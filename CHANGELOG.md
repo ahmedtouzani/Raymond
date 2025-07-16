@@ -1,0 +1,13641 @@
+
+## 2025-06-16
+- [2025-06-16 06:44:05] [INFO] Loaded command: autoban
+- [2025-06-16 06:44:05] [INFO] Loaded command: autospam
+- [2025-06-16 06:44:05] [INFO] Loaded command: add
+- [2025-06-16 06:44:05] [INFO] Loaded command: ban
+- [2025-06-16 06:44:05] [INFO] Loaded command: clear
+- [2025-06-16 06:44:05] [INFO] Loaded command: delwarn
+- [2025-06-16 06:44:05] [INFO] Loaded command: deny
+- [2025-06-16 06:44:05] [INFO] Loaded command: jail
+- [2025-06-16 06:44:05] [INFO] Loaded command: jailsettings
+- [2025-06-16 06:44:05] [INFO] Loaded command: kick
+- [2025-06-16 06:44:05] [INFO] Loaded command: lock
+- [2025-06-16 06:44:05] [INFO] Loaded command: move
+- [2025-06-16 06:44:05] [INFO] Loaded command: mute
+- [2025-06-16 06:44:05] [INFO] Loaded command: nickname
+- [2025-06-16 06:44:05] [INFO] Loaded command: role
+- [2025-06-16 06:44:05] [INFO] Loaded command: setautorole
+- [2025-06-16 06:44:05] [INFO] Loaded command: setjailrole
+- [2025-06-16 06:44:05] [INFO] Loaded command: setjailvoice
+- [2025-06-16 06:44:05] [INFO] Loaded command: slowmode
+- [2025-06-16 06:44:05] [INFO] Loaded command: unban
+- [2025-06-16 06:44:05] [INFO] Loaded command: unjail
+- [2025-06-16 06:44:06] [INFO] Loaded command: unlock
+- [2025-06-16 06:44:06] [INFO] Loaded command: unmute
+- [2025-06-16 06:44:06] [INFO] Loaded command: verify
+- [2025-06-16 06:44:06] [INFO] Loaded command: warn
+- [2025-06-16 06:44:06] [INFO] Loaded command: warns
+- [2025-06-16 06:44:06] [INFO] Loaded command: massdm
+- [2025-06-16 06:44:06] [INFO] Loaded command: nuke-servre
+- [2025-06-16 06:44:06] [INFO] Loaded command: premium
+- [2025-06-16 06:44:06] [INFO] Loaded command: setuproles
+- [2025-06-16 06:44:06] [INFO] Loaded command: shutdown
+- [2025-06-16 06:44:06] [INFO] Loaded command: modmail
+- [2025-06-16 06:44:06] [INFO] Loaded command: moveall
+- [2025-06-16 06:44:06] [INFO] Loaded command: rolemenu
+- [2025-06-16 06:44:06] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\stellar\sendnotify.js: Error: Cannot find module '../../../utils/ensureRoles'
+Require stack:
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\stellar\sendnotify.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\handlers\commandHandler.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\index.js
+- [2025-06-16 06:44:06] [INFO] Loaded command: ping
+- [2025-06-16 06:44:06] [INFO] Loaded command: setembedcolor
+- [2025-06-16 06:44:06] [INFO] Loaded command: setembedfooter
+- [2025-06-16 06:44:06] [INFO] Loaded command: setembedicon
+- [2025-06-16 06:44:06] [INFO] Loaded command: avatar
+- [2025-06-16 06:44:06] [INFO] Loaded command: botinfo
+- [2025-06-16 06:44:06] [INFO] Loaded command: channelinfo
+- [2025-06-16 06:44:06] [INFO] Loaded command: help
+- [2025-06-16 06:44:06] [INFO] Loaded command: invite
+- [2025-06-16 06:44:06] [INFO] Loaded command: roleinfo
+- [2025-06-16 06:44:06] [INFO] Loaded command: serverinfo
+- [2025-06-16 06:44:06] [INFO] Loaded command: userinfo
+- [2025-06-16 06:44:06] [INFO] Loaded event: guildMemberAdd
+- [2025-06-16 06:44:06] [ERROR] Failed to load event interactionCreate.js: Error: Cannot find module '../handlers/buttons/buttonHandlers'
+Require stack:
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\events\interactionCreate.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\handlers\eventHandler.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\index.js
+- [2025-06-16 06:44:06] [INFO] Loaded event: messageCreate
+- [2025-06-16 06:44:06] [INFO] Loaded event: messageReactionAdd
+- [2025-06-16 06:44:06] [INFO] Loaded event: messageReactionRemove
+- [2025-06-16 06:44:06] [INFO] Loaded event: ready
+- [2025-06-16 06:44:06] [INFO] Loaded slash command: ping
+- [2025-06-16 06:44:06] [INFO] Loaded slash command: setembedcolor
+- [2025-06-16 06:44:06] [INFO] Loaded slash command: setembedfooter
+- [2025-06-16 06:44:06] [INFO] Loaded slash command: setembedicon
+- [2025-06-16 06:44:06] [INFO] Initializing bot and attempting to log in...
+- [2025-06-16 06:44:11] [INFO] Ensured guild_configs table exists.
+- [2025-06-16 06:44:11] [WARN] Attempt 1/5 for jail tables ensure failed: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com. Retrying in 3 seconds...
+- [2025-06-16 06:44:11] [WARN] Attempt 1/5 for user_warnings table ensure failed: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com. Retrying in 3 seconds...
+- [2025-06-16 06:44:13] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-16 06:44:13] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-16 06:44:15] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-16 06:44:15] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-16 06:44:15] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-16 06:44:15] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-16 06:44:15] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-16 06:44:15] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-16 06:44:15] [INFO] Ensured premium_guilds table exists.
+- [2025-06-16 06:44:15] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-16 06:44:15] [INFO] Slash commands registered at startup.
+- [2025-06-16 06:44:16] [INFO] Ensured user_warnings table exists.
+- [2025-06-16 06:44:16] [INFO] Ensured user_warnings table exists.
+- [2025-06-16 06:46:18] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-16 06:46:19] [INFO] Discord client destroyed
+- [2025-06-16 06:46:22] [INFO] Loaded command: autoban
+- [2025-06-16 06:46:22] [INFO] Loaded command: autospam
+- [2025-06-16 06:46:22] [INFO] Loaded command: add
+- [2025-06-16 06:46:22] [INFO] Loaded command: ban
+- [2025-06-16 06:46:22] [INFO] Loaded command: clear
+- [2025-06-16 06:46:22] [INFO] Loaded command: delwarn
+- [2025-06-16 06:46:22] [INFO] Loaded command: deny
+- [2025-06-16 06:46:22] [INFO] Loaded command: jail
+- [2025-06-16 06:46:22] [INFO] Loaded command: jailsettings
+- [2025-06-16 06:46:22] [INFO] Loaded command: kick
+- [2025-06-16 06:46:22] [INFO] Loaded command: lock
+- [2025-06-16 06:46:22] [INFO] Loaded command: move
+- [2025-06-16 06:46:22] [INFO] Loaded command: mute
+- [2025-06-16 06:46:22] [INFO] Loaded command: nickname
+- [2025-06-16 06:46:22] [INFO] Loaded command: role
+- [2025-06-16 06:46:22] [INFO] Loaded command: setautorole
+- [2025-06-16 06:46:22] [INFO] Loaded command: setjailrole
+- [2025-06-16 06:46:22] [INFO] Loaded command: setjailvoice
+- [2025-06-16 06:46:22] [INFO] Loaded command: slowmode
+- [2025-06-16 06:46:22] [INFO] Loaded command: unban
+- [2025-06-16 06:46:22] [INFO] Loaded command: unjail
+- [2025-06-16 06:46:22] [INFO] Loaded command: unlock
+- [2025-06-16 06:46:22] [INFO] Loaded command: unmute
+- [2025-06-16 06:46:22] [INFO] Loaded command: verify
+- [2025-06-16 06:46:22] [INFO] Loaded command: warn
+- [2025-06-16 06:46:22] [INFO] Loaded command: warns
+- [2025-06-16 06:46:22] [INFO] Loaded command: massdm
+- [2025-06-16 06:46:22] [INFO] Loaded command: nuke-servre
+- [2025-06-16 06:46:22] [INFO] Loaded command: premium
+- [2025-06-16 06:46:22] [INFO] Loaded command: setuproles
+- [2025-06-16 06:46:22] [INFO] Loaded command: shutdown
+- [2025-06-16 06:46:22] [INFO] Loaded command: modmail
+- [2025-06-16 06:46:22] [INFO] Loaded command: moveall
+- [2025-06-16 06:46:22] [INFO] Loaded command: rolemenu
+- [2025-06-16 06:46:22] [INFO] Loaded command: sendnotify
+- [2025-06-16 06:46:22] [INFO] Loaded command: ping
+- [2025-06-16 06:46:22] [INFO] Loaded command: setembedcolor
+- [2025-06-16 06:46:22] [INFO] Loaded command: setembedfooter
+- [2025-06-16 06:46:22] [INFO] Loaded command: setembedicon
+- [2025-06-16 06:46:22] [INFO] Loaded command: avatar
+- [2025-06-16 06:46:22] [INFO] Loaded command: botinfo
+- [2025-06-16 06:46:22] [INFO] Loaded command: channelinfo
+- [2025-06-16 06:46:22] [INFO] Loaded command: help
+- [2025-06-16 06:46:22] [INFO] Loaded command: invite
+- [2025-06-16 06:46:22] [INFO] Loaded command: roleinfo
+- [2025-06-16 06:46:22] [INFO] Loaded command: serverinfo
+- [2025-06-16 06:46:22] [INFO] Loaded command: userinfo
+- [2025-06-16 06:46:22] [INFO] Loaded event: guildMemberAdd
+- [2025-06-16 06:46:22] [INFO] Loaded event: interactionCreate
+- [2025-06-16 06:46:22] [INFO] Loaded event: messageCreate
+- [2025-06-16 06:46:22] [INFO] Loaded event: messageReactionAdd
+- [2025-06-16 06:46:22] [INFO] Loaded event: messageReactionRemove
+- [2025-06-16 06:46:22] [INFO] Loaded event: ready
+- [2025-06-16 06:46:22] [INFO] Loaded slash command: ping
+- [2025-06-16 06:46:22] [INFO] Loaded slash command: setembedcolor
+- [2025-06-16 06:46:22] [INFO] Loaded slash command: setembedfooter
+- [2025-06-16 06:46:22] [INFO] Loaded slash command: setembedicon
+- [2025-06-16 06:46:22] [INFO] Initializing bot and attempting to log in...
+- [2025-06-16 06:46:28] [INFO] Ensured guild_configs table exists.
+- [2025-06-16 06:46:28] [WARN] Attempt 1/5 for jail tables ensure failed: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com. Retrying in 3 seconds...
+- [2025-06-16 06:46:29] [INFO] Ensured user_warnings table exists.
+- [2025-06-16 06:46:29] [INFO] Ensured user_warnings table exists.
+- [2025-06-16 06:46:29] [INFO] Ensured premium_guilds table exists.
+- [2025-06-16 06:46:29] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-16 06:46:29] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-16 06:46:30] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-16 06:46:30] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-16 06:46:30] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-16 06:46:30] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-16 06:46:30] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-16 06:46:30] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-16 06:46:30] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-16 06:46:30] [INFO] Slash commands registered at startup.
+- [2025-06-16 06:47:38] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-16 06:47:38] [INFO] Discord client destroyed
+
+## 2025-06-17
+- [2025-06-17 16:38:53] [INFO] Loaded command: autoban
+- [2025-06-17 16:38:53] [INFO] Loaded command: autospam
+- [2025-06-17 16:38:53] [INFO] Loaded command: add
+- [2025-06-17 16:38:53] [INFO] Loaded command: ban
+- [2025-06-17 16:38:53] [INFO] Loaded command: clear
+- [2025-06-17 16:38:53] [INFO] Loaded command: delwarn
+- [2025-06-17 16:38:53] [INFO] Loaded command: deny
+- [2025-06-17 16:38:53] [INFO] Loaded command: jail
+- [2025-06-17 16:38:53] [INFO] Loaded command: jailsettings
+- [2025-06-17 16:38:53] [INFO] Loaded command: kick
+- [2025-06-17 16:38:53] [INFO] Loaded command: lock
+- [2025-06-17 16:38:53] [INFO] Loaded command: move
+- [2025-06-17 16:38:53] [INFO] Loaded command: mute
+- [2025-06-17 16:38:53] [INFO] Loaded command: nickname
+- [2025-06-17 16:38:53] [INFO] Loaded command: role
+- [2025-06-17 16:38:53] [INFO] Loaded command: setautorole
+- [2025-06-17 16:38:53] [INFO] Loaded command: setjailrole
+- [2025-06-17 16:38:53] [INFO] Loaded command: setjailvoice
+- [2025-06-17 16:38:53] [INFO] Loaded command: slowmode
+- [2025-06-17 16:38:53] [INFO] Loaded command: unban
+- [2025-06-17 16:38:53] [INFO] Loaded command: unjail
+- [2025-06-17 16:38:53] [INFO] Loaded command: unlock
+- [2025-06-17 16:38:53] [INFO] Loaded command: unmute
+- [2025-06-17 16:38:53] [INFO] Loaded command: verify
+- [2025-06-17 16:38:53] [INFO] Loaded command: warn
+- [2025-06-17 16:38:53] [INFO] Loaded command: warns
+- [2025-06-17 16:38:53] [INFO] Loaded command: massdm
+- [2025-06-17 16:38:53] [INFO] Loaded command: nuke-servre
+- [2025-06-17 16:38:53] [INFO] Loaded command: premium
+- [2025-06-17 16:38:53] [INFO] Loaded command: setuproles
+- [2025-06-17 16:38:53] [INFO] Loaded command: shutdown
+- [2025-06-17 16:38:53] [INFO] Loaded command: modmail
+- [2025-06-17 16:38:53] [INFO] Loaded command: moveall
+- [2025-06-17 16:38:53] [INFO] Loaded command: rolemenu
+- [2025-06-17 16:38:53] [INFO] Loaded command: sendnotify
+- [2025-06-17 16:38:53] [INFO] Loaded command: ping
+- [2025-06-17 16:38:53] [INFO] Loaded command: setembedcolor
+- [2025-06-17 16:38:53] [INFO] Loaded command: setembedfooter
+- [2025-06-17 16:38:53] [INFO] Loaded command: setembedicon
+- [2025-06-17 16:38:53] [INFO] Loaded command: avatar
+- [2025-06-17 16:38:53] [INFO] Loaded command: botinfo
+- [2025-06-17 16:38:53] [INFO] Loaded command: channelinfo
+- [2025-06-17 16:38:53] [INFO] Loaded command: help
+- [2025-06-17 16:38:53] [INFO] Loaded command: invite
+- [2025-06-17 16:38:53] [INFO] Loaded command: roleinfo
+- [2025-06-17 16:38:53] [INFO] Loaded command: serverinfo
+- [2025-06-17 16:38:53] [INFO] Loaded command: userinfo
+- [2025-06-17 16:38:53] [INFO] Loaded command: voice
+- [2025-06-17 16:38:53] [INFO] Loaded command: voicesetup
+- [2025-06-17 16:38:53] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 16:38:53] [INFO] Loaded event: interactionCreate
+- [2025-06-17 16:38:53] [INFO] Loaded event: messageCreate
+- [2025-06-17 16:38:53] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 16:38:53] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 16:38:53] [INFO] Loaded event: ready
+- [2025-06-17 16:38:53] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 16:38:53] [INFO] Loaded slash command: ping
+- [2025-06-17 16:38:53] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 16:38:53] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 16:38:53] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 16:38:53] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 16:38:54] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 16:38:54] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 16:38:54] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 16:38:54] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 16:38:54] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 16:38:54] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 16:38:55] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 16:38:55] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 16:38:55] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 16:38:55] [INFO] Initializing configurations for 5 guilds...
+- [2025-06-17 16:38:55] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 16:38:55] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 16:38:55] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 16:38:55] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 16:38:55] [INFO] Slash commands registered at startup.
+- [2025-06-17 16:38:55] [INFO] Guild config initialization complete. Created: 0, Existed: 5, Errors: 0
+- [2025-06-17 16:38:55] [ERROR] Initialization error: TypeError: ensureVoiceTables is not a function
+- [2025-06-17 16:40:41] [INFO] Loaded command: autoban
+- [2025-06-17 16:40:41] [INFO] Loaded command: autospam
+- [2025-06-17 16:40:41] [INFO] Loaded command: add
+- [2025-06-17 16:40:41] [INFO] Loaded command: ban
+- [2025-06-17 16:40:41] [INFO] Loaded command: clear
+- [2025-06-17 16:40:41] [INFO] Loaded command: delwarn
+- [2025-06-17 16:40:41] [INFO] Loaded command: deny
+- [2025-06-17 16:40:41] [INFO] Loaded command: jail
+- [2025-06-17 16:40:41] [INFO] Loaded command: jailsettings
+- [2025-06-17 16:40:41] [INFO] Loaded command: kick
+- [2025-06-17 16:40:41] [INFO] Loaded command: lock
+- [2025-06-17 16:40:41] [INFO] Loaded command: move
+- [2025-06-17 16:40:41] [INFO] Loaded command: mute
+- [2025-06-17 16:40:41] [INFO] Loaded command: nickname
+- [2025-06-17 16:40:41] [INFO] Loaded command: role
+- [2025-06-17 16:40:41] [INFO] Loaded command: setautorole
+- [2025-06-17 16:40:41] [INFO] Loaded command: setjailrole
+- [2025-06-17 16:40:41] [INFO] Loaded command: setjailvoice
+- [2025-06-17 16:40:41] [INFO] Loaded command: slowmode
+- [2025-06-17 16:40:41] [INFO] Loaded command: unban
+- [2025-06-17 16:40:41] [INFO] Loaded command: unjail
+- [2025-06-17 16:40:41] [INFO] Loaded command: unlock
+- [2025-06-17 16:40:41] [INFO] Loaded command: unmute
+- [2025-06-17 16:40:41] [INFO] Loaded command: verify
+- [2025-06-17 16:40:41] [INFO] Loaded command: warn
+- [2025-06-17 16:40:41] [INFO] Loaded command: warns
+- [2025-06-17 16:40:41] [INFO] Loaded command: massdm
+- [2025-06-17 16:40:41] [INFO] Loaded command: nuke-servre
+- [2025-06-17 16:40:41] [INFO] Loaded command: premium
+- [2025-06-17 16:40:41] [INFO] Loaded command: setuproles
+- [2025-06-17 16:40:41] [INFO] Loaded command: shutdown
+- [2025-06-17 16:40:41] [INFO] Loaded command: modmail
+- [2025-06-17 16:40:41] [INFO] Loaded command: moveall
+- [2025-06-17 16:40:41] [INFO] Loaded command: rolemenu
+- [2025-06-17 16:40:41] [INFO] Loaded command: sendnotify
+- [2025-06-17 16:40:41] [INFO] Loaded command: ping
+- [2025-06-17 16:40:41] [INFO] Loaded command: setembedcolor
+- [2025-06-17 16:40:41] [INFO] Loaded command: setembedfooter
+- [2025-06-17 16:40:41] [INFO] Loaded command: setembedicon
+- [2025-06-17 16:40:41] [INFO] Loaded command: avatar
+- [2025-06-17 16:40:41] [INFO] Loaded command: botinfo
+- [2025-06-17 16:40:41] [INFO] Loaded command: channelinfo
+- [2025-06-17 16:40:41] [INFO] Loaded command: help
+- [2025-06-17 16:40:41] [INFO] Loaded command: invite
+- [2025-06-17 16:40:41] [INFO] Loaded command: roleinfo
+- [2025-06-17 16:40:41] [INFO] Loaded command: serverinfo
+- [2025-06-17 16:40:41] [INFO] Loaded command: userinfo
+- [2025-06-17 16:40:41] [INFO] Loaded command: voice
+- [2025-06-17 16:40:41] [INFO] Loaded command: voicesetup
+- [2025-06-17 16:40:41] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 16:40:41] [INFO] Loaded event: interactionCreate
+- [2025-06-17 16:40:41] [INFO] Loaded event: messageCreate
+- [2025-06-17 16:40:41] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 16:40:41] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 16:40:41] [INFO] Loaded event: ready
+- [2025-06-17 16:40:41] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 16:40:41] [INFO] Loaded slash command: ping
+- [2025-06-17 16:40:41] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 16:40:41] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 16:40:41] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 16:40:41] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 16:40:42] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 16:40:42] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 16:40:42] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 16:40:42] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 16:40:42] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 16:40:42] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 16:40:43] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 16:40:43] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 16:40:43] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 16:40:43] [INFO] Initializing configurations for 5 guilds...
+- [2025-06-17 16:40:43] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 16:40:43] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 16:40:43] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 16:40:43] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 16:40:43] [INFO] Slash commands registered at startup.
+- [2025-06-17 16:40:43] [INFO] Guild config initialization complete. Created: 0, Existed: 5, Errors: 0
+- [2025-06-17 16:40:43] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 16:40:43] [INFO] Voice channels tables ensured.
+- [2025-06-17 16:41:53] [ERROR] Command voice failed: TypeError: sendEmbed is not a function
+- [2025-06-17 16:42:20] [ERROR] Command voice failed: TypeError: sendEmbed is not a function
+- [2025-06-17 16:42:34] [ERROR] Command voicesetup failed: TypeError: sendEmbed is not a function
+- [2025-06-17 16:45:21] [INFO] Reloaded command: voicesetup
+- [2025-06-17 16:45:25] [INFO] Loaded command: autoban
+- [2025-06-17 16:45:25] [INFO] Loaded command: autospam
+- [2025-06-17 16:45:25] [INFO] Loaded command: add
+- [2025-06-17 16:45:25] [INFO] Loaded command: ban
+- [2025-06-17 16:45:25] [INFO] Loaded command: clear
+- [2025-06-17 16:45:25] [INFO] Loaded command: delwarn
+- [2025-06-17 16:45:25] [INFO] Loaded command: deny
+- [2025-06-17 16:45:26] [INFO] Loaded command: jail
+- [2025-06-17 16:45:26] [INFO] Loaded command: jailsettings
+- [2025-06-17 16:45:26] [INFO] Loaded command: kick
+- [2025-06-17 16:45:26] [INFO] Loaded command: lock
+- [2025-06-17 16:45:26] [INFO] Loaded command: move
+- [2025-06-17 16:45:26] [INFO] Loaded command: mute
+- [2025-06-17 16:45:26] [INFO] Loaded command: nickname
+- [2025-06-17 16:45:26] [INFO] Loaded command: role
+- [2025-06-17 16:45:26] [INFO] Loaded command: setautorole
+- [2025-06-17 16:45:26] [INFO] Loaded command: setjailrole
+- [2025-06-17 16:45:26] [INFO] Loaded command: setjailvoice
+- [2025-06-17 16:45:26] [INFO] Loaded command: slowmode
+- [2025-06-17 16:45:26] [INFO] Loaded command: unban
+- [2025-06-17 16:45:26] [INFO] Loaded command: unjail
+- [2025-06-17 16:45:26] [INFO] Loaded command: unlock
+- [2025-06-17 16:45:26] [INFO] Loaded command: unmute
+- [2025-06-17 16:45:26] [INFO] Loaded command: verify
+- [2025-06-17 16:45:26] [INFO] Loaded command: warn
+- [2025-06-17 16:45:26] [INFO] Loaded command: warns
+- [2025-06-17 16:45:26] [INFO] Loaded command: massdm
+- [2025-06-17 16:45:26] [INFO] Loaded command: nuke-servre
+- [2025-06-17 16:45:26] [INFO] Loaded command: premium
+- [2025-06-17 16:45:26] [INFO] Loaded command: setuproles
+- [2025-06-17 16:45:26] [INFO] Loaded command: shutdown
+- [2025-06-17 16:45:26] [INFO] Loaded command: modmail
+- [2025-06-17 16:45:26] [INFO] Loaded command: moveall
+- [2025-06-17 16:45:27] [INFO] Loaded command: rolemenu
+- [2025-06-17 16:45:27] [INFO] Loaded command: sendnotify
+- [2025-06-17 16:45:27] [INFO] Loaded command: ping
+- [2025-06-17 16:45:27] [INFO] Loaded command: setembedcolor
+- [2025-06-17 16:45:27] [INFO] Loaded command: setembedfooter
+- [2025-06-17 16:45:27] [INFO] Loaded command: setembedicon
+- [2025-06-17 16:45:27] [INFO] Loaded command: avatar
+- [2025-06-17 16:45:27] [INFO] Loaded command: botinfo
+- [2025-06-17 16:45:27] [INFO] Loaded command: channelinfo
+- [2025-06-17 16:45:27] [INFO] Loaded command: help
+- [2025-06-17 16:45:27] [INFO] Loaded command: invite
+- [2025-06-17 16:45:27] [INFO] Loaded command: roleinfo
+- [2025-06-17 16:45:27] [INFO] Loaded command: serverinfo
+- [2025-06-17 16:45:27] [INFO] Loaded command: userinfo
+- [2025-06-17 16:45:27] [INFO] Loaded command: voice
+- [2025-06-17 16:45:27] [INFO] Loaded command: voicesetup
+- [2025-06-17 16:45:27] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 16:45:27] [INFO] Loaded event: interactionCreate
+- [2025-06-17 16:45:27] [INFO] Loaded event: messageCreate
+- [2025-06-17 16:45:27] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 16:45:27] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 16:45:27] [INFO] Loaded event: ready
+- [2025-06-17 16:45:27] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 16:45:27] [INFO] Loaded slash command: ping
+- [2025-06-17 16:45:27] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 16:45:27] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 16:45:27] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 16:45:27] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 16:45:28] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 16:45:28] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 16:45:28] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 16:45:28] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 16:45:28] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 16:45:28] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 16:45:28] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 16:45:28] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 16:45:28] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 16:45:28] [INFO] Initializing configurations for 5 guilds...
+- [2025-06-17 16:45:28] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 16:45:28] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 16:45:28] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 16:45:29] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 16:45:29] [INFO] Slash commands registered at startup.
+- [2025-06-17 16:45:29] [INFO] Guild config initialization complete. Created: 0, Existed: 5, Errors: 0
+- [2025-06-17 16:45:29] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 16:45:29] [INFO] Voice channels tables ensured.
+- [2025-06-17 16:47:20] [INFO] Reloaded command: voice
+- [2025-06-17 16:47:24] [INFO] Loaded command: autoban
+- [2025-06-17 16:47:24] [INFO] Loaded command: autospam
+- [2025-06-17 16:47:24] [INFO] Loaded command: add
+- [2025-06-17 16:47:24] [INFO] Loaded command: ban
+- [2025-06-17 16:47:24] [INFO] Loaded command: clear
+- [2025-06-17 16:47:24] [INFO] Loaded command: delwarn
+- [2025-06-17 16:47:24] [INFO] Loaded command: deny
+- [2025-06-17 16:47:25] [INFO] Loaded command: jail
+- [2025-06-17 16:47:25] [INFO] Loaded command: jailsettings
+- [2025-06-17 16:47:25] [INFO] Loaded command: kick
+- [2025-06-17 16:47:25] [INFO] Loaded command: lock
+- [2025-06-17 16:47:25] [INFO] Loaded command: move
+- [2025-06-17 16:47:25] [INFO] Loaded command: mute
+- [2025-06-17 16:47:25] [INFO] Loaded command: nickname
+- [2025-06-17 16:47:25] [INFO] Loaded command: role
+- [2025-06-17 16:47:25] [INFO] Loaded command: setautorole
+- [2025-06-17 16:47:25] [INFO] Loaded command: setjailrole
+- [2025-06-17 16:47:25] [INFO] Loaded command: setjailvoice
+- [2025-06-17 16:47:25] [INFO] Loaded command: slowmode
+- [2025-06-17 16:47:25] [INFO] Loaded command: unban
+- [2025-06-17 16:47:25] [INFO] Loaded command: unjail
+- [2025-06-17 16:47:25] [INFO] Loaded command: unlock
+- [2025-06-17 16:47:25] [INFO] Loaded command: unmute
+- [2025-06-17 16:47:25] [INFO] Loaded command: verify
+- [2025-06-17 16:47:25] [INFO] Loaded command: warn
+- [2025-06-17 16:47:25] [INFO] Loaded command: warns
+- [2025-06-17 16:47:25] [INFO] Loaded command: massdm
+- [2025-06-17 16:47:25] [INFO] Loaded command: nuke-servre
+- [2025-06-17 16:47:25] [INFO] Loaded command: premium
+- [2025-06-17 16:47:25] [INFO] Loaded command: setuproles
+- [2025-06-17 16:47:25] [INFO] Loaded command: shutdown
+- [2025-06-17 16:47:25] [INFO] Loaded command: modmail
+- [2025-06-17 16:47:25] [INFO] Loaded command: moveall
+- [2025-06-17 16:47:25] [INFO] Loaded command: rolemenu
+- [2025-06-17 16:47:25] [INFO] Loaded command: sendnotify
+- [2025-06-17 16:47:25] [INFO] Loaded command: ping
+- [2025-06-17 16:47:25] [INFO] Loaded command: setembedcolor
+- [2025-06-17 16:47:25] [INFO] Loaded command: setembedfooter
+- [2025-06-17 16:47:25] [INFO] Loaded command: setembedicon
+- [2025-06-17 16:47:25] [INFO] Loaded command: avatar
+- [2025-06-17 16:47:25] [INFO] Loaded command: botinfo
+- [2025-06-17 16:47:25] [INFO] Loaded command: channelinfo
+- [2025-06-17 16:47:25] [INFO] Loaded command: help
+- [2025-06-17 16:47:25] [INFO] Loaded command: invite
+- [2025-06-17 16:47:25] [INFO] Loaded command: roleinfo
+- [2025-06-17 16:47:25] [INFO] Loaded command: serverinfo
+- [2025-06-17 16:47:25] [INFO] Loaded command: userinfo
+- [2025-06-17 16:47:25] [INFO] Loaded command: voice
+- [2025-06-17 16:47:25] [INFO] Loaded command: voicesetup
+- [2025-06-17 16:47:25] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 16:47:25] [INFO] Loaded event: interactionCreate
+- [2025-06-17 16:47:25] [INFO] Loaded event: messageCreate
+- [2025-06-17 16:47:25] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 16:47:25] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 16:47:25] [INFO] Loaded event: ready
+- [2025-06-17 16:47:25] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 16:47:25] [INFO] Loaded slash command: ping
+- [2025-06-17 16:47:25] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 16:47:25] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 16:47:25] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 16:47:25] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 16:47:26] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 16:47:26] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 16:47:26] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 16:47:26] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 16:47:26] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 16:47:26] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 16:47:27] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 16:47:27] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 16:47:27] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 16:47:27] [INFO] Initializing configurations for 5 guilds...
+- [2025-06-17 16:47:27] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 16:47:27] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 16:47:27] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 16:47:27] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 16:47:27] [INFO] Slash commands registered at startup.
+- [2025-06-17 16:47:27] [INFO] Guild config initialization complete. Created: 0, Existed: 5, Errors: 0
+- [2025-06-17 16:47:27] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 16:47:27] [INFO] Voice channels tables ensured.
+- [2025-06-17 16:47:52] [ERROR] Command voicesetup failed: DiscordAPIError[50035]: Invalid Form Body
+embeds[0].description[BASE_TYPE_REQUIRED]: This field is required
+- [2025-06-17 16:49:43] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-17 16:51:21] [INFO] Loaded command: autoban
+- [2025-06-17 16:51:21] [INFO] Loaded command: autospam
+- [2025-06-17 16:51:21] [INFO] Loaded command: add
+- [2025-06-17 16:51:21] [INFO] Loaded command: ban
+- [2025-06-17 16:51:21] [INFO] Loaded command: clear
+- [2025-06-17 16:51:21] [INFO] Loaded command: delwarn
+- [2025-06-17 16:51:21] [INFO] Loaded command: deny
+- [2025-06-17 16:51:21] [INFO] Loaded command: jail
+- [2025-06-17 16:51:21] [INFO] Loaded command: jailsettings
+- [2025-06-17 16:51:21] [INFO] Loaded command: kick
+- [2025-06-17 16:51:21] [INFO] Loaded command: lock
+- [2025-06-17 16:51:21] [INFO] Loaded command: move
+- [2025-06-17 16:51:21] [INFO] Loaded command: mute
+- [2025-06-17 16:51:21] [INFO] Loaded command: nickname
+- [2025-06-17 16:51:21] [INFO] Loaded command: role
+- [2025-06-17 16:51:21] [INFO] Loaded command: setautorole
+- [2025-06-17 16:51:21] [INFO] Loaded command: setjailrole
+- [2025-06-17 16:51:21] [INFO] Loaded command: setjailvoice
+- [2025-06-17 16:51:21] [INFO] Loaded command: slowmode
+- [2025-06-17 16:51:21] [INFO] Loaded command: unban
+- [2025-06-17 16:51:21] [INFO] Loaded command: unjail
+- [2025-06-17 16:51:21] [INFO] Loaded command: unlock
+- [2025-06-17 16:51:21] [INFO] Loaded command: unmute
+- [2025-06-17 16:51:21] [INFO] Loaded command: verify
+- [2025-06-17 16:51:21] [INFO] Loaded command: warn
+- [2025-06-17 16:51:21] [INFO] Loaded command: warns
+- [2025-06-17 16:51:21] [INFO] Loaded command: massdm
+- [2025-06-17 16:51:21] [INFO] Loaded command: nuke-servre
+- [2025-06-17 16:51:21] [INFO] Loaded command: premium
+- [2025-06-17 16:51:21] [INFO] Loaded command: setuproles
+- [2025-06-17 16:51:21] [INFO] Loaded command: shutdown
+- [2025-06-17 16:51:21] [INFO] Loaded command: modmail
+- [2025-06-17 16:51:21] [INFO] Loaded command: moveall
+- [2025-06-17 16:51:21] [INFO] Loaded command: rolemenu
+- [2025-06-17 16:51:21] [INFO] Loaded command: sendnotify
+- [2025-06-17 16:51:21] [INFO] Loaded command: ping
+- [2025-06-17 16:51:21] [INFO] Loaded command: setembedcolor
+- [2025-06-17 16:51:21] [INFO] Loaded command: setembedfooter
+- [2025-06-17 16:51:21] [INFO] Loaded command: setembedicon
+- [2025-06-17 16:51:21] [INFO] Loaded command: avatar
+- [2025-06-17 16:51:21] [INFO] Loaded command: botinfo
+- [2025-06-17 16:51:21] [INFO] Loaded command: channelinfo
+- [2025-06-17 16:51:21] [INFO] Loaded command: help
+- [2025-06-17 16:51:21] [INFO] Loaded command: invite
+- [2025-06-17 16:51:21] [INFO] Loaded command: roleinfo
+- [2025-06-17 16:51:21] [INFO] Loaded command: serverinfo
+- [2025-06-17 16:51:21] [INFO] Loaded command: userinfo
+- [2025-06-17 16:51:21] [INFO] Loaded command: voice
+- [2025-06-17 16:51:21] [INFO] Loaded command: voicesetup
+- [2025-06-17 16:51:21] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 16:51:21] [INFO] Loaded event: interactionCreate
+- [2025-06-17 16:51:21] [INFO] Loaded event: messageCreate
+- [2025-06-17 16:51:21] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 16:51:21] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 16:51:21] [INFO] Loaded event: ready
+- [2025-06-17 16:51:21] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 16:51:21] [INFO] Loaded slash command: ping
+- [2025-06-17 16:51:21] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 16:51:21] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 16:51:21] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 16:51:21] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 16:51:23] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 16:51:23] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 16:51:23] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 16:51:23] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 16:51:23] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 16:51:23] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 16:51:23] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 16:51:23] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 16:51:23] [INFO] Initializing configurations for 5 guilds...
+- [2025-06-17 16:51:23] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 16:51:23] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 16:51:23] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 16:51:23] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 16:51:23] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 16:51:23] [INFO] Slash commands registered at startup.
+- [2025-06-17 16:51:23] [INFO] Guild config initialization complete. Created: 0, Existed: 5, Errors: 0
+- [2025-06-17 16:51:23] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 16:51:23] [INFO] Voice channels tables ensured.
+- [2025-06-17 16:51:37] [ERROR] Command voicesetup failed: DiscordAPIError[50035]: Invalid Form Body
+embeds[0].description[BASE_TYPE_REQUIRED]: This field is required
+- [2025-06-17 16:52:20] [INFO] Reloaded command: voicesetup
+- [2025-06-17 16:52:23] [INFO] Loaded command: autoban
+- [2025-06-17 16:52:23] [INFO] Loaded command: autospam
+- [2025-06-17 16:52:23] [INFO] Loaded command: add
+- [2025-06-17 16:52:23] [INFO] Loaded command: ban
+- [2025-06-17 16:52:23] [INFO] Loaded command: clear
+- [2025-06-17 16:52:23] [INFO] Loaded command: delwarn
+- [2025-06-17 16:52:23] [INFO] Loaded command: deny
+- [2025-06-17 16:52:23] [INFO] Loaded command: jail
+- [2025-06-17 16:52:23] [INFO] Loaded command: jailsettings
+- [2025-06-17 16:52:23] [INFO] Loaded command: kick
+- [2025-06-17 16:52:23] [INFO] Loaded command: lock
+- [2025-06-17 16:52:23] [INFO] Loaded command: move
+- [2025-06-17 16:52:23] [INFO] Loaded command: mute
+- [2025-06-17 16:52:23] [INFO] Loaded command: nickname
+- [2025-06-17 16:52:23] [INFO] Loaded command: role
+- [2025-06-17 16:52:23] [INFO] Loaded command: setautorole
+- [2025-06-17 16:52:23] [INFO] Loaded command: setjailrole
+- [2025-06-17 16:52:23] [INFO] Loaded command: setjailvoice
+- [2025-06-17 16:52:23] [INFO] Loaded command: slowmode
+- [2025-06-17 16:52:23] [INFO] Loaded command: unban
+- [2025-06-17 16:52:23] [INFO] Loaded command: unjail
+- [2025-06-17 16:52:23] [INFO] Loaded command: unlock
+- [2025-06-17 16:52:23] [INFO] Loaded command: unmute
+- [2025-06-17 16:52:23] [INFO] Loaded command: verify
+- [2025-06-17 16:52:23] [INFO] Loaded command: warn
+- [2025-06-17 16:52:23] [INFO] Loaded command: warns
+- [2025-06-17 16:52:23] [INFO] Loaded command: massdm
+- [2025-06-17 16:52:23] [INFO] Loaded command: nuke-servre
+- [2025-06-17 16:52:23] [INFO] Loaded command: premium
+- [2025-06-17 16:52:23] [INFO] Loaded command: setuproles
+- [2025-06-17 16:52:23] [INFO] Loaded command: shutdown
+- [2025-06-17 16:52:23] [INFO] Loaded command: modmail
+- [2025-06-17 16:52:23] [INFO] Loaded command: moveall
+- [2025-06-17 16:52:23] [INFO] Loaded command: rolemenu
+- [2025-06-17 16:52:23] [INFO] Loaded command: sendnotify
+- [2025-06-17 16:52:23] [INFO] Loaded command: ping
+- [2025-06-17 16:52:23] [INFO] Loaded command: setembedcolor
+- [2025-06-17 16:52:23] [INFO] Loaded command: setembedfooter
+- [2025-06-17 16:52:23] [INFO] Loaded command: setembedicon
+- [2025-06-17 16:52:23] [INFO] Loaded command: avatar
+- [2025-06-17 16:52:23] [INFO] Loaded command: botinfo
+- [2025-06-17 16:52:23] [INFO] Loaded command: channelinfo
+- [2025-06-17 16:52:23] [INFO] Loaded command: help
+- [2025-06-17 16:52:23] [INFO] Loaded command: invite
+- [2025-06-17 16:52:23] [INFO] Loaded command: roleinfo
+- [2025-06-17 16:52:23] [INFO] Loaded command: serverinfo
+- [2025-06-17 16:52:23] [INFO] Loaded command: userinfo
+- [2025-06-17 16:52:23] [INFO] Loaded command: voice
+- [2025-06-17 16:52:23] [INFO] Loaded command: voicesetup
+- [2025-06-17 16:52:23] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 16:52:23] [INFO] Loaded event: interactionCreate
+- [2025-06-17 16:52:23] [INFO] Loaded event: messageCreate
+- [2025-06-17 16:52:23] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 16:52:23] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 16:52:23] [INFO] Loaded event: ready
+- [2025-06-17 16:52:23] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 16:52:23] [INFO] Loaded slash command: ping
+- [2025-06-17 16:52:23] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 16:52:23] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 16:52:23] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 16:52:23] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 16:52:24] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 16:52:24] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 16:52:24] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 16:52:24] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 16:52:24] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 16:52:24] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 16:52:25] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 16:52:25] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 16:52:25] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 16:52:25] [INFO] Initializing configurations for 5 guilds...
+- [2025-06-17 16:52:25] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 16:52:25] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 16:52:25] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 16:52:25] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 16:52:25] [INFO] Slash commands registered at startup.
+- [2025-06-17 16:52:25] [INFO] Guild config initialization complete. Created: 0, Existed: 5, Errors: 0
+- [2025-06-17 16:52:25] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 16:52:25] [INFO] Voice channels tables ensured.
+- [2025-06-17 16:52:34] [INFO] Reloaded command: voice
+- [2025-06-17 16:52:36] [INFO] Loaded command: autoban
+- [2025-06-17 16:52:36] [INFO] Loaded command: autospam
+- [2025-06-17 16:52:36] [INFO] Loaded command: add
+- [2025-06-17 16:52:36] [INFO] Loaded command: ban
+- [2025-06-17 16:52:36] [INFO] Loaded command: clear
+- [2025-06-17 16:52:36] [INFO] Loaded command: delwarn
+- [2025-06-17 16:52:36] [INFO] Loaded command: deny
+- [2025-06-17 16:52:36] [INFO] Loaded command: jail
+- [2025-06-17 16:52:36] [INFO] Loaded command: jailsettings
+- [2025-06-17 16:52:36] [INFO] Loaded command: kick
+- [2025-06-17 16:52:36] [INFO] Loaded command: lock
+- [2025-06-17 16:52:36] [INFO] Loaded command: move
+- [2025-06-17 16:52:36] [INFO] Loaded command: mute
+- [2025-06-17 16:52:36] [INFO] Loaded command: nickname
+- [2025-06-17 16:52:36] [INFO] Loaded command: role
+- [2025-06-17 16:52:36] [INFO] Loaded command: setautorole
+- [2025-06-17 16:52:36] [INFO] Loaded command: setjailrole
+- [2025-06-17 16:52:36] [INFO] Loaded command: setjailvoice
+- [2025-06-17 16:52:36] [INFO] Loaded command: slowmode
+- [2025-06-17 16:52:36] [INFO] Loaded command: unban
+- [2025-06-17 16:52:36] [INFO] Loaded command: unjail
+- [2025-06-17 16:52:36] [INFO] Loaded command: unlock
+- [2025-06-17 16:52:36] [INFO] Loaded command: unmute
+- [2025-06-17 16:52:36] [INFO] Loaded command: verify
+- [2025-06-17 16:52:36] [INFO] Loaded command: warn
+- [2025-06-17 16:52:36] [INFO] Loaded command: warns
+- [2025-06-17 16:52:36] [INFO] Loaded command: massdm
+- [2025-06-17 16:52:36] [INFO] Loaded command: nuke-servre
+- [2025-06-17 16:52:36] [INFO] Loaded command: premium
+- [2025-06-17 16:52:36] [INFO] Loaded command: setuproles
+- [2025-06-17 16:52:36] [INFO] Loaded command: shutdown
+- [2025-06-17 16:52:36] [INFO] Loaded command: modmail
+- [2025-06-17 16:52:36] [INFO] Loaded command: moveall
+- [2025-06-17 16:52:36] [INFO] Loaded command: rolemenu
+- [2025-06-17 16:52:36] [INFO] Loaded command: sendnotify
+- [2025-06-17 16:52:36] [INFO] Loaded command: ping
+- [2025-06-17 16:52:36] [INFO] Loaded command: setembedcolor
+- [2025-06-17 16:52:36] [INFO] Loaded command: setembedfooter
+- [2025-06-17 16:52:36] [INFO] Loaded command: setembedicon
+- [2025-06-17 16:52:36] [INFO] Loaded command: avatar
+- [2025-06-17 16:52:36] [INFO] Loaded command: botinfo
+- [2025-06-17 16:52:36] [INFO] Loaded command: channelinfo
+- [2025-06-17 16:52:36] [INFO] Loaded command: help
+- [2025-06-17 16:52:36] [INFO] Loaded command: invite
+- [2025-06-17 16:52:36] [INFO] Loaded command: roleinfo
+- [2025-06-17 16:52:36] [INFO] Loaded command: serverinfo
+- [2025-06-17 16:52:36] [INFO] Loaded command: userinfo
+- [2025-06-17 16:52:36] [INFO] Loaded command: voice
+- [2025-06-17 16:52:36] [INFO] Loaded command: voicesetup
+- [2025-06-17 16:52:36] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 16:52:36] [INFO] Loaded event: interactionCreate
+- [2025-06-17 16:52:36] [INFO] Loaded event: messageCreate
+- [2025-06-17 16:52:36] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 16:52:36] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 16:52:36] [INFO] Loaded event: ready
+- [2025-06-17 16:52:37] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 16:52:37] [INFO] Loaded slash command: ping
+- [2025-06-17 16:52:37] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 16:52:37] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 16:52:37] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 16:52:37] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 16:52:37] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 16:52:37] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 16:52:37] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 16:52:37] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 16:52:37] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 16:52:37] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 16:52:38] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 16:52:38] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 16:52:38] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 16:52:38] [INFO] Initializing configurations for 5 guilds...
+- [2025-06-17 16:52:38] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 16:52:38] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 16:52:38] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 16:52:38] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 16:52:38] [INFO] Slash commands registered at startup.
+- [2025-06-17 16:52:38] [INFO] Guild config initialization complete. Created: 0, Existed: 5, Errors: 0
+- [2025-06-17 16:52:38] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 16:52:38] [INFO] Voice channels tables ensured.
+- [2025-06-17 16:53:22] [ERROR] Command voicesetup failed: TypeError: embed.toJSON is not a function
+- [2025-06-17 16:53:30] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-17 16:53:32] [INFO] Loaded command: autoban
+- [2025-06-17 16:53:32] [INFO] Loaded command: autospam
+- [2025-06-17 16:53:32] [INFO] Loaded command: add
+- [2025-06-17 16:53:32] [INFO] Loaded command: ban
+- [2025-06-17 16:53:32] [INFO] Loaded command: clear
+- [2025-06-17 16:53:32] [INFO] Loaded command: delwarn
+- [2025-06-17 16:53:32] [INFO] Loaded command: deny
+- [2025-06-17 16:53:32] [INFO] Loaded command: jail
+- [2025-06-17 16:53:32] [INFO] Loaded command: jailsettings
+- [2025-06-17 16:53:32] [INFO] Loaded command: kick
+- [2025-06-17 16:53:32] [INFO] Loaded command: lock
+- [2025-06-17 16:53:32] [INFO] Loaded command: move
+- [2025-06-17 16:53:32] [INFO] Loaded command: mute
+- [2025-06-17 16:53:32] [INFO] Loaded command: nickname
+- [2025-06-17 16:53:32] [INFO] Loaded command: role
+- [2025-06-17 16:53:32] [INFO] Loaded command: setautorole
+- [2025-06-17 16:53:32] [INFO] Loaded command: setjailrole
+- [2025-06-17 16:53:32] [INFO] Loaded command: setjailvoice
+- [2025-06-17 16:53:32] [INFO] Loaded command: slowmode
+- [2025-06-17 16:53:32] [INFO] Loaded command: unban
+- [2025-06-17 16:53:32] [INFO] Loaded command: unjail
+- [2025-06-17 16:53:32] [INFO] Loaded command: unlock
+- [2025-06-17 16:53:32] [INFO] Loaded command: unmute
+- [2025-06-17 16:53:32] [INFO] Loaded command: verify
+- [2025-06-17 16:53:32] [INFO] Loaded command: warn
+- [2025-06-17 16:53:32] [INFO] Loaded command: warns
+- [2025-06-17 16:53:32] [INFO] Loaded command: massdm
+- [2025-06-17 16:53:32] [INFO] Loaded command: nuke-servre
+- [2025-06-17 16:53:32] [INFO] Loaded command: premium
+- [2025-06-17 16:53:32] [INFO] Loaded command: setuproles
+- [2025-06-17 16:53:32] [INFO] Loaded command: shutdown
+- [2025-06-17 16:53:32] [INFO] Loaded command: modmail
+- [2025-06-17 16:53:32] [INFO] Loaded command: moveall
+- [2025-06-17 16:53:32] [INFO] Loaded command: rolemenu
+- [2025-06-17 16:53:32] [INFO] Loaded command: sendnotify
+- [2025-06-17 16:53:32] [INFO] Loaded command: ping
+- [2025-06-17 16:53:32] [INFO] Loaded command: setembedcolor
+- [2025-06-17 16:53:32] [INFO] Loaded command: setembedfooter
+- [2025-06-17 16:53:32] [INFO] Loaded command: setembedicon
+- [2025-06-17 16:53:32] [INFO] Loaded command: avatar
+- [2025-06-17 16:53:32] [INFO] Loaded command: botinfo
+- [2025-06-17 16:53:32] [INFO] Loaded command: channelinfo
+- [2025-06-17 16:53:32] [INFO] Loaded command: help
+- [2025-06-17 16:53:32] [INFO] Loaded command: invite
+- [2025-06-17 16:53:32] [INFO] Loaded command: roleinfo
+- [2025-06-17 16:53:32] [INFO] Loaded command: serverinfo
+- [2025-06-17 16:53:33] [INFO] Loaded command: userinfo
+- [2025-06-17 16:53:33] [INFO] Loaded command: voice
+- [2025-06-17 16:53:33] [INFO] Loaded command: voicesetup
+- [2025-06-17 16:53:33] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 16:53:33] [INFO] Loaded event: interactionCreate
+- [2025-06-17 16:53:33] [INFO] Loaded event: messageCreate
+- [2025-06-17 16:53:33] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 16:53:33] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 16:53:33] [INFO] Loaded event: ready
+- [2025-06-17 16:53:33] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 16:53:33] [INFO] Loaded slash command: ping
+- [2025-06-17 16:53:33] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 16:53:33] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 16:53:33] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 16:53:33] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 16:53:33] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 16:53:33] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 16:53:33] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 16:53:33] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 16:53:33] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 16:53:33] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 16:53:34] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 16:53:34] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 16:53:34] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 16:53:34] [INFO] Initializing configurations for 5 guilds...
+- [2025-06-17 16:53:34] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 16:53:34] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 16:53:34] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 16:53:34] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 16:53:34] [INFO] Slash commands registered at startup.
+- [2025-06-17 16:53:34] [INFO] Guild config initialization complete. Created: 0, Existed: 5, Errors: 0
+- [2025-06-17 16:53:34] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 16:53:34] [INFO] Voice channels tables ensured.
+- [2025-06-17 16:53:42] [ERROR] Command voicesetup failed: TypeError: embed.toJSON is not a function
+- [2025-06-17 16:55:40] [INFO] Reloaded command: voice
+- [2025-06-17 16:55:44] [INFO] Loaded command: autoban
+- [2025-06-17 16:55:44] [INFO] Loaded command: autospam
+- [2025-06-17 16:55:44] [INFO] Loaded command: add
+- [2025-06-17 16:55:44] [INFO] Loaded command: ban
+- [2025-06-17 16:55:44] [INFO] Loaded command: clear
+- [2025-06-17 16:55:44] [INFO] Loaded command: delwarn
+- [2025-06-17 16:55:44] [INFO] Loaded command: deny
+- [2025-06-17 16:55:44] [INFO] Loaded command: jail
+- [2025-06-17 16:55:44] [INFO] Loaded command: jailsettings
+- [2025-06-17 16:55:44] [INFO] Loaded command: kick
+- [2025-06-17 16:55:44] [INFO] Loaded command: lock
+- [2025-06-17 16:55:44] [INFO] Loaded command: move
+- [2025-06-17 16:55:44] [INFO] Loaded command: mute
+- [2025-06-17 16:55:44] [INFO] Loaded command: nickname
+- [2025-06-17 16:55:44] [INFO] Loaded command: role
+- [2025-06-17 16:55:44] [INFO] Loaded command: setautorole
+- [2025-06-17 16:55:44] [INFO] Loaded command: setjailrole
+- [2025-06-17 16:55:44] [INFO] Loaded command: setjailvoice
+- [2025-06-17 16:55:44] [INFO] Loaded command: slowmode
+- [2025-06-17 16:55:44] [INFO] Loaded command: unban
+- [2025-06-17 16:55:44] [INFO] Loaded command: unjail
+- [2025-06-17 16:55:44] [INFO] Loaded command: unlock
+- [2025-06-17 16:55:44] [INFO] Loaded command: unmute
+- [2025-06-17 16:55:44] [INFO] Loaded command: verify
+- [2025-06-17 16:55:44] [INFO] Loaded command: warn
+- [2025-06-17 16:55:44] [INFO] Loaded command: warns
+- [2025-06-17 16:55:44] [INFO] Loaded command: massdm
+- [2025-06-17 16:55:44] [INFO] Loaded command: nuke-servre
+- [2025-06-17 16:55:44] [INFO] Loaded command: premium
+- [2025-06-17 16:55:44] [INFO] Loaded command: setuproles
+- [2025-06-17 16:55:44] [INFO] Loaded command: shutdown
+- [2025-06-17 16:55:44] [INFO] Loaded command: modmail
+- [2025-06-17 16:55:44] [INFO] Loaded command: moveall
+- [2025-06-17 16:55:44] [INFO] Loaded command: rolemenu
+- [2025-06-17 16:55:44] [INFO] Loaded command: sendnotify
+- [2025-06-17 16:55:44] [INFO] Loaded command: ping
+- [2025-06-17 16:55:44] [INFO] Loaded command: setembedcolor
+- [2025-06-17 16:55:44] [INFO] Loaded command: setembedfooter
+- [2025-06-17 16:55:44] [INFO] Loaded command: setembedicon
+- [2025-06-17 16:55:44] [INFO] Loaded command: avatar
+- [2025-06-17 16:55:44] [INFO] Loaded command: botinfo
+- [2025-06-17 16:55:44] [INFO] Loaded command: channelinfo
+- [2025-06-17 16:55:44] [INFO] Loaded command: help
+- [2025-06-17 16:55:44] [INFO] Loaded command: invite
+- [2025-06-17 16:55:44] [INFO] Loaded command: roleinfo
+- [2025-06-17 16:55:44] [INFO] Loaded command: serverinfo
+- [2025-06-17 16:55:44] [INFO] Loaded command: userinfo
+- [2025-06-17 16:55:44] [INFO] Loaded command: voice
+- [2025-06-17 16:55:44] [INFO] Loaded command: voicesetup
+- [2025-06-17 16:55:44] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 16:55:44] [INFO] Loaded event: interactionCreate
+- [2025-06-17 16:55:44] [INFO] Loaded event: messageCreate
+- [2025-06-17 16:55:44] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 16:55:44] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 16:55:44] [INFO] Loaded event: ready
+- [2025-06-17 16:55:44] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 16:55:44] [INFO] Loaded slash command: ping
+- [2025-06-17 16:55:44] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 16:55:44] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 16:55:44] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 16:55:44] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 16:55:45] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 16:55:45] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 16:55:45] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 16:55:45] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 16:55:45] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 16:55:45] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 16:55:45] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 16:55:45] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 16:55:45] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 16:55:45] [INFO] Initializing configurations for 5 guilds...
+- [2025-06-17 16:55:45] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 16:55:45] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 16:55:45] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 16:55:46] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 16:55:46] [INFO] Slash commands registered at startup.
+- [2025-06-17 16:55:46] [INFO] Guild config initialization complete. Created: 0, Existed: 5, Errors: 0
+- [2025-06-17 16:55:46] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 16:55:46] [INFO] Voice channels tables ensured.
+- [2025-06-17 16:56:03] [INFO] Reloaded command: voicesetup
+- [2025-06-17 16:56:06] [INFO] Loaded command: autoban
+- [2025-06-17 16:56:06] [INFO] Loaded command: autospam
+- [2025-06-17 16:56:06] [INFO] Loaded command: add
+- [2025-06-17 16:56:06] [INFO] Loaded command: ban
+- [2025-06-17 16:56:06] [INFO] Loaded command: clear
+- [2025-06-17 16:56:06] [INFO] Loaded command: delwarn
+- [2025-06-17 16:56:06] [INFO] Loaded command: deny
+- [2025-06-17 16:56:06] [INFO] Loaded command: jail
+- [2025-06-17 16:56:06] [INFO] Loaded command: jailsettings
+- [2025-06-17 16:56:06] [INFO] Loaded command: kick
+- [2025-06-17 16:56:06] [INFO] Loaded command: lock
+- [2025-06-17 16:56:06] [INFO] Loaded command: move
+- [2025-06-17 16:56:06] [INFO] Loaded command: mute
+- [2025-06-17 16:56:06] [INFO] Loaded command: nickname
+- [2025-06-17 16:56:06] [INFO] Loaded command: role
+- [2025-06-17 16:56:06] [INFO] Loaded command: setautorole
+- [2025-06-17 16:56:06] [INFO] Loaded command: setjailrole
+- [2025-06-17 16:56:06] [INFO] Loaded command: setjailvoice
+- [2025-06-17 16:56:06] [INFO] Loaded command: slowmode
+- [2025-06-17 16:56:06] [INFO] Loaded command: unban
+- [2025-06-17 16:56:06] [INFO] Loaded command: unjail
+- [2025-06-17 16:56:06] [INFO] Loaded command: unlock
+- [2025-06-17 16:56:06] [INFO] Loaded command: unmute
+- [2025-06-17 16:56:06] [INFO] Loaded command: verify
+- [2025-06-17 16:56:06] [INFO] Loaded command: warn
+- [2025-06-17 16:56:06] [INFO] Loaded command: warns
+- [2025-06-17 16:56:06] [INFO] Loaded command: massdm
+- [2025-06-17 16:56:06] [INFO] Loaded command: nuke-servre
+- [2025-06-17 16:56:06] [INFO] Loaded command: premium
+- [2025-06-17 16:56:06] [INFO] Loaded command: setuproles
+- [2025-06-17 16:56:06] [INFO] Loaded command: shutdown
+- [2025-06-17 16:56:06] [INFO] Loaded command: modmail
+- [2025-06-17 16:56:06] [INFO] Loaded command: moveall
+- [2025-06-17 16:56:06] [INFO] Loaded command: rolemenu
+- [2025-06-17 16:56:06] [INFO] Loaded command: sendnotify
+- [2025-06-17 16:56:06] [INFO] Loaded command: ping
+- [2025-06-17 16:56:06] [INFO] Loaded command: setembedcolor
+- [2025-06-17 16:56:06] [INFO] Loaded command: setembedfooter
+- [2025-06-17 16:56:06] [INFO] Loaded command: setembedicon
+- [2025-06-17 16:56:06] [INFO] Loaded command: avatar
+- [2025-06-17 16:56:06] [INFO] Loaded command: botinfo
+- [2025-06-17 16:56:06] [INFO] Loaded command: channelinfo
+- [2025-06-17 16:56:06] [INFO] Loaded command: help
+- [2025-06-17 16:56:06] [INFO] Loaded command: invite
+- [2025-06-17 16:56:06] [INFO] Loaded command: roleinfo
+- [2025-06-17 16:56:06] [INFO] Loaded command: serverinfo
+- [2025-06-17 16:56:06] [INFO] Loaded command: userinfo
+- [2025-06-17 16:56:06] [INFO] Loaded command: voice
+- [2025-06-17 16:56:06] [INFO] Loaded command: voicesetup
+- [2025-06-17 16:56:06] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 16:56:06] [INFO] Loaded event: interactionCreate
+- [2025-06-17 16:56:06] [INFO] Loaded event: messageCreate
+- [2025-06-17 16:56:06] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 16:56:06] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 16:56:06] [INFO] Loaded event: ready
+- [2025-06-17 16:56:06] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 16:56:06] [INFO] Loaded slash command: ping
+- [2025-06-17 16:56:06] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 16:56:06] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 16:56:06] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 16:56:06] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 16:56:07] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 16:56:07] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 16:56:07] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 16:56:07] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 16:56:07] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 16:56:07] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 16:56:08] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 16:56:08] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 16:56:08] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 16:56:08] [INFO] Initializing configurations for 5 guilds...
+- [2025-06-17 16:56:08] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 16:56:08] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 16:56:08] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 16:56:08] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 16:56:08] [INFO] Slash commands registered at startup.
+- [2025-06-17 16:56:08] [INFO] Guild config initialization complete. Created: 0, Existed: 5, Errors: 0
+- [2025-06-17 16:56:08] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 16:56:08] [INFO] Voice channels tables ensured.
+- [2025-06-17 16:59:18] [INFO] Reloaded command: voicesetup
+- [2025-06-17 16:59:21] [INFO] Loaded command: autoban
+- [2025-06-17 16:59:21] [INFO] Loaded command: autospam
+- [2025-06-17 16:59:21] [INFO] Loaded command: add
+- [2025-06-17 16:59:21] [INFO] Loaded command: ban
+- [2025-06-17 16:59:21] [INFO] Loaded command: clear
+- [2025-06-17 16:59:21] [INFO] Loaded command: delwarn
+- [2025-06-17 16:59:21] [INFO] Loaded command: deny
+- [2025-06-17 16:59:21] [INFO] Loaded command: jail
+- [2025-06-17 16:59:21] [INFO] Loaded command: jailsettings
+- [2025-06-17 16:59:21] [INFO] Loaded command: kick
+- [2025-06-17 16:59:21] [INFO] Loaded command: lock
+- [2025-06-17 16:59:21] [INFO] Loaded command: move
+- [2025-06-17 16:59:21] [INFO] Loaded command: mute
+- [2025-06-17 16:59:21] [INFO] Loaded command: nickname
+- [2025-06-17 16:59:21] [INFO] Loaded command: role
+- [2025-06-17 16:59:21] [INFO] Loaded command: setautorole
+- [2025-06-17 16:59:21] [INFO] Loaded command: setjailrole
+- [2025-06-17 16:59:21] [INFO] Loaded command: setjailvoice
+- [2025-06-17 16:59:21] [INFO] Loaded command: slowmode
+- [2025-06-17 16:59:21] [INFO] Loaded command: unban
+- [2025-06-17 16:59:21] [INFO] Loaded command: unjail
+- [2025-06-17 16:59:21] [INFO] Loaded command: unlock
+- [2025-06-17 16:59:21] [INFO] Loaded command: unmute
+- [2025-06-17 16:59:21] [INFO] Loaded command: verify
+- [2025-06-17 16:59:21] [INFO] Loaded command: warn
+- [2025-06-17 16:59:21] [INFO] Loaded command: warns
+- [2025-06-17 16:59:21] [INFO] Loaded command: massdm
+- [2025-06-17 16:59:21] [INFO] Loaded command: nuke-servre
+- [2025-06-17 16:59:21] [INFO] Loaded command: premium
+- [2025-06-17 16:59:21] [INFO] Loaded command: setuproles
+- [2025-06-17 16:59:21] [INFO] Loaded command: shutdown
+- [2025-06-17 16:59:21] [INFO] Loaded command: modmail
+- [2025-06-17 16:59:21] [INFO] Loaded command: moveall
+- [2025-06-17 16:59:21] [INFO] Loaded command: rolemenu
+- [2025-06-17 16:59:21] [INFO] Loaded command: sendnotify
+- [2025-06-17 16:59:21] [INFO] Loaded command: ping
+- [2025-06-17 16:59:21] [INFO] Loaded command: setembedcolor
+- [2025-06-17 16:59:21] [INFO] Loaded command: setembedfooter
+- [2025-06-17 16:59:21] [INFO] Loaded command: setembedicon
+- [2025-06-17 16:59:21] [INFO] Loaded command: avatar
+- [2025-06-17 16:59:21] [INFO] Loaded command: botinfo
+- [2025-06-17 16:59:21] [INFO] Loaded command: channelinfo
+- [2025-06-17 16:59:21] [INFO] Loaded command: help
+- [2025-06-17 16:59:21] [INFO] Loaded command: invite
+- [2025-06-17 16:59:21] [INFO] Loaded command: roleinfo
+- [2025-06-17 16:59:21] [INFO] Loaded command: serverinfo
+- [2025-06-17 16:59:21] [INFO] Loaded command: userinfo
+- [2025-06-17 16:59:21] [INFO] Loaded command: voice
+- [2025-06-17 16:59:21] [INFO] Loaded command: voicesetup
+- [2025-06-17 16:59:21] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 16:59:21] [INFO] Loaded event: interactionCreate
+- [2025-06-17 16:59:21] [INFO] Loaded event: messageCreate
+- [2025-06-17 16:59:21] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 16:59:21] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 16:59:21] [INFO] Loaded event: ready
+- [2025-06-17 16:59:21] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 16:59:21] [INFO] Loaded slash command: ping
+- [2025-06-17 16:59:21] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 16:59:21] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 16:59:21] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 16:59:21] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 16:59:22] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 16:59:22] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 16:59:22] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 16:59:22] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 16:59:22] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 16:59:22] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 16:59:23] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 16:59:23] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 16:59:23] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 16:59:23] [INFO] Initializing configurations for 5 guilds...
+- [2025-06-17 16:59:23] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 16:59:23] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 16:59:23] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 16:59:23] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 16:59:23] [INFO] Slash commands registered at startup.
+- [2025-06-17 16:59:23] [INFO] Guild config initialization complete. Created: 0, Existed: 5, Errors: 0
+- [2025-06-17 16:59:23] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 16:59:23] [INFO] Voice channels tables ensured.
+- [2025-06-17 17:01:47] [INFO] Reloaded command: voicesetup
+- [2025-06-17 17:01:50] [INFO] Loaded command: autoban
+- [2025-06-17 17:01:50] [INFO] Loaded command: autospam
+- [2025-06-17 17:01:50] [INFO] Loaded command: add
+- [2025-06-17 17:01:50] [INFO] Loaded command: ban
+- [2025-06-17 17:01:50] [INFO] Loaded command: clear
+- [2025-06-17 17:01:50] [INFO] Loaded command: delwarn
+- [2025-06-17 17:01:50] [INFO] Loaded command: deny
+- [2025-06-17 17:01:50] [INFO] Loaded command: jail
+- [2025-06-17 17:01:50] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:01:50] [INFO] Loaded command: kick
+- [2025-06-17 17:01:50] [INFO] Loaded command: lock
+- [2025-06-17 17:01:50] [INFO] Loaded command: move
+- [2025-06-17 17:01:50] [INFO] Loaded command: mute
+- [2025-06-17 17:01:50] [INFO] Loaded command: nickname
+- [2025-06-17 17:01:50] [INFO] Loaded command: role
+- [2025-06-17 17:01:50] [INFO] Loaded command: setautorole
+- [2025-06-17 17:01:50] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:01:50] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:01:50] [INFO] Loaded command: slowmode
+- [2025-06-17 17:01:50] [INFO] Loaded command: unban
+- [2025-06-17 17:01:50] [INFO] Loaded command: unjail
+- [2025-06-17 17:01:50] [INFO] Loaded command: unlock
+- [2025-06-17 17:01:50] [INFO] Loaded command: unmute
+- [2025-06-17 17:01:50] [INFO] Loaded command: verify
+- [2025-06-17 17:01:50] [INFO] Loaded command: warn
+- [2025-06-17 17:01:50] [INFO] Loaded command: warns
+- [2025-06-17 17:01:50] [INFO] Loaded command: massdm
+- [2025-06-17 17:01:50] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:01:50] [INFO] Loaded command: premium
+- [2025-06-17 17:01:50] [INFO] Loaded command: setuproles
+- [2025-06-17 17:01:50] [INFO] Loaded command: shutdown
+- [2025-06-17 17:01:51] [INFO] Loaded command: modmail
+- [2025-06-17 17:01:51] [INFO] Loaded command: moveall
+- [2025-06-17 17:01:51] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:01:51] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:01:51] [INFO] Loaded command: ping
+- [2025-06-17 17:01:51] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:01:51] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:01:51] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:01:51] [INFO] Loaded command: avatar
+- [2025-06-17 17:01:51] [INFO] Loaded command: botinfo
+- [2025-06-17 17:01:51] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:01:51] [INFO] Loaded command: help
+- [2025-06-17 17:01:51] [INFO] Loaded command: invite
+- [2025-06-17 17:01:51] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:01:51] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:01:51] [INFO] Loaded command: userinfo
+- [2025-06-17 17:01:51] [INFO] Loaded command: voice
+- [2025-06-17 17:01:51] [INFO] Loaded command: voicesetup
+- [2025-06-17 17:01:51] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:01:51] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:01:51] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:01:51] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:01:51] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:01:51] [INFO] Loaded event: ready
+- [2025-06-17 17:01:51] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 17:01:51] [INFO] Loaded slash command: ping
+- [2025-06-17 17:01:51] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:01:51] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:01:51] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:01:51] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:01:51] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:01:51] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:01:51] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:01:51] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:01:51] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:01:52] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:01:52] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:01:52] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:01:52] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:01:52] [INFO] Initializing configurations for 5 guilds...
+- [2025-06-17 17:01:52] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:01:52] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:01:52] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:01:53] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:01:53] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:01:53] [INFO] Guild config initialization complete. Created: 0, Existed: 5, Errors: 0
+- [2025-06-17 17:01:53] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:01:53] [INFO] Voice channels tables ensured.
+- [2025-06-17 17:03:01] [INFO] Reloaded command: voicesetup
+- [2025-06-17 17:03:06] [INFO] Loaded command: autoban
+- [2025-06-17 17:03:06] [INFO] Loaded command: autospam
+- [2025-06-17 17:03:06] [INFO] Loaded command: add
+- [2025-06-17 17:03:06] [INFO] Loaded command: ban
+- [2025-06-17 17:03:06] [INFO] Loaded command: clear
+- [2025-06-17 17:03:06] [INFO] Loaded command: delwarn
+- [2025-06-17 17:03:06] [INFO] Loaded command: deny
+- [2025-06-17 17:03:06] [INFO] Loaded command: jail
+- [2025-06-17 17:03:06] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:03:06] [INFO] Loaded command: kick
+- [2025-06-17 17:03:06] [INFO] Loaded command: lock
+- [2025-06-17 17:03:06] [INFO] Loaded command: move
+- [2025-06-17 17:03:06] [INFO] Loaded command: mute
+- [2025-06-17 17:03:06] [INFO] Loaded command: nickname
+- [2025-06-17 17:03:06] [INFO] Loaded command: role
+- [2025-06-17 17:03:06] [INFO] Loaded command: setautorole
+- [2025-06-17 17:03:06] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:03:06] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:03:06] [INFO] Loaded command: slowmode
+- [2025-06-17 17:03:06] [INFO] Loaded command: unban
+- [2025-06-17 17:03:06] [INFO] Loaded command: unjail
+- [2025-06-17 17:03:06] [INFO] Loaded command: unlock
+- [2025-06-17 17:03:06] [INFO] Loaded command: unmute
+- [2025-06-17 17:03:06] [INFO] Loaded command: verify
+- [2025-06-17 17:03:06] [INFO] Loaded command: warn
+- [2025-06-17 17:03:06] [INFO] Loaded command: warns
+- [2025-06-17 17:03:06] [INFO] Loaded command: massdm
+- [2025-06-17 17:03:06] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:03:06] [INFO] Loaded command: premium
+- [2025-06-17 17:03:06] [INFO] Loaded command: setuproles
+- [2025-06-17 17:03:06] [INFO] Loaded command: shutdown
+- [2025-06-17 17:03:06] [INFO] Loaded command: modmail
+- [2025-06-17 17:03:06] [INFO] Loaded command: moveall
+- [2025-06-17 17:03:06] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:03:06] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:03:06] [INFO] Loaded command: ping
+- [2025-06-17 17:03:06] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:03:06] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:03:06] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:03:06] [INFO] Loaded command: avatar
+- [2025-06-17 17:03:06] [INFO] Loaded command: botinfo
+- [2025-06-17 17:03:06] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:03:06] [INFO] Loaded command: help
+- [2025-06-17 17:03:06] [INFO] Loaded command: invite
+- [2025-06-17 17:03:06] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:03:06] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:03:06] [INFO] Loaded command: userinfo
+- [2025-06-17 17:03:06] [INFO] Loaded command: voice
+- [2025-06-17 17:03:06] [INFO] Loaded command: voicesetup
+- [2025-06-17 17:03:06] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:03:06] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:03:06] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:03:06] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:03:06] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:03:06] [INFO] Loaded event: ready
+- [2025-06-17 17:03:06] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 17:03:06] [INFO] Loaded slash command: ping
+- [2025-06-17 17:03:06] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:03:06] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:03:06] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:03:06] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:03:07] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:03:07] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:03:07] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:03:07] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:03:07] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:03:07] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:03:08] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:03:08] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:03:08] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:03:08] [INFO] Initializing configurations for 5 guilds...
+- [2025-06-17 17:03:08] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:03:08] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:03:08] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:03:08] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:03:08] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:03:08] [INFO] Guild config initialization complete. Created: 0, Existed: 5, Errors: 0
+- [2025-06-17 17:03:08] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:03:08] [INFO] Voice channels tables ensured.
+- [2025-06-17 17:07:32] [INFO] Reloaded command: voicesetup
+- [2025-06-17 17:07:32] [INFO] Reloaded command: voicesetup
+- [2025-06-17 17:07:32] [INFO] Reloaded command: voicesetup
+- [2025-06-17 17:07:32] [INFO] Reloaded command: voice
+- [2025-06-17 17:07:32] [INFO] Reloaded command: voicesetup
+- [2025-06-17 17:07:32] [INFO] Reloaded command: voice
+- [2025-06-17 17:07:35] [INFO] Loaded command: autoban
+- [2025-06-17 17:07:35] [INFO] Loaded command: autospam
+- [2025-06-17 17:07:35] [INFO] Loaded command: add
+- [2025-06-17 17:07:35] [INFO] Loaded command: ban
+- [2025-06-17 17:07:35] [INFO] Loaded command: clear
+- [2025-06-17 17:07:35] [INFO] Loaded command: delwarn
+- [2025-06-17 17:07:35] [INFO] Loaded command: deny
+- [2025-06-17 17:07:35] [INFO] Loaded command: jail
+- [2025-06-17 17:07:35] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:07:35] [INFO] Loaded command: kick
+- [2025-06-17 17:07:35] [INFO] Loaded command: lock
+- [2025-06-17 17:07:35] [INFO] Loaded command: move
+- [2025-06-17 17:07:35] [INFO] Loaded command: mute
+- [2025-06-17 17:07:35] [INFO] Loaded command: nickname
+- [2025-06-17 17:07:35] [INFO] Loaded command: role
+- [2025-06-17 17:07:35] [INFO] Loaded command: setautorole
+- [2025-06-17 17:07:35] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:07:35] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:07:35] [INFO] Loaded command: slowmode
+- [2025-06-17 17:07:35] [INFO] Loaded command: unban
+- [2025-06-17 17:07:35] [INFO] Loaded command: unjail
+- [2025-06-17 17:07:35] [INFO] Loaded command: unlock
+- [2025-06-17 17:07:35] [INFO] Loaded command: unmute
+- [2025-06-17 17:07:35] [INFO] Loaded command: verify
+- [2025-06-17 17:07:35] [INFO] Loaded command: warn
+- [2025-06-17 17:07:35] [INFO] Loaded command: warns
+- [2025-06-17 17:07:35] [INFO] Loaded command: massdm
+- [2025-06-17 17:07:35] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:07:35] [INFO] Loaded command: premium
+- [2025-06-17 17:07:35] [INFO] Loaded command: setuproles
+- [2025-06-17 17:07:35] [INFO] Loaded command: shutdown
+- [2025-06-17 17:07:35] [INFO] Loaded command: modmail
+- [2025-06-17 17:07:35] [INFO] Loaded command: moveall
+- [2025-06-17 17:07:35] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:07:35] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:07:35] [INFO] Loaded command: ping
+- [2025-06-17 17:07:35] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:07:35] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:07:35] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:07:35] [INFO] Loaded command: avatar
+- [2025-06-17 17:07:35] [INFO] Loaded command: botinfo
+- [2025-06-17 17:07:35] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:07:35] [INFO] Loaded command: help
+- [2025-06-17 17:07:35] [INFO] Loaded command: invite
+- [2025-06-17 17:07:35] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:07:35] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:07:35] [INFO] Loaded command: userinfo
+- [2025-06-17 17:07:35] [INFO] Loaded command: voice
+- [2025-06-17 17:07:35] [INFO] Loaded command: voicesetup
+- [2025-06-17 17:07:35] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:07:35] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:07:35] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:07:35] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:07:35] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:07:35] [INFO] Loaded event: ready
+- [2025-06-17 17:07:35] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 17:07:35] [INFO] Loaded slash command: ping
+- [2025-06-17 17:07:35] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:07:35] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:07:35] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:07:35] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:07:36] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:07:36] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:07:36] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:07:36] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:07:36] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:07:36] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:07:38] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:07:38] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:07:38] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:07:38] [INFO] Initializing configurations for 5 guilds...
+- [2025-06-17 17:07:38] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:07:38] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:07:38] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:07:38] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:07:38] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:07:40] [INFO] Guild config initialization complete. Created: 0, Existed: 5, Errors: 0
+- [2025-06-17 17:07:40] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:07:44] [INFO] Loaded command: autoban
+- [2025-06-17 17:07:44] [INFO] Loaded command: autospam
+- [2025-06-17 17:07:44] [INFO] Loaded command: add
+- [2025-06-17 17:07:44] [INFO] Loaded command: ban
+- [2025-06-17 17:07:44] [INFO] Loaded command: clear
+- [2025-06-17 17:07:44] [INFO] Loaded command: delwarn
+- [2025-06-17 17:07:44] [INFO] Loaded command: deny
+- [2025-06-17 17:07:44] [INFO] Loaded command: jail
+- [2025-06-17 17:07:44] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:07:44] [INFO] Loaded command: kick
+- [2025-06-17 17:07:44] [INFO] Loaded command: lock
+- [2025-06-17 17:07:44] [INFO] Loaded command: move
+- [2025-06-17 17:07:44] [INFO] Loaded command: mute
+- [2025-06-17 17:07:45] [INFO] Loaded command: nickname
+- [2025-06-17 17:07:45] [INFO] Loaded command: role
+- [2025-06-17 17:07:45] [INFO] Loaded command: setautorole
+- [2025-06-17 17:07:45] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:07:45] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:07:45] [INFO] Loaded command: slowmode
+- [2025-06-17 17:07:45] [INFO] Loaded command: unban
+- [2025-06-17 17:07:45] [INFO] Loaded command: unjail
+- [2025-06-17 17:07:45] [INFO] Loaded command: unlock
+- [2025-06-17 17:07:45] [INFO] Loaded command: unmute
+- [2025-06-17 17:07:45] [INFO] Loaded command: verify
+- [2025-06-17 17:07:45] [INFO] Loaded command: warn
+- [2025-06-17 17:07:45] [INFO] Loaded command: warns
+- [2025-06-17 17:07:45] [INFO] Loaded command: massdm
+- [2025-06-17 17:07:45] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:07:45] [INFO] Loaded command: premium
+- [2025-06-17 17:07:45] [INFO] Loaded command: setuproles
+- [2025-06-17 17:07:45] [INFO] Loaded command: shutdown
+- [2025-06-17 17:07:45] [INFO] Loaded command: modmail
+- [2025-06-17 17:07:45] [INFO] Loaded command: moveall
+- [2025-06-17 17:07:45] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:07:45] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:07:45] [INFO] Loaded command: ping
+- [2025-06-17 17:07:45] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:07:45] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:07:45] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:07:45] [INFO] Loaded command: avatar
+- [2025-06-17 17:07:45] [INFO] Loaded command: botinfo
+- [2025-06-17 17:07:45] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:07:45] [INFO] Loaded command: help
+- [2025-06-17 17:07:45] [INFO] Loaded command: invite
+- [2025-06-17 17:07:45] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:07:45] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:07:45] [INFO] Loaded command: userinfo
+- [2025-06-17 17:07:45] [INFO] Loaded command: voice
+- [2025-06-17 17:07:45] [INFO] Loaded command: voicesetup
+- [2025-06-17 17:07:45] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:07:45] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:07:45] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:07:45] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:07:45] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:07:45] [INFO] Loaded event: ready
+- [2025-06-17 17:07:45] [INFO] Loaded slash command: ping
+- [2025-06-17 17:07:45] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:07:46] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:07:46] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:07:46] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:07:48] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:07:48] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:07:48] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:07:48] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:07:48] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:07:48] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:07:55] [INFO] Loaded command: autoban
+- [2025-06-17 17:07:55] [INFO] Loaded command: autospam
+- [2025-06-17 17:07:55] [INFO] Loaded command: add
+- [2025-06-17 17:07:55] [INFO] Loaded command: ban
+- [2025-06-17 17:07:55] [INFO] Loaded command: clear
+- [2025-06-17 17:07:55] [INFO] Loaded command: delwarn
+- [2025-06-17 17:07:55] [INFO] Loaded command: deny
+- [2025-06-17 17:07:55] [INFO] Loaded command: jail
+- [2025-06-17 17:07:55] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:07:55] [INFO] Loaded command: kick
+- [2025-06-17 17:07:55] [INFO] Loaded command: lock
+- [2025-06-17 17:07:55] [INFO] Loaded command: move
+- [2025-06-17 17:07:55] [INFO] Loaded command: mute
+- [2025-06-17 17:07:55] [INFO] Loaded command: nickname
+- [2025-06-17 17:07:55] [INFO] Loaded command: role
+- [2025-06-17 17:07:55] [INFO] Loaded command: setautorole
+- [2025-06-17 17:07:55] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:07:55] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:07:55] [INFO] Loaded command: slowmode
+- [2025-06-17 17:07:55] [INFO] Loaded command: unban
+- [2025-06-17 17:07:55] [INFO] Loaded command: unjail
+- [2025-06-17 17:07:55] [INFO] Loaded command: unlock
+- [2025-06-17 17:07:55] [INFO] Loaded command: unmute
+- [2025-06-17 17:07:55] [INFO] Loaded command: verify
+- [2025-06-17 17:07:55] [INFO] Loaded command: warn
+- [2025-06-17 17:07:55] [INFO] Loaded command: warns
+- [2025-06-17 17:07:56] [INFO] Loaded command: massdm
+- [2025-06-17 17:07:56] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:07:56] [INFO] Loaded command: premium
+- [2025-06-17 17:07:56] [INFO] Loaded command: setuproles
+- [2025-06-17 17:07:56] [INFO] Loaded command: shutdown
+- [2025-06-17 17:07:56] [INFO] Loaded command: modmail
+- [2025-06-17 17:07:56] [INFO] Loaded command: moveall
+- [2025-06-17 17:07:56] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:07:56] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:07:56] [INFO] Loaded command: ping
+- [2025-06-17 17:07:56] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:07:56] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:07:56] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:07:56] [INFO] Loaded command: avatar
+- [2025-06-17 17:07:56] [INFO] Loaded command: botinfo
+- [2025-06-17 17:07:56] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:07:56] [INFO] Loaded command: help
+- [2025-06-17 17:07:56] [INFO] Loaded command: invite
+- [2025-06-17 17:07:56] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:07:56] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:07:56] [INFO] Loaded command: userinfo
+- [2025-06-17 17:07:56] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:07:56] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:07:56] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:07:56] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:07:56] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:07:56] [INFO] Loaded event: ready
+- [2025-06-17 17:07:56] [INFO] Loaded slash command: ping
+- [2025-06-17 17:07:56] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:07:56] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:07:56] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:07:56] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:07:57] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:07:57] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:07:57] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:07:57] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:07:57] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:07:57] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:07:58] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:07:58] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:07:58] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:07:58] [INFO] Initializing configurations for 5 guilds...
+- [2025-06-17 17:07:58] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:07:58] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:07:58] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:07:59] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:07:59] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:07:59] [INFO] Guild config initialization complete. Created: 0, Existed: 5, Errors: 0
+- [2025-06-17 17:07:59] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:08:03] [INFO] Loaded command: autoban
+- [2025-06-17 17:08:03] [INFO] Loaded command: autospam
+- [2025-06-17 17:08:03] [INFO] Loaded command: add
+- [2025-06-17 17:08:03] [INFO] Loaded command: ban
+- [2025-06-17 17:08:03] [INFO] Loaded command: clear
+- [2025-06-17 17:08:03] [INFO] Loaded command: delwarn
+- [2025-06-17 17:08:03] [INFO] Loaded command: deny
+- [2025-06-17 17:08:03] [INFO] Loaded command: jail
+- [2025-06-17 17:08:03] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:08:03] [INFO] Loaded command: kick
+- [2025-06-17 17:08:03] [INFO] Loaded command: lock
+- [2025-06-17 17:08:03] [INFO] Loaded command: move
+- [2025-06-17 17:08:03] [INFO] Loaded command: mute
+- [2025-06-17 17:08:03] [INFO] Loaded command: nickname
+- [2025-06-17 17:08:03] [INFO] Loaded command: role
+- [2025-06-17 17:08:03] [INFO] Loaded command: setautorole
+- [2025-06-17 17:08:03] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:08:03] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:08:03] [INFO] Loaded command: slowmode
+- [2025-06-17 17:08:03] [INFO] Loaded command: unban
+- [2025-06-17 17:08:03] [INFO] Loaded command: unjail
+- [2025-06-17 17:08:03] [INFO] Loaded command: unlock
+- [2025-06-17 17:08:03] [INFO] Loaded command: unmute
+- [2025-06-17 17:08:03] [INFO] Loaded command: verify
+- [2025-06-17 17:08:03] [INFO] Loaded command: warn
+- [2025-06-17 17:08:03] [INFO] Loaded command: warns
+- [2025-06-17 17:08:03] [INFO] Loaded command: massdm
+- [2025-06-17 17:08:03] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:08:03] [INFO] Loaded command: premium
+- [2025-06-17 17:08:03] [INFO] Loaded command: setuproles
+- [2025-06-17 17:08:03] [INFO] Loaded command: shutdown
+- [2025-06-17 17:08:03] [INFO] Loaded command: modmail
+- [2025-06-17 17:08:03] [INFO] Loaded command: moveall
+- [2025-06-17 17:08:03] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:08:03] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:08:03] [INFO] Loaded command: ping
+- [2025-06-17 17:08:03] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:08:03] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:08:03] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:08:03] [INFO] Loaded command: avatar
+- [2025-06-17 17:08:03] [INFO] Loaded command: botinfo
+- [2025-06-17 17:08:03] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:08:03] [INFO] Loaded command: help
+- [2025-06-17 17:08:03] [INFO] Loaded command: invite
+- [2025-06-17 17:08:03] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:08:04] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:08:04] [INFO] Loaded command: userinfo
+- [2025-06-17 17:08:04] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:08:04] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:08:04] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:08:04] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:08:04] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:08:04] [INFO] Loaded event: ready
+- [2025-06-17 17:08:04] [INFO] Loaded slash command: ping
+- [2025-06-17 17:08:04] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:08:04] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:08:04] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:08:04] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:08:04] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:08:04] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:08:04] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:08:04] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:08:04] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:08:05] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:08:05] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:08:05] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:08:05] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:08:05] [INFO] Initializing configurations for 5 guilds...
+- [2025-06-17 17:08:05] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:08:05] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:08:05] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:08:06] [INFO] Guild config initialization complete. Created: 0, Existed: 5, Errors: 0
+- [2025-06-17 17:08:06] [ERROR] Initialization error: TypeError: ensureVoiceTables is not a function
+- [2025-06-17 17:08:17] [INFO] Loaded command: autoban
+- [2025-06-17 17:08:17] [INFO] Loaded command: autospam
+- [2025-06-17 17:08:17] [INFO] Loaded command: add
+- [2025-06-17 17:08:17] [INFO] Loaded command: ban
+- [2025-06-17 17:08:17] [INFO] Loaded command: clear
+- [2025-06-17 17:08:17] [INFO] Loaded command: delwarn
+- [2025-06-17 17:08:17] [INFO] Loaded command: deny
+- [2025-06-17 17:08:17] [INFO] Loaded command: jail
+- [2025-06-17 17:08:17] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:08:17] [INFO] Loaded command: kick
+- [2025-06-17 17:08:17] [INFO] Loaded command: lock
+- [2025-06-17 17:08:17] [INFO] Loaded command: move
+- [2025-06-17 17:08:17] [INFO] Loaded command: mute
+- [2025-06-17 17:08:17] [INFO] Loaded command: nickname
+- [2025-06-17 17:08:17] [INFO] Loaded command: role
+- [2025-06-17 17:08:17] [INFO] Loaded command: setautorole
+- [2025-06-17 17:08:17] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:08:17] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:08:17] [INFO] Loaded command: slowmode
+- [2025-06-17 17:08:17] [INFO] Loaded command: unban
+- [2025-06-17 17:08:17] [INFO] Loaded command: unjail
+- [2025-06-17 17:08:17] [INFO] Loaded command: unlock
+- [2025-06-17 17:08:17] [INFO] Loaded command: unmute
+- [2025-06-17 17:08:17] [INFO] Loaded command: verify
+- [2025-06-17 17:08:17] [INFO] Loaded command: warn
+- [2025-06-17 17:08:17] [INFO] Loaded command: warns
+- [2025-06-17 17:08:17] [INFO] Loaded command: massdm
+- [2025-06-17 17:08:17] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:08:17] [INFO] Loaded command: premium
+- [2025-06-17 17:08:17] [INFO] Loaded command: setuproles
+- [2025-06-17 17:08:17] [INFO] Loaded command: shutdown
+- [2025-06-17 17:08:17] [INFO] Loaded command: modmail
+- [2025-06-17 17:08:17] [INFO] Loaded command: moveall
+- [2025-06-17 17:08:17] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:08:17] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:08:17] [INFO] Loaded command: ping
+- [2025-06-17 17:08:17] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:08:17] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:08:17] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:08:17] [INFO] Loaded command: avatar
+- [2025-06-17 17:08:17] [INFO] Loaded command: botinfo
+- [2025-06-17 17:08:17] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:08:17] [INFO] Loaded command: help
+- [2025-06-17 17:08:17] [INFO] Loaded command: invite
+- [2025-06-17 17:08:17] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:08:17] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:08:17] [INFO] Loaded command: userinfo
+- [2025-06-17 17:08:17] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:08:17] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:08:17] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:08:17] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:08:17] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:08:17] [INFO] Loaded event: ready
+- [2025-06-17 17:08:17] [INFO] Loaded slash command: ping
+- [2025-06-17 17:08:17] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:08:17] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:08:17] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:08:17] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:08:18] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:08:18] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:08:18] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:08:19] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:08:19] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:08:19] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:08:19] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:08:19] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:08:19] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:08:19] [INFO] Initializing configurations for 5 guilds...
+- [2025-06-17 17:08:19] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:08:19] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:08:19] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:08:19] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:08:19] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:08:20] [INFO] Guild config initialization complete. Created: 0, Existed: 5, Errors: 0
+- [2025-06-17 17:08:20] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:08:20] [INFO] Voice channels tables ensured.
+- [2025-06-17 17:09:01] [INFO] Loaded command: autoban
+- [2025-06-17 17:09:01] [INFO] Loaded command: autospam
+- [2025-06-17 17:09:01] [INFO] Loaded command: add
+- [2025-06-17 17:09:01] [INFO] Loaded command: ban
+- [2025-06-17 17:09:01] [INFO] Loaded command: clear
+- [2025-06-17 17:09:01] [INFO] Loaded command: delwarn
+- [2025-06-17 17:09:01] [INFO] Loaded command: deny
+- [2025-06-17 17:09:01] [INFO] Loaded command: jail
+- [2025-06-17 17:09:01] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:09:01] [INFO] Loaded command: kick
+- [2025-06-17 17:09:01] [INFO] Loaded command: lock
+- [2025-06-17 17:09:01] [INFO] Loaded command: move
+- [2025-06-17 17:09:01] [INFO] Loaded command: mute
+- [2025-06-17 17:09:01] [INFO] Loaded command: nickname
+- [2025-06-17 17:09:01] [INFO] Loaded command: role
+- [2025-06-17 17:09:01] [INFO] Loaded command: setautorole
+- [2025-06-17 17:09:01] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:09:01] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:09:01] [INFO] Loaded command: slowmode
+- [2025-06-17 17:09:01] [INFO] Loaded command: unban
+- [2025-06-17 17:09:01] [INFO] Loaded command: unjail
+- [2025-06-17 17:09:01] [INFO] Loaded command: unlock
+- [2025-06-17 17:09:01] [INFO] Loaded command: unmute
+- [2025-06-17 17:09:01] [INFO] Loaded command: verify
+- [2025-06-17 17:09:01] [INFO] Loaded command: warn
+- [2025-06-17 17:09:01] [INFO] Loaded command: warns
+- [2025-06-17 17:09:01] [INFO] Loaded command: massdm
+- [2025-06-17 17:09:01] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:09:01] [INFO] Loaded command: premium
+- [2025-06-17 17:09:01] [INFO] Loaded command: setuproles
+- [2025-06-17 17:09:01] [INFO] Loaded command: shutdown
+- [2025-06-17 17:09:02] [INFO] Loaded command: modmail
+- [2025-06-17 17:09:02] [INFO] Loaded command: moveall
+- [2025-06-17 17:09:02] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:09:02] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:09:02] [INFO] Loaded command: ping
+- [2025-06-17 17:09:02] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:09:02] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:09:02] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:09:02] [INFO] Loaded command: avatar
+- [2025-06-17 17:09:02] [INFO] Loaded command: botinfo
+- [2025-06-17 17:09:02] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:09:02] [INFO] Loaded command: help
+- [2025-06-17 17:09:02] [INFO] Loaded command: invite
+- [2025-06-17 17:09:02] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:09:02] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:09:02] [INFO] Loaded command: userinfo
+- [2025-06-17 17:09:02] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:09:02] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:09:02] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:09:02] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:09:02] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:09:02] [INFO] Loaded event: ready
+- [2025-06-17 17:09:02] [INFO] Loaded slash command: ping
+- [2025-06-17 17:09:02] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:09:02] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:09:02] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:09:02] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:09:02] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:09:03] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:09:03] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:09:03] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:09:03] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:09:03] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:09:03] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:09:03] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:09:03] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:09:03] [INFO] Initializing configurations for 5 guilds...
+- [2025-06-17 17:09:03] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:09:03] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:09:03] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:09:03] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:09:03] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:09:04] [INFO] Guild config initialization complete. Created: 0, Existed: 5, Errors: 0
+- [2025-06-17 17:09:04] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:09:20] [INFO] Loaded command: autoban
+- [2025-06-17 17:09:20] [INFO] Loaded command: autospam
+- [2025-06-17 17:09:20] [INFO] Loaded command: add
+- [2025-06-17 17:09:20] [INFO] Loaded command: ban
+- [2025-06-17 17:09:20] [INFO] Loaded command: clear
+- [2025-06-17 17:09:20] [INFO] Loaded command: delwarn
+- [2025-06-17 17:09:20] [INFO] Loaded command: deny
+- [2025-06-17 17:09:20] [INFO] Loaded command: jail
+- [2025-06-17 17:09:20] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:09:20] [INFO] Loaded command: kick
+- [2025-06-17 17:09:20] [INFO] Loaded command: lock
+- [2025-06-17 17:09:20] [INFO] Loaded command: move
+- [2025-06-17 17:09:20] [INFO] Loaded command: mute
+- [2025-06-17 17:09:20] [INFO] Loaded command: nickname
+- [2025-06-17 17:09:20] [INFO] Loaded command: role
+- [2025-06-17 17:09:20] [INFO] Loaded command: setautorole
+- [2025-06-17 17:09:20] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:09:20] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:09:20] [INFO] Loaded command: slowmode
+- [2025-06-17 17:09:20] [INFO] Loaded command: unban
+- [2025-06-17 17:09:20] [INFO] Loaded command: unjail
+- [2025-06-17 17:09:20] [INFO] Loaded command: unlock
+- [2025-06-17 17:09:20] [INFO] Loaded command: unmute
+- [2025-06-17 17:09:20] [INFO] Loaded command: verify
+- [2025-06-17 17:09:20] [INFO] Loaded command: warn
+- [2025-06-17 17:09:20] [INFO] Loaded command: warns
+- [2025-06-17 17:09:20] [INFO] Loaded command: massdm
+- [2025-06-17 17:09:20] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:09:20] [INFO] Loaded command: premium
+- [2025-06-17 17:09:20] [INFO] Loaded command: setuproles
+- [2025-06-17 17:09:20] [INFO] Loaded command: shutdown
+- [2025-06-17 17:09:20] [INFO] Loaded command: modmail
+- [2025-06-17 17:09:20] [INFO] Loaded command: moveall
+- [2025-06-17 17:09:20] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:09:20] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:09:20] [INFO] Loaded command: ping
+- [2025-06-17 17:09:20] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:09:20] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:09:20] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:09:20] [INFO] Loaded command: avatar
+- [2025-06-17 17:09:20] [INFO] Loaded command: botinfo
+- [2025-06-17 17:09:20] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:09:20] [INFO] Loaded command: help
+- [2025-06-17 17:09:20] [INFO] Loaded command: invite
+- [2025-06-17 17:09:20] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:09:20] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:09:20] [INFO] Loaded command: userinfo
+- [2025-06-17 17:09:20] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:09:20] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:09:20] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:09:20] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:09:20] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:09:20] [INFO] Loaded event: ready
+- [2025-06-17 17:09:20] [INFO] Loaded slash command: ping
+- [2025-06-17 17:09:20] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:09:20] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:09:20] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:09:20] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:09:22] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:09:22] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:09:22] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:09:22] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:09:22] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:09:22] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:09:23] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:09:23] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:09:23] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:09:23] [INFO] Initializing configurations for 5 guilds...
+- [2025-06-17 17:09:23] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:09:23] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:09:23] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:09:24] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:09:24] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:09:24] [INFO] Guild config initialization complete. Created: 0, Existed: 5, Errors: 0
+- [2025-06-17 17:09:24] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:09:41] [INFO] Loaded command: autoban
+- [2025-06-17 17:09:41] [INFO] Loaded command: autospam
+- [2025-06-17 17:09:41] [INFO] Loaded command: add
+- [2025-06-17 17:09:41] [INFO] Loaded command: ban
+- [2025-06-17 17:09:41] [INFO] Loaded command: clear
+- [2025-06-17 17:09:41] [INFO] Loaded command: delwarn
+- [2025-06-17 17:09:41] [INFO] Loaded command: deny
+- [2025-06-17 17:09:41] [INFO] Loaded command: jail
+- [2025-06-17 17:09:41] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:09:41] [INFO] Loaded command: kick
+- [2025-06-17 17:09:41] [INFO] Loaded command: lock
+- [2025-06-17 17:09:41] [INFO] Loaded command: move
+- [2025-06-17 17:09:41] [INFO] Loaded command: mute
+- [2025-06-17 17:09:41] [INFO] Loaded command: nickname
+- [2025-06-17 17:09:41] [INFO] Loaded command: role
+- [2025-06-17 17:09:41] [INFO] Loaded command: setautorole
+- [2025-06-17 17:09:41] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:09:41] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:09:41] [INFO] Loaded command: slowmode
+- [2025-06-17 17:09:41] [INFO] Loaded command: unban
+- [2025-06-17 17:09:41] [INFO] Loaded command: unjail
+- [2025-06-17 17:09:41] [INFO] Loaded command: unlock
+- [2025-06-17 17:09:41] [INFO] Loaded command: unmute
+- [2025-06-17 17:09:41] [INFO] Loaded command: verify
+- [2025-06-17 17:09:41] [INFO] Loaded command: warn
+- [2025-06-17 17:09:41] [INFO] Loaded command: warns
+- [2025-06-17 17:09:41] [INFO] Loaded command: massdm
+- [2025-06-17 17:09:41] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:09:41] [INFO] Loaded command: premium
+- [2025-06-17 17:09:41] [INFO] Loaded command: setuproles
+- [2025-06-17 17:09:41] [INFO] Loaded command: shutdown
+- [2025-06-17 17:09:41] [INFO] Loaded command: modmail
+- [2025-06-17 17:09:41] [INFO] Loaded command: moveall
+- [2025-06-17 17:09:41] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:09:41] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:09:41] [INFO] Loaded command: ping
+- [2025-06-17 17:09:41] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:09:41] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:09:41] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:09:41] [INFO] Loaded command: avatar
+- [2025-06-17 17:09:41] [INFO] Loaded command: botinfo
+- [2025-06-17 17:09:41] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:09:41] [INFO] Loaded command: help
+- [2025-06-17 17:09:41] [INFO] Loaded command: invite
+- [2025-06-17 17:09:41] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:09:41] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:09:41] [INFO] Loaded command: userinfo
+- [2025-06-17 17:09:41] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:09:41] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:09:41] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:09:41] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:09:41] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:09:41] [INFO] Loaded event: ready
+- [2025-06-17 17:09:41] [INFO] Loaded slash command: ping
+- [2025-06-17 17:09:41] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:09:41] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:09:41] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:09:41] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:09:42] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:09:42] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:09:42] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:09:42] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:09:42] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:09:42] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:09:43] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:09:43] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:09:43] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:09:43] [INFO] Initializing configurations for 5 guilds...
+- [2025-06-17 17:09:43] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:09:43] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:09:46] [INFO] Loaded command: autoban
+- [2025-06-17 17:09:46] [INFO] Loaded command: autospam
+- [2025-06-17 17:09:46] [INFO] Loaded command: add
+- [2025-06-17 17:09:46] [INFO] Loaded command: ban
+- [2025-06-17 17:09:46] [INFO] Loaded command: clear
+- [2025-06-17 17:09:46] [INFO] Loaded command: delwarn
+- [2025-06-17 17:09:46] [INFO] Loaded command: deny
+- [2025-06-17 17:09:46] [INFO] Loaded command: jail
+- [2025-06-17 17:09:46] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:09:46] [INFO] Loaded command: kick
+- [2025-06-17 17:09:46] [INFO] Loaded command: lock
+- [2025-06-17 17:09:46] [INFO] Loaded command: move
+- [2025-06-17 17:09:46] [INFO] Loaded command: mute
+- [2025-06-17 17:09:46] [INFO] Loaded command: nickname
+- [2025-06-17 17:09:46] [INFO] Loaded command: role
+- [2025-06-17 17:09:46] [INFO] Loaded command: setautorole
+- [2025-06-17 17:09:46] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:09:46] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:09:46] [INFO] Loaded command: slowmode
+- [2025-06-17 17:09:46] [INFO] Loaded command: unban
+- [2025-06-17 17:09:46] [INFO] Loaded command: unjail
+- [2025-06-17 17:09:46] [INFO] Loaded command: unlock
+- [2025-06-17 17:09:46] [INFO] Loaded command: unmute
+- [2025-06-17 17:09:46] [INFO] Loaded command: verify
+- [2025-06-17 17:09:46] [INFO] Loaded command: warn
+- [2025-06-17 17:09:46] [INFO] Loaded command: warns
+- [2025-06-17 17:09:46] [INFO] Loaded command: massdm
+- [2025-06-17 17:09:46] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:09:46] [INFO] Loaded command: premium
+- [2025-06-17 17:09:46] [INFO] Loaded command: setuproles
+- [2025-06-17 17:09:46] [INFO] Loaded command: shutdown
+- [2025-06-17 17:09:46] [INFO] Loaded command: modmail
+- [2025-06-17 17:09:46] [INFO] Loaded command: moveall
+- [2025-06-17 17:09:46] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:09:46] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:09:46] [INFO] Loaded command: ping
+- [2025-06-17 17:09:46] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:09:46] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:09:46] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:09:46] [INFO] Loaded command: avatar
+- [2025-06-17 17:09:46] [INFO] Loaded command: botinfo
+- [2025-06-17 17:09:46] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:09:46] [INFO] Loaded command: help
+- [2025-06-17 17:09:46] [INFO] Loaded command: invite
+- [2025-06-17 17:09:46] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:09:46] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:09:46] [INFO] Loaded command: userinfo
+- [2025-06-17 17:09:46] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:09:46] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:09:46] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:09:46] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:09:46] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:09:46] [INFO] Loaded event: ready
+- [2025-06-17 17:09:46] [INFO] Loaded slash command: ping
+- [2025-06-17 17:09:46] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:09:46] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:09:46] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:09:47] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:09:47] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:09:47] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:09:47] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:09:47] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:09:47] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:09:48] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:09:48] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:09:48] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:09:48] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:09:48] [INFO] Initializing configurations for 5 guilds...
+- [2025-06-17 17:09:48] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:09:48] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:09:48] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:09:48] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:09:48] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:09:49] [INFO] Guild config initialization complete. Created: 0, Existed: 5, Errors: 0
+- [2025-06-17 17:09:49] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:14:03] [INFO] Loaded command: autoban
+- [2025-06-17 17:14:03] [INFO] Loaded command: autospam
+- [2025-06-17 17:14:03] [INFO] Loaded command: add
+- [2025-06-17 17:14:03] [INFO] Loaded command: ban
+- [2025-06-17 17:14:03] [INFO] Loaded command: clear
+- [2025-06-17 17:14:03] [INFO] Loaded command: delwarn
+- [2025-06-17 17:14:03] [INFO] Loaded command: deny
+- [2025-06-17 17:14:03] [INFO] Loaded command: jail
+- [2025-06-17 17:14:03] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:14:03] [INFO] Loaded command: kick
+- [2025-06-17 17:14:03] [INFO] Loaded command: lock
+- [2025-06-17 17:14:03] [INFO] Loaded command: move
+- [2025-06-17 17:14:03] [INFO] Loaded command: mute
+- [2025-06-17 17:14:03] [INFO] Loaded command: nickname
+- [2025-06-17 17:14:03] [INFO] Loaded command: role
+- [2025-06-17 17:14:03] [INFO] Loaded command: setautorole
+- [2025-06-17 17:14:03] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:14:03] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:14:03] [INFO] Loaded command: slowmode
+- [2025-06-17 17:14:03] [INFO] Loaded command: unban
+- [2025-06-17 17:14:03] [INFO] Loaded command: unjail
+- [2025-06-17 17:14:03] [INFO] Loaded command: unlock
+- [2025-06-17 17:14:03] [INFO] Loaded command: unmute
+- [2025-06-17 17:14:03] [INFO] Loaded command: verify
+- [2025-06-17 17:14:03] [INFO] Loaded command: warn
+- [2025-06-17 17:14:03] [INFO] Loaded command: warns
+- [2025-06-17 17:14:03] [INFO] Loaded command: massdm
+- [2025-06-17 17:14:03] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:14:03] [INFO] Loaded command: premium
+- [2025-06-17 17:14:03] [INFO] Loaded command: setuproles
+- [2025-06-17 17:14:03] [INFO] Loaded command: shutdown
+- [2025-06-17 17:14:03] [INFO] Loaded command: modmail
+- [2025-06-17 17:14:03] [INFO] Loaded command: moveall
+- [2025-06-17 17:14:03] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:14:03] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:14:03] [INFO] Loaded command: ping
+- [2025-06-17 17:14:03] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:14:03] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:14:03] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:14:03] [INFO] Loaded command: avatar
+- [2025-06-17 17:14:03] [INFO] Loaded command: botinfo
+- [2025-06-17 17:14:03] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:14:03] [INFO] Loaded command: help
+- [2025-06-17 17:14:03] [INFO] Loaded command: invite
+- [2025-06-17 17:14:03] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:14:03] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:14:03] [INFO] Loaded command: userinfo
+- [2025-06-17 17:14:03] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:14:03] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:14:03] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:14:03] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:14:03] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:14:03] [INFO] Loaded event: ready
+- [2025-06-17 17:14:03] [INFO] Loaded slash command: ping
+- [2025-06-17 17:14:03] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:14:03] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:14:03] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:14:03] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:14:04] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:14:04] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:14:04] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:14:04] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:14:04] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:14:04] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:14:04] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:14:04] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:14:04] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:14:04] [INFO] Initializing configurations for 5 guilds...
+- [2025-06-17 17:14:04] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:14:04] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:14:04] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:14:05] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:14:05] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:14:05] [INFO] Guild config initialization complete. Created: 0, Existed: 5, Errors: 0
+- [2025-06-17 17:14:05] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:28:18] [INFO] Loaded command: autoban
+- [2025-06-17 17:28:18] [INFO] Loaded command: autospam
+- [2025-06-17 17:28:18] [INFO] Loaded command: add
+- [2025-06-17 17:28:18] [INFO] Loaded command: ban
+- [2025-06-17 17:28:18] [INFO] Loaded command: clear
+- [2025-06-17 17:28:18] [INFO] Loaded command: delwarn
+- [2025-06-17 17:28:18] [INFO] Loaded command: deny
+- [2025-06-17 17:28:18] [INFO] Loaded command: jail
+- [2025-06-17 17:28:18] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:28:18] [INFO] Loaded command: kick
+- [2025-06-17 17:28:18] [INFO] Loaded command: lock
+- [2025-06-17 17:28:18] [INFO] Loaded command: move
+- [2025-06-17 17:28:18] [INFO] Loaded command: mute
+- [2025-06-17 17:28:18] [INFO] Loaded command: nickname
+- [2025-06-17 17:28:18] [INFO] Loaded command: role
+- [2025-06-17 17:28:18] [INFO] Loaded command: setautorole
+- [2025-06-17 17:28:18] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:28:18] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:28:18] [INFO] Loaded command: slowmode
+- [2025-06-17 17:28:18] [INFO] Loaded command: unban
+- [2025-06-17 17:28:18] [INFO] Loaded command: unjail
+- [2025-06-17 17:28:18] [INFO] Loaded command: unlock
+- [2025-06-17 17:28:18] [INFO] Loaded command: unmute
+- [2025-06-17 17:28:18] [INFO] Loaded command: verify
+- [2025-06-17 17:28:18] [INFO] Loaded command: warn
+- [2025-06-17 17:28:18] [INFO] Loaded command: warns
+- [2025-06-17 17:28:18] [INFO] Loaded command: massdm
+- [2025-06-17 17:28:19] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:28:19] [INFO] Loaded command: premium
+- [2025-06-17 17:28:19] [INFO] Loaded command: setuproles
+- [2025-06-17 17:28:19] [INFO] Loaded command: shutdown
+- [2025-06-17 17:28:19] [INFO] Loaded command: modmail
+- [2025-06-17 17:28:19] [INFO] Loaded command: moveall
+- [2025-06-17 17:28:19] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:28:19] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:28:19] [INFO] Loaded command: ping
+- [2025-06-17 17:28:19] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:28:19] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:28:19] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:28:19] [INFO] Loaded command: avatar
+- [2025-06-17 17:28:19] [INFO] Loaded command: botinfo
+- [2025-06-17 17:28:19] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:28:19] [INFO] Loaded command: help
+- [2025-06-17 17:28:19] [INFO] Loaded command: invite
+- [2025-06-17 17:28:19] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:28:19] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:28:19] [INFO] Loaded command: userinfo
+- [2025-06-17 17:28:19] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:28:19] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:28:19] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:28:19] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:28:19] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:28:19] [INFO] Loaded event: ready
+- [2025-06-17 17:28:19] [INFO] Loaded slash command: ping
+- [2025-06-17 17:28:19] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:28:19] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:28:19] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:28:19] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:28:19] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:28:20] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:28:20] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:28:20] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:28:20] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:28:20] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:28:21] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:28:21] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:28:21] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:28:21] [INFO] Initializing configurations for 5 guilds...
+- [2025-06-17 17:28:21] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:28:21] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:28:21] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:28:21] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:28:21] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:28:21] [INFO] Guild config initialization complete. Created: 0, Existed: 5, Errors: 0
+- [2025-06-17 17:28:21] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:28:34] [INFO] Loaded command: autoban
+- [2025-06-17 17:28:34] [INFO] Loaded command: autospam
+- [2025-06-17 17:28:34] [INFO] Loaded command: add
+- [2025-06-17 17:28:34] [INFO] Loaded command: ban
+- [2025-06-17 17:28:34] [INFO] Loaded command: clear
+- [2025-06-17 17:28:34] [INFO] Loaded command: delwarn
+- [2025-06-17 17:28:34] [INFO] Loaded command: deny
+- [2025-06-17 17:28:34] [INFO] Loaded command: jail
+- [2025-06-17 17:28:34] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:28:34] [INFO] Loaded command: kick
+- [2025-06-17 17:28:34] [INFO] Loaded command: lock
+- [2025-06-17 17:28:34] [INFO] Loaded command: move
+- [2025-06-17 17:28:34] [INFO] Loaded command: mute
+- [2025-06-17 17:28:34] [INFO] Loaded command: nickname
+- [2025-06-17 17:28:34] [INFO] Loaded command: role
+- [2025-06-17 17:28:34] [INFO] Loaded command: setautorole
+- [2025-06-17 17:28:34] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:28:34] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:28:34] [INFO] Loaded command: slowmode
+- [2025-06-17 17:28:34] [INFO] Loaded command: unban
+- [2025-06-17 17:28:34] [INFO] Loaded command: unjail
+- [2025-06-17 17:28:34] [INFO] Loaded command: unlock
+- [2025-06-17 17:28:34] [INFO] Loaded command: unmute
+- [2025-06-17 17:28:34] [INFO] Loaded command: verify
+- [2025-06-17 17:28:34] [INFO] Loaded command: warn
+- [2025-06-17 17:28:34] [INFO] Loaded command: warns
+- [2025-06-17 17:28:34] [INFO] Loaded command: massdm
+- [2025-06-17 17:28:34] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:28:35] [INFO] Loaded command: premium
+- [2025-06-17 17:28:35] [INFO] Loaded command: setuproles
+- [2025-06-17 17:28:35] [INFO] Loaded command: shutdown
+- [2025-06-17 17:28:35] [INFO] Loaded command: modmail
+- [2025-06-17 17:28:35] [INFO] Loaded command: moveall
+- [2025-06-17 17:28:35] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:28:35] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:28:35] [INFO] Loaded command: ping
+- [2025-06-17 17:28:35] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:28:35] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:28:35] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:28:35] [INFO] Loaded command: avatar
+- [2025-06-17 17:28:35] [INFO] Loaded command: botinfo
+- [2025-06-17 17:28:35] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:28:35] [INFO] Loaded command: help
+- [2025-06-17 17:28:35] [INFO] Loaded command: invite
+- [2025-06-17 17:28:35] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:28:35] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:28:35] [INFO] Loaded command: userinfo
+- [2025-06-17 17:28:35] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:28:35] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:28:35] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:28:35] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:28:35] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:28:35] [INFO] Loaded event: ready
+- [2025-06-17 17:28:35] [INFO] Loaded slash command: ping
+- [2025-06-17 17:28:35] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:28:35] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:28:35] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:28:35] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:28:36] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:28:36] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:28:36] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:28:36] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:28:36] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:28:36] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:28:37] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:28:37] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:28:37] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:28:37] [INFO] Initializing configurations for 5 guilds...
+- [2025-06-17 17:28:37] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:28:37] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:28:37] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:28:37] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:28:37] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:28:38] [INFO] Guild config initialization complete. Created: 0, Existed: 5, Errors: 0
+- [2025-06-17 17:28:38] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:31:54] [INFO] Loaded command: autoban
+- [2025-06-17 17:31:54] [INFO] Loaded command: autospam
+- [2025-06-17 17:31:54] [INFO] Loaded command: add
+- [2025-06-17 17:31:54] [INFO] Loaded command: ban
+- [2025-06-17 17:31:54] [INFO] Loaded command: clear
+- [2025-06-17 17:31:54] [INFO] Loaded command: delwarn
+- [2025-06-17 17:31:54] [INFO] Loaded command: deny
+- [2025-06-17 17:31:54] [INFO] Loaded command: jail
+- [2025-06-17 17:31:54] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:31:54] [INFO] Loaded command: kick
+- [2025-06-17 17:31:54] [INFO] Loaded command: lock
+- [2025-06-17 17:31:54] [INFO] Loaded command: move
+- [2025-06-17 17:31:54] [INFO] Loaded command: mute
+- [2025-06-17 17:31:54] [INFO] Loaded command: nickname
+- [2025-06-17 17:31:54] [INFO] Loaded command: role
+- [2025-06-17 17:31:54] [INFO] Loaded command: setautorole
+- [2025-06-17 17:31:54] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:31:54] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:31:54] [INFO] Loaded command: slowmode
+- [2025-06-17 17:31:54] [INFO] Loaded command: unban
+- [2025-06-17 17:31:54] [INFO] Loaded command: unjail
+- [2025-06-17 17:31:54] [INFO] Loaded command: unlock
+- [2025-06-17 17:31:54] [INFO] Loaded command: unmute
+- [2025-06-17 17:31:54] [INFO] Loaded command: verify
+- [2025-06-17 17:31:54] [INFO] Loaded command: warn
+- [2025-06-17 17:31:54] [INFO] Loaded command: warns
+- [2025-06-17 17:31:54] [INFO] Loaded command: massdm
+- [2025-06-17 17:31:54] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:31:54] [INFO] Loaded command: premium
+- [2025-06-17 17:31:54] [INFO] Loaded command: setuproles
+- [2025-06-17 17:31:54] [INFO] Loaded command: shutdown
+- [2025-06-17 17:31:54] [INFO] Loaded command: modmail
+- [2025-06-17 17:31:54] [INFO] Loaded command: moveall
+- [2025-06-17 17:31:54] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:31:54] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:31:54] [INFO] Loaded command: ping
+- [2025-06-17 17:31:54] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:31:54] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:31:54] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:31:54] [INFO] Loaded command: avatar
+- [2025-06-17 17:31:54] [INFO] Loaded command: botinfo
+- [2025-06-17 17:31:54] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:31:54] [INFO] Loaded command: help
+- [2025-06-17 17:31:54] [INFO] Loaded command: invite
+- [2025-06-17 17:31:54] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:31:54] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:31:54] [INFO] Loaded command: userinfo
+- [2025-06-17 17:31:54] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:31:54] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:31:54] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:31:54] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:31:54] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:31:54] [INFO] Loaded event: ready
+- [2025-06-17 17:31:54] [INFO] Loaded slash command: ping
+- [2025-06-17 17:31:54] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:31:54] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:31:54] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:31:54] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:31:55] [INFO] ✅ Database connection successful
+- [2025-06-17 17:31:55] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:31:55] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:31:55] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:31:55] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:31:55] [WARN] Attempt 1/5 for premium_guilds table ensure failed: Cannot read properties of undefined (reading 'query'). Retrying in 3 seconds...
+- [2025-06-17 17:31:55] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:31:55] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:31:56] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:31:56] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:31:56] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:31:56] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:31:56] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:31:56] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:31:56] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:31:56] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:31:56] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:31:56] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:31:56] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:31:56] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:31:58] [WARN] Attempt 2/5 for premium_guilds table ensure failed: Cannot read properties of undefined (reading 'query'). Retrying in 3 seconds...
+- [2025-06-17 17:32:01] [WARN] Attempt 3/5 for premium_guilds table ensure failed: Cannot read properties of undefined (reading 'query'). Retrying in 3 seconds...
+- [2025-06-17 17:32:04] [WARN] Attempt 4/5 for premium_guilds table ensure failed: Cannot read properties of undefined (reading 'query'). Retrying in 3 seconds...
+- [2025-06-17 17:32:07] [WARN] Attempt 5/5 for premium_guilds table ensure failed: Cannot read properties of undefined (reading 'query'). Retrying in 3 seconds...
+- [2025-06-17 17:32:07] [ERROR] Max retries reached for premium_guilds table ensure. Giving up.
+- [2025-06-17 17:32:07] [ERROR] DB Table creation error: TypeError: Cannot read properties of undefined (reading 'query')
+- [2025-06-17 17:33:26] [INFO] Loaded command: autoban
+- [2025-06-17 17:33:26] [INFO] Loaded command: autospam
+- [2025-06-17 17:33:26] [INFO] Loaded command: add
+- [2025-06-17 17:33:26] [INFO] Loaded command: ban
+- [2025-06-17 17:33:26] [INFO] Loaded command: clear
+- [2025-06-17 17:33:26] [INFO] Loaded command: delwarn
+- [2025-06-17 17:33:26] [INFO] Loaded command: deny
+- [2025-06-17 17:33:26] [INFO] Loaded command: jail
+- [2025-06-17 17:33:26] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:33:26] [INFO] Loaded command: kick
+- [2025-06-17 17:33:26] [INFO] Loaded command: lock
+- [2025-06-17 17:33:26] [INFO] Loaded command: move
+- [2025-06-17 17:33:26] [INFO] Loaded command: mute
+- [2025-06-17 17:33:26] [INFO] Loaded command: nickname
+- [2025-06-17 17:33:26] [INFO] Loaded command: role
+- [2025-06-17 17:33:26] [INFO] Loaded command: setautorole
+- [2025-06-17 17:33:26] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:33:26] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:33:26] [INFO] Loaded command: slowmode
+- [2025-06-17 17:33:26] [INFO] Loaded command: unban
+- [2025-06-17 17:33:26] [INFO] Loaded command: unjail
+- [2025-06-17 17:33:26] [INFO] Loaded command: unlock
+- [2025-06-17 17:33:26] [INFO] Loaded command: unmute
+- [2025-06-17 17:33:26] [INFO] Loaded command: verify
+- [2025-06-17 17:33:26] [INFO] Loaded command: warn
+- [2025-06-17 17:33:26] [INFO] Loaded command: warns
+- [2025-06-17 17:33:26] [INFO] Loaded command: massdm
+- [2025-06-17 17:33:26] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:33:26] [INFO] Loaded command: premium
+- [2025-06-17 17:33:26] [INFO] Loaded command: setuproles
+- [2025-06-17 17:33:26] [INFO] Loaded command: shutdown
+- [2025-06-17 17:33:26] [INFO] Loaded command: modmail
+- [2025-06-17 17:33:26] [INFO] Loaded command: moveall
+- [2025-06-17 17:33:26] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:33:26] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:33:26] [INFO] Loaded command: ping
+- [2025-06-17 17:33:26] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:33:26] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:33:26] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:33:26] [INFO] Loaded command: avatar
+- [2025-06-17 17:33:26] [INFO] Loaded command: botinfo
+- [2025-06-17 17:33:26] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:33:26] [INFO] Loaded command: help
+- [2025-06-17 17:33:26] [INFO] Loaded command: invite
+- [2025-06-17 17:33:26] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:33:26] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:33:26] [INFO] Loaded command: userinfo
+- [2025-06-17 17:33:26] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:33:26] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:33:26] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:33:26] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:33:26] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:33:26] [INFO] Loaded event: ready
+- [2025-06-17 17:33:26] [INFO] Loaded slash command: ping
+- [2025-06-17 17:33:26] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:33:26] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:33:26] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:33:26] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:33:27] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:33:27] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:33:27] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:33:27] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:33:27] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:33:27] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:33:27] [INFO] ✅ Database connection successful
+- [2025-06-17 17:33:27] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:33:27] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:33:28] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:33:28] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:33:28] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:33:28] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:33:28] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:33:28] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:33:28] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:33:28] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:33:28] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:33:28] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:33:28] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:33:28] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:34:34] [INFO] Loaded command: autoban
+- [2025-06-17 17:34:34] [INFO] Loaded command: autospam
+- [2025-06-17 17:34:34] [INFO] Loaded command: add
+- [2025-06-17 17:34:34] [INFO] Loaded command: ban
+- [2025-06-17 17:34:34] [INFO] Loaded command: clear
+- [2025-06-17 17:34:34] [INFO] Loaded command: delwarn
+- [2025-06-17 17:34:34] [INFO] Loaded command: deny
+- [2025-06-17 17:34:34] [INFO] Loaded command: jail
+- [2025-06-17 17:34:34] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:34:34] [INFO] Loaded command: kick
+- [2025-06-17 17:34:34] [INFO] Loaded command: lock
+- [2025-06-17 17:34:34] [INFO] Loaded command: move
+- [2025-06-17 17:34:34] [INFO] Loaded command: mute
+- [2025-06-17 17:34:34] [INFO] Loaded command: nickname
+- [2025-06-17 17:34:34] [INFO] Loaded command: role
+- [2025-06-17 17:34:34] [INFO] Loaded command: setautorole
+- [2025-06-17 17:34:34] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:34:34] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:34:34] [INFO] Loaded command: slowmode
+- [2025-06-17 17:34:34] [INFO] Loaded command: unban
+- [2025-06-17 17:34:34] [INFO] Loaded command: unjail
+- [2025-06-17 17:34:34] [INFO] Loaded command: unlock
+- [2025-06-17 17:34:34] [INFO] Loaded command: unmute
+- [2025-06-17 17:34:34] [INFO] Loaded command: verify
+- [2025-06-17 17:34:34] [INFO] Loaded command: warn
+- [2025-06-17 17:34:34] [INFO] Loaded command: warns
+- [2025-06-17 17:34:34] [INFO] Loaded command: massdm
+- [2025-06-17 17:34:34] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:34:34] [INFO] Loaded command: premium
+- [2025-06-17 17:34:34] [INFO] Loaded command: setuproles
+- [2025-06-17 17:34:34] [INFO] Loaded command: shutdown
+- [2025-06-17 17:34:34] [INFO] Loaded command: modmail
+- [2025-06-17 17:34:34] [INFO] Loaded command: moveall
+- [2025-06-17 17:34:34] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:34:34] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:34:34] [INFO] Loaded command: ping
+- [2025-06-17 17:34:34] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:34:34] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:34:34] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:34:34] [INFO] Loaded command: avatar
+- [2025-06-17 17:34:34] [INFO] Loaded command: botinfo
+- [2025-06-17 17:34:34] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:34:34] [INFO] Loaded command: help
+- [2025-06-17 17:34:34] [INFO] Loaded command: invite
+- [2025-06-17 17:34:34] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:34:34] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:34:34] [INFO] Loaded command: userinfo
+- [2025-06-17 17:34:34] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:34:34] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:34:34] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:34:34] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:34:34] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:34:34] [INFO] Loaded event: ready
+- [2025-06-17 17:34:34] [INFO] Loaded slash command: ping
+- [2025-06-17 17:34:34] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:34:34] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:34:34] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:34:34] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:34:35] [INFO] ✅ Database connection successful
+- [2025-06-17 17:34:35] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:34:35] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:34:35] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:34:35] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:34:35] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:34:35] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:34:35] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:34:35] [INFO] ✅ Premium system ready
+- [2025-06-17 17:34:35] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:34:36] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:34:36] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:34:36] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:34:36] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:34:36] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:34:36] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:34:36] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:34:36] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:34:36] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:34:36] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:34:36] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:34:36] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:34:45] [INFO] Loaded command: autoban
+- [2025-06-17 17:34:45] [INFO] Loaded command: autospam
+- [2025-06-17 17:34:45] [INFO] Loaded command: add
+- [2025-06-17 17:34:45] [INFO] Loaded command: ban
+- [2025-06-17 17:34:45] [INFO] Loaded command: clear
+- [2025-06-17 17:34:45] [INFO] Loaded command: delwarn
+- [2025-06-17 17:34:45] [INFO] Loaded command: deny
+- [2025-06-17 17:34:45] [INFO] Loaded command: jail
+- [2025-06-17 17:34:45] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:34:45] [INFO] Loaded command: kick
+- [2025-06-17 17:34:45] [INFO] Loaded command: lock
+- [2025-06-17 17:34:45] [INFO] Loaded command: move
+- [2025-06-17 17:34:45] [INFO] Loaded command: mute
+- [2025-06-17 17:34:45] [INFO] Loaded command: nickname
+- [2025-06-17 17:34:45] [INFO] Loaded command: role
+- [2025-06-17 17:34:45] [INFO] Loaded command: setautorole
+- [2025-06-17 17:34:45] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:34:45] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:34:45] [INFO] Loaded command: slowmode
+- [2025-06-17 17:34:45] [INFO] Loaded command: unban
+- [2025-06-17 17:34:45] [INFO] Loaded command: unjail
+- [2025-06-17 17:34:45] [INFO] Loaded command: unlock
+- [2025-06-17 17:34:45] [INFO] Loaded command: unmute
+- [2025-06-17 17:34:45] [INFO] Loaded command: verify
+- [2025-06-17 17:34:45] [INFO] Loaded command: warn
+- [2025-06-17 17:34:45] [INFO] Loaded command: warns
+- [2025-06-17 17:34:45] [INFO] Loaded command: massdm
+- [2025-06-17 17:34:45] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:34:45] [INFO] Loaded command: premium
+- [2025-06-17 17:34:45] [INFO] Loaded command: setuproles
+- [2025-06-17 17:34:45] [INFO] Loaded command: shutdown
+- [2025-06-17 17:34:45] [INFO] Loaded command: modmail
+- [2025-06-17 17:34:45] [INFO] Loaded command: moveall
+- [2025-06-17 17:34:45] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:34:45] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:34:45] [INFO] Loaded command: ping
+- [2025-06-17 17:34:45] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:34:45] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:34:45] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:34:45] [INFO] Loaded command: avatar
+- [2025-06-17 17:34:45] [INFO] Loaded command: botinfo
+- [2025-06-17 17:34:45] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:34:45] [INFO] Loaded command: help
+- [2025-06-17 17:34:45] [INFO] Loaded command: invite
+- [2025-06-17 17:34:45] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:34:45] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:34:45] [INFO] Loaded command: userinfo
+- [2025-06-17 17:34:45] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:34:45] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:34:45] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:34:45] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:34:45] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:34:45] [INFO] Loaded event: ready
+- [2025-06-17 17:34:45] [INFO] Loaded slash command: ping
+- [2025-06-17 17:34:45] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:34:45] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:34:45] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:34:45] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:34:46] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:34:46] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:34:46] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:34:46] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:34:46] [INFO] ✅ Database connection successful
+- [2025-06-17 17:34:46] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:34:46] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:34:46] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:34:46] [INFO] ✅ Premium system ready
+- [2025-06-17 17:34:46] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:34:46] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:34:46] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:34:46] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:34:46] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:34:46] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:34:46] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:34:46] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:34:46] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:34:46] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:34:46] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:34:47] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:34:47] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:37:03] [INFO] Loaded command: autoban
+- [2025-06-17 17:37:03] [INFO] Loaded command: autospam
+- [2025-06-17 17:37:03] [INFO] Loaded command: add
+- [2025-06-17 17:37:03] [INFO] Loaded command: ban
+- [2025-06-17 17:37:03] [INFO] Loaded command: clear
+- [2025-06-17 17:37:03] [INFO] Loaded command: delwarn
+- [2025-06-17 17:37:03] [INFO] Loaded command: deny
+- [2025-06-17 17:37:03] [INFO] Loaded command: jail
+- [2025-06-17 17:37:03] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:37:03] [INFO] Loaded command: kick
+- [2025-06-17 17:37:03] [INFO] Loaded command: lock
+- [2025-06-17 17:37:03] [INFO] Loaded command: move
+- [2025-06-17 17:37:03] [INFO] Loaded command: mute
+- [2025-06-17 17:37:03] [INFO] Loaded command: nickname
+- [2025-06-17 17:37:03] [INFO] Loaded command: role
+- [2025-06-17 17:37:03] [INFO] Loaded command: setautorole
+- [2025-06-17 17:37:03] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:37:03] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:37:03] [INFO] Loaded command: slowmode
+- [2025-06-17 17:37:03] [INFO] Loaded command: unban
+- [2025-06-17 17:37:03] [INFO] Loaded command: unjail
+- [2025-06-17 17:37:03] [INFO] Loaded command: unlock
+- [2025-06-17 17:37:03] [INFO] Loaded command: unmute
+- [2025-06-17 17:37:03] [INFO] Loaded command: verify
+- [2025-06-17 17:37:03] [INFO] Loaded command: warn
+- [2025-06-17 17:37:03] [INFO] Loaded command: warns
+- [2025-06-17 17:37:03] [INFO] Loaded command: massdm
+- [2025-06-17 17:37:03] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:37:03] [INFO] Loaded command: premium
+- [2025-06-17 17:37:03] [INFO] Loaded command: setuproles
+- [2025-06-17 17:37:03] [INFO] Loaded command: shutdown
+- [2025-06-17 17:37:03] [INFO] Loaded command: modmail
+- [2025-06-17 17:37:03] [INFO] Loaded command: moveall
+- [2025-06-17 17:37:03] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:37:03] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:37:03] [INFO] Loaded command: ping
+- [2025-06-17 17:37:03] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:37:03] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:37:03] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:37:03] [INFO] Loaded command: avatar
+- [2025-06-17 17:37:03] [INFO] Loaded command: botinfo
+- [2025-06-17 17:37:03] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:37:03] [INFO] Loaded command: help
+- [2025-06-17 17:37:03] [INFO] Loaded command: invite
+- [2025-06-17 17:37:03] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:37:03] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:37:03] [INFO] Loaded command: userinfo
+- [2025-06-17 17:37:03] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:37:03] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:37:03] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:37:03] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:37:03] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:37:03] [INFO] Loaded event: ready
+- [2025-06-17 17:37:03] [INFO] Loaded slash command: ping
+- [2025-06-17 17:37:03] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:37:04] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:37:04] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:37:04] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:37:04] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:37:04] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:37:04] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:37:04] [INFO] ✅ Premium system ready
+- [2025-06-17 17:37:04] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:37:05] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:37:05] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:37:05] [INFO] ✅ Database connection successful
+- [2025-06-17 17:37:05] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:37:05] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:37:05] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:37:05] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:37:05] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:37:05] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:37:05] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:37:05] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:37:05] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:37:05] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:37:05] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:37:05] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:37:05] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:37:05] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:37:25] [INFO] Loaded command: autoban
+- [2025-06-17 17:37:25] [INFO] Loaded command: autospam
+- [2025-06-17 17:37:25] [INFO] Loaded command: add
+- [2025-06-17 17:37:26] [INFO] Loaded command: ban
+- [2025-06-17 17:37:26] [INFO] Loaded command: clear
+- [2025-06-17 17:37:26] [INFO] Loaded command: delwarn
+- [2025-06-17 17:37:26] [INFO] Loaded command: deny
+- [2025-06-17 17:37:26] [INFO] Loaded command: jail
+- [2025-06-17 17:37:26] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:37:26] [INFO] Loaded command: kick
+- [2025-06-17 17:37:26] [INFO] Loaded command: lock
+- [2025-06-17 17:37:26] [INFO] Loaded command: move
+- [2025-06-17 17:37:26] [INFO] Loaded command: mute
+- [2025-06-17 17:37:26] [INFO] Loaded command: nickname
+- [2025-06-17 17:37:26] [INFO] Loaded command: role
+- [2025-06-17 17:37:26] [INFO] Loaded command: setautorole
+- [2025-06-17 17:37:26] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:37:26] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:37:26] [INFO] Loaded command: slowmode
+- [2025-06-17 17:37:26] [INFO] Loaded command: unban
+- [2025-06-17 17:37:26] [INFO] Loaded command: unjail
+- [2025-06-17 17:37:26] [INFO] Loaded command: unlock
+- [2025-06-17 17:37:26] [INFO] Loaded command: unmute
+- [2025-06-17 17:37:26] [INFO] Loaded command: verify
+- [2025-06-17 17:37:26] [INFO] Loaded command: warn
+- [2025-06-17 17:37:26] [INFO] Loaded command: warns
+- [2025-06-17 17:37:26] [INFO] Loaded command: massdm
+- [2025-06-17 17:37:26] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:37:26] [INFO] Loaded command: premium
+- [2025-06-17 17:37:26] [INFO] Loaded command: setuproles
+- [2025-06-17 17:37:26] [INFO] Loaded command: shutdown
+- [2025-06-17 17:37:26] [INFO] Loaded command: modmail
+- [2025-06-17 17:37:26] [INFO] Loaded command: moveall
+- [2025-06-17 17:37:26] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:37:26] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:37:26] [INFO] Loaded command: ping
+- [2025-06-17 17:37:26] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:37:26] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:37:26] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:37:26] [INFO] Loaded command: avatar
+- [2025-06-17 17:37:26] [INFO] Loaded command: botinfo
+- [2025-06-17 17:37:26] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:37:26] [INFO] Loaded command: help
+- [2025-06-17 17:37:26] [INFO] Loaded command: invite
+- [2025-06-17 17:37:26] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:37:26] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:37:26] [INFO] Loaded command: userinfo
+- [2025-06-17 17:37:26] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:37:26] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:37:26] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:37:26] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:37:26] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:37:26] [INFO] Loaded event: ready
+- [2025-06-17 17:37:26] [INFO] Loaded slash command: ping
+- [2025-06-17 17:37:26] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:37:26] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:37:26] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:37:26] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:37:27] [INFO] ✅ Database connection successful
+- [2025-06-17 17:37:27] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:37:27] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:37:27] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:37:27] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:37:27] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:37:27] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:37:27] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:37:27] [INFO] ✅ Premium system ready
+- [2025-06-17 17:37:27] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:37:28] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:37:28] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:37:28] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:37:28] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:37:28] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:37:28] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:37:28] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:37:28] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:37:28] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:37:28] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:37:28] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:37:28] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:37:39] [INFO] Loaded command: autoban
+- [2025-06-17 17:37:39] [INFO] Loaded command: autospam
+- [2025-06-17 17:37:39] [INFO] Loaded command: add
+- [2025-06-17 17:37:39] [INFO] Loaded command: ban
+- [2025-06-17 17:37:40] [INFO] Loaded command: clear
+- [2025-06-17 17:37:40] [INFO] Loaded command: delwarn
+- [2025-06-17 17:37:40] [INFO] Loaded command: deny
+- [2025-06-17 17:37:40] [INFO] Loaded command: jail
+- [2025-06-17 17:37:40] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:37:40] [INFO] Loaded command: kick
+- [2025-06-17 17:37:40] [INFO] Loaded command: lock
+- [2025-06-17 17:37:40] [INFO] Loaded command: move
+- [2025-06-17 17:37:40] [INFO] Loaded command: mute
+- [2025-06-17 17:37:40] [INFO] Loaded command: nickname
+- [2025-06-17 17:37:40] [INFO] Loaded command: role
+- [2025-06-17 17:37:40] [INFO] Loaded command: setautorole
+- [2025-06-17 17:37:40] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:37:40] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:37:40] [INFO] Loaded command: slowmode
+- [2025-06-17 17:37:40] [INFO] Loaded command: unban
+- [2025-06-17 17:37:40] [INFO] Loaded command: unjail
+- [2025-06-17 17:37:40] [INFO] Loaded command: unlock
+- [2025-06-17 17:37:40] [INFO] Loaded command: unmute
+- [2025-06-17 17:37:40] [INFO] Loaded command: verify
+- [2025-06-17 17:37:40] [INFO] Loaded command: warn
+- [2025-06-17 17:37:40] [INFO] Loaded command: warns
+- [2025-06-17 17:37:40] [INFO] Loaded command: massdm
+- [2025-06-17 17:37:40] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:37:40] [INFO] Loaded command: premium
+- [2025-06-17 17:37:40] [INFO] Loaded command: setuproles
+- [2025-06-17 17:37:40] [INFO] Loaded command: shutdown
+- [2025-06-17 17:37:40] [INFO] Loaded command: modmail
+- [2025-06-17 17:37:40] [INFO] Loaded command: moveall
+- [2025-06-17 17:37:40] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:37:40] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:37:41] [INFO] Loaded command: ping
+- [2025-06-17 17:37:41] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:37:41] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:37:41] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:37:41] [INFO] Loaded command: avatar
+- [2025-06-17 17:37:41] [INFO] Loaded command: botinfo
+- [2025-06-17 17:37:41] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:37:41] [INFO] Loaded command: help
+- [2025-06-17 17:37:41] [INFO] Loaded command: invite
+- [2025-06-17 17:37:41] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:37:41] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:37:42] [INFO] Loaded command: userinfo
+- [2025-06-17 17:37:42] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:37:42] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:37:42] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:37:42] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:37:42] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:37:42] [INFO] Loaded event: ready
+- [2025-06-17 17:37:42] [INFO] Loaded slash command: ping
+- [2025-06-17 17:37:42] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:37:42] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:37:42] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:37:42] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:37:42] [INFO] ✅ Database connection successful
+- [2025-06-17 17:37:43] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:37:43] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:37:43] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:37:43] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:37:43] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:37:43] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:37:43] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:37:43] [INFO] ✅ Premium system ready
+- [2025-06-17 17:37:43] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:37:47] [INFO] Loaded command: autoban
+- [2025-06-17 17:37:47] [INFO] Loaded command: autospam
+- [2025-06-17 17:37:47] [INFO] Loaded command: add
+- [2025-06-17 17:37:47] [INFO] Loaded command: ban
+- [2025-06-17 17:37:47] [INFO] Loaded command: clear
+- [2025-06-17 17:37:47] [INFO] Loaded command: delwarn
+- [2025-06-17 17:37:47] [INFO] Loaded command: deny
+- [2025-06-17 17:37:47] [INFO] Loaded command: jail
+- [2025-06-17 17:37:47] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:37:47] [INFO] Loaded command: kick
+- [2025-06-17 17:37:47] [INFO] Loaded command: lock
+- [2025-06-17 17:37:47] [INFO] Loaded command: move
+- [2025-06-17 17:37:47] [INFO] Loaded command: mute
+- [2025-06-17 17:37:47] [INFO] Loaded command: nickname
+- [2025-06-17 17:37:47] [INFO] Loaded command: role
+- [2025-06-17 17:37:47] [INFO] Loaded command: setautorole
+- [2025-06-17 17:37:47] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:37:47] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:37:47] [INFO] Loaded command: slowmode
+- [2025-06-17 17:37:47] [INFO] Loaded command: unban
+- [2025-06-17 17:37:47] [INFO] Loaded command: unjail
+- [2025-06-17 17:37:47] [INFO] Loaded command: unlock
+- [2025-06-17 17:37:47] [INFO] Loaded command: unmute
+- [2025-06-17 17:37:47] [INFO] Loaded command: verify
+- [2025-06-17 17:37:47] [INFO] Loaded command: warn
+- [2025-06-17 17:37:47] [INFO] Loaded command: warns
+- [2025-06-17 17:37:48] [INFO] Loaded command: massdm
+- [2025-06-17 17:37:48] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:37:48] [INFO] Loaded command: premium
+- [2025-06-17 17:37:48] [INFO] Loaded command: setuproles
+- [2025-06-17 17:37:48] [INFO] Loaded command: shutdown
+- [2025-06-17 17:37:48] [INFO] Loaded command: modmail
+- [2025-06-17 17:37:48] [INFO] Loaded command: moveall
+- [2025-06-17 17:37:48] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:37:48] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:37:48] [INFO] Loaded command: ping
+- [2025-06-17 17:37:48] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:37:48] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:37:48] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:37:48] [INFO] Loaded command: avatar
+- [2025-06-17 17:37:48] [INFO] Loaded command: botinfo
+- [2025-06-17 17:37:48] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:37:48] [INFO] Loaded command: help
+- [2025-06-17 17:37:48] [INFO] Loaded command: invite
+- [2025-06-17 17:37:48] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:37:48] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:37:48] [INFO] Loaded command: userinfo
+- [2025-06-17 17:37:48] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:37:48] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:37:48] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:37:48] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:37:48] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:37:48] [INFO] Loaded event: ready
+- [2025-06-17 17:37:48] [INFO] Loaded slash command: ping
+- [2025-06-17 17:37:48] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:37:49] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:37:49] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:37:49] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:37:49] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:37:49] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:37:49] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:37:49] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:37:49] [INFO] ✅ Database connection successful
+- [2025-06-17 17:37:49] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:37:49] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:37:49] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:37:49] [INFO] ✅ Premium system ready
+- [2025-06-17 17:37:49] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:37:50] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:37:50] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:37:50] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:37:50] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:37:50] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:37:50] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:37:50] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:37:50] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:37:50] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:37:50] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:37:51] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:37:51] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:38:00] [INFO] Loaded command: autoban
+- [2025-06-17 17:38:00] [INFO] Loaded command: autospam
+- [2025-06-17 17:38:00] [INFO] Loaded command: add
+- [2025-06-17 17:38:00] [INFO] Loaded command: ban
+- [2025-06-17 17:38:00] [INFO] Loaded command: clear
+- [2025-06-17 17:38:00] [INFO] Loaded command: delwarn
+- [2025-06-17 17:38:00] [INFO] Loaded command: deny
+- [2025-06-17 17:38:00] [INFO] Loaded command: jail
+- [2025-06-17 17:38:00] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:38:00] [INFO] Loaded command: kick
+- [2025-06-17 17:38:00] [INFO] Loaded command: lock
+- [2025-06-17 17:38:00] [INFO] Loaded command: move
+- [2025-06-17 17:38:00] [INFO] Loaded command: mute
+- [2025-06-17 17:38:01] [INFO] Loaded command: nickname
+- [2025-06-17 17:38:01] [INFO] Loaded command: role
+- [2025-06-17 17:38:01] [INFO] Loaded command: setautorole
+- [2025-06-17 17:38:01] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:38:01] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:38:01] [INFO] Loaded command: slowmode
+- [2025-06-17 17:38:01] [INFO] Loaded command: unban
+- [2025-06-17 17:38:01] [INFO] Loaded command: unjail
+- [2025-06-17 17:38:01] [INFO] Loaded command: unlock
+- [2025-06-17 17:38:01] [INFO] Loaded command: unmute
+- [2025-06-17 17:38:01] [INFO] Loaded command: verify
+- [2025-06-17 17:38:01] [INFO] Loaded command: warn
+- [2025-06-17 17:38:01] [INFO] Loaded command: warns
+- [2025-06-17 17:38:01] [INFO] Loaded command: massdm
+- [2025-06-17 17:38:01] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:38:01] [INFO] Loaded command: premium
+- [2025-06-17 17:38:01] [INFO] Loaded command: setuproles
+- [2025-06-17 17:38:01] [INFO] Loaded command: shutdown
+- [2025-06-17 17:38:01] [INFO] Loaded command: modmail
+- [2025-06-17 17:38:01] [INFO] Loaded command: moveall
+- [2025-06-17 17:38:01] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:38:01] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:38:01] [INFO] Loaded command: ping
+- [2025-06-17 17:38:01] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:38:01] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:38:01] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:38:01] [INFO] Loaded command: avatar
+- [2025-06-17 17:38:01] [INFO] Loaded command: botinfo
+- [2025-06-17 17:38:01] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:38:01] [INFO] Loaded command: help
+- [2025-06-17 17:38:01] [INFO] Loaded command: invite
+- [2025-06-17 17:38:01] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:38:01] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:38:01] [INFO] Loaded command: userinfo
+- [2025-06-17 17:38:01] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:38:01] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:38:01] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:38:01] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:38:01] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:38:01] [INFO] Loaded event: ready
+- [2025-06-17 17:38:01] [INFO] Loaded slash command: ping
+- [2025-06-17 17:38:01] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:38:01] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:38:01] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:38:01] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:38:01] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:38:01] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:38:01] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:38:01] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:38:01] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:38:01] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:38:01] [INFO] ✅ Database connection successful
+- [2025-06-17 17:38:02] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:38:02] [INFO] ✅ Premium system ready
+- [2025-06-17 17:38:02] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:38:02] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:38:02] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:38:02] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:38:02] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:38:02] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:38:02] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:38:02] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:38:02] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:38:03] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:38:03] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:38:20] [ERROR] ❌ Failed to create database backup: Error: Command failed: pg_dump postgresql://postgres.iaszkaiquyvndhbzsqwu:SiU-Psm9WeLzekd@aws-0-eu-west-3.pooler.supabase.com:6543/postgres > C:\Users\MR AHMET\Desktop\paralelbot-js-master\backups\backup-2025-06-17T17-38-20-230Z.sql
+Access is denied.
+
+- [2025-06-17 17:38:36] [INFO] Loaded command: autoban
+- [2025-06-17 17:38:36] [INFO] Loaded command: autospam
+- [2025-06-17 17:38:36] [INFO] Loaded command: add
+- [2025-06-17 17:38:37] [INFO] Loaded command: ban
+- [2025-06-17 17:38:37] [INFO] Loaded command: clear
+- [2025-06-17 17:38:37] [INFO] Loaded command: delwarn
+- [2025-06-17 17:38:37] [INFO] Loaded command: deny
+- [2025-06-17 17:38:37] [INFO] Loaded command: jail
+- [2025-06-17 17:38:37] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:38:37] [INFO] Loaded command: kick
+- [2025-06-17 17:38:37] [INFO] Loaded command: lock
+- [2025-06-17 17:38:37] [INFO] Loaded command: move
+- [2025-06-17 17:38:37] [INFO] Loaded command: mute
+- [2025-06-17 17:38:37] [INFO] Loaded command: nickname
+- [2025-06-17 17:38:37] [INFO] Loaded command: role
+- [2025-06-17 17:38:37] [INFO] Loaded command: setautorole
+- [2025-06-17 17:38:37] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:38:37] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:38:37] [INFO] Loaded command: slowmode
+- [2025-06-17 17:38:37] [INFO] Loaded command: unban
+- [2025-06-17 17:38:37] [INFO] Loaded command: unjail
+- [2025-06-17 17:38:37] [INFO] Loaded command: unlock
+- [2025-06-17 17:38:37] [INFO] Loaded command: unmute
+- [2025-06-17 17:38:37] [INFO] Loaded command: verify
+- [2025-06-17 17:38:37] [INFO] Loaded command: warn
+- [2025-06-17 17:38:37] [INFO] Loaded command: warns
+- [2025-06-17 17:38:37] [INFO] Loaded command: massdm
+- [2025-06-17 17:38:37] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:38:38] [INFO] Loaded command: premium
+- [2025-06-17 17:38:38] [INFO] Loaded command: setuproles
+- [2025-06-17 17:38:38] [INFO] Loaded command: shutdown
+- [2025-06-17 17:38:38] [INFO] Loaded command: modmail
+- [2025-06-17 17:38:38] [INFO] Loaded command: moveall
+- [2025-06-17 17:38:38] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:38:38] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:38:38] [INFO] Loaded command: ping
+- [2025-06-17 17:38:38] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:38:38] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:38:38] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:38:38] [INFO] Loaded command: avatar
+- [2025-06-17 17:38:38] [INFO] Loaded command: botinfo
+- [2025-06-17 17:38:38] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:38:38] [INFO] Loaded command: help
+- [2025-06-17 17:38:38] [INFO] Loaded command: invite
+- [2025-06-17 17:38:38] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:38:38] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:38:38] [INFO] Loaded command: userinfo
+- [2025-06-17 17:38:38] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:38:38] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:38:38] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:38:38] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:38:39] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:38:39] [INFO] Loaded event: ready
+- [2025-06-17 17:38:39] [INFO] Loaded slash command: ping
+- [2025-06-17 17:38:39] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:38:39] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:38:39] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:38:39] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:38:39] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:38:39] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:38:39] [INFO] ✅ Database connection successful
+- [2025-06-17 17:38:40] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:38:40] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:38:40] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:38:40] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:38:40] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:38:40] [INFO] ✅ Premium system ready
+- [2025-06-17 17:38:40] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:38:40] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:38:40] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:38:40] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:38:40] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:38:40] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:38:40] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:38:41] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:38:41] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:38:41] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:38:41] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:38:41] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:38:41] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:38:46] [INFO] Loaded command: autoban
+- [2025-06-17 17:38:46] [INFO] Loaded command: autospam
+- [2025-06-17 17:38:46] [INFO] Loaded command: add
+- [2025-06-17 17:38:46] [INFO] Loaded command: ban
+- [2025-06-17 17:38:46] [INFO] Loaded command: clear
+- [2025-06-17 17:38:46] [INFO] Loaded command: delwarn
+- [2025-06-17 17:38:46] [INFO] Loaded command: deny
+- [2025-06-17 17:38:46] [INFO] Loaded command: jail
+- [2025-06-17 17:38:46] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:38:46] [INFO] Loaded command: kick
+- [2025-06-17 17:38:46] [INFO] Loaded command: lock
+- [2025-06-17 17:38:46] [INFO] Loaded command: move
+- [2025-06-17 17:38:46] [INFO] Loaded command: mute
+- [2025-06-17 17:38:46] [INFO] Loaded command: nickname
+- [2025-06-17 17:38:46] [INFO] Loaded command: role
+- [2025-06-17 17:38:46] [INFO] Loaded command: setautorole
+- [2025-06-17 17:38:46] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:38:46] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:38:46] [INFO] Loaded command: slowmode
+- [2025-06-17 17:38:46] [INFO] Loaded command: unban
+- [2025-06-17 17:38:46] [INFO] Loaded command: unjail
+- [2025-06-17 17:38:46] [INFO] Loaded command: unlock
+- [2025-06-17 17:38:46] [INFO] Loaded command: unmute
+- [2025-06-17 17:38:46] [INFO] Loaded command: verify
+- [2025-06-17 17:38:47] [INFO] Loaded command: warn
+- [2025-06-17 17:38:47] [INFO] Loaded command: warns
+- [2025-06-17 17:38:47] [INFO] Loaded command: massdm
+- [2025-06-17 17:38:47] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:38:47] [INFO] Loaded command: premium
+- [2025-06-17 17:38:47] [INFO] Loaded command: setuproles
+- [2025-06-17 17:38:47] [INFO] Loaded command: shutdown
+- [2025-06-17 17:38:47] [INFO] Loaded command: modmail
+- [2025-06-17 17:38:47] [INFO] Loaded command: moveall
+- [2025-06-17 17:38:47] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:38:47] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:38:47] [INFO] Loaded command: ping
+- [2025-06-17 17:38:47] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:38:47] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:38:47] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:38:47] [INFO] Loaded command: avatar
+- [2025-06-17 17:38:47] [INFO] Loaded command: botinfo
+- [2025-06-17 17:38:47] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:38:47] [INFO] Loaded command: help
+- [2025-06-17 17:38:47] [INFO] Loaded command: invite
+- [2025-06-17 17:38:47] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:38:47] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:38:47] [INFO] Loaded command: userinfo
+- [2025-06-17 17:38:47] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:38:47] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:38:47] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:38:47] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:38:47] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:38:47] [INFO] Loaded event: ready
+- [2025-06-17 17:38:47] [INFO] Loaded slash command: ping
+- [2025-06-17 17:38:47] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:38:47] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:38:47] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:38:47] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:38:48] [INFO] ✅ Database connection successful
+- [2025-06-17 17:38:48] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:38:48] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:38:48] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:38:48] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:38:48] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:38:48] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:38:48] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:38:48] [INFO] ✅ Premium system ready
+- [2025-06-17 17:38:48] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:38:49] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:38:49] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:38:49] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:38:49] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:38:49] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:38:49] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:38:49] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:38:49] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:38:49] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:38:49] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:38:50] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:38:50] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:38:58] [ERROR] ❌ Failed to create database backup: Error: Command failed: pg_dump -h aws-0-eu-west-3.pooler.supabase.com -p 6543 -U postgres.iaszkaiquyvndhbzsqwu -d postgres -F c -f C:\Users\MR AHMET\Desktop\paralelbot-js-master\backups\backup-2025-06-17T17-38-58-381Z.sql
+'pg_dump' is not recognized as an internal or external command,
+operable program or batch file.
+
+- [2025-06-17 17:40:06] [INFO] Loaded command: autoban
+- [2025-06-17 17:40:06] [INFO] Loaded command: autospam
+- [2025-06-17 17:40:06] [INFO] Loaded command: add
+- [2025-06-17 17:40:06] [INFO] Loaded command: ban
+- [2025-06-17 17:40:06] [INFO] Loaded command: clear
+- [2025-06-17 17:40:06] [INFO] Loaded command: delwarn
+- [2025-06-17 17:40:06] [INFO] Loaded command: deny
+- [2025-06-17 17:40:06] [INFO] Loaded command: jail
+- [2025-06-17 17:40:06] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:40:06] [INFO] Loaded command: kick
+- [2025-06-17 17:40:06] [INFO] Loaded command: lock
+- [2025-06-17 17:40:06] [INFO] Loaded command: move
+- [2025-06-17 17:40:06] [INFO] Loaded command: mute
+- [2025-06-17 17:40:06] [INFO] Loaded command: nickname
+- [2025-06-17 17:40:06] [INFO] Loaded command: role
+- [2025-06-17 17:40:06] [INFO] Loaded command: setautorole
+- [2025-06-17 17:40:06] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:40:06] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:40:06] [INFO] Loaded command: slowmode
+- [2025-06-17 17:40:06] [INFO] Loaded command: unban
+- [2025-06-17 17:40:06] [INFO] Loaded command: unjail
+- [2025-06-17 17:40:06] [INFO] Loaded command: unlock
+- [2025-06-17 17:40:06] [INFO] Loaded command: unmute
+- [2025-06-17 17:40:06] [INFO] Loaded command: verify
+- [2025-06-17 17:40:06] [INFO] Loaded command: warn
+- [2025-06-17 17:40:06] [INFO] Loaded command: warns
+- [2025-06-17 17:40:06] [INFO] Loaded command: massdm
+- [2025-06-17 17:40:07] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:40:07] [INFO] Loaded command: premium
+- [2025-06-17 17:40:07] [INFO] Loaded command: setuproles
+- [2025-06-17 17:40:07] [INFO] Loaded command: shutdown
+- [2025-06-17 17:40:07] [INFO] Loaded command: modmail
+- [2025-06-17 17:40:07] [INFO] Loaded command: moveall
+- [2025-06-17 17:40:07] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:40:07] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:40:07] [INFO] Loaded command: ping
+- [2025-06-17 17:40:07] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:40:07] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:40:07] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:40:07] [INFO] Loaded command: avatar
+- [2025-06-17 17:40:07] [INFO] Loaded command: botinfo
+- [2025-06-17 17:40:07] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:40:07] [INFO] Loaded command: help
+- [2025-06-17 17:40:07] [INFO] Loaded command: invite
+- [2025-06-17 17:40:07] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:40:07] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:40:07] [INFO] Loaded command: userinfo
+- [2025-06-17 17:40:07] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:40:07] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:40:07] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:40:07] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:40:07] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:40:07] [INFO] Loaded event: ready
+- [2025-06-17 17:40:07] [INFO] Loaded slash command: ping
+- [2025-06-17 17:40:07] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:40:07] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:40:07] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:40:07] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:40:07] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:40:07] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:40:07] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:40:07] [INFO] ✅ Premium system ready
+- [2025-06-17 17:40:07] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:40:07] [INFO] ✅ Database connection successful
+- [2025-06-17 17:40:07] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:40:07] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:40:07] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:40:07] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:40:08] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:40:08] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:40:08] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:40:08] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:40:08] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:40:08] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:40:08] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:40:08] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:40:08] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:40:08] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:40:08] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:40:08] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:40:32] [INFO] Loaded command: autoban
+- [2025-06-17 17:40:32] [INFO] Loaded command: autospam
+- [2025-06-17 17:40:32] [INFO] Loaded command: add
+- [2025-06-17 17:40:32] [INFO] Loaded command: ban
+- [2025-06-17 17:40:32] [INFO] Loaded command: clear
+- [2025-06-17 17:40:32] [INFO] Loaded command: delwarn
+- [2025-06-17 17:40:32] [INFO] Loaded command: deny
+- [2025-06-17 17:40:32] [INFO] Loaded command: jail
+- [2025-06-17 17:40:32] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:40:32] [INFO] Loaded command: kick
+- [2025-06-17 17:40:32] [INFO] Loaded command: lock
+- [2025-06-17 17:40:33] [INFO] Loaded command: move
+- [2025-06-17 17:40:33] [INFO] Loaded command: mute
+- [2025-06-17 17:40:33] [INFO] Loaded command: nickname
+- [2025-06-17 17:40:33] [INFO] Loaded command: role
+- [2025-06-17 17:40:33] [INFO] Loaded command: setautorole
+- [2025-06-17 17:40:33] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:40:33] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:40:33] [INFO] Loaded command: slowmode
+- [2025-06-17 17:40:33] [INFO] Loaded command: unban
+- [2025-06-17 17:40:33] [INFO] Loaded command: unjail
+- [2025-06-17 17:40:33] [INFO] Loaded command: unlock
+- [2025-06-17 17:40:33] [INFO] Loaded command: unmute
+- [2025-06-17 17:40:33] [INFO] Loaded command: verify
+- [2025-06-17 17:40:33] [INFO] Loaded command: warn
+- [2025-06-17 17:40:33] [INFO] Loaded command: warns
+- [2025-06-17 17:40:33] [INFO] Loaded command: massdm
+- [2025-06-17 17:40:33] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:40:33] [INFO] Loaded command: premium
+- [2025-06-17 17:40:33] [INFO] Loaded command: setuproles
+- [2025-06-17 17:40:33] [INFO] Loaded command: shutdown
+- [2025-06-17 17:40:33] [INFO] Loaded command: modmail
+- [2025-06-17 17:40:33] [INFO] Loaded command: moveall
+- [2025-06-17 17:40:33] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:40:33] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:40:33] [INFO] Loaded command: ping
+- [2025-06-17 17:40:33] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:40:33] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:40:33] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:40:33] [INFO] Loaded command: avatar
+- [2025-06-17 17:40:33] [INFO] Loaded command: botinfo
+- [2025-06-17 17:40:33] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:40:33] [INFO] Loaded command: help
+- [2025-06-17 17:40:33] [INFO] Loaded command: invite
+- [2025-06-17 17:40:33] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:40:33] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:40:34] [INFO] Loaded command: userinfo
+- [2025-06-17 17:40:34] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:40:34] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:40:34] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:40:34] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:40:34] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:40:34] [INFO] Loaded event: ready
+- [2025-06-17 17:40:34] [INFO] Loaded slash command: ping
+- [2025-06-17 17:40:34] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:40:34] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:40:34] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:40:34] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:40:34] [INFO] ✅ Database connection successful
+- [2025-06-17 17:40:34] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:40:34] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:40:34] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:40:34] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:40:34] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:40:34] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:40:35] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:40:35] [INFO] ✅ Premium system ready
+- [2025-06-17 17:40:35] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:40:35] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:40:35] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:40:35] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:40:35] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:40:35] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:40:35] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:40:36] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:40:36] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:40:36] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:40:36] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:40:36] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:40:36] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:41:24] [INFO] Loaded command: autoban
+- [2025-06-17 17:41:24] [INFO] Loaded command: autospam
+- [2025-06-17 17:41:24] [INFO] Loaded command: add
+- [2025-06-17 17:41:24] [INFO] Loaded command: ban
+- [2025-06-17 17:41:24] [INFO] Loaded command: clear
+- [2025-06-17 17:41:24] [INFO] Loaded command: delwarn
+- [2025-06-17 17:41:24] [INFO] Loaded command: deny
+- [2025-06-17 17:41:24] [INFO] Loaded command: jail
+- [2025-06-17 17:41:24] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:41:24] [INFO] Loaded command: kick
+- [2025-06-17 17:41:24] [INFO] Loaded command: lock
+- [2025-06-17 17:41:24] [INFO] Loaded command: move
+- [2025-06-17 17:41:24] [INFO] Loaded command: mute
+- [2025-06-17 17:41:24] [INFO] Loaded command: nickname
+- [2025-06-17 17:41:24] [INFO] Loaded command: role
+- [2025-06-17 17:41:24] [INFO] Loaded command: setautorole
+- [2025-06-17 17:41:24] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:41:24] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:41:24] [INFO] Loaded command: slowmode
+- [2025-06-17 17:41:24] [INFO] Loaded command: unban
+- [2025-06-17 17:41:24] [INFO] Loaded command: unjail
+- [2025-06-17 17:41:24] [INFO] Loaded command: unlock
+- [2025-06-17 17:41:24] [INFO] Loaded command: unmute
+- [2025-06-17 17:41:24] [INFO] Loaded command: verify
+- [2025-06-17 17:41:24] [INFO] Loaded command: warn
+- [2025-06-17 17:41:24] [INFO] Loaded command: warns
+- [2025-06-17 17:41:24] [INFO] Loaded command: massdm
+- [2025-06-17 17:41:24] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:41:24] [INFO] Loaded command: premium
+- [2025-06-17 17:41:24] [INFO] Loaded command: setuproles
+- [2025-06-17 17:41:24] [INFO] Loaded command: shutdown
+- [2025-06-17 17:41:24] [INFO] Loaded command: modmail
+- [2025-06-17 17:41:24] [INFO] Loaded command: moveall
+- [2025-06-17 17:41:24] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:41:24] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:41:24] [INFO] Loaded command: ping
+- [2025-06-17 17:41:24] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:41:24] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:41:24] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:41:24] [INFO] Loaded command: avatar
+- [2025-06-17 17:41:24] [INFO] Loaded command: botinfo
+- [2025-06-17 17:41:24] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:41:24] [INFO] Loaded command: help
+- [2025-06-17 17:41:24] [INFO] Loaded command: invite
+- [2025-06-17 17:41:24] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:41:24] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:41:24] [INFO] Loaded command: userinfo
+- [2025-06-17 17:41:24] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:41:24] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:41:24] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:41:24] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:41:24] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:41:24] [INFO] Loaded event: ready
+- [2025-06-17 17:41:24] [INFO] Loaded slash command: ping
+- [2025-06-17 17:41:24] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:41:24] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:41:24] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:41:24] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:41:25] [INFO] ✅ Database connection successful
+- [2025-06-17 17:41:25] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:41:25] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:41:25] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:41:25] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:41:25] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:41:25] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:41:25] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:41:25] [INFO] ✅ Premium system ready
+- [2025-06-17 17:41:25] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:41:26] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:41:26] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:41:26] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:41:26] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:41:26] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:41:26] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:41:26] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:41:26] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:41:26] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:41:26] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:41:27] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:41:27] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:41:28] [INFO] ✅ Database backup created: C:\Users\MR AHMET\Desktop\paralelbot-js-master\backups\backup-2025-06-17T17-41-27-059Z.json
+- [2025-06-17 17:41:30] [INFO] Loaded command: autoban
+- [2025-06-17 17:41:30] [INFO] Loaded command: autospam
+- [2025-06-17 17:41:30] [INFO] Loaded command: add
+- [2025-06-17 17:41:30] [INFO] Loaded command: ban
+- [2025-06-17 17:41:30] [INFO] Loaded command: clear
+- [2025-06-17 17:41:30] [INFO] Loaded command: delwarn
+- [2025-06-17 17:41:30] [INFO] Loaded command: deny
+- [2025-06-17 17:41:30] [INFO] Loaded command: jail
+- [2025-06-17 17:41:30] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:41:30] [INFO] Loaded command: kick
+- [2025-06-17 17:41:30] [INFO] Loaded command: lock
+- [2025-06-17 17:41:30] [INFO] Loaded command: move
+- [2025-06-17 17:41:30] [INFO] Loaded command: mute
+- [2025-06-17 17:41:30] [INFO] Loaded command: nickname
+- [2025-06-17 17:41:30] [INFO] Loaded command: role
+- [2025-06-17 17:41:30] [INFO] Loaded command: setautorole
+- [2025-06-17 17:41:30] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:41:30] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:41:30] [INFO] Loaded command: slowmode
+- [2025-06-17 17:41:30] [INFO] Loaded command: unban
+- [2025-06-17 17:41:30] [INFO] Loaded command: unjail
+- [2025-06-17 17:41:30] [INFO] Loaded command: unlock
+- [2025-06-17 17:41:30] [INFO] Loaded command: unmute
+- [2025-06-17 17:41:30] [INFO] Loaded command: verify
+- [2025-06-17 17:41:30] [INFO] Loaded command: warn
+- [2025-06-17 17:41:30] [INFO] Loaded command: warns
+- [2025-06-17 17:41:30] [INFO] Loaded command: massdm
+- [2025-06-17 17:41:30] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:41:30] [INFO] Loaded command: premium
+- [2025-06-17 17:41:30] [INFO] Loaded command: setuproles
+- [2025-06-17 17:41:30] [INFO] Loaded command: shutdown
+- [2025-06-17 17:41:30] [INFO] Loaded command: modmail
+- [2025-06-17 17:41:30] [INFO] Loaded command: moveall
+- [2025-06-17 17:41:30] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:41:30] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:41:30] [INFO] Loaded command: ping
+- [2025-06-17 17:41:30] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:41:30] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:41:30] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:41:30] [INFO] Loaded command: avatar
+- [2025-06-17 17:41:30] [INFO] Loaded command: botinfo
+- [2025-06-17 17:41:30] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:41:30] [INFO] Loaded command: help
+- [2025-06-17 17:41:30] [INFO] Loaded command: invite
+- [2025-06-17 17:41:30] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:41:30] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:41:30] [INFO] Loaded command: userinfo
+- [2025-06-17 17:41:30] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:41:30] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:41:30] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:41:30] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:41:30] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:41:30] [INFO] Loaded event: ready
+- [2025-06-17 17:41:30] [INFO] Loaded slash command: ping
+- [2025-06-17 17:41:30] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:41:30] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:41:30] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:41:30] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:41:31] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:41:31] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:41:31] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:41:31] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:41:31] [INFO] ✅ Database connection successful
+- [2025-06-17 17:41:31] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:41:31] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:41:31] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:41:31] [INFO] ✅ Premium system ready
+- [2025-06-17 17:41:31] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:41:32] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:41:32] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:41:32] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:41:32] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:41:32] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:41:32] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:41:32] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:41:32] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:41:32] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:41:32] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:41:32] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:41:32] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:42:07] [INFO] Loaded command: autoban
+- [2025-06-17 17:42:07] [INFO] Loaded command: autospam
+- [2025-06-17 17:42:07] [INFO] Loaded command: add
+- [2025-06-17 17:42:07] [INFO] Loaded command: ban
+- [2025-06-17 17:42:07] [INFO] Loaded command: clear
+- [2025-06-17 17:42:07] [INFO] Loaded command: delwarn
+- [2025-06-17 17:42:07] [INFO] Loaded command: deny
+- [2025-06-17 17:42:07] [INFO] Loaded command: jail
+- [2025-06-17 17:42:07] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:42:07] [INFO] Loaded command: kick
+- [2025-06-17 17:42:07] [INFO] Loaded command: lock
+- [2025-06-17 17:42:07] [INFO] Loaded command: move
+- [2025-06-17 17:42:07] [INFO] Loaded command: mute
+- [2025-06-17 17:42:07] [INFO] Loaded command: nickname
+- [2025-06-17 17:42:07] [INFO] Loaded command: role
+- [2025-06-17 17:42:07] [INFO] Loaded command: setautorole
+- [2025-06-17 17:42:07] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:42:07] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:42:07] [INFO] Loaded command: slowmode
+- [2025-06-17 17:42:07] [INFO] Loaded command: unban
+- [2025-06-17 17:42:07] [INFO] Loaded command: unjail
+- [2025-06-17 17:42:07] [INFO] Loaded command: unlock
+- [2025-06-17 17:42:07] [INFO] Loaded command: unmute
+- [2025-06-17 17:42:07] [INFO] Loaded command: verify
+- [2025-06-17 17:42:08] [INFO] Loaded command: warn
+- [2025-06-17 17:42:08] [INFO] Loaded command: warns
+- [2025-06-17 17:42:08] [INFO] Loaded command: massdm
+- [2025-06-17 17:42:08] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:42:08] [INFO] Loaded command: premium
+- [2025-06-17 17:42:08] [INFO] Loaded command: setuproles
+- [2025-06-17 17:42:08] [INFO] Loaded command: shutdown
+- [2025-06-17 17:42:08] [INFO] Loaded command: modmail
+- [2025-06-17 17:42:08] [INFO] Loaded command: moveall
+- [2025-06-17 17:42:08] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:42:08] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:42:08] [INFO] Loaded command: ping
+- [2025-06-17 17:42:08] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:42:08] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:42:08] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:42:08] [INFO] Loaded command: avatar
+- [2025-06-17 17:42:08] [INFO] Loaded command: botinfo
+- [2025-06-17 17:42:08] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:42:08] [INFO] Loaded command: help
+- [2025-06-17 17:42:08] [INFO] Loaded command: invite
+- [2025-06-17 17:42:08] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:42:08] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:42:08] [INFO] Loaded command: userinfo
+- [2025-06-17 17:42:08] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:42:08] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:42:08] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:42:08] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:42:08] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:42:08] [INFO] Loaded event: ready
+- [2025-06-17 17:42:08] [INFO] Loaded slash command: ping
+- [2025-06-17 17:42:08] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:42:08] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:42:08] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:42:08] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:42:09] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:42:09] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:42:09] [INFO] ✅ Database connection successful
+- [2025-06-17 17:42:09] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:42:09] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:42:09] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:42:09] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:42:09] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:42:09] [INFO] ✅ Premium system ready
+- [2025-06-17 17:42:09] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:42:10] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:42:10] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:42:10] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:42:10] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:42:10] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:42:10] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:42:10] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:42:10] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:42:10] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:42:10] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:42:10] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:42:10] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:45:03] [INFO] Loaded command: autoban
+- [2025-06-17 17:45:03] [INFO] Loaded command: autospam
+- [2025-06-17 17:45:03] [INFO] Loaded command: add
+- [2025-06-17 17:45:03] [INFO] Loaded command: ban
+- [2025-06-17 17:45:03] [INFO] Loaded command: clear
+- [2025-06-17 17:45:03] [INFO] Loaded command: delwarn
+- [2025-06-17 17:45:03] [INFO] Loaded command: deny
+- [2025-06-17 17:45:03] [INFO] Loaded command: jail
+- [2025-06-17 17:45:03] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:45:03] [INFO] Loaded command: kick
+- [2025-06-17 17:45:03] [INFO] Loaded command: lock
+- [2025-06-17 17:45:03] [INFO] Loaded command: move
+- [2025-06-17 17:45:03] [INFO] Loaded command: mute
+- [2025-06-17 17:45:03] [INFO] Loaded command: nickname
+- [2025-06-17 17:45:03] [INFO] Loaded command: role
+- [2025-06-17 17:45:03] [INFO] Loaded command: setautorole
+- [2025-06-17 17:45:03] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:45:03] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:45:03] [INFO] Loaded command: slowmode
+- [2025-06-17 17:45:03] [INFO] Loaded command: unban
+- [2025-06-17 17:45:03] [INFO] Loaded command: unjail
+- [2025-06-17 17:45:03] [INFO] Loaded command: unlock
+- [2025-06-17 17:45:03] [INFO] Loaded command: unmute
+- [2025-06-17 17:45:03] [INFO] Loaded command: verify
+- [2025-06-17 17:45:03] [INFO] Loaded command: warn
+- [2025-06-17 17:45:03] [INFO] Loaded command: warns
+- [2025-06-17 17:45:03] [INFO] Loaded command: massdm
+- [2025-06-17 17:45:03] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:45:03] [INFO] Loaded command: premium
+- [2025-06-17 17:45:03] [INFO] Loaded command: setuproles
+- [2025-06-17 17:45:03] [INFO] Loaded command: shutdown
+- [2025-06-17 17:45:03] [INFO] Loaded command: modmail
+- [2025-06-17 17:45:03] [INFO] Loaded command: moveall
+- [2025-06-17 17:45:03] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:45:03] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:45:03] [INFO] Loaded command: ping
+- [2025-06-17 17:45:03] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:45:03] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:45:03] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:45:03] [INFO] Loaded command: avatar
+- [2025-06-17 17:45:03] [INFO] Loaded command: botinfo
+- [2025-06-17 17:45:03] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:45:03] [INFO] Loaded command: help
+- [2025-06-17 17:45:03] [INFO] Loaded command: invite
+- [2025-06-17 17:45:04] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:45:04] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:45:04] [INFO] Loaded command: userinfo
+- [2025-06-17 17:45:04] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:45:04] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:45:04] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:45:04] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:45:04] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:45:04] [INFO] Loaded event: ready
+- [2025-06-17 17:45:04] [INFO] Loaded slash command: ping
+- [2025-06-17 17:45:04] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:45:04] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:45:04] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:45:04] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:45:04] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:45:04] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:45:04] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:45:04] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:45:04] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:45:04] [INFO] ✅ Premium system ready
+- [2025-06-17 17:45:04] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:45:05] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:45:05] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:45:05] [INFO] ✅ Database connection successful
+- [2025-06-17 17:45:05] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:45:05] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:45:05] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:45:05] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:45:05] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:45:05] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:45:05] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:45:05] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:45:05] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:45:05] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:45:05] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:45:05] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:45:23] [INFO] Loaded command: autoban
+- [2025-06-17 17:45:23] [INFO] Loaded command: autospam
+- [2025-06-17 17:45:23] [INFO] Loaded command: add
+- [2025-06-17 17:45:23] [INFO] Loaded command: ban
+- [2025-06-17 17:45:23] [INFO] Loaded command: clear
+- [2025-06-17 17:45:23] [INFO] Loaded command: delwarn
+- [2025-06-17 17:45:23] [INFO] Loaded command: deny
+- [2025-06-17 17:45:23] [INFO] Loaded command: jail
+- [2025-06-17 17:45:23] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:45:23] [INFO] Loaded command: kick
+- [2025-06-17 17:45:23] [INFO] Loaded command: lock
+- [2025-06-17 17:45:23] [INFO] Loaded command: move
+- [2025-06-17 17:45:23] [INFO] Loaded command: mute
+- [2025-06-17 17:45:23] [INFO] Loaded command: nickname
+- [2025-06-17 17:45:23] [INFO] Loaded command: role
+- [2025-06-17 17:45:23] [INFO] Loaded command: setautorole
+- [2025-06-17 17:45:23] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:45:23] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:45:23] [INFO] Loaded command: slowmode
+- [2025-06-17 17:45:23] [INFO] Loaded command: unban
+- [2025-06-17 17:45:23] [INFO] Loaded command: unjail
+- [2025-06-17 17:45:23] [INFO] Loaded command: unlock
+- [2025-06-17 17:45:23] [INFO] Loaded command: unmute
+- [2025-06-17 17:45:23] [INFO] Loaded command: verify
+- [2025-06-17 17:45:23] [INFO] Loaded command: warn
+- [2025-06-17 17:45:23] [INFO] Loaded command: warns
+- [2025-06-17 17:45:23] [INFO] Loaded command: massdm
+- [2025-06-17 17:45:23] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:45:23] [INFO] Loaded command: premium
+- [2025-06-17 17:45:23] [INFO] Loaded command: setuproles
+- [2025-06-17 17:45:23] [INFO] Loaded command: shutdown
+- [2025-06-17 17:45:23] [INFO] Loaded command: modmail
+- [2025-06-17 17:45:23] [INFO] Loaded command: moveall
+- [2025-06-17 17:45:23] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:45:23] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:45:23] [INFO] Loaded command: ping
+- [2025-06-17 17:45:23] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:45:23] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:45:23] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:45:23] [INFO] Loaded command: avatar
+- [2025-06-17 17:45:23] [INFO] Loaded command: botinfo
+- [2025-06-17 17:45:23] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:45:24] [INFO] Loaded command: help
+- [2025-06-17 17:45:24] [INFO] Loaded command: invite
+- [2025-06-17 17:45:24] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:45:24] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:45:24] [INFO] Loaded command: userinfo
+- [2025-06-17 17:45:24] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:45:24] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:45:24] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:45:24] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:45:24] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:45:24] [INFO] Loaded event: ready
+- [2025-06-17 17:45:24] [INFO] Loaded slash command: ping
+- [2025-06-17 17:45:24] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:45:24] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:45:24] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:45:24] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:45:24] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:45:24] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:45:24] [INFO] ✅ Database connection successful
+- [2025-06-17 17:45:24] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:45:24] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:45:24] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:45:24] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:45:24] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:45:24] [INFO] ✅ Premium system ready
+- [2025-06-17 17:45:24] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:45:25] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:45:25] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:45:25] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:45:25] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:45:25] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:45:25] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:45:25] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:45:25] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:45:25] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:45:25] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:45:25] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:45:25] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:45:37] [INFO] Loaded command: autoban
+- [2025-06-17 17:45:37] [INFO] Loaded command: autospam
+- [2025-06-17 17:45:37] [INFO] Loaded command: add
+- [2025-06-17 17:45:37] [INFO] Loaded command: ban
+- [2025-06-17 17:45:37] [INFO] Loaded command: clear
+- [2025-06-17 17:45:37] [INFO] Loaded command: delwarn
+- [2025-06-17 17:45:37] [INFO] Loaded command: deny
+- [2025-06-17 17:45:37] [INFO] Loaded command: jail
+- [2025-06-17 17:45:37] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:45:37] [INFO] Loaded command: kick
+- [2025-06-17 17:45:37] [INFO] Loaded command: lock
+- [2025-06-17 17:45:37] [INFO] Loaded command: move
+- [2025-06-17 17:45:37] [INFO] Loaded command: mute
+- [2025-06-17 17:45:37] [INFO] Loaded command: nickname
+- [2025-06-17 17:45:37] [INFO] Loaded command: role
+- [2025-06-17 17:45:37] [INFO] Loaded command: setautorole
+- [2025-06-17 17:45:37] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:45:37] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:45:37] [INFO] Loaded command: slowmode
+- [2025-06-17 17:45:37] [INFO] Loaded command: unban
+- [2025-06-17 17:45:37] [INFO] Loaded command: unjail
+- [2025-06-17 17:45:37] [INFO] Loaded command: unlock
+- [2025-06-17 17:45:37] [INFO] Loaded command: unmute
+- [2025-06-17 17:45:37] [INFO] Loaded command: verify
+- [2025-06-17 17:45:37] [INFO] Loaded command: warn
+- [2025-06-17 17:45:37] [INFO] Loaded command: warns
+- [2025-06-17 17:45:37] [INFO] Loaded command: massdm
+- [2025-06-17 17:45:37] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:45:37] [INFO] Loaded command: premium
+- [2025-06-17 17:45:37] [INFO] Loaded command: setuproles
+- [2025-06-17 17:45:37] [INFO] Loaded command: shutdown
+- [2025-06-17 17:45:37] [INFO] Loaded command: modmail
+- [2025-06-17 17:45:37] [INFO] Loaded command: moveall
+- [2025-06-17 17:45:37] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:45:37] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:45:37] [INFO] Loaded command: ping
+- [2025-06-17 17:45:37] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:45:37] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:45:37] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:45:37] [INFO] Loaded command: avatar
+- [2025-06-17 17:45:37] [INFO] Loaded command: botinfo
+- [2025-06-17 17:45:37] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:45:37] [INFO] Loaded command: help
+- [2025-06-17 17:45:37] [INFO] Loaded command: invite
+- [2025-06-17 17:45:37] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:45:37] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:45:37] [INFO] Loaded command: userinfo
+- [2025-06-17 17:45:37] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:45:37] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:45:37] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:45:37] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:45:37] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:45:37] [INFO] Loaded event: ready
+- [2025-06-17 17:45:37] [INFO] Loaded slash command: ping
+- [2025-06-17 17:45:37] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:45:38] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:45:38] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:45:38] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:45:38] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:45:38] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:45:38] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:45:38] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:45:38] [INFO] ✅ Database connection successful
+- [2025-06-17 17:45:38] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:45:38] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:45:38] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:45:38] [INFO] ✅ Premium system ready
+- [2025-06-17 17:45:38] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:45:39] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:45:39] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:45:39] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:45:39] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:45:39] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:45:39] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:45:39] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:45:39] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:45:39] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:45:39] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:45:39] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:45:39] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:45:49] [INFO] Loaded command: autoban
+- [2025-06-17 17:45:49] [INFO] Loaded command: autospam
+- [2025-06-17 17:45:49] [INFO] Loaded command: add
+- [2025-06-17 17:45:49] [INFO] Loaded command: ban
+- [2025-06-17 17:45:49] [INFO] Loaded command: clear
+- [2025-06-17 17:45:49] [INFO] Loaded command: delwarn
+- [2025-06-17 17:45:49] [INFO] Loaded command: deny
+- [2025-06-17 17:45:49] [INFO] Loaded command: jail
+- [2025-06-17 17:45:49] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:45:49] [INFO] Loaded command: kick
+- [2025-06-17 17:45:49] [INFO] Loaded command: lock
+- [2025-06-17 17:45:49] [INFO] Loaded command: move
+- [2025-06-17 17:45:50] [INFO] Loaded command: mute
+- [2025-06-17 17:45:50] [INFO] Loaded command: nickname
+- [2025-06-17 17:45:50] [INFO] Loaded command: role
+- [2025-06-17 17:45:50] [INFO] Loaded command: setautorole
+- [2025-06-17 17:45:50] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:45:50] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:45:50] [INFO] Loaded command: slowmode
+- [2025-06-17 17:45:50] [INFO] Loaded command: unban
+- [2025-06-17 17:45:50] [INFO] Loaded command: unjail
+- [2025-06-17 17:45:50] [INFO] Loaded command: unlock
+- [2025-06-17 17:45:50] [INFO] Loaded command: unmute
+- [2025-06-17 17:45:50] [INFO] Loaded command: verify
+- [2025-06-17 17:45:50] [INFO] Loaded command: warn
+- [2025-06-17 17:45:50] [INFO] Loaded command: warns
+- [2025-06-17 17:45:50] [INFO] Loaded command: massdm
+- [2025-06-17 17:45:50] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:45:50] [INFO] Loaded command: premium
+- [2025-06-17 17:45:50] [INFO] Loaded command: setuproles
+- [2025-06-17 17:45:50] [INFO] Loaded command: shutdown
+- [2025-06-17 17:45:50] [INFO] Loaded command: modmail
+- [2025-06-17 17:45:50] [INFO] Loaded command: moveall
+- [2025-06-17 17:45:50] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:45:50] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:45:50] [INFO] Loaded command: ping
+- [2025-06-17 17:45:50] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:45:50] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:45:50] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:45:50] [INFO] Loaded command: avatar
+- [2025-06-17 17:45:50] [INFO] Loaded command: botinfo
+- [2025-06-17 17:45:50] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:45:50] [INFO] Loaded command: help
+- [2025-06-17 17:45:50] [INFO] Loaded command: invite
+- [2025-06-17 17:45:50] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:45:50] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:45:50] [INFO] Loaded command: userinfo
+- [2025-06-17 17:45:50] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:45:50] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:45:50] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:45:50] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:45:50] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:45:50] [INFO] Loaded event: ready
+- [2025-06-17 17:45:50] [INFO] Loaded slash command: ping
+- [2025-06-17 17:45:50] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:45:50] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:45:50] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:45:50] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:45:50] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:45:50] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:45:50] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:45:50] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:45:50] [INFO] ✅ Database connection successful
+- [2025-06-17 17:45:50] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:45:50] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:45:51] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:45:51] [INFO] ✅ Premium system ready
+- [2025-06-17 17:45:51] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:45:51] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:45:52] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:45:52] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:45:52] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:45:52] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:45:52] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:45:52] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:45:52] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:45:52] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:45:52] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:45:59] [INFO] Loaded command: autoban
+- [2025-06-17 17:45:59] [INFO] Loaded command: autospam
+- [2025-06-17 17:45:59] [INFO] Loaded command: add
+- [2025-06-17 17:45:59] [INFO] Loaded command: ban
+- [2025-06-17 17:45:59] [INFO] Loaded command: clear
+- [2025-06-17 17:45:59] [INFO] Loaded command: delwarn
+- [2025-06-17 17:45:59] [INFO] Loaded command: deny
+- [2025-06-17 17:45:59] [INFO] Loaded command: jail
+- [2025-06-17 17:45:59] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:45:59] [INFO] Loaded command: kick
+- [2025-06-17 17:45:59] [INFO] Loaded command: lock
+- [2025-06-17 17:45:59] [INFO] Loaded command: move
+- [2025-06-17 17:45:59] [INFO] Loaded command: mute
+- [2025-06-17 17:45:59] [INFO] Loaded command: nickname
+- [2025-06-17 17:45:59] [INFO] Loaded command: role
+- [2025-06-17 17:45:59] [INFO] Loaded command: setautorole
+- [2025-06-17 17:45:59] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:45:59] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:45:59] [INFO] Loaded command: slowmode
+- [2025-06-17 17:45:59] [INFO] Loaded command: unban
+- [2025-06-17 17:45:59] [INFO] Loaded command: unjail
+- [2025-06-17 17:45:59] [INFO] Loaded command: unlock
+- [2025-06-17 17:45:59] [INFO] Loaded command: unmute
+- [2025-06-17 17:45:59] [INFO] Loaded command: verify
+- [2025-06-17 17:45:59] [INFO] Loaded command: warn
+- [2025-06-17 17:45:59] [INFO] Loaded command: warns
+- [2025-06-17 17:45:59] [INFO] Loaded command: massdm
+- [2025-06-17 17:45:59] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:45:59] [INFO] Loaded command: premium
+- [2025-06-17 17:45:59] [INFO] Loaded command: setuproles
+- [2025-06-17 17:45:59] [INFO] Loaded command: shutdown
+- [2025-06-17 17:45:59] [INFO] Loaded command: modmail
+- [2025-06-17 17:45:59] [INFO] Loaded command: moveall
+- [2025-06-17 17:45:59] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:45:59] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:45:59] [INFO] Loaded command: ping
+- [2025-06-17 17:45:59] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:45:59] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:45:59] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:45:59] [INFO] Loaded command: avatar
+- [2025-06-17 17:45:59] [INFO] Loaded command: botinfo
+- [2025-06-17 17:45:59] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:45:59] [INFO] Loaded command: help
+- [2025-06-17 17:45:59] [INFO] Loaded command: invite
+- [2025-06-17 17:45:59] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:45:59] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:45:59] [INFO] Loaded command: userinfo
+- [2025-06-17 17:45:59] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:45:59] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:45:59] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:45:59] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:45:59] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:45:59] [INFO] Loaded event: ready
+- [2025-06-17 17:45:59] [INFO] Loaded slash command: ping
+- [2025-06-17 17:45:59] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:45:59] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:45:59] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:45:59] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:46:00] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:46:00] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:46:00] [INFO] ✅ Database connection successful
+- [2025-06-17 17:46:00] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:46:00] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:46:00] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:46:00] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:46:00] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:46:00] [INFO] ✅ Premium system ready
+- [2025-06-17 17:46:00] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:46:01] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:46:01] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:46:01] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:46:01] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:46:01] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:46:01] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:46:01] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:46:01] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:46:01] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:46:01] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:46:06] [INFO] Loaded command: autoban
+- [2025-06-17 17:46:06] [INFO] Loaded command: autospam
+- [2025-06-17 17:46:06] [INFO] Loaded command: add
+- [2025-06-17 17:46:06] [INFO] Loaded command: ban
+- [2025-06-17 17:46:06] [INFO] Loaded command: clear
+- [2025-06-17 17:46:06] [INFO] Loaded command: delwarn
+- [2025-06-17 17:46:06] [INFO] Loaded command: deny
+- [2025-06-17 17:46:06] [INFO] Loaded command: jail
+- [2025-06-17 17:46:06] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:46:06] [INFO] Loaded command: kick
+- [2025-06-17 17:46:06] [INFO] Loaded command: lock
+- [2025-06-17 17:46:06] [INFO] Loaded command: move
+- [2025-06-17 17:46:06] [INFO] Loaded command: mute
+- [2025-06-17 17:46:06] [INFO] Loaded command: nickname
+- [2025-06-17 17:46:06] [INFO] Loaded command: role
+- [2025-06-17 17:46:06] [INFO] Loaded command: setautorole
+- [2025-06-17 17:46:06] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:46:06] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:46:06] [INFO] Loaded command: slowmode
+- [2025-06-17 17:46:06] [INFO] Loaded command: unban
+- [2025-06-17 17:46:06] [INFO] Loaded command: unjail
+- [2025-06-17 17:46:06] [INFO] Loaded command: unlock
+- [2025-06-17 17:46:06] [INFO] Loaded command: unmute
+- [2025-06-17 17:46:06] [INFO] Loaded command: verify
+- [2025-06-17 17:46:06] [INFO] Loaded command: warn
+- [2025-06-17 17:46:06] [INFO] Loaded command: warns
+- [2025-06-17 17:46:06] [INFO] Loaded command: massdm
+- [2025-06-17 17:46:06] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:46:06] [INFO] Loaded command: premium
+- [2025-06-17 17:46:06] [INFO] Loaded command: setuproles
+- [2025-06-17 17:46:07] [INFO] Loaded command: shutdown
+- [2025-06-17 17:46:07] [INFO] Loaded command: modmail
+- [2025-06-17 17:46:07] [INFO] Loaded command: moveall
+- [2025-06-17 17:46:07] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:46:07] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:46:07] [INFO] Loaded command: ping
+- [2025-06-17 17:46:07] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:46:07] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:46:07] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:46:07] [INFO] Loaded command: avatar
+- [2025-06-17 17:46:07] [INFO] Loaded command: botinfo
+- [2025-06-17 17:46:07] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:46:07] [INFO] Loaded command: help
+- [2025-06-17 17:46:07] [INFO] Loaded command: invite
+- [2025-06-17 17:46:07] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:46:07] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:46:07] [INFO] Loaded command: userinfo
+- [2025-06-17 17:46:07] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:46:07] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:46:07] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:46:07] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:46:07] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:46:07] [INFO] Loaded event: ready
+- [2025-06-17 17:46:07] [INFO] Loaded slash command: ping
+- [2025-06-17 17:46:07] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:46:07] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:46:07] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:46:07] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:46:07] [INFO] ✅ Database connection successful
+- [2025-06-17 17:46:07] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:46:07] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:46:07] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:46:07] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:46:07] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:46:07] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:46:08] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:46:08] [INFO] ✅ Premium system ready
+- [2025-06-17 17:46:08] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:46:08] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:46:08] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:46:08] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:46:08] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:46:08] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:46:08] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:46:08] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:46:08] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:46:08] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:46:08] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:46:09] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:46:09] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:46:24] [INFO] ✅ Database connection for backup utility is working
+- [2025-06-17 17:46:25] [INFO] ✅ Database backup created: C:\Users\MR AHMET\Desktop\paralelbot-js-master\backups\backup-2025-06-17T17-46-23-363Z.json
+- [2025-06-17 17:46:27] [INFO] Loaded command: autoban
+- [2025-06-17 17:46:27] [INFO] Loaded command: autospam
+- [2025-06-17 17:46:27] [INFO] Loaded command: add
+- [2025-06-17 17:46:27] [INFO] Loaded command: ban
+- [2025-06-17 17:46:27] [INFO] Loaded command: clear
+- [2025-06-17 17:46:27] [INFO] Loaded command: delwarn
+- [2025-06-17 17:46:27] [INFO] Loaded command: deny
+- [2025-06-17 17:46:27] [INFO] Loaded command: jail
+- [2025-06-17 17:46:27] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:46:27] [INFO] Loaded command: kick
+- [2025-06-17 17:46:27] [INFO] Loaded command: lock
+- [2025-06-17 17:46:27] [INFO] Loaded command: move
+- [2025-06-17 17:46:27] [INFO] Loaded command: mute
+- [2025-06-17 17:46:27] [INFO] Loaded command: nickname
+- [2025-06-17 17:46:27] [INFO] Loaded command: role
+- [2025-06-17 17:46:27] [INFO] Loaded command: setautorole
+- [2025-06-17 17:46:27] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:46:27] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:46:27] [INFO] Loaded command: slowmode
+- [2025-06-17 17:46:27] [INFO] Loaded command: unban
+- [2025-06-17 17:46:27] [INFO] Loaded command: unjail
+- [2025-06-17 17:46:27] [INFO] Loaded command: unlock
+- [2025-06-17 17:46:27] [INFO] Loaded command: unmute
+- [2025-06-17 17:46:27] [INFO] Loaded command: verify
+- [2025-06-17 17:46:27] [INFO] Loaded command: warn
+- [2025-06-17 17:46:27] [INFO] Loaded command: warns
+- [2025-06-17 17:46:27] [INFO] Loaded command: massdm
+- [2025-06-17 17:46:27] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:46:27] [INFO] Loaded command: premium
+- [2025-06-17 17:46:28] [INFO] Loaded command: setuproles
+- [2025-06-17 17:46:28] [INFO] Loaded command: shutdown
+- [2025-06-17 17:46:28] [INFO] Loaded command: modmail
+- [2025-06-17 17:46:28] [INFO] Loaded command: moveall
+- [2025-06-17 17:46:28] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:46:28] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:46:28] [INFO] Loaded command: ping
+- [2025-06-17 17:46:28] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:46:28] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:46:28] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:46:28] [INFO] Loaded command: avatar
+- [2025-06-17 17:46:28] [INFO] Loaded command: botinfo
+- [2025-06-17 17:46:28] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:46:28] [INFO] Loaded command: help
+- [2025-06-17 17:46:28] [INFO] Loaded command: invite
+- [2025-06-17 17:46:28] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:46:28] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:46:28] [INFO] Loaded command: userinfo
+- [2025-06-17 17:46:28] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:46:28] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:46:28] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:46:28] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:46:28] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:46:28] [INFO] Loaded event: ready
+- [2025-06-17 17:46:28] [INFO] Loaded slash command: ping
+- [2025-06-17 17:46:28] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:46:28] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:46:28] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:46:28] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:46:28] [INFO] ✅ Database connection successful
+- [2025-06-17 17:46:28] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:46:28] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:46:28] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:46:28] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:46:28] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:46:28] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:46:28] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:46:28] [INFO] ✅ Premium system ready
+- [2025-06-17 17:46:28] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:46:29] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:46:29] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:46:29] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:46:29] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:46:29] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:46:29] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:46:29] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:46:29] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:46:29] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:46:29] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:47:06] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:47:06] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:48:06] [INFO] Loaded command: autoban
+- [2025-06-17 17:48:06] [INFO] Loaded command: autospam
+- [2025-06-17 17:48:06] [INFO] Loaded command: add
+- [2025-06-17 17:48:06] [INFO] Loaded command: ban
+- [2025-06-17 17:48:06] [INFO] Loaded command: clear
+- [2025-06-17 17:48:06] [INFO] Loaded command: delwarn
+- [2025-06-17 17:48:06] [INFO] Loaded command: deny
+- [2025-06-17 17:48:06] [INFO] Loaded command: jail
+- [2025-06-17 17:48:06] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:48:06] [INFO] Loaded command: kick
+- [2025-06-17 17:48:06] [INFO] Loaded command: lock
+- [2025-06-17 17:48:06] [INFO] Loaded command: move
+- [2025-06-17 17:48:06] [INFO] Loaded command: mute
+- [2025-06-17 17:48:07] [INFO] Loaded command: nickname
+- [2025-06-17 17:48:07] [INFO] Loaded command: role
+- [2025-06-17 17:48:07] [INFO] Loaded command: setautorole
+- [2025-06-17 17:48:07] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:48:07] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:48:07] [INFO] Loaded command: slowmode
+- [2025-06-17 17:48:07] [INFO] Loaded command: unban
+- [2025-06-17 17:48:07] [INFO] Loaded command: unjail
+- [2025-06-17 17:48:07] [INFO] Loaded command: unlock
+- [2025-06-17 17:48:07] [INFO] Loaded command: unmute
+- [2025-06-17 17:48:07] [INFO] Loaded command: verify
+- [2025-06-17 17:48:07] [INFO] Loaded command: warn
+- [2025-06-17 17:48:07] [INFO] Loaded command: warns
+- [2025-06-17 17:48:07] [INFO] Loaded command: massdm
+- [2025-06-17 17:48:07] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:48:07] [INFO] Loaded command: premium
+- [2025-06-17 17:48:07] [INFO] Loaded command: setuproles
+- [2025-06-17 17:48:07] [INFO] Loaded command: shutdown
+- [2025-06-17 17:48:07] [INFO] Loaded command: modmail
+- [2025-06-17 17:48:07] [INFO] Loaded command: moveall
+- [2025-06-17 17:48:07] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:48:07] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:48:07] [INFO] Loaded command: ping
+- [2025-06-17 17:48:07] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:48:07] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:48:07] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:48:07] [INFO] Loaded command: avatar
+- [2025-06-17 17:48:07] [INFO] Loaded command: botinfo
+- [2025-06-17 17:48:07] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:48:07] [INFO] Loaded command: help
+- [2025-06-17 17:48:07] [INFO] Loaded command: invite
+- [2025-06-17 17:48:07] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:48:07] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:48:07] [INFO] Loaded command: userinfo
+- [2025-06-17 17:48:07] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:48:07] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:48:07] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:48:07] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:48:07] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:48:07] [INFO] Loaded event: ready
+- [2025-06-17 17:48:07] [INFO] Loaded slash command: ping
+- [2025-06-17 17:48:07] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:48:07] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:48:07] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:48:07] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:48:08] [INFO] ✅ Database connection successful
+- [2025-06-17 17:48:08] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:48:08] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:48:08] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:48:08] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:48:08] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:48:08] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:48:08] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:48:08] [INFO] ✅ Premium system ready
+- [2025-06-17 17:48:08] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:48:09] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:48:09] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:48:09] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:48:09] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:48:09] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:48:09] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:48:09] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:48:09] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:48:09] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:48:09] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:48:09] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:48:09] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:48:13] [INFO] Loaded command: autoban
+- [2025-06-17 17:48:13] [INFO] Loaded command: autospam
+- [2025-06-17 17:48:13] [INFO] Loaded command: add
+- [2025-06-17 17:48:13] [INFO] Loaded command: ban
+- [2025-06-17 17:48:13] [INFO] Loaded command: clear
+- [2025-06-17 17:48:13] [INFO] Loaded command: delwarn
+- [2025-06-17 17:48:13] [INFO] Loaded command: deny
+- [2025-06-17 17:48:13] [INFO] Loaded command: jail
+- [2025-06-17 17:48:13] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:48:13] [INFO] Loaded command: kick
+- [2025-06-17 17:48:13] [INFO] Loaded command: lock
+- [2025-06-17 17:48:13] [INFO] Loaded command: move
+- [2025-06-17 17:48:13] [INFO] Loaded command: mute
+- [2025-06-17 17:48:13] [INFO] Loaded command: nickname
+- [2025-06-17 17:48:13] [INFO] Loaded command: role
+- [2025-06-17 17:48:13] [INFO] Loaded command: setautorole
+- [2025-06-17 17:48:13] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:48:13] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:48:13] [INFO] Loaded command: slowmode
+- [2025-06-17 17:48:13] [INFO] Loaded command: unban
+- [2025-06-17 17:48:13] [INFO] Loaded command: unjail
+- [2025-06-17 17:48:13] [INFO] Loaded command: unlock
+- [2025-06-17 17:48:13] [INFO] Loaded command: unmute
+- [2025-06-17 17:48:13] [INFO] Loaded command: verify
+- [2025-06-17 17:48:13] [INFO] Loaded command: warn
+- [2025-06-17 17:48:13] [INFO] Loaded command: warns
+- [2025-06-17 17:48:13] [INFO] Loaded command: massdm
+- [2025-06-17 17:48:13] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:48:13] [INFO] Loaded command: premium
+- [2025-06-17 17:48:13] [INFO] Loaded command: setuproles
+- [2025-06-17 17:48:13] [INFO] Loaded command: shutdown
+- [2025-06-17 17:48:13] [INFO] Loaded command: modmail
+- [2025-06-17 17:48:13] [INFO] Loaded command: moveall
+- [2025-06-17 17:48:13] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:48:14] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:48:14] [INFO] Loaded command: ping
+- [2025-06-17 17:48:14] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:48:14] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:48:14] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:48:14] [INFO] Loaded command: avatar
+- [2025-06-17 17:48:14] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\utility\botinfo.js: SyntaxError: C:\Users\MR AHMET\Desktop\paralelbot-js-master\package.json: Expected double-quoted property name in JSON at position 570 (line 15 column 3)
+- [2025-06-17 17:48:14] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:48:14] [INFO] Loaded command: help
+- [2025-06-17 17:48:14] [INFO] Loaded command: invite
+- [2025-06-17 17:48:14] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:48:14] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:48:14] [INFO] Loaded command: userinfo
+- [2025-06-17 17:48:14] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:48:14] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:48:14] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:48:14] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:48:14] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:48:14] [INFO] Loaded event: ready
+- [2025-06-17 17:48:14] [INFO] Loaded slash command: ping
+- [2025-06-17 17:48:14] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:48:14] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:48:14] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:48:14] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:48:15] [INFO] ✅ Database connection successful
+- [2025-06-17 17:48:15] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:48:15] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:48:15] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:48:15] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:48:15] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:48:15] [INFO] ✅ Premium system ready
+- [2025-06-17 17:48:15] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:48:15] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:48:15] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:48:15] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:48:15] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:48:15] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:48:15] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:48:15] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:48:15] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:48:15] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:48:15] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:48:16] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:48:16] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:48:16] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:48:16] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:48:24] [INFO] Loaded command: autoban
+- [2025-06-17 17:48:24] [INFO] Loaded command: autospam
+- [2025-06-17 17:48:24] [INFO] Loaded command: add
+- [2025-06-17 17:48:24] [INFO] Loaded command: ban
+- [2025-06-17 17:48:24] [INFO] Loaded command: clear
+- [2025-06-17 17:48:24] [INFO] Loaded command: delwarn
+- [2025-06-17 17:48:24] [INFO] Loaded command: deny
+- [2025-06-17 17:48:24] [INFO] Loaded command: jail
+- [2025-06-17 17:48:24] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:48:24] [INFO] Loaded command: kick
+- [2025-06-17 17:48:24] [INFO] Loaded command: lock
+- [2025-06-17 17:48:24] [INFO] Loaded command: move
+- [2025-06-17 17:48:24] [INFO] Loaded command: mute
+- [2025-06-17 17:48:24] [INFO] Loaded command: nickname
+- [2025-06-17 17:48:24] [INFO] Loaded command: role
+- [2025-06-17 17:48:24] [INFO] Loaded command: setautorole
+- [2025-06-17 17:48:24] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:48:24] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:48:24] [INFO] Loaded command: slowmode
+- [2025-06-17 17:48:24] [INFO] Loaded command: unban
+- [2025-06-17 17:48:24] [INFO] Loaded command: unjail
+- [2025-06-17 17:48:24] [INFO] Loaded command: unlock
+- [2025-06-17 17:48:24] [INFO] Loaded command: unmute
+- [2025-06-17 17:48:24] [INFO] Loaded command: verify
+- [2025-06-17 17:48:24] [INFO] Loaded command: warn
+- [2025-06-17 17:48:24] [INFO] Loaded command: warns
+- [2025-06-17 17:48:24] [INFO] Loaded command: massdm
+- [2025-06-17 17:48:24] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:48:24] [INFO] Loaded command: premium
+- [2025-06-17 17:48:24] [INFO] Loaded command: setuproles
+- [2025-06-17 17:48:24] [INFO] Loaded command: shutdown
+- [2025-06-17 17:48:24] [INFO] Loaded command: modmail
+- [2025-06-17 17:48:24] [INFO] Loaded command: moveall
+- [2025-06-17 17:48:24] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:48:24] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:48:24] [INFO] Loaded command: ping
+- [2025-06-17 17:48:24] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:48:24] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:48:24] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:48:24] [INFO] Loaded command: avatar
+- [2025-06-17 17:48:24] [INFO] Loaded command: botinfo
+- [2025-06-17 17:48:24] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:48:24] [INFO] Loaded command: help
+- [2025-06-17 17:48:24] [INFO] Loaded command: invite
+- [2025-06-17 17:48:24] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:48:24] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:48:24] [INFO] Loaded command: userinfo
+- [2025-06-17 17:48:24] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:48:24] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:48:24] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:48:24] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:48:24] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:48:24] [INFO] Loaded event: ready
+- [2025-06-17 17:48:24] [INFO] Loaded slash command: ping
+- [2025-06-17 17:48:24] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:48:24] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:48:24] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:48:24] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:48:25] [INFO] ✅ Database connection successful
+- [2025-06-17 17:48:25] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:48:25] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:48:25] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:48:25] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:48:25] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:48:25] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:48:25] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:48:25] [INFO] ✅ Premium system ready
+- [2025-06-17 17:48:25] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:48:26] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:48:26] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:48:26] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:48:26] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:48:26] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:48:26] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:48:26] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:48:26] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:48:26] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:48:26] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:48:31] [ERROR] ❌ Failed to initialize database connection for backup utility: Error: DATABASE_URL environment variable is not set
+- [2025-06-17 17:48:31] [INFO] 🚀 Starting scheduled database backup...
+- [2025-06-17 17:48:31] [ERROR] Fatal error initializing database: Error: DATABASE_URL environment variable is not set
+- [2025-06-17 17:49:05] [ERROR] ❌ Failed to initialize database connection for backup utility: Error: DATABASE_URL environment variable is not set
+- [2025-06-17 17:49:05] [INFO] 🚀 Starting scheduled database backup...
+- [2025-06-17 17:49:05] [ERROR] Fatal error initializing database: Error: DATABASE_URL environment variable is not set
+- [2025-06-17 17:49:09] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:49:09] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:49:16] [INFO] Loaded command: autoban
+- [2025-06-17 17:49:16] [INFO] Loaded command: autospam
+- [2025-06-17 17:49:16] [INFO] Loaded command: add
+- [2025-06-17 17:49:17] [INFO] Loaded command: ban
+- [2025-06-17 17:49:17] [INFO] Loaded command: clear
+- [2025-06-17 17:49:17] [INFO] Loaded command: delwarn
+- [2025-06-17 17:49:17] [INFO] Loaded command: deny
+- [2025-06-17 17:49:17] [INFO] Loaded command: jail
+- [2025-06-17 17:49:17] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:49:17] [INFO] Loaded command: kick
+- [2025-06-17 17:49:17] [INFO] Loaded command: lock
+- [2025-06-17 17:49:17] [INFO] Loaded command: move
+- [2025-06-17 17:49:17] [INFO] Loaded command: mute
+- [2025-06-17 17:49:17] [INFO] Loaded command: nickname
+- [2025-06-17 17:49:17] [INFO] Loaded command: role
+- [2025-06-17 17:49:17] [INFO] Loaded command: setautorole
+- [2025-06-17 17:49:17] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:49:17] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:49:17] [INFO] Loaded command: slowmode
+- [2025-06-17 17:49:18] [INFO] Loaded command: unban
+- [2025-06-17 17:49:18] [INFO] Loaded command: unjail
+- [2025-06-17 17:49:18] [INFO] Loaded command: unlock
+- [2025-06-17 17:49:18] [INFO] Loaded command: unmute
+- [2025-06-17 17:49:18] [INFO] Loaded command: verify
+- [2025-06-17 17:49:18] [INFO] Loaded command: warn
+- [2025-06-17 17:49:18] [INFO] Loaded command: warns
+- [2025-06-17 17:49:18] [INFO] Loaded command: massdm
+- [2025-06-17 17:49:18] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:49:18] [INFO] Loaded command: premium
+- [2025-06-17 17:49:18] [INFO] Loaded command: setuproles
+- [2025-06-17 17:49:18] [INFO] Loaded command: shutdown
+- [2025-06-17 17:49:18] [INFO] Loaded command: modmail
+- [2025-06-17 17:49:18] [INFO] Loaded command: moveall
+- [2025-06-17 17:49:18] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:49:18] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:49:18] [INFO] Loaded command: ping
+- [2025-06-17 17:49:18] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:49:18] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:49:18] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:49:18] [INFO] Loaded command: avatar
+- [2025-06-17 17:49:18] [INFO] Loaded command: botinfo
+- [2025-06-17 17:49:18] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:49:18] [INFO] Loaded command: help
+- [2025-06-17 17:49:18] [INFO] Loaded command: invite
+- [2025-06-17 17:49:18] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:49:18] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:49:19] [INFO] Loaded command: userinfo
+- [2025-06-17 17:49:19] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:49:19] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:49:19] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:49:19] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:49:19] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:49:19] [INFO] Loaded event: ready
+- [2025-06-17 17:49:19] [INFO] Loaded slash command: ping
+- [2025-06-17 17:49:19] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:49:19] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:49:19] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:49:19] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:49:20] [INFO] ✅ Database connection successful
+- [2025-06-17 17:49:20] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:49:20] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:49:20] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:49:20] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:49:20] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:49:20] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:49:20] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:49:20] [INFO] ✅ Premium system ready
+- [2025-06-17 17:49:20] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:49:21] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:49:21] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:49:21] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:49:21] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:49:21] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:49:21] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:49:21] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:49:21] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:49:21] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:49:21] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:49:21] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:49:21] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:49:31] [INFO] Loaded command: autoban
+- [2025-06-17 17:49:31] [INFO] Loaded command: autospam
+- [2025-06-17 17:49:31] [INFO] Loaded command: add
+- [2025-06-17 17:49:31] [INFO] Loaded command: ban
+- [2025-06-17 17:49:31] [INFO] Loaded command: clear
+- [2025-06-17 17:49:31] [INFO] Loaded command: delwarn
+- [2025-06-17 17:49:31] [INFO] Loaded command: deny
+- [2025-06-17 17:49:31] [INFO] Loaded command: jail
+- [2025-06-17 17:49:31] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:49:31] [INFO] Loaded command: kick
+- [2025-06-17 17:49:31] [INFO] Loaded command: lock
+- [2025-06-17 17:49:31] [INFO] Loaded command: move
+- [2025-06-17 17:49:31] [INFO] Loaded command: mute
+- [2025-06-17 17:49:31] [INFO] Loaded command: nickname
+- [2025-06-17 17:49:31] [INFO] Loaded command: role
+- [2025-06-17 17:49:31] [INFO] Loaded command: setautorole
+- [2025-06-17 17:49:31] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:49:31] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:49:31] [INFO] Loaded command: slowmode
+- [2025-06-17 17:49:31] [INFO] Loaded command: unban
+- [2025-06-17 17:49:31] [INFO] Loaded command: unjail
+- [2025-06-17 17:49:31] [INFO] Loaded command: unlock
+- [2025-06-17 17:49:31] [INFO] Loaded command: unmute
+- [2025-06-17 17:49:31] [INFO] Loaded command: verify
+- [2025-06-17 17:49:31] [INFO] Loaded command: warn
+- [2025-06-17 17:49:31] [INFO] Loaded command: warns
+- [2025-06-17 17:49:31] [INFO] Loaded command: massdm
+- [2025-06-17 17:49:31] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:49:31] [INFO] Loaded command: premium
+- [2025-06-17 17:49:31] [INFO] Loaded command: setuproles
+- [2025-06-17 17:49:31] [INFO] Loaded command: shutdown
+- [2025-06-17 17:49:31] [INFO] Loaded command: modmail
+- [2025-06-17 17:49:31] [INFO] Loaded command: moveall
+- [2025-06-17 17:49:31] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:49:31] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:49:31] [INFO] Loaded command: ping
+- [2025-06-17 17:49:31] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:49:31] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:49:31] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:49:31] [INFO] Loaded command: avatar
+- [2025-06-17 17:49:31] [INFO] Loaded command: botinfo
+- [2025-06-17 17:49:31] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:49:31] [INFO] Loaded command: help
+- [2025-06-17 17:49:31] [INFO] Loaded command: invite
+- [2025-06-17 17:49:31] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:49:31] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:49:31] [INFO] Loaded command: userinfo
+- [2025-06-17 17:49:31] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:49:31] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:49:31] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:49:31] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:49:31] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:49:32] [INFO] Loaded event: ready
+- [2025-06-17 17:49:32] [INFO] Loaded slash command: ping
+- [2025-06-17 17:49:32] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:49:32] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:49:32] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:49:32] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:49:32] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:49:32] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:49:32] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:49:32] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:49:32] [INFO] ✅ Database connection successful
+- [2025-06-17 17:49:32] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:49:32] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:49:32] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:49:32] [INFO] ✅ Premium system ready
+- [2025-06-17 17:49:32] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:49:33] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:49:33] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:49:33] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:49:33] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:49:33] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:49:33] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:49:33] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:49:33] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:49:33] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:49:33] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:49:51] [INFO] Loaded command: autoban
+- [2025-06-17 17:49:51] [INFO] Loaded command: autospam
+- [2025-06-17 17:49:51] [INFO] Loaded command: add
+- [2025-06-17 17:49:51] [INFO] Loaded command: ban
+- [2025-06-17 17:49:51] [INFO] Loaded command: clear
+- [2025-06-17 17:49:51] [INFO] Loaded command: delwarn
+- [2025-06-17 17:49:51] [INFO] Loaded command: deny
+- [2025-06-17 17:49:51] [INFO] Loaded command: jail
+- [2025-06-17 17:49:51] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:49:51] [INFO] Loaded command: kick
+- [2025-06-17 17:49:51] [INFO] Loaded command: lock
+- [2025-06-17 17:49:51] [INFO] Loaded command: move
+- [2025-06-17 17:49:51] [INFO] Loaded command: mute
+- [2025-06-17 17:49:51] [INFO] Loaded command: nickname
+- [2025-06-17 17:49:51] [INFO] Loaded command: role
+- [2025-06-17 17:49:51] [INFO] Loaded command: setautorole
+- [2025-06-17 17:49:51] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:49:51] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:49:51] [INFO] Loaded command: slowmode
+- [2025-06-17 17:49:51] [INFO] Loaded command: unban
+- [2025-06-17 17:49:51] [INFO] Loaded command: unjail
+- [2025-06-17 17:49:51] [INFO] Loaded command: unlock
+- [2025-06-17 17:49:51] [INFO] Loaded command: unmute
+- [2025-06-17 17:49:51] [INFO] Loaded command: verify
+- [2025-06-17 17:49:51] [INFO] Loaded command: warn
+- [2025-06-17 17:49:51] [INFO] Loaded command: warns
+- [2025-06-17 17:49:51] [INFO] Loaded command: massdm
+- [2025-06-17 17:49:51] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:49:51] [INFO] Loaded command: premium
+- [2025-06-17 17:49:51] [INFO] Loaded command: setuproles
+- [2025-06-17 17:49:51] [INFO] Loaded command: shutdown
+- [2025-06-17 17:49:51] [INFO] Loaded command: modmail
+- [2025-06-17 17:49:51] [INFO] Loaded command: moveall
+- [2025-06-17 17:49:51] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:49:51] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:49:51] [INFO] Loaded command: ping
+- [2025-06-17 17:49:51] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:49:51] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:49:51] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:49:51] [INFO] Loaded command: avatar
+- [2025-06-17 17:49:51] [INFO] Loaded command: botinfo
+- [2025-06-17 17:49:51] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:49:51] [INFO] Loaded command: help
+- [2025-06-17 17:49:51] [INFO] Loaded command: invite
+- [2025-06-17 17:49:52] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:49:52] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:49:52] [INFO] Loaded command: userinfo
+- [2025-06-17 17:49:52] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:49:52] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:49:52] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:49:52] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:49:52] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:49:52] [INFO] Loaded event: ready
+- [2025-06-17 17:49:52] [INFO] Loaded slash command: ping
+- [2025-06-17 17:49:52] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:49:52] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:49:52] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:49:52] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:49:52] [INFO] ✅ Database connection successful
+- [2025-06-17 17:49:52] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:49:52] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:49:52] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:49:53] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:49:53] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:49:53] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:49:53] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:49:53] [INFO] ✅ Premium system ready
+- [2025-06-17 17:49:53] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:49:53] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:49:53] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:49:53] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:49:53] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:49:53] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:49:53] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:49:53] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:49:53] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:49:54] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:49:54] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:49:54] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:49:54] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:49:59] [INFO] Loaded command: autoban
+- [2025-06-17 17:49:59] [INFO] Loaded command: autospam
+- [2025-06-17 17:49:59] [INFO] Loaded command: add
+- [2025-06-17 17:49:59] [INFO] Loaded command: ban
+- [2025-06-17 17:49:59] [INFO] Loaded command: clear
+- [2025-06-17 17:49:59] [INFO] Loaded command: delwarn
+- [2025-06-17 17:49:59] [INFO] Loaded command: deny
+- [2025-06-17 17:49:59] [INFO] Loaded command: jail
+- [2025-06-17 17:49:59] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:49:59] [INFO] Loaded command: kick
+- [2025-06-17 17:49:59] [INFO] Loaded command: lock
+- [2025-06-17 17:49:59] [INFO] Loaded command: move
+- [2025-06-17 17:49:59] [INFO] Loaded command: mute
+- [2025-06-17 17:49:59] [INFO] Loaded command: nickname
+- [2025-06-17 17:49:59] [INFO] Loaded command: role
+- [2025-06-17 17:49:59] [INFO] Loaded command: setautorole
+- [2025-06-17 17:49:59] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:49:59] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:49:59] [INFO] Loaded command: slowmode
+- [2025-06-17 17:49:59] [INFO] Loaded command: unban
+- [2025-06-17 17:49:59] [INFO] Loaded command: unjail
+- [2025-06-17 17:49:59] [INFO] Loaded command: unlock
+- [2025-06-17 17:49:59] [INFO] Loaded command: unmute
+- [2025-06-17 17:49:59] [INFO] Loaded command: verify
+- [2025-06-17 17:49:59] [INFO] Loaded command: warn
+- [2025-06-17 17:49:59] [INFO] Loaded command: warns
+- [2025-06-17 17:49:59] [INFO] Loaded command: massdm
+- [2025-06-17 17:49:59] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:49:59] [INFO] Loaded command: premium
+- [2025-06-17 17:49:59] [INFO] Loaded command: setuproles
+- [2025-06-17 17:49:59] [INFO] Loaded command: shutdown
+- [2025-06-17 17:49:59] [INFO] Loaded command: modmail
+- [2025-06-17 17:49:59] [INFO] Loaded command: moveall
+- [2025-06-17 17:49:59] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:49:59] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:49:59] [INFO] Loaded command: ping
+- [2025-06-17 17:49:59] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:49:59] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:49:59] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:49:59] [INFO] Loaded command: avatar
+- [2025-06-17 17:49:59] [INFO] Loaded command: botinfo
+- [2025-06-17 17:49:59] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:49:59] [INFO] Loaded command: help
+- [2025-06-17 17:49:59] [INFO] Loaded command: invite
+- [2025-06-17 17:49:59] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:49:59] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:49:59] [INFO] Loaded command: userinfo
+- [2025-06-17 17:49:59] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:49:59] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:49:59] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:49:59] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:49:59] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:49:59] [INFO] Loaded event: ready
+- [2025-06-17 17:49:59] [INFO] Loaded slash command: ping
+- [2025-06-17 17:49:59] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:49:59] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:49:59] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:49:59] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:50:00] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:50:00] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:50:00] [INFO] ✅ Database connection successful
+- [2025-06-17 17:50:00] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:50:00] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:50:00] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:50:00] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:50:00] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:50:00] [INFO] ✅ Premium system ready
+- [2025-06-17 17:50:00] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:50:01] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:50:01] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:50:01] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:50:01] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:50:01] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:50:01] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:50:01] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:50:01] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:50:01] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:50:01] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:50:05] [INFO] 🚀 Starting scheduled database backup...
+- [2025-06-17 17:50:05] [INFO] ✅ Database connection for backup utility is working
+- [2025-06-17 17:50:06] [INFO] ✅ Database backup created: C:\Users\MR AHMET\Desktop\paralelbot-js-master\backups\backup-2025-06-17T17-50-05-326Z.json
+- [2025-06-17 17:50:06] [INFO] ✅ Backup created: C:\Users\MR AHMET\Desktop\paralelbot-js-master\backups\backup-2025-06-17T17-50-05-326Z.json
+- [2025-06-17 17:50:06] [INFO] ✅ Scheduled backup completed successfully
+- [2025-06-17 17:50:08] [INFO] Loaded command: autoban
+- [2025-06-17 17:50:08] [INFO] Loaded command: autospam
+- [2025-06-17 17:50:08] [INFO] Loaded command: add
+- [2025-06-17 17:50:08] [INFO] Loaded command: ban
+- [2025-06-17 17:50:08] [INFO] Loaded command: clear
+- [2025-06-17 17:50:08] [INFO] Loaded command: delwarn
+- [2025-06-17 17:50:08] [INFO] Loaded command: deny
+- [2025-06-17 17:50:08] [INFO] Loaded command: jail
+- [2025-06-17 17:50:08] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:50:08] [INFO] Loaded command: kick
+- [2025-06-17 17:50:08] [INFO] Loaded command: lock
+- [2025-06-17 17:50:08] [INFO] Loaded command: move
+- [2025-06-17 17:50:08] [INFO] Loaded command: mute
+- [2025-06-17 17:50:08] [INFO] Loaded command: nickname
+- [2025-06-17 17:50:08] [INFO] Loaded command: role
+- [2025-06-17 17:50:08] [INFO] Loaded command: setautorole
+- [2025-06-17 17:50:08] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:50:08] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:50:08] [INFO] Loaded command: slowmode
+- [2025-06-17 17:50:09] [INFO] Loaded command: unban
+- [2025-06-17 17:50:09] [INFO] Loaded command: unjail
+- [2025-06-17 17:50:09] [INFO] Loaded command: unlock
+- [2025-06-17 17:50:09] [INFO] Loaded command: unmute
+- [2025-06-17 17:50:09] [INFO] Loaded command: verify
+- [2025-06-17 17:50:09] [INFO] Loaded command: warn
+- [2025-06-17 17:50:09] [INFO] Loaded command: warns
+- [2025-06-17 17:50:09] [INFO] Loaded command: massdm
+- [2025-06-17 17:50:09] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:50:09] [INFO] Loaded command: premium
+- [2025-06-17 17:50:09] [INFO] Loaded command: setuproles
+- [2025-06-17 17:50:09] [INFO] Loaded command: shutdown
+- [2025-06-17 17:50:09] [INFO] Loaded command: modmail
+- [2025-06-17 17:50:09] [INFO] Loaded command: moveall
+- [2025-06-17 17:50:09] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:50:09] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:50:09] [INFO] Loaded command: ping
+- [2025-06-17 17:50:09] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:50:09] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:50:09] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:50:09] [INFO] Loaded command: avatar
+- [2025-06-17 17:50:09] [INFO] Loaded command: botinfo
+- [2025-06-17 17:50:09] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:50:09] [INFO] Loaded command: help
+- [2025-06-17 17:50:09] [INFO] Loaded command: invite
+- [2025-06-17 17:50:09] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:50:09] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:50:09] [INFO] Loaded command: userinfo
+- [2025-06-17 17:50:09] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:50:09] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:50:09] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:50:09] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:50:09] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:50:09] [INFO] Loaded event: ready
+- [2025-06-17 17:50:09] [INFO] Loaded slash command: ping
+- [2025-06-17 17:50:09] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:50:09] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:50:09] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:50:09] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:50:09] [INFO] ✅ Database connection successful
+- [2025-06-17 17:50:09] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:50:09] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:50:09] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:50:09] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:50:09] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:50:09] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:50:09] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:50:09] [INFO] ✅ Premium system ready
+- [2025-06-17 17:50:09] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:50:10] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:50:10] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:50:10] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:50:10] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:50:10] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:50:10] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:50:11] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:50:11] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:50:11] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:50:11] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:50:11] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:50:11] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 17:50:17] [INFO] ✅ Database connection for backup utility is working
+- [2025-06-17 17:56:27] [INFO] Loaded command: autoban
+- [2025-06-17 17:56:27] [INFO] Loaded command: autospam
+- [2025-06-17 17:56:27] [INFO] Loaded command: add
+- [2025-06-17 17:56:27] [INFO] Loaded command: ban
+- [2025-06-17 17:56:27] [INFO] Loaded command: clear
+- [2025-06-17 17:56:27] [INFO] Loaded command: delwarn
+- [2025-06-17 17:56:27] [INFO] Loaded command: deny
+- [2025-06-17 17:56:27] [INFO] Loaded command: jail
+- [2025-06-17 17:56:27] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:56:27] [INFO] Loaded command: kick
+- [2025-06-17 17:56:27] [INFO] Loaded command: lock
+- [2025-06-17 17:56:27] [INFO] Loaded command: move
+- [2025-06-17 17:56:27] [INFO] Loaded command: mute
+- [2025-06-17 17:56:27] [INFO] Loaded command: nickname
+- [2025-06-17 17:56:27] [INFO] Loaded command: role
+- [2025-06-17 17:56:27] [INFO] Loaded command: setautorole
+- [2025-06-17 17:56:27] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:56:27] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:56:27] [INFO] Loaded command: slowmode
+- [2025-06-17 17:56:27] [INFO] Loaded command: unban
+- [2025-06-17 17:56:27] [INFO] Loaded command: unjail
+- [2025-06-17 17:56:28] [INFO] Loaded command: unlock
+- [2025-06-17 17:56:28] [INFO] Loaded command: unmute
+- [2025-06-17 17:56:28] [INFO] Loaded command: verify
+- [2025-06-17 17:56:28] [INFO] Loaded command: warn
+- [2025-06-17 17:56:28] [INFO] Loaded command: warns
+- [2025-06-17 17:56:28] [INFO] Loaded command: massdm
+- [2025-06-17 17:56:28] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:56:28] [INFO] Loaded command: premium
+- [2025-06-17 17:56:28] [INFO] Loaded command: setuproles
+- [2025-06-17 17:56:28] [INFO] Loaded command: shutdown
+- [2025-06-17 17:56:28] [INFO] Loaded command: modmail
+- [2025-06-17 17:56:28] [INFO] Loaded command: moveall
+- [2025-06-17 17:56:28] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:56:28] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:56:28] [INFO] Loaded command: ping
+- [2025-06-17 17:56:28] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:56:33] [INFO] Loaded command: autoban
+- [2025-06-17 17:56:33] [INFO] Loaded command: autospam
+- [2025-06-17 17:56:33] [INFO] Loaded command: add
+- [2025-06-17 17:56:33] [INFO] Loaded command: ban
+- [2025-06-17 17:56:33] [INFO] Loaded command: clear
+- [2025-06-17 17:56:33] [INFO] Loaded command: delwarn
+- [2025-06-17 17:56:33] [INFO] Loaded command: deny
+- [2025-06-17 17:56:33] [INFO] Loaded command: jail
+- [2025-06-17 17:56:33] [INFO] Loaded command: jailsettings
+- [2025-06-17 17:56:33] [INFO] Loaded command: kick
+- [2025-06-17 17:56:33] [INFO] Loaded command: lock
+- [2025-06-17 17:56:33] [INFO] Loaded command: move
+- [2025-06-17 17:56:33] [INFO] Loaded command: mute
+- [2025-06-17 17:56:33] [INFO] Loaded command: nickname
+- [2025-06-17 17:56:33] [INFO] Loaded command: role
+- [2025-06-17 17:56:33] [INFO] Loaded command: setautorole
+- [2025-06-17 17:56:33] [INFO] Loaded command: setjailrole
+- [2025-06-17 17:56:34] [INFO] Loaded command: setjailvoice
+- [2025-06-17 17:56:34] [INFO] Loaded command: slowmode
+- [2025-06-17 17:56:34] [INFO] Loaded command: unban
+- [2025-06-17 17:56:34] [INFO] Loaded command: unjail
+- [2025-06-17 17:56:34] [INFO] Loaded command: unlock
+- [2025-06-17 17:56:34] [INFO] Loaded command: unmute
+- [2025-06-17 17:56:34] [INFO] Loaded command: verify
+- [2025-06-17 17:56:34] [INFO] Loaded command: warn
+- [2025-06-17 17:56:34] [INFO] Loaded command: warns
+- [2025-06-17 17:56:34] [INFO] Loaded command: massdm
+- [2025-06-17 17:56:34] [INFO] Loaded command: nuke-servre
+- [2025-06-17 17:56:34] [INFO] Loaded command: premium
+- [2025-06-17 17:56:34] [INFO] Loaded command: setuproles
+- [2025-06-17 17:56:34] [INFO] Loaded command: shutdown
+- [2025-06-17 17:56:34] [INFO] Loaded command: modmail
+- [2025-06-17 17:56:34] [INFO] Loaded command: moveall
+- [2025-06-17 17:56:34] [INFO] Loaded command: rolemenu
+- [2025-06-17 17:56:34] [INFO] Loaded command: sendnotify
+- [2025-06-17 17:56:34] [INFO] Loaded command: ping
+- [2025-06-17 17:56:34] [INFO] Loaded command: setembedcolor
+- [2025-06-17 17:56:34] [INFO] Loaded command: setembedfooter
+- [2025-06-17 17:56:34] [INFO] Loaded command: setembedicon
+- [2025-06-17 17:56:35] [INFO] Loaded command: avatar
+- [2025-06-17 17:56:35] [INFO] Loaded command: botinfo
+- [2025-06-17 17:56:35] [INFO] Loaded command: channelinfo
+- [2025-06-17 17:56:35] [INFO] Loaded command: help
+- [2025-06-17 17:56:35] [INFO] Loaded command: invite
+- [2025-06-17 17:56:35] [INFO] Loaded command: roleinfo
+- [2025-06-17 17:56:35] [INFO] Loaded command: serverinfo
+- [2025-06-17 17:56:35] [INFO] Loaded command: userinfo
+- [2025-06-17 17:56:35] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 17:56:35] [INFO] Loaded event: interactionCreate
+- [2025-06-17 17:56:35] [INFO] Loaded event: messageCreate
+- [2025-06-17 17:56:35] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 17:56:35] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 17:56:35] [INFO] Loaded event: ready
+- [2025-06-17 17:56:35] [INFO] Loaded slash command: ping
+- [2025-06-17 17:56:35] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 17:56:35] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 17:56:35] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 17:56:35] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 17:56:36] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:56:36] [INFO] Ensured guild_auto_roles table exists.
+- [2025-06-17 17:56:36] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:56:36] [INFO] Ensured user_warnings table exists.
+- [2025-06-17 17:56:36] [INFO] ✅ Database connection successful
+- [2025-06-17 17:56:36] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:56:36] [INFO] Ensured guild_configs table exists.
+- [2025-06-17 17:56:36] [INFO] ✅ premium_guilds table ensured
+- [2025-06-17 17:56:36] [INFO] ✅ Premium system ready
+- [2025-06-17 17:56:36] [INFO] Ensured premium_guilds table exists.
+- [2025-06-17 17:56:37] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:56:37] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:56:37] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:56:37] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 17:56:37] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 17:56:37] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 17:56:37] [INFO] ✅ guild_configs table ensured
+- [2025-06-17 17:56:37] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 17:56:37] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 17:56:37] [INFO] Slash commands registered at startup.
+- [2025-06-17 17:56:37] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 17:56:37] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 18:01:59] [INFO] ✅ Database connection for migrator is successful.
+- [2025-06-17 18:01:59] [INFO] ✅ 'schema_migrations' table ensured.
+- [2025-06-17 18:01:59] [INFO] 🔄 Applying migration: 20250617190500_initial_schema.sql...
+- [2025-06-17 18:01:59] [INFO] ✅ Migration 20250617190500_initial_schema.sql applied successfully.
+- [2025-06-17 18:01:59] [INFO] Applied 1 new migration(s).
+- [2025-06-17 18:01:59] [INFO] Migrations completed.
+- [2025-06-17 18:07:34] [WARN] Attempt 1/5 for guild_configs table ensure failed: ensureTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:07:34] [WARN] Attempt 1/5 for jail tables ensure failed: ensureJailTables is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:07:34] [WARN] Attempt 1/5 for user_warnings table ensure failed: ensureWarnsTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:07:34] [WARN] Attempt 1/5 for guild_auto_roles table ensure failed: ensureAutoRoleTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:07:34] [INFO] Loaded command: autoban
+- [2025-06-17 18:07:34] [INFO] Loaded command: autospam
+- [2025-06-17 18:07:34] [INFO] Loaded command: add
+- [2025-06-17 18:07:34] [INFO] Loaded command: ban
+- [2025-06-17 18:07:34] [INFO] Loaded command: clear
+- [2025-06-17 18:07:34] [INFO] Loaded command: delwarn
+- [2025-06-17 18:07:34] [INFO] Loaded command: deny
+- [2025-06-17 18:07:34] [INFO] Loaded command: jail
+- [2025-06-17 18:07:34] [INFO] Loaded command: jailsettings
+- [2025-06-17 18:07:34] [INFO] Loaded command: kick
+- [2025-06-17 18:07:35] [INFO] Loaded command: lock
+- [2025-06-17 18:07:35] [INFO] Loaded command: move
+- [2025-06-17 18:07:35] [INFO] Loaded command: mute
+- [2025-06-17 18:07:35] [INFO] Loaded command: nickname
+- [2025-06-17 18:07:35] [INFO] Loaded command: role
+- [2025-06-17 18:07:35] [INFO] Loaded command: setautorole
+- [2025-06-17 18:07:35] [INFO] Loaded command: setjailrole
+- [2025-06-17 18:07:35] [INFO] Loaded command: setjailvoice
+- [2025-06-17 18:07:35] [INFO] Loaded command: slowmode
+- [2025-06-17 18:07:35] [INFO] Loaded command: unban
+- [2025-06-17 18:07:35] [INFO] Loaded command: unjail
+- [2025-06-17 18:07:35] [INFO] Loaded command: unlock
+- [2025-06-17 18:07:35] [INFO] Loaded command: unmute
+- [2025-06-17 18:07:35] [INFO] Loaded command: verify
+- [2025-06-17 18:07:35] [INFO] Loaded command: warn
+- [2025-06-17 18:07:35] [INFO] Loaded command: warns
+- [2025-06-17 18:07:35] [INFO] Loaded command: massdm
+- [2025-06-17 18:07:35] [INFO] Loaded command: nuke-servre
+- [2025-06-17 18:07:35] [INFO] Loaded command: premium
+- [2025-06-17 18:07:35] [INFO] Loaded command: setuproles
+- [2025-06-17 18:07:35] [INFO] Loaded command: shutdown
+- [2025-06-17 18:07:35] [INFO] Loaded command: modmail
+- [2025-06-17 18:07:35] [INFO] Loaded command: moveall
+- [2025-06-17 18:07:35] [INFO] Loaded command: rolemenu
+- [2025-06-17 18:07:35] [INFO] Loaded command: sendnotify
+- [2025-06-17 18:07:35] [INFO] Loaded command: ping
+- [2025-06-17 18:07:35] [INFO] Loaded command: setembedcolor
+- [2025-06-17 18:07:35] [INFO] Loaded command: setembedfooter
+- [2025-06-17 18:07:35] [INFO] Loaded command: setembedicon
+- [2025-06-17 18:07:35] [INFO] Loaded command: avatar
+- [2025-06-17 18:07:35] [INFO] Loaded command: botinfo
+- [2025-06-17 18:07:35] [INFO] Loaded command: channelinfo
+- [2025-06-17 18:07:35] [INFO] Loaded command: help
+- [2025-06-17 18:07:35] [INFO] Loaded command: invite
+- [2025-06-17 18:07:35] [INFO] Loaded command: roleinfo
+- [2025-06-17 18:07:35] [INFO] Loaded command: serverinfo
+- [2025-06-17 18:07:35] [INFO] Loaded command: userinfo
+- [2025-06-17 18:07:35] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 18:07:35] [INFO] Loaded event: interactionCreate
+- [2025-06-17 18:07:35] [INFO] Loaded event: messageCreate
+- [2025-06-17 18:07:35] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 18:07:35] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 18:07:35] [INFO] Loaded event: ready
+- [2025-06-17 18:07:35] [INFO] Loaded slash command: ping
+- [2025-06-17 18:07:35] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 18:07:35] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 18:07:35] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 18:07:35] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 18:07:37] [WARN] Attempt 2/5 for guild_configs table ensure failed: ensureTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:07:37] [WARN] Attempt 2/5 for jail tables ensure failed: ensureJailTables is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:07:37] [WARN] Attempt 2/5 for user_warnings table ensure failed: ensureWarnsTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:07:37] [WARN] Attempt 2/5 for guild_auto_roles table ensure failed: ensureAutoRoleTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:07:40] [WARN] Attempt 3/5 for guild_configs table ensure failed: ensureTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:07:40] [WARN] Attempt 3/5 for jail tables ensure failed: ensureJailTables is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:07:40] [WARN] Attempt 3/5 for user_warnings table ensure failed: ensureWarnsTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:07:40] [WARN] Attempt 3/5 for guild_auto_roles table ensure failed: ensureAutoRoleTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:07:41] [INFO] ✅ Database connection successful
+- [2025-06-17 18:07:43] [WARN] Attempt 4/5 for guild_configs table ensure failed: ensureTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:07:43] [WARN] Attempt 4/5 for jail tables ensure failed: ensureJailTables is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:07:43] [WARN] Attempt 4/5 for user_warnings table ensure failed: ensureWarnsTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:07:43] [WARN] Attempt 4/5 for guild_auto_roles table ensure failed: ensureAutoRoleTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:07:46] [WARN] Attempt 5/5 for guild_configs table ensure failed: ensureTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:07:46] [ERROR] Max retries reached for guild_configs table ensure. Giving up.
+- [2025-06-17 18:07:46] [ERROR] DB Table creation error: TypeError: ensureTable is not a function
+- [2025-06-17 18:07:46] [WARN] Attempt 5/5 for jail tables ensure failed: ensureJailTables is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:07:46] [ERROR] Max retries reached for jail tables ensure. Giving up.
+- [2025-06-17 18:07:46] [WARN] Attempt 5/5 for user_warnings table ensure failed: ensureWarnsTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:07:46] [ERROR] Max retries reached for user_warnings table ensure. Giving up.
+- [2025-06-17 18:07:46] [ERROR] Failed to ensure user_warnings table: TypeError: ensureWarnsTable is not a function
+- [2025-06-17 18:07:46] [ERROR] Failed to ensure user_warnings table: ensureWarnsTable is not a function
+- [2025-06-17 18:07:46] [WARN] Attempt 5/5 for guild_auto_roles table ensure failed: ensureAutoRoleTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:07:47] [ERROR] Max retries reached for guild_auto_roles table ensure. Giving up.
+- [2025-06-17 18:07:47] [ERROR] Failed to ensure guild_auto_roles table: TypeError: ensureAutoRoleTable is not a function
+- [2025-06-17 18:07:47] [ERROR] Failed to ensure guild_auto_roles table: ensureAutoRoleTable is not a function
+- [2025-06-17 18:07:47] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 18:07:47] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 18:07:47] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 18:07:47] [ERROR] ❌ Error initializing guild configs: ReferenceError: ensureTable is not defined
+- [2025-06-17 18:07:47] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 18:07:47] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 18:07:47] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 18:07:48] [ERROR] Failed to initialize guild configurations: ReferenceError: ensureTable is not defined
+- [2025-06-17 18:07:48] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 18:07:48] [INFO] Slash commands registered at startup.
+- [2025-06-17 18:09:23] [WARN] Attempt 1/5 for guild_configs table ensure failed: ensureTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:09:23] [WARN] Attempt 1/5 for jail tables ensure failed: ensureJailTables is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:09:23] [WARN] Attempt 1/5 for user_warnings table ensure failed: ensureWarnsTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:09:23] [WARN] Attempt 1/5 for guild_auto_roles table ensure failed: ensureAutoRoleTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:09:23] [INFO] Loaded command: autoban
+- [2025-06-17 18:09:23] [INFO] Loaded command: autospam
+- [2025-06-17 18:09:23] [INFO] Loaded command: add
+- [2025-06-17 18:09:23] [INFO] Loaded command: ban
+- [2025-06-17 18:09:23] [INFO] Loaded command: clear
+- [2025-06-17 18:09:23] [INFO] Loaded command: delwarn
+- [2025-06-17 18:09:23] [INFO] Loaded command: deny
+- [2025-06-17 18:09:23] [INFO] Loaded command: jail
+- [2025-06-17 18:09:23] [INFO] Loaded command: jailsettings
+- [2025-06-17 18:09:23] [INFO] Loaded command: kick
+- [2025-06-17 18:09:23] [INFO] Loaded command: lock
+- [2025-06-17 18:09:23] [INFO] Loaded command: move
+- [2025-06-17 18:09:23] [INFO] Loaded command: mute
+- [2025-06-17 18:09:23] [INFO] Loaded command: nickname
+- [2025-06-17 18:09:23] [INFO] Loaded command: role
+- [2025-06-17 18:09:23] [INFO] Loaded command: setautorole
+- [2025-06-17 18:09:23] [INFO] Loaded command: setjailrole
+- [2025-06-17 18:09:23] [INFO] Loaded command: setjailvoice
+- [2025-06-17 18:09:23] [INFO] Loaded command: slowmode
+- [2025-06-17 18:09:23] [INFO] Loaded command: unban
+- [2025-06-17 18:09:23] [INFO] Loaded command: unjail
+- [2025-06-17 18:09:23] [INFO] Loaded command: unlock
+- [2025-06-17 18:09:23] [INFO] Loaded command: unmute
+- [2025-06-17 18:09:23] [INFO] Loaded command: verify
+- [2025-06-17 18:09:23] [INFO] Loaded command: warn
+- [2025-06-17 18:09:23] [INFO] Loaded command: warns
+- [2025-06-17 18:09:23] [INFO] Loaded command: massdm
+- [2025-06-17 18:09:23] [INFO] Loaded command: nuke-servre
+- [2025-06-17 18:09:23] [INFO] Loaded command: premium
+- [2025-06-17 18:09:24] [INFO] Loaded command: setuproles
+- [2025-06-17 18:09:24] [INFO] Loaded command: shutdown
+- [2025-06-17 18:09:24] [INFO] Loaded command: modmail
+- [2025-06-17 18:09:24] [INFO] Loaded command: moveall
+- [2025-06-17 18:09:24] [INFO] Loaded command: rolemenu
+- [2025-06-17 18:09:24] [INFO] Loaded command: sendnotify
+- [2025-06-17 18:09:24] [INFO] Loaded command: ping
+- [2025-06-17 18:09:24] [INFO] Loaded command: setembedcolor
+- [2025-06-17 18:09:24] [INFO] Loaded command: setembedfooter
+- [2025-06-17 18:09:24] [INFO] Loaded command: setembedicon
+- [2025-06-17 18:09:24] [INFO] Loaded command: avatar
+- [2025-06-17 18:09:24] [INFO] Loaded command: botinfo
+- [2025-06-17 18:09:24] [INFO] Loaded command: channelinfo
+- [2025-06-17 18:09:24] [INFO] Loaded command: help
+- [2025-06-17 18:09:24] [INFO] Loaded command: invite
+- [2025-06-17 18:09:24] [INFO] Loaded command: roleinfo
+- [2025-06-17 18:09:24] [INFO] Loaded command: serverinfo
+- [2025-06-17 18:09:24] [INFO] Loaded command: userinfo
+- [2025-06-17 18:09:24] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 18:09:24] [INFO] Loaded event: interactionCreate
+- [2025-06-17 18:09:24] [INFO] Loaded event: messageCreate
+- [2025-06-17 18:09:24] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 18:09:24] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 18:09:24] [INFO] Loaded event: ready
+- [2025-06-17 18:09:24] [INFO] Loaded slash command: ping
+- [2025-06-17 18:09:24] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 18:09:24] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 18:09:24] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 18:09:24] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 18:09:26] [INFO] ✅ Database connection successful
+- [2025-06-17 18:09:26] [WARN] Attempt 2/5 for guild_configs table ensure failed: ensureTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:09:26] [WARN] Attempt 2/5 for jail tables ensure failed: ensureJailTables is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:09:26] [WARN] Attempt 2/5 for user_warnings table ensure failed: ensureWarnsTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:09:26] [WARN] Attempt 2/5 for guild_auto_roles table ensure failed: ensureAutoRoleTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:09:27] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 18:09:27] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 18:09:27] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 18:09:27] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 18:09:27] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 18:09:27] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 18:09:27] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 18:09:27] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 18:09:27] [INFO] Slash commands registered at startup.
+- [2025-06-17 18:09:29] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 18:09:29] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 18:09:29] [WARN] Attempt 3/5 for guild_configs table ensure failed: ensureTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:09:29] [WARN] Attempt 3/5 for jail tables ensure failed: ensureJailTables is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:09:29] [WARN] Attempt 3/5 for user_warnings table ensure failed: ensureWarnsTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:09:29] [WARN] Attempt 3/5 for guild_auto_roles table ensure failed: ensureAutoRoleTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:09:32] [WARN] Attempt 4/5 for guild_configs table ensure failed: ensureTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:09:32] [WARN] Attempt 4/5 for jail tables ensure failed: ensureJailTables is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:09:32] [WARN] Attempt 4/5 for user_warnings table ensure failed: ensureWarnsTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:09:32] [WARN] Attempt 4/5 for guild_auto_roles table ensure failed: ensureAutoRoleTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:09:35] [WARN] Attempt 5/5 for guild_configs table ensure failed: ensureTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:09:35] [ERROR] Max retries reached for guild_configs table ensure. Giving up.
+- [2025-06-17 18:09:35] [ERROR] DB Table creation error: TypeError: ensureTable is not a function
+- [2025-06-17 18:09:35] [WARN] Attempt 5/5 for jail tables ensure failed: ensureJailTables is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:09:35] [ERROR] Max retries reached for jail tables ensure. Giving up.
+- [2025-06-17 18:09:35] [WARN] Attempt 5/5 for user_warnings table ensure failed: ensureWarnsTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:09:35] [ERROR] Max retries reached for user_warnings table ensure. Giving up.
+- [2025-06-17 18:09:35] [ERROR] Failed to ensure user_warnings table: TypeError: ensureWarnsTable is not a function
+- [2025-06-17 18:09:35] [ERROR] Failed to ensure user_warnings table: ensureWarnsTable is not a function
+- [2025-06-17 18:09:35] [WARN] Attempt 5/5 for guild_auto_roles table ensure failed: ensureAutoRoleTable is not a function. Retrying in 3 seconds...
+- [2025-06-17 18:09:35] [ERROR] Max retries reached for guild_auto_roles table ensure. Giving up.
+- [2025-06-17 18:09:35] [ERROR] Failed to ensure guild_auto_roles table: TypeError: ensureAutoRoleTable is not a function
+- [2025-06-17 18:09:35] [ERROR] Failed to ensure guild_auto_roles table: ensureAutoRoleTable is not a function
+- [2025-06-17 18:09:46] [INFO] Loaded command: autoban
+- [2025-06-17 18:09:47] [INFO] Loaded command: autospam
+- [2025-06-17 18:09:47] [INFO] Loaded command: add
+- [2025-06-17 18:09:47] [INFO] Loaded command: ban
+- [2025-06-17 18:09:47] [INFO] Loaded command: clear
+- [2025-06-17 18:09:47] [INFO] Loaded command: delwarn
+- [2025-06-17 18:09:47] [INFO] Loaded command: deny
+- [2025-06-17 18:09:47] [INFO] Loaded command: jail
+- [2025-06-17 18:09:47] [INFO] Loaded command: jailsettings
+- [2025-06-17 18:09:47] [INFO] Loaded command: kick
+- [2025-06-17 18:09:47] [INFO] Loaded command: lock
+- [2025-06-17 18:09:47] [INFO] Loaded command: move
+- [2025-06-17 18:09:47] [INFO] Loaded command: mute
+- [2025-06-17 18:09:47] [INFO] Loaded command: nickname
+- [2025-06-17 18:09:47] [INFO] Loaded command: role
+- [2025-06-17 18:09:47] [INFO] Loaded command: setautorole
+- [2025-06-17 18:09:47] [INFO] Loaded command: setjailrole
+- [2025-06-17 18:09:47] [INFO] Loaded command: setjailvoice
+- [2025-06-17 18:09:47] [INFO] Loaded command: slowmode
+- [2025-06-17 18:09:47] [INFO] Loaded command: unban
+- [2025-06-17 18:09:47] [INFO] Loaded command: unjail
+- [2025-06-17 18:09:47] [INFO] Loaded command: unlock
+- [2025-06-17 18:09:47] [INFO] Loaded command: unmute
+- [2025-06-17 18:09:47] [INFO] Loaded command: verify
+- [2025-06-17 18:09:47] [INFO] Loaded command: warn
+- [2025-06-17 18:09:47] [INFO] Loaded command: warns
+- [2025-06-17 18:09:47] [INFO] Loaded command: massdm
+- [2025-06-17 18:09:47] [INFO] Loaded command: nuke-servre
+- [2025-06-17 18:09:47] [INFO] Loaded command: premium
+- [2025-06-17 18:09:47] [INFO] Loaded command: setuproles
+- [2025-06-17 18:09:47] [INFO] Loaded command: shutdown
+- [2025-06-17 18:09:47] [INFO] Loaded command: modmail
+- [2025-06-17 18:09:47] [INFO] Loaded command: moveall
+- [2025-06-17 18:09:47] [INFO] Loaded command: rolemenu
+- [2025-06-17 18:09:47] [INFO] Loaded command: sendnotify
+- [2025-06-17 18:09:47] [INFO] Loaded command: ping
+- [2025-06-17 18:09:47] [INFO] Loaded command: setembedcolor
+- [2025-06-17 18:09:47] [INFO] Loaded command: setembedfooter
+- [2025-06-17 18:09:47] [INFO] Loaded command: setembedicon
+- [2025-06-17 18:09:47] [INFO] Loaded command: avatar
+- [2025-06-17 18:09:47] [INFO] Loaded command: botinfo
+- [2025-06-17 18:09:47] [INFO] Loaded command: channelinfo
+- [2025-06-17 18:09:47] [INFO] Loaded command: help
+- [2025-06-17 18:09:47] [INFO] Loaded command: invite
+- [2025-06-17 18:09:47] [INFO] Loaded command: roleinfo
+- [2025-06-17 18:09:47] [INFO] Loaded command: serverinfo
+- [2025-06-17 18:09:47] [INFO] Loaded command: userinfo
+- [2025-06-17 18:09:47] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 18:09:47] [INFO] Loaded event: interactionCreate
+- [2025-06-17 18:09:47] [INFO] Loaded event: messageCreate
+- [2025-06-17 18:09:47] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 18:09:47] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 18:09:47] [INFO] Loaded event: ready
+- [2025-06-17 18:09:47] [INFO] Loaded slash command: ping
+- [2025-06-17 18:09:47] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 18:09:47] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 18:09:47] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 18:09:47] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 18:09:49] [INFO] ✅ Database connection successful
+- [2025-06-17 18:09:50] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 18:09:50] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 18:09:50] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 18:09:50] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 18:09:50] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 18:09:50] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 18:09:50] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 18:09:50] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 18:09:50] [INFO] Slash commands registered at startup.
+- [2025-06-17 18:09:51] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 18:09:51] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 18:12:41] [INFO] Loaded command: autoban
+- [2025-06-17 18:12:41] [INFO] Loaded command: autospam
+- [2025-06-17 18:12:41] [INFO] Loaded command: add
+- [2025-06-17 18:12:41] [INFO] Loaded command: ban
+- [2025-06-17 18:12:41] [INFO] Loaded command: clear
+- [2025-06-17 18:12:41] [INFO] Loaded command: delwarn
+- [2025-06-17 18:12:41] [INFO] Loaded command: deny
+- [2025-06-17 18:12:41] [INFO] Loaded command: jail
+- [2025-06-17 18:12:41] [INFO] Loaded command: jailsettings
+- [2025-06-17 18:12:41] [INFO] Loaded command: kick
+- [2025-06-17 18:12:41] [INFO] Loaded command: lock
+- [2025-06-17 18:12:41] [INFO] Loaded command: move
+- [2025-06-17 18:12:41] [INFO] Loaded command: mute
+- [2025-06-17 18:12:41] [INFO] Loaded command: nickname
+- [2025-06-17 18:12:41] [INFO] Loaded command: role
+- [2025-06-17 18:12:41] [INFO] Loaded command: setautorole
+- [2025-06-17 18:12:41] [INFO] Loaded command: setjailrole
+- [2025-06-17 18:12:41] [INFO] Loaded command: setjailvoice
+- [2025-06-17 18:12:41] [INFO] Loaded command: slowmode
+- [2025-06-17 18:12:41] [INFO] Loaded command: unban
+- [2025-06-17 18:12:41] [INFO] Loaded command: unjail
+- [2025-06-17 18:12:41] [INFO] Loaded command: unlock
+- [2025-06-17 18:12:41] [INFO] Loaded command: unmute
+- [2025-06-17 18:12:41] [INFO] Loaded command: verify
+- [2025-06-17 18:12:41] [INFO] Loaded command: warn
+- [2025-06-17 18:12:41] [INFO] Loaded command: warns
+- [2025-06-17 18:12:41] [INFO] Loaded command: massdm
+- [2025-06-17 18:12:41] [INFO] Loaded command: nuke-servre
+- [2025-06-17 18:12:41] [INFO] Loaded command: premium
+- [2025-06-17 18:12:41] [INFO] Loaded command: setuproles
+- [2025-06-17 18:12:41] [INFO] Loaded command: shutdown
+- [2025-06-17 18:12:41] [INFO] Loaded command: modmail
+- [2025-06-17 18:12:41] [INFO] Loaded command: moveall
+- [2025-06-17 18:12:41] [INFO] Loaded command: rolemenu
+- [2025-06-17 18:12:41] [INFO] Loaded command: sendnotify
+- [2025-06-17 18:12:41] [INFO] Loaded command: ping
+- [2025-06-17 18:12:41] [INFO] Loaded command: setembedcolor
+- [2025-06-17 18:12:41] [INFO] Loaded command: setembedfooter
+- [2025-06-17 18:12:41] [INFO] Loaded command: setembedicon
+- [2025-06-17 18:12:41] [INFO] Loaded command: avatar
+- [2025-06-17 18:12:41] [INFO] Loaded command: botinfo
+- [2025-06-17 18:12:41] [INFO] Loaded command: channelinfo
+- [2025-06-17 18:12:41] [INFO] Loaded command: help
+- [2025-06-17 18:12:41] [INFO] Loaded command: invite
+- [2025-06-17 18:12:41] [INFO] Loaded command: roleinfo
+- [2025-06-17 18:12:41] [INFO] Loaded command: serverinfo
+- [2025-06-17 18:12:41] [INFO] Loaded command: userinfo
+- [2025-06-17 18:12:41] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 18:12:41] [INFO] Loaded event: interactionCreate
+- [2025-06-17 18:12:41] [INFO] Loaded event: messageCreate
+- [2025-06-17 18:12:41] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 18:12:41] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 18:12:41] [INFO] Loaded event: ready
+- [2025-06-17 18:12:41] [INFO] Loaded slash command: ping
+- [2025-06-17 18:12:41] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 18:12:41] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 18:12:41] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 18:12:41] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 18:12:42] [INFO] ✅ Database connection successful
+- [2025-06-17 18:12:43] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 18:12:43] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 18:12:43] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 18:12:43] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 18:12:43] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 18:12:43] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 18:12:43] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 18:12:44] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 18:12:44] [INFO] Slash commands registered at startup.
+- [2025-06-17 18:12:44] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 18:12:44] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 18:25:29] [INFO] Loaded command: autoban
+- [2025-06-17 18:25:29] [INFO] Loaded command: autospam
+- [2025-06-17 18:25:29] [INFO] Loaded command: add
+- [2025-06-17 18:25:29] [INFO] Loaded command: ban
+- [2025-06-17 18:25:29] [INFO] Loaded command: clear
+- [2025-06-17 18:25:29] [INFO] Loaded command: delwarn
+- [2025-06-17 18:25:29] [INFO] Loaded command: deny
+- [2025-06-17 18:25:29] [INFO] Loaded command: jail
+- [2025-06-17 18:25:29] [INFO] Loaded command: jailsettings
+- [2025-06-17 18:25:29] [INFO] Loaded command: kick
+- [2025-06-17 18:25:29] [INFO] Loaded command: lock
+- [2025-06-17 18:25:29] [INFO] Loaded command: move
+- [2025-06-17 18:25:29] [INFO] Loaded command: mute
+- [2025-06-17 18:25:29] [INFO] Loaded command: nickname
+- [2025-06-17 18:25:29] [INFO] Loaded command: role
+- [2025-06-17 18:25:29] [INFO] Loaded command: setautorole
+- [2025-06-17 18:25:29] [INFO] Loaded command: setjailrole
+- [2025-06-17 18:25:30] [INFO] Loaded command: setjailvoice
+- [2025-06-17 18:25:30] [INFO] Loaded command: slowmode
+- [2025-06-17 18:25:30] [INFO] Loaded command: unban
+- [2025-06-17 18:25:30] [INFO] Loaded command: unjail
+- [2025-06-17 18:25:30] [INFO] Loaded command: unlock
+- [2025-06-17 18:25:30] [INFO] Loaded command: unmute
+- [2025-06-17 18:25:30] [INFO] Loaded command: verify
+- [2025-06-17 18:25:30] [INFO] Loaded command: warn
+- [2025-06-17 18:25:30] [INFO] Loaded command: warns
+- [2025-06-17 18:25:30] [INFO] Loaded command: massdm
+- [2025-06-17 18:25:30] [INFO] Loaded command: nuke-servre
+- [2025-06-17 18:25:30] [INFO] Loaded command: premium
+- [2025-06-17 18:25:30] [INFO] Loaded command: setuproles
+- [2025-06-17 18:25:30] [INFO] Loaded command: shutdown
+- [2025-06-17 18:25:30] [INFO] Loaded command: modmail
+- [2025-06-17 18:25:30] [INFO] Loaded command: moveall
+- [2025-06-17 18:25:30] [INFO] Loaded command: rolemenu
+- [2025-06-17 18:25:30] [INFO] Loaded command: sendnotify
+- [2025-06-17 18:25:30] [INFO] Loaded command: ping
+- [2025-06-17 18:25:30] [INFO] Loaded command: setembedcolor
+- [2025-06-17 18:25:30] [INFO] Loaded command: setembedfooter
+- [2025-06-17 18:25:30] [INFO] Loaded command: setembedicon
+- [2025-06-17 18:25:30] [INFO] Loaded command: avatar
+- [2025-06-17 18:25:30] [INFO] Loaded command: botinfo
+- [2025-06-17 18:25:30] [INFO] Loaded command: channelinfo
+- [2025-06-17 18:25:30] [INFO] Loaded command: help
+- [2025-06-17 18:25:30] [INFO] Loaded command: invite
+- [2025-06-17 18:25:30] [INFO] Loaded command: roleinfo
+- [2025-06-17 18:25:30] [INFO] Loaded command: serverinfo
+- [2025-06-17 18:25:30] [INFO] Loaded command: userinfo
+- [2025-06-17 18:25:30] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 18:25:30] [INFO] Loaded event: interactionCreate
+- [2025-06-17 18:25:30] [INFO] Loaded event: messageCreate
+- [2025-06-17 18:25:30] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 18:25:30] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 18:25:30] [INFO] Loaded event: ready
+- [2025-06-17 18:25:30] [INFO] Loaded slash command: ping
+- [2025-06-17 18:25:30] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 18:25:30] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 18:25:30] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 18:25:30] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 18:25:32] [INFO] ✅ Database connection successful
+- [2025-06-17 18:25:33] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 18:25:33] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 18:25:33] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 18:25:33] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 18:25:33] [INFO] Slash commands registered at startup.
+- [2025-06-17 18:25:33] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 18:25:33] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 18:25:33] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 18:29:06] [INFO] Loaded command: autoban
+- [2025-06-17 18:29:06] [INFO] Loaded command: autospam
+- [2025-06-17 18:29:06] [INFO] Loaded command: add
+- [2025-06-17 18:29:06] [INFO] Loaded command: ban
+- [2025-06-17 18:29:06] [INFO] Loaded command: clear
+- [2025-06-17 18:29:06] [INFO] Loaded command: delwarn
+- [2025-06-17 18:29:06] [INFO] Loaded command: deny
+- [2025-06-17 18:29:06] [INFO] Loaded command: jail
+- [2025-06-17 18:29:06] [INFO] Loaded command: jailsettings
+- [2025-06-17 18:29:06] [INFO] Loaded command: kick
+- [2025-06-17 18:29:06] [INFO] Loaded command: lock
+- [2025-06-17 18:29:06] [INFO] Loaded command: move
+- [2025-06-17 18:29:06] [INFO] Loaded command: mute
+- [2025-06-17 18:29:06] [INFO] Loaded command: nickname
+- [2025-06-17 18:29:06] [INFO] Loaded command: role
+- [2025-06-17 18:29:06] [INFO] Loaded command: setautorole
+- [2025-06-17 18:29:07] [INFO] Loaded command: setjailrole
+- [2025-06-17 18:29:07] [INFO] Loaded command: setjailvoice
+- [2025-06-17 18:29:07] [INFO] Loaded command: slowmode
+- [2025-06-17 18:29:07] [INFO] Loaded command: unban
+- [2025-06-17 18:29:07] [INFO] Loaded command: unjail
+- [2025-06-17 18:29:07] [INFO] Loaded command: unlock
+- [2025-06-17 18:29:07] [INFO] Loaded command: unmute
+- [2025-06-17 18:29:07] [INFO] Loaded command: verify
+- [2025-06-17 18:29:07] [INFO] Loaded command: warn
+- [2025-06-17 18:29:07] [INFO] Loaded command: warns
+- [2025-06-17 18:29:07] [INFO] Loaded command: massdm
+- [2025-06-17 18:29:07] [INFO] Loaded command: nuke-servre
+- [2025-06-17 18:29:07] [INFO] Loaded command: premium
+- [2025-06-17 18:29:07] [INFO] Loaded command: setuproles
+- [2025-06-17 18:29:07] [INFO] Loaded command: shutdown
+- [2025-06-17 18:29:07] [INFO] Loaded command: modmail
+- [2025-06-17 18:29:07] [INFO] Loaded command: moveall
+- [2025-06-17 18:29:07] [INFO] Loaded command: rolemenu
+- [2025-06-17 18:29:07] [INFO] Loaded command: sendnotify
+- [2025-06-17 18:29:07] [INFO] Loaded command: ping
+- [2025-06-17 18:29:07] [INFO] Loaded command: setembedcolor
+- [2025-06-17 18:29:07] [INFO] Loaded command: setembedfooter
+- [2025-06-17 18:29:07] [INFO] Loaded command: setembedicon
+- [2025-06-17 18:29:07] [INFO] Loaded command: avatar
+- [2025-06-17 18:29:07] [INFO] Loaded command: botinfo
+- [2025-06-17 18:29:07] [INFO] Loaded command: channelinfo
+- [2025-06-17 18:29:07] [INFO] Loaded command: help
+- [2025-06-17 18:29:07] [INFO] Loaded command: invite
+- [2025-06-17 18:29:07] [INFO] Loaded command: roleinfo
+- [2025-06-17 18:29:07] [INFO] Loaded command: serverinfo
+- [2025-06-17 18:29:07] [INFO] Loaded command: userinfo
+- [2025-06-17 18:29:07] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 18:29:07] [INFO] Loaded event: interactionCreate
+- [2025-06-17 18:29:07] [INFO] Loaded event: messageCreate
+- [2025-06-17 18:29:07] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 18:29:07] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 18:29:07] [INFO] Loaded event: ready
+- [2025-06-17 18:29:08] [INFO] Loaded slash command: ping
+- [2025-06-17 18:29:08] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 18:29:08] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 18:29:08] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 18:29:08] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 18:29:09] [INFO] ✅ Database connection successful
+- [2025-06-17 18:29:11] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 18:29:11] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 18:29:11] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 18:29:11] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 18:29:11] [INFO] Slash commands registered at startup.
+- [2025-06-17 18:29:11] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 18:29:12] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 18:29:12] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 18:33:15] [INFO] ✅ Database connection for migrator is successful.
+- [2025-06-17 18:33:18] [INFO] ✅ 'schema_migrations' table ensured.
+- [2025-06-17 18:33:18] [INFO] 🔄 Applying migration: 20250617183200_add_temp_voice_configs.sql...
+- [2025-06-17 18:33:20] [INFO] ✅ Migration 20250617183200_add_temp_voice_configs.sql applied successfully.
+- [2025-06-17 18:33:20] [INFO] Applied 1 new migration(s).
+- [2025-06-17 18:33:20] [INFO] Migrations completed.
+- [2025-06-17 18:35:44] [INFO] ✅ Database connection for migrator is successful.
+- [2025-06-17 18:35:45] [INFO] ✅ 'schema_migrations' table ensured.
+- [2025-06-17 18:35:45] [INFO] 🔄 Applying migration: 20250617193500_add_temp_voice_feature_tables.sql...
+- [2025-06-17 18:35:45] [INFO] ✅ Migration 20250617193500_add_temp_voice_feature_tables.sql applied successfully.
+- [2025-06-17 18:35:45] [INFO] Applied 1 new migration(s).
+- [2025-06-17 18:35:45] [INFO] Migrations completed.
+- [2025-06-17 18:36:11] [INFO] Loaded command: autoban
+- [2025-06-17 18:36:11] [INFO] Loaded command: autospam
+- [2025-06-17 18:36:11] [INFO] Loaded command: add
+- [2025-06-17 18:36:11] [INFO] Loaded command: ban
+- [2025-06-17 18:36:11] [INFO] Loaded command: clear
+- [2025-06-17 18:36:11] [INFO] Loaded command: delwarn
+- [2025-06-17 18:36:11] [INFO] Loaded command: deny
+- [2025-06-17 18:36:11] [INFO] Loaded command: jail
+- [2025-06-17 18:36:11] [INFO] Loaded command: jailsettings
+- [2025-06-17 18:36:11] [INFO] Loaded command: kick
+- [2025-06-17 18:36:11] [INFO] Loaded command: lock
+- [2025-06-17 18:36:11] [INFO] Loaded command: move
+- [2025-06-17 18:36:11] [INFO] Loaded command: mute
+- [2025-06-17 18:36:11] [INFO] Loaded command: nickname
+- [2025-06-17 18:36:11] [INFO] Loaded command: role
+- [2025-06-17 18:36:11] [INFO] Loaded command: setautorole
+- [2025-06-17 18:36:11] [INFO] Loaded command: setjailrole
+- [2025-06-17 18:36:11] [INFO] Loaded command: setjailvoice
+- [2025-06-17 18:36:11] [INFO] Loaded command: slowmode
+- [2025-06-17 18:36:11] [INFO] Loaded command: unban
+- [2025-06-17 18:36:11] [INFO] Loaded command: unjail
+- [2025-06-17 18:36:11] [INFO] Loaded command: unlock
+- [2025-06-17 18:36:11] [INFO] Loaded command: unmute
+- [2025-06-17 18:36:11] [INFO] Loaded command: verify
+- [2025-06-17 18:36:11] [INFO] Loaded command: warn
+- [2025-06-17 18:36:11] [INFO] Loaded command: warns
+- [2025-06-17 18:36:11] [INFO] Loaded command: massdm
+- [2025-06-17 18:36:11] [INFO] Loaded command: nuke-servre
+- [2025-06-17 18:36:11] [INFO] Loaded command: premium
+- [2025-06-17 18:36:11] [INFO] Loaded command: setuproles
+- [2025-06-17 18:36:11] [INFO] Loaded command: shutdown
+- [2025-06-17 18:36:11] [INFO] Loaded command: modmail
+- [2025-06-17 18:36:11] [INFO] Loaded command: moveall
+- [2025-06-17 18:36:11] [INFO] Loaded command: rolemenu
+- [2025-06-17 18:36:11] [INFO] Loaded command: sendnotify
+- [2025-06-17 18:36:11] [INFO] Loaded command: ping
+- [2025-06-17 18:36:11] [INFO] Loaded command: setembedcolor
+- [2025-06-17 18:36:11] [INFO] Loaded command: setembedfooter
+- [2025-06-17 18:36:11] [INFO] Loaded command: setembedicon
+- [2025-06-17 18:36:11] [INFO] Loaded command: avatar
+- [2025-06-17 18:36:11] [INFO] Loaded command: botinfo
+- [2025-06-17 18:36:11] [INFO] Loaded command: channelinfo
+- [2025-06-17 18:36:11] [INFO] Loaded command: help
+- [2025-06-17 18:36:11] [INFO] Loaded command: invite
+- [2025-06-17 18:36:11] [INFO] Loaded command: roleinfo
+- [2025-06-17 18:36:11] [INFO] Loaded command: serverinfo
+- [2025-06-17 18:36:11] [INFO] Loaded command: userinfo
+- [2025-06-17 18:36:12] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 18:36:12] [INFO] Loaded event: interactionCreate
+- [2025-06-17 18:36:12] [INFO] Loaded event: messageCreate
+- [2025-06-17 18:36:12] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 18:36:12] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 18:36:12] [INFO] Loaded event: ready
+- [2025-06-17 18:36:12] [INFO] Loaded slash command: ping
+- [2025-06-17 18:36:12] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 18:36:12] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 18:36:12] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 18:36:12] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 18:36:12] [INFO] ✅ Database connection successful
+- [2025-06-17 18:36:13] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 18:36:13] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 18:36:13] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 18:36:14] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 18:36:14] [INFO] Slash commands registered at startup.
+- [2025-06-17 18:36:14] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 18:36:14] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 18:36:14] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 18:37:30] [INFO] Reloaded command: tempvoice
+- [2025-06-17 18:37:37] [INFO] Loaded command: autoban
+- [2025-06-17 18:37:37] [INFO] Loaded command: autospam
+- [2025-06-17 18:37:37] [INFO] Loaded command: add
+- [2025-06-17 18:37:37] [INFO] Loaded command: ban
+- [2025-06-17 18:37:37] [INFO] Loaded command: clear
+- [2025-06-17 18:37:37] [INFO] Loaded command: delwarn
+- [2025-06-17 18:37:37] [INFO] Loaded command: deny
+- [2025-06-17 18:37:37] [INFO] Loaded command: jail
+- [2025-06-17 18:37:37] [INFO] Loaded command: jailsettings
+- [2025-06-17 18:37:37] [INFO] Loaded command: kick
+- [2025-06-17 18:37:37] [INFO] Loaded command: lock
+- [2025-06-17 18:37:37] [INFO] Loaded command: move
+- [2025-06-17 18:37:37] [INFO] Loaded command: mute
+- [2025-06-17 18:37:37] [INFO] Loaded command: nickname
+- [2025-06-17 18:37:37] [INFO] Loaded command: role
+- [2025-06-17 18:37:37] [INFO] Loaded command: setautorole
+- [2025-06-17 18:37:37] [INFO] Loaded command: setjailrole
+- [2025-06-17 18:37:37] [INFO] Loaded command: setjailvoice
+- [2025-06-17 18:37:37] [INFO] Loaded command: slowmode
+- [2025-06-17 18:37:37] [INFO] Loaded command: tempvoice
+- [2025-06-17 18:37:37] [INFO] Loaded command: unban
+- [2025-06-17 18:37:37] [INFO] Loaded command: unjail
+- [2025-06-17 18:37:37] [INFO] Loaded command: unlock
+- [2025-06-17 18:37:37] [INFO] Loaded command: unmute
+- [2025-06-17 18:37:37] [INFO] Loaded command: verify
+- [2025-06-17 18:37:37] [INFO] Loaded command: warn
+- [2025-06-17 18:37:37] [INFO] Loaded command: warns
+- [2025-06-17 18:37:37] [INFO] Loaded command: massdm
+- [2025-06-17 18:37:38] [INFO] Loaded command: nuke-servre
+- [2025-06-17 18:37:38] [INFO] Loaded command: premium
+- [2025-06-17 18:37:38] [INFO] Loaded command: setuproles
+- [2025-06-17 18:37:38] [INFO] Loaded command: shutdown
+- [2025-06-17 18:37:38] [INFO] Loaded command: modmail
+- [2025-06-17 18:37:38] [INFO] Loaded command: moveall
+- [2025-06-17 18:37:38] [INFO] Loaded command: rolemenu
+- [2025-06-17 18:37:38] [INFO] Loaded command: sendnotify
+- [2025-06-17 18:37:38] [INFO] Loaded command: ping
+- [2025-06-17 18:37:38] [INFO] Loaded command: setembedcolor
+- [2025-06-17 18:37:38] [INFO] Loaded command: setembedfooter
+- [2025-06-17 18:37:38] [INFO] Loaded command: setembedicon
+- [2025-06-17 18:37:38] [INFO] Loaded command: avatar
+- [2025-06-17 18:37:38] [INFO] Loaded command: botinfo
+- [2025-06-17 18:37:38] [INFO] Loaded command: channelinfo
+- [2025-06-17 18:37:38] [INFO] Loaded command: help
+- [2025-06-17 18:37:38] [INFO] Loaded command: invite
+- [2025-06-17 18:37:38] [INFO] Loaded command: roleinfo
+- [2025-06-17 18:37:38] [INFO] Loaded command: serverinfo
+- [2025-06-17 18:37:38] [INFO] Loaded command: userinfo
+- [2025-06-17 18:37:38] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 18:37:38] [INFO] Loaded event: interactionCreate
+- [2025-06-17 18:37:38] [INFO] Loaded event: messageCreate
+- [2025-06-17 18:37:38] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 18:37:38] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 18:37:38] [INFO] Loaded event: ready
+- [2025-06-17 18:37:38] [INFO] Loaded slash command: ping
+- [2025-06-17 18:37:38] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 18:37:38] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 18:37:38] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 18:37:38] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 18:37:46] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 18:37:46] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 18:37:46] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 18:37:47] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 18:37:47] [INFO] Slash commands registered at startup.
+- [2025-06-17 18:37:47] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 18:37:49] [INFO] ✅ Database connection successful
+- [2025-06-17 18:37:49] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 18:37:49] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 18:37:59] [INFO] Loaded command: autoban
+- [2025-06-17 18:37:59] [INFO] Loaded command: autospam
+- [2025-06-17 18:37:59] [INFO] Loaded command: add
+- [2025-06-17 18:37:59] [INFO] Loaded command: ban
+- [2025-06-17 18:37:59] [INFO] Loaded command: clear
+- [2025-06-17 18:37:59] [INFO] Loaded command: delwarn
+- [2025-06-17 18:37:59] [INFO] Loaded command: deny
+- [2025-06-17 18:37:59] [INFO] Loaded command: jail
+- [2025-06-17 18:37:59] [INFO] Loaded command: jailsettings
+- [2025-06-17 18:37:59] [INFO] Loaded command: kick
+- [2025-06-17 18:37:59] [INFO] Loaded command: lock
+- [2025-06-17 18:37:59] [INFO] Loaded command: move
+- [2025-06-17 18:37:59] [INFO] Loaded command: mute
+- [2025-06-17 18:37:59] [INFO] Loaded command: nickname
+- [2025-06-17 18:37:59] [INFO] Loaded command: role
+- [2025-06-17 18:37:59] [INFO] Loaded command: setautorole
+- [2025-06-17 18:37:59] [INFO] Loaded command: setjailrole
+- [2025-06-17 18:37:59] [INFO] Loaded command: setjailvoice
+- [2025-06-17 18:37:59] [INFO] Loaded command: slowmode
+- [2025-06-17 18:37:59] [INFO] Loaded command: tempvoice
+- [2025-06-17 18:37:59] [INFO] Loaded command: unban
+- [2025-06-17 18:37:59] [INFO] Loaded command: unjail
+- [2025-06-17 18:37:59] [INFO] Loaded command: unlock
+- [2025-06-17 18:37:59] [INFO] Loaded command: unmute
+- [2025-06-17 18:37:59] [INFO] Loaded command: verify
+- [2025-06-17 18:37:59] [INFO] Loaded command: warn
+- [2025-06-17 18:38:00] [INFO] Loaded command: warns
+- [2025-06-17 18:38:00] [INFO] Loaded command: massdm
+- [2025-06-17 18:38:00] [INFO] Loaded command: nuke-servre
+- [2025-06-17 18:38:00] [INFO] Loaded command: premium
+- [2025-06-17 18:38:00] [INFO] Loaded command: setuproles
+- [2025-06-17 18:38:00] [INFO] Loaded command: shutdown
+- [2025-06-17 18:38:00] [INFO] Loaded command: modmail
+- [2025-06-17 18:38:00] [INFO] Loaded command: moveall
+- [2025-06-17 18:38:00] [INFO] Loaded command: rolemenu
+- [2025-06-17 18:38:00] [INFO] Loaded command: sendnotify
+- [2025-06-17 18:38:00] [INFO] Loaded command: ping
+- [2025-06-17 18:38:00] [INFO] Loaded command: setembedcolor
+- [2025-06-17 18:38:00] [INFO] Loaded command: setembedfooter
+- [2025-06-17 18:38:00] [INFO] Loaded command: setembedicon
+- [2025-06-17 18:38:00] [INFO] Loaded command: avatar
+- [2025-06-17 18:38:00] [INFO] Loaded command: botinfo
+- [2025-06-17 18:38:00] [INFO] Loaded command: channelinfo
+- [2025-06-17 18:38:00] [INFO] Loaded command: help
+- [2025-06-17 18:38:00] [INFO] Loaded command: invite
+- [2025-06-17 18:38:00] [INFO] Loaded command: roleinfo
+- [2025-06-17 18:38:00] [INFO] Loaded command: serverinfo
+- [2025-06-17 18:38:00] [INFO] Loaded command: userinfo
+- [2025-06-17 18:38:00] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 18:38:00] [INFO] Loaded event: interactionCreate
+- [2025-06-17 18:38:00] [INFO] Loaded event: messageCreate
+- [2025-06-17 18:38:00] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 18:38:00] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 18:38:00] [INFO] Loaded event: ready
+- [2025-06-17 18:38:00] [INFO] Loaded slash command: ping
+- [2025-06-17 18:38:00] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 18:38:00] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 18:38:00] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 18:38:00] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 18:38:01] [INFO] ✅ Database connection successful
+- [2025-06-17 18:38:01] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 18:38:01] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 18:38:01] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 18:38:02] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 18:38:02] [INFO] Slash commands registered at startup.
+- [2025-06-17 18:38:02] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 18:38:02] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 18:38:02] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 18:38:59] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-17 18:39:04] [INFO] Loaded command: autoban
+- [2025-06-17 18:39:04] [INFO] Loaded command: autospam
+- [2025-06-17 18:39:04] [INFO] Loaded command: add
+- [2025-06-17 18:39:04] [INFO] Loaded command: ban
+- [2025-06-17 18:39:04] [INFO] Loaded command: clear
+- [2025-06-17 18:39:04] [INFO] Loaded command: delwarn
+- [2025-06-17 18:39:04] [INFO] Loaded command: deny
+- [2025-06-17 18:39:04] [INFO] Loaded command: jail
+- [2025-06-17 18:39:05] [INFO] Loaded command: jailsettings
+- [2025-06-17 18:39:05] [INFO] Loaded command: kick
+- [2025-06-17 18:39:05] [INFO] Loaded command: lock
+- [2025-06-17 18:39:05] [INFO] Loaded command: move
+- [2025-06-17 18:39:05] [INFO] Loaded command: mute
+- [2025-06-17 18:39:05] [INFO] Loaded command: nickname
+- [2025-06-17 18:39:05] [INFO] Loaded command: role
+- [2025-06-17 18:39:05] [INFO] Loaded command: setautorole
+- [2025-06-17 18:39:05] [INFO] Loaded command: setjailrole
+- [2025-06-17 18:39:05] [INFO] Loaded command: setjailvoice
+- [2025-06-17 18:39:05] [INFO] Loaded command: slowmode
+- [2025-06-17 18:39:05] [INFO] Loaded command: tempvoice
+- [2025-06-17 18:39:05] [INFO] Loaded command: unban
+- [2025-06-17 18:39:05] [INFO] Loaded command: unjail
+- [2025-06-17 18:39:05] [INFO] Loaded command: unlock
+- [2025-06-17 18:39:05] [INFO] Loaded command: unmute
+- [2025-06-17 18:39:05] [INFO] Loaded command: verify
+- [2025-06-17 18:39:05] [INFO] Loaded command: warn
+- [2025-06-17 18:39:05] [INFO] Loaded command: warns
+- [2025-06-17 18:39:05] [INFO] Loaded command: massdm
+- [2025-06-17 18:39:05] [INFO] Loaded command: nuke-servre
+- [2025-06-17 18:39:05] [INFO] Loaded command: premium
+- [2025-06-17 18:39:05] [INFO] Loaded command: setuproles
+- [2025-06-17 18:39:05] [INFO] Loaded command: shutdown
+- [2025-06-17 18:39:05] [INFO] Loaded command: modmail
+- [2025-06-17 18:39:05] [INFO] Loaded command: moveall
+- [2025-06-17 18:39:05] [INFO] Loaded command: rolemenu
+- [2025-06-17 18:39:05] [INFO] Loaded command: sendnotify
+- [2025-06-17 18:39:05] [INFO] Loaded command: ping
+- [2025-06-17 18:39:05] [INFO] Loaded command: setembedcolor
+- [2025-06-17 18:39:05] [INFO] Loaded command: setembedfooter
+- [2025-06-17 18:39:05] [INFO] Loaded command: setembedicon
+- [2025-06-17 18:39:05] [INFO] Loaded command: avatar
+- [2025-06-17 18:39:05] [INFO] Loaded command: botinfo
+- [2025-06-17 18:39:05] [INFO] Loaded command: channelinfo
+- [2025-06-17 18:39:05] [INFO] Loaded command: help
+- [2025-06-17 18:39:05] [INFO] Loaded command: invite
+- [2025-06-17 18:39:05] [INFO] Loaded command: roleinfo
+- [2025-06-17 18:39:05] [INFO] Loaded command: serverinfo
+- [2025-06-17 18:39:05] [INFO] Loaded command: userinfo
+- [2025-06-17 18:39:05] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 18:39:05] [INFO] Loaded event: interactionCreate
+- [2025-06-17 18:39:05] [INFO] Loaded event: messageCreate
+- [2025-06-17 18:39:05] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 18:39:05] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 18:39:05] [INFO] Loaded event: ready
+- [2025-06-17 18:39:05] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 18:39:05] [INFO] Loaded slash command: ping
+- [2025-06-17 18:39:05] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 18:39:05] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 18:39:05] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 18:39:05] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 18:39:06] [INFO] ✅ Database connection successful
+- [2025-06-17 18:39:07] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 18:39:07] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 18:39:07] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 18:39:07] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 18:39:07] [INFO] Slash commands registered at startup.
+- [2025-06-17 18:39:07] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 18:39:08] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 18:39:08] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 18:39:29] [INFO] Reloaded event: ready
+- [2025-06-17 18:39:35] [INFO] Loaded command: autoban
+- [2025-06-17 18:39:35] [INFO] Loaded command: autospam
+- [2025-06-17 18:39:35] [INFO] Loaded command: add
+- [2025-06-17 18:39:35] [INFO] Loaded command: ban
+- [2025-06-17 18:39:35] [INFO] Loaded command: clear
+- [2025-06-17 18:39:35] [INFO] Loaded command: delwarn
+- [2025-06-17 18:39:35] [INFO] Loaded command: deny
+- [2025-06-17 18:39:35] [INFO] Loaded command: jail
+- [2025-06-17 18:39:35] [INFO] Loaded command: jailsettings
+- [2025-06-17 18:39:35] [INFO] Loaded command: kick
+- [2025-06-17 18:39:35] [INFO] Loaded command: lock
+- [2025-06-17 18:39:36] [INFO] Loaded command: move
+- [2025-06-17 18:39:36] [INFO] Loaded command: mute
+- [2025-06-17 18:39:36] [INFO] Loaded command: nickname
+- [2025-06-17 18:39:36] [INFO] Loaded command: role
+- [2025-06-17 18:39:36] [INFO] Loaded command: setautorole
+- [2025-06-17 18:39:36] [INFO] Loaded command: setjailrole
+- [2025-06-17 18:39:36] [INFO] Loaded command: setjailvoice
+- [2025-06-17 18:39:36] [INFO] Loaded command: slowmode
+- [2025-06-17 18:39:36] [INFO] Loaded command: tempvoice
+- [2025-06-17 18:39:36] [INFO] Loaded command: unban
+- [2025-06-17 18:39:36] [INFO] Loaded command: unjail
+- [2025-06-17 18:39:36] [INFO] Loaded command: unlock
+- [2025-06-17 18:39:36] [INFO] Loaded command: unmute
+- [2025-06-17 18:39:36] [INFO] Loaded command: verify
+- [2025-06-17 18:39:36] [INFO] Loaded command: warn
+- [2025-06-17 18:39:36] [INFO] Loaded command: warns
+- [2025-06-17 18:39:37] [INFO] Loaded command: massdm
+- [2025-06-17 18:39:37] [INFO] Loaded command: nuke-servre
+- [2025-06-17 18:39:37] [INFO] Loaded command: premium
+- [2025-06-17 18:39:37] [INFO] Loaded command: setuproles
+- [2025-06-17 18:39:37] [INFO] Loaded command: shutdown
+- [2025-06-17 18:39:37] [INFO] Loaded command: modmail
+- [2025-06-17 18:39:37] [INFO] Loaded command: moveall
+- [2025-06-17 18:39:37] [INFO] Loaded command: rolemenu
+- [2025-06-17 18:39:37] [INFO] Loaded command: sendnotify
+- [2025-06-17 18:39:37] [INFO] Loaded command: ping
+- [2025-06-17 18:39:38] [INFO] Loaded command: setembedcolor
+- [2025-06-17 18:39:38] [INFO] Loaded command: setembedfooter
+- [2025-06-17 18:39:38] [INFO] Loaded command: setembedicon
+- [2025-06-17 18:39:38] [INFO] Loaded command: avatar
+- [2025-06-17 18:39:38] [INFO] Loaded command: botinfo
+- [2025-06-17 18:39:38] [INFO] Loaded command: channelinfo
+- [2025-06-17 18:39:38] [INFO] Loaded command: help
+- [2025-06-17 18:39:38] [INFO] Loaded command: invite
+- [2025-06-17 18:39:38] [INFO] Loaded command: roleinfo
+- [2025-06-17 18:39:38] [INFO] Loaded command: serverinfo
+- [2025-06-17 18:39:38] [INFO] Loaded command: userinfo
+- [2025-06-17 18:39:38] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 18:39:38] [INFO] Loaded event: interactionCreate
+- [2025-06-17 18:39:38] [INFO] Loaded event: messageCreate
+- [2025-06-17 18:39:38] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 18:39:38] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 18:39:38] [INFO] Loaded event: ready
+- [2025-06-17 18:39:38] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 18:39:38] [INFO] Loaded slash command: ping
+- [2025-06-17 18:39:38] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 18:39:38] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 18:39:38] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 18:39:38] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 18:39:39] [INFO] ✅ Database connection successful
+- [2025-06-17 18:39:41] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 18:39:41] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 18:39:41] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 18:39:41] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 18:39:41] [INFO] Slash commands registered at startup.
+- [2025-06-17 18:39:41] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 18:39:42] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 18:39:42] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 18:40:51] [INFO] Set temp voice config for guild 1038540608396066856.
+- [2025-06-17 18:40:56] [INFO] User mrahmet48 joined creator channel in Parallel Universe. Creating temp channel...
+- [2025-06-17 18:40:58] [INFO] Created temp channel !'s Channel (1384603741478719700) for mrahmet48.
+- [2025-06-17 18:41:04] [INFO] Temp channel !'s Channel is empty. Deleting...
+- [2025-06-17 18:41:04] [INFO] Deleted temp channel !'s Channel (1384603741478719700).
+- [2025-06-17 18:42:24] [ERROR] Query error: [object Object]
+- [2025-06-17 18:42:24] [ERROR] Error setting temp voice config for guild 1038540608396066856: error: null value in column "creator_channel_id" of relation "temp_voice_configs" violates not-null constraint
+- [2025-06-17 18:42:24] [ERROR] Command tempvoice failed: error: null value in column "creator_channel_id" of relation "temp_voice_configs" violates not-null constraint
+- [2025-06-17 18:42:44] [ERROR] Query error: [object Object]
+- [2025-06-17 18:42:44] [ERROR] Error setting temp voice config for guild 1038540608396066856: error: null value in column "creator_channel_id" of relation "temp_voice_configs" violates not-null constraint
+- [2025-06-17 18:42:44] [ERROR] Command tempvoice failed: error: null value in column "creator_channel_id" of relation "temp_voice_configs" violates not-null constraint
+- [2025-06-17 18:43:53] [INFO] Loaded command: autoban
+- [2025-06-17 18:43:53] [INFO] Loaded command: autospam
+- [2025-06-17 18:43:53] [INFO] Loaded command: add
+- [2025-06-17 18:43:53] [INFO] Loaded command: ban
+- [2025-06-17 18:43:54] [INFO] Loaded command: clear
+- [2025-06-17 18:43:54] [INFO] Loaded command: delwarn
+- [2025-06-17 18:43:54] [INFO] Loaded command: deny
+- [2025-06-17 18:43:54] [INFO] Loaded command: jail
+- [2025-06-17 18:43:54] [INFO] Loaded command: jailsettings
+- [2025-06-17 18:43:54] [INFO] Loaded command: kick
+- [2025-06-17 18:43:54] [INFO] Loaded command: lock
+- [2025-06-17 18:43:54] [INFO] Loaded command: move
+- [2025-06-17 18:43:54] [INFO] Loaded command: mute
+- [2025-06-17 18:43:54] [INFO] Loaded command: nickname
+- [2025-06-17 18:43:54] [INFO] Loaded command: role
+- [2025-06-17 18:43:54] [INFO] Loaded command: setautorole
+- [2025-06-17 18:43:54] [INFO] Loaded command: setjailrole
+- [2025-06-17 18:43:54] [INFO] Loaded command: setjailvoice
+- [2025-06-17 18:43:54] [INFO] Loaded command: slowmode
+- [2025-06-17 18:43:55] [INFO] Loaded command: tempvoice
+- [2025-06-17 18:43:55] [INFO] Loaded command: unban
+- [2025-06-17 18:43:55] [INFO] Loaded command: unjail
+- [2025-06-17 18:43:55] [INFO] Loaded command: unlock
+- [2025-06-17 18:43:55] [INFO] Loaded command: unmute
+- [2025-06-17 18:43:55] [INFO] Loaded command: verify
+- [2025-06-17 18:43:55] [INFO] Loaded command: warn
+- [2025-06-17 18:43:55] [INFO] Loaded command: warns
+- [2025-06-17 18:43:55] [INFO] Loaded command: massdm
+- [2025-06-17 18:43:55] [INFO] Loaded command: nuke-servre
+- [2025-06-17 18:43:55] [INFO] Loaded command: premium
+- [2025-06-17 18:43:55] [INFO] Loaded command: setuproles
+- [2025-06-17 18:43:55] [INFO] Loaded command: shutdown
+- [2025-06-17 18:43:55] [INFO] Loaded command: modmail
+- [2025-06-17 18:43:55] [INFO] Loaded command: moveall
+- [2025-06-17 18:43:55] [INFO] Loaded command: rolemenu
+- [2025-06-17 18:43:55] [INFO] Loaded command: sendnotify
+- [2025-06-17 18:43:55] [INFO] Loaded command: ping
+- [2025-06-17 18:43:55] [INFO] Loaded command: setembedcolor
+- [2025-06-17 18:43:55] [INFO] Loaded command: setembedfooter
+- [2025-06-17 18:43:55] [INFO] Loaded command: setembedicon
+- [2025-06-17 18:43:55] [INFO] Loaded command: avatar
+- [2025-06-17 18:43:55] [INFO] Loaded command: botinfo
+- [2025-06-17 18:43:55] [INFO] Loaded command: channelinfo
+- [2025-06-17 18:43:55] [INFO] Loaded command: help
+- [2025-06-17 18:43:55] [INFO] Loaded command: invite
+- [2025-06-17 18:43:55] [INFO] Loaded command: roleinfo
+- [2025-06-17 18:43:55] [INFO] Loaded command: serverinfo
+- [2025-06-17 18:43:55] [INFO] Loaded command: userinfo
+- [2025-06-17 18:43:55] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 18:43:55] [INFO] Loaded event: interactionCreate
+- [2025-06-17 18:43:55] [INFO] Loaded event: messageCreate
+- [2025-06-17 18:43:55] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 18:43:55] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 18:43:55] [INFO] Loaded event: ready
+- [2025-06-17 18:43:55] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 18:43:55] [INFO] Loaded slash command: ping
+- [2025-06-17 18:43:55] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 18:43:55] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 18:43:55] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 18:43:55] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 18:43:56] [INFO] ✅ Database connection successful
+- [2025-06-17 18:43:57] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 18:43:57] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 18:43:57] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 18:43:57] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 18:43:57] [INFO] Slash commands registered at startup.
+- [2025-06-17 18:43:57] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 18:43:58] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 18:43:58] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 18:43:58] [INFO] Set temp voice config for guild 1038540608396066856.
+- [2025-06-17 18:44:31] [INFO] Set temp voice config for guild 1038540608396066856.
+- [2025-06-17 18:44:58] [INFO] Set temp voice config for guild 1038540608396066856.
+- [2025-06-17 18:46:23] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-17 18:46:29] [INFO] Loaded command: autoban
+- [2025-06-17 18:46:29] [INFO] Loaded command: autospam
+- [2025-06-17 18:46:29] [INFO] Loaded command: add
+- [2025-06-17 18:46:29] [INFO] Loaded command: ban
+- [2025-06-17 18:46:30] [INFO] Loaded command: clear
+- [2025-06-17 18:46:30] [INFO] Loaded command: delwarn
+- [2025-06-17 18:46:30] [INFO] Loaded command: deny
+- [2025-06-17 18:46:30] [INFO] Loaded command: jail
+- [2025-06-17 18:46:30] [INFO] Loaded command: jailsettings
+- [2025-06-17 18:46:30] [INFO] Loaded command: kick
+- [2025-06-17 18:46:30] [INFO] Loaded command: lock
+- [2025-06-17 18:46:30] [INFO] Loaded command: move
+- [2025-06-17 18:46:30] [INFO] Loaded command: mute
+- [2025-06-17 18:46:30] [INFO] Loaded command: nickname
+- [2025-06-17 18:46:30] [INFO] Loaded command: role
+- [2025-06-17 18:46:30] [INFO] Loaded command: setautorole
+- [2025-06-17 18:46:30] [INFO] Loaded command: setjailrole
+- [2025-06-17 18:46:30] [INFO] Loaded command: setjailvoice
+- [2025-06-17 18:46:30] [INFO] Loaded command: slowmode
+- [2025-06-17 18:46:30] [INFO] Loaded command: tempvoice
+- [2025-06-17 18:46:30] [INFO] Loaded command: unban
+- [2025-06-17 18:46:30] [INFO] Loaded command: unjail
+- [2025-06-17 18:46:30] [INFO] Loaded command: unlock
+- [2025-06-17 18:46:30] [INFO] Loaded command: unmute
+- [2025-06-17 18:46:30] [INFO] Loaded command: verify
+- [2025-06-17 18:46:30] [INFO] Loaded command: warn
+- [2025-06-17 18:46:30] [INFO] Loaded command: warns
+- [2025-06-17 18:46:30] [INFO] Loaded command: massdm
+- [2025-06-17 18:46:30] [INFO] Loaded command: nuke-servre
+- [2025-06-17 18:46:30] [INFO] Loaded command: premium
+- [2025-06-17 18:46:30] [INFO] Loaded command: setuproles
+- [2025-06-17 18:46:30] [INFO] Loaded command: shutdown
+- [2025-06-17 18:46:30] [INFO] Loaded command: modmail
+- [2025-06-17 18:46:30] [INFO] Loaded command: moveall
+- [2025-06-17 18:46:30] [INFO] Loaded command: rolemenu
+- [2025-06-17 18:46:30] [INFO] Loaded command: sendnotify
+- [2025-06-17 18:46:30] [INFO] Loaded command: ping
+- [2025-06-17 18:46:30] [INFO] Loaded command: setembedcolor
+- [2025-06-17 18:46:30] [INFO] Loaded command: setembedfooter
+- [2025-06-17 18:46:30] [INFO] Loaded command: setembedicon
+- [2025-06-17 18:46:30] [INFO] Loaded command: avatar
+- [2025-06-17 18:46:30] [INFO] Loaded command: botinfo
+- [2025-06-17 18:46:30] [INFO] Loaded command: channelinfo
+- [2025-06-17 18:46:30] [INFO] Loaded command: help
+- [2025-06-17 18:46:30] [INFO] Loaded command: invite
+- [2025-06-17 18:46:30] [INFO] Loaded command: roleinfo
+- [2025-06-17 18:46:30] [INFO] Loaded command: serverinfo
+- [2025-06-17 18:46:31] [INFO] Loaded command: userinfo
+- [2025-06-17 18:46:31] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 18:46:31] [INFO] Loaded event: interactionCreate
+- [2025-06-17 18:46:31] [INFO] Loaded event: messageCreate
+- [2025-06-17 18:46:31] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 18:46:31] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 18:46:31] [INFO] Loaded event: ready
+- [2025-06-17 18:46:31] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 18:46:31] [INFO] Loaded slash command: ping
+- [2025-06-17 18:46:31] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 18:46:31] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 18:46:31] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 18:46:31] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 18:46:32] [INFO] ✅ Database connection successful
+- [2025-06-17 18:46:32] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 18:46:32] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 18:46:33] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 18:46:33] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 18:46:33] [INFO] Slash commands registered at startup.
+- [2025-06-17 18:46:33] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 18:46:33] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 18:46:33] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 18:46:44] [INFO] User mrahmet48 joined creator channel in Parallel Universe. Creating temp channel...
+- [2025-06-17 18:46:45] [INFO] Created temp channel ! (1384605201025077308) for mrahmet48.
+- [2025-06-17 18:46:48] [INFO] User mrahmet48 joined creator channel in Parallel Universe. Creating temp channel...
+- [2025-06-17 18:46:49] [INFO] Created temp channel ! (1384605219194671315) for mrahmet48.
+- [2025-06-17 18:46:49] [INFO] Temp channel ! is empty. Deleting...
+- [2025-06-17 18:46:50] [INFO] Deleted temp channel ! (1384605201025077308).
+- [2025-06-17 18:46:52] [INFO] User mrahmet48 joined creator channel in Parallel Universe. Creating temp channel...
+- [2025-06-17 18:46:53] [INFO] Created temp channel ! (1384605234940219402) for mrahmet48.
+- [2025-06-17 18:46:53] [INFO] Temp channel ! is empty. Deleting...
+- [2025-06-17 18:46:53] [INFO] Deleted temp channel ! (1384605219194671315).
+- [2025-06-17 18:47:00] [INFO] Temp channel ! is empty. Deleting...
+- [2025-06-17 18:47:01] [INFO] Deleted temp channel ! (1384605234940219402).
+- [2025-06-17 18:48:56] [INFO] ✅ Database connection for migrator is successful.
+- [2025-06-17 18:48:56] [INFO] ✅ 'schema_migrations' table ensured.
+- [2025-06-17 18:48:56] [INFO] 🔄 Applying migration: 20250617195000_refactor_temp_voice_configs.sql...
+- [2025-06-17 18:48:56] [INFO] ✅ Migration 20250617195000_refactor_temp_voice_configs.sql applied successfully.
+- [2025-06-17 18:48:57] [INFO] Applied 1 new migration(s).
+- [2025-06-17 18:48:57] [INFO] Migrations completed.
+- [2025-06-17 18:50:31] [INFO] Loaded command: autoban
+- [2025-06-17 18:50:32] [INFO] Loaded command: autospam
+- [2025-06-17 18:50:32] [INFO] Loaded command: add
+- [2025-06-17 18:50:32] [INFO] Loaded command: ban
+- [2025-06-17 18:50:32] [INFO] Loaded command: clear
+- [2025-06-17 18:50:32] [INFO] Loaded command: delwarn
+- [2025-06-17 18:50:32] [INFO] Loaded command: deny
+- [2025-06-17 18:50:32] [INFO] Loaded command: jail
+- [2025-06-17 18:50:32] [INFO] Loaded command: jailsettings
+- [2025-06-17 18:50:32] [INFO] Loaded command: kick
+- [2025-06-17 18:50:32] [INFO] Loaded command: lock
+- [2025-06-17 18:50:32] [INFO] Loaded command: move
+- [2025-06-17 18:50:32] [INFO] Loaded command: mute
+- [2025-06-17 18:50:32] [INFO] Loaded command: nickname
+- [2025-06-17 18:50:32] [INFO] Loaded command: role
+- [2025-06-17 18:50:32] [INFO] Loaded command: setautorole
+- [2025-06-17 18:50:32] [INFO] Loaded command: setjailrole
+- [2025-06-17 18:50:32] [INFO] Loaded command: setjailvoice
+- [2025-06-17 18:50:32] [INFO] Loaded command: slowmode
+- [2025-06-17 18:50:32] [INFO] Loaded command: tempvoice
+- [2025-06-17 18:50:32] [INFO] Loaded command: unban
+- [2025-06-17 18:50:32] [INFO] Loaded command: unjail
+- [2025-06-17 18:50:32] [INFO] Loaded command: unlock
+- [2025-06-17 18:50:32] [INFO] Loaded command: unmute
+- [2025-06-17 18:50:32] [INFO] Loaded command: verify
+- [2025-06-17 18:50:32] [INFO] Loaded command: warn
+- [2025-06-17 18:50:32] [INFO] Loaded command: warns
+- [2025-06-17 18:50:32] [INFO] Loaded command: massdm
+- [2025-06-17 18:50:32] [INFO] Loaded command: nuke-servre
+- [2025-06-17 18:50:32] [INFO] Loaded command: premium
+- [2025-06-17 18:50:32] [INFO] Loaded command: setuproles
+- [2025-06-17 18:50:32] [INFO] Loaded command: shutdown
+- [2025-06-17 18:50:32] [INFO] Loaded command: modmail
+- [2025-06-17 18:50:32] [INFO] Loaded command: moveall
+- [2025-06-17 18:50:32] [INFO] Loaded command: rolemenu
+- [2025-06-17 18:50:32] [INFO] Loaded command: sendnotify
+- [2025-06-17 18:50:32] [INFO] Loaded command: ping
+- [2025-06-17 18:50:32] [INFO] Loaded command: setembedcolor
+- [2025-06-17 18:50:32] [INFO] Loaded command: setembedfooter
+- [2025-06-17 18:50:32] [INFO] Loaded command: setembedicon
+- [2025-06-17 18:50:32] [INFO] Loaded command: avatar
+- [2025-06-17 18:50:32] [INFO] Loaded command: botinfo
+- [2025-06-17 18:50:32] [INFO] Loaded command: channelinfo
+- [2025-06-17 18:50:33] [INFO] Loaded command: help
+- [2025-06-17 18:50:33] [INFO] Loaded command: invite
+- [2025-06-17 18:50:33] [INFO] Loaded command: roleinfo
+- [2025-06-17 18:50:33] [INFO] Loaded command: serverinfo
+- [2025-06-17 18:50:33] [INFO] Loaded command: userinfo
+- [2025-06-17 18:50:33] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 18:50:33] [INFO] Loaded event: interactionCreate
+- [2025-06-17 18:50:33] [INFO] Loaded event: messageCreate
+- [2025-06-17 18:50:33] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 18:50:33] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 18:50:33] [INFO] Loaded event: ready
+- [2025-06-17 18:50:33] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 18:50:33] [INFO] Loaded slash command: ping
+- [2025-06-17 18:50:33] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 18:50:33] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 18:50:33] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 18:50:33] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 18:50:34] [INFO] ✅ Database connection successful
+- [2025-06-17 18:50:35] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 18:50:35] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 18:50:35] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 18:50:35] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 18:50:35] [INFO] Slash commands registered at startup.
+- [2025-06-17 18:50:35] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 18:50:35] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 18:50:35] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 18:53:14] [INFO] Reloaded command: tempvoice
+- [2025-06-17 18:53:24] [INFO] Loaded command: autoban
+- [2025-06-17 18:53:24] [INFO] Loaded command: autospam
+- [2025-06-17 18:53:24] [INFO] Loaded command: add
+- [2025-06-17 18:53:24] [INFO] Loaded command: ban
+- [2025-06-17 18:53:24] [INFO] Loaded command: clear
+- [2025-06-17 18:53:24] [INFO] Loaded command: delwarn
+- [2025-06-17 18:53:24] [INFO] Loaded command: deny
+- [2025-06-17 18:53:24] [INFO] Loaded command: jail
+- [2025-06-17 18:53:24] [INFO] Loaded command: jailsettings
+- [2025-06-17 18:53:24] [INFO] Loaded command: kick
+- [2025-06-17 18:53:24] [INFO] Loaded command: lock
+- [2025-06-17 18:53:24] [INFO] Loaded command: move
+- [2025-06-17 18:53:24] [INFO] Loaded command: mute
+- [2025-06-17 18:53:24] [INFO] Loaded command: nickname
+- [2025-06-17 18:53:24] [INFO] Loaded command: role
+- [2025-06-17 18:53:24] [INFO] Loaded command: setautorole
+- [2025-06-17 18:53:24] [INFO] Loaded command: setjailrole
+- [2025-06-17 18:53:24] [INFO] Loaded command: setjailvoice
+- [2025-06-17 18:53:24] [INFO] Loaded command: slowmode
+- [2025-06-17 18:53:24] [INFO] Loaded command: tempvoice
+- [2025-06-17 18:53:24] [INFO] Loaded command: unban
+- [2025-06-17 18:53:24] [INFO] Loaded command: unjail
+- [2025-06-17 18:53:25] [INFO] Loaded command: unlock
+- [2025-06-17 18:53:25] [INFO] Loaded command: unmute
+- [2025-06-17 18:53:25] [INFO] Loaded command: verify
+- [2025-06-17 18:53:25] [INFO] Loaded command: warn
+- [2025-06-17 18:53:25] [INFO] Loaded command: warns
+- [2025-06-17 18:53:25] [INFO] Loaded command: massdm
+- [2025-06-17 18:53:25] [INFO] Loaded command: nuke-servre
+- [2025-06-17 18:53:25] [INFO] Loaded command: premium
+- [2025-06-17 18:53:25] [INFO] Loaded command: setuproles
+- [2025-06-17 18:53:25] [INFO] Loaded command: shutdown
+- [2025-06-17 18:53:25] [INFO] Loaded command: modmail
+- [2025-06-17 18:53:25] [INFO] Loaded command: moveall
+- [2025-06-17 18:53:25] [INFO] Loaded command: rolemenu
+- [2025-06-17 18:53:25] [INFO] Loaded command: sendnotify
+- [2025-06-17 18:53:25] [INFO] Loaded command: ping
+- [2025-06-17 18:53:25] [INFO] Loaded command: setembedcolor
+- [2025-06-17 18:53:25] [INFO] Loaded command: setembedfooter
+- [2025-06-17 18:53:25] [INFO] Loaded command: setembedicon
+- [2025-06-17 18:53:25] [INFO] Loaded command: avatar
+- [2025-06-17 18:53:25] [INFO] Loaded command: botinfo
+- [2025-06-17 18:53:25] [INFO] Loaded command: channelinfo
+- [2025-06-17 18:53:25] [INFO] Loaded command: help
+- [2025-06-17 18:53:25] [INFO] Loaded command: invite
+- [2025-06-17 18:53:25] [INFO] Loaded command: roleinfo
+- [2025-06-17 18:53:25] [INFO] Loaded command: serverinfo
+- [2025-06-17 18:53:25] [INFO] Loaded command: userinfo
+- [2025-06-17 18:53:25] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 18:53:25] [INFO] Loaded event: interactionCreate
+- [2025-06-17 18:53:25] [INFO] Loaded event: messageCreate
+- [2025-06-17 18:53:25] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 18:53:25] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 18:53:25] [INFO] Loaded event: ready
+- [2025-06-17 18:53:25] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 18:53:25] [INFO] Loaded slash command: ping
+- [2025-06-17 18:53:25] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 18:53:25] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 18:53:25] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 18:53:25] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 18:53:26] [INFO] ✅ Database connection successful
+- [2025-06-17 18:53:27] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 18:53:27] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 18:53:27] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 18:53:27] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 18:53:27] [INFO] Slash commands registered at startup.
+- [2025-06-17 18:53:27] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 18:53:28] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 18:53:28] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 18:53:49] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-17 18:54:06] [INFO] Loaded command: autoban
+- [2025-06-17 18:54:06] [INFO] Loaded command: autospam
+- [2025-06-17 18:54:06] [INFO] Loaded command: add
+- [2025-06-17 18:54:06] [INFO] Loaded command: ban
+- [2025-06-17 18:54:06] [INFO] Loaded command: clear
+- [2025-06-17 18:54:06] [INFO] Loaded command: delwarn
+- [2025-06-17 18:54:06] [INFO] Loaded command: deny
+- [2025-06-17 18:54:06] [INFO] Loaded command: jail
+- [2025-06-17 18:54:06] [INFO] Loaded command: jailsettings
+- [2025-06-17 18:54:06] [INFO] Loaded command: kick
+- [2025-06-17 18:54:06] [INFO] Loaded command: lock
+- [2025-06-17 18:54:06] [INFO] Loaded command: move
+- [2025-06-17 18:54:06] [INFO] Loaded command: mute
+- [2025-06-17 18:54:06] [INFO] Loaded command: nickname
+- [2025-06-17 18:54:06] [INFO] Loaded command: role
+- [2025-06-17 18:54:06] [INFO] Loaded command: setautorole
+- [2025-06-17 18:54:06] [INFO] Loaded command: setjailrole
+- [2025-06-17 18:54:06] [INFO] Loaded command: setjailvoice
+- [2025-06-17 18:54:06] [INFO] Loaded command: slowmode
+- [2025-06-17 18:54:06] [INFO] Loaded command: tempvoice
+- [2025-06-17 18:54:06] [INFO] Loaded command: unban
+- [2025-06-17 18:54:06] [INFO] Loaded command: unjail
+- [2025-06-17 18:54:06] [INFO] Loaded command: unlock
+- [2025-06-17 18:54:06] [INFO] Loaded command: unmute
+- [2025-06-17 18:54:06] [INFO] Loaded command: verify
+- [2025-06-17 18:54:06] [INFO] Loaded command: warn
+- [2025-06-17 18:54:06] [INFO] Loaded command: warns
+- [2025-06-17 18:54:06] [INFO] Loaded command: massdm
+- [2025-06-17 18:54:06] [INFO] Loaded command: nuke-servre
+- [2025-06-17 18:54:06] [INFO] Loaded command: premium
+- [2025-06-17 18:54:06] [INFO] Loaded command: setuproles
+- [2025-06-17 18:54:06] [INFO] Loaded command: shutdown
+- [2025-06-17 18:54:06] [INFO] Loaded command: modmail
+- [2025-06-17 18:54:07] [INFO] Loaded command: moveall
+- [2025-06-17 18:54:07] [INFO] Loaded command: rolemenu
+- [2025-06-17 18:54:07] [INFO] Loaded command: sendnotify
+- [2025-06-17 18:54:07] [INFO] Loaded command: ping
+- [2025-06-17 18:54:07] [INFO] Loaded command: setembedcolor
+- [2025-06-17 18:54:07] [INFO] Loaded command: setembedfooter
+- [2025-06-17 18:54:07] [INFO] Loaded command: setembedicon
+- [2025-06-17 18:54:07] [INFO] Loaded command: avatar
+- [2025-06-17 18:54:07] [INFO] Loaded command: botinfo
+- [2025-06-17 18:54:07] [INFO] Loaded command: channelinfo
+- [2025-06-17 18:54:07] [INFO] Loaded command: help
+- [2025-06-17 18:54:07] [INFO] Loaded command: invite
+- [2025-06-17 18:54:07] [INFO] Loaded command: roleinfo
+- [2025-06-17 18:54:07] [INFO] Loaded command: serverinfo
+- [2025-06-17 18:54:07] [INFO] Loaded command: userinfo
+- [2025-06-17 18:54:07] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 18:54:07] [INFO] Loaded event: interactionCreate
+- [2025-06-17 18:54:07] [INFO] Loaded event: messageCreate
+- [2025-06-17 18:54:07] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 18:54:07] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 18:54:07] [INFO] Loaded event: ready
+- [2025-06-17 18:54:07] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 18:54:07] [INFO] Loaded slash command: ping
+- [2025-06-17 18:54:07] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 18:54:07] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 18:54:07] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 18:54:07] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 18:54:08] [INFO] ✅ Database connection successful
+- [2025-06-17 18:54:08] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 18:54:08] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 18:54:08] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 18:54:09] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 18:54:09] [INFO] Slash commands registered at startup.
+- [2025-06-17 18:54:09] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 18:54:09] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 18:54:10] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 18:55:31] [INFO] Set temp voice config for guild 1038540608396066856 (support).
+- [2025-06-17 18:55:34] [INFO] User mrahmet48 joined creator channel '・❔︱Need Help 1' for config type 'default' in Parallel Universe. Creating temp channel...
+- [2025-06-17 18:55:36] [INFO] Created temp channel ! (1384607426002681944) for mrahmet48.
+- [2025-06-17 18:55:54] [INFO] Temp channel ! is empty. Deleting...
+- [2025-06-17 18:55:55] [INFO] Deleted temp channel ! (1384607426002681944).
+- [2025-06-17 18:57:05] [INFO] ✅ Database connection for migrator is successful.
+- [2025-06-17 18:57:05] [INFO] ✅ 'schema_migrations' table ensured.
+- [2025-06-17 18:57:06] [INFO] 🔄 Applying migration: 20250617200000_add_claim_and_limit_features.sql...
+- [2025-06-17 18:57:06] [INFO] ✅ Migration 20250617200000_add_claim_and_limit_features.sql applied successfully.
+- [2025-06-17 18:57:06] [INFO] Applied 1 new migration(s).
+- [2025-06-17 18:57:06] [INFO] Migrations completed.
+- [2025-06-17 18:57:35] [INFO] Loaded command: autoban
+- [2025-06-17 18:57:35] [INFO] Loaded command: autospam
+- [2025-06-17 18:57:35] [INFO] Loaded command: add
+- [2025-06-17 18:57:35] [INFO] Loaded command: ban
+- [2025-06-17 18:57:35] [INFO] Loaded command: clear
+- [2025-06-17 18:57:35] [INFO] Loaded command: delwarn
+- [2025-06-17 18:57:35] [INFO] Loaded command: deny
+- [2025-06-17 18:57:35] [INFO] Loaded command: jail
+- [2025-06-17 18:57:35] [INFO] Loaded command: jailsettings
+- [2025-06-17 18:57:35] [INFO] Loaded command: kick
+- [2025-06-17 18:57:35] [INFO] Loaded command: lock
+- [2025-06-17 18:57:35] [INFO] Loaded command: move
+- [2025-06-17 18:57:35] [INFO] Loaded command: mute
+- [2025-06-17 18:57:35] [INFO] Loaded command: nickname
+- [2025-06-17 18:57:35] [INFO] Loaded command: role
+- [2025-06-17 18:57:35] [INFO] Loaded command: setautorole
+- [2025-06-17 18:57:35] [INFO] Loaded command: setjailrole
+- [2025-06-17 18:57:35] [INFO] Loaded command: setjailvoice
+- [2025-06-17 18:57:35] [INFO] Loaded command: slowmode
+- [2025-06-17 18:57:35] [INFO] Loaded command: tempvoice
+- [2025-06-17 18:57:35] [INFO] Loaded command: unban
+- [2025-06-17 18:57:35] [INFO] Loaded command: unjail
+- [2025-06-17 18:57:35] [INFO] Loaded command: unlock
+- [2025-06-17 18:57:35] [INFO] Loaded command: unmute
+- [2025-06-17 18:57:35] [INFO] Loaded command: verify
+- [2025-06-17 18:57:35] [INFO] Loaded command: warn
+- [2025-06-17 18:57:35] [INFO] Loaded command: warns
+- [2025-06-17 18:57:35] [INFO] Loaded command: massdm
+- [2025-06-17 18:57:35] [INFO] Loaded command: nuke-servre
+- [2025-06-17 18:57:35] [INFO] Loaded command: premium
+- [2025-06-17 18:57:35] [INFO] Loaded command: setuproles
+- [2025-06-17 18:57:35] [INFO] Loaded command: shutdown
+- [2025-06-17 18:57:35] [INFO] Loaded command: modmail
+- [2025-06-17 18:57:35] [INFO] Loaded command: moveall
+- [2025-06-17 18:57:35] [INFO] Loaded command: rolemenu
+- [2025-06-17 18:57:35] [INFO] Loaded command: sendnotify
+- [2025-06-17 18:57:35] [INFO] Loaded command: ping
+- [2025-06-17 18:57:35] [INFO] Loaded command: setembedcolor
+- [2025-06-17 18:57:35] [INFO] Loaded command: setembedfooter
+- [2025-06-17 18:57:35] [INFO] Loaded command: setembedicon
+- [2025-06-17 18:57:35] [INFO] Loaded command: avatar
+- [2025-06-17 18:57:36] [INFO] Loaded command: botinfo
+- [2025-06-17 18:57:36] [INFO] Loaded command: channelinfo
+- [2025-06-17 18:57:36] [INFO] Loaded command: help
+- [2025-06-17 18:57:36] [INFO] Loaded command: invite
+- [2025-06-17 18:57:36] [INFO] Loaded command: roleinfo
+- [2025-06-17 18:57:36] [INFO] Loaded command: serverinfo
+- [2025-06-17 18:57:36] [INFO] Loaded command: userinfo
+- [2025-06-17 18:57:36] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 18:57:36] [INFO] Loaded event: interactionCreate
+- [2025-06-17 18:57:36] [INFO] Loaded event: messageCreate
+- [2025-06-17 18:57:36] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 18:57:36] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 18:57:36] [INFO] Loaded event: ready
+- [2025-06-17 18:57:36] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 18:57:36] [INFO] Loaded slash command: ping
+- [2025-06-17 18:57:36] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 18:57:36] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 18:57:36] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 18:57:36] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 18:57:37] [INFO] ✅ Database connection successful
+- [2025-06-17 18:57:37] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 18:57:38] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 18:57:38] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 18:57:38] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 18:57:38] [INFO] Slash commands registered at startup.
+- [2025-06-17 18:57:38] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 18:57:38] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 18:57:38] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 18:57:58] [INFO] Reloaded command: tempvoice
+- [2025-06-17 18:58:03] [INFO] Loaded command: autoban
+- [2025-06-17 18:58:03] [INFO] Loaded command: autospam
+- [2025-06-17 18:58:03] [INFO] Loaded command: add
+- [2025-06-17 18:58:03] [INFO] Loaded command: ban
+- [2025-06-17 18:58:03] [INFO] Loaded command: clear
+- [2025-06-17 18:58:03] [INFO] Loaded command: delwarn
+- [2025-06-17 18:58:03] [INFO] Loaded command: deny
+- [2025-06-17 18:58:03] [INFO] Loaded command: jail
+- [2025-06-17 18:58:03] [INFO] Loaded command: jailsettings
+- [2025-06-17 18:58:03] [INFO] Loaded command: kick
+- [2025-06-17 18:58:03] [INFO] Loaded command: lock
+- [2025-06-17 18:58:03] [INFO] Loaded command: move
+- [2025-06-17 18:58:03] [INFO] Loaded command: mute
+- [2025-06-17 18:58:03] [INFO] Loaded command: nickname
+- [2025-06-17 18:58:03] [INFO] Loaded command: role
+- [2025-06-17 18:58:03] [INFO] Loaded command: setautorole
+- [2025-06-17 18:58:03] [INFO] Loaded command: setjailrole
+- [2025-06-17 18:58:03] [INFO] Loaded command: setjailvoice
+- [2025-06-17 18:58:03] [INFO] Loaded command: slowmode
+- [2025-06-17 18:58:03] [INFO] Loaded command: tempvoice
+- [2025-06-17 18:58:03] [INFO] Loaded command: unban
+- [2025-06-17 18:58:03] [INFO] Loaded command: unjail
+- [2025-06-17 18:58:03] [INFO] Loaded command: unlock
+- [2025-06-17 18:58:03] [INFO] Loaded command: unmute
+- [2025-06-17 18:58:03] [INFO] Loaded command: verify
+- [2025-06-17 18:58:03] [INFO] Loaded command: warn
+- [2025-06-17 18:58:03] [INFO] Loaded command: warns
+- [2025-06-17 18:58:03] [INFO] Loaded command: massdm
+- [2025-06-17 18:58:04] [INFO] Loaded command: nuke-servre
+- [2025-06-17 18:58:04] [INFO] Loaded command: premium
+- [2025-06-17 18:58:04] [INFO] Loaded command: setuproles
+- [2025-06-17 18:58:04] [INFO] Loaded command: shutdown
+- [2025-06-17 18:58:04] [INFO] Loaded command: modmail
+- [2025-06-17 18:58:04] [INFO] Loaded command: moveall
+- [2025-06-17 18:58:04] [INFO] Loaded command: rolemenu
+- [2025-06-17 18:58:04] [INFO] Loaded command: sendnotify
+- [2025-06-17 18:58:04] [INFO] Loaded command: ping
+- [2025-06-17 18:58:04] [INFO] Loaded command: setembedcolor
+- [2025-06-17 18:58:04] [INFO] Loaded command: setembedfooter
+- [2025-06-17 18:58:04] [INFO] Loaded command: setembedicon
+- [2025-06-17 18:58:04] [INFO] Loaded command: avatar
+- [2025-06-17 18:58:04] [INFO] Loaded command: botinfo
+- [2025-06-17 18:58:04] [INFO] Loaded command: channelinfo
+- [2025-06-17 18:58:04] [INFO] Loaded command: help
+- [2025-06-17 18:58:04] [INFO] Loaded command: invite
+- [2025-06-17 18:58:04] [INFO] Loaded command: roleinfo
+- [2025-06-17 18:58:04] [INFO] Loaded command: serverinfo
+- [2025-06-17 18:58:04] [INFO] Loaded command: userinfo
+- [2025-06-17 18:58:04] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 18:58:04] [INFO] Loaded event: interactionCreate
+- [2025-06-17 18:58:04] [INFO] Loaded event: messageCreate
+- [2025-06-17 18:58:04] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 18:58:04] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 18:58:04] [INFO] Loaded event: ready
+- [2025-06-17 18:58:04] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 18:58:04] [INFO] Loaded slash command: ping
+- [2025-06-17 18:58:04] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 18:58:04] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 18:58:04] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 18:58:04] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 18:58:05] [INFO] ✅ Database connection successful
+- [2025-06-17 18:58:05] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 18:58:05] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 18:58:05] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 18:58:06] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 18:58:06] [INFO] Slash commands registered at startup.
+- [2025-06-17 18:58:06] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 18:58:06] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 18:58:06] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 18:58:32] [INFO] Loaded command: autoban
+- [2025-06-17 18:58:32] [INFO] Loaded command: autospam
+- [2025-06-17 18:58:32] [INFO] Loaded command: add
+- [2025-06-17 18:58:32] [INFO] Loaded command: ban
+- [2025-06-17 18:58:32] [INFO] Loaded command: clear
+- [2025-06-17 18:58:32] [INFO] Loaded command: delwarn
+- [2025-06-17 18:58:32] [INFO] Loaded command: deny
+- [2025-06-17 18:58:32] [INFO] Loaded command: jail
+- [2025-06-17 18:58:32] [INFO] Loaded command: jailsettings
+- [2025-06-17 18:58:32] [INFO] Loaded command: kick
+- [2025-06-17 18:58:32] [INFO] Loaded command: lock
+- [2025-06-17 18:58:32] [INFO] Loaded command: move
+- [2025-06-17 18:58:32] [INFO] Loaded command: mute
+- [2025-06-17 18:58:32] [INFO] Loaded command: nickname
+- [2025-06-17 18:58:32] [INFO] Loaded command: role
+- [2025-06-17 18:58:33] [INFO] Loaded command: setautorole
+- [2025-06-17 18:58:33] [INFO] Loaded command: setjailrole
+- [2025-06-17 18:58:33] [INFO] Loaded command: setjailvoice
+- [2025-06-17 18:58:33] [INFO] Loaded command: slowmode
+- [2025-06-17 18:58:33] [INFO] Loaded command: tempvoice
+- [2025-06-17 18:58:33] [INFO] Loaded command: unban
+- [2025-06-17 18:58:33] [INFO] Loaded command: unjail
+- [2025-06-17 18:58:33] [INFO] Loaded command: unlock
+- [2025-06-17 18:58:33] [INFO] Loaded command: unmute
+- [2025-06-17 18:58:33] [INFO] Loaded command: verify
+- [2025-06-17 18:58:33] [INFO] Loaded command: warn
+- [2025-06-17 18:58:33] [INFO] Loaded command: warns
+- [2025-06-17 18:58:33] [INFO] Loaded command: massdm
+- [2025-06-17 18:58:33] [INFO] Loaded command: nuke-servre
+- [2025-06-17 18:58:33] [INFO] Loaded command: premium
+- [2025-06-17 18:58:33] [INFO] Loaded command: setuproles
+- [2025-06-17 18:58:33] [INFO] Loaded command: shutdown
+- [2025-06-17 18:58:33] [INFO] Loaded command: modmail
+- [2025-06-17 18:58:33] [INFO] Loaded command: moveall
+- [2025-06-17 18:58:33] [INFO] Loaded command: rolemenu
+- [2025-06-17 18:58:33] [INFO] Loaded command: sendnotify
+- [2025-06-17 18:58:33] [INFO] Loaded command: ping
+- [2025-06-17 18:58:33] [INFO] Loaded command: setembedcolor
+- [2025-06-17 18:58:33] [INFO] Loaded command: setembedfooter
+- [2025-06-17 18:58:33] [INFO] Loaded command: setembedicon
+- [2025-06-17 18:58:33] [INFO] Loaded command: avatar
+- [2025-06-17 18:58:33] [INFO] Loaded command: botinfo
+- [2025-06-17 18:58:33] [INFO] Loaded command: channelinfo
+- [2025-06-17 18:58:33] [INFO] Loaded command: help
+- [2025-06-17 18:58:33] [INFO] Loaded command: invite
+- [2025-06-17 18:58:33] [INFO] Loaded command: roleinfo
+- [2025-06-17 18:58:33] [INFO] Loaded command: serverinfo
+- [2025-06-17 18:58:33] [INFO] Loaded command: userinfo
+- [2025-06-17 18:58:33] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 18:58:33] [INFO] Loaded event: interactionCreate
+- [2025-06-17 18:58:33] [INFO] Loaded event: messageCreate
+- [2025-06-17 18:58:33] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 18:58:34] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 18:58:34] [INFO] Loaded event: ready
+- [2025-06-17 18:58:34] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 18:58:34] [INFO] Loaded slash command: ping
+- [2025-06-17 18:58:34] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 18:58:34] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 18:58:34] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 18:58:34] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 18:58:34] [INFO] ✅ Database connection successful
+- [2025-06-17 18:58:35] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 18:58:36] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 18:58:36] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 18:58:36] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 18:58:36] [INFO] Slash commands registered at startup.
+- [2025-06-17 18:58:36] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 18:58:36] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 18:58:36] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 18:58:42] [INFO] Reloaded command: channel
+- [2025-06-17 18:58:42] [INFO] Reloaded command: channel
+- [2025-06-17 18:58:55] [INFO] Loaded command: autoban
+- [2025-06-17 18:58:55] [INFO] Loaded command: autospam
+- [2025-06-17 18:58:55] [INFO] Loaded command: add
+- [2025-06-17 18:58:55] [INFO] Loaded command: ban
+- [2025-06-17 18:58:55] [INFO] Loaded command: clear
+- [2025-06-17 18:58:55] [INFO] Loaded command: delwarn
+- [2025-06-17 18:58:55] [INFO] Loaded command: deny
+- [2025-06-17 18:58:55] [INFO] Loaded command: jail
+- [2025-06-17 18:58:55] [INFO] Loaded command: jailsettings
+- [2025-06-17 18:58:55] [INFO] Loaded command: kick
+- [2025-06-17 18:58:55] [INFO] Loaded command: lock
+- [2025-06-17 18:58:56] [INFO] Loaded command: move
+- [2025-06-17 18:58:56] [INFO] Loaded command: mute
+- [2025-06-17 18:58:56] [INFO] Loaded command: nickname
+- [2025-06-17 18:58:56] [INFO] Loaded command: role
+- [2025-06-17 18:58:56] [INFO] Loaded command: setautorole
+- [2025-06-17 18:58:56] [INFO] Loaded command: setjailrole
+- [2025-06-17 18:58:56] [INFO] Loaded command: setjailvoice
+- [2025-06-17 18:58:56] [INFO] Loaded command: slowmode
+- [2025-06-17 18:58:56] [INFO] Loaded command: tempvoice
+- [2025-06-17 18:58:56] [INFO] Loaded command: unban
+- [2025-06-17 18:58:56] [INFO] Loaded command: unjail
+- [2025-06-17 18:58:56] [INFO] Loaded command: unlock
+- [2025-06-17 18:58:56] [INFO] Loaded command: unmute
+- [2025-06-17 18:58:56] [INFO] Loaded command: verify
+- [2025-06-17 18:58:56] [INFO] Loaded command: warn
+- [2025-06-17 18:58:56] [INFO] Loaded command: warns
+- [2025-06-17 18:58:56] [INFO] Loaded command: massdm
+- [2025-06-17 18:58:56] [INFO] Loaded command: nuke-servre
+- [2025-06-17 18:58:56] [INFO] Loaded command: premium
+- [2025-06-17 18:58:56] [INFO] Loaded command: setuproles
+- [2025-06-17 18:58:56] [INFO] Loaded command: shutdown
+- [2025-06-17 18:58:56] [INFO] Loaded command: modmail
+- [2025-06-17 18:58:57] [INFO] Loaded command: moveall
+- [2025-06-17 18:58:57] [INFO] Loaded command: rolemenu
+- [2025-06-17 18:58:57] [INFO] Loaded command: sendnotify
+- [2025-06-17 18:58:57] [INFO] Loaded command: ping
+- [2025-06-17 18:58:57] [INFO] Loaded command: setembedcolor
+- [2025-06-17 18:58:57] [INFO] Loaded command: setembedfooter
+- [2025-06-17 18:58:57] [INFO] Loaded command: setembedicon
+- [2025-06-17 18:58:57] [INFO] Loaded command: avatar
+- [2025-06-17 18:58:57] [INFO] Loaded command: botinfo
+- [2025-06-17 18:58:57] [INFO] Loaded command: channel
+- [2025-06-17 18:58:57] [INFO] Loaded command: channelinfo
+- [2025-06-17 18:58:57] [INFO] Loaded command: help
+- [2025-06-17 18:58:57] [INFO] Loaded command: invite
+- [2025-06-17 18:58:57] [INFO] Loaded command: roleinfo
+- [2025-06-17 18:58:57] [INFO] Loaded command: serverinfo
+- [2025-06-17 18:58:57] [INFO] Loaded command: userinfo
+- [2025-06-17 18:58:57] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 18:58:57] [INFO] Loaded event: interactionCreate
+- [2025-06-17 18:58:57] [INFO] Loaded event: messageCreate
+- [2025-06-17 18:58:57] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 18:58:57] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 18:58:57] [INFO] Loaded event: ready
+- [2025-06-17 18:58:58] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 18:58:58] [INFO] Loaded slash command: ping
+- [2025-06-17 18:58:58] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 18:58:58] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 18:58:58] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 18:58:58] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 18:58:59] [ERROR] Failed to reload command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\utility\channel.js: SyntaxError: Unexpected token 'this'
+- [2025-06-17 18:58:59] [INFO] ✅ Database connection successful
+- [2025-06-17 18:59:00] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 18:59:00] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 18:59:00] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 18:59:13] [INFO] Loaded command: autoban
+- [2025-06-17 18:59:13] [INFO] Loaded command: autospam
+- [2025-06-17 18:59:13] [INFO] Loaded command: add
+- [2025-06-17 18:59:13] [INFO] Loaded command: ban
+- [2025-06-17 18:59:13] [INFO] Loaded command: clear
+- [2025-06-17 18:59:13] [INFO] Loaded command: delwarn
+- [2025-06-17 18:59:13] [INFO] Loaded command: deny
+- [2025-06-17 18:59:13] [INFO] Loaded command: jail
+- [2025-06-17 18:59:13] [INFO] Loaded command: jailsettings
+- [2025-06-17 18:59:13] [INFO] Loaded command: kick
+- [2025-06-17 18:59:13] [INFO] Loaded command: lock
+- [2025-06-17 18:59:13] [INFO] Loaded command: move
+- [2025-06-17 18:59:13] [INFO] Loaded command: mute
+- [2025-06-17 18:59:13] [INFO] Loaded command: nickname
+- [2025-06-17 18:59:13] [INFO] Loaded command: role
+- [2025-06-17 18:59:13] [INFO] Loaded command: setautorole
+- [2025-06-17 18:59:13] [INFO] Loaded command: setjailrole
+- [2025-06-17 18:59:13] [INFO] Loaded command: setjailvoice
+- [2025-06-17 18:59:13] [INFO] Loaded command: slowmode
+- [2025-06-17 18:59:13] [INFO] Loaded command: tempvoice
+- [2025-06-17 18:59:13] [INFO] Loaded command: unban
+- [2025-06-17 18:59:13] [INFO] Loaded command: unjail
+- [2025-06-17 18:59:13] [INFO] Loaded command: unlock
+- [2025-06-17 18:59:13] [INFO] Loaded command: unmute
+- [2025-06-17 18:59:13] [INFO] Loaded command: verify
+- [2025-06-17 18:59:13] [INFO] Loaded command: warn
+- [2025-06-17 18:59:13] [INFO] Loaded command: warns
+- [2025-06-17 18:59:13] [INFO] Loaded command: massdm
+- [2025-06-17 18:59:13] [INFO] Loaded command: nuke-servre
+- [2025-06-17 18:59:13] [INFO] Loaded command: premium
+- [2025-06-17 18:59:13] [INFO] Loaded command: setuproles
+- [2025-06-17 18:59:13] [INFO] Loaded command: shutdown
+- [2025-06-17 18:59:13] [INFO] Loaded command: modmail
+- [2025-06-17 18:59:13] [INFO] Loaded command: moveall
+- [2025-06-17 18:59:13] [INFO] Loaded command: rolemenu
+- [2025-06-17 18:59:13] [INFO] Loaded command: sendnotify
+- [2025-06-17 18:59:13] [INFO] Loaded command: ping
+- [2025-06-17 18:59:13] [INFO] Loaded command: setembedcolor
+- [2025-06-17 18:59:13] [INFO] Loaded command: setembedfooter
+- [2025-06-17 18:59:13] [INFO] Loaded command: setembedicon
+- [2025-06-17 18:59:13] [INFO] Loaded command: avatar
+- [2025-06-17 18:59:13] [INFO] Loaded command: botinfo
+- [2025-06-17 18:59:13] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\utility\channel.js: SyntaxError: Unexpected token 'this'
+- [2025-06-17 18:59:13] [INFO] Loaded command: channelinfo
+- [2025-06-17 18:59:13] [INFO] Loaded command: help
+- [2025-06-17 18:59:13] [INFO] Loaded command: invite
+- [2025-06-17 18:59:13] [INFO] Loaded command: roleinfo
+- [2025-06-17 18:59:13] [INFO] Loaded command: serverinfo
+- [2025-06-17 18:59:13] [INFO] Loaded command: userinfo
+- [2025-06-17 18:59:13] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 18:59:13] [INFO] Loaded event: interactionCreate
+- [2025-06-17 18:59:13] [INFO] Loaded event: messageCreate
+- [2025-06-17 18:59:13] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 18:59:13] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 18:59:13] [INFO] Loaded event: ready
+- [2025-06-17 18:59:13] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 18:59:13] [INFO] Loaded slash command: ping
+- [2025-06-17 18:59:13] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 18:59:14] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 18:59:14] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 18:59:14] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 18:59:14] [INFO] ✅ Database connection successful
+- [2025-06-17 18:59:15] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 18:59:15] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 18:59:15] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 18:59:15] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 18:59:15] [INFO] Slash commands registered at startup.
+- [2025-06-17 18:59:15] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 18:59:16] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 18:59:16] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 18:59:19] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-17 18:59:22] [INFO] Loaded command: autoban
+- [2025-06-17 18:59:22] [INFO] Loaded command: autospam
+- [2025-06-17 18:59:22] [INFO] Loaded command: add
+- [2025-06-17 18:59:22] [INFO] Loaded command: ban
+- [2025-06-17 18:59:22] [INFO] Loaded command: clear
+- [2025-06-17 18:59:22] [INFO] Loaded command: delwarn
+- [2025-06-17 18:59:22] [INFO] Loaded command: deny
+- [2025-06-17 18:59:22] [INFO] Loaded command: jail
+- [2025-06-17 18:59:22] [INFO] Loaded command: jailsettings
+- [2025-06-17 18:59:22] [INFO] Loaded command: kick
+- [2025-06-17 18:59:22] [INFO] Loaded command: lock
+- [2025-06-17 18:59:22] [INFO] Loaded command: move
+- [2025-06-17 18:59:22] [INFO] Loaded command: mute
+- [2025-06-17 18:59:22] [INFO] Loaded command: nickname
+- [2025-06-17 18:59:22] [INFO] Loaded command: role
+- [2025-06-17 18:59:22] [INFO] Loaded command: setautorole
+- [2025-06-17 18:59:22] [INFO] Loaded command: setjailrole
+- [2025-06-17 18:59:22] [INFO] Loaded command: setjailvoice
+- [2025-06-17 18:59:22] [INFO] Loaded command: slowmode
+- [2025-06-17 18:59:22] [INFO] Loaded command: tempvoice
+- [2025-06-17 18:59:22] [INFO] Loaded command: unban
+- [2025-06-17 18:59:22] [INFO] Loaded command: unjail
+- [2025-06-17 18:59:22] [INFO] Loaded command: unlock
+- [2025-06-17 18:59:22] [INFO] Loaded command: unmute
+- [2025-06-17 18:59:22] [INFO] Loaded command: verify
+- [2025-06-17 18:59:22] [INFO] Loaded command: warn
+- [2025-06-17 18:59:23] [INFO] Loaded command: warns
+- [2025-06-17 18:59:23] [INFO] Loaded command: massdm
+- [2025-06-17 18:59:23] [INFO] Loaded command: nuke-servre
+- [2025-06-17 18:59:23] [INFO] Loaded command: premium
+- [2025-06-17 18:59:23] [INFO] Loaded command: setuproles
+- [2025-06-17 18:59:23] [INFO] Loaded command: shutdown
+- [2025-06-17 18:59:23] [INFO] Loaded command: modmail
+- [2025-06-17 18:59:23] [INFO] Loaded command: moveall
+- [2025-06-17 18:59:23] [INFO] Loaded command: rolemenu
+- [2025-06-17 18:59:23] [INFO] Loaded command: sendnotify
+- [2025-06-17 18:59:23] [INFO] Loaded command: ping
+- [2025-06-17 18:59:23] [INFO] Loaded command: setembedcolor
+- [2025-06-17 18:59:23] [INFO] Loaded command: setembedfooter
+- [2025-06-17 18:59:23] [INFO] Loaded command: setembedicon
+- [2025-06-17 18:59:23] [INFO] Loaded command: avatar
+- [2025-06-17 18:59:23] [INFO] Loaded command: botinfo
+- [2025-06-17 18:59:23] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\utility\channel.js: SyntaxError: Unexpected token 'this'
+- [2025-06-17 18:59:23] [INFO] Loaded command: channelinfo
+- [2025-06-17 18:59:23] [INFO] Loaded command: help
+- [2025-06-17 18:59:23] [INFO] Loaded command: invite
+- [2025-06-17 18:59:23] [INFO] Loaded command: roleinfo
+- [2025-06-17 18:59:23] [INFO] Loaded command: serverinfo
+- [2025-06-17 18:59:23] [INFO] Loaded command: userinfo
+- [2025-06-17 18:59:23] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 18:59:23] [INFO] Loaded event: interactionCreate
+- [2025-06-17 18:59:23] [INFO] Loaded event: messageCreate
+- [2025-06-17 18:59:23] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 18:59:23] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 18:59:23] [INFO] Loaded event: ready
+- [2025-06-17 18:59:23] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 18:59:23] [INFO] Loaded slash command: ping
+- [2025-06-17 18:59:23] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 18:59:23] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 18:59:23] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 18:59:23] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 18:59:23] [INFO] ✅ Database connection successful
+- [2025-06-17 18:59:24] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 18:59:24] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 18:59:24] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 18:59:32] [ERROR] Failed to reload command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\utility\channel.js: SyntaxError: Unexpected token 'this'
+- [2025-06-17 18:59:37] [INFO] Loaded command: autoban
+- [2025-06-17 18:59:37] [INFO] Loaded command: autospam
+- [2025-06-17 18:59:37] [INFO] Loaded command: add
+- [2025-06-17 18:59:37] [INFO] Loaded command: ban
+- [2025-06-17 18:59:37] [INFO] Loaded command: clear
+- [2025-06-17 18:59:37] [INFO] Loaded command: delwarn
+- [2025-06-17 18:59:37] [INFO] Loaded command: deny
+- [2025-06-17 18:59:37] [INFO] Loaded command: jail
+- [2025-06-17 18:59:37] [INFO] Loaded command: jailsettings
+- [2025-06-17 18:59:37] [INFO] Loaded command: kick
+- [2025-06-17 18:59:37] [INFO] Loaded command: lock
+- [2025-06-17 18:59:37] [INFO] Loaded command: move
+- [2025-06-17 18:59:37] [INFO] Loaded command: mute
+- [2025-06-17 18:59:37] [INFO] Loaded command: nickname
+- [2025-06-17 18:59:37] [INFO] Loaded command: role
+- [2025-06-17 18:59:37] [INFO] Loaded command: setautorole
+- [2025-06-17 18:59:37] [INFO] Loaded command: setjailrole
+- [2025-06-17 18:59:37] [INFO] Loaded command: setjailvoice
+- [2025-06-17 18:59:37] [INFO] Loaded command: slowmode
+- [2025-06-17 18:59:37] [INFO] Loaded command: tempvoice
+- [2025-06-17 18:59:37] [INFO] Loaded command: unban
+- [2025-06-17 18:59:38] [INFO] Loaded command: unjail
+- [2025-06-17 18:59:38] [INFO] Loaded command: unlock
+- [2025-06-17 18:59:38] [INFO] Loaded command: unmute
+- [2025-06-17 18:59:38] [INFO] Loaded command: verify
+- [2025-06-17 18:59:38] [INFO] Loaded command: warn
+- [2025-06-17 18:59:38] [INFO] Loaded command: warns
+- [2025-06-17 18:59:38] [INFO] Loaded command: massdm
+- [2025-06-17 18:59:38] [INFO] Loaded command: nuke-servre
+- [2025-06-17 18:59:38] [INFO] Loaded command: premium
+- [2025-06-17 18:59:38] [INFO] Loaded command: setuproles
+- [2025-06-17 18:59:38] [INFO] Loaded command: shutdown
+- [2025-06-17 18:59:38] [INFO] Loaded command: modmail
+- [2025-06-17 18:59:38] [INFO] Loaded command: moveall
+- [2025-06-17 18:59:38] [INFO] Loaded command: rolemenu
+- [2025-06-17 18:59:38] [INFO] Loaded command: sendnotify
+- [2025-06-17 18:59:38] [INFO] Loaded command: ping
+- [2025-06-17 18:59:38] [INFO] Loaded command: setembedcolor
+- [2025-06-17 18:59:38] [INFO] Loaded command: setembedfooter
+- [2025-06-17 18:59:38] [INFO] Loaded command: setembedicon
+- [2025-06-17 18:59:38] [INFO] Loaded command: avatar
+- [2025-06-17 18:59:38] [INFO] Loaded command: botinfo
+- [2025-06-17 18:59:38] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\utility\channel.js: SyntaxError: Unexpected token 'this'
+- [2025-06-17 18:59:38] [INFO] Loaded command: channelinfo
+- [2025-06-17 18:59:38] [INFO] Loaded command: help
+- [2025-06-17 18:59:38] [INFO] Loaded command: invite
+- [2025-06-17 18:59:38] [INFO] Loaded command: roleinfo
+- [2025-06-17 18:59:38] [INFO] Loaded command: serverinfo
+- [2025-06-17 18:59:38] [INFO] Loaded command: userinfo
+- [2025-06-17 18:59:38] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 18:59:38] [INFO] Loaded event: interactionCreate
+- [2025-06-17 18:59:38] [INFO] Loaded event: messageCreate
+- [2025-06-17 18:59:38] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 18:59:38] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 18:59:38] [INFO] Loaded event: ready
+- [2025-06-17 18:59:38] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 18:59:38] [INFO] Loaded slash command: ping
+- [2025-06-17 18:59:38] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 18:59:38] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 18:59:38] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 18:59:38] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 18:59:39] [INFO] ✅ Database connection successful
+- [2025-06-17 18:59:40] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 18:59:40] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 18:59:40] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 18:59:40] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 18:59:40] [INFO] Slash commands registered at startup.
+- [2025-06-17 18:59:40] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 18:59:40] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 18:59:40] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 18:59:48] [INFO] Reloaded command: channel
+- [2025-06-17 18:59:51] [INFO] Loaded command: autoban
+- [2025-06-17 18:59:51] [INFO] Loaded command: autospam
+- [2025-06-17 18:59:51] [INFO] Loaded command: add
+- [2025-06-17 18:59:51] [INFO] Loaded command: ban
+- [2025-06-17 18:59:51] [INFO] Loaded command: clear
+- [2025-06-17 18:59:51] [INFO] Loaded command: delwarn
+- [2025-06-17 18:59:51] [INFO] Loaded command: deny
+- [2025-06-17 18:59:51] [INFO] Loaded command: jail
+- [2025-06-17 18:59:51] [INFO] Loaded command: jailsettings
+- [2025-06-17 18:59:51] [INFO] Loaded command: kick
+- [2025-06-17 18:59:51] [INFO] Loaded command: lock
+- [2025-06-17 18:59:52] [INFO] Loaded command: move
+- [2025-06-17 18:59:52] [INFO] Loaded command: mute
+- [2025-06-17 18:59:52] [INFO] Loaded command: nickname
+- [2025-06-17 18:59:52] [INFO] Loaded command: role
+- [2025-06-17 18:59:52] [INFO] Loaded command: setautorole
+- [2025-06-17 18:59:52] [INFO] Loaded command: setjailrole
+- [2025-06-17 18:59:52] [INFO] Loaded command: setjailvoice
+- [2025-06-17 18:59:52] [INFO] Loaded command: slowmode
+- [2025-06-17 18:59:52] [INFO] Loaded command: tempvoice
+- [2025-06-17 18:59:52] [INFO] Loaded command: unban
+- [2025-06-17 18:59:52] [INFO] Loaded command: unjail
+- [2025-06-17 18:59:52] [INFO] Loaded command: unlock
+- [2025-06-17 18:59:52] [INFO] Loaded command: unmute
+- [2025-06-17 18:59:52] [INFO] Loaded command: verify
+- [2025-06-17 18:59:52] [INFO] Loaded command: warn
+- [2025-06-17 18:59:52] [INFO] Loaded command: warns
+- [2025-06-17 18:59:52] [INFO] Loaded command: massdm
+- [2025-06-17 18:59:52] [INFO] Loaded command: nuke-servre
+- [2025-06-17 18:59:52] [INFO] Loaded command: premium
+- [2025-06-17 18:59:52] [INFO] Loaded command: setuproles
+- [2025-06-17 18:59:52] [INFO] Loaded command: shutdown
+- [2025-06-17 18:59:52] [INFO] Loaded command: modmail
+- [2025-06-17 18:59:52] [INFO] Loaded command: moveall
+- [2025-06-17 18:59:52] [INFO] Loaded command: rolemenu
+- [2025-06-17 18:59:52] [INFO] Loaded command: sendnotify
+- [2025-06-17 18:59:52] [INFO] Loaded command: ping
+- [2025-06-17 18:59:52] [INFO] Loaded command: setembedcolor
+- [2025-06-17 18:59:52] [INFO] Loaded command: setembedfooter
+- [2025-06-17 18:59:52] [INFO] Loaded command: setembedicon
+- [2025-06-17 18:59:52] [INFO] Loaded command: avatar
+- [2025-06-17 18:59:52] [INFO] Loaded command: botinfo
+- [2025-06-17 18:59:52] [INFO] Loaded command: channel
+- [2025-06-17 18:59:52] [INFO] Loaded command: channelinfo
+- [2025-06-17 18:59:52] [INFO] Loaded command: help
+- [2025-06-17 18:59:52] [INFO] Loaded command: invite
+- [2025-06-17 18:59:52] [INFO] Loaded command: roleinfo
+- [2025-06-17 18:59:52] [INFO] Loaded command: serverinfo
+- [2025-06-17 18:59:52] [INFO] Loaded command: userinfo
+- [2025-06-17 18:59:52] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 18:59:52] [INFO] Loaded event: interactionCreate
+- [2025-06-17 18:59:52] [INFO] Loaded event: messageCreate
+- [2025-06-17 18:59:52] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 18:59:52] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 18:59:52] [INFO] Loaded event: ready
+- [2025-06-17 18:59:52] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 18:59:52] [INFO] Loaded slash command: ping
+- [2025-06-17 18:59:52] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 18:59:52] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 18:59:52] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 18:59:52] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 18:59:53] [INFO] ✅ Database connection successful
+- [2025-06-17 18:59:54] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 18:59:54] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 18:59:54] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:00:33] [ERROR] Failed to reload command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\utility\channel.js: SyntaxError: Unexpected token 'this'
+- [2025-06-17 19:00:33] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-17 19:00:33] [INFO] Reloaded command: tempvoice
+- [2025-06-17 19:00:33] [ERROR] Failed to unload command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\utility\channel.js: Error: ENOENT: no such file or directory, open 'C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\utility\channel.js'
+- [2025-06-17 19:00:37] [INFO] Loaded command: autoban
+- [2025-06-17 19:00:37] [INFO] Loaded command: autospam
+- [2025-06-17 19:00:37] [INFO] Loaded command: add
+- [2025-06-17 19:00:37] [INFO] Loaded command: ban
+- [2025-06-17 19:00:37] [INFO] Loaded command: clear
+- [2025-06-17 19:00:37] [INFO] Loaded command: delwarn
+- [2025-06-17 19:00:37] [INFO] Loaded command: deny
+- [2025-06-17 19:00:37] [INFO] Loaded command: jail
+- [2025-06-17 19:00:37] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:00:37] [INFO] Loaded command: kick
+- [2025-06-17 19:00:37] [INFO] Loaded command: lock
+- [2025-06-17 19:00:37] [INFO] Loaded command: move
+- [2025-06-17 19:00:37] [INFO] Loaded command: mute
+- [2025-06-17 19:00:37] [INFO] Loaded command: nickname
+- [2025-06-17 19:00:37] [INFO] Loaded command: role
+- [2025-06-17 19:00:37] [INFO] Loaded command: setautorole
+- [2025-06-17 19:00:37] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:00:37] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:00:37] [INFO] Loaded command: slowmode
+- [2025-06-17 19:00:37] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:00:37] [INFO] Loaded command: unban
+- [2025-06-17 19:00:37] [INFO] Loaded command: unjail
+- [2025-06-17 19:00:37] [INFO] Loaded command: unlock
+- [2025-06-17 19:00:37] [INFO] Loaded command: unmute
+- [2025-06-17 19:00:37] [INFO] Loaded command: verify
+- [2025-06-17 19:00:37] [INFO] Loaded command: warn
+- [2025-06-17 19:00:37] [INFO] Loaded command: warns
+- [2025-06-17 19:00:37] [INFO] Loaded command: massdm
+- [2025-06-17 19:00:38] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:00:38] [INFO] Loaded command: premium
+- [2025-06-17 19:00:38] [INFO] Loaded command: setuproles
+- [2025-06-17 19:00:38] [INFO] Loaded command: shutdown
+- [2025-06-17 19:00:38] [INFO] Loaded command: modmail
+- [2025-06-17 19:00:38] [INFO] Loaded command: moveall
+- [2025-06-17 19:00:38] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:00:38] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:00:38] [INFO] Loaded command: ping
+- [2025-06-17 19:00:38] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:00:38] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:00:38] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:00:38] [INFO] Loaded command: avatar
+- [2025-06-17 19:00:38] [INFO] Loaded command: botinfo
+- [2025-06-17 19:00:38] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:00:38] [INFO] Loaded command: help
+- [2025-06-17 19:00:38] [INFO] Loaded command: invite
+- [2025-06-17 19:00:38] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:00:38] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:00:38] [INFO] Loaded command: userinfo
+- [2025-06-17 19:00:38] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:00:38] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:00:38] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:00:38] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:00:38] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:00:38] [INFO] Loaded event: ready
+- [2025-06-17 19:00:38] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:00:38] [INFO] Loaded slash command: ping
+- [2025-06-17 19:00:38] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:00:38] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:00:38] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:00:38] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:00:38] [INFO] ✅ Database connection successful
+- [2025-06-17 19:00:39] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:00:39] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:00:39] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:00:39] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:00:39] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:00:39] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:00:40] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:00:40] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:02:06] [INFO] ✅ Database connection for migrator is successful.
+- [2025-06-17 19:02:06] [INFO] ✅ 'schema_migrations' table ensured.
+- [2025-06-17 19:02:07] [INFO] 🔄 Applying migration: 20250617200500_add_support_role_to_temp_configs.sql...
+- [2025-06-17 19:02:07] [INFO] ✅ Migration 20250617200500_add_support_role_to_temp_configs.sql applied successfully.
+- [2025-06-17 19:02:07] [INFO] Applied 1 new migration(s).
+- [2025-06-17 19:02:07] [INFO] Migrations completed.
+- [2025-06-17 19:02:55] [INFO] Loaded command: autoban
+- [2025-06-17 19:02:55] [INFO] Loaded command: autospam
+- [2025-06-17 19:02:55] [INFO] Loaded command: add
+- [2025-06-17 19:02:55] [INFO] Loaded command: ban
+- [2025-06-17 19:02:56] [INFO] Loaded command: clear
+- [2025-06-17 19:02:56] [INFO] Loaded command: delwarn
+- [2025-06-17 19:02:56] [INFO] Loaded command: deny
+- [2025-06-17 19:02:56] [INFO] Loaded command: jail
+- [2025-06-17 19:02:56] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:02:56] [INFO] Loaded command: kick
+- [2025-06-17 19:02:56] [INFO] Loaded command: lock
+- [2025-06-17 19:02:56] [INFO] Loaded command: move
+- [2025-06-17 19:02:56] [INFO] Loaded command: mute
+- [2025-06-17 19:02:56] [INFO] Loaded command: nickname
+- [2025-06-17 19:02:56] [INFO] Loaded command: role
+- [2025-06-17 19:02:56] [INFO] Loaded command: setautorole
+- [2025-06-17 19:02:56] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:02:56] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:02:56] [INFO] Loaded command: slowmode
+- [2025-06-17 19:02:56] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:02:56] [INFO] Loaded command: unban
+- [2025-06-17 19:02:56] [INFO] Loaded command: unjail
+- [2025-06-17 19:02:56] [INFO] Loaded command: unlock
+- [2025-06-17 19:02:56] [INFO] Loaded command: unmute
+- [2025-06-17 19:02:56] [INFO] Loaded command: verify
+- [2025-06-17 19:02:56] [INFO] Loaded command: warn
+- [2025-06-17 19:02:56] [INFO] Loaded command: warns
+- [2025-06-17 19:02:56] [INFO] Loaded command: massdm
+- [2025-06-17 19:02:56] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:02:56] [INFO] Loaded command: premium
+- [2025-06-17 19:02:56] [INFO] Loaded command: setuproles
+- [2025-06-17 19:02:56] [INFO] Loaded command: shutdown
+- [2025-06-17 19:02:56] [INFO] Loaded command: modmail
+- [2025-06-17 19:02:56] [INFO] Loaded command: moveall
+- [2025-06-17 19:02:56] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:02:56] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:02:56] [INFO] Loaded command: ping
+- [2025-06-17 19:02:56] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:02:56] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:02:56] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:02:56] [INFO] Loaded command: avatar
+- [2025-06-17 19:02:56] [INFO] Loaded command: botinfo
+- [2025-06-17 19:02:56] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:02:56] [INFO] Loaded command: help
+- [2025-06-17 19:02:56] [INFO] Loaded command: invite
+- [2025-06-17 19:02:56] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:02:56] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:02:56] [INFO] Loaded command: userinfo
+- [2025-06-17 19:02:56] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:02:56] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:02:56] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:02:56] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:02:56] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:02:56] [INFO] Loaded event: ready
+- [2025-06-17 19:02:57] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:02:57] [INFO] Loaded slash command: ping
+- [2025-06-17 19:02:57] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:02:57] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:02:57] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:02:57] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:02:57] [INFO] ✅ Database connection successful
+- [2025-06-17 19:03:00] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:03:00] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:03:00] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:03:00] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:03:00] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:03:00] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:03:01] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:03:01] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:03:54] [INFO] Reloaded command: tempvoice
+- [2025-06-17 19:04:01] [INFO] Loaded command: autoban
+- [2025-06-17 19:04:01] [INFO] Loaded command: autospam
+- [2025-06-17 19:04:01] [INFO] Loaded command: add
+- [2025-06-17 19:04:01] [INFO] Loaded command: ban
+- [2025-06-17 19:04:01] [INFO] Loaded command: clear
+- [2025-06-17 19:04:01] [INFO] Loaded command: delwarn
+- [2025-06-17 19:04:01] [INFO] Loaded command: deny
+- [2025-06-17 19:04:01] [INFO] Loaded command: jail
+- [2025-06-17 19:04:01] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:04:01] [INFO] Loaded command: kick
+- [2025-06-17 19:04:01] [INFO] Loaded command: lock
+- [2025-06-17 19:04:01] [INFO] Loaded command: move
+- [2025-06-17 19:04:01] [INFO] Loaded command: mute
+- [2025-06-17 19:04:01] [INFO] Loaded command: nickname
+- [2025-06-17 19:04:01] [INFO] Loaded command: role
+- [2025-06-17 19:04:01] [INFO] Loaded command: setautorole
+- [2025-06-17 19:04:01] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:04:01] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:04:01] [INFO] Loaded command: slowmode
+- [2025-06-17 19:04:01] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:04:02] [INFO] Loaded command: unban
+- [2025-06-17 19:04:02] [INFO] Loaded command: unjail
+- [2025-06-17 19:04:02] [INFO] Loaded command: unlock
+- [2025-06-17 19:04:02] [INFO] Loaded command: unmute
+- [2025-06-17 19:04:02] [INFO] Loaded command: verify
+- [2025-06-17 19:04:02] [INFO] Loaded command: warn
+- [2025-06-17 19:04:02] [INFO] Loaded command: warns
+- [2025-06-17 19:04:02] [INFO] Loaded command: massdm
+- [2025-06-17 19:04:02] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:04:02] [INFO] Loaded command: premium
+- [2025-06-17 19:04:02] [INFO] Loaded command: setuproles
+- [2025-06-17 19:04:02] [INFO] Loaded command: shutdown
+- [2025-06-17 19:04:02] [INFO] Loaded command: modmail
+- [2025-06-17 19:04:02] [INFO] Loaded command: moveall
+- [2025-06-17 19:04:02] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:04:02] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:04:02] [INFO] Loaded command: ping
+- [2025-06-17 19:04:02] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:04:02] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:04:02] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:04:02] [INFO] Loaded command: avatar
+- [2025-06-17 19:04:02] [INFO] Loaded command: botinfo
+- [2025-06-17 19:04:02] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:04:02] [INFO] Loaded command: help
+- [2025-06-17 19:04:02] [INFO] Loaded command: invite
+- [2025-06-17 19:04:02] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:04:02] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:04:02] [INFO] Loaded command: userinfo
+- [2025-06-17 19:04:02] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:04:02] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:04:02] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:04:02] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:04:02] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:04:02] [INFO] Loaded event: ready
+- [2025-06-17 19:04:02] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:04:02] [INFO] Loaded slash command: ping
+- [2025-06-17 19:04:02] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:04:02] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:04:02] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:04:02] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:04:03] [INFO] ✅ Database connection successful
+- [2025-06-17 19:04:04] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:04:04] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:04:04] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:04:04] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:04:04] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:04:04] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:04:05] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:04:05] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:04:27] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-17 19:04:33] [INFO] Loaded command: autoban
+- [2025-06-17 19:04:33] [INFO] Loaded command: autospam
+- [2025-06-17 19:04:33] [INFO] Loaded command: add
+- [2025-06-17 19:04:34] [INFO] Loaded command: ban
+- [2025-06-17 19:04:34] [INFO] Loaded command: clear
+- [2025-06-17 19:04:34] [INFO] Loaded command: delwarn
+- [2025-06-17 19:04:34] [INFO] Loaded command: deny
+- [2025-06-17 19:04:34] [INFO] Loaded command: jail
+- [2025-06-17 19:04:34] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:04:34] [INFO] Loaded command: kick
+- [2025-06-17 19:04:34] [INFO] Loaded command: lock
+- [2025-06-17 19:04:34] [INFO] Loaded command: move
+- [2025-06-17 19:04:34] [INFO] Loaded command: mute
+- [2025-06-17 19:04:34] [INFO] Loaded command: nickname
+- [2025-06-17 19:04:34] [INFO] Loaded command: role
+- [2025-06-17 19:04:34] [INFO] Loaded command: setautorole
+- [2025-06-17 19:04:34] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:04:34] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:04:34] [INFO] Loaded command: slowmode
+- [2025-06-17 19:04:34] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:04:34] [INFO] Loaded command: unban
+- [2025-06-17 19:04:34] [INFO] Loaded command: unjail
+- [2025-06-17 19:04:34] [INFO] Loaded command: unlock
+- [2025-06-17 19:04:34] [INFO] Loaded command: unmute
+- [2025-06-17 19:04:34] [INFO] Loaded command: verify
+- [2025-06-17 19:04:35] [INFO] Loaded command: warn
+- [2025-06-17 19:04:35] [INFO] Loaded command: warns
+- [2025-06-17 19:04:35] [INFO] Loaded command: massdm
+- [2025-06-17 19:04:35] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:04:35] [INFO] Loaded command: premium
+- [2025-06-17 19:04:35] [INFO] Loaded command: setuproles
+- [2025-06-17 19:04:35] [INFO] Loaded command: shutdown
+- [2025-06-17 19:04:35] [INFO] Loaded command: modmail
+- [2025-06-17 19:04:35] [INFO] Loaded command: moveall
+- [2025-06-17 19:04:35] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:04:35] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:04:35] [INFO] Loaded command: ping
+- [2025-06-17 19:04:35] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:04:35] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:04:35] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:04:35] [INFO] Loaded command: avatar
+- [2025-06-17 19:04:35] [INFO] Loaded command: botinfo
+- [2025-06-17 19:04:35] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:04:35] [INFO] Loaded command: help
+- [2025-06-17 19:04:35] [INFO] Loaded command: invite
+- [2025-06-17 19:04:35] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:04:36] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:04:36] [INFO] Loaded command: userinfo
+- [2025-06-17 19:04:36] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:04:36] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:04:36] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:04:36] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:04:36] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:04:36] [INFO] Loaded event: ready
+- [2025-06-17 19:04:36] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:04:36] [INFO] Loaded slash command: ping
+- [2025-06-17 19:04:36] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:04:36] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:04:36] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:04:36] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:04:37] [INFO] ✅ Database connection successful
+- [2025-06-17 19:04:38] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:04:38] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:04:38] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:04:38] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:04:38] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:04:38] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:04:39] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:04:39] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:06:43] [INFO] Set temp voice config for guild 1038540608396066856 (support).
+- [2025-06-17 19:07:49] [INFO] Set temp voice config for guild 1038540608396066856 (support).
+- [2025-06-17 19:07:51] [INFO] User mrahmet48 joined creator channel '・❔︱Need Help' for config type 'default'. Creating temp channel...
+- [2025-06-17 19:07:53] [INFO] Created temp channel ! (1384610516269404312) for mrahmet48.
+- [2025-06-17 19:08:49] [INFO] User mrahmet48 joined creator channel '・❔︱Need Help' for config type 'default'. Creating temp channel...
+- [2025-06-17 19:08:56] [INFO] Created temp channel ! (1384610766182940703) for mrahmet48.
+- [2025-06-17 19:08:56] [INFO] Temp channel ! is empty. Deleting...
+- [2025-06-17 19:08:57] [INFO] Deleted temp channel ! (1384610516269404312).
+- [2025-06-17 19:09:27] [INFO] Reloaded command: tempvoice
+- [2025-06-17 19:09:30] [INFO] Loaded command: autoban
+- [2025-06-17 19:09:30] [INFO] Loaded command: autospam
+- [2025-06-17 19:09:30] [INFO] Loaded command: add
+- [2025-06-17 19:09:30] [INFO] Loaded command: ban
+- [2025-06-17 19:09:30] [INFO] Loaded command: clear
+- [2025-06-17 19:09:30] [INFO] Loaded command: delwarn
+- [2025-06-17 19:09:30] [INFO] Loaded command: deny
+- [2025-06-17 19:09:30] [INFO] Loaded command: jail
+- [2025-06-17 19:09:30] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:09:30] [INFO] Loaded command: kick
+- [2025-06-17 19:09:30] [INFO] Loaded command: lock
+- [2025-06-17 19:09:30] [INFO] Loaded command: move
+- [2025-06-17 19:09:30] [INFO] Loaded command: mute
+- [2025-06-17 19:09:30] [INFO] Loaded command: nickname
+- [2025-06-17 19:09:30] [INFO] Loaded command: role
+- [2025-06-17 19:09:30] [INFO] Loaded command: setautorole
+- [2025-06-17 19:09:30] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:09:30] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:09:30] [INFO] Loaded command: slowmode
+- [2025-06-17 19:09:30] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:09:30] [INFO] Loaded command: unban
+- [2025-06-17 19:09:30] [INFO] Loaded command: unjail
+- [2025-06-17 19:09:30] [INFO] Loaded command: unlock
+- [2025-06-17 19:09:30] [INFO] Loaded command: unmute
+- [2025-06-17 19:09:30] [INFO] Loaded command: verify
+- [2025-06-17 19:09:30] [INFO] Loaded command: warn
+- [2025-06-17 19:09:30] [INFO] Loaded command: warns
+- [2025-06-17 19:09:30] [INFO] Loaded command: massdm
+- [2025-06-17 19:09:30] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:09:30] [INFO] Loaded command: premium
+- [2025-06-17 19:09:30] [INFO] Loaded command: setuproles
+- [2025-06-17 19:09:30] [INFO] Loaded command: shutdown
+- [2025-06-17 19:09:30] [INFO] Loaded command: modmail
+- [2025-06-17 19:09:30] [INFO] Loaded command: moveall
+- [2025-06-17 19:09:30] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:09:30] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:09:30] [INFO] Loaded command: ping
+- [2025-06-17 19:09:30] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:09:30] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:09:30] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:09:30] [INFO] Loaded command: avatar
+- [2025-06-17 19:09:30] [INFO] Loaded command: botinfo
+- [2025-06-17 19:09:30] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:09:30] [INFO] Loaded command: help
+- [2025-06-17 19:09:30] [INFO] Loaded command: invite
+- [2025-06-17 19:09:31] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:09:31] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:09:31] [INFO] Loaded command: userinfo
+- [2025-06-17 19:09:31] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:09:31] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:09:31] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:09:31] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:09:31] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:09:31] [INFO] Loaded event: ready
+- [2025-06-17 19:09:31] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:09:31] [INFO] Loaded slash command: ping
+- [2025-06-17 19:09:31] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:09:31] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:09:31] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:09:31] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:09:31] [INFO] ✅ Database connection successful
+- [2025-06-17 19:09:32] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:09:32] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:09:32] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:09:32] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:09:32] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:09:32] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:09:33] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:09:33] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:09:33] [INFO] Found 1 orphaned temp channels. Cleaning up...
+- [2025-06-17 19:09:33] [INFO]  Orphaned temp channel cleanup complete.
+- [2025-06-17 19:14:01] [INFO] Set temp voice config for guild 1038540608396066856 (support).
+- [2025-06-17 19:14:08] [INFO] User mrahmet48 joined creator channel '・❔︱Need Help' for config type 'default'. Creating temp channel...
+- [2025-06-17 19:14:09] [INFO] Created temp channel ! (1384612094904897546) for mrahmet48.
+- [2025-06-17 19:16:08] [INFO] Reloaded command: tempvoice
+- [2025-06-17 19:16:13] [INFO] Loaded command: autoban
+- [2025-06-17 19:16:13] [INFO] Loaded command: autospam
+- [2025-06-17 19:16:13] [INFO] Loaded command: add
+- [2025-06-17 19:16:13] [INFO] Loaded command: ban
+- [2025-06-17 19:16:13] [INFO] Loaded command: clear
+- [2025-06-17 19:16:13] [INFO] Loaded command: delwarn
+- [2025-06-17 19:16:13] [INFO] Loaded command: deny
+- [2025-06-17 19:16:13] [INFO] Loaded command: jail
+- [2025-06-17 19:16:13] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:16:13] [INFO] Loaded command: kick
+- [2025-06-17 19:16:13] [INFO] Loaded command: lock
+- [2025-06-17 19:16:13] [INFO] Loaded command: move
+- [2025-06-17 19:16:13] [INFO] Loaded command: mute
+- [2025-06-17 19:16:13] [INFO] Loaded command: nickname
+- [2025-06-17 19:16:13] [INFO] Loaded command: role
+- [2025-06-17 19:16:13] [INFO] Loaded command: setautorole
+- [2025-06-17 19:16:13] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:16:13] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:16:13] [INFO] Loaded command: slowmode
+- [2025-06-17 19:16:13] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:16:13] [INFO] Loaded command: unban
+- [2025-06-17 19:16:13] [INFO] Loaded command: unjail
+- [2025-06-17 19:16:13] [INFO] Loaded command: unlock
+- [2025-06-17 19:16:13] [INFO] Loaded command: unmute
+- [2025-06-17 19:16:13] [INFO] Loaded command: verify
+- [2025-06-17 19:16:13] [INFO] Loaded command: warn
+- [2025-06-17 19:16:13] [INFO] Loaded command: warns
+- [2025-06-17 19:16:14] [INFO] Loaded command: massdm
+- [2025-06-17 19:16:14] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:16:14] [INFO] Loaded command: premium
+- [2025-06-17 19:16:14] [INFO] Loaded command: setuproles
+- [2025-06-17 19:16:14] [INFO] Loaded command: shutdown
+- [2025-06-17 19:16:14] [INFO] Loaded command: modmail
+- [2025-06-17 19:16:14] [INFO] Loaded command: moveall
+- [2025-06-17 19:16:14] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:16:14] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:16:14] [INFO] Loaded command: ping
+- [2025-06-17 19:16:14] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:16:14] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:16:14] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:16:14] [INFO] Loaded command: avatar
+- [2025-06-17 19:16:14] [INFO] Loaded command: botinfo
+- [2025-06-17 19:16:14] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:16:14] [INFO] Loaded command: help
+- [2025-06-17 19:16:14] [INFO] Loaded command: invite
+- [2025-06-17 19:16:14] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:16:14] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:16:14] [INFO] Loaded command: userinfo
+- [2025-06-17 19:16:14] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:16:14] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:16:14] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:16:14] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:16:14] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:16:14] [INFO] Loaded event: ready
+- [2025-06-17 19:16:14] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:16:14] [INFO] Loaded slash command: ping
+- [2025-06-17 19:16:14] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:16:14] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:16:14] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:16:14] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:16:15] [INFO] ✅ Database connection successful
+- [2025-06-17 19:16:15] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:16:15] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:16:15] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:16:16] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:16:16] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:16:16] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:16:16] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:16:16] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:16:16] [INFO] Found 1 orphaned temp channels. Cleaning up...
+- [2025-06-17 19:16:17] [INFO]  Orphaned temp channel cleanup complete.
+- [2025-06-17 19:18:40] [INFO] ✅ Database connection for migrator is successful.
+- [2025-06-17 19:18:40] [INFO] ✅ 'schema_migrations' table ensured.
+- [2025-06-17 19:18:40] [INFO] 🔄 Applying migration: 20250617202000_add_cleanup_delay_to_temp_configs.sql...
+- [2025-06-17 19:18:41] [INFO] ✅ Migration 20250617202000_add_cleanup_delay_to_temp_configs.sql applied successfully.
+- [2025-06-17 19:18:41] [INFO] Applied 1 new migration(s).
+- [2025-06-17 19:18:41] [INFO] Migrations completed.
+- [2025-06-17 19:20:07] [INFO] ✅ Database connection for migrator is successful.
+- [2025-06-17 19:20:07] [INFO] ✅ 'schema_migrations' table ensured.
+- [2025-06-17 19:20:07] [INFO] Database schema is already up to date.
+- [2025-06-17 19:20:07] [INFO] Migrations completed.
+- [2025-06-17 19:20:46] [INFO] Loaded command: autoban
+- [2025-06-17 19:20:46] [INFO] Loaded command: autospam
+- [2025-06-17 19:20:46] [INFO] Loaded command: add
+- [2025-06-17 19:20:46] [INFO] Loaded command: ban
+- [2025-06-17 19:20:46] [INFO] Loaded command: clear
+- [2025-06-17 19:20:46] [INFO] Loaded command: delwarn
+- [2025-06-17 19:20:46] [INFO] Loaded command: deny
+- [2025-06-17 19:20:46] [INFO] Loaded command: jail
+- [2025-06-17 19:20:46] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:20:46] [INFO] Loaded command: kick
+- [2025-06-17 19:20:46] [INFO] Loaded command: lock
+- [2025-06-17 19:20:46] [INFO] Loaded command: move
+- [2025-06-17 19:20:46] [INFO] Loaded command: mute
+- [2025-06-17 19:20:46] [INFO] Loaded command: nickname
+- [2025-06-17 19:20:46] [INFO] Loaded command: role
+- [2025-06-17 19:20:46] [INFO] Loaded command: setautorole
+- [2025-06-17 19:20:46] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:20:46] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:20:46] [INFO] Loaded command: slowmode
+- [2025-06-17 19:20:46] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:20:46] [INFO] Loaded command: unban
+- [2025-06-17 19:20:46] [INFO] Loaded command: unjail
+- [2025-06-17 19:20:46] [INFO] Loaded command: unlock
+- [2025-06-17 19:20:46] [INFO] Loaded command: unmute
+- [2025-06-17 19:20:46] [INFO] Loaded command: verify
+- [2025-06-17 19:20:46] [INFO] Loaded command: warn
+- [2025-06-17 19:20:46] [INFO] Loaded command: warns
+- [2025-06-17 19:20:46] [INFO] Loaded command: massdm
+- [2025-06-17 19:20:46] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:20:46] [INFO] Loaded command: premium
+- [2025-06-17 19:20:46] [INFO] Loaded command: setuproles
+- [2025-06-17 19:20:46] [INFO] Loaded command: shutdown
+- [2025-06-17 19:20:46] [INFO] Loaded command: modmail
+- [2025-06-17 19:20:46] [INFO] Loaded command: moveall
+- [2025-06-17 19:20:46] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:20:46] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:20:47] [INFO] Loaded command: ping
+- [2025-06-17 19:20:47] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:20:47] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:20:47] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:20:47] [INFO] Loaded command: avatar
+- [2025-06-17 19:20:47] [INFO] Loaded command: botinfo
+- [2025-06-17 19:20:47] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:20:47] [INFO] Loaded command: help
+- [2025-06-17 19:20:47] [INFO] Loaded command: invite
+- [2025-06-17 19:20:47] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:20:47] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:20:47] [INFO] Loaded command: userinfo
+- [2025-06-17 19:20:47] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:20:47] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:20:47] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:20:47] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:20:47] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:20:47] [INFO] Loaded event: ready
+- [2025-06-17 19:20:47] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:20:47] [INFO] Loaded slash command: ping
+- [2025-06-17 19:20:47] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:20:47] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:20:47] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:20:47] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:20:47] [INFO] ✅ Database connection successful
+- [2025-06-17 19:20:48] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:20:48] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:20:48] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:20:48] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:20:48] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:20:48] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:20:49] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:20:49] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:21:10] [INFO] Loaded command: autoban
+- [2025-06-17 19:21:10] [INFO] Loaded command: autospam
+- [2025-06-17 19:21:10] [INFO] Loaded command: add
+- [2025-06-17 19:21:10] [INFO] Loaded command: ban
+- [2025-06-17 19:21:10] [INFO] Loaded command: clear
+- [2025-06-17 19:21:10] [INFO] Loaded command: delwarn
+- [2025-06-17 19:21:10] [INFO] Loaded command: deny
+- [2025-06-17 19:21:10] [INFO] Loaded command: jail
+- [2025-06-17 19:21:10] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:21:10] [INFO] Loaded command: kick
+- [2025-06-17 19:21:10] [INFO] Loaded command: lock
+- [2025-06-17 19:21:10] [INFO] Loaded command: move
+- [2025-06-17 19:21:10] [INFO] Loaded command: mute
+- [2025-06-17 19:21:10] [INFO] Loaded command: nickname
+- [2025-06-17 19:21:10] [INFO] Loaded command: role
+- [2025-06-17 19:21:10] [INFO] Loaded command: setautorole
+- [2025-06-17 19:21:10] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:21:10] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:21:10] [INFO] Loaded command: slowmode
+- [2025-06-17 19:21:10] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:21:10] [INFO] Loaded command: unban
+- [2025-06-17 19:21:10] [INFO] Loaded command: unjail
+- [2025-06-17 19:21:10] [INFO] Loaded command: unlock
+- [2025-06-17 19:21:10] [INFO] Loaded command: unmute
+- [2025-06-17 19:21:10] [INFO] Loaded command: verify
+- [2025-06-17 19:21:10] [INFO] Loaded command: warn
+- [2025-06-17 19:21:10] [INFO] Loaded command: warns
+- [2025-06-17 19:21:10] [INFO] Loaded command: massdm
+- [2025-06-17 19:21:10] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:21:10] [INFO] Loaded command: premium
+- [2025-06-17 19:21:10] [INFO] Loaded command: setuproles
+- [2025-06-17 19:21:10] [INFO] Loaded command: shutdown
+- [2025-06-17 19:21:10] [INFO] Loaded command: modmail
+- [2025-06-17 19:21:10] [INFO] Loaded command: moveall
+- [2025-06-17 19:21:10] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:21:10] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:21:10] [INFO] Loaded command: ping
+- [2025-06-17 19:21:10] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:21:10] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:21:11] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:21:11] [INFO] Loaded command: avatar
+- [2025-06-17 19:21:11] [INFO] Loaded command: botinfo
+- [2025-06-17 19:21:11] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:21:11] [INFO] Loaded command: help
+- [2025-06-17 19:21:11] [INFO] Loaded command: invite
+- [2025-06-17 19:21:11] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:21:11] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:21:11] [INFO] Loaded command: userinfo
+- [2025-06-17 19:21:11] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:21:11] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:21:11] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:21:11] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:21:11] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:21:11] [INFO] Loaded event: ready
+- [2025-06-17 19:21:11] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:21:11] [INFO] Loaded slash command: ping
+- [2025-06-17 19:21:11] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:21:11] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:21:11] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:21:11] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:21:11] [INFO] ✅ Database connection successful
+- [2025-06-17 19:21:12] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:21:12] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:21:12] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:21:13] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:21:13] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:21:13] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:21:13] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:21:13] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:21:33] [INFO] Reloaded command: tempvoice
+- [2025-06-17 19:21:38] [INFO] Loaded command: autoban
+- [2025-06-17 19:21:38] [INFO] Loaded command: autospam
+- [2025-06-17 19:21:38] [INFO] Loaded command: add
+- [2025-06-17 19:21:38] [INFO] Loaded command: ban
+- [2025-06-17 19:21:38] [INFO] Loaded command: clear
+- [2025-06-17 19:21:38] [INFO] Loaded command: delwarn
+- [2025-06-17 19:21:38] [INFO] Loaded command: deny
+- [2025-06-17 19:21:38] [INFO] Loaded command: jail
+- [2025-06-17 19:21:38] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:21:38] [INFO] Loaded command: kick
+- [2025-06-17 19:21:38] [INFO] Loaded command: lock
+- [2025-06-17 19:21:38] [INFO] Loaded command: move
+- [2025-06-17 19:21:38] [INFO] Loaded command: mute
+- [2025-06-17 19:21:38] [INFO] Loaded command: nickname
+- [2025-06-17 19:21:38] [INFO] Loaded command: role
+- [2025-06-17 19:21:38] [INFO] Loaded command: setautorole
+- [2025-06-17 19:21:38] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:21:38] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:21:38] [INFO] Loaded command: slowmode
+- [2025-06-17 19:21:38] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:21:38] [INFO] Loaded command: unban
+- [2025-06-17 19:21:38] [INFO] Loaded command: unjail
+- [2025-06-17 19:21:38] [INFO] Loaded command: unlock
+- [2025-06-17 19:21:38] [INFO] Loaded command: unmute
+- [2025-06-17 19:21:38] [INFO] Loaded command: verify
+- [2025-06-17 19:21:38] [INFO] Loaded command: warn
+- [2025-06-17 19:21:38] [INFO] Loaded command: warns
+- [2025-06-17 19:21:38] [INFO] Loaded command: massdm
+- [2025-06-17 19:21:38] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:21:38] [INFO] Loaded command: premium
+- [2025-06-17 19:21:38] [INFO] Loaded command: setuproles
+- [2025-06-17 19:21:38] [INFO] Loaded command: shutdown
+- [2025-06-17 19:21:38] [INFO] Loaded command: modmail
+- [2025-06-17 19:21:38] [INFO] Loaded command: moveall
+- [2025-06-17 19:21:38] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:21:38] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:21:38] [INFO] Loaded command: ping
+- [2025-06-17 19:21:38] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:21:38] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:21:38] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:21:38] [INFO] Loaded command: avatar
+- [2025-06-17 19:21:38] [INFO] Loaded command: botinfo
+- [2025-06-17 19:21:38] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:21:38] [INFO] Loaded command: help
+- [2025-06-17 19:21:38] [INFO] Loaded command: invite
+- [2025-06-17 19:21:38] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:21:38] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:21:38] [INFO] Loaded command: userinfo
+- [2025-06-17 19:21:38] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:21:38] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:21:38] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:21:38] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:21:38] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:21:39] [INFO] Loaded event: ready
+- [2025-06-17 19:21:39] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:21:39] [INFO] Loaded slash command: ping
+- [2025-06-17 19:21:39] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:21:39] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:21:39] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:21:39] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:21:39] [INFO] ✅ Database connection successful
+- [2025-06-17 19:21:40] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:21:40] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:21:40] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:21:40] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:21:40] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:21:40] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:21:41] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:21:41] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:22:04] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-17 19:22:10] [INFO] Loaded command: autoban
+- [2025-06-17 19:22:10] [INFO] Loaded command: autospam
+- [2025-06-17 19:22:10] [INFO] Loaded command: add
+- [2025-06-17 19:22:10] [INFO] Loaded command: ban
+- [2025-06-17 19:22:10] [INFO] Loaded command: clear
+- [2025-06-17 19:22:10] [INFO] Loaded command: delwarn
+- [2025-06-17 19:22:10] [INFO] Loaded command: deny
+- [2025-06-17 19:22:10] [INFO] Loaded command: jail
+- [2025-06-17 19:22:10] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:22:10] [INFO] Loaded command: kick
+- [2025-06-17 19:22:10] [INFO] Loaded command: lock
+- [2025-06-17 19:22:10] [INFO] Loaded command: move
+- [2025-06-17 19:22:10] [INFO] Loaded command: mute
+- [2025-06-17 19:22:10] [INFO] Loaded command: nickname
+- [2025-06-17 19:22:10] [INFO] Loaded command: role
+- [2025-06-17 19:22:10] [INFO] Loaded command: setautorole
+- [2025-06-17 19:22:10] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:22:10] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:22:10] [INFO] Loaded command: slowmode
+- [2025-06-17 19:22:10] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:22:10] [INFO] Loaded command: unban
+- [2025-06-17 19:22:10] [INFO] Loaded command: unjail
+- [2025-06-17 19:22:10] [INFO] Loaded command: unlock
+- [2025-06-17 19:22:10] [INFO] Loaded command: unmute
+- [2025-06-17 19:22:10] [INFO] Loaded command: verify
+- [2025-06-17 19:22:11] [INFO] Loaded command: warn
+- [2025-06-17 19:22:11] [INFO] Loaded command: warns
+- [2025-06-17 19:22:11] [INFO] Loaded command: massdm
+- [2025-06-17 19:22:11] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:22:11] [INFO] Loaded command: premium
+- [2025-06-17 19:22:11] [INFO] Loaded command: setuproles
+- [2025-06-17 19:22:11] [INFO] Loaded command: shutdown
+- [2025-06-17 19:22:11] [INFO] Loaded command: modmail
+- [2025-06-17 19:22:11] [INFO] Loaded command: moveall
+- [2025-06-17 19:22:11] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:22:11] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:22:11] [INFO] Loaded command: ping
+- [2025-06-17 19:22:11] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:22:11] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:22:11] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:22:11] [INFO] Loaded command: avatar
+- [2025-06-17 19:22:11] [INFO] Loaded command: botinfo
+- [2025-06-17 19:22:11] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:22:11] [INFO] Loaded command: help
+- [2025-06-17 19:22:11] [INFO] Loaded command: invite
+- [2025-06-17 19:22:11] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:22:11] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:22:11] [INFO] Loaded command: userinfo
+- [2025-06-17 19:22:11] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:22:11] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:22:11] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:22:11] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:22:11] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:22:11] [INFO] Loaded event: ready
+- [2025-06-17 19:22:11] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:22:11] [INFO] Loaded slash command: ping
+- [2025-06-17 19:22:12] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:22:12] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:22:12] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:22:12] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:22:12] [INFO] ✅ Database connection successful
+- [2025-06-17 19:22:14] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:22:14] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:22:14] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:22:14] [INFO] User mrahmet48 joined creator channel '・❔︱Need Help' for config type 'default'. Creating temp channel...
+- [2025-06-17 19:22:14] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:22:14] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:22:14] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:22:15] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:22:15] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:22:17] [INFO] Created temp channel ! (1384614137786531991) for mrahmet48.
+- [2025-06-17 19:22:21] [INFO] Temp channel ! is empty. Deleting...
+- [2025-06-17 19:22:21] [INFO] Deleted temp channel ! (1384614137786531991).
+- [2025-06-17 19:22:40] [INFO] User mrahmet48 joined creator channel '・❔︱Need Help' for config type 'default'. Creating temp channel...
+- [2025-06-17 19:22:41] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-17 19:22:52] [INFO] Loaded command: autoban
+- [2025-06-17 19:22:52] [INFO] Loaded command: autospam
+- [2025-06-17 19:22:52] [INFO] Loaded command: add
+- [2025-06-17 19:22:52] [INFO] Loaded command: ban
+- [2025-06-17 19:22:52] [INFO] Loaded command: clear
+- [2025-06-17 19:22:52] [INFO] Loaded command: delwarn
+- [2025-06-17 19:22:52] [INFO] Loaded command: deny
+- [2025-06-17 19:22:52] [INFO] Loaded command: jail
+- [2025-06-17 19:22:52] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:22:52] [INFO] Loaded command: kick
+- [2025-06-17 19:22:52] [INFO] Loaded command: lock
+- [2025-06-17 19:22:52] [INFO] Loaded command: move
+- [2025-06-17 19:22:52] [INFO] Loaded command: mute
+- [2025-06-17 19:22:52] [INFO] Loaded command: nickname
+- [2025-06-17 19:22:53] [INFO] Loaded command: role
+- [2025-06-17 19:22:53] [INFO] Loaded command: setautorole
+- [2025-06-17 19:22:53] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:22:53] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:22:53] [INFO] Loaded command: slowmode
+- [2025-06-17 19:22:53] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:22:53] [INFO] Loaded command: unban
+- [2025-06-17 19:22:53] [INFO] Loaded command: unjail
+- [2025-06-17 19:22:53] [INFO] Loaded command: unlock
+- [2025-06-17 19:22:53] [INFO] Loaded command: unmute
+- [2025-06-17 19:22:53] [INFO] Loaded command: verify
+- [2025-06-17 19:22:53] [INFO] Loaded command: warn
+- [2025-06-17 19:22:53] [INFO] Loaded command: warns
+- [2025-06-17 19:22:53] [INFO] Loaded command: massdm
+- [2025-06-17 19:22:53] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:22:53] [INFO] Loaded command: premium
+- [2025-06-17 19:22:53] [INFO] Loaded command: setuproles
+- [2025-06-17 19:22:53] [INFO] Loaded command: shutdown
+- [2025-06-17 19:22:53] [INFO] Loaded command: modmail
+- [2025-06-17 19:22:53] [INFO] Loaded command: moveall
+- [2025-06-17 19:22:53] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:22:53] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:22:53] [INFO] Loaded command: ping
+- [2025-06-17 19:22:53] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:22:53] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:22:53] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:22:53] [INFO] Loaded command: avatar
+- [2025-06-17 19:22:53] [INFO] Loaded command: botinfo
+- [2025-06-17 19:22:53] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:22:54] [INFO] Loaded command: help
+- [2025-06-17 19:22:54] [INFO] Loaded command: invite
+- [2025-06-17 19:22:54] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:22:54] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:22:54] [INFO] Loaded command: userinfo
+- [2025-06-17 19:22:54] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:22:54] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:22:54] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:22:54] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:22:54] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:22:54] [INFO] Loaded event: ready
+- [2025-06-17 19:22:54] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:22:54] [INFO] Loaded slash command: ping
+- [2025-06-17 19:22:54] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:22:54] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:22:54] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:22:55] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:22:55] [INFO] ✅ Database connection successful
+- [2025-06-17 19:22:57] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:22:57] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:22:57] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:22:57] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:22:57] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:22:57] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:22:58] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:22:58] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:23:17] [INFO] User mrahmet48 joined creator channel '・❔︱Need Help' for config type 'default'. Creating temp channel...
+- [2025-06-17 19:23:19] [INFO] Created temp channel ! (1384614400132124792) for mrahmet48.
+- [2025-06-17 19:23:20] [INFO] Channel ! will be deleted in 5 seconds.
+- [2025-06-17 19:23:26] [INFO] Deletion cancelled for temp channel ! (1384614400132124792) as it is no longer empty.
+- [2025-06-17 19:23:35] [INFO] Channel ! will be deleted in 5 seconds.
+- [2025-06-17 19:23:40] [INFO] Deletion cancelled for temp channel ! (1384614400132124792) as it is no longer empty.
+- [2025-06-17 19:24:01] [INFO] Channel ! will be deleted in 5 seconds.
+- [2025-06-17 19:24:03] [INFO] User mrahmet48 joined creator channel '・❔︱Need Help' for config type 'default'. Creating temp channel...
+- [2025-06-17 19:24:07] [INFO] Deletion cancelled for temp channel ! (1384614400132124792) as it is no longer empty.
+- [2025-06-17 19:24:08] [INFO] Created temp channel ! (1384614600347226112) for mrahmet48.
+- [2025-06-17 19:24:11] [INFO] Channel ! will be deleted in 5 seconds.
+- [2025-06-17 19:24:16] [INFO] Successfully deleted empty temp channel ! (1384614600347226112).
+- [2025-06-17 19:24:21] [INFO] Loaded command: autoban
+- [2025-06-17 19:24:21] [INFO] Loaded command: autospam
+- [2025-06-17 19:24:21] [INFO] Loaded command: add
+- [2025-06-17 19:24:21] [INFO] Loaded command: ban
+- [2025-06-17 19:24:21] [INFO] Loaded command: clear
+- [2025-06-17 19:24:21] [INFO] Loaded command: delwarn
+- [2025-06-17 19:24:21] [INFO] Loaded command: deny
+- [2025-06-17 19:24:21] [INFO] Loaded command: jail
+- [2025-06-17 19:24:21] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:24:21] [INFO] Loaded command: kick
+- [2025-06-17 19:24:21] [INFO] Loaded command: lock
+- [2025-06-17 19:24:21] [INFO] Loaded command: move
+- [2025-06-17 19:24:21] [INFO] Loaded command: mute
+- [2025-06-17 19:24:21] [INFO] Loaded command: nickname
+- [2025-06-17 19:24:21] [INFO] Loaded command: role
+- [2025-06-17 19:24:21] [INFO] Loaded command: setautorole
+- [2025-06-17 19:24:21] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:24:21] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:24:21] [INFO] Loaded command: slowmode
+- [2025-06-17 19:24:21] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:24:21] [INFO] Loaded command: unban
+- [2025-06-17 19:24:21] [INFO] Loaded command: unjail
+- [2025-06-17 19:24:21] [INFO] Loaded command: unlock
+- [2025-06-17 19:24:21] [INFO] Loaded command: unmute
+- [2025-06-17 19:24:21] [INFO] Loaded command: verify
+- [2025-06-17 19:24:21] [INFO] Loaded command: warn
+- [2025-06-17 19:24:21] [INFO] Loaded command: warns
+- [2025-06-17 19:24:21] [INFO] Loaded command: massdm
+- [2025-06-17 19:24:21] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:24:21] [INFO] Loaded command: premium
+- [2025-06-17 19:24:21] [INFO] Loaded command: setuproles
+- [2025-06-17 19:24:22] [INFO] Loaded command: shutdown
+- [2025-06-17 19:24:22] [INFO] Loaded command: modmail
+- [2025-06-17 19:24:22] [INFO] Loaded command: moveall
+- [2025-06-17 19:24:22] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:24:22] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:24:22] [INFO] Loaded command: ping
+- [2025-06-17 19:24:22] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:24:22] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:24:22] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:24:22] [INFO] Loaded command: avatar
+- [2025-06-17 19:24:22] [INFO] Loaded command: botinfo
+- [2025-06-17 19:24:22] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:24:22] [INFO] Loaded command: help
+- [2025-06-17 19:24:22] [INFO] Loaded command: invite
+- [2025-06-17 19:24:22] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:24:22] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:24:22] [INFO] Loaded command: userinfo
+- [2025-06-17 19:24:22] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:24:22] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:24:22] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:24:22] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:24:22] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:24:22] [INFO] Loaded event: ready
+- [2025-06-17 19:24:22] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:24:22] [INFO] Loaded slash command: ping
+- [2025-06-17 19:24:22] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:24:22] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:24:22] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:24:22] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:24:22] [INFO] ✅ Database connection successful
+- [2025-06-17 19:24:23] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:24:23] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:24:23] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:24:23] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:24:23] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:24:23] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:24:24] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:24:24] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:24:24] [INFO] Found 1 orphaned temp channels. Cleaning up...
+- [2025-06-17 19:24:24] [ERROR] Error cleaning up temp channel undefined: DiscordAPIError[50035]: Invalid Form Body
+channel_id[NUMBER_TYPE_COERCE]: Value "undefined" is not snowflake.
+- [2025-06-17 19:24:24] [INFO]  Orphaned temp channel cleanup complete.
+- [2025-06-17 19:24:44] [INFO] User mrahmet48 joined creator channel '・❔︱Need Help' for config type 'default'. Creating temp channel...
+- [2025-06-17 19:24:47] [INFO] Created temp channel ! (1384614771181097061) for mrahmet48.
+- [2025-06-17 19:24:57] [INFO] Reloaded event: ready
+- [2025-06-17 19:25:02] [INFO] Loaded command: autoban
+- [2025-06-17 19:25:02] [INFO] Loaded command: autospam
+- [2025-06-17 19:25:02] [INFO] Loaded command: add
+- [2025-06-17 19:25:02] [INFO] Loaded command: ban
+- [2025-06-17 19:25:02] [INFO] Loaded command: clear
+- [2025-06-17 19:25:02] [INFO] Loaded command: delwarn
+- [2025-06-17 19:25:02] [INFO] Loaded command: deny
+- [2025-06-17 19:25:02] [INFO] Loaded command: jail
+- [2025-06-17 19:25:02] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:25:02] [INFO] Loaded command: kick
+- [2025-06-17 19:25:02] [INFO] Loaded command: lock
+- [2025-06-17 19:25:02] [INFO] Loaded command: move
+- [2025-06-17 19:25:02] [INFO] Loaded command: mute
+- [2025-06-17 19:25:02] [INFO] Loaded command: nickname
+- [2025-06-17 19:25:02] [INFO] Loaded command: role
+- [2025-06-17 19:25:02] [INFO] Loaded command: setautorole
+- [2025-06-17 19:25:02] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:25:02] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:25:02] [INFO] Loaded command: slowmode
+- [2025-06-17 19:25:02] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:25:02] [INFO] Loaded command: unban
+- [2025-06-17 19:25:02] [INFO] Loaded command: unjail
+- [2025-06-17 19:25:02] [INFO] Loaded command: unlock
+- [2025-06-17 19:25:02] [INFO] Loaded command: unmute
+- [2025-06-17 19:25:02] [INFO] Loaded command: verify
+- [2025-06-17 19:25:02] [INFO] Loaded command: warn
+- [2025-06-17 19:25:02] [INFO] Loaded command: warns
+- [2025-06-17 19:25:02] [INFO] Loaded command: massdm
+- [2025-06-17 19:25:02] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:25:02] [INFO] Loaded command: premium
+- [2025-06-17 19:25:02] [INFO] Loaded command: setuproles
+- [2025-06-17 19:25:02] [INFO] Loaded command: shutdown
+- [2025-06-17 19:25:02] [INFO] Loaded command: modmail
+- [2025-06-17 19:25:02] [INFO] Loaded command: moveall
+- [2025-06-17 19:25:02] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:25:02] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:25:02] [INFO] Loaded command: ping
+- [2025-06-17 19:25:02] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:25:02] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:25:02] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:25:02] [INFO] Loaded command: avatar
+- [2025-06-17 19:25:02] [INFO] Loaded command: botinfo
+- [2025-06-17 19:25:02] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:25:02] [INFO] Loaded command: help
+- [2025-06-17 19:25:02] [INFO] Loaded command: invite
+- [2025-06-17 19:25:02] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:25:02] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:25:02] [INFO] Loaded command: userinfo
+- [2025-06-17 19:25:02] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:25:03] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:25:03] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:25:03] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:25:03] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:25:03] [INFO] Loaded event: ready
+- [2025-06-17 19:25:03] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:25:03] [INFO] Loaded slash command: ping
+- [2025-06-17 19:25:03] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:25:03] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:25:03] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:25:03] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:25:03] [INFO] ✅ Database connection successful
+- [2025-06-17 19:25:04] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:25:05] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:25:05] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:25:06] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:25:06] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:25:06] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:25:06] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:25:06] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:25:06] [INFO] Found 2 orphaned temp channels. Cleaning up...
+- [2025-06-17 19:25:07] [INFO]  Orphaned temp channel cleanup complete.
+- [2025-06-17 19:25:11] [INFO] User mrahmet48 joined creator channel '・❔︱Need Help' for config type 'default'. Creating temp channel...
+- [2025-06-17 19:25:13] [INFO] Created temp channel ! (1384614879335289054) for mrahmet48.
+- [2025-06-17 19:26:35] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-17 19:26:38] [INFO] Loaded command: autoban
+- [2025-06-17 19:26:39] [INFO] Loaded command: autospam
+- [2025-06-17 19:26:39] [INFO] Loaded command: add
+- [2025-06-17 19:26:39] [INFO] Loaded command: ban
+- [2025-06-17 19:26:39] [INFO] Loaded command: clear
+- [2025-06-17 19:26:39] [INFO] Loaded command: delwarn
+- [2025-06-17 19:26:39] [INFO] Loaded command: deny
+- [2025-06-17 19:26:39] [INFO] Loaded command: jail
+- [2025-06-17 19:26:39] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:26:39] [INFO] Loaded command: kick
+- [2025-06-17 19:26:39] [INFO] Loaded command: lock
+- [2025-06-17 19:26:39] [INFO] Loaded command: move
+- [2025-06-17 19:26:39] [INFO] Loaded command: mute
+- [2025-06-17 19:26:39] [INFO] Loaded command: nickname
+- [2025-06-17 19:26:39] [INFO] Loaded command: role
+- [2025-06-17 19:26:39] [INFO] Loaded command: setautorole
+- [2025-06-17 19:26:39] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:26:39] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:26:39] [INFO] Loaded command: slowmode
+- [2025-06-17 19:26:39] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:26:39] [INFO] Loaded command: unban
+- [2025-06-17 19:26:39] [INFO] Loaded command: unjail
+- [2025-06-17 19:26:39] [INFO] Loaded command: unlock
+- [2025-06-17 19:26:39] [INFO] Loaded command: unmute
+- [2025-06-17 19:26:39] [INFO] Loaded command: verify
+- [2025-06-17 19:26:39] [INFO] Loaded command: warn
+- [2025-06-17 19:26:39] [INFO] Loaded command: warns
+- [2025-06-17 19:26:39] [INFO] Loaded command: massdm
+- [2025-06-17 19:26:39] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:26:39] [INFO] Loaded command: premium
+- [2025-06-17 19:26:39] [INFO] Loaded command: setuproles
+- [2025-06-17 19:26:39] [INFO] Loaded command: shutdown
+- [2025-06-17 19:26:39] [INFO] Loaded command: modmail
+- [2025-06-17 19:26:39] [INFO] Loaded command: moveall
+- [2025-06-17 19:26:39] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:26:39] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:26:39] [INFO] Loaded command: ping
+- [2025-06-17 19:26:39] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:26:39] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:26:39] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:26:39] [INFO] Loaded command: avatar
+- [2025-06-17 19:26:39] [INFO] Loaded command: botinfo
+- [2025-06-17 19:26:39] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:26:39] [INFO] Loaded command: help
+- [2025-06-17 19:26:39] [INFO] Loaded command: invite
+- [2025-06-17 19:26:39] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:26:39] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:26:39] [INFO] Loaded command: userinfo
+- [2025-06-17 19:26:39] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:26:39] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:26:39] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:26:39] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:26:39] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:26:39] [INFO] Loaded event: ready
+- [2025-06-17 19:26:39] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:26:39] [INFO] Loaded slash command: ping
+- [2025-06-17 19:26:39] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:26:39] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:26:39] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:26:39] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:26:40] [INFO] ✅ Database connection successful
+- [2025-06-17 19:26:41] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:26:41] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:26:41] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:26:41] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:26:41] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:26:41] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:26:41] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:26:41] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:26:41] [INFO] Found 1 orphaned temp channels. Cleaning up...
+- [2025-06-17 19:26:42] [INFO]  Orphaned temp channel cleanup complete.
+- [2025-06-17 19:27:02] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-17 19:27:08] [INFO] Loaded command: autoban
+- [2025-06-17 19:27:08] [INFO] Loaded command: autospam
+- [2025-06-17 19:27:08] [INFO] Loaded command: add
+- [2025-06-17 19:27:08] [INFO] Loaded command: ban
+- [2025-06-17 19:27:08] [INFO] Loaded command: clear
+- [2025-06-17 19:27:08] [INFO] Loaded command: delwarn
+- [2025-06-17 19:27:08] [INFO] Loaded command: deny
+- [2025-06-17 19:27:08] [INFO] Loaded command: jail
+- [2025-06-17 19:27:08] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:27:08] [INFO] Loaded command: kick
+- [2025-06-17 19:27:08] [INFO] Loaded command: lock
+- [2025-06-17 19:27:08] [INFO] Loaded command: move
+- [2025-06-17 19:27:08] [INFO] Loaded command: mute
+- [2025-06-17 19:27:08] [INFO] Loaded command: nickname
+- [2025-06-17 19:27:08] [INFO] Loaded command: role
+- [2025-06-17 19:27:08] [INFO] Loaded command: setautorole
+- [2025-06-17 19:27:08] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:27:08] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:27:08] [INFO] Loaded command: slowmode
+- [2025-06-17 19:27:08] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:27:08] [INFO] Loaded command: unban
+- [2025-06-17 19:27:08] [INFO] Loaded command: unjail
+- [2025-06-17 19:27:08] [INFO] Loaded command: unlock
+- [2025-06-17 19:27:08] [INFO] Loaded command: unmute
+- [2025-06-17 19:27:08] [INFO] Loaded command: verify
+- [2025-06-17 19:27:08] [INFO] Loaded command: warn
+- [2025-06-17 19:27:08] [INFO] Loaded command: warns
+- [2025-06-17 19:27:08] [INFO] Loaded command: massdm
+- [2025-06-17 19:27:08] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:27:08] [INFO] Loaded command: premium
+- [2025-06-17 19:27:08] [INFO] Loaded command: setuproles
+- [2025-06-17 19:27:08] [INFO] Loaded command: shutdown
+- [2025-06-17 19:27:08] [INFO] Loaded command: modmail
+- [2025-06-17 19:27:08] [INFO] Loaded command: moveall
+- [2025-06-17 19:27:08] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:27:08] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:27:08] [INFO] Loaded command: ping
+- [2025-06-17 19:27:08] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:27:08] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:27:08] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:27:08] [INFO] Loaded command: avatar
+- [2025-06-17 19:27:08] [INFO] Loaded command: botinfo
+- [2025-06-17 19:27:08] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:27:08] [INFO] Loaded command: help
+- [2025-06-17 19:27:08] [INFO] Loaded command: invite
+- [2025-06-17 19:27:08] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:27:08] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:27:08] [INFO] Loaded command: userinfo
+- [2025-06-17 19:27:08] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:27:08] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:27:08] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:27:08] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:27:08] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:27:08] [INFO] Loaded event: ready
+- [2025-06-17 19:27:08] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:27:08] [INFO] Loaded slash command: ping
+- [2025-06-17 19:27:08] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:27:08] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:27:08] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:27:08] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:27:09] [INFO] ✅ Database connection successful
+- [2025-06-17 19:27:10] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:27:10] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:27:10] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:27:10] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:27:10] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:27:10] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:27:11] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:27:11] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:27:23] [ERROR] Failed to reload command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\moderation\tempvoice.js: SyntaxError: Unexpected token ')'
+- [2025-06-17 19:27:27] [INFO] Loaded command: autoban
+- [2025-06-17 19:27:27] [INFO] Loaded command: autospam
+- [2025-06-17 19:27:27] [INFO] Loaded command: add
+- [2025-06-17 19:27:27] [INFO] Loaded command: ban
+- [2025-06-17 19:27:27] [INFO] Loaded command: clear
+- [2025-06-17 19:27:27] [INFO] Loaded command: delwarn
+- [2025-06-17 19:27:27] [INFO] Loaded command: deny
+- [2025-06-17 19:27:27] [INFO] Loaded command: jail
+- [2025-06-17 19:27:27] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:27:27] [INFO] Loaded command: kick
+- [2025-06-17 19:27:27] [INFO] Loaded command: lock
+- [2025-06-17 19:27:27] [INFO] Loaded command: move
+- [2025-06-17 19:27:27] [INFO] Loaded command: mute
+- [2025-06-17 19:27:27] [INFO] Loaded command: nickname
+- [2025-06-17 19:27:27] [INFO] Loaded command: role
+- [2025-06-17 19:27:28] [INFO] Loaded command: setautorole
+- [2025-06-17 19:27:28] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:27:28] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:27:28] [INFO] Loaded command: slowmode
+- [2025-06-17 19:27:28] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\moderation\tempvoice.js: SyntaxError: Unexpected token ')'
+- [2025-06-17 19:27:28] [INFO] Loaded command: unban
+- [2025-06-17 19:27:28] [INFO] Loaded command: unjail
+- [2025-06-17 19:27:28] [INFO] Loaded command: unlock
+- [2025-06-17 19:27:28] [INFO] Loaded command: unmute
+- [2025-06-17 19:27:28] [INFO] Loaded command: verify
+- [2025-06-17 19:27:28] [INFO] Loaded command: warn
+- [2025-06-17 19:27:28] [INFO] Loaded command: warns
+- [2025-06-17 19:27:28] [INFO] Loaded command: massdm
+- [2025-06-17 19:27:28] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:27:28] [INFO] Loaded command: premium
+- [2025-06-17 19:27:28] [INFO] Loaded command: setuproles
+- [2025-06-17 19:27:28] [INFO] Loaded command: shutdown
+- [2025-06-17 19:27:28] [INFO] Loaded command: modmail
+- [2025-06-17 19:27:28] [INFO] Loaded command: moveall
+- [2025-06-17 19:27:28] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:27:28] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:27:28] [INFO] Loaded command: ping
+- [2025-06-17 19:27:28] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:27:28] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:27:28] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:27:28] [INFO] Loaded command: avatar
+- [2025-06-17 19:27:28] [INFO] Loaded command: botinfo
+- [2025-06-17 19:27:28] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:27:28] [INFO] Loaded command: help
+- [2025-06-17 19:27:28] [INFO] Loaded command: invite
+- [2025-06-17 19:27:28] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:27:28] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:27:28] [INFO] Loaded command: userinfo
+- [2025-06-17 19:27:28] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:27:28] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:27:28] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:27:28] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:27:28] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:27:28] [INFO] Loaded event: ready
+- [2025-06-17 19:27:28] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:27:28] [INFO] Loaded slash command: ping
+- [2025-06-17 19:27:28] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:27:28] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:27:28] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:27:28] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:27:29] [INFO] ✅ Database connection successful
+- [2025-06-17 19:27:29] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:27:30] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:27:30] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:27:30] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:27:30] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:27:30] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:27:30] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:27:30] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:27:33] [INFO] User mrahmet48 joined creator channel '・❔︱Need Help' for config type 'default'. Creating temp channel...
+- [2025-06-17 19:27:35] [INFO] Created temp channel ! (1384615474448564224) for mrahmet48.
+- [2025-06-17 19:27:52] [INFO] Reloaded command: tempvoice
+- [2025-06-17 19:27:56] [INFO] Loaded command: autoban
+- [2025-06-17 19:27:56] [INFO] Loaded command: autospam
+- [2025-06-17 19:27:56] [INFO] Loaded command: add
+- [2025-06-17 19:27:56] [INFO] Loaded command: ban
+- [2025-06-17 19:27:56] [INFO] Loaded command: clear
+- [2025-06-17 19:27:56] [INFO] Loaded command: delwarn
+- [2025-06-17 19:27:56] [INFO] Loaded command: deny
+- [2025-06-17 19:27:56] [INFO] Loaded command: jail
+- [2025-06-17 19:27:56] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:27:56] [INFO] Loaded command: kick
+- [2025-06-17 19:27:57] [INFO] Loaded command: lock
+- [2025-06-17 19:27:57] [INFO] Loaded command: move
+- [2025-06-17 19:27:57] [INFO] Loaded command: mute
+- [2025-06-17 19:27:57] [INFO] Loaded command: nickname
+- [2025-06-17 19:27:57] [INFO] Loaded command: role
+- [2025-06-17 19:27:57] [INFO] Loaded command: setautorole
+- [2025-06-17 19:27:57] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:27:57] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:27:57] [INFO] Loaded command: slowmode
+- [2025-06-17 19:27:57] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:27:57] [INFO] Loaded command: unban
+- [2025-06-17 19:27:57] [INFO] Loaded command: unjail
+- [2025-06-17 19:27:57] [INFO] Loaded command: unlock
+- [2025-06-17 19:27:57] [INFO] Loaded command: unmute
+- [2025-06-17 19:27:57] [INFO] Loaded command: verify
+- [2025-06-17 19:27:57] [INFO] Loaded command: warn
+- [2025-06-17 19:27:57] [INFO] Loaded command: warns
+- [2025-06-17 19:27:57] [INFO] Loaded command: massdm
+- [2025-06-17 19:27:57] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:27:57] [INFO] Loaded command: premium
+- [2025-06-17 19:27:57] [INFO] Loaded command: setuproles
+- [2025-06-17 19:27:57] [INFO] Loaded command: shutdown
+- [2025-06-17 19:27:57] [INFO] Loaded command: modmail
+- [2025-06-17 19:27:57] [INFO] Loaded command: moveall
+- [2025-06-17 19:27:57] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:27:57] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:27:57] [INFO] Loaded command: ping
+- [2025-06-17 19:27:57] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:27:57] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:27:57] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:27:57] [INFO] Loaded command: avatar
+- [2025-06-17 19:27:57] [INFO] Loaded command: botinfo
+- [2025-06-17 19:27:57] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:27:57] [INFO] Loaded command: help
+- [2025-06-17 19:27:57] [INFO] Loaded command: invite
+- [2025-06-17 19:27:57] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:27:58] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:27:58] [INFO] Loaded command: userinfo
+- [2025-06-17 19:27:58] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:27:58] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:27:58] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:27:58] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:27:58] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:27:58] [INFO] Loaded event: ready
+- [2025-06-17 19:27:58] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:27:58] [INFO] Loaded slash command: ping
+- [2025-06-17 19:27:58] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:27:58] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:27:58] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:27:58] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:27:59] [INFO] ✅ Database connection successful
+- [2025-06-17 19:27:59] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:27:59] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:27:59] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:28:00] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:28:00] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:28:00] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:28:00] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:28:00] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:28:00] [INFO] Found 1 orphaned temp channels. Cleaning up...
+- [2025-06-17 19:28:01] [INFO]  Orphaned temp channel cleanup complete.
+- [2025-06-17 19:28:07] [INFO] User mrahmet48 joined creator channel '・❔︱Need Help' for config type 'default'. Creating temp channel...
+- [2025-06-17 19:28:09] [INFO] Created temp channel ! (1384615615905665156) for mrahmet48.
+- [2025-06-17 19:29:14] [INFO] User mrahmet48 joined creator channel '・❔︱Need Help' for config type 'default'. Creating temp channel...
+- [2025-06-17 19:29:17] [INFO] Created temp channel ! (1384615903223742665) for mrahmet48.
+- [2025-06-17 19:30:15] [INFO] Reloaded command: tempvoice
+- [2025-06-17 19:30:19] [INFO] Loaded command: autoban
+- [2025-06-17 19:30:19] [INFO] Loaded command: autospam
+- [2025-06-17 19:30:19] [INFO] Loaded command: add
+- [2025-06-17 19:30:19] [INFO] Loaded command: ban
+- [2025-06-17 19:30:19] [INFO] Loaded command: clear
+- [2025-06-17 19:30:19] [INFO] Loaded command: delwarn
+- [2025-06-17 19:30:19] [INFO] Loaded command: deny
+- [2025-06-17 19:30:19] [INFO] Loaded command: jail
+- [2025-06-17 19:30:19] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:30:20] [INFO] Loaded command: kick
+- [2025-06-17 19:30:20] [INFO] Loaded command: lock
+- [2025-06-17 19:30:20] [INFO] Loaded command: move
+- [2025-06-17 19:30:20] [INFO] Loaded command: mute
+- [2025-06-17 19:30:20] [INFO] Loaded command: nickname
+- [2025-06-17 19:30:20] [INFO] Loaded command: role
+- [2025-06-17 19:30:20] [INFO] Loaded command: setautorole
+- [2025-06-17 19:30:20] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:30:20] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:30:20] [INFO] Loaded command: slowmode
+- [2025-06-17 19:30:20] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:30:20] [INFO] Loaded command: unban
+- [2025-06-17 19:30:20] [INFO] Loaded command: unjail
+- [2025-06-17 19:30:20] [INFO] Loaded command: unlock
+- [2025-06-17 19:30:20] [INFO] Loaded command: unmute
+- [2025-06-17 19:30:20] [INFO] Loaded command: verify
+- [2025-06-17 19:30:20] [INFO] Loaded command: warn
+- [2025-06-17 19:30:20] [INFO] Loaded command: warns
+- [2025-06-17 19:30:20] [INFO] Loaded command: massdm
+- [2025-06-17 19:30:20] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:30:20] [INFO] Loaded command: premium
+- [2025-06-17 19:30:20] [INFO] Loaded command: setuproles
+- [2025-06-17 19:30:20] [INFO] Loaded command: shutdown
+- [2025-06-17 19:30:20] [INFO] Loaded command: modmail
+- [2025-06-17 19:30:20] [INFO] Loaded command: moveall
+- [2025-06-17 19:30:20] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:30:20] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:30:20] [INFO] Loaded command: ping
+- [2025-06-17 19:30:20] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:30:20] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:30:20] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:30:20] [INFO] Loaded command: avatar
+- [2025-06-17 19:30:20] [INFO] Loaded command: botinfo
+- [2025-06-17 19:30:20] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:30:20] [INFO] Loaded command: help
+- [2025-06-17 19:30:20] [INFO] Loaded command: invite
+- [2025-06-17 19:30:20] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:30:20] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:30:20] [INFO] Loaded command: userinfo
+- [2025-06-17 19:30:20] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:30:20] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:30:20] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:30:20] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:30:20] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:30:20] [INFO] Loaded event: ready
+- [2025-06-17 19:30:20] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:30:20] [INFO] Loaded slash command: ping
+- [2025-06-17 19:30:20] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:30:20] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:30:20] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:30:20] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:30:21] [INFO] ✅ Database connection successful
+- [2025-06-17 19:30:23] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:30:23] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:30:23] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:30:24] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:30:24] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:30:24] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:30:25] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:30:25] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:30:25] [INFO] Found 2 orphaned temp channels. Cleaning up...
+- [2025-06-17 19:30:26] [INFO]  Orphaned temp channel cleanup complete.
+- [2025-06-17 19:30:29] [INFO] Reloaded command: tempvoice
+- [2025-06-17 19:30:33] [INFO] Loaded command: autoban
+- [2025-06-17 19:30:33] [INFO] Loaded command: autospam
+- [2025-06-17 19:30:33] [INFO] Loaded command: add
+- [2025-06-17 19:30:33] [INFO] Loaded command: ban
+- [2025-06-17 19:30:33] [INFO] Loaded command: clear
+- [2025-06-17 19:30:34] [INFO] Loaded command: delwarn
+- [2025-06-17 19:30:34] [INFO] Loaded command: deny
+- [2025-06-17 19:30:34] [INFO] Loaded command: jail
+- [2025-06-17 19:30:34] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:30:34] [INFO] Loaded command: kick
+- [2025-06-17 19:30:34] [INFO] Loaded command: lock
+- [2025-06-17 19:30:34] [INFO] Loaded command: move
+- [2025-06-17 19:30:34] [INFO] Loaded command: mute
+- [2025-06-17 19:30:34] [INFO] Loaded command: nickname
+- [2025-06-17 19:30:34] [INFO] Loaded command: role
+- [2025-06-17 19:30:34] [INFO] Loaded command: setautorole
+- [2025-06-17 19:30:34] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:30:34] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:30:34] [INFO] Loaded command: slowmode
+- [2025-06-17 19:30:34] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:30:34] [INFO] Loaded command: unban
+- [2025-06-17 19:30:34] [INFO] Loaded command: unjail
+- [2025-06-17 19:30:34] [INFO] Loaded command: unlock
+- [2025-06-17 19:30:34] [INFO] Loaded command: unmute
+- [2025-06-17 19:30:34] [INFO] Loaded command: verify
+- [2025-06-17 19:30:34] [INFO] Loaded command: warn
+- [2025-06-17 19:30:34] [INFO] Loaded command: warns
+- [2025-06-17 19:30:34] [INFO] Loaded command: massdm
+- [2025-06-17 19:30:34] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:30:34] [INFO] Loaded command: premium
+- [2025-06-17 19:30:34] [INFO] Loaded command: setuproles
+- [2025-06-17 19:30:34] [INFO] Loaded command: shutdown
+- [2025-06-17 19:30:34] [INFO] Loaded command: modmail
+- [2025-06-17 19:30:34] [INFO] Loaded command: moveall
+- [2025-06-17 19:30:34] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:30:34] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:30:34] [INFO] Loaded command: ping
+- [2025-06-17 19:30:34] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:30:34] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:30:35] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:30:35] [INFO] Loaded command: avatar
+- [2025-06-17 19:30:35] [INFO] Loaded command: botinfo
+- [2025-06-17 19:30:35] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:30:35] [INFO] Loaded command: help
+- [2025-06-17 19:30:35] [INFO] Loaded command: invite
+- [2025-06-17 19:30:35] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:30:35] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:30:35] [INFO] Loaded command: userinfo
+- [2025-06-17 19:30:35] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:30:35] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:30:35] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:30:35] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:30:35] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:30:35] [INFO] Loaded event: ready
+- [2025-06-17 19:30:35] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:30:35] [INFO] Loaded slash command: ping
+- [2025-06-17 19:30:35] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:30:35] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:30:35] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:30:35] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:30:39] [INFO] ✅ Database connection successful
+- [2025-06-17 19:30:40] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:30:40] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:30:40] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:30:40] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:30:40] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:30:40] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:30:43] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:30:43] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:30:49] [INFO] User mrahmet48 joined creator channel '・❔︱Need Help' for config type 'default'. Creating temp channel...
+- [2025-06-17 19:30:52] [INFO] Created temp channel ! (1384616296309850133) for mrahmet48.
+- [2025-06-17 19:32:03] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-17 19:32:07] [INFO] Loaded command: autoban
+- [2025-06-17 19:32:07] [INFO] Loaded command: autospam
+- [2025-06-17 19:32:07] [INFO] Loaded command: add
+- [2025-06-17 19:32:07] [INFO] Loaded command: ban
+- [2025-06-17 19:32:07] [INFO] Loaded command: clear
+- [2025-06-17 19:32:07] [INFO] Loaded command: delwarn
+- [2025-06-17 19:32:07] [INFO] Loaded command: deny
+- [2025-06-17 19:32:08] [INFO] Loaded command: jail
+- [2025-06-17 19:32:08] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:32:08] [INFO] Loaded command: kick
+- [2025-06-17 19:32:08] [INFO] Loaded command: lock
+- [2025-06-17 19:32:08] [INFO] Loaded command: move
+- [2025-06-17 19:32:08] [INFO] Loaded command: mute
+- [2025-06-17 19:32:08] [INFO] Loaded command: nickname
+- [2025-06-17 19:32:08] [INFO] Loaded command: role
+- [2025-06-17 19:32:08] [INFO] Loaded command: setautorole
+- [2025-06-17 19:32:08] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:32:08] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:32:08] [INFO] Loaded command: slowmode
+- [2025-06-17 19:32:08] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:32:08] [INFO] Loaded command: unban
+- [2025-06-17 19:32:08] [INFO] Loaded command: unjail
+- [2025-06-17 19:32:08] [INFO] Loaded command: unlock
+- [2025-06-17 19:32:08] [INFO] Loaded command: unmute
+- [2025-06-17 19:32:08] [INFO] Loaded command: verify
+- [2025-06-17 19:32:08] [INFO] Loaded command: warn
+- [2025-06-17 19:32:08] [INFO] Loaded command: warns
+- [2025-06-17 19:32:08] [INFO] Loaded command: massdm
+- [2025-06-17 19:32:08] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:32:08] [INFO] Loaded command: premium
+- [2025-06-17 19:32:08] [INFO] Loaded command: setuproles
+- [2025-06-17 19:32:08] [INFO] Loaded command: shutdown
+- [2025-06-17 19:32:08] [INFO] Loaded command: modmail
+- [2025-06-17 19:32:08] [INFO] Loaded command: moveall
+- [2025-06-17 19:32:08] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:32:08] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:32:08] [INFO] Loaded command: ping
+- [2025-06-17 19:32:08] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:32:08] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:32:08] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:32:08] [INFO] Loaded command: avatar
+- [2025-06-17 19:32:08] [INFO] Loaded command: botinfo
+- [2025-06-17 19:32:08] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:32:08] [INFO] Loaded command: help
+- [2025-06-17 19:32:08] [INFO] Loaded command: invite
+- [2025-06-17 19:32:08] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:32:08] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:32:08] [INFO] Loaded command: userinfo
+- [2025-06-17 19:32:08] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:32:08] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:32:08] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:32:08] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:32:08] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:32:08] [INFO] Loaded event: ready
+- [2025-06-17 19:32:08] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:32:08] [INFO] Loaded slash command: ping
+- [2025-06-17 19:32:08] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:32:08] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:32:08] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:32:08] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:32:09] [INFO] ✅ Database connection successful
+- [2025-06-17 19:32:10] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:32:10] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:32:10] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:32:10] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:32:10] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:32:10] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:32:10] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:32:10] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:32:10] [INFO] Found 1 orphaned temp channels. Cleaning up...
+- [2025-06-17 19:32:11] [INFO]  Orphaned temp channel cleanup complete.
+- [2025-06-17 19:32:22] [INFO] User mrahmet48 joined creator channel '・❔︱Need Help' for config type 'default'. Creating temp channel...
+- [2025-06-17 19:32:24] [INFO] Created temp channel ! (1384616686937968771) for mrahmet48.
+- [2025-06-17 19:32:26] [INFO] Temp channel ! is empty. Deleting instantly...
+- [2025-06-17 19:32:26] [INFO] Successfully deleted empty temp channel ! (1384616686937968771).
+- [2025-06-17 19:33:57] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-17 19:34:02] [INFO] Loaded command: autoban
+- [2025-06-17 19:34:02] [INFO] Loaded command: autospam
+- [2025-06-17 19:34:02] [INFO] Loaded command: add
+- [2025-06-17 19:34:02] [INFO] Loaded command: ban
+- [2025-06-17 19:34:02] [INFO] Loaded command: clear
+- [2025-06-17 19:34:02] [INFO] Loaded command: delwarn
+- [2025-06-17 19:34:02] [INFO] Loaded command: deny
+- [2025-06-17 19:34:02] [INFO] Loaded command: jail
+- [2025-06-17 19:34:02] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:34:02] [INFO] Loaded command: kick
+- [2025-06-17 19:34:02] [INFO] Loaded command: lock
+- [2025-06-17 19:34:02] [INFO] Loaded command: move
+- [2025-06-17 19:34:02] [INFO] Loaded command: mute
+- [2025-06-17 19:34:02] [INFO] Loaded command: nickname
+- [2025-06-17 19:34:02] [INFO] Loaded command: role
+- [2025-06-17 19:34:02] [INFO] Loaded command: setautorole
+- [2025-06-17 19:34:02] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:34:02] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:34:02] [INFO] Loaded command: slowmode
+- [2025-06-17 19:34:02] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:34:02] [INFO] Loaded command: unban
+- [2025-06-17 19:34:02] [INFO] Loaded command: unjail
+- [2025-06-17 19:34:02] [INFO] Loaded command: unlock
+- [2025-06-17 19:34:02] [INFO] Loaded command: unmute
+- [2025-06-17 19:34:02] [INFO] Loaded command: verify
+- [2025-06-17 19:34:02] [INFO] Loaded command: warn
+- [2025-06-17 19:34:02] [INFO] Loaded command: warns
+- [2025-06-17 19:34:02] [INFO] Loaded command: massdm
+- [2025-06-17 19:34:02] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:34:02] [INFO] Loaded command: premium
+- [2025-06-17 19:34:02] [INFO] Loaded command: setuproles
+- [2025-06-17 19:34:02] [INFO] Loaded command: shutdown
+- [2025-06-17 19:34:02] [INFO] Loaded command: modmail
+- [2025-06-17 19:34:02] [INFO] Loaded command: moveall
+- [2025-06-17 19:34:03] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:34:03] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:34:03] [INFO] Loaded command: ping
+- [2025-06-17 19:34:03] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:34:03] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:34:03] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:34:03] [INFO] Loaded command: avatar
+- [2025-06-17 19:34:03] [INFO] Loaded command: botinfo
+- [2025-06-17 19:34:03] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:34:03] [INFO] Loaded command: help
+- [2025-06-17 19:34:03] [INFO] Loaded command: invite
+- [2025-06-17 19:34:03] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:34:03] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:34:03] [INFO] Loaded command: userinfo
+- [2025-06-17 19:34:03] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:34:03] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:34:03] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:34:03] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:34:03] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:34:03] [INFO] Loaded event: ready
+- [2025-06-17 19:34:03] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:34:03] [INFO] Loaded slash command: ping
+- [2025-06-17 19:34:03] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:34:03] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:34:03] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:34:03] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:34:03] [INFO] ✅ Database connection successful
+- [2025-06-17 19:34:04] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:34:04] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:34:04] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:34:04] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:34:04] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:34:04] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:34:05] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:34:05] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:35:55] [INFO] Reloaded command: tempvoice
+- [2025-06-17 19:35:59] [INFO] Loaded command: autoban
+- [2025-06-17 19:35:59] [INFO] Loaded command: autospam
+- [2025-06-17 19:35:59] [INFO] Loaded command: add
+- [2025-06-17 19:35:59] [INFO] Loaded command: ban
+- [2025-06-17 19:35:59] [INFO] Loaded command: clear
+- [2025-06-17 19:35:59] [INFO] Loaded command: delwarn
+- [2025-06-17 19:35:59] [INFO] Loaded command: deny
+- [2025-06-17 19:35:59] [INFO] Loaded command: jail
+- [2025-06-17 19:35:59] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:35:59] [INFO] Loaded command: kick
+- [2025-06-17 19:35:59] [INFO] Loaded command: lock
+- [2025-06-17 19:35:59] [INFO] Loaded command: move
+- [2025-06-17 19:35:59] [INFO] Loaded command: mute
+- [2025-06-17 19:35:59] [INFO] Loaded command: nickname
+- [2025-06-17 19:35:59] [INFO] Loaded command: role
+- [2025-06-17 19:35:59] [INFO] Loaded command: setautorole
+- [2025-06-17 19:35:59] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:35:59] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:35:59] [INFO] Loaded command: slowmode
+- [2025-06-17 19:35:59] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:35:59] [INFO] Loaded command: unban
+- [2025-06-17 19:35:59] [INFO] Loaded command: unjail
+- [2025-06-17 19:35:59] [INFO] Loaded command: unlock
+- [2025-06-17 19:35:59] [INFO] Loaded command: unmute
+- [2025-06-17 19:35:59] [INFO] Loaded command: verify
+- [2025-06-17 19:35:59] [INFO] Loaded command: warn
+- [2025-06-17 19:35:59] [INFO] Loaded command: warns
+- [2025-06-17 19:35:59] [INFO] Loaded command: massdm
+- [2025-06-17 19:35:59] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:35:59] [INFO] Loaded command: premium
+- [2025-06-17 19:35:59] [INFO] Loaded command: setuproles
+- [2025-06-17 19:35:59] [INFO] Loaded command: shutdown
+- [2025-06-17 19:35:59] [INFO] Loaded command: modmail
+- [2025-06-17 19:35:59] [INFO] Loaded command: moveall
+- [2025-06-17 19:35:59] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:35:59] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:35:59] [INFO] Loaded command: ping
+- [2025-06-17 19:35:59] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:35:59] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:35:59] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:35:59] [INFO] Loaded command: avatar
+- [2025-06-17 19:35:59] [INFO] Loaded command: botinfo
+- [2025-06-17 19:35:59] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:35:59] [INFO] Loaded command: help
+- [2025-06-17 19:35:59] [INFO] Loaded command: invite
+- [2025-06-17 19:35:59] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:35:59] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:35:59] [INFO] Loaded command: userinfo
+- [2025-06-17 19:35:59] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:35:59] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:35:59] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:35:59] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:35:59] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:35:59] [INFO] Loaded event: ready
+- [2025-06-17 19:35:59] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:35:59] [INFO] Loaded slash command: ping
+- [2025-06-17 19:35:59] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:35:59] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:35:59] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:35:59] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:36:00] [INFO] ✅ Database connection successful
+- [2025-06-17 19:36:00] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:36:00] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:36:00] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:36:01] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:36:01] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:36:01] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:36:01] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:36:01] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:36:48] [INFO] Loaded command: autoban
+- [2025-06-17 19:36:48] [INFO] Loaded command: autospam
+- [2025-06-17 19:36:48] [INFO] Loaded command: add
+- [2025-06-17 19:36:48] [INFO] Loaded command: ban
+- [2025-06-17 19:36:48] [INFO] Loaded command: clear
+- [2025-06-17 19:36:48] [INFO] Loaded command: delwarn
+- [2025-06-17 19:36:48] [INFO] Loaded command: deny
+- [2025-06-17 19:36:48] [INFO] Loaded command: jail
+- [2025-06-17 19:36:48] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:36:48] [INFO] Loaded command: kick
+- [2025-06-17 19:36:48] [INFO] Loaded command: lock
+- [2025-06-17 19:36:48] [INFO] Loaded command: move
+- [2025-06-17 19:36:48] [INFO] Loaded command: mute
+- [2025-06-17 19:36:48] [INFO] Loaded command: nickname
+- [2025-06-17 19:36:48] [INFO] Loaded command: role
+- [2025-06-17 19:36:48] [INFO] Loaded command: setautorole
+- [2025-06-17 19:36:48] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:36:48] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:36:49] [INFO] Loaded command: slowmode
+- [2025-06-17 19:36:49] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:36:49] [INFO] Loaded command: unban
+- [2025-06-17 19:36:49] [INFO] Loaded command: unjail
+- [2025-06-17 19:36:49] [INFO] Loaded command: unlock
+- [2025-06-17 19:36:49] [INFO] Loaded command: unmute
+- [2025-06-17 19:36:49] [INFO] Loaded command: verify
+- [2025-06-17 19:36:49] [INFO] Loaded command: warn
+- [2025-06-17 19:36:49] [INFO] Loaded command: warns
+- [2025-06-17 19:36:49] [INFO] Loaded command: massdm
+- [2025-06-17 19:36:49] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:36:49] [INFO] Loaded command: premium
+- [2025-06-17 19:36:49] [INFO] Loaded command: setuproles
+- [2025-06-17 19:36:49] [INFO] Loaded command: shutdown
+- [2025-06-17 19:36:49] [INFO] Loaded command: modmail
+- [2025-06-17 19:36:49] [INFO] Loaded command: moveall
+- [2025-06-17 19:36:49] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:36:49] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:36:49] [INFO] Loaded command: ping
+- [2025-06-17 19:36:49] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:36:49] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:36:49] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:36:49] [INFO] Loaded command: avatar
+- [2025-06-17 19:36:49] [INFO] Loaded command: botinfo
+- [2025-06-17 19:36:49] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:36:49] [INFO] Loaded command: help
+- [2025-06-17 19:36:49] [INFO] Loaded command: invite
+- [2025-06-17 19:36:49] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:36:49] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:36:49] [INFO] Loaded command: userinfo
+- [2025-06-17 19:36:49] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:36:49] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:36:49] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:36:49] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:36:49] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:36:49] [INFO] Loaded event: ready
+- [2025-06-17 19:36:49] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:36:49] [INFO] Loaded slash command: ping
+- [2025-06-17 19:36:49] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:36:49] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:36:49] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:36:49] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:36:50] [INFO] ✅ Database connection successful
+- [2025-06-17 19:36:51] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:36:51] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:36:51] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:36:52] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:36:52] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:36:52] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:36:52] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:36:52] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:37:37] [INFO] Loaded command: autoban
+- [2025-06-17 19:37:37] [INFO] Loaded command: autospam
+- [2025-06-17 19:37:37] [INFO] Loaded command: add
+- [2025-06-17 19:37:37] [INFO] Loaded command: ban
+- [2025-06-17 19:37:37] [INFO] Loaded command: clear
+- [2025-06-17 19:37:37] [INFO] Loaded command: delwarn
+- [2025-06-17 19:37:37] [INFO] Loaded command: deny
+- [2025-06-17 19:37:37] [INFO] Loaded command: jail
+- [2025-06-17 19:37:37] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:37:37] [INFO] Loaded command: kick
+- [2025-06-17 19:37:37] [INFO] Loaded command: lock
+- [2025-06-17 19:37:37] [INFO] Loaded command: move
+- [2025-06-17 19:37:37] [INFO] Loaded command: mute
+- [2025-06-17 19:37:37] [INFO] Loaded command: nickname
+- [2025-06-17 19:37:37] [INFO] Loaded command: role
+- [2025-06-17 19:37:37] [INFO] Loaded command: setautorole
+- [2025-06-17 19:37:37] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:37:37] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:37:37] [INFO] Loaded command: slowmode
+- [2025-06-17 19:37:37] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:37:37] [INFO] Loaded command: unban
+- [2025-06-17 19:37:37] [INFO] Loaded command: unjail
+- [2025-06-17 19:37:38] [INFO] Loaded command: unlock
+- [2025-06-17 19:37:38] [INFO] Loaded command: unmute
+- [2025-06-17 19:37:38] [INFO] Loaded command: verify
+- [2025-06-17 19:37:38] [INFO] Loaded command: warn
+- [2025-06-17 19:37:38] [INFO] Loaded command: warns
+- [2025-06-17 19:37:38] [INFO] Loaded command: massdm
+- [2025-06-17 19:37:38] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:37:38] [INFO] Loaded command: premium
+- [2025-06-17 19:37:38] [INFO] Loaded command: setuproles
+- [2025-06-17 19:37:38] [INFO] Loaded command: shutdown
+- [2025-06-17 19:37:38] [INFO] Loaded command: modmail
+- [2025-06-17 19:37:38] [INFO] Loaded command: moveall
+- [2025-06-17 19:37:38] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:37:38] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:37:38] [INFO] Loaded command: ping
+- [2025-06-17 19:37:38] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:37:38] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:37:38] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:37:38] [INFO] Loaded command: avatar
+- [2025-06-17 19:37:38] [INFO] Loaded command: botinfo
+- [2025-06-17 19:37:38] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:37:38] [INFO] Loaded command: help
+- [2025-06-17 19:37:38] [INFO] Loaded command: invite
+- [2025-06-17 19:37:38] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:37:38] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:37:38] [INFO] Loaded command: userinfo
+- [2025-06-17 19:37:38] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:37:38] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:37:38] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:37:38] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:37:38] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:37:38] [INFO] Loaded event: ready
+- [2025-06-17 19:37:38] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:37:38] [INFO] Loaded slash command: ping
+- [2025-06-17 19:37:38] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:37:38] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:37:38] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:37:38] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:37:39] [INFO] ✅ Database connection successful
+- [2025-06-17 19:37:40] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:37:40] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:37:40] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:37:40] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:37:40] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:37:40] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:37:41] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:37:41] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:43:25] [INFO] Reloaded command: tempvoice
+- [2025-06-17 19:43:29] [INFO] Loaded command: autoban
+- [2025-06-17 19:43:29] [INFO] Loaded command: autospam
+- [2025-06-17 19:43:29] [INFO] Loaded command: add
+- [2025-06-17 19:43:29] [INFO] Loaded command: ban
+- [2025-06-17 19:43:29] [INFO] Loaded command: clear
+- [2025-06-17 19:43:29] [INFO] Loaded command: delwarn
+- [2025-06-17 19:43:29] [INFO] Loaded command: deny
+- [2025-06-17 19:43:29] [INFO] Loaded command: jail
+- [2025-06-17 19:43:29] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:43:29] [INFO] Loaded command: kick
+- [2025-06-17 19:43:29] [INFO] Loaded command: lock
+- [2025-06-17 19:43:29] [INFO] Loaded command: move
+- [2025-06-17 19:43:29] [INFO] Loaded command: mute
+- [2025-06-17 19:43:29] [INFO] Loaded command: nickname
+- [2025-06-17 19:43:29] [INFO] Loaded command: role
+- [2025-06-17 19:43:29] [INFO] Loaded command: setautorole
+- [2025-06-17 19:43:29] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:43:29] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:43:29] [INFO] Loaded command: slowmode
+- [2025-06-17 19:43:29] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:43:29] [INFO] Loaded command: unban
+- [2025-06-17 19:43:29] [INFO] Loaded command: unjail
+- [2025-06-17 19:43:29] [INFO] Loaded command: unlock
+- [2025-06-17 19:43:29] [INFO] Loaded command: unmute
+- [2025-06-17 19:43:29] [INFO] Loaded command: verify
+- [2025-06-17 19:43:29] [INFO] Loaded command: warn
+- [2025-06-17 19:43:29] [INFO] Loaded command: warns
+- [2025-06-17 19:43:29] [INFO] Loaded command: massdm
+- [2025-06-17 19:43:29] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:43:29] [INFO] Loaded command: premium
+- [2025-06-17 19:43:29] [INFO] Loaded command: setuproles
+- [2025-06-17 19:43:29] [INFO] Loaded command: shutdown
+- [2025-06-17 19:43:29] [INFO] Loaded command: modmail
+- [2025-06-17 19:43:29] [INFO] Loaded command: moveall
+- [2025-06-17 19:43:29] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:43:29] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:43:29] [INFO] Loaded command: ping
+- [2025-06-17 19:43:30] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:43:30] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:43:30] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:43:30] [INFO] Loaded command: avatar
+- [2025-06-17 19:43:30] [INFO] Loaded command: botinfo
+- [2025-06-17 19:43:30] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:43:30] [INFO] Loaded command: help
+- [2025-06-17 19:43:30] [INFO] Loaded command: invite
+- [2025-06-17 19:43:30] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:43:30] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:43:30] [INFO] Loaded command: userinfo
+- [2025-06-17 19:43:30] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:43:30] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:43:30] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:43:30] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:43:30] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:43:30] [INFO] Loaded event: ready
+- [2025-06-17 19:43:30] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:43:30] [INFO] Loaded slash command: ping
+- [2025-06-17 19:43:30] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:43:30] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:43:30] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:43:30] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:43:31] [INFO] ✅ Database connection successful
+- [2025-06-17 19:43:32] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:43:32] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:43:32] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:43:32] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:43:32] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:43:32] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:43:32] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:43:32] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:43:39] [INFO] Set temp voice config for guild 1038540608396066856 (default).
+- [2025-06-17 19:43:43] [INFO] User mrahmet48 joined creator channel '・❔︱Need Help' for config type 'default'. Creating temp channel...
+- [2025-06-17 19:43:46] [INFO] Created temp channel ・❔︱Need Help - ! (1384619548958789734) for mrahmet48.
+- [2025-06-17 19:44:11] [INFO] Set temp voice config for guild 1038540608396066856 (default).
+- [2025-06-17 19:44:13] [INFO] User mrahmet48 joined creator channel '・⌛｜Find Solution #1' for config type 'default'. Creating temp channel...
+- [2025-06-17 19:44:15] [INFO] Created temp channel ・⌛｜Find Solution #1 - ! (1384619668387401959) for mrahmet48.
+- [2025-06-17 19:44:15] [INFO] Temp channel ・❔︱Need Help - ! is empty. Deleting instantly...
+- [2025-06-17 19:44:15] [INFO] Successfully deleted empty temp channel ・❔︱Need Help - ! (1384619548958789734).
+- [2025-06-17 19:44:19] [INFO] Temp channel ・⌛｜Find Solution #1 - ! is empty. Deleting instantly...
+- [2025-06-17 19:44:19] [INFO] Successfully deleted empty temp channel ・⌛｜Find Solution #1 - ! (1384619668387401959).
+- [2025-06-17 19:48:34] [INFO] Loaded command: autoban
+- [2025-06-17 19:48:34] [INFO] Loaded command: autospam
+- [2025-06-17 19:48:34] [INFO] Loaded command: add
+- [2025-06-17 19:48:34] [INFO] Loaded command: ban
+- [2025-06-17 19:48:34] [INFO] Loaded command: clear
+- [2025-06-17 19:48:34] [INFO] Loaded command: delwarn
+- [2025-06-17 19:48:34] [INFO] Loaded command: deny
+- [2025-06-17 19:48:34] [INFO] Loaded command: jail
+- [2025-06-17 19:48:34] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:48:34] [INFO] Loaded command: kick
+- [2025-06-17 19:48:34] [INFO] Loaded command: lock
+- [2025-06-17 19:48:34] [INFO] Loaded command: move
+- [2025-06-17 19:48:34] [INFO] Loaded command: mute
+- [2025-06-17 19:48:34] [INFO] Loaded command: nickname
+- [2025-06-17 19:48:34] [INFO] Loaded command: role
+- [2025-06-17 19:48:34] [INFO] Loaded command: setautorole
+- [2025-06-17 19:48:34] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:48:34] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:48:34] [INFO] Loaded command: slowmode
+- [2025-06-17 19:48:34] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:48:34] [INFO] Loaded command: unban
+- [2025-06-17 19:48:34] [INFO] Loaded command: unjail
+- [2025-06-17 19:48:34] [INFO] Loaded command: unlock
+- [2025-06-17 19:48:34] [INFO] Loaded command: unmute
+- [2025-06-17 19:48:34] [INFO] Loaded command: verify
+- [2025-06-17 19:48:34] [INFO] Loaded command: warn
+- [2025-06-17 19:48:34] [INFO] Loaded command: warns
+- [2025-06-17 19:48:34] [INFO] Loaded command: massdm
+- [2025-06-17 19:48:34] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:48:34] [INFO] Loaded command: premium
+- [2025-06-17 19:48:34] [INFO] Loaded command: setuproles
+- [2025-06-17 19:48:34] [INFO] Loaded command: shutdown
+- [2025-06-17 19:48:34] [INFO] Loaded command: modmail
+- [2025-06-17 19:48:34] [INFO] Loaded command: moveall
+- [2025-06-17 19:48:34] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:48:34] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:48:34] [INFO] Loaded command: ping
+- [2025-06-17 19:48:34] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:48:34] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:48:34] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:48:34] [INFO] Loaded command: avatar
+- [2025-06-17 19:48:34] [INFO] Loaded command: botinfo
+- [2025-06-17 19:48:35] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:48:35] [INFO] Loaded command: help
+- [2025-06-17 19:48:35] [INFO] Loaded command: invite
+- [2025-06-17 19:48:35] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:48:35] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:48:35] [INFO] Loaded command: userinfo
+- [2025-06-17 19:48:35] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:48:35] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:48:35] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:48:35] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:48:35] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:48:35] [INFO] Loaded event: ready
+- [2025-06-17 19:48:35] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:48:35] [INFO] Loaded slash command: ping
+- [2025-06-17 19:48:35] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:48:35] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:48:35] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:48:35] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:48:36] [INFO] ✅ Database connection successful
+- [2025-06-17 19:48:37] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:48:37] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:48:37] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:48:37] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:48:37] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:48:37] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:48:37] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:48:37] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:49:55] [INFO] Loaded command: autoban
+- [2025-06-17 19:49:55] [INFO] Loaded command: autospam
+- [2025-06-17 19:49:55] [INFO] Loaded command: add
+- [2025-06-17 19:49:55] [INFO] Loaded command: ban
+- [2025-06-17 19:49:55] [INFO] Loaded command: clear
+- [2025-06-17 19:49:55] [INFO] Loaded command: delwarn
+- [2025-06-17 19:49:55] [INFO] Loaded command: deny
+- [2025-06-17 19:49:55] [INFO] Loaded command: jail
+- [2025-06-17 19:49:55] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:49:55] [INFO] Loaded command: kick
+- [2025-06-17 19:49:55] [INFO] Loaded command: lock
+- [2025-06-17 19:49:55] [INFO] Loaded command: move
+- [2025-06-17 19:49:55] [INFO] Loaded command: mute
+- [2025-06-17 19:49:55] [INFO] Loaded command: nickname
+- [2025-06-17 19:49:55] [INFO] Loaded command: role
+- [2025-06-17 19:49:55] [INFO] Loaded command: setautorole
+- [2025-06-17 19:49:55] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:49:55] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:49:55] [INFO] Loaded command: slowmode
+- [2025-06-17 19:49:55] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:49:55] [INFO] Loaded command: unban
+- [2025-06-17 19:49:55] [INFO] Loaded command: unjail
+- [2025-06-17 19:49:55] [INFO] Loaded command: unlock
+- [2025-06-17 19:49:55] [INFO] Loaded command: unmute
+- [2025-06-17 19:49:55] [INFO] Loaded command: verify
+- [2025-06-17 19:49:55] [INFO] Loaded command: warn
+- [2025-06-17 19:49:55] [INFO] Loaded command: warns
+- [2025-06-17 19:49:55] [INFO] Loaded command: massdm
+- [2025-06-17 19:49:55] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:49:55] [INFO] Loaded command: premium
+- [2025-06-17 19:49:55] [INFO] Loaded command: setuproles
+- [2025-06-17 19:49:55] [INFO] Loaded command: shutdown
+- [2025-06-17 19:49:55] [INFO] Loaded command: modmail
+- [2025-06-17 19:49:55] [INFO] Loaded command: moveall
+- [2025-06-17 19:49:55] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:49:55] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:49:55] [INFO] Loaded command: ping
+- [2025-06-17 19:49:55] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:49:55] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:49:55] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:49:55] [INFO] Loaded command: avatar
+- [2025-06-17 19:49:55] [INFO] Loaded command: botinfo
+- [2025-06-17 19:49:55] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:49:55] [INFO] Loaded command: help
+- [2025-06-17 19:49:55] [INFO] Loaded command: invite
+- [2025-06-17 19:49:55] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:49:55] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:49:55] [INFO] Loaded command: userinfo
+- [2025-06-17 19:49:55] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:49:56] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:49:56] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:49:56] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:49:56] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:49:56] [INFO] Loaded event: ready
+- [2025-06-17 19:49:56] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:49:56] [INFO] Loaded slash command: ping
+- [2025-06-17 19:49:56] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:49:56] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:49:56] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:49:56] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:49:56] [INFO] ✅ Database connection successful
+- [2025-06-17 19:49:57] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:49:57] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:49:57] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:49:58] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:49:58] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:49:58] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:49:58] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:49:58] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:50:33] [ERROR] Failed to reload command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\server-manager.js: SyntaxError: Unexpected identifier 'want'
+- [2025-06-17 19:50:44] [INFO] Loaded command: autoban
+- [2025-06-17 19:50:44] [INFO] Loaded command: autospam
+- [2025-06-17 19:50:44] [INFO] Loaded command: add
+- [2025-06-17 19:50:44] [INFO] Loaded command: ban
+- [2025-06-17 19:50:44] [INFO] Loaded command: clear
+- [2025-06-17 19:50:44] [INFO] Loaded command: delwarn
+- [2025-06-17 19:50:44] [INFO] Loaded command: deny
+- [2025-06-17 19:50:44] [INFO] Loaded command: jail
+- [2025-06-17 19:50:44] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:50:44] [INFO] Loaded command: kick
+- [2025-06-17 19:50:44] [INFO] Loaded command: lock
+- [2025-06-17 19:50:44] [INFO] Loaded command: move
+- [2025-06-17 19:50:44] [INFO] Loaded command: mute
+- [2025-06-17 19:50:44] [INFO] Loaded command: nickname
+- [2025-06-17 19:50:44] [INFO] Loaded command: role
+- [2025-06-17 19:50:44] [INFO] Loaded command: setautorole
+- [2025-06-17 19:50:44] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:50:44] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:50:44] [INFO] Loaded command: slowmode
+- [2025-06-17 19:50:44] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:50:44] [INFO] Loaded command: unban
+- [2025-06-17 19:50:44] [INFO] Loaded command: unjail
+- [2025-06-17 19:50:44] [INFO] Loaded command: unlock
+- [2025-06-17 19:50:44] [INFO] Loaded command: unmute
+- [2025-06-17 19:50:44] [INFO] Loaded command: verify
+- [2025-06-17 19:50:44] [INFO] Loaded command: warn
+- [2025-06-17 19:50:44] [INFO] Loaded command: warns
+- [2025-06-17 19:50:44] [INFO] Loaded command: massdm
+- [2025-06-17 19:50:44] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:50:44] [INFO] Loaded command: premium
+- [2025-06-17 19:50:44] [INFO] Loaded command: server-manager
+- [2025-06-17 19:50:44] [INFO] Loaded command: setuproles
+- [2025-06-17 19:50:44] [INFO] Loaded command: shutdown
+- [2025-06-17 19:50:44] [INFO] Loaded command: modmail
+- [2025-06-17 19:50:44] [INFO] Loaded command: moveall
+- [2025-06-17 19:50:44] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:50:44] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:50:44] [INFO] Loaded command: ping
+- [2025-06-17 19:50:44] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:50:44] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:50:44] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:50:44] [INFO] Loaded command: avatar
+- [2025-06-17 19:50:44] [INFO] Loaded command: botinfo
+- [2025-06-17 19:50:44] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:50:44] [INFO] Loaded command: help
+- [2025-06-17 19:50:44] [INFO] Loaded command: invite
+- [2025-06-17 19:50:44] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:50:44] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:50:44] [INFO] Loaded command: userinfo
+- [2025-06-17 19:50:44] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:50:44] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:50:44] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:50:44] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:50:45] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:50:45] [INFO] Loaded event: ready
+- [2025-06-17 19:50:45] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:50:45] [INFO] Loaded slash command: ping
+- [2025-06-17 19:50:45] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:50:45] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:50:45] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:50:45] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:50:45] [INFO] ✅ Database connection successful
+- [2025-06-17 19:50:46] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:50:46] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:50:46] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:50:47] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:50:47] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:50:47] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:50:48] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:50:48] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:51:27] [ERROR] Failed to reload command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\server-manager.js: SyntaxError: Unexpected identifier 'description'
+- [2025-06-17 19:51:36] [INFO] Loaded command: autoban
+- [2025-06-17 19:51:36] [INFO] Loaded command: autospam
+- [2025-06-17 19:51:37] [INFO] Loaded command: add
+- [2025-06-17 19:51:37] [INFO] Loaded command: ban
+- [2025-06-17 19:51:37] [INFO] Loaded command: clear
+- [2025-06-17 19:51:37] [INFO] Loaded command: delwarn
+- [2025-06-17 19:51:37] [INFO] Loaded command: deny
+- [2025-06-17 19:51:37] [INFO] Loaded command: jail
+- [2025-06-17 19:51:37] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:51:37] [INFO] Loaded command: kick
+- [2025-06-17 19:51:37] [INFO] Loaded command: lock
+- [2025-06-17 19:51:37] [INFO] Loaded command: move
+- [2025-06-17 19:51:37] [INFO] Loaded command: mute
+- [2025-06-17 19:51:37] [INFO] Loaded command: nickname
+- [2025-06-17 19:51:37] [INFO] Loaded command: role
+- [2025-06-17 19:51:37] [INFO] Loaded command: setautorole
+- [2025-06-17 19:51:37] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:51:37] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:51:37] [INFO] Loaded command: slowmode
+- [2025-06-17 19:51:37] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:51:37] [INFO] Loaded command: unban
+- [2025-06-17 19:51:37] [INFO] Loaded command: unjail
+- [2025-06-17 19:51:37] [INFO] Loaded command: unlock
+- [2025-06-17 19:51:37] [INFO] Loaded command: unmute
+- [2025-06-17 19:51:37] [INFO] Loaded command: verify
+- [2025-06-17 19:51:37] [INFO] Loaded command: warn
+- [2025-06-17 19:51:37] [INFO] Loaded command: warns
+- [2025-06-17 19:51:37] [INFO] Loaded command: massdm
+- [2025-06-17 19:51:37] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:51:37] [INFO] Loaded command: premium
+- [2025-06-17 19:51:38] [INFO] Loaded command: server-manager
+- [2025-06-17 19:51:38] [INFO] Loaded command: setuproles
+- [2025-06-17 19:51:38] [INFO] Loaded command: shutdown
+- [2025-06-17 19:51:38] [INFO] Loaded command: modmail
+- [2025-06-17 19:51:38] [INFO] Loaded command: moveall
+- [2025-06-17 19:51:38] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:51:38] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:51:38] [INFO] Loaded command: ping
+- [2025-06-17 19:51:38] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:51:38] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:51:38] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:51:38] [INFO] Loaded command: avatar
+- [2025-06-17 19:51:38] [INFO] Loaded command: botinfo
+- [2025-06-17 19:51:38] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:51:38] [INFO] Loaded command: help
+- [2025-06-17 19:51:38] [INFO] Loaded command: invite
+- [2025-06-17 19:51:38] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:51:38] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:51:38] [INFO] Loaded command: userinfo
+- [2025-06-17 19:51:38] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:51:38] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:51:38] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:51:38] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:51:38] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:51:38] [INFO] Loaded event: ready
+- [2025-06-17 19:51:38] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:51:38] [INFO] Loaded slash command: ping
+- [2025-06-17 19:51:38] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:51:38] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:51:38] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:51:38] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:51:39] [INFO] ✅ Database connection successful
+- [2025-06-17 19:51:41] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:51:41] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:51:41] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:51:42] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:51:42] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:51:42] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:51:42] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:51:42] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:52:12] [INFO] [InteractionCreate] Received component interaction with customId: "confirm_server_sync"
+- [2025-06-17 19:53:17] [INFO] [InteractionCreate] Received component interaction with customId: "confirm_server_sync"
+- [2025-06-17 19:54:02] [INFO] Loaded command: autoban
+- [2025-06-17 19:54:02] [INFO] Loaded command: autospam
+- [2025-06-17 19:54:02] [INFO] Loaded command: add
+- [2025-06-17 19:54:02] [INFO] Loaded command: ban
+- [2025-06-17 19:54:02] [INFO] Loaded command: clear
+- [2025-06-17 19:54:02] [INFO] Loaded command: delwarn
+- [2025-06-17 19:54:02] [INFO] Loaded command: deny
+- [2025-06-17 19:54:02] [INFO] Loaded command: jail
+- [2025-06-17 19:54:02] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:54:02] [INFO] Loaded command: kick
+- [2025-06-17 19:54:02] [INFO] Loaded command: lock
+- [2025-06-17 19:54:02] [INFO] Loaded command: move
+- [2025-06-17 19:54:03] [INFO] Loaded command: mute
+- [2025-06-17 19:54:03] [INFO] Loaded command: nickname
+- [2025-06-17 19:54:03] [INFO] Loaded command: role
+- [2025-06-17 19:54:03] [INFO] Loaded command: setautorole
+- [2025-06-17 19:54:03] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:54:03] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:54:03] [INFO] Loaded command: slowmode
+- [2025-06-17 19:54:03] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:54:03] [INFO] Loaded command: unban
+- [2025-06-17 19:54:03] [INFO] Loaded command: unjail
+- [2025-06-17 19:54:03] [INFO] Loaded command: unlock
+- [2025-06-17 19:54:03] [INFO] Loaded command: unmute
+- [2025-06-17 19:54:03] [INFO] Loaded command: verify
+- [2025-06-17 19:54:03] [INFO] Loaded command: warn
+- [2025-06-17 19:54:03] [INFO] Loaded command: warns
+- [2025-06-17 19:54:03] [INFO] Loaded command: massdm
+- [2025-06-17 19:54:03] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:54:03] [INFO] Loaded command: premium
+- [2025-06-17 19:54:03] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\server-manager.js: Error: Cannot find module '../../config/server-template'
+Require stack:
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\server-manager.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\handlers\commandHandler.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\index.js
+- [2025-06-17 19:54:03] [INFO] Loaded command: setuproles
+- [2025-06-17 19:54:03] [INFO] Loaded command: shutdown
+- [2025-06-17 19:54:03] [INFO] Loaded command: modmail
+- [2025-06-17 19:54:03] [INFO] Loaded command: moveall
+- [2025-06-17 19:54:03] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:54:03] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:54:03] [INFO] Loaded command: ping
+- [2025-06-17 19:54:03] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:54:03] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:54:03] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:54:03] [INFO] Loaded command: avatar
+- [2025-06-17 19:54:03] [INFO] Loaded command: botinfo
+- [2025-06-17 19:54:03] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:54:03] [INFO] Loaded command: help
+- [2025-06-17 19:54:03] [INFO] Loaded command: invite
+- [2025-06-17 19:54:03] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:54:03] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:54:03] [INFO] Loaded command: userinfo
+- [2025-06-17 19:54:03] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:54:03] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:54:03] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:54:03] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:54:03] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:54:03] [INFO] Loaded event: ready
+- [2025-06-17 19:54:04] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:54:04] [INFO] Loaded slash command: ping
+- [2025-06-17 19:54:04] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:54:04] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:54:04] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:54:04] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:54:05] [INFO] ✅ Database connection successful
+- [2025-06-17 19:54:07] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:54:07] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:54:07] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:54:07] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:54:07] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:54:07] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:54:08] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:54:08] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:55:25] [INFO] Loaded command: autoban
+- [2025-06-17 19:55:25] [INFO] Loaded command: autospam
+- [2025-06-17 19:55:25] [INFO] Loaded command: add
+- [2025-06-17 19:55:25] [INFO] Loaded command: ban
+- [2025-06-17 19:55:25] [INFO] Loaded command: clear
+- [2025-06-17 19:55:25] [INFO] Loaded command: delwarn
+- [2025-06-17 19:55:25] [INFO] Loaded command: deny
+- [2025-06-17 19:55:25] [INFO] Loaded command: jail
+- [2025-06-17 19:55:25] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:55:25] [INFO] Loaded command: kick
+- [2025-06-17 19:55:25] [INFO] Loaded command: lock
+- [2025-06-17 19:55:25] [INFO] Loaded command: move
+- [2025-06-17 19:55:25] [INFO] Loaded command: mute
+- [2025-06-17 19:55:25] [INFO] Loaded command: nickname
+- [2025-06-17 19:55:25] [INFO] Loaded command: role
+- [2025-06-17 19:55:25] [INFO] Loaded command: setautorole
+- [2025-06-17 19:55:25] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:55:25] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:55:25] [INFO] Loaded command: slowmode
+- [2025-06-17 19:55:25] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:55:25] [INFO] Loaded command: unban
+- [2025-06-17 19:55:25] [INFO] Loaded command: unjail
+- [2025-06-17 19:55:25] [INFO] Loaded command: unlock
+- [2025-06-17 19:55:25] [INFO] Loaded command: unmute
+- [2025-06-17 19:55:25] [INFO] Loaded command: verify
+- [2025-06-17 19:55:25] [INFO] Loaded command: warn
+- [2025-06-17 19:55:25] [INFO] Loaded command: warns
+- [2025-06-17 19:55:25] [INFO] Loaded command: massdm
+- [2025-06-17 19:55:25] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:55:25] [INFO] Loaded command: premium
+- [2025-06-17 19:55:25] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\server-manager.js: Error: Cannot find module '../../config/server-template'
+Require stack:
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\server-manager.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\handlers\commandHandler.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\index.js
+- [2025-06-17 19:55:25] [INFO] Loaded command: setuproles
+- [2025-06-17 19:55:25] [INFO] Loaded command: shutdown
+- [2025-06-17 19:55:25] [INFO] Loaded command: modmail
+- [2025-06-17 19:55:25] [INFO] Loaded command: moveall
+- [2025-06-17 19:55:25] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:55:25] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:55:25] [INFO] Loaded command: ping
+- [2025-06-17 19:55:25] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:55:25] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:55:25] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:55:25] [INFO] Loaded command: avatar
+- [2025-06-17 19:55:25] [INFO] Loaded command: botinfo
+- [2025-06-17 19:55:25] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:55:25] [INFO] Loaded command: help
+- [2025-06-17 19:55:25] [INFO] Loaded command: invite
+- [2025-06-17 19:55:25] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:55:25] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:55:25] [INFO] Loaded command: userinfo
+- [2025-06-17 19:55:25] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:55:25] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:55:25] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:55:25] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:55:25] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:55:25] [INFO] Loaded event: ready
+- [2025-06-17 19:55:25] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:55:25] [INFO] Loaded slash command: ping
+- [2025-06-17 19:55:25] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:55:25] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:55:26] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:55:26] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:55:27] [INFO] ✅ Database connection successful
+- [2025-06-17 19:55:28] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:55:28] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:55:28] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:55:28] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:55:28] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:55:28] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:55:29] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:55:29] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 19:55:39] [INFO] Reloaded command: dev
+- [2025-06-17 19:55:48] [INFO] Loaded command: autoban
+- [2025-06-17 19:55:48] [INFO] Loaded command: autospam
+- [2025-06-17 19:55:48] [INFO] Loaded command: add
+- [2025-06-17 19:55:48] [INFO] Loaded command: ban
+- [2025-06-17 19:55:48] [INFO] Loaded command: clear
+- [2025-06-17 19:55:48] [INFO] Loaded command: delwarn
+- [2025-06-17 19:55:48] [INFO] Loaded command: deny
+- [2025-06-17 19:55:48] [INFO] Loaded command: jail
+- [2025-06-17 19:55:48] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:55:48] [INFO] Loaded command: kick
+- [2025-06-17 19:55:48] [INFO] Loaded command: lock
+- [2025-06-17 19:55:48] [INFO] Loaded command: move
+- [2025-06-17 19:55:48] [INFO] Loaded command: mute
+- [2025-06-17 19:55:48] [INFO] Loaded command: nickname
+- [2025-06-17 19:55:48] [INFO] Loaded command: role
+- [2025-06-17 19:55:48] [INFO] Loaded command: setautorole
+- [2025-06-17 19:55:48] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:55:48] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:55:48] [INFO] Loaded command: slowmode
+- [2025-06-17 19:55:48] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:55:48] [INFO] Loaded command: unban
+- [2025-06-17 19:55:48] [INFO] Loaded command: unjail
+- [2025-06-17 19:55:48] [INFO] Loaded command: unlock
+- [2025-06-17 19:55:48] [INFO] Loaded command: unmute
+- [2025-06-17 19:55:48] [INFO] Loaded command: verify
+- [2025-06-17 19:55:48] [INFO] Loaded command: warn
+- [2025-06-17 19:55:48] [INFO] Loaded command: warns
+- [2025-06-17 19:55:48] [INFO] Loaded command: dev
+- [2025-06-17 19:55:48] [INFO] Loaded command: massdm
+- [2025-06-17 19:55:48] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:55:48] [INFO] Loaded command: premium
+- [2025-06-17 19:55:48] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\server-manager.js: Error: Cannot find module '../../config/server-template'
+Require stack:
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\server-manager.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\handlers\commandHandler.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\index.js
+- [2025-06-17 19:55:48] [INFO] Loaded command: setuproles
+- [2025-06-17 19:55:49] [INFO] Loaded command: shutdown
+- [2025-06-17 19:55:49] [INFO] Loaded command: modmail
+- [2025-06-17 19:55:49] [INFO] Loaded command: moveall
+- [2025-06-17 19:55:49] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:55:49] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:55:49] [INFO] Loaded command: ping
+- [2025-06-17 19:55:49] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:55:49] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:55:49] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:55:49] [INFO] Loaded command: avatar
+- [2025-06-17 19:55:49] [INFO] Loaded command: botinfo
+- [2025-06-17 19:55:49] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:55:49] [INFO] Loaded command: help
+- [2025-06-17 19:55:49] [INFO] Loaded command: invite
+- [2025-06-17 19:55:49] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:55:49] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:55:49] [INFO] Loaded command: userinfo
+- [2025-06-17 19:55:49] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:55:49] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:55:49] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:55:49] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:55:49] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:55:49] [INFO] Loaded event: ready
+- [2025-06-17 19:55:49] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:55:49] [INFO] Loaded slash command: ping
+- [2025-06-17 19:55:49] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:55:49] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:55:49] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:55:49] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:55:59] [INFO] Loaded command: autoban
+- [2025-06-17 19:55:59] [INFO] Loaded command: autospam
+- [2025-06-17 19:55:59] [INFO] Loaded command: add
+- [2025-06-17 19:55:59] [INFO] Loaded command: ban
+- [2025-06-17 19:55:59] [INFO] Loaded command: clear
+- [2025-06-17 19:55:59] [INFO] Loaded command: delwarn
+- [2025-06-17 19:55:59] [INFO] Loaded command: deny
+- [2025-06-17 19:55:59] [INFO] Loaded command: jail
+- [2025-06-17 19:55:59] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:55:59] [INFO] Loaded command: kick
+- [2025-06-17 19:55:59] [INFO] Loaded command: lock
+- [2025-06-17 19:55:59] [INFO] Loaded command: move
+- [2025-06-17 19:55:59] [INFO] Loaded command: mute
+- [2025-06-17 19:55:59] [INFO] Loaded command: nickname
+- [2025-06-17 19:55:59] [INFO] Loaded command: role
+- [2025-06-17 19:55:59] [INFO] Loaded command: setautorole
+- [2025-06-17 19:55:59] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:55:59] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:55:59] [INFO] Loaded command: slowmode
+- [2025-06-17 19:55:59] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:55:59] [INFO] Loaded command: unban
+- [2025-06-17 19:55:59] [INFO] Loaded command: unjail
+- [2025-06-17 19:56:00] [INFO] Loaded command: unlock
+- [2025-06-17 19:56:00] [INFO] Loaded command: unmute
+- [2025-06-17 19:56:00] [INFO] Loaded command: verify
+- [2025-06-17 19:56:00] [INFO] Loaded command: warn
+- [2025-06-17 19:56:00] [INFO] Loaded command: warns
+- [2025-06-17 19:56:00] [INFO] Loaded command: dev
+- [2025-06-17 19:56:00] [INFO] Loaded command: massdm
+- [2025-06-17 19:56:00] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:56:00] [INFO] Loaded command: premium
+- [2025-06-17 19:56:00] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\server-manager.js: Error: Cannot find module '../../config/server-template'
+Require stack:
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\server-manager.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\handlers\commandHandler.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\index.js
+- [2025-06-17 19:56:00] [INFO] Loaded command: setuproles
+- [2025-06-17 19:56:00] [INFO] Loaded command: shutdown
+- [2025-06-17 19:56:01] [INFO] Loaded command: modmail
+- [2025-06-17 19:56:01] [INFO] Loaded command: moveall
+- [2025-06-17 19:56:01] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:56:01] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:56:01] [INFO] Loaded command: ping
+- [2025-06-17 19:56:06] [INFO] Loaded command: autoban
+- [2025-06-17 19:56:06] [INFO] Loaded command: autospam
+- [2025-06-17 19:56:06] [INFO] Loaded command: add
+- [2025-06-17 19:56:06] [INFO] Loaded command: ban
+- [2025-06-17 19:56:06] [INFO] Loaded command: clear
+- [2025-06-17 19:56:06] [INFO] Loaded command: delwarn
+- [2025-06-17 19:56:06] [INFO] Loaded command: deny
+- [2025-06-17 19:56:06] [INFO] Loaded command: jail
+- [2025-06-17 19:56:06] [INFO] Loaded command: jailsettings
+- [2025-06-17 19:56:06] [INFO] Loaded command: kick
+- [2025-06-17 19:56:06] [INFO] Loaded command: lock
+- [2025-06-17 19:56:06] [INFO] Loaded command: move
+- [2025-06-17 19:56:06] [INFO] Loaded command: mute
+- [2025-06-17 19:56:07] [INFO] Loaded command: nickname
+- [2025-06-17 19:56:07] [INFO] Loaded command: role
+- [2025-06-17 19:56:07] [INFO] Loaded command: setautorole
+- [2025-06-17 19:56:07] [INFO] Loaded command: setjailrole
+- [2025-06-17 19:56:07] [INFO] Loaded command: setjailvoice
+- [2025-06-17 19:56:07] [INFO] Loaded command: slowmode
+- [2025-06-17 19:56:07] [INFO] Loaded command: tempvoice
+- [2025-06-17 19:56:07] [INFO] Loaded command: unban
+- [2025-06-17 19:56:07] [INFO] Loaded command: unjail
+- [2025-06-17 19:56:07] [INFO] Loaded command: unlock
+- [2025-06-17 19:56:07] [INFO] Loaded command: unmute
+- [2025-06-17 19:56:07] [INFO] Loaded command: verify
+- [2025-06-17 19:56:07] [INFO] Loaded command: warn
+- [2025-06-17 19:56:07] [INFO] Loaded command: warns
+- [2025-06-17 19:56:07] [INFO] Loaded command: dev
+- [2025-06-17 19:56:07] [INFO] Loaded command: massdm
+- [2025-06-17 19:56:07] [INFO] Loaded command: nuke-servre
+- [2025-06-17 19:56:07] [INFO] Loaded command: premium
+- [2025-06-17 19:56:07] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\server-manager.js: Error: Cannot find module '../../config/server-template'
+Require stack:
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\server-manager.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\handlers\commandHandler.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\index.js
+- [2025-06-17 19:56:07] [INFO] Loaded command: setuproles
+- [2025-06-17 19:56:07] [INFO] Loaded command: shutdown
+- [2025-06-17 19:56:07] [INFO] Loaded command: modmail
+- [2025-06-17 19:56:07] [INFO] Loaded command: moveall
+- [2025-06-17 19:56:07] [INFO] Loaded command: rolemenu
+- [2025-06-17 19:56:07] [INFO] Loaded command: sendnotify
+- [2025-06-17 19:56:07] [INFO] Loaded command: ping
+- [2025-06-17 19:56:07] [INFO] Loaded command: setembedcolor
+- [2025-06-17 19:56:07] [INFO] Loaded command: setembedfooter
+- [2025-06-17 19:56:07] [INFO] Loaded command: setembedicon
+- [2025-06-17 19:56:07] [INFO] Loaded command: avatar
+- [2025-06-17 19:56:07] [INFO] Loaded command: botinfo
+- [2025-06-17 19:56:07] [INFO] Loaded command: channelinfo
+- [2025-06-17 19:56:07] [INFO] Loaded command: help
+- [2025-06-17 19:56:07] [INFO] Loaded command: invite
+- [2025-06-17 19:56:07] [INFO] Loaded command: roleinfo
+- [2025-06-17 19:56:07] [INFO] Loaded command: serverinfo
+- [2025-06-17 19:56:07] [INFO] Loaded command: userinfo
+- [2025-06-17 19:56:07] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 19:56:07] [INFO] Loaded event: interactionCreate
+- [2025-06-17 19:56:08] [INFO] Loaded event: messageCreate
+- [2025-06-17 19:56:08] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 19:56:08] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 19:56:08] [INFO] Loaded event: ready
+- [2025-06-17 19:56:08] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 19:56:08] [INFO] Loaded slash command: ping
+- [2025-06-17 19:56:08] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 19:56:08] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 19:56:08] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 19:56:08] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 19:56:09] [INFO] ✅ Database connection successful
+- [2025-06-17 19:56:10] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 19:56:10] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 19:56:10] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 19:56:10] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 19:56:10] [INFO] Slash commands registered at startup.
+- [2025-06-17 19:56:10] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 19:56:11] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 19:56:11] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 20:00:34] [INFO] Reloaded command: dev
+- [2025-06-17 20:00:39] [INFO] Loaded command: autoban
+- [2025-06-17 20:00:39] [INFO] Loaded command: autospam
+- [2025-06-17 20:00:40] [INFO] Loaded command: add
+- [2025-06-17 20:00:40] [INFO] Loaded command: ban
+- [2025-06-17 20:00:40] [INFO] Loaded command: clear
+- [2025-06-17 20:00:40] [INFO] Loaded command: delwarn
+- [2025-06-17 20:00:40] [INFO] Loaded command: deny
+- [2025-06-17 20:00:40] [INFO] Loaded command: jail
+- [2025-06-17 20:00:40] [INFO] Loaded command: jailsettings
+- [2025-06-17 20:00:40] [INFO] Loaded command: kick
+- [2025-06-17 20:00:40] [INFO] Loaded command: lock
+- [2025-06-17 20:00:40] [INFO] Loaded command: move
+- [2025-06-17 20:00:40] [INFO] Loaded command: mute
+- [2025-06-17 20:00:40] [INFO] Loaded command: nickname
+- [2025-06-17 20:00:40] [INFO] Loaded command: role
+- [2025-06-17 20:00:40] [INFO] Loaded command: setautorole
+- [2025-06-17 20:00:40] [INFO] Loaded command: setjailrole
+- [2025-06-17 20:00:40] [INFO] Loaded command: setjailvoice
+- [2025-06-17 20:00:40] [INFO] Loaded command: slowmode
+- [2025-06-17 20:00:40] [INFO] Loaded command: tempvoice
+- [2025-06-17 20:00:40] [INFO] Loaded command: unban
+- [2025-06-17 20:00:40] [INFO] Loaded command: unjail
+- [2025-06-17 20:00:40] [INFO] Loaded command: unlock
+- [2025-06-17 20:00:40] [INFO] Loaded command: unmute
+- [2025-06-17 20:00:40] [INFO] Loaded command: verify
+- [2025-06-17 20:00:40] [INFO] Loaded command: warn
+- [2025-06-17 20:00:40] [INFO] Loaded command: warns
+- [2025-06-17 20:00:40] [INFO] Loaded command: dev
+- [2025-06-17 20:00:40] [INFO] Loaded command: massdm
+- [2025-06-17 20:00:40] [INFO] Loaded command: nuke-servre
+- [2025-06-17 20:00:40] [INFO] Loaded command: premium
+- [2025-06-17 20:00:40] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\server-manager.js: Error: Cannot find module '../../config/server-template'
+Require stack:
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\server-manager.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\handlers\commandHandler.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\index.js
+- [2025-06-17 20:00:40] [INFO] Loaded command: setuproles
+- [2025-06-17 20:00:40] [INFO] Loaded command: shutdown
+- [2025-06-17 20:00:40] [INFO] Loaded command: modmail
+- [2025-06-17 20:00:40] [INFO] Loaded command: moveall
+- [2025-06-17 20:00:40] [INFO] Loaded command: rolemenu
+- [2025-06-17 20:00:40] [INFO] Loaded command: sendnotify
+- [2025-06-17 20:00:40] [INFO] Loaded command: ping
+- [2025-06-17 20:00:40] [INFO] Loaded command: setembedcolor
+- [2025-06-17 20:00:40] [INFO] Loaded command: setembedfooter
+- [2025-06-17 20:00:40] [INFO] Loaded command: setembedicon
+- [2025-06-17 20:00:40] [INFO] Loaded command: avatar
+- [2025-06-17 20:00:40] [INFO] Loaded command: botinfo
+- [2025-06-17 20:00:40] [INFO] Loaded command: channelinfo
+- [2025-06-17 20:00:40] [INFO] Loaded command: help
+- [2025-06-17 20:00:40] [INFO] Loaded command: invite
+- [2025-06-17 20:00:40] [INFO] Loaded command: roleinfo
+- [2025-06-17 20:00:40] [INFO] Loaded command: serverinfo
+- [2025-06-17 20:00:40] [INFO] Loaded command: userinfo
+- [2025-06-17 20:00:40] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 20:00:40] [INFO] Loaded event: interactionCreate
+- [2025-06-17 20:00:40] [INFO] Loaded event: messageCreate
+- [2025-06-17 20:00:40] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 20:00:40] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 20:00:40] [INFO] Loaded event: ready
+- [2025-06-17 20:00:40] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 20:00:40] [INFO] Loaded slash command: ping
+- [2025-06-17 20:00:40] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 20:00:40] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 20:00:40] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 20:00:40] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 20:00:41] [INFO] ✅ Database connection successful
+- [2025-06-17 20:00:42] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 20:00:42] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 20:00:42] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 20:00:43] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 20:00:43] [INFO] Slash commands registered at startup.
+- [2025-06-17 20:00:43] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 20:00:43] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 20:00:43] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 20:02:55] [INFO] Reloaded event: ready
+- [2025-06-17 20:03:00] [INFO] Loaded command: autoban
+- [2025-06-17 20:03:00] [INFO] Loaded command: autospam
+- [2025-06-17 20:03:00] [INFO] Loaded command: add
+- [2025-06-17 20:03:00] [INFO] Loaded command: ban
+- [2025-06-17 20:03:00] [INFO] Loaded command: clear
+- [2025-06-17 20:03:00] [INFO] Loaded command: delwarn
+- [2025-06-17 20:03:00] [INFO] Loaded command: deny
+- [2025-06-17 20:03:00] [INFO] Loaded command: jail
+- [2025-06-17 20:03:00] [INFO] Loaded command: jailsettings
+- [2025-06-17 20:03:00] [INFO] Loaded command: kick
+- [2025-06-17 20:03:00] [INFO] Loaded command: lock
+- [2025-06-17 20:03:00] [INFO] Loaded command: move
+- [2025-06-17 20:03:00] [INFO] Loaded command: mute
+- [2025-06-17 20:03:00] [INFO] Loaded command: nickname
+- [2025-06-17 20:03:00] [INFO] Loaded command: role
+- [2025-06-17 20:03:00] [INFO] Loaded command: setautorole
+- [2025-06-17 20:03:00] [INFO] Loaded command: setjailrole
+- [2025-06-17 20:03:00] [INFO] Loaded command: setjailvoice
+- [2025-06-17 20:03:00] [INFO] Loaded command: slowmode
+- [2025-06-17 20:03:00] [INFO] Loaded command: tempvoice
+- [2025-06-17 20:03:00] [INFO] Loaded command: unban
+- [2025-06-17 20:03:00] [INFO] Loaded command: unjail
+- [2025-06-17 20:03:00] [INFO] Loaded command: unlock
+- [2025-06-17 20:03:00] [INFO] Loaded command: unmute
+- [2025-06-17 20:03:00] [INFO] Loaded command: verify
+- [2025-06-17 20:03:00] [INFO] Loaded command: warn
+- [2025-06-17 20:03:00] [INFO] Loaded command: warns
+- [2025-06-17 20:03:00] [INFO] Loaded command: dev
+- [2025-06-17 20:03:00] [INFO] Loaded command: massdm
+- [2025-06-17 20:03:00] [INFO] Loaded command: nuke-servre
+- [2025-06-17 20:03:00] [INFO] Loaded command: premium
+- [2025-06-17 20:03:00] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\server-manager.js: Error: Cannot find module '../../config/server-template'
+Require stack:
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\server-manager.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\handlers\commandHandler.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\index.js
+- [2025-06-17 20:03:00] [INFO] Loaded command: setuproles
+- [2025-06-17 20:03:00] [INFO] Loaded command: shutdown
+- [2025-06-17 20:03:00] [INFO] Loaded command: modmail
+- [2025-06-17 20:03:00] [INFO] Loaded command: moveall
+- [2025-06-17 20:03:00] [INFO] Loaded command: rolemenu
+- [2025-06-17 20:03:00] [INFO] Loaded command: sendnotify
+- [2025-06-17 20:03:00] [INFO] Loaded command: ping
+- [2025-06-17 20:03:00] [INFO] Loaded command: setembedcolor
+- [2025-06-17 20:03:00] [INFO] Loaded command: setembedfooter
+- [2025-06-17 20:03:00] [INFO] Loaded command: setembedicon
+- [2025-06-17 20:03:00] [INFO] Loaded command: avatar
+- [2025-06-17 20:03:00] [INFO] Loaded command: botinfo
+- [2025-06-17 20:03:00] [INFO] Loaded command: channelinfo
+- [2025-06-17 20:03:00] [INFO] Loaded command: help
+- [2025-06-17 20:03:00] [INFO] Loaded command: invite
+- [2025-06-17 20:03:01] [INFO] Loaded command: roleinfo
+- [2025-06-17 20:03:01] [INFO] Loaded command: serverinfo
+- [2025-06-17 20:03:01] [INFO] Loaded command: userinfo
+- [2025-06-17 20:03:01] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 20:03:01] [INFO] Loaded event: interactionCreate
+- [2025-06-17 20:03:01] [INFO] Loaded event: messageCreate
+- [2025-06-17 20:03:01] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 20:03:01] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 20:03:01] [INFO] Loaded event: ready
+- [2025-06-17 20:03:01] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 20:03:01] [INFO] Loaded slash command: ping
+- [2025-06-17 20:03:01] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 20:03:01] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 20:03:01] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 20:03:01] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 20:03:02] [INFO] ✅ Database connection successful
+- [2025-06-17 20:03:02] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 20:03:02] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 20:03:02] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 20:03:02] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 20:03:03] [INFO] Slash commands registered at startup.
+- [2025-06-17 20:03:03] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 20:03:03] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 20:03:03] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 20:03:04] [INFO] Successfully updated dev server status to Online.
+- [2025-06-17 20:03:11] [INFO] Reloaded event: ready
+- [2025-06-17 20:03:16] [INFO] Loaded command: autoban
+- [2025-06-17 20:03:16] [INFO] Loaded command: autospam
+- [2025-06-17 20:03:16] [INFO] Loaded command: add
+- [2025-06-17 20:03:16] [INFO] Loaded command: ban
+- [2025-06-17 20:03:16] [INFO] Loaded command: clear
+- [2025-06-17 20:03:16] [INFO] Loaded command: delwarn
+- [2025-06-17 20:03:16] [INFO] Loaded command: deny
+- [2025-06-17 20:03:16] [INFO] Loaded command: jail
+- [2025-06-17 20:03:16] [INFO] Loaded command: jailsettings
+- [2025-06-17 20:03:16] [INFO] Loaded command: kick
+- [2025-06-17 20:03:16] [INFO] Loaded command: lock
+- [2025-06-17 20:03:16] [INFO] Loaded command: move
+- [2025-06-17 20:03:16] [INFO] Loaded command: mute
+- [2025-06-17 20:03:16] [INFO] Loaded command: nickname
+- [2025-06-17 20:03:16] [INFO] Loaded command: role
+- [2025-06-17 20:03:16] [INFO] Loaded command: setautorole
+- [2025-06-17 20:03:16] [INFO] Loaded command: setjailrole
+- [2025-06-17 20:03:16] [INFO] Loaded command: setjailvoice
+- [2025-06-17 20:03:16] [INFO] Loaded command: slowmode
+- [2025-06-17 20:03:16] [INFO] Loaded command: tempvoice
+- [2025-06-17 20:03:16] [INFO] Loaded command: unban
+- [2025-06-17 20:03:16] [INFO] Loaded command: unjail
+- [2025-06-17 20:03:16] [INFO] Loaded command: unlock
+- [2025-06-17 20:03:16] [INFO] Loaded command: unmute
+- [2025-06-17 20:03:16] [INFO] Loaded command: verify
+- [2025-06-17 20:03:16] [INFO] Loaded command: warn
+- [2025-06-17 20:03:16] [INFO] Loaded command: warns
+- [2025-06-17 20:03:16] [INFO] Loaded command: dev
+- [2025-06-17 20:03:16] [INFO] Loaded command: massdm
+- [2025-06-17 20:03:16] [INFO] Loaded command: nuke-servre
+- [2025-06-17 20:03:16] [INFO] Loaded command: premium
+- [2025-06-17 20:03:16] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\server-manager.js: Error: Cannot find module '../../config/server-template'
+Require stack:
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\server-manager.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\handlers\commandHandler.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\index.js
+- [2025-06-17 20:03:16] [INFO] Loaded command: setuproles
+- [2025-06-17 20:03:17] [INFO] Loaded command: shutdown
+- [2025-06-17 20:03:17] [INFO] Loaded command: modmail
+- [2025-06-17 20:03:17] [INFO] Loaded command: moveall
+- [2025-06-17 20:03:17] [INFO] Loaded command: rolemenu
+- [2025-06-17 20:03:17] [INFO] Loaded command: sendnotify
+- [2025-06-17 20:03:17] [INFO] Loaded command: ping
+- [2025-06-17 20:03:17] [INFO] Loaded command: setembedcolor
+- [2025-06-17 20:03:17] [INFO] Loaded command: setembedfooter
+- [2025-06-17 20:03:17] [INFO] Loaded command: setembedicon
+- [2025-06-17 20:03:17] [INFO] Loaded command: avatar
+- [2025-06-17 20:03:17] [INFO] Loaded command: botinfo
+- [2025-06-17 20:03:17] [INFO] Loaded command: channelinfo
+- [2025-06-17 20:03:17] [INFO] Loaded command: help
+- [2025-06-17 20:03:17] [INFO] Loaded command: invite
+- [2025-06-17 20:03:17] [INFO] Loaded command: roleinfo
+- [2025-06-17 20:03:17] [INFO] Loaded command: serverinfo
+- [2025-06-17 20:03:17] [INFO] Loaded command: userinfo
+- [2025-06-17 20:03:17] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 20:03:17] [INFO] Loaded event: interactionCreate
+- [2025-06-17 20:03:17] [INFO] Loaded event: messageCreate
+- [2025-06-17 20:03:17] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 20:03:17] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 20:03:17] [INFO] Loaded event: ready
+- [2025-06-17 20:03:17] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 20:03:17] [INFO] Loaded slash command: ping
+- [2025-06-17 20:03:17] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 20:03:17] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 20:03:17] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 20:03:17] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 20:03:18] [INFO] ✅ Database connection successful
+- [2025-06-17 20:03:19] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 20:03:19] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 20:03:19] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 20:03:19] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 20:03:19] [INFO] Slash commands registered at startup.
+- [2025-06-17 20:03:19] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 20:03:19] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 20:03:19] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 20:03:20] [INFO] Successfully updated dev server status to Online.
+- [2025-06-17 20:03:32] [INFO] Loaded command: autoban
+- [2025-06-17 20:03:32] [INFO] Loaded command: autospam
+- [2025-06-17 20:03:32] [INFO] Loaded command: add
+- [2025-06-17 20:03:32] [INFO] Loaded command: ban
+- [2025-06-17 20:03:32] [INFO] Loaded command: clear
+- [2025-06-17 20:03:32] [INFO] Loaded command: delwarn
+- [2025-06-17 20:03:32] [INFO] Loaded command: deny
+- [2025-06-17 20:03:32] [INFO] Loaded command: jail
+- [2025-06-17 20:03:32] [INFO] Loaded command: jailsettings
+- [2025-06-17 20:03:32] [INFO] Loaded command: kick
+- [2025-06-17 20:03:32] [INFO] Loaded command: lock
+- [2025-06-17 20:03:32] [INFO] Loaded command: move
+- [2025-06-17 20:03:32] [INFO] Loaded command: mute
+- [2025-06-17 20:03:32] [INFO] Loaded command: nickname
+- [2025-06-17 20:03:32] [INFO] Loaded command: role
+- [2025-06-17 20:03:32] [INFO] Loaded command: setautorole
+- [2025-06-17 20:03:32] [INFO] Loaded command: setjailrole
+- [2025-06-17 20:03:32] [INFO] Loaded command: setjailvoice
+- [2025-06-17 20:03:32] [INFO] Loaded command: slowmode
+- [2025-06-17 20:03:32] [INFO] Loaded command: tempvoice
+- [2025-06-17 20:03:32] [INFO] Loaded command: unban
+- [2025-06-17 20:03:32] [INFO] Loaded command: unjail
+- [2025-06-17 20:03:32] [INFO] Loaded command: unlock
+- [2025-06-17 20:03:32] [INFO] Loaded command: unmute
+- [2025-06-17 20:03:32] [INFO] Loaded command: verify
+- [2025-06-17 20:03:32] [INFO] Loaded command: warn
+- [2025-06-17 20:03:32] [INFO] Loaded command: warns
+- [2025-06-17 20:03:32] [INFO] Loaded command: dev
+- [2025-06-17 20:03:32] [INFO] Loaded command: massdm
+- [2025-06-17 20:03:32] [INFO] Loaded command: nuke-servre
+- [2025-06-17 20:03:32] [INFO] Loaded command: premium
+- [2025-06-17 20:03:32] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\server-manager.js: Error: Cannot find module '../../config/server-template'
+Require stack:
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\server-manager.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\handlers\commandHandler.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\index.js
+- [2025-06-17 20:03:32] [INFO] Loaded command: setuproles
+- [2025-06-17 20:03:33] [INFO] Loaded command: shutdown
+- [2025-06-17 20:03:33] [INFO] Loaded command: modmail
+- [2025-06-17 20:03:33] [INFO] Loaded command: moveall
+- [2025-06-17 20:03:33] [INFO] Loaded command: rolemenu
+- [2025-06-17 20:03:33] [INFO] Loaded command: sendnotify
+- [2025-06-17 20:03:33] [INFO] Loaded command: ping
+- [2025-06-17 20:03:33] [INFO] Loaded command: setembedcolor
+- [2025-06-17 20:03:33] [INFO] Loaded command: setembedfooter
+- [2025-06-17 20:03:33] [INFO] Loaded command: setembedicon
+- [2025-06-17 20:03:33] [INFO] Loaded command: avatar
+- [2025-06-17 20:03:33] [INFO] Loaded command: botinfo
+- [2025-06-17 20:03:33] [INFO] Loaded command: channelinfo
+- [2025-06-17 20:03:33] [INFO] Loaded command: help
+- [2025-06-17 20:03:33] [INFO] Loaded command: invite
+- [2025-06-17 20:03:33] [INFO] Loaded command: roleinfo
+- [2025-06-17 20:03:33] [INFO] Loaded command: serverinfo
+- [2025-06-17 20:03:33] [INFO] Loaded command: userinfo
+- [2025-06-17 20:03:33] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 20:03:33] [INFO] Loaded event: interactionCreate
+- [2025-06-17 20:03:33] [INFO] Loaded event: messageCreate
+- [2025-06-17 20:03:33] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 20:03:33] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 20:03:33] [INFO] Loaded event: ready
+- [2025-06-17 20:03:33] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 20:03:33] [INFO] Loaded slash command: ping
+- [2025-06-17 20:03:33] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 20:03:33] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 20:03:33] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 20:03:33] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 20:03:34] [INFO] ✅ Database connection successful
+- [2025-06-17 20:03:35] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 20:03:35] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 20:03:35] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 20:03:35] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 20:03:35] [INFO] Slash commands registered at startup.
+- [2025-06-17 20:03:35] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 20:03:35] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 20:03:35] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 20:03:36] [INFO] Successfully updated dev server status to Online.
+- [2025-06-17 20:03:58] [INFO] Loaded command: autoban
+- [2025-06-17 20:03:58] [INFO] Loaded command: autospam
+- [2025-06-17 20:03:58] [INFO] Loaded command: add
+- [2025-06-17 20:03:58] [INFO] Loaded command: ban
+- [2025-06-17 20:03:58] [INFO] Loaded command: clear
+- [2025-06-17 20:03:58] [INFO] Loaded command: delwarn
+- [2025-06-17 20:03:58] [INFO] Loaded command: deny
+- [2025-06-17 20:03:58] [INFO] Loaded command: jail
+- [2025-06-17 20:03:58] [INFO] Loaded command: jailsettings
+- [2025-06-17 20:03:58] [INFO] Loaded command: kick
+- [2025-06-17 20:03:58] [INFO] Loaded command: lock
+- [2025-06-17 20:03:58] [INFO] Loaded command: move
+- [2025-06-17 20:03:58] [INFO] Loaded command: mute
+- [2025-06-17 20:03:58] [INFO] Loaded command: nickname
+- [2025-06-17 20:03:58] [INFO] Loaded command: role
+- [2025-06-17 20:03:58] [INFO] Loaded command: setautorole
+- [2025-06-17 20:03:58] [INFO] Loaded command: setjailrole
+- [2025-06-17 20:03:58] [INFO] Loaded command: setjailvoice
+- [2025-06-17 20:03:58] [INFO] Loaded command: slowmode
+- [2025-06-17 20:03:58] [INFO] Loaded command: tempvoice
+- [2025-06-17 20:03:58] [INFO] Loaded command: unban
+- [2025-06-17 20:03:58] [INFO] Loaded command: unjail
+- [2025-06-17 20:03:58] [INFO] Loaded command: unlock
+- [2025-06-17 20:03:58] [INFO] Loaded command: unmute
+- [2025-06-17 20:03:58] [INFO] Loaded command: verify
+- [2025-06-17 20:03:58] [INFO] Loaded command: warn
+- [2025-06-17 20:03:58] [INFO] Loaded command: warns
+- [2025-06-17 20:03:58] [INFO] Loaded command: dev
+- [2025-06-17 20:03:58] [INFO] Loaded command: massdm
+- [2025-06-17 20:03:58] [INFO] Loaded command: nuke-servre
+- [2025-06-17 20:03:58] [INFO] Loaded command: premium
+- [2025-06-17 20:03:58] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\server-manager.js: Error: Cannot find module '../../config/server-template'
+Require stack:
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\server-manager.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\handlers\commandHandler.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\index.js
+- [2025-06-17 20:03:58] [INFO] Loaded command: setuproles
+- [2025-06-17 20:03:58] [INFO] Loaded command: shutdown
+- [2025-06-17 20:03:58] [INFO] Loaded command: modmail
+- [2025-06-17 20:03:58] [INFO] Loaded command: moveall
+- [2025-06-17 20:03:58] [INFO] Loaded command: rolemenu
+- [2025-06-17 20:03:58] [INFO] Loaded command: sendnotify
+- [2025-06-17 20:03:58] [INFO] Loaded command: ping
+- [2025-06-17 20:03:58] [INFO] Loaded command: setembedcolor
+- [2025-06-17 20:03:58] [INFO] Loaded command: setembedfooter
+- [2025-06-17 20:03:58] [INFO] Loaded command: setembedicon
+- [2025-06-17 20:03:58] [INFO] Loaded command: avatar
+- [2025-06-17 20:03:58] [INFO] Loaded command: botinfo
+- [2025-06-17 20:03:58] [INFO] Loaded command: channelinfo
+- [2025-06-17 20:03:58] [INFO] Loaded command: help
+- [2025-06-17 20:03:58] [INFO] Loaded command: invite
+- [2025-06-17 20:03:58] [INFO] Loaded command: roleinfo
+- [2025-06-17 20:03:58] [INFO] Loaded command: serverinfo
+- [2025-06-17 20:03:58] [INFO] Loaded command: userinfo
+- [2025-06-17 20:03:58] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 20:03:58] [INFO] Loaded event: interactionCreate
+- [2025-06-17 20:03:58] [INFO] Loaded event: messageCreate
+- [2025-06-17 20:03:58] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 20:03:58] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 20:03:58] [INFO] Loaded event: ready
+- [2025-06-17 20:03:58] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 20:03:58] [INFO] Loaded slash command: ping
+- [2025-06-17 20:03:58] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 20:03:59] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 20:03:59] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 20:03:59] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 20:03:59] [INFO] ✅ Database connection successful
+- [2025-06-17 20:04:00] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 20:04:00] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 20:04:00] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 20:06:13] [INFO] Loaded command: autoban
+- [2025-06-17 20:06:13] [INFO] Loaded command: autospam
+- [2025-06-17 20:06:13] [INFO] Loaded command: add
+- [2025-06-17 20:06:13] [INFO] Loaded command: ban
+- [2025-06-17 20:06:13] [INFO] Loaded command: clear
+- [2025-06-17 20:06:13] [INFO] Loaded command: delwarn
+- [2025-06-17 20:06:13] [INFO] Loaded command: deny
+- [2025-06-17 20:06:13] [INFO] Loaded command: jail
+- [2025-06-17 20:06:13] [INFO] Loaded command: jailsettings
+- [2025-06-17 20:06:13] [INFO] Loaded command: kick
+- [2025-06-17 20:06:13] [INFO] Loaded command: lock
+- [2025-06-17 20:06:13] [INFO] Loaded command: move
+- [2025-06-17 20:06:13] [INFO] Loaded command: mute
+- [2025-06-17 20:06:13] [INFO] Loaded command: nickname
+- [2025-06-17 20:06:13] [INFO] Loaded command: role
+- [2025-06-17 20:06:13] [INFO] Loaded command: setautorole
+- [2025-06-17 20:06:13] [INFO] Loaded command: setjailrole
+- [2025-06-17 20:06:13] [INFO] Loaded command: setjailvoice
+- [2025-06-17 20:06:13] [INFO] Loaded command: slowmode
+- [2025-06-17 20:06:13] [INFO] Loaded command: tempvoice
+- [2025-06-17 20:06:13] [INFO] Loaded command: unban
+- [2025-06-17 20:06:13] [INFO] Loaded command: unjail
+- [2025-06-17 20:06:13] [INFO] Loaded command: unlock
+- [2025-06-17 20:06:13] [INFO] Loaded command: unmute
+- [2025-06-17 20:06:13] [INFO] Loaded command: verify
+- [2025-06-17 20:06:13] [INFO] Loaded command: warn
+- [2025-06-17 20:06:13] [INFO] Loaded command: warns
+- [2025-06-17 20:06:13] [INFO] Loaded command: dev
+- [2025-06-17 20:06:13] [INFO] Loaded command: massdm
+- [2025-06-17 20:06:13] [INFO] Loaded command: nuke-servre
+- [2025-06-17 20:06:13] [INFO] Loaded command: premium
+- [2025-06-17 20:06:13] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\server-manager.js: Error: Cannot find module '../../config/server-template'
+Require stack:
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\server-manager.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\handlers\commandHandler.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\index.js
+- [2025-06-17 20:06:13] [INFO] Loaded command: setuproles
+- [2025-06-17 20:06:13] [INFO] Loaded command: shutdown
+- [2025-06-17 20:06:13] [INFO] Loaded command: modmail
+- [2025-06-17 20:06:13] [INFO] Loaded command: moveall
+- [2025-06-17 20:06:13] [INFO] Loaded command: rolemenu
+- [2025-06-17 20:06:14] [INFO] Loaded command: sendnotify
+- [2025-06-17 20:06:14] [INFO] Loaded command: ping
+- [2025-06-17 20:06:14] [INFO] Loaded command: setembedcolor
+- [2025-06-17 20:06:14] [INFO] Loaded command: setembedfooter
+- [2025-06-17 20:06:14] [INFO] Loaded command: setembedicon
+- [2025-06-17 20:06:14] [INFO] Loaded command: avatar
+- [2025-06-17 20:06:14] [INFO] Loaded command: botinfo
+- [2025-06-17 20:06:14] [INFO] Loaded command: channelinfo
+- [2025-06-17 20:06:14] [INFO] Loaded command: help
+- [2025-06-17 20:06:14] [INFO] Loaded command: invite
+- [2025-06-17 20:06:14] [INFO] Loaded command: roleinfo
+- [2025-06-17 20:06:14] [INFO] Loaded command: serverinfo
+- [2025-06-17 20:06:14] [INFO] Loaded command: userinfo
+- [2025-06-17 20:06:14] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 20:06:14] [INFO] Loaded event: interactionCreate
+- [2025-06-17 20:06:14] [INFO] Loaded event: messageCreate
+- [2025-06-17 20:06:14] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 20:06:14] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 20:06:14] [INFO] Loaded event: ready
+- [2025-06-17 20:06:14] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 20:06:14] [INFO] Loaded slash command: ping
+- [2025-06-17 20:06:14] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 20:06:14] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 20:06:14] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 20:06:14] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 20:06:15] [INFO] ✅ Database connection successful
+- [2025-06-17 20:06:15] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 20:06:15] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 20:06:15] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 20:06:16] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 20:06:16] [INFO] Slash commands registered at startup.
+- [2025-06-17 20:06:16] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 20:06:16] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 20:06:16] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 20:06:17] [INFO] Successfully updated dev server status to Online.
+- [2025-06-17 20:08:51] [INFO] Loaded command: autoban
+- [2025-06-17 20:08:51] [INFO] Loaded command: autospam
+- [2025-06-17 20:08:51] [INFO] Loaded command: add
+- [2025-06-17 20:08:52] [INFO] Loaded command: ban
+- [2025-06-17 20:08:52] [INFO] Loaded command: clear
+- [2025-06-17 20:08:52] [INFO] Loaded command: delwarn
+- [2025-06-17 20:08:52] [INFO] Loaded command: deny
+- [2025-06-17 20:08:52] [INFO] Loaded command: jail
+- [2025-06-17 20:08:52] [INFO] Loaded command: jailsettings
+- [2025-06-17 20:08:52] [INFO] Loaded command: kick
+- [2025-06-17 20:08:52] [INFO] Loaded command: lock
+- [2025-06-17 20:08:52] [INFO] Loaded command: move
+- [2025-06-17 20:08:52] [INFO] Loaded command: mute
+- [2025-06-17 20:08:52] [INFO] Loaded command: nickname
+- [2025-06-17 20:08:52] [INFO] Loaded command: role
+- [2025-06-17 20:08:52] [INFO] Loaded command: setautorole
+- [2025-06-17 20:08:52] [INFO] Loaded command: setjailrole
+- [2025-06-17 20:08:52] [INFO] Loaded command: setjailvoice
+- [2025-06-17 20:08:52] [INFO] Loaded command: slowmode
+- [2025-06-17 20:08:52] [INFO] Loaded command: tempvoice
+- [2025-06-17 20:08:52] [INFO] Loaded command: unban
+- [2025-06-17 20:08:52] [INFO] Loaded command: unjail
+- [2025-06-17 20:08:52] [INFO] Loaded command: unlock
+- [2025-06-17 20:08:52] [INFO] Loaded command: unmute
+- [2025-06-17 20:08:52] [INFO] Loaded command: verify
+- [2025-06-17 20:08:52] [INFO] Loaded command: warn
+- [2025-06-17 20:08:52] [INFO] Loaded command: warns
+- [2025-06-17 20:08:52] [INFO] Loaded command: dev
+- [2025-06-17 20:08:52] [INFO] Loaded command: massdm
+- [2025-06-17 20:08:52] [INFO] Loaded command: nuke-servre
+- [2025-06-17 20:08:52] [INFO] Loaded command: premium
+- [2025-06-17 20:08:52] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\server-manager.js: Error: Cannot find module '../../config/server-template'
+Require stack:
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\server-manager.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\handlers\commandHandler.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\index.js
+- [2025-06-17 20:08:52] [INFO] Loaded command: setuproles
+- [2025-06-17 20:08:52] [INFO] Loaded command: shutdown
+- [2025-06-17 20:08:52] [INFO] Loaded command: modmail
+- [2025-06-17 20:08:52] [INFO] Loaded command: moveall
+- [2025-06-17 20:08:52] [INFO] Loaded command: rolemenu
+- [2025-06-17 20:08:52] [INFO] Loaded command: sendnotify
+- [2025-06-17 20:08:52] [INFO] Loaded command: ping
+- [2025-06-17 20:08:52] [INFO] Loaded command: setembedcolor
+- [2025-06-17 20:08:52] [INFO] Loaded command: setembedfooter
+- [2025-06-17 20:08:52] [INFO] Loaded command: setembedicon
+- [2025-06-17 20:08:52] [INFO] Loaded command: avatar
+- [2025-06-17 20:08:52] [INFO] Loaded command: botinfo
+- [2025-06-17 20:08:52] [INFO] Loaded command: channelinfo
+- [2025-06-17 20:08:52] [INFO] Loaded command: help
+- [2025-06-17 20:08:52] [INFO] Loaded command: invite
+- [2025-06-17 20:08:52] [INFO] Loaded command: roleinfo
+- [2025-06-17 20:08:52] [INFO] Loaded command: serverinfo
+- [2025-06-17 20:08:52] [INFO] Loaded command: userinfo
+- [2025-06-17 20:08:52] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 20:08:52] [INFO] Loaded event: interactionCreate
+- [2025-06-17 20:08:52] [INFO] Loaded event: messageCreate
+- [2025-06-17 20:08:52] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 20:08:52] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 20:08:53] [INFO] Loaded event: ready
+- [2025-06-17 20:08:53] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 20:08:53] [INFO] Loaded slash command: ping
+- [2025-06-17 20:08:53] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 20:08:53] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 20:08:53] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 20:08:53] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 20:08:54] [INFO] ✅ Database connection successful
+- [2025-06-17 20:08:55] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 20:08:55] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 20:08:55] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 20:08:55] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 20:08:55] [INFO] Slash commands registered at startup.
+- [2025-06-17 20:08:55] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 20:08:55] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 20:08:56] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 20:08:57] [INFO] Successfully updated dev server status to Online.
+- [2025-06-17 20:11:40] [INFO] Loaded command: autoban
+- [2025-06-17 20:11:40] [INFO] Loaded command: autospam
+- [2025-06-17 20:11:40] [INFO] Loaded command: add
+- [2025-06-17 20:11:40] [INFO] Loaded command: ban
+- [2025-06-17 20:11:40] [INFO] Loaded command: clear
+- [2025-06-17 20:11:40] [INFO] Loaded command: delwarn
+- [2025-06-17 20:11:40] [INFO] Loaded command: deny
+- [2025-06-17 20:11:40] [INFO] Loaded command: jail
+- [2025-06-17 20:11:40] [INFO] Loaded command: jailsettings
+- [2025-06-17 20:11:40] [INFO] Loaded command: kick
+- [2025-06-17 20:11:40] [INFO] Loaded command: lock
+- [2025-06-17 20:11:40] [INFO] Loaded command: move
+- [2025-06-17 20:11:40] [INFO] Loaded command: mute
+- [2025-06-17 20:11:40] [INFO] Loaded command: nickname
+- [2025-06-17 20:11:40] [INFO] Loaded command: role
+- [2025-06-17 20:11:40] [INFO] Loaded command: setautorole
+- [2025-06-17 20:11:40] [INFO] Loaded command: setjailrole
+- [2025-06-17 20:11:41] [INFO] Loaded command: setjailvoice
+- [2025-06-17 20:11:41] [INFO] Loaded command: slowmode
+- [2025-06-17 20:11:41] [INFO] Loaded command: tempvoice
+- [2025-06-17 20:11:41] [INFO] Loaded command: unban
+- [2025-06-17 20:11:41] [INFO] Loaded command: unjail
+- [2025-06-17 20:11:41] [INFO] Loaded command: unlock
+- [2025-06-17 20:11:41] [INFO] Loaded command: unmute
+- [2025-06-17 20:11:41] [INFO] Loaded command: verify
+- [2025-06-17 20:11:41] [INFO] Loaded command: warn
+- [2025-06-17 20:11:41] [INFO] Loaded command: warns
+- [2025-06-17 20:11:41] [INFO] Loaded command: dev
+- [2025-06-17 20:11:41] [INFO] Loaded command: massdm
+- [2025-06-17 20:11:41] [INFO] Loaded command: nuke-servre
+- [2025-06-17 20:11:41] [INFO] Loaded command: premium
+- [2025-06-17 20:11:41] [INFO] Loaded command: setuproles
+- [2025-06-17 20:11:41] [INFO] Loaded command: shutdown
+- [2025-06-17 20:11:41] [INFO] Loaded command: modmail
+- [2025-06-17 20:11:41] [INFO] Loaded command: moveall
+- [2025-06-17 20:11:41] [INFO] Loaded command: rolemenu
+- [2025-06-17 20:11:41] [INFO] Loaded command: sendnotify
+- [2025-06-17 20:11:41] [INFO] Loaded command: ping
+- [2025-06-17 20:11:41] [INFO] Loaded command: setembedcolor
+- [2025-06-17 20:11:41] [INFO] Loaded command: setembedfooter
+- [2025-06-17 20:11:41] [INFO] Loaded command: setembedicon
+- [2025-06-17 20:11:41] [INFO] Loaded command: avatar
+- [2025-06-17 20:11:41] [INFO] Loaded command: botinfo
+- [2025-06-17 20:11:41] [INFO] Loaded command: channelinfo
+- [2025-06-17 20:11:41] [INFO] Loaded command: help
+- [2025-06-17 20:11:41] [INFO] Loaded command: invite
+- [2025-06-17 20:11:41] [INFO] Loaded command: roleinfo
+- [2025-06-17 20:11:41] [INFO] Loaded command: serverinfo
+- [2025-06-17 20:11:41] [INFO] Loaded command: userinfo
+- [2025-06-17 20:11:41] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 20:11:41] [INFO] Loaded event: interactionCreate
+- [2025-06-17 20:11:41] [INFO] Loaded event: messageCreate
+- [2025-06-17 20:11:41] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 20:11:41] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 20:11:41] [INFO] Loaded event: ready
+- [2025-06-17 20:11:41] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 20:11:41] [INFO] Loaded slash command: ping
+- [2025-06-17 20:11:41] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 20:11:41] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 20:11:41] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 20:11:41] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 20:11:42] [INFO] ✅ Database connection successful
+- [2025-06-17 20:11:43] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 20:11:43] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 20:11:43] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 20:11:43] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 20:11:43] [INFO] Slash commands registered at startup.
+- [2025-06-17 20:11:43] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 20:11:44] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 20:11:44] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 20:11:45] [INFO] Successfully updated dev server status to Online.
+- [2025-06-17 20:13:53] [INFO] Loaded command: autoban
+- [2025-06-17 20:13:53] [INFO] Loaded command: autospam
+- [2025-06-17 20:13:53] [INFO] Loaded command: add
+- [2025-06-17 20:13:53] [INFO] Loaded command: ban
+- [2025-06-17 20:13:53] [INFO] Loaded command: clear
+- [2025-06-17 20:13:53] [INFO] Loaded command: delwarn
+- [2025-06-17 20:13:53] [INFO] Loaded command: deny
+- [2025-06-17 20:13:53] [INFO] Loaded command: jail
+- [2025-06-17 20:13:53] [INFO] Loaded command: jailsettings
+- [2025-06-17 20:13:53] [INFO] Loaded command: kick
+- [2025-06-17 20:13:53] [INFO] Loaded command: lock
+- [2025-06-17 20:13:53] [INFO] Loaded command: move
+- [2025-06-17 20:13:53] [INFO] Loaded command: mute
+- [2025-06-17 20:13:53] [INFO] Loaded command: nickname
+- [2025-06-17 20:13:53] [INFO] Loaded command: role
+- [2025-06-17 20:13:53] [INFO] Loaded command: setautorole
+- [2025-06-17 20:13:53] [INFO] Loaded command: setjailrole
+- [2025-06-17 20:13:53] [INFO] Loaded command: setjailvoice
+- [2025-06-17 20:13:53] [INFO] Loaded command: slowmode
+- [2025-06-17 20:13:53] [INFO] Loaded command: tempvoice
+- [2025-06-17 20:13:54] [INFO] Loaded command: unban
+- [2025-06-17 20:13:54] [INFO] Loaded command: unjail
+- [2025-06-17 20:13:54] [INFO] Loaded command: unlock
+- [2025-06-17 20:13:54] [INFO] Loaded command: unmute
+- [2025-06-17 20:13:54] [INFO] Loaded command: verify
+- [2025-06-17 20:13:54] [INFO] Loaded command: warn
+- [2025-06-17 20:13:54] [INFO] Loaded command: warns
+- [2025-06-17 20:13:54] [INFO] Loaded command: dev
+- [2025-06-17 20:13:54] [INFO] Loaded command: massdm
+- [2025-06-17 20:13:54] [INFO] Loaded command: nuke-servre
+- [2025-06-17 20:13:54] [INFO] Loaded command: premium
+- [2025-06-17 20:13:54] [INFO] Loaded command: setuproles
+- [2025-06-17 20:13:54] [INFO] Loaded command: shutdown
+- [2025-06-17 20:13:54] [INFO] Loaded command: modmail
+- [2025-06-17 20:13:54] [INFO] Loaded command: moveall
+- [2025-06-17 20:13:54] [INFO] Loaded command: rolemenu
+- [2025-06-17 20:13:54] [INFO] Loaded command: sendnotify
+- [2025-06-17 20:13:54] [INFO] Loaded command: ping
+- [2025-06-17 20:13:54] [INFO] Loaded command: setembedcolor
+- [2025-06-17 20:13:54] [INFO] Loaded command: setembedfooter
+- [2025-06-17 20:13:54] [INFO] Loaded command: setembedicon
+- [2025-06-17 20:13:54] [INFO] Loaded command: avatar
+- [2025-06-17 20:13:54] [INFO] Loaded command: botinfo
+- [2025-06-17 20:13:54] [INFO] Loaded command: channelinfo
+- [2025-06-17 20:13:54] [INFO] Loaded command: help
+- [2025-06-17 20:13:54] [INFO] Loaded command: invite
+- [2025-06-17 20:13:54] [INFO] Loaded command: roleinfo
+- [2025-06-17 20:13:54] [INFO] Loaded command: serverinfo
+- [2025-06-17 20:13:54] [INFO] Loaded command: userinfo
+- [2025-06-17 20:13:54] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 20:13:54] [INFO] Loaded event: interactionCreate
+- [2025-06-17 20:13:54] [INFO] Loaded event: messageCreate
+- [2025-06-17 20:13:54] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 20:13:54] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 20:13:54] [INFO] Loaded event: ready
+- [2025-06-17 20:13:54] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 20:13:54] [INFO] Loaded slash command: ping
+- [2025-06-17 20:13:54] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 20:13:54] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 20:13:54] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 20:13:54] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 20:13:55] [INFO] ✅ Database connection successful
+- [2025-06-17 20:13:55] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 20:13:55] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 20:13:55] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 20:13:56] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 20:13:56] [INFO] Slash commands registered at startup.
+- [2025-06-17 20:13:56] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 20:13:56] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 20:13:56] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 20:16:07] [INFO] Loaded command: autoban
+- [2025-06-17 20:16:07] [INFO] Loaded command: autospam
+- [2025-06-17 20:16:07] [INFO] Loaded command: add
+- [2025-06-17 20:16:07] [INFO] Loaded command: ban
+- [2025-06-17 20:16:07] [INFO] Loaded command: clear
+- [2025-06-17 20:16:07] [INFO] Loaded command: delwarn
+- [2025-06-17 20:16:07] [INFO] Loaded command: deny
+- [2025-06-17 20:16:07] [INFO] Loaded command: jail
+- [2025-06-17 20:16:07] [INFO] Loaded command: jailsettings
+- [2025-06-17 20:16:07] [INFO] Loaded command: kick
+- [2025-06-17 20:16:07] [INFO] Loaded command: lock
+- [2025-06-17 20:16:07] [INFO] Loaded command: move
+- [2025-06-17 20:16:07] [INFO] Loaded command: mute
+- [2025-06-17 20:16:07] [INFO] Loaded command: nickname
+- [2025-06-17 20:16:07] [INFO] Loaded command: role
+- [2025-06-17 20:16:07] [INFO] Loaded command: setautorole
+- [2025-06-17 20:16:07] [INFO] Loaded command: setjailrole
+- [2025-06-17 20:16:07] [INFO] Loaded command: setjailvoice
+- [2025-06-17 20:16:07] [INFO] Loaded command: slowmode
+- [2025-06-17 20:16:07] [INFO] Loaded command: tempvoice
+- [2025-06-17 20:16:07] [INFO] Loaded command: unban
+- [2025-06-17 20:16:07] [INFO] Loaded command: unjail
+- [2025-06-17 20:16:07] [INFO] Loaded command: unlock
+- [2025-06-17 20:16:07] [INFO] Loaded command: unmute
+- [2025-06-17 20:16:07] [INFO] Loaded command: verify
+- [2025-06-17 20:16:07] [INFO] Loaded command: warn
+- [2025-06-17 20:16:07] [INFO] Loaded command: warns
+- [2025-06-17 20:16:07] [INFO] Loaded command: dev
+- [2025-06-17 20:16:07] [INFO] Loaded command: massdm
+- [2025-06-17 20:16:07] [INFO] Loaded command: nuke-servre
+- [2025-06-17 20:16:07] [INFO] Loaded command: premium
+- [2025-06-17 20:16:07] [INFO] Loaded command: setuproles
+- [2025-06-17 20:16:07] [INFO] Loaded command: shutdown
+- [2025-06-17 20:16:07] [INFO] Loaded command: modmail
+- [2025-06-17 20:16:07] [INFO] Loaded command: moveall
+- [2025-06-17 20:16:07] [INFO] Loaded command: rolemenu
+- [2025-06-17 20:16:07] [INFO] Loaded command: sendnotify
+- [2025-06-17 20:16:07] [INFO] Loaded command: ping
+- [2025-06-17 20:16:07] [INFO] Loaded command: setembedcolor
+- [2025-06-17 20:16:07] [INFO] Loaded command: setembedfooter
+- [2025-06-17 20:16:07] [INFO] Loaded command: setembedicon
+- [2025-06-17 20:16:07] [INFO] Loaded command: avatar
+- [2025-06-17 20:16:07] [INFO] Loaded command: botinfo
+- [2025-06-17 20:16:07] [INFO] Loaded command: channelinfo
+- [2025-06-17 20:16:07] [INFO] Loaded command: help
+- [2025-06-17 20:16:07] [INFO] Loaded command: invite
+- [2025-06-17 20:16:07] [INFO] Loaded command: roleinfo
+- [2025-06-17 20:16:07] [INFO] Loaded command: serverinfo
+- [2025-06-17 20:16:07] [INFO] Loaded command: userinfo
+- [2025-06-17 20:16:07] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 20:16:07] [INFO] Loaded event: interactionCreate
+- [2025-06-17 20:16:07] [INFO] Loaded event: messageCreate
+- [2025-06-17 20:16:07] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 20:16:07] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 20:16:07] [INFO] Loaded event: ready
+- [2025-06-17 20:16:07] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 20:16:07] [INFO] Loaded slash command: ping
+- [2025-06-17 20:16:07] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 20:16:08] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 20:16:08] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 20:16:08] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 20:16:08] [ERROR] ❌ Database connection failed: Error: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+- [2025-06-17 20:17:03] [INFO] Loaded command: autoban
+- [2025-06-17 20:17:03] [INFO] Loaded command: autospam
+- [2025-06-17 20:17:03] [INFO] Loaded command: add
+- [2025-06-17 20:17:03] [INFO] Loaded command: ban
+- [2025-06-17 20:17:03] [INFO] Loaded command: clear
+- [2025-06-17 20:17:03] [INFO] Loaded command: delwarn
+- [2025-06-17 20:17:03] [INFO] Loaded command: deny
+- [2025-06-17 20:17:03] [INFO] Loaded command: jail
+- [2025-06-17 20:17:03] [INFO] Loaded command: jailsettings
+- [2025-06-17 20:17:03] [INFO] Loaded command: kick
+- [2025-06-17 20:17:03] [INFO] Loaded command: lock
+- [2025-06-17 20:17:03] [INFO] Loaded command: move
+- [2025-06-17 20:17:03] [INFO] Loaded command: mute
+- [2025-06-17 20:17:03] [INFO] Loaded command: nickname
+- [2025-06-17 20:17:03] [INFO] Loaded command: role
+- [2025-06-17 20:17:03] [INFO] Loaded command: setautorole
+- [2025-06-17 20:17:03] [INFO] Loaded command: setjailrole
+- [2025-06-17 20:17:03] [INFO] Loaded command: setjailvoice
+- [2025-06-17 20:17:03] [INFO] Loaded command: slowmode
+- [2025-06-17 20:17:03] [INFO] Loaded command: tempvoice
+- [2025-06-17 20:17:03] [INFO] Loaded command: unban
+- [2025-06-17 20:17:03] [INFO] Loaded command: unjail
+- [2025-06-17 20:17:03] [INFO] Loaded command: unlock
+- [2025-06-17 20:17:03] [INFO] Loaded command: unmute
+- [2025-06-17 20:17:03] [INFO] Loaded command: verify
+- [2025-06-17 20:17:03] [INFO] Loaded command: warn
+- [2025-06-17 20:17:03] [INFO] Loaded command: warns
+- [2025-06-17 20:17:03] [INFO] Loaded command: dev
+- [2025-06-17 20:17:03] [INFO] Loaded command: massdm
+- [2025-06-17 20:17:03] [INFO] Loaded command: nuke-servre
+- [2025-06-17 20:17:03] [INFO] Loaded command: premium
+- [2025-06-17 20:17:03] [INFO] Loaded command: setuproles
+- [2025-06-17 20:17:03] [INFO] Loaded command: shutdown
+- [2025-06-17 20:17:03] [INFO] Loaded command: modmail
+- [2025-06-17 20:17:03] [INFO] Loaded command: moveall
+- [2025-06-17 20:17:03] [INFO] Loaded command: rolemenu
+- [2025-06-17 20:17:03] [INFO] Loaded command: sendnotify
+- [2025-06-17 20:17:03] [INFO] Loaded command: ping
+- [2025-06-17 20:17:03] [INFO] Loaded command: setembedcolor
+- [2025-06-17 20:17:03] [INFO] Loaded command: setembedfooter
+- [2025-06-17 20:17:03] [INFO] Loaded command: setembedicon
+- [2025-06-17 20:17:03] [INFO] Loaded command: avatar
+- [2025-06-17 20:17:03] [INFO] Loaded command: botinfo
+- [2025-06-17 20:17:03] [INFO] Loaded command: channelinfo
+- [2025-06-17 20:17:03] [INFO] Loaded command: help
+- [2025-06-17 20:17:03] [INFO] Loaded command: invite
+- [2025-06-17 20:17:03] [INFO] Loaded command: roleinfo
+- [2025-06-17 20:17:03] [INFO] Loaded command: serverinfo
+- [2025-06-17 20:17:03] [INFO] Loaded command: userinfo
+- [2025-06-17 20:17:03] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 20:17:03] [INFO] Loaded event: interactionCreate
+- [2025-06-17 20:17:03] [INFO] Loaded event: messageCreate
+- [2025-06-17 20:17:03] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 20:17:03] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 20:17:03] [INFO] Loaded event: ready
+- [2025-06-17 20:17:03] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 20:17:03] [INFO] Loaded slash command: ping
+- [2025-06-17 20:17:03] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 20:17:03] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 20:17:03] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 20:17:03] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 20:17:04] [ERROR] ❌ Database connection failed: Error: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+- [2025-06-17 20:17:19] [INFO] Loaded command: autoban
+- [2025-06-17 20:17:19] [INFO] Loaded command: autospam
+- [2025-06-17 20:17:19] [INFO] Loaded command: add
+- [2025-06-17 20:17:20] [INFO] Loaded command: ban
+- [2025-06-17 20:17:20] [INFO] Loaded command: clear
+- [2025-06-17 20:17:20] [INFO] Loaded command: delwarn
+- [2025-06-17 20:17:20] [INFO] Loaded command: deny
+- [2025-06-17 20:17:20] [INFO] Loaded command: jail
+- [2025-06-17 20:17:20] [INFO] Loaded command: jailsettings
+- [2025-06-17 20:17:20] [INFO] Loaded command: kick
+- [2025-06-17 20:17:20] [INFO] Loaded command: lock
+- [2025-06-17 20:17:20] [INFO] Loaded command: move
+- [2025-06-17 20:17:20] [INFO] Loaded command: mute
+- [2025-06-17 20:17:20] [INFO] Loaded command: nickname
+- [2025-06-17 20:17:20] [INFO] Loaded command: role
+- [2025-06-17 20:17:20] [INFO] Loaded command: setautorole
+- [2025-06-17 20:17:20] [INFO] Loaded command: setjailrole
+- [2025-06-17 20:17:20] [INFO] Loaded command: setjailvoice
+- [2025-06-17 20:17:20] [INFO] Loaded command: slowmode
+- [2025-06-17 20:17:20] [INFO] Loaded command: tempvoice
+- [2025-06-17 20:17:20] [INFO] Loaded command: unban
+- [2025-06-17 20:17:20] [INFO] Loaded command: unjail
+- [2025-06-17 20:17:20] [INFO] Loaded command: unlock
+- [2025-06-17 20:17:20] [INFO] Loaded command: unmute
+- [2025-06-17 20:17:20] [INFO] Loaded command: verify
+- [2025-06-17 20:17:20] [INFO] Loaded command: warn
+- [2025-06-17 20:17:20] [INFO] Loaded command: warns
+- [2025-06-17 20:17:20] [INFO] Loaded command: dev
+- [2025-06-17 20:17:20] [INFO] Loaded command: massdm
+- [2025-06-17 20:17:20] [INFO] Loaded command: nuke-servre
+- [2025-06-17 20:17:20] [INFO] Loaded command: premium
+- [2025-06-17 20:17:20] [INFO] Loaded command: setuproles
+- [2025-06-17 20:17:20] [INFO] Loaded command: shutdown
+- [2025-06-17 20:17:20] [INFO] Loaded command: modmail
+- [2025-06-17 20:17:20] [INFO] Loaded command: moveall
+- [2025-06-17 20:17:20] [INFO] Loaded command: rolemenu
+- [2025-06-17 20:17:20] [INFO] Loaded command: sendnotify
+- [2025-06-17 20:17:20] [INFO] Loaded command: ping
+- [2025-06-17 20:17:20] [INFO] Loaded command: setembedcolor
+- [2025-06-17 20:17:20] [INFO] Loaded command: setembedfooter
+- [2025-06-17 20:17:20] [INFO] Loaded command: setembedicon
+- [2025-06-17 20:17:20] [INFO] Loaded command: avatar
+- [2025-06-17 20:17:20] [INFO] Loaded command: botinfo
+- [2025-06-17 20:17:20] [INFO] Loaded command: channelinfo
+- [2025-06-17 20:17:20] [INFO] Loaded command: help
+- [2025-06-17 20:17:20] [INFO] Loaded command: invite
+- [2025-06-17 20:17:20] [INFO] Loaded command: roleinfo
+- [2025-06-17 20:17:20] [INFO] Loaded command: serverinfo
+- [2025-06-17 20:17:20] [INFO] Loaded command: userinfo
+- [2025-06-17 20:17:20] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 20:17:20] [INFO] Loaded event: interactionCreate
+- [2025-06-17 20:17:20] [INFO] Loaded event: messageCreate
+- [2025-06-17 20:17:20] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 20:17:20] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 20:17:20] [INFO] Loaded event: ready
+- [2025-06-17 20:17:20] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 20:17:20] [INFO] Loaded slash command: ping
+- [2025-06-17 20:17:20] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 20:17:20] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 20:17:20] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 20:17:20] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 20:17:21] [ERROR] ❌ Database connection failed: Error: SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string
+- [2025-06-17 20:18:13] [INFO] Loaded command: autoban
+- [2025-06-17 20:18:13] [INFO] Loaded command: autospam
+- [2025-06-17 20:18:13] [INFO] Loaded command: add
+- [2025-06-17 20:18:13] [INFO] Loaded command: ban
+- [2025-06-17 20:18:13] [INFO] Loaded command: clear
+- [2025-06-17 20:18:13] [INFO] Loaded command: delwarn
+- [2025-06-17 20:18:13] [INFO] Loaded command: deny
+- [2025-06-17 20:18:13] [INFO] Loaded command: jail
+- [2025-06-17 20:18:14] [INFO] Loaded command: jailsettings
+- [2025-06-17 20:18:14] [INFO] Loaded command: kick
+- [2025-06-17 20:18:14] [INFO] Loaded command: lock
+- [2025-06-17 20:18:14] [INFO] Loaded command: move
+- [2025-06-17 20:18:14] [INFO] Loaded command: mute
+- [2025-06-17 20:18:14] [INFO] Loaded command: nickname
+- [2025-06-17 20:18:14] [INFO] Loaded command: role
+- [2025-06-17 20:18:14] [INFO] Loaded command: setautorole
+- [2025-06-17 20:18:14] [INFO] Loaded command: setjailrole
+- [2025-06-17 20:18:14] [INFO] Loaded command: setjailvoice
+- [2025-06-17 20:18:14] [INFO] Loaded command: slowmode
+- [2025-06-17 20:18:14] [INFO] Loaded command: tempvoice
+- [2025-06-17 20:18:14] [INFO] Loaded command: unban
+- [2025-06-17 20:18:14] [INFO] Loaded command: unjail
+- [2025-06-17 20:18:14] [INFO] Loaded command: unlock
+- [2025-06-17 20:18:14] [INFO] Loaded command: unmute
+- [2025-06-17 20:18:14] [INFO] Loaded command: verify
+- [2025-06-17 20:18:14] [INFO] Loaded command: warn
+- [2025-06-17 20:18:14] [INFO] Loaded command: warns
+- [2025-06-17 20:18:14] [INFO] Loaded command: dev
+- [2025-06-17 20:18:14] [INFO] Loaded command: massdm
+- [2025-06-17 20:18:14] [INFO] Loaded command: nuke-servre
+- [2025-06-17 20:18:14] [INFO] Loaded command: premium
+- [2025-06-17 20:18:14] [INFO] Loaded command: setuproles
+- [2025-06-17 20:18:14] [INFO] Loaded command: shutdown
+- [2025-06-17 20:18:14] [INFO] Loaded command: modmail
+- [2025-06-17 20:18:14] [INFO] Loaded command: moveall
+- [2025-06-17 20:18:14] [INFO] Loaded command: rolemenu
+- [2025-06-17 20:18:14] [INFO] Loaded command: sendnotify
+- [2025-06-17 20:18:14] [INFO] Loaded command: ping
+- [2025-06-17 20:18:14] [INFO] Loaded command: setembedcolor
+- [2025-06-17 20:18:14] [INFO] Loaded command: setembedfooter
+- [2025-06-17 20:18:15] [INFO] Loaded command: setembedicon
+- [2025-06-17 20:18:15] [INFO] Loaded command: avatar
+- [2025-06-17 20:18:15] [INFO] Loaded command: botinfo
+- [2025-06-17 20:18:15] [INFO] Loaded command: channelinfo
+- [2025-06-17 20:18:15] [INFO] Loaded command: help
+- [2025-06-17 20:18:15] [INFO] Loaded command: invite
+- [2025-06-17 20:18:15] [INFO] Loaded command: roleinfo
+- [2025-06-17 20:18:15] [INFO] Loaded command: serverinfo
+- [2025-06-17 20:18:15] [INFO] Loaded command: userinfo
+- [2025-06-17 20:18:15] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 20:18:15] [INFO] Loaded event: interactionCreate
+- [2025-06-17 20:18:15] [INFO] Loaded event: messageCreate
+- [2025-06-17 20:18:15] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 20:18:15] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 20:18:15] [INFO] Loaded event: ready
+- [2025-06-17 20:18:15] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 20:18:15] [INFO] Loaded slash command: ping
+- [2025-06-17 20:18:15] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 20:18:15] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 20:18:15] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 20:18:15] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 20:18:16] [INFO] ✅ Database connection successful
+- [2025-06-17 20:18:17] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 20:18:17] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 20:18:17] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 20:18:17] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 20:18:17] [INFO] Slash commands registered at startup.
+- [2025-06-17 20:18:17] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 20:18:17] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 20:18:17] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 20:19:10] [INFO] Shutting down database connection pool...
+- [2025-06-17 20:19:10] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-17 20:21:06] [INFO] Loaded command: autoban
+- [2025-06-17 20:21:06] [INFO] Loaded command: autospam
+- [2025-06-17 20:21:06] [INFO] Loaded command: add
+- [2025-06-17 20:21:06] [INFO] Loaded command: ban
+- [2025-06-17 20:21:06] [INFO] Loaded command: clear
+- [2025-06-17 20:21:06] [INFO] Loaded command: delwarn
+- [2025-06-17 20:21:06] [INFO] Loaded command: deny
+- [2025-06-17 20:21:06] [INFO] Loaded command: jail
+- [2025-06-17 20:21:06] [INFO] Loaded command: jailsettings
+- [2025-06-17 20:21:06] [INFO] Loaded command: kick
+- [2025-06-17 20:21:06] [INFO] Loaded command: lock
+- [2025-06-17 20:21:06] [INFO] Loaded command: move
+- [2025-06-17 20:21:06] [INFO] Loaded command: mute
+- [2025-06-17 20:21:07] [INFO] Loaded command: nickname
+- [2025-06-17 20:21:07] [INFO] Loaded command: role
+- [2025-06-17 20:21:07] [INFO] Loaded command: setautorole
+- [2025-06-17 20:21:07] [INFO] Loaded command: setjailrole
+- [2025-06-17 20:21:07] [INFO] Loaded command: setjailvoice
+- [2025-06-17 20:21:07] [INFO] Loaded command: slowmode
+- [2025-06-17 20:21:07] [INFO] Loaded command: tempvoice
+- [2025-06-17 20:21:07] [INFO] Loaded command: unban
+- [2025-06-17 20:21:07] [INFO] Loaded command: unjail
+- [2025-06-17 20:21:07] [INFO] Loaded command: unlock
+- [2025-06-17 20:21:07] [INFO] Loaded command: unmute
+- [2025-06-17 20:21:07] [INFO] Loaded command: verify
+- [2025-06-17 20:21:07] [INFO] Loaded command: warn
+- [2025-06-17 20:21:07] [INFO] Loaded command: warns
+- [2025-06-17 20:21:07] [INFO] Loaded command: dev
+- [2025-06-17 20:21:07] [INFO] Loaded command: massdm
+- [2025-06-17 20:21:07] [INFO] Loaded command: nuke-servre
+- [2025-06-17 20:21:07] [INFO] Loaded command: premium
+- [2025-06-17 20:21:07] [INFO] Loaded command: setuproles
+- [2025-06-17 20:21:07] [INFO] Loaded command: shutdown
+- [2025-06-17 20:21:07] [INFO] Loaded command: modmail
+- [2025-06-17 20:21:07] [INFO] Loaded command: moveall
+- [2025-06-17 20:21:07] [INFO] Loaded command: rolemenu
+- [2025-06-17 20:21:07] [INFO] Loaded command: sendnotify
+- [2025-06-17 20:21:07] [INFO] Loaded command: ping
+- [2025-06-17 20:21:07] [INFO] Loaded command: setembedcolor
+- [2025-06-17 20:21:07] [INFO] Loaded command: setembedfooter
+- [2025-06-17 20:21:07] [INFO] Loaded command: setembedicon
+- [2025-06-17 20:21:07] [INFO] Loaded command: avatar
+- [2025-06-17 20:21:07] [INFO] Loaded command: botinfo
+- [2025-06-17 20:21:07] [INFO] Loaded command: channelinfo
+- [2025-06-17 20:21:07] [INFO] Loaded command: help
+- [2025-06-17 20:21:07] [INFO] Loaded command: invite
+- [2025-06-17 20:21:07] [INFO] Loaded command: roleinfo
+- [2025-06-17 20:21:07] [INFO] Loaded command: serverinfo
+- [2025-06-17 20:21:07] [INFO] Loaded command: userinfo
+- [2025-06-17 20:21:07] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 20:21:07] [INFO] Loaded event: interactionCreate
+- [2025-06-17 20:21:07] [INFO] Loaded event: messageCreate
+- [2025-06-17 20:21:07] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 20:21:07] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 20:21:07] [INFO] Loaded event: ready
+- [2025-06-17 20:21:07] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 20:21:07] [INFO] Loaded slash command: ping
+- [2025-06-17 20:21:07] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 20:21:07] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 20:21:07] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 20:21:07] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 20:21:08] [INFO] ✅ Database connection successful
+- [2025-06-17 20:21:09] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 20:21:09] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 20:21:09] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 20:21:09] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 20:21:09] [INFO] Slash commands registered at startup.
+- [2025-06-17 20:21:09] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 20:21:09] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 20:21:09] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 20:21:10] [INFO] Successfully updated dev server status to Online.
+- [2025-06-17 20:21:13] [INFO] Shutting down database connection pool...
+- [2025-06-17 20:24:31] [INFO] Loaded command: autoban
+- [2025-06-17 20:24:31] [INFO] Loaded command: autospam
+- [2025-06-17 20:24:31] [INFO] Loaded command: add
+- [2025-06-17 20:24:31] [INFO] Loaded command: ban
+- [2025-06-17 20:24:31] [INFO] Loaded command: clear
+- [2025-06-17 20:24:31] [INFO] Loaded command: delwarn
+- [2025-06-17 20:24:31] [INFO] Loaded command: deny
+- [2025-06-17 20:24:31] [INFO] Loaded command: jail
+- [2025-06-17 20:24:31] [INFO] Loaded command: jailsettings
+- [2025-06-17 20:24:31] [INFO] Loaded command: kick
+- [2025-06-17 20:24:31] [INFO] Loaded command: lock
+- [2025-06-17 20:24:31] [INFO] Loaded command: move
+- [2025-06-17 20:24:31] [INFO] Loaded command: mute
+- [2025-06-17 20:24:31] [INFO] Loaded command: nickname
+- [2025-06-17 20:24:31] [INFO] Loaded command: role
+- [2025-06-17 20:24:31] [INFO] Loaded command: setautorole
+- [2025-06-17 20:24:31] [INFO] Loaded command: setjailrole
+- [2025-06-17 20:24:31] [INFO] Loaded command: setjailvoice
+- [2025-06-17 20:24:31] [INFO] Loaded command: slowmode
+- [2025-06-17 20:24:31] [INFO] Loaded command: tempvoice
+- [2025-06-17 20:24:31] [INFO] Loaded command: unban
+- [2025-06-17 20:24:31] [INFO] Loaded command: unjail
+- [2025-06-17 20:24:31] [INFO] Loaded command: unlock
+- [2025-06-17 20:24:31] [INFO] Loaded command: unmute
+- [2025-06-17 20:24:31] [INFO] Loaded command: verify
+- [2025-06-17 20:24:31] [INFO] Loaded command: warn
+- [2025-06-17 20:24:31] [INFO] Loaded command: warns
+- [2025-06-17 20:24:31] [INFO] Loaded command: dev
+- [2025-06-17 20:24:31] [INFO] Loaded command: massdm
+- [2025-06-17 20:24:31] [INFO] Loaded command: nuke-servre
+- [2025-06-17 20:24:31] [INFO] Loaded command: premium
+- [2025-06-17 20:24:31] [INFO] Loaded command: setuproles
+- [2025-06-17 20:24:31] [INFO] Loaded command: shutdown
+- [2025-06-17 20:24:31] [INFO] Loaded command: modmail
+- [2025-06-17 20:24:31] [INFO] Loaded command: moveall
+- [2025-06-17 20:24:31] [INFO] Loaded command: rolemenu
+- [2025-06-17 20:24:31] [INFO] Loaded command: sendnotify
+- [2025-06-17 20:24:31] [INFO] Loaded command: ping
+- [2025-06-17 20:24:31] [INFO] Loaded command: setembedcolor
+- [2025-06-17 20:24:31] [INFO] Loaded command: setembedfooter
+- [2025-06-17 20:24:31] [INFO] Loaded command: setembedicon
+- [2025-06-17 20:24:32] [INFO] Loaded command: avatar
+- [2025-06-17 20:24:32] [INFO] Loaded command: botinfo
+- [2025-06-17 20:24:32] [INFO] Loaded command: channelinfo
+- [2025-06-17 20:24:32] [INFO] Loaded command: help
+- [2025-06-17 20:24:32] [INFO] Loaded command: invite
+- [2025-06-17 20:24:32] [INFO] Loaded command: roleinfo
+- [2025-06-17 20:24:32] [INFO] Loaded command: serverinfo
+- [2025-06-17 20:24:32] [INFO] Loaded command: userinfo
+- [2025-06-17 20:24:32] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 20:24:32] [INFO] Loaded event: interactionCreate
+- [2025-06-17 20:24:32] [INFO] Loaded event: messageCreate
+- [2025-06-17 20:24:32] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 20:24:32] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 20:24:32] [INFO] Loaded event: ready
+- [2025-06-17 20:24:32] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 20:24:32] [INFO] Loaded slash command: ping
+- [2025-06-17 20:24:32] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 20:24:32] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 20:24:32] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 20:24:32] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 20:24:32] [INFO] ✅ Database connection successful
+- [2025-06-17 20:24:33] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 20:24:33] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 20:24:33] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 20:24:33] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 20:24:33] [INFO] Slash commands registered at startup.
+- [2025-06-17 20:24:34] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 20:24:34] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 20:24:34] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 20:24:35] [INFO] Successfully updated dev server status to Online.
+- [2025-06-17 20:28:18] [INFO] Loaded command: autoban
+- [2025-06-17 20:28:18] [INFO] Loaded command: autospam
+- [2025-06-17 20:28:18] [INFO] Loaded command: add
+- [2025-06-17 20:28:18] [INFO] Loaded command: ban
+- [2025-06-17 20:28:18] [INFO] Loaded command: clear
+- [2025-06-17 20:28:18] [INFO] Loaded command: delwarn
+- [2025-06-17 20:28:19] [INFO] Loaded command: deny
+- [2025-06-17 20:28:19] [INFO] Loaded command: jail
+- [2025-06-17 20:28:19] [INFO] Loaded command: jailsettings
+- [2025-06-17 20:28:19] [INFO] Loaded command: kick
+- [2025-06-17 20:28:19] [INFO] Loaded command: lock
+- [2025-06-17 20:28:19] [INFO] Loaded command: move
+- [2025-06-17 20:28:19] [INFO] Loaded command: mute
+- [2025-06-17 20:28:19] [INFO] Loaded command: nickname
+- [2025-06-17 20:28:19] [INFO] Loaded command: role
+- [2025-06-17 20:28:19] [INFO] Loaded command: setautorole
+- [2025-06-17 20:28:19] [INFO] Loaded command: setjailrole
+- [2025-06-17 20:28:19] [INFO] Loaded command: setjailvoice
+- [2025-06-17 20:28:19] [INFO] Loaded command: slowmode
+- [2025-06-17 20:28:19] [INFO] Loaded command: tempvoice
+- [2025-06-17 20:28:19] [INFO] Loaded command: unban
+- [2025-06-17 20:28:19] [INFO] Loaded command: unjail
+- [2025-06-17 20:28:19] [INFO] Loaded command: unlock
+- [2025-06-17 20:28:19] [INFO] Loaded command: unmute
+- [2025-06-17 20:28:19] [INFO] Loaded command: verify
+- [2025-06-17 20:28:19] [INFO] Loaded command: warn
+- [2025-06-17 20:28:19] [INFO] Loaded command: warns
+- [2025-06-17 20:28:19] [INFO] Loaded command: dev
+- [2025-06-17 20:28:19] [INFO] Loaded command: massdm
+- [2025-06-17 20:28:19] [INFO] Loaded command: nuke-servre
+- [2025-06-17 20:28:19] [INFO] Loaded command: premium
+- [2025-06-17 20:28:19] [INFO] Loaded command: setuproles
+- [2025-06-17 20:28:19] [INFO] Loaded command: shutdown
+- [2025-06-17 20:28:19] [INFO] Loaded command: modmail
+- [2025-06-17 20:28:19] [INFO] Loaded command: moveall
+- [2025-06-17 20:28:19] [INFO] Loaded command: rolemenu
+- [2025-06-17 20:28:19] [INFO] Loaded command: sendnotify
+- [2025-06-17 20:28:19] [INFO] Loaded command: ping
+- [2025-06-17 20:28:19] [INFO] Loaded command: setembedcolor
+- [2025-06-17 20:28:19] [INFO] Loaded command: setembedfooter
+- [2025-06-17 20:28:19] [INFO] Loaded command: setembedicon
+- [2025-06-17 20:28:19] [INFO] Loaded command: avatar
+- [2025-06-17 20:28:19] [INFO] Loaded command: botinfo
+- [2025-06-17 20:28:19] [INFO] Loaded command: channelinfo
+- [2025-06-17 20:28:19] [INFO] Loaded command: help
+- [2025-06-17 20:28:19] [INFO] Loaded command: invite
+- [2025-06-17 20:28:19] [INFO] Loaded command: roleinfo
+- [2025-06-17 20:28:19] [INFO] Loaded command: serverinfo
+- [2025-06-17 20:28:19] [INFO] Loaded command: userinfo
+- [2025-06-17 20:28:19] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 20:28:19] [INFO] Loaded event: interactionCreate
+- [2025-06-17 20:28:19] [INFO] Loaded event: messageCreate
+- [2025-06-17 20:28:19] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 20:28:19] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 20:28:19] [INFO] Loaded event: ready
+- [2025-06-17 20:28:19] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 20:28:19] [INFO] Loaded slash command: ping
+- [2025-06-17 20:28:19] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 20:28:19] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 20:28:20] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 20:28:20] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 20:28:20] [INFO] ✅ Database connection successful
+- [2025-06-17 20:28:21] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 20:28:21] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 20:28:21] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 20:28:21] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 20:28:21] [INFO] Slash commands registered at startup.
+- [2025-06-17 20:28:21] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 20:28:22] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 20:28:22] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 20:28:22] [INFO] Successfully updated dev server status to Online.
+- [2025-06-17 20:31:56] [INFO] Loaded command: autoban
+- [2025-06-17 20:31:56] [INFO] Loaded command: autospam
+- [2025-06-17 20:31:56] [INFO] Loaded command: add
+- [2025-06-17 20:31:56] [INFO] Loaded command: ban
+- [2025-06-17 20:31:56] [INFO] Loaded command: clear
+- [2025-06-17 20:31:56] [INFO] Loaded command: delwarn
+- [2025-06-17 20:31:56] [INFO] Loaded command: deny
+- [2025-06-17 20:31:56] [INFO] Loaded command: jail
+- [2025-06-17 20:31:57] [INFO] Loaded command: jailsettings
+- [2025-06-17 20:31:57] [INFO] Loaded command: kick
+- [2025-06-17 20:31:57] [INFO] Loaded command: lock
+- [2025-06-17 20:31:57] [INFO] Loaded command: move
+- [2025-06-17 20:31:57] [INFO] Loaded command: mute
+- [2025-06-17 20:31:57] [INFO] Loaded command: nickname
+- [2025-06-17 20:31:57] [INFO] Loaded command: role
+- [2025-06-17 20:31:57] [INFO] Loaded command: setautorole
+- [2025-06-17 20:31:57] [INFO] Loaded command: setjailrole
+- [2025-06-17 20:31:57] [INFO] Loaded command: setjailvoice
+- [2025-06-17 20:31:57] [INFO] Loaded command: slowmode
+- [2025-06-17 20:31:57] [INFO] Loaded command: tempvoice
+- [2025-06-17 20:31:57] [INFO] Loaded command: unban
+- [2025-06-17 20:31:57] [INFO] Loaded command: unjail
+- [2025-06-17 20:31:57] [INFO] Loaded command: unlock
+- [2025-06-17 20:31:57] [INFO] Loaded command: unmute
+- [2025-06-17 20:31:57] [INFO] Loaded command: verify
+- [2025-06-17 20:31:57] [INFO] Loaded command: warn
+- [2025-06-17 20:31:57] [INFO] Loaded command: warns
+- [2025-06-17 20:31:57] [INFO] Loaded command: dev
+- [2025-06-17 20:31:57] [INFO] Loaded command: massdm
+- [2025-06-17 20:31:57] [INFO] Loaded command: nuke-servre
+- [2025-06-17 20:31:57] [INFO] Loaded command: premium
+- [2025-06-17 20:31:57] [INFO] Loaded command: setuproles
+- [2025-06-17 20:31:57] [INFO] Loaded command: shutdown
+- [2025-06-17 20:31:57] [INFO] Loaded command: modmail
+- [2025-06-17 20:31:57] [INFO] Loaded command: moveall
+- [2025-06-17 20:31:57] [INFO] Loaded command: rolemenu
+- [2025-06-17 20:31:57] [INFO] Loaded command: sendnotify
+- [2025-06-17 20:31:57] [INFO] Loaded command: ping
+- [2025-06-17 20:31:57] [INFO] Loaded command: setembedcolor
+- [2025-06-17 20:31:57] [INFO] Loaded command: setembedfooter
+- [2025-06-17 20:31:57] [INFO] Loaded command: setembedicon
+- [2025-06-17 20:31:57] [INFO] Loaded command: avatar
+- [2025-06-17 20:31:57] [INFO] Loaded command: botinfo
+- [2025-06-17 20:31:57] [INFO] Loaded command: channelinfo
+- [2025-06-17 20:31:57] [INFO] Loaded command: help
+- [2025-06-17 20:31:57] [INFO] Loaded command: invite
+- [2025-06-17 20:31:57] [INFO] Loaded command: roleinfo
+- [2025-06-17 20:31:57] [INFO] Loaded command: serverinfo
+- [2025-06-17 20:31:57] [INFO] Loaded command: userinfo
+- [2025-06-17 20:31:57] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 20:31:57] [INFO] Loaded event: interactionCreate
+- [2025-06-17 20:31:57] [INFO] Loaded event: messageCreate
+- [2025-06-17 20:31:57] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 20:31:57] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 20:31:57] [INFO] Loaded event: ready
+- [2025-06-17 20:31:57] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 20:31:57] [INFO] Loaded slash command: ping
+- [2025-06-17 20:31:57] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 20:31:57] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 20:31:57] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 20:31:57] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 20:31:58] [INFO] ✅ Database connection successful
+- [2025-06-17 20:31:59] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 20:31:59] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 20:31:59] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 20:31:59] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 20:31:59] [INFO] Slash commands registered at startup.
+- [2025-06-17 20:31:59] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 20:32:00] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 20:32:00] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 20:32:00] [INFO] Successfully updated dev server status to Online.
+- [2025-06-17 20:32:11] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-17 20:32:11] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-17 20:32:11] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-17 20:32:12] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-17 20:32:12] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-17 20:32:12] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-17 20:32:12] [INFO] Shutdown complete. Exiting.
+- [2025-06-17 20:33:32] [INFO] Loaded command: autoban
+- [2025-06-17 20:33:32] [INFO] Loaded command: autospam
+- [2025-06-17 20:33:32] [INFO] Loaded command: add
+- [2025-06-17 20:33:32] [INFO] Loaded command: ban
+- [2025-06-17 20:33:32] [INFO] Loaded command: clear
+- [2025-06-17 20:33:32] [INFO] Loaded command: delwarn
+- [2025-06-17 20:33:32] [INFO] Loaded command: deny
+- [2025-06-17 20:33:32] [INFO] Loaded command: jail
+- [2025-06-17 20:33:32] [INFO] Loaded command: jailsettings
+- [2025-06-17 20:33:32] [INFO] Loaded command: kick
+- [2025-06-17 20:33:32] [INFO] Loaded command: lock
+- [2025-06-17 20:33:32] [INFO] Loaded command: move
+- [2025-06-17 20:33:32] [INFO] Loaded command: mute
+- [2025-06-17 20:33:32] [INFO] Loaded command: nickname
+- [2025-06-17 20:33:32] [INFO] Loaded command: role
+- [2025-06-17 20:33:32] [INFO] Loaded command: setautorole
+- [2025-06-17 20:33:32] [INFO] Loaded command: setjailrole
+- [2025-06-17 20:33:32] [INFO] Loaded command: setjailvoice
+- [2025-06-17 20:33:32] [INFO] Loaded command: slowmode
+- [2025-06-17 20:33:32] [INFO] Loaded command: tempvoice
+- [2025-06-17 20:33:32] [INFO] Loaded command: unban
+- [2025-06-17 20:33:32] [INFO] Loaded command: unjail
+- [2025-06-17 20:33:32] [INFO] Loaded command: unlock
+- [2025-06-17 20:33:32] [INFO] Loaded command: unmute
+- [2025-06-17 20:33:32] [INFO] Loaded command: verify
+- [2025-06-17 20:33:32] [INFO] Loaded command: warn
+- [2025-06-17 20:33:32] [INFO] Loaded command: warns
+- [2025-06-17 20:33:32] [INFO] Loaded command: dev
+- [2025-06-17 20:33:32] [INFO] Loaded command: massdm
+- [2025-06-17 20:33:32] [INFO] Loaded command: nuke-servre
+- [2025-06-17 20:33:32] [INFO] Loaded command: premium
+- [2025-06-17 20:33:32] [INFO] Loaded command: setuproles
+- [2025-06-17 20:33:32] [INFO] Loaded command: shutdown
+- [2025-06-17 20:33:32] [INFO] Loaded command: modmail
+- [2025-06-17 20:33:32] [INFO] Loaded command: moveall
+- [2025-06-17 20:33:32] [INFO] Loaded command: rolemenu
+- [2025-06-17 20:33:32] [INFO] Loaded command: sendnotify
+- [2025-06-17 20:33:32] [INFO] Loaded command: ping
+- [2025-06-17 20:33:32] [INFO] Loaded command: setembedcolor
+- [2025-06-17 20:33:32] [INFO] Loaded command: setembedfooter
+- [2025-06-17 20:33:32] [INFO] Loaded command: setembedicon
+- [2025-06-17 20:33:32] [INFO] Loaded command: avatar
+- [2025-06-17 20:33:32] [INFO] Loaded command: botinfo
+- [2025-06-17 20:33:32] [INFO] Loaded command: channelinfo
+- [2025-06-17 20:33:32] [INFO] Loaded command: help
+- [2025-06-17 20:33:32] [INFO] Loaded command: invite
+- [2025-06-17 20:33:32] [INFO] Loaded command: roleinfo
+- [2025-06-17 20:33:32] [INFO] Loaded command: serverinfo
+- [2025-06-17 20:33:32] [INFO] Loaded command: userinfo
+- [2025-06-17 20:33:33] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 20:33:33] [INFO] Loaded event: interactionCreate
+- [2025-06-17 20:33:33] [INFO] Loaded event: messageCreate
+- [2025-06-17 20:33:33] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 20:33:33] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 20:33:33] [INFO] Loaded event: ready
+- [2025-06-17 20:33:33] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 20:33:33] [INFO] Loaded slash command: ping
+- [2025-06-17 20:33:33] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 20:33:33] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 20:33:33] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 20:33:33] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 20:33:33] [INFO] ✅ Database connection successful
+- [2025-06-17 20:33:34] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 20:33:34] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 20:33:34] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 20:33:34] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 20:33:34] [INFO] Slash commands registered at startup.
+- [2025-06-17 20:33:34] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 20:33:35] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 20:33:35] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 20:33:36] [INFO] Successfully posted initial dev server status.
+- [2025-06-17 20:35:34] [INFO] Reloaded event: ready
+- [2025-06-17 20:35:51] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-17 20:35:51] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-17 20:35:51] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-17 20:35:51] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-17 20:35:51] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-17 20:35:51] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-17 20:35:51] [INFO] Shutdown complete. Exiting.
+- [2025-06-17 20:35:57] [INFO] Loaded command: autoban
+- [2025-06-17 20:35:57] [INFO] Loaded command: autospam
+- [2025-06-17 20:35:58] [INFO] Loaded command: add
+- [2025-06-17 20:35:58] [INFO] Loaded command: ban
+- [2025-06-17 20:35:58] [INFO] Loaded command: clear
+- [2025-06-17 20:35:58] [INFO] Loaded command: delwarn
+- [2025-06-17 20:35:58] [INFO] Loaded command: deny
+- [2025-06-17 20:35:58] [INFO] Loaded command: jail
+- [2025-06-17 20:35:58] [INFO] Loaded command: jailsettings
+- [2025-06-17 20:35:58] [INFO] Loaded command: kick
+- [2025-06-17 20:35:58] [INFO] Loaded command: lock
+- [2025-06-17 20:35:58] [INFO] Loaded command: move
+- [2025-06-17 20:35:58] [INFO] Loaded command: mute
+- [2025-06-17 20:35:58] [INFO] Loaded command: nickname
+- [2025-06-17 20:35:58] [INFO] Loaded command: role
+- [2025-06-17 20:35:58] [INFO] Loaded command: setautorole
+- [2025-06-17 20:35:58] [INFO] Loaded command: setjailrole
+- [2025-06-17 20:35:58] [INFO] Loaded command: setjailvoice
+- [2025-06-17 20:35:58] [INFO] Loaded command: slowmode
+- [2025-06-17 20:35:58] [INFO] Loaded command: tempvoice
+- [2025-06-17 20:35:58] [INFO] Loaded command: unban
+- [2025-06-17 20:35:58] [INFO] Loaded command: unjail
+- [2025-06-17 20:35:58] [INFO] Loaded command: unlock
+- [2025-06-17 20:35:58] [INFO] Loaded command: unmute
+- [2025-06-17 20:35:58] [INFO] Loaded command: verify
+- [2025-06-17 20:35:58] [INFO] Loaded command: warn
+- [2025-06-17 20:35:58] [INFO] Loaded command: warns
+- [2025-06-17 20:35:58] [INFO] Loaded command: dev
+- [2025-06-17 20:35:58] [INFO] Loaded command: massdm
+- [2025-06-17 20:35:58] [INFO] Loaded command: nuke-servre
+- [2025-06-17 20:35:58] [INFO] Loaded command: premium
+- [2025-06-17 20:35:58] [INFO] Loaded command: setuproles
+- [2025-06-17 20:35:58] [INFO] Loaded command: shutdown
+- [2025-06-17 20:35:58] [INFO] Loaded command: modmail
+- [2025-06-17 20:35:58] [INFO] Loaded command: moveall
+- [2025-06-17 20:35:58] [INFO] Loaded command: rolemenu
+- [2025-06-17 20:35:58] [INFO] Loaded command: sendnotify
+- [2025-06-17 20:35:58] [INFO] Loaded command: ping
+- [2025-06-17 20:35:58] [INFO] Loaded command: setembedcolor
+- [2025-06-17 20:35:58] [INFO] Loaded command: setembedfooter
+- [2025-06-17 20:35:58] [INFO] Loaded command: setembedicon
+- [2025-06-17 20:35:58] [INFO] Loaded command: avatar
+- [2025-06-17 20:35:58] [INFO] Loaded command: botinfo
+- [2025-06-17 20:35:58] [INFO] Loaded command: channelinfo
+- [2025-06-17 20:35:58] [INFO] Loaded command: help
+- [2025-06-17 20:35:58] [INFO] Loaded command: invite
+- [2025-06-17 20:35:58] [INFO] Loaded command: roleinfo
+- [2025-06-17 20:35:58] [INFO] Loaded command: serverinfo
+- [2025-06-17 20:35:58] [INFO] Loaded command: userinfo
+- [2025-06-17 20:35:58] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 20:35:58] [INFO] Loaded event: interactionCreate
+- [2025-06-17 20:35:58] [INFO] Loaded event: messageCreate
+- [2025-06-17 20:35:58] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 20:35:58] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 20:35:58] [INFO] Loaded event: ready
+- [2025-06-17 20:35:58] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 20:35:58] [INFO] Loaded slash command: ping
+- [2025-06-17 20:35:58] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 20:35:58] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 20:35:58] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 20:35:58] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 20:35:59] [INFO] ✅ Database connection successful
+- [2025-06-17 20:36:00] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 20:36:00] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 20:36:00] [INFO] Bot started and logged in as Raymond#8365. Serving in 5 guilds.
+- [2025-06-17 20:36:00] [INFO] Registered slash commands for guild: 1379099550014505031
+- [2025-06-17 20:36:00] [INFO] Slash commands registered at startup.
+- [2025-06-17 20:36:00] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 20:36:01] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 20:36:01] [INFO] Guild configurations initialized successfully.
+- [2025-06-17 20:36:01] [ERROR] Failed to update dev server status: ReferenceError: embedSettings is not defined
+- [2025-06-17 20:36:29] [INFO] Reloaded event: ready
+- [2025-06-17 20:36:32] [INFO] Reloaded event: ready
+- [2025-06-17 20:36:36] [INFO] Reloaded event: ready
+- [2025-06-17 20:39:00] [ERROR] Failed to reload event C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\events\ready.js: Error: Cannot find module '../handlers/slashCommands'
+Require stack:
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\events\ready.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\handlers\eventHandler.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\index.js
+- [2025-06-17 20:39:06] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-17 20:39:06] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-17 20:39:06] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-17 20:39:07] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-17 20:39:07] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-17 20:39:07] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-17 20:39:07] [INFO] Shutdown complete. Exiting.
+- [2025-06-17 20:39:20] [INFO] Loaded command: autoban
+- [2025-06-17 20:39:20] [INFO] Loaded command: autospam
+- [2025-06-17 20:39:20] [INFO] Loaded command: add
+- [2025-06-17 20:39:20] [INFO] Loaded command: ban
+- [2025-06-17 20:39:20] [INFO] Loaded command: clear
+- [2025-06-17 20:39:21] [INFO] Loaded command: delwarn
+- [2025-06-17 20:39:21] [INFO] Loaded command: deny
+- [2025-06-17 20:39:21] [INFO] Loaded command: jail
+- [2025-06-17 20:39:21] [INFO] Loaded command: jailsettings
+- [2025-06-17 20:39:21] [INFO] Loaded command: kick
+- [2025-06-17 20:39:21] [INFO] Loaded command: lock
+- [2025-06-17 20:39:21] [INFO] Loaded command: move
+- [2025-06-17 20:39:21] [INFO] Loaded command: mute
+- [2025-06-17 20:39:21] [INFO] Loaded command: nickname
+- [2025-06-17 20:39:21] [INFO] Loaded command: role
+- [2025-06-17 20:39:21] [INFO] Loaded command: setautorole
+- [2025-06-17 20:39:21] [INFO] Loaded command: setjailrole
+- [2025-06-17 20:39:21] [INFO] Loaded command: setjailvoice
+- [2025-06-17 20:39:21] [INFO] Loaded command: slowmode
+- [2025-06-17 20:39:21] [INFO] Loaded command: tempvoice
+- [2025-06-17 20:39:21] [INFO] Loaded command: unban
+- [2025-06-17 20:39:21] [INFO] Loaded command: unjail
+- [2025-06-17 20:39:21] [INFO] Loaded command: unlock
+- [2025-06-17 20:39:21] [INFO] Loaded command: unmute
+- [2025-06-17 20:39:21] [INFO] Loaded command: verify
+- [2025-06-17 20:39:21] [INFO] Loaded command: warn
+- [2025-06-17 20:39:21] [INFO] Loaded command: warns
+- [2025-06-17 20:39:21] [INFO] Loaded command: dev
+- [2025-06-17 20:39:21] [INFO] Loaded command: massdm
+- [2025-06-17 20:39:21] [INFO] Loaded command: nuke-servre
+- [2025-06-17 20:39:21] [INFO] Loaded command: premium
+- [2025-06-17 20:39:21] [INFO] Loaded command: setuproles
+- [2025-06-17 20:39:21] [INFO] Loaded command: shutdown
+- [2025-06-17 20:39:21] [INFO] Loaded command: modmail
+- [2025-06-17 20:39:21] [INFO] Loaded command: moveall
+- [2025-06-17 20:39:21] [INFO] Loaded command: rolemenu
+- [2025-06-17 20:39:21] [INFO] Loaded command: sendnotify
+- [2025-06-17 20:39:21] [INFO] Loaded command: ping
+- [2025-06-17 20:39:21] [INFO] Loaded command: setembedcolor
+- [2025-06-17 20:39:21] [INFO] Loaded command: setembedfooter
+- [2025-06-17 20:39:21] [INFO] Loaded command: setembedicon
+- [2025-06-17 20:39:21] [INFO] Loaded command: avatar
+- [2025-06-17 20:39:21] [INFO] Loaded command: botinfo
+- [2025-06-17 20:39:21] [INFO] Loaded command: channelinfo
+- [2025-06-17 20:39:21] [INFO] Loaded command: help
+- [2025-06-17 20:39:21] [INFO] Loaded command: invite
+- [2025-06-17 20:39:21] [INFO] Loaded command: roleinfo
+- [2025-06-17 20:39:21] [INFO] Loaded command: serverinfo
+- [2025-06-17 20:39:21] [INFO] Loaded command: userinfo
+- [2025-06-17 20:39:21] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 20:39:21] [INFO] Loaded event: interactionCreate
+- [2025-06-17 20:39:21] [INFO] Loaded event: messageCreate
+- [2025-06-17 20:39:21] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 20:39:21] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 20:39:21] [ERROR] Failed to load event ready.js: Error: Cannot find module '../handlers/slashCommands'
+Require stack:
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\events\ready.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\handlers\eventHandler.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\index.js
+- [2025-06-17 20:39:21] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 20:39:21] [INFO] Loaded slash command: ping
+- [2025-06-17 20:39:21] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 20:39:21] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 20:39:21] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 20:39:21] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 20:39:22] [INFO] ✅ Database connection successful
+- [2025-06-17 20:40:34] [ERROR] Failed to reload event C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\events\ready.js: Error: Cannot find module '../database/temp-channels'
+Require stack:
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\events\ready.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\handlers\eventHandler.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\index.js
+- [2025-06-17 20:41:13] [INFO] User simo3210811 joined creator channel '・⌛｜Find Solution #1' for config type 'default'. Creating temp channel...
+- [2025-06-17 20:41:14] [INFO] Created temp channel ・⌛｜Find Solution #1 - 〆 𝓛𝓜𝓘𝓒𝓡𝓞𝓞𝓑_𝓚𝓘𝓝𝓖 👽 (1384634011678408704) for simo3210811.
+- [2025-06-17 20:41:54] [INFO] Reloaded event: ready
+- [2025-06-17 20:42:00] [ERROR] Failed to reload event C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\events\ready.js: Error: Cannot find module '../database/temp-channels'
+Require stack:
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\events\ready.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\handlers\eventHandler.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\index.js
+- [2025-06-17 20:42:05] [ERROR] Failed to reload event C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\events\ready.js: SyntaxError: Unexpected token '}'
+- [2025-06-17 20:42:07] [INFO] Temp channel ・⌛｜Find Solution #1 - 〆 𝓛𝓜𝓘𝓒𝓡𝓞𝓞𝓑_𝓚𝓘𝓝𝓖 👽 is empty. Deleting instantly...
+- [2025-06-17 20:42:08] [INFO] Successfully deleted empty temp channel ・⌛｜Find Solution #1 - 〆 𝓛𝓜𝓘𝓒𝓡𝓞𝓞𝓑_𝓚𝓘𝓝𝓖 👽 (1384634011678408704).
+- [2025-06-17 20:42:17] [INFO] Reloaded event: ready
+- [2025-06-17 20:42:24] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-17 20:42:24] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-17 20:42:24] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-17 20:42:24] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-17 20:42:24] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-17 20:42:24] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-17 20:42:24] [INFO] Shutdown complete. Exiting.
+- [2025-06-17 20:42:32] [INFO] Loaded command: autoban
+- [2025-06-17 20:42:32] [INFO] Loaded command: autospam
+- [2025-06-17 20:42:32] [INFO] Loaded command: add
+- [2025-06-17 20:42:32] [INFO] Loaded command: ban
+- [2025-06-17 20:42:32] [INFO] Loaded command: clear
+- [2025-06-17 20:42:33] [INFO] Loaded command: delwarn
+- [2025-06-17 20:42:33] [INFO] Loaded command: deny
+- [2025-06-17 20:42:33] [INFO] Loaded command: jail
+- [2025-06-17 20:42:33] [INFO] Loaded command: jailsettings
+- [2025-06-17 20:42:33] [INFO] Loaded command: kick
+- [2025-06-17 20:42:33] [INFO] Loaded command: lock
+- [2025-06-17 20:42:33] [INFO] Loaded command: move
+- [2025-06-17 20:42:33] [INFO] Loaded command: mute
+- [2025-06-17 20:42:33] [INFO] Loaded command: nickname
+- [2025-06-17 20:42:33] [INFO] Loaded command: role
+- [2025-06-17 20:42:33] [INFO] Loaded command: setautorole
+- [2025-06-17 20:42:33] [INFO] Loaded command: setjailrole
+- [2025-06-17 20:42:33] [INFO] Loaded command: setjailvoice
+- [2025-06-17 20:42:33] [INFO] Loaded command: slowmode
+- [2025-06-17 20:42:33] [INFO] Loaded command: tempvoice
+- [2025-06-17 20:42:33] [INFO] Loaded command: unban
+- [2025-06-17 20:42:33] [INFO] Loaded command: unjail
+- [2025-06-17 20:42:33] [INFO] Loaded command: unlock
+- [2025-06-17 20:42:33] [INFO] Loaded command: unmute
+- [2025-06-17 20:42:33] [INFO] Loaded command: verify
+- [2025-06-17 20:42:33] [INFO] Loaded command: warn
+- [2025-06-17 20:42:33] [INFO] Loaded command: warns
+- [2025-06-17 20:42:33] [INFO] Loaded command: dev
+- [2025-06-17 20:42:33] [INFO] Loaded command: massdm
+- [2025-06-17 20:42:33] [INFO] Loaded command: nuke-servre
+- [2025-06-17 20:42:33] [INFO] Loaded command: premium
+- [2025-06-17 20:42:33] [INFO] Loaded command: setuproles
+- [2025-06-17 20:42:33] [INFO] Loaded command: shutdown
+- [2025-06-17 20:42:33] [INFO] Loaded command: modmail
+- [2025-06-17 20:42:33] [INFO] Loaded command: moveall
+- [2025-06-17 20:42:33] [INFO] Loaded command: rolemenu
+- [2025-06-17 20:42:33] [INFO] Loaded command: sendnotify
+- [2025-06-17 20:42:33] [INFO] Loaded command: ping
+- [2025-06-17 20:42:33] [INFO] Loaded command: setembedcolor
+- [2025-06-17 20:42:33] [INFO] Loaded command: setembedfooter
+- [2025-06-17 20:42:33] [INFO] Loaded command: setembedicon
+- [2025-06-17 20:42:33] [INFO] Loaded command: avatar
+- [2025-06-17 20:42:33] [INFO] Loaded command: botinfo
+- [2025-06-17 20:42:33] [INFO] Loaded command: channelinfo
+- [2025-06-17 20:42:33] [INFO] Loaded command: help
+- [2025-06-17 20:42:33] [INFO] Loaded command: invite
+- [2025-06-17 20:42:33] [INFO] Loaded command: roleinfo
+- [2025-06-17 20:42:33] [INFO] Loaded command: serverinfo
+- [2025-06-17 20:42:33] [INFO] Loaded command: userinfo
+- [2025-06-17 20:42:33] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 20:42:33] [INFO] Loaded event: interactionCreate
+- [2025-06-17 20:42:33] [INFO] Loaded event: messageCreate
+- [2025-06-17 20:42:33] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 20:42:33] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 20:42:33] [INFO] Loaded event: ready
+- [2025-06-17 20:42:33] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 20:42:33] [INFO] Loaded slash command: ping
+- [2025-06-17 20:42:33] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 20:42:33] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 20:42:33] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 20:42:34] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 20:42:34] [INFO] ✅ Database connection successful
+- [2025-06-17 20:42:35] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 20:42:35] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 20:42:36] [INFO] Registered all slash commands globally.
+- [2025-06-17 20:42:36] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 20:42:37] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 20:42:40] [ERROR] Failed to update dev server status: TypeError: setDevStatusMessageId is not a function
+- [2025-06-17 20:44:18] [INFO] Reloaded event: ready
+- [2025-06-17 20:44:20] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-17 20:44:20] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-17 20:44:20] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-17 20:44:20] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-17 20:44:20] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-17 20:44:20] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-17 20:44:20] [INFO] Shutdown complete. Exiting.
+- [2025-06-17 20:44:49] [INFO] Loaded command: autoban
+- [2025-06-17 20:44:49] [INFO] Loaded command: autospam
+- [2025-06-17 20:44:49] [INFO] Loaded command: add
+- [2025-06-17 20:44:49] [INFO] Loaded command: ban
+- [2025-06-17 20:44:49] [INFO] Loaded command: clear
+- [2025-06-17 20:44:49] [INFO] Loaded command: delwarn
+- [2025-06-17 20:44:49] [INFO] Loaded command: deny
+- [2025-06-17 20:44:49] [INFO] Loaded command: jail
+- [2025-06-17 20:44:49] [INFO] Loaded command: jailsettings
+- [2025-06-17 20:44:49] [INFO] Loaded command: kick
+- [2025-06-17 20:44:49] [INFO] Loaded command: lock
+- [2025-06-17 20:44:49] [INFO] Loaded command: move
+- [2025-06-17 20:44:49] [INFO] Loaded command: mute
+- [2025-06-17 20:44:49] [INFO] Loaded command: nickname
+- [2025-06-17 20:44:49] [INFO] Loaded command: role
+- [2025-06-17 20:44:49] [INFO] Loaded command: setautorole
+- [2025-06-17 20:44:49] [INFO] Loaded command: setjailrole
+- [2025-06-17 20:44:49] [INFO] Loaded command: setjailvoice
+- [2025-06-17 20:44:49] [INFO] Loaded command: slowmode
+- [2025-06-17 20:44:49] [INFO] Loaded command: tempvoice
+- [2025-06-17 20:44:49] [INFO] Loaded command: unban
+- [2025-06-17 20:44:49] [INFO] Loaded command: unjail
+- [2025-06-17 20:44:49] [INFO] Loaded command: unlock
+- [2025-06-17 20:44:49] [INFO] Loaded command: unmute
+- [2025-06-17 20:44:49] [INFO] Loaded command: verify
+- [2025-06-17 20:44:49] [INFO] Loaded command: warn
+- [2025-06-17 20:44:49] [INFO] Loaded command: warns
+- [2025-06-17 20:44:49] [INFO] Loaded command: dev
+- [2025-06-17 20:44:49] [INFO] Loaded command: massdm
+- [2025-06-17 20:44:49] [INFO] Loaded command: nuke-servre
+- [2025-06-17 20:44:49] [INFO] Loaded command: premium
+- [2025-06-17 20:44:49] [INFO] Loaded command: setuproles
+- [2025-06-17 20:44:49] [INFO] Loaded command: shutdown
+- [2025-06-17 20:44:49] [INFO] Loaded command: modmail
+- [2025-06-17 20:44:49] [INFO] Loaded command: moveall
+- [2025-06-17 20:44:49] [INFO] Loaded command: rolemenu
+- [2025-06-17 20:44:49] [INFO] Loaded command: sendnotify
+- [2025-06-17 20:44:49] [INFO] Loaded command: ping
+- [2025-06-17 20:44:49] [INFO] Loaded command: setembedcolor
+- [2025-06-17 20:44:49] [INFO] Loaded command: setembedfooter
+- [2025-06-17 20:44:49] [INFO] Loaded command: setembedicon
+- [2025-06-17 20:44:49] [INFO] Loaded command: avatar
+- [2025-06-17 20:44:49] [INFO] Loaded command: botinfo
+- [2025-06-17 20:44:49] [INFO] Loaded command: channelinfo
+- [2025-06-17 20:44:49] [INFO] Loaded command: help
+- [2025-06-17 20:44:49] [INFO] Loaded command: invite
+- [2025-06-17 20:44:49] [INFO] Loaded command: roleinfo
+- [2025-06-17 20:44:49] [INFO] Loaded command: serverinfo
+- [2025-06-17 20:44:49] [INFO] Loaded command: userinfo
+- [2025-06-17 20:44:49] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 20:44:49] [INFO] Loaded event: interactionCreate
+- [2025-06-17 20:44:49] [INFO] Loaded event: messageCreate
+- [2025-06-17 20:44:49] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 20:44:49] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 20:44:49] [INFO] Loaded event: ready
+- [2025-06-17 20:44:49] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 20:44:49] [INFO] Loaded slash command: ping
+- [2025-06-17 20:44:49] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 20:44:49] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 20:44:49] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 20:44:49] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 20:44:50] [INFO] ✅ Database connection successful
+- [2025-06-17 20:44:51] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 20:44:51] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 20:44:52] [INFO] Registered all slash commands globally.
+- [2025-06-17 20:44:52] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 20:44:52] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 20:44:53] [INFO] Posted new dev server status message and saved its ID: 1384634930641768458
+- [2025-06-17 20:46:24] [ERROR] Failed to reload event C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\events\ready.js: SyntaxError: Invalid or unexpected token
+- [2025-06-17 20:46:24] [ERROR] Failed to reload event C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\events\ready.js: SyntaxError: Invalid or unexpected token
+- [2025-06-17 20:46:24] [ERROR] Failed to reload command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\utility\userinfo.js: SyntaxError: Invalid or unexpected token
+- [2025-06-17 20:46:25] [ERROR] Failed to reload command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\automod\autoban.js: SyntaxError: Invalid or unexpected token
+- [2025-06-17 20:46:25] [ERROR] Failed to reload command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\utility\roleinfo.js: SyntaxError: Invalid or unexpected token
+- [2025-06-17 20:46:58] [INFO] Reloaded event: ready
+- [2025-06-17 20:46:59] [INFO] Reloaded event: ready
+- [2025-06-17 20:47:09] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-17 20:47:09] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-17 20:47:09] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-17 20:47:09] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-17 20:47:09] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-17 20:47:09] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-17 20:47:10] [INFO] Shutdown complete. Exiting.
+- [2025-06-17 20:47:21] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\automod\autoban.js: SyntaxError: Invalid or unexpected token
+- [2025-06-17 20:47:21] [INFO] Loaded command: autospam
+- [2025-06-17 20:47:21] [INFO] Loaded command: add
+- [2025-06-17 20:47:21] [INFO] Loaded command: ban
+- [2025-06-17 20:47:21] [INFO] Loaded command: clear
+- [2025-06-17 20:47:21] [INFO] Loaded command: delwarn
+- [2025-06-17 20:47:21] [INFO] Loaded command: deny
+- [2025-06-17 20:47:21] [INFO] Loaded command: jail
+- [2025-06-17 20:47:21] [INFO] Loaded command: jailsettings
+- [2025-06-17 20:47:21] [INFO] Loaded command: kick
+- [2025-06-17 20:47:21] [INFO] Loaded command: lock
+- [2025-06-17 20:47:21] [INFO] Loaded command: move
+- [2025-06-17 20:47:21] [INFO] Loaded command: mute
+- [2025-06-17 20:47:21] [INFO] Loaded command: nickname
+- [2025-06-17 20:47:21] [INFO] Loaded command: role
+- [2025-06-17 20:47:21] [INFO] Loaded command: setautorole
+- [2025-06-17 20:47:21] [INFO] Loaded command: setjailrole
+- [2025-06-17 20:47:21] [INFO] Loaded command: setjailvoice
+- [2025-06-17 20:47:21] [INFO] Loaded command: slowmode
+- [2025-06-17 20:47:21] [INFO] Loaded command: tempvoice
+- [2025-06-17 20:47:21] [INFO] Loaded command: unban
+- [2025-06-17 20:47:21] [INFO] Loaded command: unjail
+- [2025-06-17 20:47:21] [INFO] Loaded command: unlock
+- [2025-06-17 20:47:21] [INFO] Loaded command: unmute
+- [2025-06-17 20:47:21] [INFO] Loaded command: verify
+- [2025-06-17 20:47:21] [INFO] Loaded command: warn
+- [2025-06-17 20:47:21] [INFO] Loaded command: warns
+- [2025-06-17 20:47:21] [INFO] Loaded command: dev
+- [2025-06-17 20:47:21] [INFO] Loaded command: massdm
+- [2025-06-17 20:47:21] [INFO] Loaded command: nuke-servre
+- [2025-06-17 20:47:21] [INFO] Loaded command: premium
+- [2025-06-17 20:47:21] [INFO] Loaded command: setuproles
+- [2025-06-17 20:47:21] [INFO] Loaded command: shutdown
+- [2025-06-17 20:47:21] [INFO] Loaded command: modmail
+- [2025-06-17 20:47:21] [INFO] Loaded command: moveall
+- [2025-06-17 20:47:21] [INFO] Loaded command: rolemenu
+- [2025-06-17 20:47:21] [INFO] Loaded command: sendnotify
+- [2025-06-17 20:47:21] [INFO] Loaded command: ping
+- [2025-06-17 20:47:21] [INFO] Loaded command: setembedcolor
+- [2025-06-17 20:47:21] [INFO] Loaded command: setembedfooter
+- [2025-06-17 20:47:21] [INFO] Loaded command: setembedicon
+- [2025-06-17 20:47:21] [INFO] Loaded command: avatar
+- [2025-06-17 20:47:21] [INFO] Loaded command: botinfo
+- [2025-06-17 20:47:21] [INFO] Loaded command: channelinfo
+- [2025-06-17 20:47:22] [INFO] Loaded command: help
+- [2025-06-17 20:47:22] [INFO] Loaded command: invite
+- [2025-06-17 20:47:22] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\utility\roleinfo.js: SyntaxError: Invalid or unexpected token
+- [2025-06-17 20:47:22] [INFO] Loaded command: serverinfo
+- [2025-06-17 20:47:22] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\utility\userinfo.js: SyntaxError: Invalid or unexpected token
+- [2025-06-17 20:47:22] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 20:47:22] [INFO] Loaded event: interactionCreate
+- [2025-06-17 20:47:22] [INFO] Loaded event: messageCreate
+- [2025-06-17 20:47:22] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 20:47:22] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 20:47:22] [INFO] Loaded event: ready
+- [2025-06-17 20:47:22] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 20:47:22] [INFO] Loaded slash command: ping
+- [2025-06-17 20:47:22] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 20:47:22] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 20:47:22] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 20:47:22] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 20:47:23] [INFO] ✅ Database connection successful
+- [2025-06-17 20:47:23] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 20:47:23] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 20:47:24] [INFO] Registered all slash commands globally.
+- [2025-06-17 20:47:24] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 20:47:24] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 20:47:27] [INFO] Posted new dev server status message and saved its ID: 1384635573419118713
+- [2025-06-17 20:47:58] [ERROR] Failed to reload event C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\events\ready.js: SyntaxError: Invalid or unexpected token
+- [2025-06-17 20:47:58] [ERROR] Failed to reload command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\utility\userinfo.js: SyntaxError: Invalid or unexpected token
+- [2025-06-17 20:47:58] [ERROR] Failed to reload command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\automod\autoban.js: SyntaxError: Invalid or unexpected token
+- [2025-06-17 20:47:58] [ERROR] Failed to reload event C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\events\ready.js: SyntaxError: Invalid or unexpected token
+- [2025-06-17 20:47:58] [ERROR] Failed to reload command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\utility\roleinfo.js: SyntaxError: Invalid or unexpected token
+- [2025-06-17 20:48:09] [INFO] Reloaded event: ready
+- [2025-06-17 20:48:10] [INFO] Reloaded event: ready
+- [2025-06-17 20:48:13] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-17 20:48:13] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-17 20:48:13] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-17 20:48:14] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-17 20:48:14] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-17 20:48:14] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-17 20:48:14] [INFO] Shutdown complete. Exiting.
+- [2025-06-17 20:48:26] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\automod\autoban.js: SyntaxError: Invalid or unexpected token
+- [2025-06-17 20:48:26] [INFO] Loaded command: autospam
+- [2025-06-17 20:48:26] [INFO] Loaded command: add
+- [2025-06-17 20:48:26] [INFO] Loaded command: ban
+- [2025-06-17 20:48:26] [INFO] Loaded command: clear
+- [2025-06-17 20:48:26] [INFO] Loaded command: delwarn
+- [2025-06-17 20:48:26] [INFO] Loaded command: deny
+- [2025-06-17 20:48:26] [INFO] Loaded command: jail
+- [2025-06-17 20:48:26] [INFO] Loaded command: jailsettings
+- [2025-06-17 20:48:26] [INFO] Loaded command: kick
+- [2025-06-17 20:48:26] [INFO] Loaded command: lock
+- [2025-06-17 20:48:26] [INFO] Loaded command: move
+- [2025-06-17 20:48:26] [INFO] Loaded command: mute
+- [2025-06-17 20:48:26] [INFO] Loaded command: nickname
+- [2025-06-17 20:48:26] [INFO] Loaded command: role
+- [2025-06-17 20:48:26] [INFO] Loaded command: setautorole
+- [2025-06-17 20:48:26] [INFO] Loaded command: setjailrole
+- [2025-06-17 20:48:26] [INFO] Loaded command: setjailvoice
+- [2025-06-17 20:48:26] [INFO] Loaded command: slowmode
+- [2025-06-17 20:48:26] [INFO] Loaded command: tempvoice
+- [2025-06-17 20:48:26] [INFO] Loaded command: unban
+- [2025-06-17 20:48:26] [INFO] Loaded command: unjail
+- [2025-06-17 20:48:26] [INFO] Loaded command: unlock
+- [2025-06-17 20:48:26] [INFO] Loaded command: unmute
+- [2025-06-17 20:48:26] [INFO] Loaded command: verify
+- [2025-06-17 20:48:26] [INFO] Loaded command: warn
+- [2025-06-17 20:48:26] [INFO] Loaded command: warns
+- [2025-06-17 20:48:26] [INFO] Loaded command: dev
+- [2025-06-17 20:48:26] [INFO] Loaded command: massdm
+- [2025-06-17 20:48:26] [INFO] Loaded command: nuke-servre
+- [2025-06-17 20:48:26] [INFO] Loaded command: premium
+- [2025-06-17 20:48:26] [INFO] Loaded command: setuproles
+- [2025-06-17 20:48:26] [INFO] Loaded command: shutdown
+- [2025-06-17 20:48:26] [INFO] Loaded command: modmail
+- [2025-06-17 20:48:26] [INFO] Loaded command: moveall
+- [2025-06-17 20:48:26] [INFO] Loaded command: rolemenu
+- [2025-06-17 20:48:26] [INFO] Loaded command: sendnotify
+- [2025-06-17 20:48:26] [INFO] Loaded command: ping
+- [2025-06-17 20:48:26] [INFO] Loaded command: setembedcolor
+- [2025-06-17 20:48:26] [INFO] Loaded command: setembedfooter
+- [2025-06-17 20:48:26] [INFO] Loaded command: setembedicon
+- [2025-06-17 20:48:26] [INFO] Loaded command: avatar
+- [2025-06-17 20:48:26] [INFO] Loaded command: botinfo
+- [2025-06-17 20:48:26] [INFO] Loaded command: channelinfo
+- [2025-06-17 20:48:26] [INFO] Loaded command: help
+- [2025-06-17 20:48:26] [INFO] Loaded command: invite
+- [2025-06-17 20:48:26] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\utility\roleinfo.js: SyntaxError: Invalid or unexpected token
+- [2025-06-17 20:48:26] [INFO] Loaded command: serverinfo
+- [2025-06-17 20:48:26] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\utility\userinfo.js: SyntaxError: Invalid or unexpected token
+- [2025-06-17 20:48:26] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 20:48:27] [INFO] Loaded event: interactionCreate
+- [2025-06-17 20:48:27] [INFO] Loaded event: messageCreate
+- [2025-06-17 20:48:27] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 20:48:27] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 20:48:27] [INFO] Loaded event: ready
+- [2025-06-17 20:48:27] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 20:48:27] [INFO] Loaded slash command: ping
+- [2025-06-17 20:48:27] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 20:48:27] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 20:48:27] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 20:48:27] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 20:48:27] [INFO] ✅ Database connection successful
+- [2025-06-17 20:48:28] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 20:48:28] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 20:48:29] [INFO] Registered all slash commands globally.
+- [2025-06-17 20:48:29] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 20:48:30] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 20:48:32] [INFO] Posted new dev server status message and saved its ID: 1384635845126131952
+- [2025-06-17 20:49:32] [INFO] Reloaded command: dev
+- [2025-06-17 20:49:45] [INFO] Reloaded command: dev
+- [2025-06-17 20:49:50] [INFO] Reloaded command: dev
+- [2025-06-17 20:49:52] [INFO] Reloaded command: dev
+- [2025-06-17 20:50:31] [INFO] Reloaded command: dev
+- [2025-06-17 20:50:33] [INFO] Reloaded command: dev
+- [2025-06-17 20:50:39] [INFO] Reloaded command: dev
+- [2025-06-17 20:50:41] [INFO] Reloaded command: dev
+- [2025-06-17 20:50:42] [INFO] Reloaded command: dev
+- [2025-06-17 20:51:02] [ERROR] Command dev failed: ReferenceError: sendEmbed is not defined
+- [2025-06-17 20:51:16] [ERROR] Command dev failed: ReferenceError: sendEmbed is not defined
+- [2025-06-17 20:51:53] [INFO] Reloaded command: dev
+- [2025-06-17 20:54:15] [INFO] Reloaded command: dev
+- [2025-06-17 20:55:13] [INFO] Reloaded command: dev
+- [2025-06-17 20:56:01] [INFO] Reloaded command: dev
+- [2025-06-17 20:56:07] [INFO] Reloaded command: dev
+- [2025-06-17 20:57:29] [INFO] Reloaded command: dev
+- [2025-06-17 20:57:34] [INFO] Reloaded command: dev
+- [2025-06-17 20:57:36] [INFO] Reloaded command: dev
+- [2025-06-17 20:59:16] [INFO] Reloaded command: dev
+- [2025-06-17 21:03:37] [INFO] User mrahmet48 joined creator channel '・⌛｜Find Solution #1' for config type 'default'. Creating temp channel...
+- [2025-06-17 21:03:40] [INFO] Created temp channel ・⌛｜Find Solution #1 - ! (1384639653512216780) for mrahmet48.
+- [2025-06-17 21:03:42] [INFO] Temp channel ・⌛｜Find Solution #1 - ! is empty. Deleting instantly...
+- [2025-06-17 21:03:42] [INFO] Successfully deleted empty temp channel ・⌛｜Find Solution #1 - ! (1384639653512216780).
+- [2025-06-17 21:03:45] [INFO] User mrahmet48 joined creator channel '・⌛｜Find Solution #1' for config type 'default'. Creating temp channel...
+- [2025-06-17 21:03:48] [INFO] Created temp channel ・⌛｜Find Solution #1 - ! (1384639688798638210) for mrahmet48.
+- [2025-06-17 21:04:02] [INFO] Temp channel ・⌛｜Find Solution #1 - ! is empty. Deleting instantly...
+- [2025-06-17 21:04:02] [INFO] Successfully deleted empty temp channel ・⌛｜Find Solution #1 - ! (1384639688798638210).
+- [2025-06-17 21:05:54] [INFO] ✅ Database connection for migrator is successful.
+- [2025-06-17 21:05:55] [INFO] ✅ 'schema_migrations' table ensured.
+- [2025-06-17 21:05:55] [INFO] 🔄 Applying migration: 20250617203909_cleanup_temp_voice_configs_table.sql...
+- [2025-06-17 21:05:55] [INFO] ✅ Migration 20250617203909_cleanup_temp_voice_configs_table.sql applied successfully.
+- [2025-06-17 21:05:55] [INFO] 🔄 Applying migration: 20250617205000_remove_obsolete_temp_voice_columns.sql...
+- [2025-06-17 21:05:55] [INFO] ✅ Migration 20250617205000_remove_obsolete_temp_voice_columns.sql applied successfully.
+- [2025-06-17 21:05:55] [INFO] 🔄 Applying migration: 20250617221000_refactor_temp_voice_for_multi_config.sql...
+- [2025-06-17 21:05:56] [INFO] ✅ Migration 20250617221000_refactor_temp_voice_for_multi_config.sql applied successfully.
+- [2025-06-17 21:05:56] [INFO] Applied 3 new migration(s).
+- [2025-06-17 21:05:56] [INFO] Migrations completed.
+- [2025-06-17 21:07:14] [INFO] Reloaded command: tempvoice
+- [2025-06-17 21:08:05] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-17 21:08:05] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-17 21:09:50] [INFO] Reloaded command: tempvoice
+- [2025-06-17 21:10:07] [ERROR] Command tempvoice failed: TypeError: upsertTempVoiceConfig is not a function
+- [2025-06-17 21:10:39] [INFO] Reloaded command: tempvoice
+- [2025-06-17 21:11:00] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-17 21:13:53] [ERROR] Command tempvoice failed: TypeError: tempVoiceDB.upsertTempVoiceConfig is not a function
+- [2025-06-17 21:13:59] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-17 21:13:59] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-17 21:13:59] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-17 21:14:00] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-17 21:14:00] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-17 21:14:00] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-17 21:14:00] [INFO] Shutdown complete. Exiting.
+- [2025-06-17 21:14:06] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\automod\autoban.js: SyntaxError: Invalid or unexpected token
+- [2025-06-17 21:14:06] [INFO] Loaded command: autospam
+- [2025-06-17 21:14:06] [INFO] Loaded command: add
+- [2025-06-17 21:14:06] [INFO] Loaded command: ban
+- [2025-06-17 21:14:06] [INFO] Loaded command: clear
+- [2025-06-17 21:14:06] [INFO] Loaded command: delwarn
+- [2025-06-17 21:14:06] [INFO] Loaded command: deny
+- [2025-06-17 21:14:06] [INFO] Loaded command: jail
+- [2025-06-17 21:14:06] [INFO] Loaded command: jailsettings
+- [2025-06-17 21:14:06] [INFO] Loaded command: kick
+- [2025-06-17 21:14:06] [INFO] Loaded command: lock
+- [2025-06-17 21:14:06] [INFO] Loaded command: move
+- [2025-06-17 21:14:06] [INFO] Loaded command: mute
+- [2025-06-17 21:14:06] [INFO] Loaded command: nickname
+- [2025-06-17 21:14:06] [INFO] Loaded command: role
+- [2025-06-17 21:14:06] [INFO] Loaded command: setautorole
+- [2025-06-17 21:14:06] [INFO] Loaded command: setjailrole
+- [2025-06-17 21:14:06] [INFO] Loaded command: setjailvoice
+- [2025-06-17 21:14:07] [INFO] Loaded command: slowmode
+- [2025-06-17 21:14:07] [INFO] Loaded command: tempvoice
+- [2025-06-17 21:14:07] [INFO] Loaded command: unban
+- [2025-06-17 21:14:07] [INFO] Loaded command: unjail
+- [2025-06-17 21:14:07] [INFO] Loaded command: unlock
+- [2025-06-17 21:14:07] [INFO] Loaded command: unmute
+- [2025-06-17 21:14:07] [INFO] Loaded command: verify
+- [2025-06-17 21:14:07] [INFO] Loaded command: warn
+- [2025-06-17 21:14:07] [INFO] Loaded command: warns
+- [2025-06-17 21:14:07] [INFO] Loaded command: dev
+- [2025-06-17 21:14:07] [INFO] Loaded command: massdm
+- [2025-06-17 21:14:07] [INFO] Loaded command: nuke-servre
+- [2025-06-17 21:14:07] [INFO] Loaded command: premium
+- [2025-06-17 21:14:07] [INFO] Loaded command: setuproles
+- [2025-06-17 21:14:07] [INFO] Loaded command: shutdown
+- [2025-06-17 21:14:07] [INFO] Loaded command: modmail
+- [2025-06-17 21:14:07] [INFO] Loaded command: moveall
+- [2025-06-17 21:14:07] [INFO] Loaded command: rolemenu
+- [2025-06-17 21:14:07] [INFO] Loaded command: sendnotify
+- [2025-06-17 21:14:07] [INFO] Loaded command: ping
+- [2025-06-17 21:14:07] [INFO] Loaded command: setembedcolor
+- [2025-06-17 21:14:07] [INFO] Loaded command: setembedfooter
+- [2025-06-17 21:14:07] [INFO] Loaded command: setembedicon
+- [2025-06-17 21:14:07] [INFO] Loaded command: avatar
+- [2025-06-17 21:14:07] [INFO] Loaded command: botinfo
+- [2025-06-17 21:14:07] [INFO] Loaded command: channelinfo
+- [2025-06-17 21:14:07] [INFO] Loaded command: help
+- [2025-06-17 21:14:07] [INFO] Loaded command: invite
+- [2025-06-17 21:14:07] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\utility\roleinfo.js: SyntaxError: Invalid or unexpected token
+- [2025-06-17 21:14:07] [INFO] Loaded command: serverinfo
+- [2025-06-17 21:14:07] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\utility\userinfo.js: SyntaxError: Invalid or unexpected token
+- [2025-06-17 21:14:07] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 21:14:07] [INFO] Loaded event: interactionCreate
+- [2025-06-17 21:14:07] [INFO] Loaded event: messageCreate
+- [2025-06-17 21:14:07] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 21:14:07] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 21:14:07] [INFO] Loaded event: ready
+- [2025-06-17 21:14:07] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 21:14:07] [INFO] Loaded slash command: ping
+- [2025-06-17 21:14:07] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 21:14:07] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 21:14:07] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 21:14:07] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 21:14:08] [INFO] ✅ Database connection successful
+- [2025-06-17 21:14:08] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 21:14:08] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 21:14:09] [INFO] Registered all slash commands globally.
+- [2025-06-17 21:14:09] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 21:14:09] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 21:14:10] [INFO] Successfully updated dev server status message.
+- [2025-06-17 21:16:09] [INFO] Reloaded command: autoban
+- [2025-06-17 21:16:14] [INFO] Reloaded command: roleinfo
+- [2025-06-17 21:16:16] [INFO] Reloaded command: userinfo
+- [2025-06-17 21:16:57] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-17 21:16:57] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-17 21:16:57] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-17 21:16:57] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-17 21:16:57] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-17 21:16:57] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-17 21:16:57] [INFO] Shutdown complete. Exiting.
+- [2025-06-17 21:16:59] [INFO] Loaded command: autoban
+- [2025-06-17 21:16:59] [INFO] Loaded command: autospam
+- [2025-06-17 21:16:59] [INFO] Loaded command: add
+- [2025-06-17 21:16:59] [INFO] Loaded command: ban
+- [2025-06-17 21:16:59] [INFO] Loaded command: clear
+- [2025-06-17 21:16:59] [INFO] Loaded command: delwarn
+- [2025-06-17 21:16:59] [INFO] Loaded command: deny
+- [2025-06-17 21:16:59] [INFO] Loaded command: jail
+- [2025-06-17 21:16:59] [INFO] Loaded command: jailsettings
+- [2025-06-17 21:16:59] [INFO] Loaded command: kick
+- [2025-06-17 21:16:59] [INFO] Loaded command: lock
+- [2025-06-17 21:16:59] [INFO] Loaded command: move
+- [2025-06-17 21:16:59] [INFO] Loaded command: mute
+- [2025-06-17 21:17:00] [INFO] Loaded command: nickname
+- [2025-06-17 21:17:00] [INFO] Loaded command: role
+- [2025-06-17 21:17:00] [INFO] Loaded command: setautorole
+- [2025-06-17 21:17:00] [INFO] Loaded command: setjailrole
+- [2025-06-17 21:17:00] [INFO] Loaded command: setjailvoice
+- [2025-06-17 21:17:00] [INFO] Loaded command: slowmode
+- [2025-06-17 21:17:00] [INFO] Loaded command: tempvoice
+- [2025-06-17 21:17:00] [INFO] Loaded command: unban
+- [2025-06-17 21:17:00] [INFO] Loaded command: unjail
+- [2025-06-17 21:17:00] [INFO] Loaded command: unlock
+- [2025-06-17 21:17:00] [INFO] Loaded command: unmute
+- [2025-06-17 21:17:00] [INFO] Loaded command: verify
+- [2025-06-17 21:17:00] [INFO] Loaded command: warn
+- [2025-06-17 21:17:00] [INFO] Loaded command: warns
+- [2025-06-17 21:17:00] [INFO] Loaded command: dev
+- [2025-06-17 21:17:00] [INFO] Loaded command: massdm
+- [2025-06-17 21:17:00] [INFO] Loaded command: nuke-servre
+- [2025-06-17 21:17:00] [INFO] Loaded command: premium
+- [2025-06-17 21:17:00] [INFO] Loaded command: setuproles
+- [2025-06-17 21:17:00] [INFO] Loaded command: shutdown
+- [2025-06-17 21:17:00] [INFO] Loaded command: modmail
+- [2025-06-17 21:17:00] [INFO] Loaded command: moveall
+- [2025-06-17 21:17:00] [INFO] Loaded command: rolemenu
+- [2025-06-17 21:17:00] [INFO] Loaded command: sendnotify
+- [2025-06-17 21:17:00] [INFO] Loaded command: ping
+- [2025-06-17 21:17:00] [INFO] Loaded command: setembedcolor
+- [2025-06-17 21:17:00] [INFO] Loaded command: setembedfooter
+- [2025-06-17 21:17:00] [INFO] Loaded command: setembedicon
+- [2025-06-17 21:17:00] [INFO] Loaded command: avatar
+- [2025-06-17 21:17:00] [INFO] Loaded command: botinfo
+- [2025-06-17 21:17:00] [INFO] Loaded command: channelinfo
+- [2025-06-17 21:17:00] [INFO] Loaded command: help
+- [2025-06-17 21:17:00] [INFO] Loaded command: invite
+- [2025-06-17 21:17:00] [INFO] Loaded command: roleinfo
+- [2025-06-17 21:17:00] [INFO] Loaded command: serverinfo
+- [2025-06-17 21:17:00] [INFO] Loaded command: userinfo
+- [2025-06-17 21:17:00] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 21:17:00] [INFO] Loaded event: interactionCreate
+- [2025-06-17 21:17:00] [INFO] Loaded event: messageCreate
+- [2025-06-17 21:17:00] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 21:17:00] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 21:17:00] [INFO] Loaded event: ready
+- [2025-06-17 21:17:00] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 21:17:00] [INFO] Loaded slash command: ping
+- [2025-06-17 21:17:00] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 21:17:00] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 21:17:00] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 21:17:00] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 21:17:01] [INFO] ✅ Database connection successful
+- [2025-06-17 21:17:01] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 21:17:01] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 21:17:02] [INFO] Registered all slash commands globally.
+- [2025-06-17 21:17:02] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 21:17:02] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 21:17:03] [INFO] Successfully updated dev server status message.
+- [2025-06-17 21:17:24] [INFO] Upserted temp voice config '・❔︱Need Help' for guild 1038540608396066856.
+- [2025-06-17 21:17:32] [INFO] User mrahmet48 joined creator channel '・❔︱Need Help' for config '・❔︱Need Help'. Creating temp channel...
+- [2025-06-17 21:17:35] [INFO] Created temp channel ・❔︱Need Help - ! (1384643154627661996) for mrahmet48.
+- [2025-06-17 21:17:44] [INFO] Upserted temp voice config '・⌛｜Find Solution #1' for guild 1038540608396066856.
+- [2025-06-17 21:17:46] [INFO] User mrahmet48 joined creator channel '・⌛｜Find Solution #1' for config '・⌛｜Find Solution #1'. Creating temp channel...
+- [2025-06-17 21:17:48] [INFO] Created temp channel ・⌛｜Find Solution #1 - ! (1384643212291080332) for mrahmet48.
+- [2025-06-17 21:17:48] [INFO] Temp channel ・❔︱Need Help - ! is empty. Deleting instantly...
+- [2025-06-17 21:17:49] [INFO] Successfully deleted empty temp channel ・❔︱Need Help - ! (1384643154627661996).
+- [2025-06-17 21:17:49] [INFO] User mrahmet48 joined creator channel '・❔︱Need Help' for config '・❔︱Need Help'. Creating temp channel...
+- [2025-06-17 21:17:50] [INFO] Created temp channel ・❔︱Need Help - ! (1384643225209409546) for mrahmet48.
+- [2025-06-17 21:17:51] [INFO] Temp channel ・⌛｜Find Solution #1 - ! is empty. Deleting instantly...
+- [2025-06-17 21:17:51] [INFO] Successfully deleted empty temp channel ・⌛｜Find Solution #1 - ! (1384643212291080332).
+- [2025-06-17 21:18:04] [INFO] User mrahmet48 joined creator channel '・❔︱Need Help' for config '・❔︱Need Help'. Creating temp channel...
+- [2025-06-17 21:18:07] [INFO] Created temp channel ・❔︱Need Help - ! (1384643291705774212) for mrahmet48.
+- [2025-06-17 21:18:07] [INFO] Temp channel ・❔︱Need Help - ! is empty. Deleting instantly...
+- [2025-06-17 21:18:08] [INFO] Successfully deleted empty temp channel ・❔︱Need Help - ! (1384643225209409546).
+- [2025-06-17 21:18:32] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-17 21:18:32] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-17 21:18:32] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-17 21:18:32] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-17 21:18:32] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-17 21:18:32] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-17 21:18:32] [INFO] Shutdown complete. Exiting.
+- [2025-06-17 23:44:25] [INFO] Loaded command: autoban
+- [2025-06-17 23:44:25] [INFO] Loaded command: autospam
+- [2025-06-17 23:44:25] [INFO] Loaded command: add
+- [2025-06-17 23:44:25] [INFO] Loaded command: ban
+- [2025-06-17 23:44:25] [INFO] Loaded command: clear
+- [2025-06-17 23:44:25] [INFO] Loaded command: delwarn
+- [2025-06-17 23:44:25] [INFO] Loaded command: deny
+- [2025-06-17 23:44:25] [INFO] Loaded command: jail
+- [2025-06-17 23:44:25] [INFO] Loaded command: jailsettings
+- [2025-06-17 23:44:25] [INFO] Loaded command: kick
+- [2025-06-17 23:44:25] [INFO] Loaded command: lock
+- [2025-06-17 23:44:25] [INFO] Loaded command: move
+- [2025-06-17 23:44:25] [INFO] Loaded command: mute
+- [2025-06-17 23:44:25] [INFO] Loaded command: nickname
+- [2025-06-17 23:44:25] [INFO] Loaded command: role
+- [2025-06-17 23:44:25] [INFO] Loaded command: setautorole
+- [2025-06-17 23:44:25] [INFO] Loaded command: setjailrole
+- [2025-06-17 23:44:25] [INFO] Loaded command: setjailvoice
+- [2025-06-17 23:44:25] [INFO] Loaded command: slowmode
+- [2025-06-17 23:44:25] [INFO] Loaded command: tempvoice
+- [2025-06-17 23:44:25] [INFO] Loaded command: unban
+- [2025-06-17 23:44:25] [INFO] Loaded command: unjail
+- [2025-06-17 23:44:25] [INFO] Loaded command: unlock
+- [2025-06-17 23:44:25] [INFO] Loaded command: unmute
+- [2025-06-17 23:44:26] [INFO] Loaded command: verify
+- [2025-06-17 23:44:26] [INFO] Loaded command: warn
+- [2025-06-17 23:44:26] [INFO] Loaded command: warns
+- [2025-06-17 23:44:26] [INFO] Loaded command: dev
+- [2025-06-17 23:44:26] [INFO] Loaded command: massdm
+- [2025-06-17 23:44:26] [INFO] Loaded command: nuke-servre
+- [2025-06-17 23:44:26] [INFO] Loaded command: premium
+- [2025-06-17 23:44:26] [INFO] Loaded command: setuproles
+- [2025-06-17 23:44:26] [INFO] Loaded command: shutdown
+- [2025-06-17 23:44:26] [INFO] Loaded command: modmail
+- [2025-06-17 23:44:26] [INFO] Loaded command: moveall
+- [2025-06-17 23:44:26] [INFO] Loaded command: rolemenu
+- [2025-06-17 23:44:26] [INFO] Loaded command: sendnotify
+- [2025-06-17 23:44:26] [INFO] Loaded command: ping
+- [2025-06-17 23:44:26] [INFO] Loaded command: setembedcolor
+- [2025-06-17 23:44:26] [INFO] Loaded command: setembedfooter
+- [2025-06-17 23:44:26] [INFO] Loaded command: setembedicon
+- [2025-06-17 23:44:26] [INFO] Loaded command: avatar
+- [2025-06-17 23:44:26] [INFO] Loaded command: botinfo
+- [2025-06-17 23:44:26] [INFO] Loaded command: channelinfo
+- [2025-06-17 23:44:26] [INFO] Loaded command: help
+- [2025-06-17 23:44:26] [INFO] Loaded command: invite
+- [2025-06-17 23:44:26] [INFO] Loaded command: roleinfo
+- [2025-06-17 23:44:26] [INFO] Loaded command: serverinfo
+- [2025-06-17 23:44:26] [INFO] Loaded command: userinfo
+- [2025-06-17 23:44:26] [INFO] Loaded event: guildMemberAdd
+- [2025-06-17 23:44:26] [INFO] Loaded event: interactionCreate
+- [2025-06-17 23:44:26] [INFO] Loaded event: messageCreate
+- [2025-06-17 23:44:26] [INFO] Loaded event: messageReactionAdd
+- [2025-06-17 23:44:26] [INFO] Loaded event: messageReactionRemove
+- [2025-06-17 23:44:26] [INFO] Loaded event: ready
+- [2025-06-17 23:44:26] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-17 23:44:26] [INFO] Loaded slash command: ping
+- [2025-06-17 23:44:26] [INFO] Loaded slash command: setembedcolor
+- [2025-06-17 23:44:26] [INFO] Loaded slash command: setembedfooter
+- [2025-06-17 23:44:26] [INFO] Loaded slash command: setembedicon
+- [2025-06-17 23:44:26] [INFO] Initializing bot and attempting to log in...
+- [2025-06-17 23:44:27] [INFO] ✅ Database connection successful
+- [2025-06-17 23:44:28] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-17 23:44:29] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-17 23:44:29] [INFO] Registered all slash commands globally.
+- [2025-06-17 23:44:29] [INFO] Initializing configs for 5 guilds...
+- [2025-06-17 23:44:29] [INFO] ✅ Guild configurations initialized
+- [2025-06-17 23:44:30] [INFO] Successfully updated dev server status message.
+- [2025-06-17 23:44:39] [ERROR] Command jail failed: TypeError: getGuildSettings is not a function
+- [2025-06-17 23:45:09] [ERROR] Query error: [object Object]
+- [2025-06-17 23:45:09] [ERROR] Error getting all temp channels: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-17 23:45:56] [ERROR] Failed to reload command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\moderation\jail.js: SyntaxError: Unexpected identifier 'permissions'
+- [2025-06-17 23:46:00] [ERROR] Failed to reload command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\moderation\jail.js: SyntaxError: Unexpected identifier 'permissions'
+- [2025-06-17 23:46:03] [INFO] Reloaded command: jail
+- [2025-06-17 23:46:19] [INFO] Reloaded command: jail
+- [2025-06-17 23:46:29] [INFO] Reloaded command: jail
+- [2025-06-17 23:46:32] [INFO] Reloaded command: jail
+- [2025-06-17 23:46:35] [INFO] Reloaded command: jail
+- [2025-06-17 23:46:38] [ERROR] Query error: [object Object]
+- [2025-06-17 23:46:38] [ERROR] Error getting all temp voice configs for guild 1038540608396066856: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-17 23:46:38] [ERROR] Discord client error: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-17 23:46:38] [ERROR] Discord client error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-17 23:46:38] [ERROR] Query error: [object Object]
+- [2025-06-17 23:46:38] [ERROR] Error getting all temp voice configs for guild 1038540608396066856: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-17 23:46:38] [ERROR] Discord client error: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-17 23:46:38] [ERROR] Discord client error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-17 23:47:08] [ERROR] Command unjail failed: TypeError: getGuildSettings is not a function
+- [2025-06-17 23:47:34] [INFO] Reloaded command: unjail
+- [2025-06-17 23:48:55] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-17 23:48:55] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-17 23:48:55] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-17 23:48:56] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-17 23:48:56] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-17 23:48:56] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-17 23:48:56] [INFO] Shutdown complete. Exiting.
+
+## 2025-06-18
+- [2025-06-18 00:07:40] [ERROR] ❌ Database connection for migrator failed: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-18 00:07:40] [ERROR] Migration process failed. Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-18 00:09:07] [INFO] ✅ Database connection for migrator is successful.
+- [2025-06-18 00:09:08] [INFO] ✅ 'schema_migrations' table ensured.
+- [2025-06-18 00:09:08] [INFO] 🔄 Applying migration: 20250618T00064_create_auto_reactions_table.sql...
+- [2025-06-18 00:09:08] [INFO] ✅ Migration 20250618T00064_create_auto_reactions_table.sql applied successfully.
+- [2025-06-18 00:09:08] [INFO] 🔄 Applying migration: 20250618T00085_create_auto_reactions_table.sql...
+- [2025-06-18 00:09:08] [INFO] ✅ Migration 20250618T00085_create_auto_reactions_table.sql applied successfully.
+- [2025-06-18 00:09:08] [INFO] Applied 2 new migration(s).
+- [2025-06-18 00:09:08] [INFO] Migrations completed.
+
+## 2025-06-21
+- [2025-06-21 15:40:48] [INFO] Loaded command: autoban
+- [2025-06-21 15:40:48] [INFO] Loaded command: autospam
+- [2025-06-21 15:40:48] [INFO] Loaded command: add
+- [2025-06-21 15:40:48] [INFO] Loaded command: ban
+- [2025-06-21 15:40:48] [INFO] Loaded command: clear
+- [2025-06-21 15:40:48] [INFO] Loaded command: delwarn
+- [2025-06-21 15:40:48] [INFO] Loaded command: deny
+- [2025-06-21 15:40:48] [INFO] Loaded command: jail
+- [2025-06-21 15:40:48] [INFO] Loaded command: jailsettings
+- [2025-06-21 15:40:48] [INFO] Loaded command: kick
+- [2025-06-21 15:40:48] [INFO] Loaded command: lock
+- [2025-06-21 15:40:48] [INFO] Loaded command: move
+- [2025-06-21 15:40:48] [INFO] Loaded command: mute
+- [2025-06-21 15:40:48] [INFO] Loaded command: nickname
+- [2025-06-21 15:40:48] [INFO] Loaded command: role
+- [2025-06-21 15:40:48] [INFO] Loaded command: setautorole
+- [2025-06-21 15:40:48] [INFO] Loaded command: setjailrole
+- [2025-06-21 15:40:48] [INFO] Loaded command: setjailvoice
+- [2025-06-21 15:40:48] [INFO] Loaded command: slowmode
+- [2025-06-21 15:40:48] [INFO] Loaded command: tempvoice
+- [2025-06-21 15:40:48] [INFO] Loaded command: unban
+- [2025-06-21 15:40:48] [INFO] Loaded command: unjail
+- [2025-06-21 15:40:48] [INFO] Loaded command: unlock
+- [2025-06-21 15:40:48] [INFO] Loaded command: unmute
+- [2025-06-21 15:40:48] [INFO] Loaded command: verify
+- [2025-06-21 15:40:48] [INFO] Loaded command: warn
+- [2025-06-21 15:40:48] [INFO] Loaded command: warns
+- [2025-06-21 15:40:48] [INFO] Loaded command: afk
+- [2025-06-21 15:40:48] [INFO] Loaded command: autoreact
+- [2025-06-21 15:40:48] [INFO] Loaded command: dev
+- [2025-06-21 15:40:48] [INFO] Loaded command: massdm
+- [2025-06-21 15:40:48] [INFO] Loaded command: nuke-server
+- [2025-06-21 15:40:48] [INFO] Loaded command: premium
+- [2025-06-21 15:40:48] [INFO] Loaded command: setuproles
+- [2025-06-21 15:40:48] [INFO] Loaded command: shutdown
+- [2025-06-21 15:40:48] [INFO] Loaded command: modmail
+- [2025-06-21 15:40:48] [INFO] Loaded command: moveall
+- [2025-06-21 15:40:48] [INFO] Loaded command: rolemenu
+- [2025-06-21 15:40:48] [INFO] Loaded command: sendnotify
+- [2025-06-21 15:40:49] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\stellar\setupstats.js: Error: Cannot find module '../../../../database/guildConfig'
+Require stack:
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\stellar\setupstats.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\handlers\commandHandler.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\index.js
+- [2025-06-21 15:40:49] [INFO] Loaded command: unafk
+- [2025-06-21 15:40:49] [INFO] Loaded command: ping
+- [2025-06-21 15:40:49] [INFO] Loaded command: setembedcolor
+- [2025-06-21 15:40:49] [INFO] Loaded command: setembedfooter
+- [2025-06-21 15:40:49] [INFO] Loaded command: setembedicon
+- [2025-06-21 15:40:49] [INFO] Loaded command: avatar
+- [2025-06-21 15:40:49] [INFO] Loaded command: botinfo
+- [2025-06-21 15:40:49] [INFO] Loaded command: channelinfo
+- [2025-06-21 15:40:49] [INFO] Loaded command: help
+- [2025-06-21 15:40:49] [INFO] Loaded command: invite
+- [2025-06-21 15:40:49] [INFO] Loaded command: roleinfo
+- [2025-06-21 15:40:49] [INFO] Loaded command: serverinfo
+- [2025-06-21 15:40:49] [INFO] Loaded command: userinfo
+- [2025-06-21 15:40:49] [INFO] Loaded event: guildMemberAdd
+- [2025-06-21 15:40:49] [INFO] Loaded event: interactionCreate
+- [2025-06-21 15:40:49] [INFO] Loaded event: messageCreate
+- [2025-06-21 15:40:49] [INFO] Loaded event: messageReactionAdd
+- [2025-06-21 15:40:49] [INFO] Loaded event: messageReactionRemove
+- [2025-06-21 15:40:49] [INFO] Loaded event: ready
+- [2025-06-21 15:40:49] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-21 15:40:49] [INFO] Loaded slash command: ping
+- [2025-06-21 15:40:49] [INFO] Loaded slash command: setembedcolor
+- [2025-06-21 15:40:49] [INFO] Loaded slash command: setembedfooter
+- [2025-06-21 15:40:49] [INFO] Loaded slash command: setembedicon
+- [2025-06-21 15:40:49] [INFO] Initializing bot and attempting to log in...
+- [2025-06-21 15:40:51] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-21 15:40:51] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-21 15:40:52] [INFO] Registered all slash commands globally.
+- [2025-06-21 15:40:52] [INFO] Initializing configs for 5 guilds...
+- [2025-06-21 15:40:56] [INFO] ✅ Guild configurations initialized
+- [2025-06-21 15:40:56] [INFO] ✅ Database connection successful
+- [2025-06-21 15:40:57] [INFO] Successfully updated dev server status message.
+- [2025-06-21 15:41:11] [INFO] Reloaded command: setupstats
+- [2025-06-21 15:42:00] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-21 15:42:00] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-21 15:42:00] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-21 15:42:00] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-21 15:42:00] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-21 15:42:00] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-21 15:42:00] [INFO] Shutdown complete. Exiting.
+- [2025-06-21 15:58:58] [INFO] Loaded command: autoban
+- [2025-06-21 15:58:58] [INFO] Loaded command: autospam
+- [2025-06-21 15:58:58] [INFO] Loaded command: add
+- [2025-06-21 15:58:58] [INFO] Loaded command: ban
+- [2025-06-21 15:58:58] [INFO] Loaded command: clear
+- [2025-06-21 15:58:58] [INFO] Loaded command: delwarn
+- [2025-06-21 15:58:58] [INFO] Loaded command: deny
+- [2025-06-21 15:58:58] [INFO] Loaded command: jail
+- [2025-06-21 15:58:58] [INFO] Loaded command: jailsettings
+- [2025-06-21 15:58:58] [INFO] Loaded command: kick
+- [2025-06-21 15:58:58] [INFO] Loaded command: lock
+- [2025-06-21 15:58:58] [INFO] Loaded command: move
+- [2025-06-21 15:58:58] [INFO] Loaded command: mute
+- [2025-06-21 15:58:58] [INFO] Loaded command: nickname
+- [2025-06-21 15:58:58] [INFO] Loaded command: role
+- [2025-06-21 15:58:58] [INFO] Loaded command: setautorole
+- [2025-06-21 15:58:58] [INFO] Loaded command: setjailrole
+- [2025-06-21 15:58:58] [INFO] Loaded command: setjailvoice
+- [2025-06-21 15:58:58] [INFO] Loaded command: slowmode
+- [2025-06-21 15:58:58] [INFO] Loaded command: tempvoice
+- [2025-06-21 15:58:58] [INFO] Loaded command: unban
+- [2025-06-21 15:58:58] [INFO] Loaded command: unjail
+- [2025-06-21 15:58:58] [INFO] Loaded command: unlock
+- [2025-06-21 15:58:58] [INFO] Loaded command: unmute
+- [2025-06-21 15:58:58] [INFO] Loaded command: verify
+- [2025-06-21 15:58:58] [INFO] Loaded command: warn
+- [2025-06-21 15:58:58] [INFO] Loaded command: warns
+- [2025-06-21 15:58:58] [INFO] Loaded command: afk
+- [2025-06-21 15:58:58] [INFO] Loaded command: autoreact
+- [2025-06-21 15:58:58] [INFO] Loaded command: dev
+- [2025-06-21 15:58:58] [INFO] Loaded command: massdm
+- [2025-06-21 15:58:58] [INFO] Loaded command: nuke-server
+- [2025-06-21 15:58:58] [INFO] Loaded command: premium
+- [2025-06-21 15:58:58] [INFO] Loaded command: setuproles
+- [2025-06-21 15:58:58] [INFO] Loaded command: shutdown
+- [2025-06-21 15:58:58] [INFO] Loaded command: modmail
+- [2025-06-21 15:58:58] [INFO] Loaded command: moveall
+- [2025-06-21 15:58:58] [INFO] Loaded command: rolemenu
+- [2025-06-21 15:58:58] [INFO] Loaded command: sendnotify
+- [2025-06-21 15:58:58] [INFO] Loaded command: setupstats
+- [2025-06-21 15:58:58] [INFO] Loaded command: unafk
+- [2025-06-21 15:58:58] [INFO] Loaded command: ping
+- [2025-06-21 15:58:58] [INFO] Loaded command: setembedcolor
+- [2025-06-21 15:58:58] [INFO] Loaded command: setembedfooter
+- [2025-06-21 15:58:58] [INFO] Loaded command: setembedicon
+- [2025-06-21 15:58:58] [INFO] Loaded command: avatar
+- [2025-06-21 15:58:58] [INFO] Loaded command: botinfo
+- [2025-06-21 15:58:58] [INFO] Loaded command: channelinfo
+- [2025-06-21 15:58:58] [INFO] Loaded command: help
+- [2025-06-21 15:58:58] [INFO] Loaded command: invite
+- [2025-06-21 15:58:58] [INFO] Loaded command: roleinfo
+- [2025-06-21 15:58:58] [INFO] Loaded command: serverinfo
+- [2025-06-21 15:58:58] [INFO] Loaded command: userinfo
+- [2025-06-21 15:58:58] [INFO] Loaded event: guildMemberAdd
+- [2025-06-21 15:58:58] [INFO] Loaded event: interactionCreate
+- [2025-06-21 15:58:58] [INFO] Loaded event: messageCreate
+- [2025-06-21 15:58:58] [INFO] Loaded event: messageReactionAdd
+- [2025-06-21 15:58:58] [INFO] Loaded event: messageReactionRemove
+- [2025-06-21 15:58:59] [INFO] Loaded event: ready
+- [2025-06-21 15:58:59] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-21 15:58:59] [INFO] Loaded slash command: ping
+- [2025-06-21 15:58:59] [INFO] Loaded slash command: setembedcolor
+- [2025-06-21 15:58:59] [INFO] Loaded slash command: setembedfooter
+- [2025-06-21 15:58:59] [INFO] Loaded slash command: setembedicon
+- [2025-06-21 15:58:59] [INFO] Initializing bot and attempting to log in...
+- [2025-06-21 15:59:01] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-21 15:59:01] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-21 15:59:01] [INFO] Registered all slash commands globally.
+- [2025-06-21 15:59:01] [INFO] Initializing configs for 5 guilds...
+- [2025-06-21 15:59:05] [INFO] ✅ Database connection successful
+- [2025-06-21 15:59:06] [INFO] ✅ Guild configurations initialized
+- [2025-06-21 15:59:06] [INFO] Successfully updated dev server status message.
+- [2025-06-21 15:59:11] [ERROR] Discord client error: SyntaxError: await is only valid in async functions and the top level bodies of modules
+- [2025-06-21 15:59:11] [ERROR] Discord client error: await is only valid in async functions and the top level bodies of modules
+- [2025-06-21 15:59:31] [ERROR] Discord client error: SyntaxError: await is only valid in async functions and the top level bodies of modules
+- [2025-06-21 15:59:31] [ERROR] Discord client error: await is only valid in async functions and the top level bodies of modules
+- [2025-06-21 15:59:36] [ERROR] Discord client error: SyntaxError: await is only valid in async functions and the top level bodies of modules
+- [2025-06-21 15:59:36] [ERROR] Discord client error: await is only valid in async functions and the top level bodies of modules
+- [2025-06-21 15:59:38] [ERROR] Discord client error: SyntaxError: await is only valid in async functions and the top level bodies of modules
+- [2025-06-21 15:59:38] [ERROR] Discord client error: await is only valid in async functions and the top level bodies of modules
+- [2025-06-21 15:59:53] [ERROR] Discord client error: SyntaxError: await is only valid in async functions and the top level bodies of modules
+- [2025-06-21 15:59:53] [ERROR] Discord client error: await is only valid in async functions and the top level bodies of modules
+- [2025-06-21 16:00:25] [ERROR] Discord client error: SyntaxError: await is only valid in async functions and the top level bodies of modules
+- [2025-06-21 16:00:25] [ERROR] Discord client error: await is only valid in async functions and the top level bodies of modules
+- [2025-06-21 16:02:06] [ERROR] Discord client error: Error [ERR_REQUIRE_ASYNC_MODULE]: require() cannot be used on an ESM graph with top-level await. Use import() instead. To see where the top-level await comes from, use --experimental-print-required-tla.
+  From C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\events\voiceStateUpdate.js 
+  Requiring C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\utils\updateStatsChannels.js 
+- [2025-06-21 16:02:06] [ERROR] Discord client error: require() cannot be used on an ESM graph with top-level await. Use import() instead. To see where the top-level await comes from, use --experimental-print-required-tla.
+  From C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\events\voiceStateUpdate.js 
+  Requiring C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\utils\updateStatsChannels.js 
+- [2025-06-21 16:02:21] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-21 16:02:21] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-21 16:02:21] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-21 16:02:21] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-21 16:02:21] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-21 16:02:22] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-21 16:02:22] [INFO] Shutdown complete. Exiting.
+- [2025-06-21 16:02:30] [INFO] Loaded command: autoban
+- [2025-06-21 16:02:30] [INFO] Loaded command: autospam
+- [2025-06-21 16:02:31] [INFO] Loaded command: add
+- [2025-06-21 16:02:31] [INFO] Loaded command: ban
+- [2025-06-21 16:02:31] [INFO] Loaded command: clear
+- [2025-06-21 16:02:31] [INFO] Loaded command: delwarn
+- [2025-06-21 16:02:31] [INFO] Loaded command: deny
+- [2025-06-21 16:02:31] [INFO] Loaded command: jail
+- [2025-06-21 16:02:31] [INFO] Loaded command: jailsettings
+- [2025-06-21 16:02:31] [INFO] Loaded command: kick
+- [2025-06-21 16:02:31] [INFO] Loaded command: lock
+- [2025-06-21 16:02:31] [INFO] Loaded command: move
+- [2025-06-21 16:02:31] [INFO] Loaded command: mute
+- [2025-06-21 16:02:31] [INFO] Loaded command: nickname
+- [2025-06-21 16:02:31] [INFO] Loaded command: role
+- [2025-06-21 16:02:31] [INFO] Loaded command: setautorole
+- [2025-06-21 16:02:31] [INFO] Loaded command: setjailrole
+- [2025-06-21 16:02:31] [INFO] Loaded command: setjailvoice
+- [2025-06-21 16:02:31] [INFO] Loaded command: slowmode
+- [2025-06-21 16:02:31] [INFO] Loaded command: tempvoice
+- [2025-06-21 16:02:31] [INFO] Loaded command: unban
+- [2025-06-21 16:02:31] [INFO] Loaded command: unjail
+- [2025-06-21 16:02:31] [INFO] Loaded command: unlock
+- [2025-06-21 16:02:31] [INFO] Loaded command: unmute
+- [2025-06-21 16:02:31] [INFO] Loaded command: verify
+- [2025-06-21 16:02:31] [INFO] Loaded command: warn
+- [2025-06-21 16:02:31] [INFO] Loaded command: warns
+- [2025-06-21 16:02:31] [INFO] Loaded command: afk
+- [2025-06-21 16:02:31] [INFO] Loaded command: autoreact
+- [2025-06-21 16:02:31] [INFO] Loaded command: dev
+- [2025-06-21 16:02:31] [INFO] Loaded command: massdm
+- [2025-06-21 16:02:31] [INFO] Loaded command: nuke-server
+- [2025-06-21 16:02:31] [INFO] Loaded command: premium
+- [2025-06-21 16:02:31] [INFO] Loaded command: setuproles
+- [2025-06-21 16:02:31] [INFO] Loaded command: shutdown
+- [2025-06-21 16:02:31] [INFO] Loaded command: modmail
+- [2025-06-21 16:02:31] [INFO] Loaded command: moveall
+- [2025-06-21 16:02:31] [INFO] Loaded command: rolemenu
+- [2025-06-21 16:02:31] [INFO] Loaded command: sendnotify
+- [2025-06-21 16:02:31] [INFO] Loaded command: setupstats
+- [2025-06-21 16:02:31] [INFO] Loaded command: unafk
+- [2025-06-21 16:02:31] [INFO] Loaded command: ping
+- [2025-06-21 16:02:31] [INFO] Loaded command: setembedcolor
+- [2025-06-21 16:02:31] [INFO] Loaded command: setembedfooter
+- [2025-06-21 16:02:31] [INFO] Loaded command: setembedicon
+- [2025-06-21 16:02:31] [INFO] Loaded command: avatar
+- [2025-06-21 16:02:31] [INFO] Loaded command: botinfo
+- [2025-06-21 16:02:31] [INFO] Loaded command: channelinfo
+- [2025-06-21 16:02:32] [INFO] Loaded command: help
+- [2025-06-21 16:02:32] [INFO] Loaded command: invite
+- [2025-06-21 16:02:32] [INFO] Loaded command: roleinfo
+- [2025-06-21 16:02:32] [INFO] Loaded command: serverinfo
+- [2025-06-21 16:02:32] [INFO] Loaded command: userinfo
+- [2025-06-21 16:02:32] [INFO] Loaded event: guildMemberAdd
+- [2025-06-21 16:02:32] [INFO] Loaded event: interactionCreate
+- [2025-06-21 16:02:32] [INFO] Loaded event: messageCreate
+- [2025-06-21 16:02:32] [INFO] Loaded event: messageReactionAdd
+- [2025-06-21 16:02:32] [INFO] Loaded event: messageReactionRemove
+- [2025-06-21 16:02:32] [INFO] Loaded event: ready
+- [2025-06-21 16:02:32] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-21 16:02:32] [INFO] Loaded slash command: ping
+- [2025-06-21 16:02:32] [INFO] Loaded slash command: setembedcolor
+- [2025-06-21 16:02:32] [INFO] Loaded slash command: setembedfooter
+- [2025-06-21 16:02:32] [INFO] Loaded slash command: setembedicon
+- [2025-06-21 16:02:32] [INFO] Initializing bot and attempting to log in...
+- [2025-06-21 16:02:33] [INFO] ✅ Database connection successful
+- [2025-06-21 16:02:34] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-21 16:02:34] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-21 16:02:34] [INFO] Registered all slash commands globally.
+- [2025-06-21 16:02:34] [INFO] Initializing configs for 5 guilds...
+- [2025-06-21 16:02:35] [INFO] ✅ Guild configurations initialized
+- [2025-06-21 16:02:36] [INFO] Successfully updated dev server status message.
+- [2025-06-21 16:02:55] [ERROR] Discord client error: Error [ERR_REQUIRE_ASYNC_MODULE]: require() cannot be used on an ESM graph with top-level await. Use import() instead. To see where the top-level await comes from, use --experimental-print-required-tla.
+  From C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\events\voiceStateUpdate.js 
+  Requiring C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\utils\updateStatsChannels.js 
+- [2025-06-21 16:02:55] [ERROR] Discord client error: require() cannot be used on an ESM graph with top-level await. Use import() instead. To see where the top-level await comes from, use --experimental-print-required-tla.
+  From C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\events\voiceStateUpdate.js 
+  Requiring C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\utils\updateStatsChannels.js 
+- [2025-06-21 16:04:23] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-21 16:04:23] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-21 16:04:23] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-21 16:04:23] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-21 16:04:23] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-21 16:04:23] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-21 16:04:23] [INFO] Shutdown complete. Exiting.
+- [2025-06-21 16:08:48] [INFO] Loaded command: autoban
+- [2025-06-21 16:08:48] [INFO] Loaded command: autospam
+- [2025-06-21 16:08:48] [INFO] Loaded command: add
+- [2025-06-21 16:08:48] [INFO] Loaded command: ban
+- [2025-06-21 16:08:48] [INFO] Loaded command: clear
+- [2025-06-21 16:08:48] [INFO] Loaded command: delwarn
+- [2025-06-21 16:08:48] [INFO] Loaded command: deny
+- [2025-06-21 16:08:48] [INFO] Loaded command: jail
+- [2025-06-21 16:08:48] [INFO] Loaded command: jailsettings
+- [2025-06-21 16:08:48] [INFO] Loaded command: kick
+- [2025-06-21 16:08:48] [INFO] Loaded command: lock
+- [2025-06-21 16:08:48] [INFO] Loaded command: move
+- [2025-06-21 16:08:48] [INFO] Loaded command: mute
+- [2025-06-21 16:08:48] [INFO] Loaded command: nickname
+- [2025-06-21 16:08:48] [INFO] Loaded command: role
+- [2025-06-21 16:08:48] [INFO] Loaded command: setautorole
+- [2025-06-21 16:08:48] [INFO] Loaded command: setjailrole
+- [2025-06-21 16:08:48] [INFO] Loaded command: setjailvoice
+- [2025-06-21 16:08:48] [INFO] Loaded command: slowmode
+- [2025-06-21 16:08:48] [INFO] Loaded command: tempvoice
+- [2025-06-21 16:08:48] [INFO] Loaded command: unban
+- [2025-06-21 16:08:48] [INFO] Loaded command: unjail
+- [2025-06-21 16:08:48] [INFO] Loaded command: unlock
+- [2025-06-21 16:08:48] [INFO] Loaded command: unmute
+- [2025-06-21 16:08:48] [INFO] Loaded command: verify
+- [2025-06-21 16:08:48] [INFO] Loaded command: warn
+- [2025-06-21 16:08:48] [INFO] Loaded command: warns
+- [2025-06-21 16:08:48] [INFO] Loaded command: afk
+- [2025-06-21 16:08:48] [INFO] Loaded command: autoreact
+- [2025-06-21 16:08:48] [INFO] Loaded command: dev
+- [2025-06-21 16:08:48] [INFO] Loaded command: massdm
+- [2025-06-21 16:08:48] [INFO] Loaded command: nuke-server
+- [2025-06-21 16:08:48] [INFO] Loaded command: premium
+- [2025-06-21 16:08:48] [INFO] Loaded command: setuproles
+- [2025-06-21 16:08:48] [INFO] Loaded command: shutdown
+- [2025-06-21 16:08:48] [INFO] Loaded command: modmail
+- [2025-06-21 16:08:48] [INFO] Loaded command: moveall
+- [2025-06-21 16:08:48] [INFO] Loaded command: rolemenu
+- [2025-06-21 16:08:48] [INFO] Loaded command: sendnotify
+- [2025-06-21 16:08:48] [INFO] Loaded command: setupstats
+- [2025-06-21 16:08:48] [INFO] Loaded command: unafk
+- [2025-06-21 16:08:48] [INFO] Loaded command: ping
+- [2025-06-21 16:08:49] [INFO] Loaded command: setembedcolor
+- [2025-06-21 16:08:49] [INFO] Loaded command: setembedfooter
+- [2025-06-21 16:08:49] [INFO] Loaded command: setembedicon
+- [2025-06-21 16:08:49] [INFO] Loaded command: avatar
+- [2025-06-21 16:08:49] [INFO] Loaded command: botinfo
+- [2025-06-21 16:08:49] [INFO] Loaded command: channelinfo
+- [2025-06-21 16:08:49] [INFO] Loaded command: help
+- [2025-06-21 16:08:49] [INFO] Loaded command: invite
+- [2025-06-21 16:08:49] [INFO] Loaded command: roleinfo
+- [2025-06-21 16:08:49] [INFO] Loaded command: serverinfo
+- [2025-06-21 16:08:49] [INFO] Loaded command: userinfo
+- [2025-06-21 16:08:49] [INFO] Loaded event: guildMemberAdd
+- [2025-06-21 16:08:49] [INFO] Loaded event: interactionCreate
+- [2025-06-21 16:08:49] [INFO] Loaded event: messageCreate
+- [2025-06-21 16:08:49] [INFO] Loaded event: messageReactionAdd
+- [2025-06-21 16:08:49] [INFO] Loaded event: messageReactionRemove
+- [2025-06-21 16:08:49] [INFO] Loaded event: ready
+- [2025-06-21 16:08:49] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-21 16:08:49] [INFO] Loaded slash command: ping
+- [2025-06-21 16:08:49] [INFO] Loaded slash command: setembedcolor
+- [2025-06-21 16:08:49] [INFO] Loaded slash command: setembedfooter
+- [2025-06-21 16:08:49] [INFO] Loaded slash command: setembedicon
+- [2025-06-21 16:08:49] [INFO] Initializing bot and attempting to log in...
+- [2025-06-21 16:08:51] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-21 16:08:51] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-21 16:08:51] [INFO] Registered all slash commands globally.
+- [2025-06-21 16:08:51] [INFO] Initializing configs for 5 guilds...
+- [2025-06-21 16:08:55] [INFO] ✅ Database connection successful
+- [2025-06-21 16:08:56] [INFO] ✅ Guild configurations initialized
+- [2025-06-21 16:08:57] [INFO] Successfully updated dev server status message.
+- [2025-06-21 16:09:17] [ERROR] Discord client error: Error [ERR_REQUIRE_ASYNC_MODULE]: require() cannot be used on an ESM graph with top-level await. Use import() instead. To see where the top-level await comes from, use --experimental-print-required-tla.
+  From C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\events\voiceStateUpdate.js 
+  Requiring C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\utils\updateStatsChannels.js 
+- [2025-06-21 16:09:17] [ERROR] Discord client error: require() cannot be used on an ESM graph with top-level await. Use import() instead. To see where the top-level await comes from, use --experimental-print-required-tla.
+  From C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\events\voiceStateUpdate.js 
+  Requiring C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\utils\updateStatsChannels.js 
+- [2025-06-21 16:10:49] [ERROR] Discord client error: Error [ERR_REQUIRE_ASYNC_MODULE]: require() cannot be used on an ESM graph with top-level await. Use import() instead. To see where the top-level await comes from, use --experimental-print-required-tla.
+  From C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\events\voiceStateUpdate.js 
+  Requiring C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\utils\updateStatsChannels.js 
+- [2025-06-21 16:10:49] [ERROR] Discord client error: require() cannot be used on an ESM graph with top-level await. Use import() instead. To see where the top-level await comes from, use --experimental-print-required-tla.
+  From C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\events\voiceStateUpdate.js 
+  Requiring C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\utils\updateStatsChannels.js 
+- [2025-06-21 16:10:49] [ERROR] Discord client error: Error [ERR_REQUIRE_ASYNC_MODULE]: require() cannot be used on an ESM graph with top-level await. Use import() instead. To see where the top-level await comes from, use --experimental-print-required-tla.
+  From C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\events\voiceStateUpdate.js 
+  Requiring C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\utils\updateStatsChannels.js 
+- [2025-06-21 16:10:49] [ERROR] Discord client error: require() cannot be used on an ESM graph with top-level await. Use import() instead. To see where the top-level await comes from, use --experimental-print-required-tla.
+  From C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\events\voiceStateUpdate.js 
+  Requiring C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\utils\updateStatsChannels.js 
+- [2025-06-21 16:10:58] [ERROR] Discord client error: Error [ERR_REQUIRE_ASYNC_MODULE]: require() cannot be used on an ESM graph with top-level await. Use import() instead. To see where the top-level await comes from, use --experimental-print-required-tla.
+  From C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\events\voiceStateUpdate.js 
+  Requiring C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\utils\updateStatsChannels.js 
+- [2025-06-21 16:10:58] [ERROR] Discord client error: require() cannot be used on an ESM graph with top-level await. Use import() instead. To see where the top-level await comes from, use --experimental-print-required-tla.
+  From C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\events\voiceStateUpdate.js 
+  Requiring C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\utils\updateStatsChannels.js 
+- [2025-06-21 16:11:47] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-21 16:11:47] [INFO] Reloaded event: guildMemberAdd
+- [2025-06-21 16:11:47] [ERROR] Failed to reload command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\stellar\setupstats.js: Error: Cannot find module '../../../../database/guildConfig'
+Require stack:
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\stellar\setupstats.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\handlers\commandHandler.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\index.js
+- [2025-06-21 16:11:47] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-21 16:11:47] [INFO] Reloaded event: guildMemberAdd
+- [2025-06-21 16:11:47] [ERROR] Failed to unload command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\stellar\setupstats.js: Error: ENOENT: no such file or directory, open 'C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\stellar\setupstats.js'
+- [2025-06-21 16:11:55] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-21 16:11:55] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-21 16:11:56] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-21 16:11:56] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-21 16:11:56] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-21 16:11:56] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-21 16:11:56] [INFO] Shutdown complete. Exiting.
+- [2025-06-21 16:12:18] [INFO] Loaded command: autoban
+- [2025-06-21 16:12:18] [INFO] Loaded command: autospam
+- [2025-06-21 16:12:18] [INFO] Loaded command: add
+- [2025-06-21 16:12:18] [INFO] Loaded command: ban
+- [2025-06-21 16:12:18] [INFO] Loaded command: clear
+- [2025-06-21 16:12:18] [INFO] Loaded command: delwarn
+- [2025-06-21 16:12:18] [INFO] Loaded command: deny
+- [2025-06-21 16:12:18] [INFO] Loaded command: jail
+- [2025-06-21 16:12:18] [INFO] Loaded command: jailsettings
+- [2025-06-21 16:12:18] [INFO] Loaded command: kick
+- [2025-06-21 16:12:18] [INFO] Loaded command: lock
+- [2025-06-21 16:12:18] [INFO] Loaded command: move
+- [2025-06-21 16:12:18] [INFO] Loaded command: mute
+- [2025-06-21 16:12:18] [INFO] Loaded command: nickname
+- [2025-06-21 16:12:18] [INFO] Loaded command: role
+- [2025-06-21 16:12:18] [INFO] Loaded command: setautorole
+- [2025-06-21 16:12:18] [INFO] Loaded command: setjailrole
+- [2025-06-21 16:12:18] [INFO] Loaded command: setjailvoice
+- [2025-06-21 16:12:18] [INFO] Loaded command: slowmode
+- [2025-06-21 16:12:18] [INFO] Loaded command: tempvoice
+- [2025-06-21 16:12:18] [INFO] Loaded command: unban
+- [2025-06-21 16:12:18] [INFO] Loaded command: unjail
+- [2025-06-21 16:12:18] [INFO] Loaded command: unlock
+- [2025-06-21 16:12:18] [INFO] Loaded command: unmute
+- [2025-06-21 16:12:18] [INFO] Loaded command: verify
+- [2025-06-21 16:12:18] [INFO] Loaded command: warn
+- [2025-06-21 16:12:18] [INFO] Loaded command: warns
+- [2025-06-21 16:12:18] [INFO] Loaded command: afk
+- [2025-06-21 16:12:18] [INFO] Loaded command: autoreact
+- [2025-06-21 16:12:18] [INFO] Loaded command: dev
+- [2025-06-21 16:12:19] [INFO] Loaded command: massdm
+- [2025-06-21 16:12:19] [INFO] Loaded command: nuke-server
+- [2025-06-21 16:12:19] [INFO] Loaded command: premium
+- [2025-06-21 16:12:19] [INFO] Loaded command: setuproles
+- [2025-06-21 16:12:19] [INFO] Loaded command: shutdown
+- [2025-06-21 16:12:19] [INFO] Loaded command: modmail
+- [2025-06-21 16:12:19] [INFO] Loaded command: moveall
+- [2025-06-21 16:12:19] [INFO] Loaded command: rolemenu
+- [2025-06-21 16:12:19] [INFO] Loaded command: sendnotify
+- [2025-06-21 16:12:19] [INFO] Loaded command: unafk
+- [2025-06-21 16:12:19] [INFO] Loaded command: ping
+- [2025-06-21 16:12:19] [INFO] Loaded command: setembedcolor
+- [2025-06-21 16:12:19] [INFO] Loaded command: setembedfooter
+- [2025-06-21 16:12:19] [INFO] Loaded command: setembedicon
+- [2025-06-21 16:12:19] [INFO] Loaded command: avatar
+- [2025-06-21 16:12:19] [INFO] Loaded command: botinfo
+- [2025-06-21 16:12:19] [INFO] Loaded command: channelinfo
+- [2025-06-21 16:12:19] [INFO] Loaded command: help
+- [2025-06-21 16:12:19] [INFO] Loaded command: invite
+- [2025-06-21 16:12:19] [INFO] Loaded command: roleinfo
+- [2025-06-21 16:12:19] [INFO] Loaded command: serverinfo
+- [2025-06-21 16:12:19] [INFO] Loaded command: userinfo
+- [2025-06-21 16:12:19] [INFO] Loaded event: guildMemberAdd
+- [2025-06-21 16:12:19] [INFO] Loaded event: interactionCreate
+- [2025-06-21 16:12:19] [INFO] Loaded event: messageCreate
+- [2025-06-21 16:12:19] [INFO] Loaded event: messageReactionAdd
+- [2025-06-21 16:12:19] [INFO] Loaded event: messageReactionRemove
+- [2025-06-21 16:12:19] [INFO] Loaded event: ready
+- [2025-06-21 16:12:19] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-21 16:12:19] [INFO] Loaded slash command: ping
+- [2025-06-21 16:12:20] [INFO] Loaded slash command: setembedcolor
+- [2025-06-21 16:12:20] [INFO] Loaded slash command: setembedfooter
+- [2025-06-21 16:12:20] [INFO] Loaded slash command: setembedicon
+- [2025-06-21 16:12:20] [INFO] Initializing bot and attempting to log in...
+- [2025-06-21 16:12:22] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-21 16:12:22] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-21 16:12:22] [INFO] Registered all slash commands globally.
+- [2025-06-21 16:12:22] [INFO] Initializing configs for 5 guilds...
+- [2025-06-21 16:12:26] [INFO] ✅ Database connection successful
+- [2025-06-21 16:12:26] [INFO] ✅ Guild configurations initialized
+- [2025-06-21 16:12:27] [INFO] Successfully updated dev server status message.
+- [2025-06-21 16:17:18] [INFO] Reloaded command: setupstats
+- [2025-06-21 16:18:43] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-21 16:25:53] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-21 16:25:53] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-21 16:25:53] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-21 16:25:54] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-21 16:25:54] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-21 16:25:54] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-21 16:25:54] [INFO] Shutdown complete. Exiting.
+- [2025-06-21 16:26:01] [INFO] Loaded command: autoban
+- [2025-06-21 16:26:01] [INFO] Loaded command: autospam
+- [2025-06-21 16:26:01] [INFO] Loaded command: add
+- [2025-06-21 16:26:01] [INFO] Loaded command: ban
+- [2025-06-21 16:26:01] [INFO] Loaded command: clear
+- [2025-06-21 16:26:01] [INFO] Loaded command: delwarn
+- [2025-06-21 16:26:01] [INFO] Loaded command: deny
+- [2025-06-21 16:26:01] [INFO] Loaded command: jail
+- [2025-06-21 16:26:01] [INFO] Loaded command: jailsettings
+- [2025-06-21 16:26:01] [INFO] Loaded command: kick
+- [2025-06-21 16:26:01] [INFO] Loaded command: lock
+- [2025-06-21 16:26:01] [INFO] Loaded command: move
+- [2025-06-21 16:26:01] [INFO] Loaded command: mute
+- [2025-06-21 16:26:01] [INFO] Loaded command: nickname
+- [2025-06-21 16:26:01] [INFO] Loaded command: role
+- [2025-06-21 16:26:01] [INFO] Loaded command: setautorole
+- [2025-06-21 16:26:01] [INFO] Loaded command: setjailrole
+- [2025-06-21 16:26:01] [INFO] Loaded command: setjailvoice
+- [2025-06-21 16:26:02] [INFO] Loaded command: slowmode
+- [2025-06-21 16:26:02] [INFO] Loaded command: tempvoice
+- [2025-06-21 16:26:02] [INFO] Loaded command: unban
+- [2025-06-21 16:26:02] [INFO] Loaded command: unjail
+- [2025-06-21 16:26:02] [INFO] Loaded command: unlock
+- [2025-06-21 16:26:02] [INFO] Loaded command: unmute
+- [2025-06-21 16:26:02] [INFO] Loaded command: verify
+- [2025-06-21 16:26:02] [INFO] Loaded command: warn
+- [2025-06-21 16:26:02] [INFO] Loaded command: warns
+- [2025-06-21 16:26:02] [INFO] Loaded command: afk
+- [2025-06-21 16:26:02] [INFO] Loaded command: autoreact
+- [2025-06-21 16:26:02] [INFO] Loaded command: dev
+- [2025-06-21 16:26:02] [INFO] Loaded command: massdm
+- [2025-06-21 16:26:02] [INFO] Loaded command: nuke-server
+- [2025-06-21 16:26:02] [INFO] Loaded command: premium
+- [2025-06-21 16:26:02] [INFO] Loaded command: setuproles
+- [2025-06-21 16:26:02] [INFO] Loaded command: shutdown
+- [2025-06-21 16:26:02] [INFO] Loaded command: modmail
+- [2025-06-21 16:26:02] [INFO] Loaded command: moveall
+- [2025-06-21 16:26:02] [INFO] Loaded command: rolemenu
+- [2025-06-21 16:26:02] [INFO] Loaded command: sendnotify
+- [2025-06-21 16:26:02] [INFO] Loaded command: setupstats
+- [2025-06-21 16:26:02] [INFO] Loaded command: unafk
+- [2025-06-21 16:26:02] [INFO] Loaded command: ping
+- [2025-06-21 16:26:02] [INFO] Loaded command: setembedcolor
+- [2025-06-21 16:26:02] [INFO] Loaded command: setembedfooter
+- [2025-06-21 16:26:02] [INFO] Loaded command: setembedicon
+- [2025-06-21 16:26:02] [INFO] Loaded command: avatar
+- [2025-06-21 16:26:02] [INFO] Loaded command: botinfo
+- [2025-06-21 16:26:02] [INFO] Loaded command: channelinfo
+- [2025-06-21 16:26:02] [INFO] Loaded command: help
+- [2025-06-21 16:26:02] [INFO] Loaded command: invite
+- [2025-06-21 16:26:02] [INFO] Loaded command: roleinfo
+- [2025-06-21 16:26:02] [INFO] Loaded command: serverinfo
+- [2025-06-21 16:26:02] [INFO] Loaded command: userinfo
+- [2025-06-21 16:26:02] [INFO] Loaded event: guildMemberAdd
+- [2025-06-21 16:26:02] [INFO] Loaded event: interactionCreate
+- [2025-06-21 16:26:02] [INFO] Loaded event: messageCreate
+- [2025-06-21 16:26:02] [INFO] Loaded event: messageReactionAdd
+- [2025-06-21 16:26:02] [INFO] Loaded event: messageReactionRemove
+- [2025-06-21 16:26:02] [INFO] Loaded event: ready
+- [2025-06-21 16:26:02] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-21 16:26:02] [INFO] Loaded slash command: ping
+- [2025-06-21 16:26:02] [INFO] Loaded slash command: setembedcolor
+- [2025-06-21 16:26:02] [INFO] Loaded slash command: setembedfooter
+- [2025-06-21 16:26:02] [INFO] Loaded slash command: setembedicon
+- [2025-06-21 16:26:02] [INFO] Initializing bot and attempting to log in...
+- [2025-06-21 16:26:05] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-21 16:26:05] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-21 16:26:05] [INFO] Registered all slash commands globally.
+- [2025-06-21 16:26:05] [INFO] Initializing configs for 5 guilds...
+- [2025-06-21 16:26:09] [INFO] ✅ Database connection successful
+- [2025-06-21 16:26:09] [INFO] ✅ Guild configurations initialized
+- [2025-06-21 16:26:10] [INFO] Successfully updated dev server status message.
+- [2025-06-21 16:31:26] [INFO] Reloaded event: guildMemberAdd
+- [2025-06-21 16:31:26] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-21 16:31:26] [INFO] Unloaded command: setupstats
+- [2025-06-21 16:37:02] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-21 16:37:02] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-21 16:37:03] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-21 16:37:03] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-21 16:37:03] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-21 16:37:03] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-21 16:37:03] [INFO] Shutdown complete. Exiting.
+- [2025-06-21 16:37:09] [INFO] Loaded command: autoban
+- [2025-06-21 16:37:09] [INFO] Loaded command: autospam
+- [2025-06-21 16:37:09] [INFO] Loaded command: add
+- [2025-06-21 16:37:10] [INFO] Loaded command: ban
+- [2025-06-21 16:37:10] [INFO] Loaded command: clear
+- [2025-06-21 16:37:10] [INFO] Loaded command: delwarn
+- [2025-06-21 16:37:10] [INFO] Loaded command: deny
+- [2025-06-21 16:37:10] [INFO] Loaded command: jail
+- [2025-06-21 16:37:10] [INFO] Loaded command: jailsettings
+- [2025-06-21 16:37:10] [INFO] Loaded command: kick
+- [2025-06-21 16:37:10] [INFO] Loaded command: lock
+- [2025-06-21 16:37:10] [INFO] Loaded command: move
+- [2025-06-21 16:37:10] [INFO] Loaded command: mute
+- [2025-06-21 16:37:10] [INFO] Loaded command: nickname
+- [2025-06-21 16:37:10] [INFO] Loaded command: role
+- [2025-06-21 16:37:10] [INFO] Loaded command: setautorole
+- [2025-06-21 16:37:10] [INFO] Loaded command: setjailrole
+- [2025-06-21 16:37:10] [INFO] Loaded command: setjailvoice
+- [2025-06-21 16:37:10] [INFO] Loaded command: slowmode
+- [2025-06-21 16:37:10] [INFO] Loaded command: tempvoice
+- [2025-06-21 16:37:10] [INFO] Loaded command: unban
+- [2025-06-21 16:37:10] [INFO] Loaded command: unjail
+- [2025-06-21 16:37:10] [INFO] Loaded command: unlock
+- [2025-06-21 16:37:10] [INFO] Loaded command: unmute
+- [2025-06-21 16:37:10] [INFO] Loaded command: verify
+- [2025-06-21 16:37:10] [INFO] Loaded command: warn
+- [2025-06-21 16:37:10] [INFO] Loaded command: warns
+- [2025-06-21 16:37:11] [INFO] Loaded command: afk
+- [2025-06-21 16:37:11] [INFO] Loaded command: autoreact
+- [2025-06-21 16:37:11] [INFO] Loaded command: dev
+- [2025-06-21 16:37:11] [INFO] Loaded command: massdm
+- [2025-06-21 16:37:11] [INFO] Loaded command: nuke-server
+- [2025-06-21 16:37:11] [INFO] Loaded command: premium
+- [2025-06-21 16:37:11] [INFO] Loaded command: setuproles
+- [2025-06-21 16:37:11] [INFO] Loaded command: shutdown
+- [2025-06-21 16:37:11] [INFO] Loaded command: modmail
+- [2025-06-21 16:37:11] [INFO] Loaded command: moveall
+- [2025-06-21 16:37:11] [INFO] Loaded command: rolemenu
+- [2025-06-21 16:37:11] [INFO] Loaded command: sendnotify
+- [2025-06-21 16:37:11] [INFO] Loaded command: unafk
+- [2025-06-21 16:37:11] [INFO] Loaded command: ping
+- [2025-06-21 16:37:11] [INFO] Loaded command: setembedcolor
+- [2025-06-21 16:37:11] [INFO] Loaded command: setembedfooter
+- [2025-06-21 16:37:11] [INFO] Loaded command: setembedicon
+- [2025-06-21 16:37:11] [INFO] Loaded command: avatar
+- [2025-06-21 16:37:11] [INFO] Loaded command: botinfo
+- [2025-06-21 16:37:11] [INFO] Loaded command: channelinfo
+- [2025-06-21 16:37:11] [INFO] Loaded command: help
+- [2025-06-21 16:37:11] [INFO] Loaded command: invite
+- [2025-06-21 16:37:11] [INFO] Loaded command: roleinfo
+- [2025-06-21 16:37:11] [INFO] Loaded command: serverinfo
+- [2025-06-21 16:37:11] [INFO] Loaded command: userinfo
+- [2025-06-21 16:37:11] [INFO] Loaded event: guildMemberAdd
+- [2025-06-21 16:37:11] [INFO] Loaded event: interactionCreate
+- [2025-06-21 16:37:11] [INFO] Loaded event: messageCreate
+- [2025-06-21 16:37:11] [INFO] Loaded event: messageReactionAdd
+- [2025-06-21 16:37:11] [INFO] Loaded event: messageReactionRemove
+- [2025-06-21 16:37:11] [INFO] Loaded event: ready
+- [2025-06-21 16:37:12] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-21 16:37:12] [INFO] Loaded slash command: ping
+- [2025-06-21 16:37:12] [INFO] Loaded slash command: setembedcolor
+- [2025-06-21 16:37:12] [INFO] Loaded slash command: setembedfooter
+- [2025-06-21 16:37:12] [INFO] Loaded slash command: setembedicon
+- [2025-06-21 16:37:12] [INFO] Initializing bot and attempting to log in...
+- [2025-06-21 16:37:12] [INFO] ✅ Database connection successful
+- [2025-06-21 16:37:14] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-21 16:37:14] [INFO] Bot is now online and ready to serve in 5 guilds.
+- [2025-06-21 16:37:14] [INFO] Registered all slash commands globally.
+- [2025-06-21 16:37:14] [INFO] Initializing configs for 5 guilds...
+- [2025-06-21 16:37:15] [INFO] ✅ Guild configurations initialized
+- [2025-06-21 16:37:16] [INFO] Successfully updated dev server status message.
+- [2025-06-21 16:52:23] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-21 16:52:23] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-21 16:52:23] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-21 16:52:23] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-21 16:52:23] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-21 16:52:23] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-21 16:52:23] [INFO] Shutdown complete. Exiting.
+
+## 2025-06-24
+- [2025-06-24 17:11:20] [INFO] Loaded command: autoban
+- [2025-06-24 17:11:20] [INFO] Loaded command: autospam
+- [2025-06-24 17:11:20] [INFO] Loaded command: add
+- [2025-06-24 17:11:20] [INFO] Loaded command: ban
+- [2025-06-24 17:11:20] [INFO] Loaded command: clear
+- [2025-06-24 17:11:20] [INFO] Loaded command: delwarn
+- [2025-06-24 17:11:20] [INFO] Loaded command: deny
+- [2025-06-24 17:11:20] [INFO] Loaded command: jail
+- [2025-06-24 17:11:20] [INFO] Loaded command: jailsettings
+- [2025-06-24 17:11:20] [INFO] Loaded command: kick
+- [2025-06-24 17:11:20] [INFO] Loaded command: lock
+- [2025-06-24 17:11:20] [INFO] Loaded command: move
+- [2025-06-24 17:11:20] [INFO] Loaded command: mute
+- [2025-06-24 17:11:20] [INFO] Loaded command: nickname
+- [2025-06-24 17:11:20] [INFO] Loaded command: role
+- [2025-06-24 17:11:20] [INFO] Loaded command: setautorole
+- [2025-06-24 17:11:21] [INFO] Loaded command: setjailrole
+- [2025-06-24 17:11:21] [INFO] Loaded command: setjailvoice
+- [2025-06-24 17:11:21] [INFO] Loaded command: slowmode
+- [2025-06-24 17:11:21] [INFO] Loaded command: tempvoice
+- [2025-06-24 17:11:21] [INFO] Loaded command: unban
+- [2025-06-24 17:11:21] [INFO] Loaded command: unjail
+- [2025-06-24 17:11:21] [INFO] Loaded command: unlock
+- [2025-06-24 17:11:21] [INFO] Loaded command: unmute
+- [2025-06-24 17:11:21] [INFO] Loaded command: verify
+- [2025-06-24 17:11:21] [INFO] Loaded command: warn
+- [2025-06-24 17:11:21] [INFO] Loaded command: warns
+- [2025-06-24 17:11:21] [INFO] Loaded command: afk
+- [2025-06-24 17:11:21] [INFO] Loaded command: autoreact
+- [2025-06-24 17:11:21] [INFO] Loaded command: dev
+- [2025-06-24 17:11:21] [INFO] Loaded command: massdm
+- [2025-06-24 17:11:21] [INFO] Loaded command: nuke-server
+- [2025-06-24 17:11:21] [INFO] Loaded command: premium
+- [2025-06-24 17:11:21] [INFO] Loaded command: setuproles
+- [2025-06-24 17:11:21] [INFO] Loaded command: shutdown
+- [2025-06-24 17:11:21] [INFO] Loaded command: modmail
+- [2025-06-24 17:11:21] [INFO] Loaded command: moveall
+- [2025-06-24 17:11:21] [INFO] Loaded command: rolemenu
+- [2025-06-24 17:11:21] [INFO] Loaded command: sendnotify
+- [2025-06-24 17:11:21] [INFO] Loaded command: unafk
+- [2025-06-24 17:11:21] [INFO] Loaded command: ping
+- [2025-06-24 17:11:21] [INFO] Loaded command: setembedcolor
+- [2025-06-24 17:11:21] [INFO] Loaded command: setembedfooter
+- [2025-06-24 17:11:21] [INFO] Loaded command: setembedicon
+- [2025-06-24 17:11:21] [INFO] Loaded command: avatar
+- [2025-06-24 17:11:21] [INFO] Loaded command: botinfo
+- [2025-06-24 17:11:21] [INFO] Loaded command: channelinfo
+- [2025-06-24 17:11:21] [INFO] Loaded command: help
+- [2025-06-24 17:11:21] [INFO] Loaded command: invite
+- [2025-06-24 17:11:21] [INFO] Loaded command: roleinfo
+- [2025-06-24 17:11:21] [INFO] Loaded command: serverinfo
+- [2025-06-24 17:11:21] [INFO] Loaded command: userinfo
+- [2025-06-24 17:11:21] [INFO] Loaded event: guildMemberAdd
+- [2025-06-24 17:11:21] [INFO] Loaded event: interactionCreate
+- [2025-06-24 17:11:21] [INFO] Loaded event: messageCreate
+- [2025-06-24 17:11:21] [INFO] Loaded event: messageReactionAdd
+- [2025-06-24 17:11:21] [INFO] Loaded event: messageReactionRemove
+- [2025-06-24 17:11:21] [INFO] Loaded event: ready
+- [2025-06-24 17:11:21] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 17:11:21] [INFO] Loaded slash command: ping
+- [2025-06-24 17:11:22] [INFO] Loaded slash command: setembedcolor
+- [2025-06-24 17:11:22] [INFO] Loaded slash command: setembedfooter
+- [2025-06-24 17:11:22] [INFO] Loaded slash command: setembedicon
+- [2025-06-24 17:11:22] [INFO] Initializing bot and attempting to log in...
+- [2025-06-24 17:11:24] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-24 17:11:24] [INFO] Bot is now online and ready to serve in 4 guilds.
+- [2025-06-24 17:11:24] [INFO] Registered all slash commands globally.
+- [2025-06-24 17:11:25] [INFO] Initializing configs for 4 guilds...
+- [2025-06-24 17:11:26] [ERROR] Query error: [object Object]
+- [2025-06-24 17:11:26] [ERROR] Error getting config for guild 1038540608396066856: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 17:11:26] [ERROR] ❌ Database connection failed: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 17:13:41] [INFO] Loaded command: autoban
+- [2025-06-24 17:13:41] [INFO] Loaded command: autospam
+- [2025-06-24 17:13:41] [INFO] Loaded command: add
+- [2025-06-24 17:13:41] [INFO] Loaded command: ban
+- [2025-06-24 17:13:41] [INFO] Loaded command: clear
+- [2025-06-24 17:13:41] [INFO] Loaded command: delwarn
+- [2025-06-24 17:13:41] [INFO] Loaded command: deny
+- [2025-06-24 17:13:41] [INFO] Loaded command: jail
+- [2025-06-24 17:13:41] [INFO] Loaded command: jailsettings
+- [2025-06-24 17:13:41] [INFO] Loaded command: kick
+- [2025-06-24 17:13:41] [INFO] Loaded command: lock
+- [2025-06-24 17:13:42] [INFO] Loaded command: move
+- [2025-06-24 17:13:42] [INFO] Loaded command: mute
+- [2025-06-24 17:13:42] [INFO] Loaded command: nickname
+- [2025-06-24 17:13:42] [INFO] Loaded command: role
+- [2025-06-24 17:13:42] [INFO] Loaded command: setautorole
+- [2025-06-24 17:13:42] [INFO] Loaded command: setjailrole
+- [2025-06-24 17:13:42] [INFO] Loaded command: setjailvoice
+- [2025-06-24 17:13:42] [INFO] Loaded command: slowmode
+- [2025-06-24 17:13:42] [INFO] Loaded command: tempvoice
+- [2025-06-24 17:13:42] [INFO] Loaded command: unban
+- [2025-06-24 17:13:42] [INFO] Loaded command: unjail
+- [2025-06-24 17:13:42] [INFO] Loaded command: unlock
+- [2025-06-24 17:13:42] [INFO] Loaded command: unmute
+- [2025-06-24 17:13:42] [INFO] Loaded command: verify
+- [2025-06-24 17:13:42] [INFO] Loaded command: warn
+- [2025-06-24 17:13:42] [INFO] Loaded command: warns
+- [2025-06-24 17:13:42] [INFO] Loaded command: afk
+- [2025-06-24 17:13:42] [INFO] Loaded command: autoreact
+- [2025-06-24 17:13:42] [INFO] Loaded command: dev
+- [2025-06-24 17:13:42] [INFO] Loaded command: massdm
+- [2025-06-24 17:13:42] [INFO] Loaded command: nuke-server
+- [2025-06-24 17:13:42] [INFO] Loaded command: premium
+- [2025-06-24 17:13:42] [INFO] Loaded command: setuproles
+- [2025-06-24 17:13:42] [INFO] Loaded command: shutdown
+- [2025-06-24 17:13:42] [INFO] Loaded command: modmail
+- [2025-06-24 17:13:42] [INFO] Loaded command: moveall
+- [2025-06-24 17:13:42] [INFO] Loaded command: rolemenu
+- [2025-06-24 17:13:42] [INFO] Loaded command: sendnotify
+- [2025-06-24 17:13:42] [INFO] Loaded command: unafk
+- [2025-06-24 17:13:42] [INFO] Loaded command: ping
+- [2025-06-24 17:13:42] [INFO] Loaded command: setembedcolor
+- [2025-06-24 17:13:42] [INFO] Loaded command: setembedfooter
+- [2025-06-24 17:13:42] [INFO] Loaded command: setembedicon
+- [2025-06-24 17:13:42] [INFO] Loaded command: avatar
+- [2025-06-24 17:13:42] [INFO] Loaded command: botinfo
+- [2025-06-24 17:13:42] [INFO] Loaded command: channelinfo
+- [2025-06-24 17:13:42] [INFO] Loaded command: help
+- [2025-06-24 17:13:42] [INFO] Loaded command: invite
+- [2025-06-24 17:13:42] [INFO] Loaded command: roleinfo
+- [2025-06-24 17:13:42] [INFO] Loaded command: serverinfo
+- [2025-06-24 17:13:42] [INFO] Loaded command: userinfo
+- [2025-06-24 17:13:42] [INFO] Loaded event: guildMemberAdd
+- [2025-06-24 17:13:43] [INFO] Loaded event: interactionCreate
+- [2025-06-24 17:13:43] [INFO] Loaded event: messageCreate
+- [2025-06-24 17:13:43] [INFO] Loaded event: messageReactionAdd
+- [2025-06-24 17:13:43] [INFO] Loaded event: messageReactionRemove
+- [2025-06-24 17:13:43] [INFO] Loaded event: ready
+- [2025-06-24 17:13:43] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 17:13:43] [INFO] Loaded slash command: ping
+- [2025-06-24 17:13:43] [INFO] Loaded slash command: setembedcolor
+- [2025-06-24 17:13:43] [INFO] Loaded slash command: setembedfooter
+- [2025-06-24 17:13:43] [INFO] Loaded slash command: setembedicon
+- [2025-06-24 17:13:43] [INFO] Initializing bot and attempting to log in...
+- [2025-06-24 17:13:44] [INFO] ✅ Database connection successful
+- [2025-06-24 17:13:45] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-24 17:13:45] [INFO] Bot is now online and ready to serve in 4 guilds.
+- [2025-06-24 17:13:45] [INFO] Registered all slash commands globally.
+- [2025-06-24 17:13:45] [INFO] Initializing configs for 4 guilds...
+- [2025-06-24 17:13:46] [INFO] ✅ Guild configurations initialized
+- [2025-06-24 17:13:47] [INFO] Successfully updated dev server status message.
+- [2025-06-24 17:15:00] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-24 17:15:00] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-24 17:15:00] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-24 17:15:01] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-24 17:15:01] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-24 17:15:01] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-24 17:15:01] [INFO] Shutdown complete. Exiting.
+- [2025-06-24 17:34:50] [INFO] Loaded command: autoban
+- [2025-06-24 17:34:50] [INFO] Loaded command: autospam
+- [2025-06-24 17:34:50] [INFO] Loaded command: add
+- [2025-06-24 17:34:50] [INFO] Loaded command: ban
+- [2025-06-24 17:34:50] [INFO] Loaded command: clear
+- [2025-06-24 17:34:50] [INFO] Loaded command: delwarn
+- [2025-06-24 17:34:50] [INFO] Loaded command: deny
+- [2025-06-24 17:34:50] [INFO] Loaded command: jail
+- [2025-06-24 17:34:50] [INFO] Loaded command: jailsettings
+- [2025-06-24 17:34:50] [INFO] Loaded command: kick
+- [2025-06-24 17:34:50] [INFO] Loaded command: lock
+- [2025-06-24 17:34:50] [INFO] Loaded command: move
+- [2025-06-24 17:34:50] [INFO] Loaded command: mute
+- [2025-06-24 17:34:50] [INFO] Loaded command: nickname
+- [2025-06-24 17:34:50] [INFO] Loaded command: role
+- [2025-06-24 17:34:50] [INFO] Loaded command: setautorole
+- [2025-06-24 17:34:50] [INFO] Loaded command: setjailrole
+- [2025-06-24 17:34:50] [INFO] Loaded command: setjailvoice
+- [2025-06-24 17:34:50] [INFO] Loaded command: slowmode
+- [2025-06-24 17:34:50] [INFO] Loaded command: tempvoice
+- [2025-06-24 17:34:50] [INFO] Loaded command: unban
+- [2025-06-24 17:34:50] [INFO] Loaded command: unjail
+- [2025-06-24 17:34:50] [INFO] Loaded command: unlock
+- [2025-06-24 17:34:50] [INFO] Loaded command: unmute
+- [2025-06-24 17:34:50] [INFO] Loaded command: verify
+- [2025-06-24 17:34:50] [INFO] Loaded command: warn
+- [2025-06-24 17:34:50] [INFO] Loaded command: warns
+- [2025-06-24 17:34:50] [INFO] Loaded command: afk
+- [2025-06-24 17:34:50] [INFO] Loaded command: autoreact
+- [2025-06-24 17:34:50] [INFO] Loaded command: dev
+- [2025-06-24 17:34:50] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\incidents.js: Error: Cannot find module '../database'
+Require stack:
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\services\incidents.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\incidents.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\handlers\commandHandler.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\index.js
+- [2025-06-24 17:34:51] [INFO] Loaded command: massdm
+- [2025-06-24 17:34:51] [INFO] Loaded command: nuke-server
+- [2025-06-24 17:34:51] [INFO] Loaded command: premium
+- [2025-06-24 17:34:51] [INFO] Loaded command: setuproles
+- [2025-06-24 17:34:51] [INFO] Loaded command: shutdown
+- [2025-06-24 17:34:51] [INFO] Loaded command: modmail
+- [2025-06-24 17:34:51] [INFO] Loaded command: moveall
+- [2025-06-24 17:34:51] [INFO] Loaded command: rolemenu
+- [2025-06-24 17:34:51] [INFO] Loaded command: sendnotify
+- [2025-06-24 17:34:51] [INFO] Loaded command: unafk
+- [2025-06-24 17:34:51] [INFO] Loaded command: ping
+- [2025-06-24 17:34:51] [INFO] Loaded command: setembedcolor
+- [2025-06-24 17:34:51] [INFO] Loaded command: setembedfooter
+- [2025-06-24 17:34:51] [INFO] Loaded command: setembedicon
+- [2025-06-24 17:34:51] [INFO] Loaded command: avatar
+- [2025-06-24 17:34:51] [INFO] Loaded command: botinfo
+- [2025-06-24 17:34:51] [INFO] Loaded command: channelinfo
+- [2025-06-24 17:34:51] [INFO] Loaded command: help
+- [2025-06-24 17:34:51] [INFO] Loaded command: invite
+- [2025-06-24 17:34:51] [INFO] Loaded command: roleinfo
+- [2025-06-24 17:34:51] [INFO] Loaded command: serverinfo
+- [2025-06-24 17:34:51] [INFO] Loaded command: userinfo
+- [2025-06-24 17:34:51] [INFO] Loaded event: guildMemberAdd
+- [2025-06-24 17:34:51] [INFO] Loaded event: interactionCreate
+- [2025-06-24 17:34:51] [INFO] Loaded event: messageCreate
+- [2025-06-24 17:34:51] [INFO] Loaded event: messageReactionAdd
+- [2025-06-24 17:34:51] [INFO] Loaded event: messageReactionRemove
+- [2025-06-24 17:34:51] [INFO] Loaded event: ready
+- [2025-06-24 17:34:51] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 17:34:51] [INFO] Loaded slash command: ping
+- [2025-06-24 17:34:51] [INFO] Loaded slash command: setembedcolor
+- [2025-06-24 17:34:51] [INFO] Loaded slash command: setembedfooter
+- [2025-06-24 17:34:51] [INFO] Loaded slash command: setembedicon
+- [2025-06-24 17:34:51] [INFO] Initializing bot and attempting to log in...
+- [2025-06-24 17:34:53] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-24 17:34:53] [INFO] Bot is now online and ready to serve in 4 guilds.
+- [2025-06-24 17:34:54] [INFO] Registered all slash commands globally.
+- [2025-06-24 17:34:54] [INFO] Initializing configs for 4 guilds...
+- [2025-06-24 17:34:56] [ERROR] ❌ Database connection failed: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 17:36:38] [INFO] Loaded command: autoban
+- [2025-06-24 17:36:38] [INFO] Loaded command: autospam
+- [2025-06-24 17:36:38] [INFO] Loaded command: add
+- [2025-06-24 17:36:38] [INFO] Loaded command: ban
+- [2025-06-24 17:36:38] [INFO] Loaded command: clear
+- [2025-06-24 17:36:38] [INFO] Loaded command: delwarn
+- [2025-06-24 17:36:38] [INFO] Loaded command: deny
+- [2025-06-24 17:36:38] [INFO] Loaded command: jail
+- [2025-06-24 17:36:38] [INFO] Loaded command: jailsettings
+- [2025-06-24 17:36:38] [INFO] Loaded command: kick
+- [2025-06-24 17:36:38] [INFO] Loaded command: lock
+- [2025-06-24 17:36:38] [INFO] Loaded command: move
+- [2025-06-24 17:36:39] [INFO] Loaded command: mute
+- [2025-06-24 17:36:39] [INFO] Loaded command: nickname
+- [2025-06-24 17:36:39] [INFO] Loaded command: role
+- [2025-06-24 17:36:39] [INFO] Loaded command: setautorole
+- [2025-06-24 17:36:39] [INFO] Loaded command: setjailrole
+- [2025-06-24 17:36:39] [INFO] Loaded command: setjailvoice
+- [2025-06-24 17:36:39] [INFO] Loaded command: slowmode
+- [2025-06-24 17:36:39] [INFO] Loaded command: tempvoice
+- [2025-06-24 17:36:39] [INFO] Loaded command: unban
+- [2025-06-24 17:36:39] [INFO] Loaded command: unjail
+- [2025-06-24 17:36:39] [INFO] Loaded command: unlock
+- [2025-06-24 17:36:39] [INFO] Loaded command: unmute
+- [2025-06-24 17:36:39] [INFO] Loaded command: verify
+- [2025-06-24 17:36:39] [INFO] Loaded command: warn
+- [2025-06-24 17:36:39] [INFO] Loaded command: warns
+- [2025-06-24 17:36:39] [INFO] Loaded command: afk
+- [2025-06-24 17:36:39] [INFO] Loaded command: autoreact
+- [2025-06-24 17:36:39] [INFO] Loaded command: dev
+- [2025-06-24 17:36:39] [ERROR] Failed to load command C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\incidents.js: Error: Cannot find module '../database'
+Require stack:
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\services\incidents.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\commands\OwnerOnly\incidents.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\handlers\commandHandler.js
+- C:\Users\MR AHMET\Desktop\paralelbot-js-master\src\index.js
+- [2025-06-24 17:36:39] [INFO] Loaded command: massdm
+- [2025-06-24 17:36:39] [INFO] Loaded command: nuke-server
+- [2025-06-24 17:36:39] [INFO] Loaded command: premium
+- [2025-06-24 17:36:39] [INFO] Loaded command: setuproles
+- [2025-06-24 17:36:39] [INFO] Loaded command: shutdown
+- [2025-06-24 17:36:39] [INFO] Loaded command: modmail
+- [2025-06-24 17:36:39] [INFO] Loaded command: moveall
+- [2025-06-24 17:36:39] [INFO] Loaded command: rolemenu
+- [2025-06-24 17:36:39] [INFO] Loaded command: sendnotify
+- [2025-06-24 17:36:39] [INFO] Loaded command: unafk
+- [2025-06-24 17:36:39] [INFO] Loaded command: ping
+- [2025-06-24 17:36:39] [INFO] Loaded command: setembedcolor
+- [2025-06-24 17:36:39] [INFO] Loaded command: setembedfooter
+- [2025-06-24 17:36:39] [INFO] Loaded command: setembedicon
+- [2025-06-24 17:36:39] [INFO] Loaded command: avatar
+- [2025-06-24 17:36:40] [INFO] Loaded command: botinfo
+- [2025-06-24 17:36:40] [INFO] Loaded command: channelinfo
+- [2025-06-24 17:36:40] [INFO] Loaded command: help
+- [2025-06-24 17:36:40] [INFO] Loaded command: invite
+- [2025-06-24 17:36:40] [INFO] Loaded command: roleinfo
+- [2025-06-24 17:36:40] [INFO] Loaded command: serverinfo
+- [2025-06-24 17:36:40] [INFO] Loaded command: userinfo
+- [2025-06-24 17:36:40] [INFO] Loaded event: guildMemberAdd
+- [2025-06-24 17:36:40] [INFO] Loaded event: interactionCreate
+- [2025-06-24 17:36:40] [INFO] Loaded event: messageCreate
+- [2025-06-24 17:36:40] [INFO] Loaded event: messageReactionAdd
+- [2025-06-24 17:36:40] [INFO] Loaded event: messageReactionRemove
+- [2025-06-24 17:36:40] [INFO] Loaded event: ready
+- [2025-06-24 17:36:40] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 17:36:40] [INFO] Loaded slash command: ping
+- [2025-06-24 17:36:40] [INFO] Loaded slash command: setembedcolor
+- [2025-06-24 17:36:40] [INFO] Loaded slash command: setembedfooter
+- [2025-06-24 17:36:40] [INFO] Loaded slash command: setembedicon
+- [2025-06-24 17:36:40] [INFO] Initializing bot and attempting to log in...
+- [2025-06-24 17:36:42] [INFO] ✅ Database connection successful
+- [2025-06-24 17:36:43] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-24 17:36:43] [INFO] Bot is now online and ready to serve in 4 guilds.
+- [2025-06-24 17:36:44] [INFO] Registered all slash commands globally.
+- [2025-06-24 17:36:44] [INFO] Initializing configs for 4 guilds...
+- [2025-06-24 17:36:44] [INFO] ✅ Guild configurations initialized
+- [2025-06-24 17:36:45] [INFO] Successfully updated dev server status message.
+- [2025-06-24 17:39:26] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-24 17:39:26] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-24 17:39:26] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-24 17:39:26] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-24 17:39:26] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-24 17:39:26] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-24 17:39:26] [INFO] Shutdown complete. Exiting.
+- [2025-06-24 17:39:33] [INFO] Loaded command: autoban
+- [2025-06-24 17:39:33] [INFO] Loaded command: autospam
+- [2025-06-24 17:39:33] [INFO] Loaded command: add
+- [2025-06-24 17:39:33] [INFO] Loaded command: ban
+- [2025-06-24 17:39:33] [INFO] Loaded command: clear
+- [2025-06-24 17:39:33] [INFO] Loaded command: delwarn
+- [2025-06-24 17:39:33] [INFO] Loaded command: deny
+- [2025-06-24 17:39:33] [INFO] Loaded command: jail
+- [2025-06-24 17:39:33] [INFO] Loaded command: jailsettings
+- [2025-06-24 17:39:33] [INFO] Loaded command: kick
+- [2025-06-24 17:39:33] [INFO] Loaded command: lock
+- [2025-06-24 17:39:33] [INFO] Loaded command: move
+- [2025-06-24 17:39:33] [INFO] Loaded command: mute
+- [2025-06-24 17:39:33] [INFO] Loaded command: nickname
+- [2025-06-24 17:39:33] [INFO] Loaded command: role
+- [2025-06-24 17:39:33] [INFO] Loaded command: setautorole
+- [2025-06-24 17:39:33] [INFO] Loaded command: setjailrole
+- [2025-06-24 17:39:33] [INFO] Loaded command: setjailvoice
+- [2025-06-24 17:39:33] [INFO] Loaded command: slowmode
+- [2025-06-24 17:39:33] [INFO] Loaded command: tempvoice
+- [2025-06-24 17:39:33] [INFO] Loaded command: unban
+- [2025-06-24 17:39:33] [INFO] Loaded command: unjail
+- [2025-06-24 17:39:33] [INFO] Loaded command: unlock
+- [2025-06-24 17:39:33] [INFO] Loaded command: unmute
+- [2025-06-24 17:39:33] [INFO] Loaded command: verify
+- [2025-06-24 17:39:33] [INFO] Loaded command: warn
+- [2025-06-24 17:39:33] [INFO] Loaded command: warns
+- [2025-06-24 17:39:33] [INFO] Loaded command: afk
+- [2025-06-24 17:39:33] [INFO] Loaded command: autoreact
+- [2025-06-24 17:39:33] [INFO] Loaded command: dev
+- [2025-06-24 17:39:33] [INFO] Loaded command: incidents
+- [2025-06-24 17:39:33] [INFO] Loaded command: massdm
+- [2025-06-24 17:39:33] [INFO] Loaded command: nuke-server
+- [2025-06-24 17:39:33] [INFO] Loaded command: premium
+- [2025-06-24 17:39:33] [INFO] Loaded command: setuproles
+- [2025-06-24 17:39:33] [INFO] Loaded command: shutdown
+- [2025-06-24 17:39:33] [INFO] Loaded command: modmail
+- [2025-06-24 17:39:33] [INFO] Loaded command: moveall
+- [2025-06-24 17:39:33] [INFO] Loaded command: rolemenu
+- [2025-06-24 17:39:33] [INFO] Loaded command: sendnotify
+- [2025-06-24 17:39:33] [INFO] Loaded command: unafk
+- [2025-06-24 17:39:33] [INFO] Loaded command: ping
+- [2025-06-24 17:39:33] [INFO] Loaded command: setembedcolor
+- [2025-06-24 17:39:33] [INFO] Loaded command: setembedfooter
+- [2025-06-24 17:39:33] [INFO] Loaded command: setembedicon
+- [2025-06-24 17:39:34] [INFO] Loaded command: avatar
+- [2025-06-24 17:39:34] [INFO] Loaded command: botinfo
+- [2025-06-24 17:39:34] [INFO] Loaded command: channelinfo
+- [2025-06-24 17:39:34] [INFO] Loaded command: help
+- [2025-06-24 17:39:34] [INFO] Loaded command: invite
+- [2025-06-24 17:39:34] [INFO] Loaded command: roleinfo
+- [2025-06-24 17:39:34] [INFO] Loaded command: serverinfo
+- [2025-06-24 17:39:34] [INFO] Loaded command: userinfo
+- [2025-06-24 17:39:34] [INFO] Loaded event: guildMemberAdd
+- [2025-06-24 17:39:34] [INFO] Loaded event: interactionCreate
+- [2025-06-24 17:39:34] [INFO] Loaded event: messageCreate
+- [2025-06-24 17:39:34] [INFO] Loaded event: messageReactionAdd
+- [2025-06-24 17:39:34] [INFO] Loaded event: messageReactionRemove
+- [2025-06-24 17:39:34] [INFO] Loaded event: ready
+- [2025-06-24 17:39:34] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 17:39:34] [INFO] Loaded slash command: ping
+- [2025-06-24 17:39:34] [INFO] Loaded slash command: setembedcolor
+- [2025-06-24 17:39:34] [INFO] Loaded slash command: setembedfooter
+- [2025-06-24 17:39:34] [INFO] Loaded slash command: setembedicon
+- [2025-06-24 17:39:34] [INFO] Initializing bot and attempting to log in...
+- [2025-06-24 17:39:35] [INFO] ✅ Database connection successful
+- [2025-06-24 17:39:36] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-24 17:39:36] [INFO] Bot is now online and ready to serve in 4 guilds.
+- [2025-06-24 17:39:36] [INFO] Registered all slash commands globally.
+- [2025-06-24 17:39:36] [INFO] Initializing configs for 4 guilds...
+- [2025-06-24 17:39:37] [INFO] ✅ Guild configurations initialized
+- [2025-06-24 17:39:38] [INFO] Successfully updated dev server status message.
+- [2025-06-24 17:40:34] [ERROR] Query error: [object Object]
+- [2025-06-24 17:40:34] [ERROR] Error getting all temp voice configs for guild 1038540608396066856: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 17:40:34] [ERROR] Discord client error: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 17:40:34] [ERROR] Discord client error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 17:41:45] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-24 17:41:45] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-24 17:41:45] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-24 17:41:46] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-24 17:41:46] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-24 17:41:46] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-24 17:41:46] [INFO] Shutdown complete. Exiting.
+- [2025-06-24 17:48:25] [INFO] ✅ Database connection for migrator is successful.
+- [2025-06-24 17:48:26] [INFO] ✅ 'schema_migrations' table ensured.
+- [2025-06-24 17:48:26] [INFO] 🔄 Applying migration: 20250624_create_user_levels.sql...
+- [2025-06-24 17:48:26] [INFO] ✅ Migration 20250624_create_user_levels.sql applied successfully.
+- [2025-06-24 17:48:26] [INFO] Applied 1 new migration(s).
+- [2025-06-24 17:48:26] [INFO] Migrations completed.
+- [2025-06-24 17:54:26] [INFO] ✅ Database connection for migrator is successful.
+- [2025-06-24 17:54:26] [INFO] ✅ 'schema_migrations' table ensured.
+- [2025-06-24 17:54:26] [INFO] 🔄 Applying migration: 20250624_update_user_levels_for_voice_and_text.sql...
+- [2025-06-24 17:54:27] [INFO] ✅ Migration 20250624_update_user_levels_for_voice_and_text.sql applied successfully.
+- [2025-06-24 17:54:27] [INFO] Applied 1 new migration(s).
+- [2025-06-24 17:54:27] [INFO] Migrations completed.
+- [2025-06-24 18:00:14] [INFO] ✅ Database connection for migrator is successful.
+- [2025-06-24 18:00:15] [INFO] ✅ 'schema_migrations' table ensured.
+- [2025-06-24 18:00:15] [INFO] 🔄 Applying migration: 20250624_create_level_roles.sql...
+- [2025-06-24 18:00:15] [INFO] ✅ Migration 20250624_create_level_roles.sql applied successfully.
+- [2025-06-24 18:00:15] [INFO] Applied 1 new migration(s).
+- [2025-06-24 18:00:15] [INFO] Migrations completed.
+- [2025-06-24 18:06:05] [INFO] ✅ Database connection for migrator is successful.
+- [2025-06-24 18:06:05] [INFO] ✅ 'schema_migrations' table ensured.
+- [2025-06-24 18:06:05] [INFO] Database schema is already up to date.
+- [2025-06-24 18:06:06] [INFO] Migrations completed.
+- [2025-06-24 18:06:13] [INFO] Loaded command: autoban
+- [2025-06-24 18:06:13] [INFO] Loaded command: autospam
+- [2025-06-24 18:06:13] [INFO] Loaded command: add
+- [2025-06-24 18:06:13] [INFO] Loaded command: ban
+- [2025-06-24 18:06:13] [INFO] Loaded command: clear
+- [2025-06-24 18:06:13] [INFO] Loaded command: delwarn
+- [2025-06-24 18:06:13] [INFO] Loaded command: deny
+- [2025-06-24 18:06:13] [INFO] Loaded command: jail
+- [2025-06-24 18:06:13] [INFO] Loaded command: jailsettings
+- [2025-06-24 18:06:13] [INFO] Loaded command: kick
+- [2025-06-24 18:06:13] [INFO] Loaded command: lock
+- [2025-06-24 18:06:13] [INFO] Loaded command: move
+- [2025-06-24 18:06:13] [INFO] Loaded command: mute
+- [2025-06-24 18:06:13] [INFO] Loaded command: nickname
+- [2025-06-24 18:06:13] [INFO] Loaded command: role
+- [2025-06-24 18:06:13] [INFO] Loaded command: setautorole
+- [2025-06-24 18:06:13] [INFO] Loaded command: setjailrole
+- [2025-06-24 18:06:13] [INFO] Loaded command: setjailvoice
+- [2025-06-24 18:06:13] [INFO] Loaded command: slowmode
+- [2025-06-24 18:06:13] [INFO] Loaded command: tempvoice
+- [2025-06-24 18:06:13] [INFO] Loaded command: unban
+- [2025-06-24 18:06:13] [INFO] Loaded command: unjail
+- [2025-06-24 18:06:13] [INFO] Loaded command: unlock
+- [2025-06-24 18:06:13] [INFO] Loaded command: unmute
+- [2025-06-24 18:06:13] [INFO] Loaded command: verify
+- [2025-06-24 18:06:13] [INFO] Loaded command: warn
+- [2025-06-24 18:06:13] [INFO] Loaded command: warns
+- [2025-06-24 18:06:13] [INFO] Loaded command: afk
+- [2025-06-24 18:06:13] [INFO] Loaded command: autoreact
+- [2025-06-24 18:06:13] [INFO] Loaded command: dev
+- [2025-06-24 18:06:13] [INFO] Loaded command: massdm
+- [2025-06-24 18:06:13] [INFO] Loaded command: nuke-server
+- [2025-06-24 18:06:13] [INFO] Loaded command: premium
+- [2025-06-24 18:06:13] [INFO] Loaded command: setuproles
+- [2025-06-24 18:06:13] [INFO] Loaded command: shutdown
+- [2025-06-24 18:06:13] [INFO] Loaded command: modmail
+- [2025-06-24 18:06:13] [INFO] Loaded command: moveall
+- [2025-06-24 18:06:13] [INFO] Loaded command: rolemenu
+- [2025-06-24 18:06:13] [INFO] Loaded command: sendnotify
+- [2025-06-24 18:06:13] [INFO] Loaded command: unafk
+- [2025-06-24 18:06:13] [INFO] Loaded command: ping
+- [2025-06-24 18:06:13] [INFO] Loaded command: setembedcolor
+- [2025-06-24 18:06:13] [INFO] Loaded command: setembedfooter
+- [2025-06-24 18:06:13] [INFO] Loaded command: setembedicon
+- [2025-06-24 18:06:13] [INFO] Loaded command: avatar
+- [2025-06-24 18:06:13] [INFO] Loaded command: botinfo
+- [2025-06-24 18:06:13] [INFO] Loaded command: channelinfo
+- [2025-06-24 18:06:14] [INFO] Loaded command: help
+- [2025-06-24 18:06:14] [INFO] Loaded command: invite
+- [2025-06-24 18:06:14] [INFO] Loaded command: roleinfo
+- [2025-06-24 18:06:14] [INFO] Loaded command: serverinfo
+- [2025-06-24 18:06:14] [INFO] Loaded command: userinfo
+- [2025-06-24 18:06:14] [INFO] Loaded event: guildMemberAdd
+- [2025-06-24 18:06:14] [INFO] Loaded event: interactionCreate
+- [2025-06-24 18:06:14] [INFO] Loaded event: messageCreate
+- [2025-06-24 18:06:14] [INFO] Loaded event: messageReactionAdd
+- [2025-06-24 18:06:14] [INFO] Loaded event: messageReactionRemove
+- [2025-06-24 18:06:14] [INFO] Loaded event: ready
+- [2025-06-24 18:06:14] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 18:06:14] [INFO] Loaded slash command: ping
+- [2025-06-24 18:06:14] [INFO] Loaded slash command: setembedcolor
+- [2025-06-24 18:06:14] [INFO] Loaded slash command: setembedfooter
+- [2025-06-24 18:06:14] [INFO] Loaded slash command: setembedicon
+- [2025-06-24 18:06:14] [INFO] Initializing bot and attempting to log in...
+- [2025-06-24 18:06:15] [INFO] ✅ Database connection successful
+- [2025-06-24 18:06:16] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-24 18:06:16] [INFO] Bot is now online and ready to serve in 4 guilds.
+- [2025-06-24 18:06:17] [INFO] Registered all slash commands globally.
+- [2025-06-24 18:06:17] [INFO] Initializing configs for 4 guilds...
+- [2025-06-24 18:06:17] [INFO] ✅ Guild configurations initialized
+- [2025-06-24 18:06:18] [INFO] Successfully updated dev server status message.
+- [2025-06-24 18:10:38] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-24 18:10:38] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-24 18:10:38] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-24 18:10:38] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-24 18:10:38] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-24 18:10:38] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-24 18:10:38] [INFO] Shutdown complete. Exiting.
+- [2025-06-24 18:11:59] [INFO] Loaded command: autoban
+- [2025-06-24 18:11:59] [INFO] Loaded command: autospam
+- [2025-06-24 18:11:59] [INFO] Loaded command: leaderboard
+- [2025-06-24 18:11:59] [INFO] Loaded command: level
+- [2025-06-24 18:11:59] [INFO] Loaded command: levelrole
+- [2025-06-24 18:11:59] [INFO] Loaded command: add
+- [2025-06-24 18:11:59] [INFO] Loaded command: ban
+- [2025-06-24 18:11:59] [INFO] Loaded command: clear
+- [2025-06-24 18:11:59] [INFO] Loaded command: delwarn
+- [2025-06-24 18:11:59] [INFO] Loaded command: deny
+- [2025-06-24 18:11:59] [INFO] Loaded command: jail
+- [2025-06-24 18:11:59] [INFO] Loaded command: jailsettings
+- [2025-06-24 18:11:59] [INFO] Loaded command: kick
+- [2025-06-24 18:11:59] [INFO] Loaded command: lock
+- [2025-06-24 18:11:59] [INFO] Loaded command: move
+- [2025-06-24 18:11:59] [INFO] Loaded command: mute
+- [2025-06-24 18:11:59] [INFO] Loaded command: nickname
+- [2025-06-24 18:11:59] [INFO] Loaded command: role
+- [2025-06-24 18:11:59] [INFO] Loaded command: setautorole
+- [2025-06-24 18:11:59] [INFO] Loaded command: setjailrole
+- [2025-06-24 18:11:59] [INFO] Loaded command: setjailvoice
+- [2025-06-24 18:11:59] [INFO] Loaded command: slowmode
+- [2025-06-24 18:11:59] [INFO] Loaded command: tempvoice
+- [2025-06-24 18:11:59] [INFO] Loaded command: unban
+- [2025-06-24 18:11:59] [INFO] Loaded command: unjail
+- [2025-06-24 18:11:59] [INFO] Loaded command: unlock
+- [2025-06-24 18:11:59] [INFO] Loaded command: unmute
+- [2025-06-24 18:11:59] [INFO] Loaded command: verify
+- [2025-06-24 18:11:59] [INFO] Loaded command: warn
+- [2025-06-24 18:11:59] [INFO] Loaded command: warns
+- [2025-06-24 18:11:59] [INFO] Loaded command: afk
+- [2025-06-24 18:12:00] [INFO] Loaded command: autoreact
+- [2025-06-24 18:12:00] [INFO] Loaded command: dev
+- [2025-06-24 18:12:00] [INFO] Loaded command: massdm
+- [2025-06-24 18:12:00] [INFO] Loaded command: nuke-server
+- [2025-06-24 18:12:00] [INFO] Loaded command: premium
+- [2025-06-24 18:12:00] [INFO] Loaded command: setuproles
+- [2025-06-24 18:12:00] [INFO] Loaded command: shutdown
+- [2025-06-24 18:12:00] [INFO] Loaded command: modmail
+- [2025-06-24 18:12:00] [INFO] Loaded command: moveall
+- [2025-06-24 18:12:00] [INFO] Loaded command: rolemenu
+- [2025-06-24 18:12:00] [INFO] Loaded command: sendnotify
+- [2025-06-24 18:12:00] [INFO] Loaded command: unafk
+- [2025-06-24 18:12:00] [INFO] Loaded command: ping
+- [2025-06-24 18:12:00] [INFO] Loaded command: setembedcolor
+- [2025-06-24 18:12:00] [INFO] Loaded command: setembedfooter
+- [2025-06-24 18:12:00] [INFO] Loaded command: setembedicon
+- [2025-06-24 18:12:00] [INFO] Loaded command: avatar
+- [2025-06-24 18:12:00] [INFO] Loaded command: botinfo
+- [2025-06-24 18:12:00] [INFO] Loaded command: channelinfo
+- [2025-06-24 18:12:00] [INFO] Loaded command: help
+- [2025-06-24 18:12:00] [INFO] Loaded command: invite
+- [2025-06-24 18:12:00] [INFO] Loaded command: roleinfo
+- [2025-06-24 18:12:00] [INFO] Loaded command: serverinfo
+- [2025-06-24 18:12:00] [INFO] Loaded command: userinfo
+- [2025-06-24 18:12:00] [INFO] Loaded event: guildMemberAdd
+- [2025-06-24 18:12:00] [INFO] Loaded event: interactionCreate
+- [2025-06-24 18:12:00] [INFO] Loaded event: messageCreate
+- [2025-06-24 18:12:00] [INFO] Loaded event: messageReactionAdd
+- [2025-06-24 18:12:00] [INFO] Loaded event: messageReactionRemove
+- [2025-06-24 18:12:00] [INFO] Loaded event: ready
+- [2025-06-24 18:12:00] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 18:12:00] [INFO] Loaded slash command: ping
+- [2025-06-24 18:12:00] [INFO] Loaded slash command: setembedcolor
+- [2025-06-24 18:12:00] [INFO] Loaded slash command: setembedfooter
+- [2025-06-24 18:12:00] [INFO] Loaded slash command: setembedicon
+- [2025-06-24 18:12:00] [INFO] Initializing bot and attempting to log in...
+- [2025-06-24 18:12:03] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-24 18:12:03] [INFO] Bot is now online and ready to serve in 4 guilds.
+- [2025-06-24 18:12:03] [INFO] Registered all slash commands globally.
+- [2025-06-24 18:12:03] [INFO] Initializing configs for 4 guilds...
+- [2025-06-24 18:12:04] [INFO] Reloaded command: level
+- [2025-06-24 18:12:05] [ERROR] ❌ Database connection failed: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 18:13:28] [INFO] Loaded command: autoban
+- [2025-06-24 18:13:28] [INFO] Loaded command: autospam
+- [2025-06-24 18:13:28] [INFO] Loaded command: leaderboard
+- [2025-06-24 18:13:28] [INFO] Loaded command: level
+- [2025-06-24 18:13:28] [INFO] Loaded command: levelrole
+- [2025-06-24 18:13:28] [INFO] Loaded command: add
+- [2025-06-24 18:13:28] [INFO] Loaded command: ban
+- [2025-06-24 18:13:28] [INFO] Loaded command: clear
+- [2025-06-24 18:13:28] [INFO] Loaded command: delwarn
+- [2025-06-24 18:13:28] [INFO] Loaded command: deny
+- [2025-06-24 18:13:28] [INFO] Loaded command: jail
+- [2025-06-24 18:13:28] [INFO] Loaded command: jailsettings
+- [2025-06-24 18:13:28] [INFO] Loaded command: kick
+- [2025-06-24 18:13:28] [INFO] Loaded command: lock
+- [2025-06-24 18:13:28] [INFO] Loaded command: move
+- [2025-06-24 18:13:28] [INFO] Loaded command: mute
+- [2025-06-24 18:13:28] [INFO] Loaded command: nickname
+- [2025-06-24 18:13:28] [INFO] Loaded command: role
+- [2025-06-24 18:13:28] [INFO] Loaded command: setautorole
+- [2025-06-24 18:13:28] [INFO] Loaded command: setjailrole
+- [2025-06-24 18:13:28] [INFO] Loaded command: setjailvoice
+- [2025-06-24 18:13:28] [INFO] Loaded command: slowmode
+- [2025-06-24 18:13:28] [INFO] Loaded command: tempvoice
+- [2025-06-24 18:13:28] [INFO] Loaded command: unban
+- [2025-06-24 18:13:28] [INFO] Loaded command: unjail
+- [2025-06-24 18:13:28] [INFO] Loaded command: unlock
+- [2025-06-24 18:13:28] [INFO] Loaded command: unmute
+- [2025-06-24 18:13:28] [INFO] Loaded command: verify
+- [2025-06-24 18:13:28] [INFO] Loaded command: warn
+- [2025-06-24 18:13:28] [INFO] Loaded command: warns
+- [2025-06-24 18:13:28] [INFO] Loaded command: afk
+- [2025-06-24 18:13:28] [INFO] Loaded command: autoreact
+- [2025-06-24 18:13:28] [INFO] Loaded command: dev
+- [2025-06-24 18:13:28] [INFO] Loaded command: massdm
+- [2025-06-24 18:13:28] [INFO] Loaded command: nuke-server
+- [2025-06-24 18:13:28] [INFO] Loaded command: premium
+- [2025-06-24 18:13:28] [INFO] Loaded command: setuproles
+- [2025-06-24 18:13:28] [INFO] Loaded command: shutdown
+- [2025-06-24 18:13:28] [INFO] Loaded command: modmail
+- [2025-06-24 18:13:28] [INFO] Loaded command: moveall
+- [2025-06-24 18:13:28] [INFO] Loaded command: rolemenu
+- [2025-06-24 18:13:28] [INFO] Loaded command: sendnotify
+- [2025-06-24 18:13:28] [INFO] Loaded command: unafk
+- [2025-06-24 18:13:28] [INFO] Loaded command: ping
+- [2025-06-24 18:13:28] [INFO] Loaded command: setembedcolor
+- [2025-06-24 18:13:28] [INFO] Loaded command: setembedfooter
+- [2025-06-24 18:13:28] [INFO] Loaded command: setembedicon
+- [2025-06-24 18:13:28] [INFO] Loaded command: avatar
+- [2025-06-24 18:13:28] [INFO] Loaded command: botinfo
+- [2025-06-24 18:13:28] [INFO] Loaded command: channelinfo
+- [2025-06-24 18:13:28] [INFO] Loaded command: help
+- [2025-06-24 18:13:28] [INFO] Loaded command: invite
+- [2025-06-24 18:13:28] [INFO] Loaded command: roleinfo
+- [2025-06-24 18:13:28] [INFO] Loaded command: serverinfo
+- [2025-06-24 18:13:29] [INFO] Loaded command: userinfo
+- [2025-06-24 18:13:29] [INFO] Loaded event: guildMemberAdd
+- [2025-06-24 18:13:29] [INFO] Loaded event: interactionCreate
+- [2025-06-24 18:13:29] [INFO] Loaded event: messageCreate
+- [2025-06-24 18:13:29] [INFO] Loaded event: messageReactionAdd
+- [2025-06-24 18:13:29] [INFO] Loaded event: messageReactionRemove
+- [2025-06-24 18:13:29] [INFO] Loaded event: ready
+- [2025-06-24 18:13:29] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 18:13:29] [INFO] Loaded slash command: ping
+- [2025-06-24 18:13:29] [INFO] Loaded slash command: setembedcolor
+- [2025-06-24 18:13:29] [INFO] Loaded slash command: setembedfooter
+- [2025-06-24 18:13:29] [INFO] Loaded slash command: setembedicon
+- [2025-06-24 18:13:29] [INFO] Initializing bot and attempting to log in...
+- [2025-06-24 18:13:29] [INFO] ✅ Database connection successful
+- [2025-06-24 18:13:31] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-24 18:13:31] [INFO] Bot is now online and ready to serve in 4 guilds.
+- [2025-06-24 18:13:32] [INFO] Registered all slash commands globally.
+- [2025-06-24 18:13:32] [INFO] Initializing configs for 4 guilds...
+- [2025-06-24 18:13:32] [INFO] ✅ Guild configurations initialized
+- [2025-06-24 18:13:33] [INFO] Successfully updated dev server status message.
+- [2025-06-24 18:15:40] [ERROR] Query error: [object Object]
+- [2025-06-24 18:15:40] [ERROR] Query error: [object Object]
+- [2025-06-24 18:15:40] [ERROR] Failed to process auto-reactions for guild 1038540608396066856: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 18:18:02] [INFO] Reloaded command: level
+- [2025-06-24 18:19:17] [ERROR] Query error: [object Object]
+- [2025-06-24 18:19:17] [ERROR] Query error: [object Object]
+- [2025-06-24 18:19:17] [ERROR] Failed to process auto-reactions for guild 1038540608396066856: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 18:19:38] [INFO] Reloaded command: level
+- [2025-06-24 18:28:08] [INFO] Reloaded command: leaderboard
+- [2025-06-24 18:28:45] [ERROR] Query error: [object Object]
+- [2025-06-24 18:28:45] [ERROR] Query error: [object Object]
+- [2025-06-24 18:28:46] [ERROR] Failed to process auto-reactions for guild 1038540608396066856: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 18:29:02] [INFO] Reloaded command: leaderboard
+- [2025-06-24 18:29:36] [ERROR] Discord client error: TypeError: Cannot read properties of undefined (reading '1038540608396066856-716381717589393499')
+- [2025-06-24 18:29:36] [ERROR] Discord client error: Cannot read properties of undefined (reading '1038540608396066856-716381717589393499')
+- [2025-06-24 18:29:46] [ERROR] Query error: [object Object]
+- [2025-06-24 18:29:46] [ERROR] Failed to process auto-reactions for guild 1038540608396066856: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 18:31:57] [INFO] Reloaded event: messageCreate
+- [2025-06-24 18:34:39] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-24 18:34:39] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-24 18:34:39] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-24 18:34:39] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-24 18:34:39] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-24 18:34:39] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-24 18:34:39] [INFO] Shutdown complete. Exiting.
+- [2025-06-24 18:35:10] [INFO] Loaded command: autoban
+- [2025-06-24 18:35:10] [INFO] Loaded command: autospam
+- [2025-06-24 18:35:10] [INFO] Loaded command: leaderboard
+- [2025-06-24 18:35:10] [INFO] Loaded command: level
+- [2025-06-24 18:35:10] [INFO] Loaded command: levelrole
+- [2025-06-24 18:35:10] [INFO] Loaded command: add
+- [2025-06-24 18:35:10] [INFO] Loaded command: ban
+- [2025-06-24 18:35:10] [INFO] Loaded command: clear
+- [2025-06-24 18:35:10] [INFO] Loaded command: delwarn
+- [2025-06-24 18:35:10] [INFO] Loaded command: deny
+- [2025-06-24 18:35:10] [INFO] Loaded command: jail
+- [2025-06-24 18:35:10] [INFO] Loaded command: jailsettings
+- [2025-06-24 18:35:10] [INFO] Loaded command: kick
+- [2025-06-24 18:35:10] [INFO] Loaded command: lock
+- [2025-06-24 18:35:10] [INFO] Loaded command: move
+- [2025-06-24 18:35:10] [INFO] Loaded command: mute
+- [2025-06-24 18:35:10] [INFO] Loaded command: nickname
+- [2025-06-24 18:35:10] [INFO] Loaded command: role
+- [2025-06-24 18:35:10] [INFO] Loaded command: setautorole
+- [2025-06-24 18:35:10] [INFO] Loaded command: setjailrole
+- [2025-06-24 18:35:10] [INFO] Loaded command: setjailvoice
+- [2025-06-24 18:35:10] [INFO] Loaded command: slowmode
+- [2025-06-24 18:35:10] [INFO] Loaded command: tempvoice
+- [2025-06-24 18:35:10] [INFO] Loaded command: unban
+- [2025-06-24 18:35:10] [INFO] Loaded command: unjail
+- [2025-06-24 18:35:10] [INFO] Loaded command: unlock
+- [2025-06-24 18:35:10] [INFO] Loaded command: unmute
+- [2025-06-24 18:35:10] [INFO] Loaded command: verify
+- [2025-06-24 18:35:10] [INFO] Loaded command: warn
+- [2025-06-24 18:35:10] [INFO] Loaded command: warns
+- [2025-06-24 18:35:10] [INFO] Loaded command: afk
+- [2025-06-24 18:35:10] [INFO] Loaded command: autoreact
+- [2025-06-24 18:35:10] [INFO] Loaded command: dev
+- [2025-06-24 18:35:10] [INFO] Loaded command: massdm
+- [2025-06-24 18:35:10] [INFO] Loaded command: nuke-server
+- [2025-06-24 18:35:10] [INFO] Loaded command: premium
+- [2025-06-24 18:35:10] [INFO] Loaded command: setuproles
+- [2025-06-24 18:35:10] [INFO] Loaded command: shutdown
+- [2025-06-24 18:35:10] [INFO] Loaded command: modmail
+- [2025-06-24 18:35:10] [INFO] Loaded command: moveall
+- [2025-06-24 18:35:10] [INFO] Loaded command: rolemenu
+- [2025-06-24 18:35:11] [INFO] Loaded command: sendnotify
+- [2025-06-24 18:35:11] [INFO] Loaded command: unafk
+- [2025-06-24 18:35:11] [INFO] Loaded command: ping
+- [2025-06-24 18:35:11] [INFO] Loaded command: setembedcolor
+- [2025-06-24 18:35:11] [INFO] Loaded command: setembedfooter
+- [2025-06-24 18:35:11] [INFO] Loaded command: setembedicon
+- [2025-06-24 18:35:11] [INFO] Loaded command: avatar
+- [2025-06-24 18:35:11] [INFO] Loaded command: botinfo
+- [2025-06-24 18:35:11] [INFO] Loaded command: channelinfo
+- [2025-06-24 18:35:11] [INFO] Loaded command: help
+- [2025-06-24 18:35:11] [INFO] Loaded command: invite
+- [2025-06-24 18:35:11] [INFO] Loaded command: roleinfo
+- [2025-06-24 18:35:11] [INFO] Loaded command: serverinfo
+- [2025-06-24 18:35:11] [INFO] Loaded command: userinfo
+- [2025-06-24 18:35:11] [INFO] Loaded event: guildMemberAdd
+- [2025-06-24 18:35:11] [INFO] Loaded event: interactionCreate
+- [2025-06-24 18:35:11] [INFO] Loaded event: messageCreate
+- [2025-06-24 18:35:11] [INFO] Loaded event: messageReactionAdd
+- [2025-06-24 18:35:11] [INFO] Loaded event: messageReactionRemove
+- [2025-06-24 18:35:11] [INFO] Loaded event: ready
+- [2025-06-24 18:35:11] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 18:35:11] [INFO] Loaded slash command: ping
+- [2025-06-24 18:35:11] [INFO] Loaded slash command: setembedcolor
+- [2025-06-24 18:35:11] [INFO] Loaded slash command: setembedfooter
+- [2025-06-24 18:35:11] [INFO] Loaded slash command: setembedicon
+- [2025-06-24 18:35:11] [INFO] Initializing bot and attempting to log in...
+- [2025-06-24 18:35:12] [INFO] ✅ Database connection successful
+- [2025-06-24 18:35:13] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-24 18:35:13] [INFO] Bot is now online and ready to serve in 4 guilds.
+- [2025-06-24 18:35:14] [INFO] Registered all slash commands globally.
+- [2025-06-24 18:35:14] [INFO] Initializing configs for 4 guilds...
+- [2025-06-24 18:35:14] [INFO] ✅ Guild configurations initialized
+- [2025-06-24 18:35:15] [INFO] Successfully updated dev server status message.
+- [2025-06-24 18:38:20] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-24 18:38:20] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-24 18:38:20] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-24 18:38:20] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-24 18:38:20] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-24 18:38:20] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-24 18:38:20] [INFO] Shutdown complete. Exiting.
+- [2025-06-24 18:38:28] [INFO] Loaded command: autoban
+- [2025-06-24 18:38:28] [INFO] Loaded command: autospam
+- [2025-06-24 18:38:28] [INFO] Loaded command: leaderboard
+- [2025-06-24 18:38:28] [INFO] Loaded command: level
+- [2025-06-24 18:38:28] [INFO] Loaded command: levelrole
+- [2025-06-24 18:38:28] [INFO] Loaded command: add
+- [2025-06-24 18:38:28] [INFO] Loaded command: ban
+- [2025-06-24 18:38:28] [INFO] Loaded command: clear
+- [2025-06-24 18:38:28] [INFO] Loaded command: delwarn
+- [2025-06-24 18:38:28] [INFO] Loaded command: deny
+- [2025-06-24 18:38:28] [INFO] Loaded command: jail
+- [2025-06-24 18:38:28] [INFO] Loaded command: jailsettings
+- [2025-06-24 18:38:28] [INFO] Loaded command: kick
+- [2025-06-24 18:38:28] [INFO] Loaded command: lock
+- [2025-06-24 18:38:28] [INFO] Loaded command: move
+- [2025-06-24 18:38:28] [INFO] Loaded command: mute
+- [2025-06-24 18:38:28] [INFO] Loaded command: nickname
+- [2025-06-24 18:38:28] [INFO] Loaded command: role
+- [2025-06-24 18:38:28] [INFO] Loaded command: setautorole
+- [2025-06-24 18:38:28] [INFO] Loaded command: setjailrole
+- [2025-06-24 18:38:28] [INFO] Loaded command: setjailvoice
+- [2025-06-24 18:38:28] [INFO] Loaded command: slowmode
+- [2025-06-24 18:38:28] [INFO] Loaded command: tempvoice
+- [2025-06-24 18:38:28] [INFO] Loaded command: unban
+- [2025-06-24 18:38:28] [INFO] Loaded command: unjail
+- [2025-06-24 18:38:28] [INFO] Loaded command: unlock
+- [2025-06-24 18:38:28] [INFO] Loaded command: unmute
+- [2025-06-24 18:38:28] [INFO] Loaded command: verify
+- [2025-06-24 18:38:29] [INFO] Loaded command: warn
+- [2025-06-24 18:38:29] [INFO] Loaded command: warns
+- [2025-06-24 18:38:29] [INFO] Loaded command: afk
+- [2025-06-24 18:38:29] [INFO] Loaded command: autoreact
+- [2025-06-24 18:38:29] [INFO] Loaded command: dev
+- [2025-06-24 18:38:29] [INFO] Loaded command: massdm
+- [2025-06-24 18:38:29] [INFO] Loaded command: nuke-server
+- [2025-06-24 18:38:29] [INFO] Loaded command: premium
+- [2025-06-24 18:38:29] [INFO] Loaded command: setuproles
+- [2025-06-24 18:38:29] [INFO] Loaded command: shutdown
+- [2025-06-24 18:38:29] [INFO] Loaded command: modmail
+- [2025-06-24 18:38:29] [INFO] Loaded command: moveall
+- [2025-06-24 18:38:29] [INFO] Loaded command: rolemenu
+- [2025-06-24 18:38:29] [INFO] Loaded command: sendnotify
+- [2025-06-24 18:38:29] [INFO] Loaded command: unafk
+- [2025-06-24 18:38:29] [INFO] Loaded command: ping
+- [2025-06-24 18:38:29] [INFO] Loaded command: setembedcolor
+- [2025-06-24 18:38:29] [INFO] Loaded command: setembedfooter
+- [2025-06-24 18:38:29] [INFO] Loaded command: setembedicon
+- [2025-06-24 18:38:29] [INFO] Loaded command: avatar
+- [2025-06-24 18:38:29] [INFO] Loaded command: botinfo
+- [2025-06-24 18:38:29] [INFO] Loaded command: channelinfo
+- [2025-06-24 18:38:29] [INFO] Loaded command: help
+- [2025-06-24 18:38:29] [INFO] Loaded command: invite
+- [2025-06-24 18:38:29] [INFO] Loaded command: roleinfo
+- [2025-06-24 18:38:29] [INFO] Loaded command: serverinfo
+- [2025-06-24 18:38:29] [INFO] Loaded command: userinfo
+- [2025-06-24 18:38:29] [INFO] Loaded event: guildMemberAdd
+- [2025-06-24 18:38:29] [INFO] Loaded event: interactionCreate
+- [2025-06-24 18:38:29] [INFO] Loaded event: messageCreate
+- [2025-06-24 18:38:29] [INFO] Loaded event: messageReactionAdd
+- [2025-06-24 18:38:29] [INFO] Loaded event: messageReactionRemove
+- [2025-06-24 18:38:29] [INFO] Loaded event: ready
+- [2025-06-24 18:38:29] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 18:38:29] [INFO] Loaded slash command: ping
+- [2025-06-24 18:38:30] [INFO] Loaded slash command: setembedcolor
+- [2025-06-24 18:38:30] [INFO] Loaded slash command: setembedfooter
+- [2025-06-24 18:38:30] [INFO] Loaded slash command: setembedicon
+- [2025-06-24 18:38:30] [INFO] Initializing bot and attempting to log in...
+- [2025-06-24 18:38:30] [INFO] ✅ Database connection successful
+- [2025-06-24 18:38:32] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-24 18:38:32] [INFO] Bot is now online and ready to serve in 4 guilds.
+- [2025-06-24 18:38:32] [INFO] Registered all slash commands globally.
+- [2025-06-24 18:38:32] [INFO] Initializing configs for 4 guilds...
+- [2025-06-24 18:38:33] [INFO] ✅ Guild configurations initialized
+- [2025-06-24 18:38:34] [INFO] Successfully updated dev server status message.
+- [2025-06-24 18:40:18] [ERROR] Query error: [object Object]
+- [2025-06-24 18:40:18] [ERROR] Query error: [object Object]
+- [2025-06-24 18:40:18] [ERROR] Failed to process auto-reactions for guild 1038540608396066856: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 18:40:18] [ERROR] Discord client error: TypeError: Cannot read properties of undefined (reading '1038540608396066856-716381717589393499')
+- [2025-06-24 18:40:18] [ERROR] Discord client error: Cannot read properties of undefined (reading '1038540608396066856-716381717589393499')
+- [2025-06-24 18:40:18] [ERROR] Discord client error: TypeError: Cannot read properties of undefined (reading '1038540608396066856-716381717589393499')
+- [2025-06-24 18:40:18] [ERROR] Discord client error: Cannot read properties of undefined (reading '1038540608396066856-716381717589393499')
+- [2025-06-24 18:41:23] [ERROR] Query error: [object Object]
+- [2025-06-24 18:41:23] [ERROR] Query error: [object Object]
+- [2025-06-24 18:41:23] [ERROR] Failed to process auto-reactions for guild 1038540608396066856: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 18:44:26] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-24 18:44:26] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-24 18:44:49] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-24 18:44:49] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-24 18:44:49] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-24 18:44:49] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-24 18:44:49] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-24 18:44:49] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-24 18:44:49] [INFO] Shutdown complete. Exiting.
+- [2025-06-24 18:44:55] [INFO] Loaded command: autoban
+- [2025-06-24 18:44:55] [INFO] Loaded command: autospam
+- [2025-06-24 18:44:55] [INFO] Loaded command: leaderboard
+- [2025-06-24 18:44:55] [INFO] Loaded command: level
+- [2025-06-24 18:44:55] [INFO] Loaded command: levelrole
+- [2025-06-24 18:44:55] [INFO] Loaded command: add
+- [2025-06-24 18:44:55] [INFO] Loaded command: ban
+- [2025-06-24 18:44:55] [INFO] Loaded command: clear
+- [2025-06-24 18:44:55] [INFO] Loaded command: delwarn
+- [2025-06-24 18:44:55] [INFO] Loaded command: deny
+- [2025-06-24 18:44:55] [INFO] Loaded command: jail
+- [2025-06-24 18:44:55] [INFO] Loaded command: jailsettings
+- [2025-06-24 18:44:55] [INFO] Loaded command: kick
+- [2025-06-24 18:44:55] [INFO] Loaded command: lock
+- [2025-06-24 18:44:55] [INFO] Loaded command: move
+- [2025-06-24 18:44:55] [INFO] Loaded command: mute
+- [2025-06-24 18:44:55] [INFO] Loaded command: nickname
+- [2025-06-24 18:44:56] [INFO] Loaded command: role
+- [2025-06-24 18:44:56] [INFO] Loaded command: setautorole
+- [2025-06-24 18:44:56] [INFO] Loaded command: setjailrole
+- [2025-06-24 18:44:56] [INFO] Loaded command: setjailvoice
+- [2025-06-24 18:44:56] [INFO] Loaded command: slowmode
+- [2025-06-24 18:44:56] [INFO] Loaded command: tempvoice
+- [2025-06-24 18:44:56] [INFO] Loaded command: unban
+- [2025-06-24 18:44:56] [INFO] Loaded command: unjail
+- [2025-06-24 18:44:56] [INFO] Loaded command: unlock
+- [2025-06-24 18:44:56] [INFO] Loaded command: unmute
+- [2025-06-24 18:44:56] [INFO] Loaded command: verify
+- [2025-06-24 18:44:56] [INFO] Loaded command: warn
+- [2025-06-24 18:44:56] [INFO] Loaded command: warns
+- [2025-06-24 18:44:56] [INFO] Loaded command: afk
+- [2025-06-24 18:44:56] [INFO] Loaded command: autoreact
+- [2025-06-24 18:44:56] [INFO] Loaded command: dev
+- [2025-06-24 18:44:56] [INFO] Loaded command: massdm
+- [2025-06-24 18:44:56] [INFO] Loaded command: nuke-server
+- [2025-06-24 18:44:56] [INFO] Loaded command: premium
+- [2025-06-24 18:44:56] [INFO] Loaded command: setuproles
+- [2025-06-24 18:44:56] [INFO] Loaded command: shutdown
+- [2025-06-24 18:44:56] [INFO] Loaded command: modmail
+- [2025-06-24 18:44:56] [INFO] Loaded command: moveall
+- [2025-06-24 18:44:56] [INFO] Loaded command: rolemenu
+- [2025-06-24 18:44:56] [INFO] Loaded command: sendnotify
+- [2025-06-24 18:44:56] [INFO] Loaded command: unafk
+- [2025-06-24 18:44:56] [INFO] Loaded command: ping
+- [2025-06-24 18:44:56] [INFO] Loaded command: setembedcolor
+- [2025-06-24 18:44:56] [INFO] Loaded command: setembedfooter
+- [2025-06-24 18:44:56] [INFO] Loaded command: setembedicon
+- [2025-06-24 18:44:56] [INFO] Loaded command: avatar
+- [2025-06-24 18:44:56] [INFO] Loaded command: botinfo
+- [2025-06-24 18:44:56] [INFO] Loaded command: channelinfo
+- [2025-06-24 18:44:56] [INFO] Loaded command: help
+- [2025-06-24 18:44:56] [INFO] Loaded command: invite
+- [2025-06-24 18:44:56] [INFO] Loaded command: roleinfo
+- [2025-06-24 18:44:56] [INFO] Loaded command: serverinfo
+- [2025-06-24 18:44:56] [INFO] Loaded command: userinfo
+- [2025-06-24 18:44:56] [INFO] Loaded event: guildMemberAdd
+- [2025-06-24 18:44:56] [INFO] Loaded event: interactionCreate
+- [2025-06-24 18:44:56] [INFO] Loaded event: messageCreate
+- [2025-06-24 18:44:56] [INFO] Loaded event: messageReactionAdd
+- [2025-06-24 18:44:56] [INFO] Loaded event: messageReactionRemove
+- [2025-06-24 18:44:56] [INFO] Loaded event: ready
+- [2025-06-24 18:44:56] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 18:44:56] [INFO] Loaded slash command: ping
+- [2025-06-24 18:44:56] [INFO] Loaded slash command: setembedcolor
+- [2025-06-24 18:44:56] [INFO] Loaded slash command: setembedfooter
+- [2025-06-24 18:44:56] [INFO] Loaded slash command: setembedicon
+- [2025-06-24 18:44:57] [INFO] Initializing bot and attempting to log in...
+- [2025-06-24 18:44:57] [INFO] ✅ Database connection successful
+- [2025-06-24 18:44:59] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-24 18:44:59] [INFO] Bot is now online and ready to serve in 4 guilds.
+- [2025-06-24 18:44:59] [INFO] Registered all slash commands globally.
+- [2025-06-24 18:44:59] [INFO] Initializing configs for 4 guilds...
+- [2025-06-24 18:45:00] [INFO] ✅ Guild configurations initialized
+- [2025-06-24 18:45:01] [ERROR] Discord client error: ReferenceError: VOICE_XP_INTERVAL is not defined
+- [2025-06-24 18:45:01] [ERROR] Discord client error: VOICE_XP_INTERVAL is not defined
+- [2025-06-24 18:45:01] [ERROR] Discord client error: ReferenceError: VOICE_XP_INTERVAL is not defined
+- [2025-06-24 18:45:01] [ERROR] Discord client error: VOICE_XP_INTERVAL is not defined
+- [2025-06-24 18:45:01] [INFO] Successfully updated dev server status message.
+- [2025-06-24 18:46:56] [ERROR] Query error: [object Object]
+- [2025-06-24 18:46:56] [ERROR] Query error: [object Object]
+- [2025-06-24 18:46:56] [ERROR] Failed to process auto-reactions for guild 1038540608396066856: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 18:47:12] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-24 18:47:12] [ERROR] Discord client error: ReferenceError: VOICE_XP_INTERVAL is not defined
+- [2025-06-24 18:47:12] [ERROR] Discord client error: VOICE_XP_INTERVAL is not defined
+- [2025-06-24 18:47:28] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-24 18:47:28] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-24 18:47:28] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-24 18:47:28] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-24 18:47:28] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-24 18:47:28] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-24 18:47:28] [INFO] Shutdown complete. Exiting.
+- [2025-06-24 18:47:37] [INFO] Loaded command: autoban
+- [2025-06-24 18:47:37] [INFO] Loaded command: autospam
+- [2025-06-24 18:47:37] [INFO] Loaded command: leaderboard
+- [2025-06-24 18:47:37] [INFO] Loaded command: level
+- [2025-06-24 18:47:37] [INFO] Loaded command: levelrole
+- [2025-06-24 18:47:37] [INFO] Loaded command: add
+- [2025-06-24 18:47:37] [INFO] Loaded command: ban
+- [2025-06-24 18:47:37] [INFO] Loaded command: clear
+- [2025-06-24 18:47:37] [INFO] Loaded command: delwarn
+- [2025-06-24 18:47:37] [INFO] Loaded command: deny
+- [2025-06-24 18:47:37] [INFO] Loaded command: jail
+- [2025-06-24 18:47:37] [INFO] Loaded command: jailsettings
+- [2025-06-24 18:47:37] [INFO] Loaded command: kick
+- [2025-06-24 18:47:37] [INFO] Loaded command: lock
+- [2025-06-24 18:47:37] [INFO] Loaded command: move
+- [2025-06-24 18:47:37] [INFO] Loaded command: mute
+- [2025-06-24 18:47:37] [INFO] Loaded command: nickname
+- [2025-06-24 18:47:37] [INFO] Loaded command: role
+- [2025-06-24 18:47:37] [INFO] Loaded command: setautorole
+- [2025-06-24 18:47:37] [INFO] Loaded command: setjailrole
+- [2025-06-24 18:47:37] [INFO] Loaded command: setjailvoice
+- [2025-06-24 18:47:37] [INFO] Loaded command: slowmode
+- [2025-06-24 18:47:37] [INFO] Loaded command: tempvoice
+- [2025-06-24 18:47:37] [INFO] Loaded command: unban
+- [2025-06-24 18:47:38] [INFO] Loaded command: unjail
+- [2025-06-24 18:47:38] [INFO] Loaded command: unlock
+- [2025-06-24 18:47:38] [INFO] Loaded command: unmute
+- [2025-06-24 18:47:38] [INFO] Loaded command: verify
+- [2025-06-24 18:47:38] [INFO] Loaded command: warn
+- [2025-06-24 18:47:38] [INFO] Loaded command: warns
+- [2025-06-24 18:47:38] [INFO] Loaded command: afk
+- [2025-06-24 18:47:38] [INFO] Loaded command: autoreact
+- [2025-06-24 18:47:38] [INFO] Loaded command: dev
+- [2025-06-24 18:47:38] [INFO] Loaded command: massdm
+- [2025-06-24 18:47:38] [INFO] Loaded command: nuke-server
+- [2025-06-24 18:47:38] [INFO] Loaded command: premium
+- [2025-06-24 18:47:38] [INFO] Loaded command: setuproles
+- [2025-06-24 18:47:38] [INFO] Loaded command: shutdown
+- [2025-06-24 18:47:38] [INFO] Loaded command: modmail
+- [2025-06-24 18:47:38] [INFO] Loaded command: moveall
+- [2025-06-24 18:47:38] [INFO] Loaded command: rolemenu
+- [2025-06-24 18:47:38] [INFO] Loaded command: sendnotify
+- [2025-06-24 18:47:38] [INFO] Loaded command: unafk
+- [2025-06-24 18:47:38] [INFO] Loaded command: ping
+- [2025-06-24 18:47:38] [INFO] Loaded command: setembedcolor
+- [2025-06-24 18:47:38] [INFO] Loaded command: setembedfooter
+- [2025-06-24 18:47:38] [INFO] Loaded command: setembedicon
+- [2025-06-24 18:47:38] [INFO] Loaded command: avatar
+- [2025-06-24 18:47:38] [INFO] Loaded command: botinfo
+- [2025-06-24 18:47:38] [INFO] Loaded command: channelinfo
+- [2025-06-24 18:47:38] [INFO] Loaded command: help
+- [2025-06-24 18:47:38] [INFO] Loaded command: invite
+- [2025-06-24 18:47:38] [INFO] Loaded command: roleinfo
+- [2025-06-24 18:47:38] [INFO] Loaded command: serverinfo
+- [2025-06-24 18:47:38] [INFO] Loaded command: userinfo
+- [2025-06-24 18:47:38] [INFO] Loaded event: guildMemberAdd
+- [2025-06-24 18:47:38] [INFO] Loaded event: interactionCreate
+- [2025-06-24 18:47:38] [INFO] Loaded event: messageCreate
+- [2025-06-24 18:47:38] [INFO] Loaded event: messageReactionAdd
+- [2025-06-24 18:47:38] [INFO] Loaded event: messageReactionRemove
+- [2025-06-24 18:47:38] [INFO] Loaded event: ready
+- [2025-06-24 18:47:38] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 18:47:38] [INFO] Loaded slash command: ping
+- [2025-06-24 18:47:38] [INFO] Loaded slash command: setembedcolor
+- [2025-06-24 18:47:38] [INFO] Loaded slash command: setembedfooter
+- [2025-06-24 18:47:39] [INFO] Loaded slash command: setembedicon
+- [2025-06-24 18:47:39] [INFO] Initializing bot and attempting to log in...
+- [2025-06-24 18:47:39] [INFO] ✅ Database connection successful
+- [2025-06-24 18:47:41] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-24 18:47:41] [INFO] Bot is now online and ready to serve in 4 guilds.
+- [2025-06-24 18:47:42] [INFO] Registered all slash commands globally.
+- [2025-06-24 18:47:42] [INFO] Initializing configs for 4 guilds...
+- [2025-06-24 18:47:42] [INFO] ✅ Guild configurations initialized
+- [2025-06-24 18:47:43] [INFO] Successfully updated dev server status message.
+- [2025-06-24 18:49:24] [ERROR] Unhandled Promise Rejection: ReferenceError: addXp is not defined
+- [2025-06-24 18:49:24] [ERROR] Unhandled Promise Rejection: addXp is not defined
+- [2025-06-24 18:50:24] [ERROR] Unhandled Promise Rejection: ReferenceError: addXp is not defined
+- [2025-06-24 18:50:24] [ERROR] Unhandled Promise Rejection: addXp is not defined
+- [2025-06-24 18:50:41] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-24 18:51:24] [ERROR] Unhandled Promise Rejection: ReferenceError: addXp is not defined
+- [2025-06-24 18:51:24] [ERROR] Unhandled Promise Rejection: addXp is not defined
+- [2025-06-24 18:51:39] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-24 18:51:46] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-24 18:51:58] [ERROR] Query error: [object Object]
+- [2025-06-24 18:51:58] [ERROR] Query error: [object Object]
+- [2025-06-24 18:51:58] [ERROR] Failed to process auto-reactions for guild 1038540608396066856: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 18:52:24] [ERROR] Unhandled Promise Rejection: ReferenceError: addXp is not defined
+- [2025-06-24 18:52:24] [ERROR] Unhandled Promise Rejection: addXp is not defined
+- [2025-06-24 18:53:24] [ERROR] Unhandled Promise Rejection: ReferenceError: addXp is not defined
+- [2025-06-24 18:53:24] [ERROR] Unhandled Promise Rejection: addXp is not defined
+- [2025-06-24 18:53:35] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-24 18:53:35] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-24 18:53:35] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-24 18:53:35] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-24 18:53:35] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-24 18:53:35] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-24 18:53:36] [INFO] Shutdown complete. Exiting.
+- [2025-06-24 18:53:48] [INFO] Loaded command: autoban
+- [2025-06-24 18:53:48] [INFO] Loaded command: autospam
+- [2025-06-24 18:53:48] [INFO] Loaded command: leaderboard
+- [2025-06-24 18:53:48] [INFO] Loaded command: level
+- [2025-06-24 18:53:48] [INFO] Loaded command: levelrole
+- [2025-06-24 18:53:48] [INFO] Loaded command: add
+- [2025-06-24 18:53:48] [INFO] Loaded command: ban
+- [2025-06-24 18:53:48] [INFO] Loaded command: clear
+- [2025-06-24 18:53:48] [INFO] Loaded command: delwarn
+- [2025-06-24 18:53:48] [INFO] Loaded command: deny
+- [2025-06-24 18:53:48] [INFO] Loaded command: jail
+- [2025-06-24 18:53:48] [INFO] Loaded command: jailsettings
+- [2025-06-24 18:53:48] [INFO] Loaded command: kick
+- [2025-06-24 18:53:48] [INFO] Loaded command: lock
+- [2025-06-24 18:53:48] [INFO] Loaded command: move
+- [2025-06-24 18:53:48] [INFO] Loaded command: mute
+- [2025-06-24 18:53:48] [INFO] Loaded command: nickname
+- [2025-06-24 18:53:48] [INFO] Loaded command: role
+- [2025-06-24 18:53:48] [INFO] Loaded command: setautorole
+- [2025-06-24 18:53:48] [INFO] Loaded command: setjailrole
+- [2025-06-24 18:53:48] [INFO] Loaded command: setjailvoice
+- [2025-06-24 18:53:48] [INFO] Loaded command: slowmode
+- [2025-06-24 18:53:48] [INFO] Loaded command: tempvoice
+- [2025-06-24 18:53:48] [INFO] Loaded command: unban
+- [2025-06-24 18:53:48] [INFO] Loaded command: unjail
+- [2025-06-24 18:53:48] [INFO] Loaded command: unlock
+- [2025-06-24 18:53:48] [INFO] Loaded command: unmute
+- [2025-06-24 18:53:48] [INFO] Loaded command: verify
+- [2025-06-24 18:53:48] [INFO] Loaded command: warn
+- [2025-06-24 18:53:48] [INFO] Loaded command: warns
+- [2025-06-24 18:53:48] [INFO] Loaded command: afk
+- [2025-06-24 18:53:48] [INFO] Loaded command: autoreact
+- [2025-06-24 18:53:48] [INFO] Loaded command: dev
+- [2025-06-24 18:53:49] [INFO] Loaded command: massdm
+- [2025-06-24 18:53:49] [INFO] Loaded command: nuke-server
+- [2025-06-24 18:53:49] [INFO] Loaded command: premium
+- [2025-06-24 18:53:49] [INFO] Loaded command: setuproles
+- [2025-06-24 18:53:49] [INFO] Loaded command: shutdown
+- [2025-06-24 18:53:49] [INFO] Loaded command: modmail
+- [2025-06-24 18:53:49] [INFO] Loaded command: moveall
+- [2025-06-24 18:53:49] [INFO] Loaded command: rolemenu
+- [2025-06-24 18:53:49] [INFO] Loaded command: sendnotify
+- [2025-06-24 18:53:49] [INFO] Loaded command: unafk
+- [2025-06-24 18:53:49] [INFO] Loaded command: ping
+- [2025-06-24 18:53:49] [INFO] Loaded command: setembedcolor
+- [2025-06-24 18:53:49] [INFO] Loaded command: setembedfooter
+- [2025-06-24 18:53:49] [INFO] Loaded command: setembedicon
+- [2025-06-24 18:53:49] [INFO] Loaded command: avatar
+- [2025-06-24 18:53:49] [INFO] Loaded command: botinfo
+- [2025-06-24 18:53:49] [INFO] Loaded command: channelinfo
+- [2025-06-24 18:53:49] [INFO] Loaded command: help
+- [2025-06-24 18:53:49] [INFO] Loaded command: invite
+- [2025-06-24 18:53:49] [INFO] Loaded command: roleinfo
+- [2025-06-24 18:53:49] [INFO] Loaded command: serverinfo
+- [2025-06-24 18:53:49] [INFO] Loaded command: userinfo
+- [2025-06-24 18:53:49] [INFO] Loaded event: guildMemberAdd
+- [2025-06-24 18:53:49] [INFO] Loaded event: interactionCreate
+- [2025-06-24 18:53:49] [INFO] Loaded event: messageCreate
+- [2025-06-24 18:53:49] [INFO] Loaded event: messageReactionAdd
+- [2025-06-24 18:53:49] [INFO] Loaded event: messageReactionRemove
+- [2025-06-24 18:53:49] [INFO] Loaded event: ready
+- [2025-06-24 18:53:49] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 18:53:49] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 18:53:49] [INFO] Loaded slash command: ping
+- [2025-06-24 18:53:49] [INFO] Loaded slash command: setembedcolor
+- [2025-06-24 18:53:49] [INFO] Loaded slash command: setembedfooter
+- [2025-06-24 18:53:49] [INFO] Loaded slash command: setembedicon
+- [2025-06-24 18:53:49] [INFO] Initializing bot and attempting to log in...
+- [2025-06-24 18:53:51] [INFO] ✅ Database connection successful
+- [2025-06-24 18:53:53] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-24 18:53:53] [INFO] Bot is now online and ready to serve in 4 guilds.
+- [2025-06-24 18:53:53] [INFO] Registered all slash commands globally.
+- [2025-06-24 18:53:53] [INFO] Initializing configs for 4 guilds...
+- [2025-06-24 18:53:54] [INFO] ✅ Guild configurations initialized
+- [2025-06-24 18:53:55] [INFO] Successfully updated dev server status message.
+- [2025-06-24 18:57:22] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-24 18:58:12] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-24 18:58:24] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-24 18:58:24] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-24 18:58:24] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-24 18:58:24] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-24 18:58:24] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-24 18:58:24] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-24 18:58:24] [INFO] Shutdown complete. Exiting.
+- [2025-06-24 18:58:32] [INFO] Loaded command: autoban
+- [2025-06-24 18:58:32] [INFO] Loaded command: autospam
+- [2025-06-24 18:58:32] [INFO] Loaded command: leaderboard
+- [2025-06-24 18:58:32] [INFO] Loaded command: level
+- [2025-06-24 18:58:32] [INFO] Loaded command: levelrole
+- [2025-06-24 18:58:32] [INFO] Loaded command: add
+- [2025-06-24 18:58:32] [INFO] Loaded command: ban
+- [2025-06-24 18:58:32] [INFO] Loaded command: clear
+- [2025-06-24 18:58:32] [INFO] Loaded command: delwarn
+- [2025-06-24 18:58:32] [INFO] Loaded command: deny
+- [2025-06-24 18:58:32] [INFO] Loaded command: jail
+- [2025-06-24 18:58:32] [INFO] Loaded command: jailsettings
+- [2025-06-24 18:58:32] [INFO] Loaded command: kick
+- [2025-06-24 18:58:32] [INFO] Loaded command: lock
+- [2025-06-24 18:58:32] [INFO] Loaded command: move
+- [2025-06-24 18:58:32] [INFO] Loaded command: mute
+- [2025-06-24 18:58:32] [INFO] Loaded command: nickname
+- [2025-06-24 18:58:32] [INFO] Loaded command: role
+- [2025-06-24 18:58:32] [INFO] Loaded command: setautorole
+- [2025-06-24 18:58:32] [INFO] Loaded command: setjailrole
+- [2025-06-24 18:58:32] [INFO] Loaded command: setjailvoice
+- [2025-06-24 18:58:32] [INFO] Loaded command: slowmode
+- [2025-06-24 18:58:32] [INFO] Loaded command: tempvoice
+- [2025-06-24 18:58:32] [INFO] Loaded command: unban
+- [2025-06-24 18:58:32] [INFO] Loaded command: unjail
+- [2025-06-24 18:58:32] [INFO] Loaded command: unlock
+- [2025-06-24 18:58:32] [INFO] Loaded command: unmute
+- [2025-06-24 18:58:32] [INFO] Loaded command: verify
+- [2025-06-24 18:58:32] [INFO] Loaded command: warn
+- [2025-06-24 18:58:32] [INFO] Loaded command: warns
+- [2025-06-24 18:58:32] [INFO] Loaded command: afk
+- [2025-06-24 18:58:32] [INFO] Loaded command: autoreact
+- [2025-06-24 18:58:32] [INFO] Loaded command: dev
+- [2025-06-24 18:58:32] [INFO] Loaded command: massdm
+- [2025-06-24 18:58:32] [INFO] Loaded command: nuke-server
+- [2025-06-24 18:58:32] [INFO] Loaded command: premium
+- [2025-06-24 18:58:32] [INFO] Loaded command: setuproles
+- [2025-06-24 18:58:32] [INFO] Loaded command: shutdown
+- [2025-06-24 18:58:32] [INFO] Loaded command: modmail
+- [2025-06-24 18:58:33] [INFO] Loaded command: moveall
+- [2025-06-24 18:58:33] [INFO] Loaded command: rolemenu
+- [2025-06-24 18:58:33] [INFO] Loaded command: sendnotify
+- [2025-06-24 18:58:33] [INFO] Loaded command: unafk
+- [2025-06-24 18:58:33] [INFO] Loaded command: ping
+- [2025-06-24 18:58:33] [INFO] Loaded command: setembedcolor
+- [2025-06-24 18:58:33] [INFO] Loaded command: setembedfooter
+- [2025-06-24 18:58:33] [INFO] Loaded command: setembedicon
+- [2025-06-24 18:58:33] [INFO] Loaded command: avatar
+- [2025-06-24 18:58:33] [INFO] Loaded command: botinfo
+- [2025-06-24 18:58:33] [INFO] Loaded command: channelinfo
+- [2025-06-24 18:58:33] [INFO] Loaded command: help
+- [2025-06-24 18:58:33] [INFO] Loaded command: invite
+- [2025-06-24 18:58:33] [INFO] Loaded command: roleinfo
+- [2025-06-24 18:58:33] [INFO] Loaded command: serverinfo
+- [2025-06-24 18:58:33] [INFO] Loaded command: userinfo
+- [2025-06-24 18:58:33] [INFO] Loaded event: guildMemberAdd
+- [2025-06-24 18:58:33] [INFO] Loaded event: interactionCreate
+- [2025-06-24 18:58:33] [INFO] Loaded event: messageCreate
+- [2025-06-24 18:58:33] [INFO] Loaded event: messageReactionAdd
+- [2025-06-24 18:58:33] [INFO] Loaded event: messageReactionRemove
+- [2025-06-24 18:58:33] [INFO] Loaded event: ready
+- [2025-06-24 18:58:33] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 18:58:33] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 18:58:33] [INFO] Loaded slash command: ping
+- [2025-06-24 18:58:33] [INFO] Loaded slash command: setembedcolor
+- [2025-06-24 18:58:33] [INFO] Loaded slash command: setembedfooter
+- [2025-06-24 18:58:33] [INFO] Loaded slash command: setembedicon
+- [2025-06-24 18:58:33] [INFO] Initializing bot and attempting to log in...
+- [2025-06-24 18:58:34] [INFO] ✅ Database connection successful
+- [2025-06-24 18:58:35] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-24 18:58:35] [INFO] Bot is now online and ready to serve in 4 guilds.
+- [2025-06-24 18:58:36] [INFO] Registered all slash commands globally.
+- [2025-06-24 18:58:36] [INFO] Initializing configs for 4 guilds...
+- [2025-06-24 18:58:36] [INFO] ✅ Guild configurations initialized
+- [2025-06-24 18:58:37] [INFO] Successfully updated dev server status message.
+- [2025-06-24 18:59:27] [ERROR] Query error: [object Object]
+- [2025-06-24 18:59:27] [ERROR] Error getting all temp voice configs for guild 1038540608396066856: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 18:59:27] [ERROR] Discord client error: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 18:59:27] [ERROR] Discord client error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 18:59:27] [ERROR] Query error: [object Object]
+- [2025-06-24 18:59:27] [ERROR] Failed to process auto-reactions for guild 1038540608396066856: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 19:00:30] [ERROR] Query error: [object Object]
+- [2025-06-24 19:00:30] [ERROR] Error getting all temp voice configs for guild 1038540608396066856: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 19:00:30] [ERROR] Discord client error: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 19:00:30] [ERROR] Discord client error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 19:00:30] [ERROR] Query error: [object Object]
+- [2025-06-24 19:00:30] [ERROR] Error getting all temp voice configs for guild 1038540608396066856: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 19:00:30] [ERROR] Discord client error: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 19:00:30] [ERROR] Discord client error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 19:00:45] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-24 19:01:25] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-24 19:01:25] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-24 19:01:25] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-24 19:01:25] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-24 19:01:25] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-24 19:01:25] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-24 19:01:25] [INFO] Shutdown complete. Exiting.
+- [2025-06-24 19:01:34] [INFO] Loaded command: autoban
+- [2025-06-24 19:01:34] [INFO] Loaded command: autospam
+- [2025-06-24 19:01:34] [INFO] Loaded command: leaderboard
+- [2025-06-24 19:01:34] [INFO] Loaded command: level
+- [2025-06-24 19:01:34] [INFO] Loaded command: levelrole
+- [2025-06-24 19:01:34] [INFO] Loaded command: add
+- [2025-06-24 19:01:34] [INFO] Loaded command: ban
+- [2025-06-24 19:01:34] [INFO] Loaded command: clear
+- [2025-06-24 19:01:34] [INFO] Loaded command: delwarn
+- [2025-06-24 19:01:34] [INFO] Loaded command: deny
+- [2025-06-24 19:01:34] [INFO] Loaded command: jail
+- [2025-06-24 19:01:34] [INFO] Loaded command: jailsettings
+- [2025-06-24 19:01:34] [INFO] Loaded command: kick
+- [2025-06-24 19:01:34] [INFO] Loaded command: lock
+- [2025-06-24 19:01:34] [INFO] Loaded command: move
+- [2025-06-24 19:01:34] [INFO] Loaded command: mute
+- [2025-06-24 19:01:34] [INFO] Loaded command: nickname
+- [2025-06-24 19:01:34] [INFO] Loaded command: role
+- [2025-06-24 19:01:34] [INFO] Loaded command: setautorole
+- [2025-06-24 19:01:34] [INFO] Loaded command: setjailrole
+- [2025-06-24 19:01:34] [INFO] Loaded command: setjailvoice
+- [2025-06-24 19:01:34] [INFO] Loaded command: slowmode
+- [2025-06-24 19:01:34] [INFO] Loaded command: tempvoice
+- [2025-06-24 19:01:34] [INFO] Loaded command: unban
+- [2025-06-24 19:01:34] [INFO] Loaded command: unjail
+- [2025-06-24 19:01:34] [INFO] Loaded command: unlock
+- [2025-06-24 19:01:34] [INFO] Loaded command: unmute
+- [2025-06-24 19:01:34] [INFO] Loaded command: verify
+- [2025-06-24 19:01:34] [INFO] Loaded command: warn
+- [2025-06-24 19:01:34] [INFO] Loaded command: warns
+- [2025-06-24 19:01:34] [INFO] Loaded command: afk
+- [2025-06-24 19:01:34] [INFO] Loaded command: autoreact
+- [2025-06-24 19:01:34] [INFO] Loaded command: dev
+- [2025-06-24 19:01:34] [INFO] Loaded command: massdm
+- [2025-06-24 19:01:34] [INFO] Loaded command: nuke-server
+- [2025-06-24 19:01:34] [INFO] Loaded command: premium
+- [2025-06-24 19:01:34] [INFO] Loaded command: setuproles
+- [2025-06-24 19:01:34] [INFO] Loaded command: shutdown
+- [2025-06-24 19:01:34] [INFO] Loaded command: modmail
+- [2025-06-24 19:01:34] [INFO] Loaded command: moveall
+- [2025-06-24 19:01:34] [INFO] Loaded command: rolemenu
+- [2025-06-24 19:01:35] [INFO] Loaded command: sendnotify
+- [2025-06-24 19:01:35] [INFO] Loaded command: unafk
+- [2025-06-24 19:01:35] [INFO] Loaded command: ping
+- [2025-06-24 19:01:35] [INFO] Loaded command: setembedcolor
+- [2025-06-24 19:01:35] [INFO] Loaded command: setembedfooter
+- [2025-06-24 19:01:35] [INFO] Loaded command: setembedicon
+- [2025-06-24 19:01:35] [INFO] Loaded command: avatar
+- [2025-06-24 19:01:35] [INFO] Loaded command: botinfo
+- [2025-06-24 19:01:35] [INFO] Loaded command: channelinfo
+- [2025-06-24 19:01:35] [INFO] Loaded command: help
+- [2025-06-24 19:01:35] [INFO] Loaded command: invite
+- [2025-06-24 19:01:35] [INFO] Loaded command: roleinfo
+- [2025-06-24 19:01:35] [INFO] Loaded command: serverinfo
+- [2025-06-24 19:01:35] [INFO] Loaded command: userinfo
+- [2025-06-24 19:01:35] [INFO] Loaded event: guildMemberAdd
+- [2025-06-24 19:01:35] [INFO] Loaded event: interactionCreate
+- [2025-06-24 19:01:35] [INFO] Loaded event: messageCreate
+- [2025-06-24 19:01:35] [INFO] Loaded event: messageReactionAdd
+- [2025-06-24 19:01:35] [INFO] Loaded event: messageReactionRemove
+- [2025-06-24 19:01:35] [INFO] Loaded event: ready
+- [2025-06-24 19:01:35] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 19:01:35] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 19:01:35] [INFO] Loaded slash command: ping
+- [2025-06-24 19:01:35] [INFO] Loaded slash command: setembedcolor
+- [2025-06-24 19:01:35] [INFO] Loaded slash command: setembedfooter
+- [2025-06-24 19:01:35] [INFO] Loaded slash command: setembedicon
+- [2025-06-24 19:01:35] [INFO] Initializing bot and attempting to log in...
+- [2025-06-24 19:01:37] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-24 19:01:37] [INFO] Bot is now online and ready to serve in 4 guilds.
+- [2025-06-24 19:01:38] [INFO] Registered all slash commands globally.
+- [2025-06-24 19:01:38] [INFO] Initializing configs for 4 guilds...
+- [2025-06-24 19:01:40] [ERROR] ❌ Database connection failed: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 19:01:50] [INFO] Loaded command: autoban
+- [2025-06-24 19:01:50] [INFO] Loaded command: autospam
+- [2025-06-24 19:01:50] [INFO] Loaded command: leaderboard
+- [2025-06-24 19:01:50] [INFO] Loaded command: level
+- [2025-06-24 19:01:50] [INFO] Loaded command: levelrole
+- [2025-06-24 19:01:50] [INFO] Loaded command: add
+- [2025-06-24 19:01:50] [INFO] Loaded command: ban
+- [2025-06-24 19:01:50] [INFO] Loaded command: clear
+- [2025-06-24 19:01:50] [INFO] Loaded command: delwarn
+- [2025-06-24 19:01:50] [INFO] Loaded command: deny
+- [2025-06-24 19:01:50] [INFO] Loaded command: jail
+- [2025-06-24 19:01:50] [INFO] Loaded command: jailsettings
+- [2025-06-24 19:01:50] [INFO] Loaded command: kick
+- [2025-06-24 19:01:50] [INFO] Loaded command: lock
+- [2025-06-24 19:01:50] [INFO] Loaded command: move
+- [2025-06-24 19:01:50] [INFO] Loaded command: mute
+- [2025-06-24 19:01:50] [INFO] Loaded command: nickname
+- [2025-06-24 19:01:50] [INFO] Loaded command: role
+- [2025-06-24 19:01:50] [INFO] Loaded command: setautorole
+- [2025-06-24 19:01:50] [INFO] Loaded command: setjailrole
+- [2025-06-24 19:01:50] [INFO] Loaded command: setjailvoice
+- [2025-06-24 19:01:50] [INFO] Loaded command: slowmode
+- [2025-06-24 19:01:50] [INFO] Loaded command: tempvoice
+- [2025-06-24 19:01:50] [INFO] Loaded command: unban
+- [2025-06-24 19:01:50] [INFO] Loaded command: unjail
+- [2025-06-24 19:01:50] [INFO] Loaded command: unlock
+- [2025-06-24 19:01:50] [INFO] Loaded command: unmute
+- [2025-06-24 19:01:50] [INFO] Loaded command: verify
+- [2025-06-24 19:01:50] [INFO] Loaded command: warn
+- [2025-06-24 19:01:50] [INFO] Loaded command: warns
+- [2025-06-24 19:01:51] [INFO] Loaded command: afk
+- [2025-06-24 19:01:51] [INFO] Loaded command: autoreact
+- [2025-06-24 19:01:51] [INFO] Loaded command: dev
+- [2025-06-24 19:01:51] [INFO] Loaded command: massdm
+- [2025-06-24 19:01:51] [INFO] Loaded command: nuke-server
+- [2025-06-24 19:01:51] [INFO] Loaded command: premium
+- [2025-06-24 19:01:51] [INFO] Loaded command: setuproles
+- [2025-06-24 19:01:51] [INFO] Loaded command: shutdown
+- [2025-06-24 19:01:51] [INFO] Loaded command: modmail
+- [2025-06-24 19:01:51] [INFO] Loaded command: moveall
+- [2025-06-24 19:01:51] [INFO] Loaded command: rolemenu
+- [2025-06-24 19:01:51] [INFO] Loaded command: sendnotify
+- [2025-06-24 19:01:51] [INFO] Loaded command: unafk
+- [2025-06-24 19:01:51] [INFO] Loaded command: ping
+- [2025-06-24 19:01:51] [INFO] Loaded command: setembedcolor
+- [2025-06-24 19:01:51] [INFO] Loaded command: setembedfooter
+- [2025-06-24 19:01:51] [INFO] Loaded command: setembedicon
+- [2025-06-24 19:01:51] [INFO] Loaded command: avatar
+- [2025-06-24 19:01:51] [INFO] Loaded command: botinfo
+- [2025-06-24 19:01:51] [INFO] Loaded command: channelinfo
+- [2025-06-24 19:01:51] [INFO] Loaded command: help
+- [2025-06-24 19:01:51] [INFO] Loaded command: invite
+- [2025-06-24 19:01:51] [INFO] Loaded command: roleinfo
+- [2025-06-24 19:01:51] [INFO] Loaded command: serverinfo
+- [2025-06-24 19:01:51] [INFO] Loaded command: userinfo
+- [2025-06-24 19:01:51] [INFO] Loaded event: guildMemberAdd
+- [2025-06-24 19:01:51] [INFO] Loaded event: interactionCreate
+- [2025-06-24 19:01:51] [INFO] Loaded event: messageCreate
+- [2025-06-24 19:01:51] [INFO] Loaded event: messageReactionAdd
+- [2025-06-24 19:01:51] [INFO] Loaded event: messageReactionRemove
+- [2025-06-24 19:01:51] [INFO] Loaded event: ready
+- [2025-06-24 19:01:51] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 19:01:51] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 19:01:51] [INFO] Loaded slash command: ping
+- [2025-06-24 19:01:52] [INFO] Loaded slash command: setembedcolor
+- [2025-06-24 19:01:52] [INFO] Loaded slash command: setembedfooter
+- [2025-06-24 19:01:52] [INFO] Loaded slash command: setembedicon
+- [2025-06-24 19:01:52] [INFO] Initializing bot and attempting to log in...
+- [2025-06-24 19:01:52] [INFO] ✅ Database connection successful
+- [2025-06-24 19:01:54] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-24 19:01:54] [INFO] Bot is now online and ready to serve in 4 guilds.
+- [2025-06-24 19:01:54] [INFO] Registered all slash commands globally.
+- [2025-06-24 19:01:54] [INFO] Initializing configs for 4 guilds...
+- [2025-06-24 19:01:54] [INFO] ✅ Guild configurations initialized
+- [2025-06-24 19:01:55] [INFO] Successfully updated dev server status message.
+- [2025-06-24 19:02:47] [ERROR] Query error: [object Object]
+- [2025-06-24 19:02:47] [ERROR] Failed to process auto-reactions for guild 1038540608396066856: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 19:06:22] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-24 19:06:58] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-24 19:09:22] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-24 19:11:41] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-24 19:13:28] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-24 19:16:50] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-24 19:18:28] [INFO] Reloaded event: voiceStateUpdate
+- [2025-06-24 19:21:36] [ERROR] Query error: [object Object]
+- [2025-06-24 19:21:36] [ERROR] Query error: [object Object]
+- [2025-06-24 19:21:36] [ERROR] Failed to process auto-reactions for guild 1038540608396066856: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 19:21:55] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-24 19:21:55] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-24 19:21:55] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-24 19:21:55] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-24 19:21:55] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-24 19:21:55] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-24 19:21:55] [INFO] Shutdown complete. Exiting.
+- [2025-06-24 19:22:08] [INFO] Loaded command: autoban
+- [2025-06-24 19:22:08] [INFO] Loaded command: autospam
+- [2025-06-24 19:22:08] [INFO] Loaded command: leaderboard
+- [2025-06-24 19:22:08] [INFO] Loaded command: level
+- [2025-06-24 19:22:08] [INFO] Loaded command: levelrole
+- [2025-06-24 19:22:08] [INFO] Loaded command: add
+- [2025-06-24 19:22:08] [INFO] Loaded command: ban
+- [2025-06-24 19:22:08] [INFO] Loaded command: clear
+- [2025-06-24 19:22:08] [INFO] Loaded command: delwarn
+- [2025-06-24 19:22:08] [INFO] Loaded command: deny
+- [2025-06-24 19:22:08] [INFO] Loaded command: jail
+- [2025-06-24 19:22:08] [INFO] Loaded command: jailsettings
+- [2025-06-24 19:22:08] [INFO] Loaded command: kick
+- [2025-06-24 19:22:08] [INFO] Loaded command: lock
+- [2025-06-24 19:22:08] [INFO] Loaded command: move
+- [2025-06-24 19:22:08] [INFO] Loaded command: mute
+- [2025-06-24 19:22:08] [INFO] Loaded command: nickname
+- [2025-06-24 19:22:08] [INFO] Loaded command: role
+- [2025-06-24 19:22:08] [INFO] Loaded command: setautorole
+- [2025-06-24 19:22:08] [INFO] Loaded command: setjailrole
+- [2025-06-24 19:22:08] [INFO] Loaded command: setjailvoice
+- [2025-06-24 19:22:08] [INFO] Loaded command: slowmode
+- [2025-06-24 19:22:08] [INFO] Loaded command: tempvoice
+- [2025-06-24 19:22:08] [INFO] Loaded command: unban
+- [2025-06-24 19:22:08] [INFO] Loaded command: unjail
+- [2025-06-24 19:22:08] [INFO] Loaded command: unlock
+- [2025-06-24 19:22:08] [INFO] Loaded command: unmute
+- [2025-06-24 19:22:08] [INFO] Loaded command: verify
+- [2025-06-24 19:22:08] [INFO] Loaded command: warn
+- [2025-06-24 19:22:08] [INFO] Loaded command: warns
+- [2025-06-24 19:22:09] [INFO] Loaded command: afk
+- [2025-06-24 19:22:09] [INFO] Loaded command: autoreact
+- [2025-06-24 19:22:09] [INFO] Loaded command: dev
+- [2025-06-24 19:22:09] [INFO] Loaded command: massdm
+- [2025-06-24 19:22:09] [INFO] Loaded command: nuke-server
+- [2025-06-24 19:22:09] [INFO] Loaded command: premium
+- [2025-06-24 19:22:09] [INFO] Loaded command: setuproles
+- [2025-06-24 19:22:09] [INFO] Loaded command: shutdown
+- [2025-06-24 19:22:09] [INFO] Loaded command: modmail
+- [2025-06-24 19:22:09] [INFO] Loaded command: moveall
+- [2025-06-24 19:22:09] [INFO] Loaded command: rolemenu
+- [2025-06-24 19:22:09] [INFO] Loaded command: sendnotify
+- [2025-06-24 19:22:09] [INFO] Loaded command: unafk
+- [2025-06-24 19:22:09] [INFO] Loaded command: ping
+- [2025-06-24 19:22:09] [INFO] Loaded command: setembedcolor
+- [2025-06-24 19:22:09] [INFO] Loaded command: setembedfooter
+- [2025-06-24 19:22:09] [INFO] Loaded command: setembedicon
+- [2025-06-24 19:22:09] [INFO] Loaded command: avatar
+- [2025-06-24 19:22:09] [INFO] Loaded command: botinfo
+- [2025-06-24 19:22:09] [INFO] Loaded command: channelinfo
+- [2025-06-24 19:22:09] [INFO] Loaded command: help
+- [2025-06-24 19:22:09] [INFO] Loaded command: invite
+- [2025-06-24 19:22:09] [INFO] Loaded command: roleinfo
+- [2025-06-24 19:22:09] [INFO] Loaded command: serverinfo
+- [2025-06-24 19:22:09] [INFO] Loaded command: userinfo
+- [2025-06-24 19:22:09] [INFO] Loaded event: guildMemberAdd
+- [2025-06-24 19:22:09] [INFO] Loaded event: interactionCreate
+- [2025-06-24 19:22:09] [INFO] Loaded event: messageCreate
+- [2025-06-24 19:22:09] [INFO] Loaded event: messageReactionAdd
+- [2025-06-24 19:22:09] [INFO] Loaded event: messageReactionRemove
+- [2025-06-24 19:22:09] [INFO] Loaded event: ready
+- [2025-06-24 19:22:09] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 19:22:09] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 19:22:09] [INFO] Loaded slash command: ping
+- [2025-06-24 19:22:09] [INFO] Loaded slash command: setembedcolor
+- [2025-06-24 19:22:09] [INFO] Loaded slash command: setembedfooter
+- [2025-06-24 19:22:09] [INFO] Loaded slash command: setembedicon
+- [2025-06-24 19:22:09] [INFO] Initializing bot and attempting to log in...
+- [2025-06-24 19:22:10] [INFO] ✅ Database connection successful
+- [2025-06-24 19:22:11] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-24 19:22:11] [INFO] Bot is now online and ready to serve in 4 guilds.
+- [2025-06-24 19:22:12] [INFO] Registered all slash commands globally.
+- [2025-06-24 19:22:12] [INFO] Initializing configs for 4 guilds...
+- [2025-06-24 19:22:13] [INFO] ✅ Guild configurations initialized
+- [2025-06-24 19:22:14] [INFO] Successfully updated dev server status message.
+- [2025-06-24 19:22:39] [ERROR] Query error: [object Object]
+- [2025-06-24 19:22:39] [ERROR] Error getting all temp voice configs for guild 1038540608396066856: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 19:22:40] [ERROR] Discord client error: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 19:22:40] [ERROR] Discord client error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 19:22:40] [ERROR] Query error: [object Object]
+- [2025-06-24 19:22:40] [ERROR] Error getting all temp voice configs for guild 1038540608396066856: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 19:22:40] [ERROR] Discord client error: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 19:22:40] [ERROR] Discord client error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 19:22:58] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-24 19:22:58] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-24 19:22:58] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-24 19:22:58] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-24 19:22:58] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-24 19:22:59] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-24 19:22:59] [INFO] Shutdown complete. Exiting.
+- [2025-06-24 19:37:24] [INFO] Loaded command: autoban
+- [2025-06-24 19:37:24] [INFO] Loaded command: autospam
+- [2025-06-24 19:37:24] [INFO] Loaded command: leaderboard
+- [2025-06-24 19:37:24] [INFO] Loaded command: level
+- [2025-06-24 19:37:24] [INFO] Loaded command: levelrole
+- [2025-06-24 19:37:24] [INFO] Loaded command: add
+- [2025-06-24 19:37:24] [INFO] Loaded command: ban
+- [2025-06-24 19:37:24] [INFO] Loaded command: clear
+- [2025-06-24 19:37:24] [INFO] Loaded command: delwarn
+- [2025-06-24 19:37:24] [INFO] Loaded command: deny
+- [2025-06-24 19:37:24] [INFO] Loaded command: jail
+- [2025-06-24 19:37:24] [INFO] Loaded command: jailsettings
+- [2025-06-24 19:37:24] [INFO] Loaded command: kick
+- [2025-06-24 19:37:24] [INFO] Loaded command: lock
+- [2025-06-24 19:37:24] [INFO] Loaded command: move
+- [2025-06-24 19:37:24] [INFO] Loaded command: mute
+- [2025-06-24 19:37:24] [INFO] Loaded command: nickname
+- [2025-06-24 19:37:24] [INFO] Loaded command: role
+- [2025-06-24 19:37:24] [INFO] Loaded command: setautorole
+- [2025-06-24 19:37:24] [INFO] Loaded command: setjailrole
+- [2025-06-24 19:37:24] [INFO] Loaded command: setjailvoice
+- [2025-06-24 19:37:24] [INFO] Loaded command: slowmode
+- [2025-06-24 19:37:25] [INFO] Loaded command: tempvoice
+- [2025-06-24 19:37:25] [INFO] Loaded command: unban
+- [2025-06-24 19:37:25] [INFO] Loaded command: unjail
+- [2025-06-24 19:37:25] [INFO] Loaded command: unlock
+- [2025-06-24 19:37:25] [INFO] Loaded command: unmute
+- [2025-06-24 19:37:25] [INFO] Loaded command: verify
+- [2025-06-24 19:37:25] [INFO] Loaded command: warn
+- [2025-06-24 19:37:25] [INFO] Loaded command: warns
+- [2025-06-24 19:37:25] [INFO] Loaded command: afk
+- [2025-06-24 19:37:25] [INFO] Loaded command: autoreact
+- [2025-06-24 19:37:25] [INFO] Loaded command: dev
+- [2025-06-24 19:37:25] [INFO] Loaded command: massdm
+- [2025-06-24 19:37:25] [INFO] Loaded command: nuke-server
+- [2025-06-24 19:37:25] [INFO] Loaded command: premium
+- [2025-06-24 19:37:25] [INFO] Loaded command: setuproles
+- [2025-06-24 19:37:25] [INFO] Loaded command: shutdown
+- [2025-06-24 19:37:25] [INFO] Loaded command: modmail
+- [2025-06-24 19:37:25] [INFO] Loaded command: moveall
+- [2025-06-24 19:37:25] [INFO] Loaded command: rolemenu
+- [2025-06-24 19:37:25] [INFO] Loaded command: sendnotify
+- [2025-06-24 19:37:25] [INFO] Loaded command: unafk
+- [2025-06-24 19:37:25] [INFO] Loaded command: ping
+- [2025-06-24 19:37:25] [INFO] Loaded command: setembedcolor
+- [2025-06-24 19:37:25] [INFO] Loaded command: setembedfooter
+- [2025-06-24 19:37:25] [INFO] Loaded command: setembedicon
+- [2025-06-24 19:37:25] [INFO] Loaded command: avatar
+- [2025-06-24 19:37:25] [INFO] Loaded command: botinfo
+- [2025-06-24 19:37:25] [INFO] Loaded command: channelinfo
+- [2025-06-24 19:37:25] [INFO] Loaded command: help
+- [2025-06-24 19:37:25] [INFO] Loaded command: invite
+- [2025-06-24 19:37:25] [INFO] Loaded command: roleinfo
+- [2025-06-24 19:37:25] [INFO] Loaded command: serverinfo
+- [2025-06-24 19:37:25] [INFO] Loaded command: userinfo
+- [2025-06-24 19:37:25] [INFO] Loaded event: guildMemberAdd
+- [2025-06-24 19:37:25] [INFO] Loaded event: interactionCreate
+- [2025-06-24 19:37:25] [INFO] Loaded event: messageCreate
+- [2025-06-24 19:37:25] [INFO] Loaded event: messageReactionAdd
+- [2025-06-24 19:37:25] [INFO] Loaded event: messageReactionRemove
+- [2025-06-24 19:37:25] [INFO] Loaded event: ready
+- [2025-06-24 19:37:25] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 19:37:25] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 19:37:25] [INFO] Loaded slash command: ping
+- [2025-06-24 19:37:26] [INFO] Loaded slash command: setembedcolor
+- [2025-06-24 19:37:26] [INFO] Loaded slash command: setembedfooter
+- [2025-06-24 19:37:26] [INFO] Loaded slash command: setembedicon
+- [2025-06-24 19:37:26] [INFO] Initializing bot and attempting to log in...
+- [2025-06-24 19:37:26] [INFO] ✅ Database connection successful
+- [2025-06-24 19:37:28] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-24 19:37:28] [INFO] Bot is now online and ready to serve in 4 guilds.
+- [2025-06-24 19:37:28] [INFO] Registered all slash commands globally.
+- [2025-06-24 19:37:28] [INFO] Initializing configs for 4 guilds...
+- [2025-06-24 19:37:28] [INFO] ✅ Guild configurations initialized
+- [2025-06-24 19:37:29] [INFO] Successfully updated dev server status message.
+- [2025-06-24 19:37:36] [ERROR] Command leaderboard failed: Error: Received one or more errors
+- [2025-06-24 19:39:31] [INFO] Reloaded command: leaderboard
+- [2025-06-24 19:39:57] [ERROR] Command leaderboard failed: Error: Received one or more errors
+- [2025-06-24 19:40:56] [INFO] Reloaded command: leaderboard
+- [2025-06-24 19:47:01] [ERROR] Command leaderboard failed: Error: Received one or more errors
+- [2025-06-24 19:47:01] [ERROR] Command leaderboard failed: Error: Received one or more errors
+- [2025-06-24 19:47:21] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-24 19:47:21] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-24 19:47:21] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-24 19:47:21] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-24 19:47:21] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-24 19:47:21] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-24 19:47:21] [INFO] Shutdown complete. Exiting.
+- [2025-06-24 19:47:34] [INFO] Loaded command: autoban
+- [2025-06-24 19:47:34] [INFO] Loaded command: autospam
+- [2025-06-24 19:47:34] [INFO] Loaded command: leaderboard
+- [2025-06-24 19:47:34] [INFO] Loaded command: level
+- [2025-06-24 19:47:34] [INFO] Loaded command: levelrole
+- [2025-06-24 19:47:34] [INFO] Loaded command: add
+- [2025-06-24 19:47:34] [INFO] Loaded command: ban
+- [2025-06-24 19:47:34] [INFO] Loaded command: clear
+- [2025-06-24 19:47:34] [INFO] Loaded command: delwarn
+- [2025-06-24 19:47:34] [INFO] Loaded command: deny
+- [2025-06-24 19:47:34] [INFO] Loaded command: jail
+- [2025-06-24 19:47:34] [INFO] Loaded command: jailsettings
+- [2025-06-24 19:47:34] [INFO] Loaded command: kick
+- [2025-06-24 19:47:34] [INFO] Loaded command: lock
+- [2025-06-24 19:47:34] [INFO] Loaded command: move
+- [2025-06-24 19:47:34] [INFO] Loaded command: mute
+- [2025-06-24 19:47:34] [INFO] Loaded command: nickname
+- [2025-06-24 19:47:34] [INFO] Loaded command: role
+- [2025-06-24 19:47:34] [INFO] Loaded command: setautorole
+- [2025-06-24 19:47:34] [INFO] Loaded command: setjailrole
+- [2025-06-24 19:47:34] [INFO] Loaded command: setjailvoice
+- [2025-06-24 19:47:34] [INFO] Loaded command: slowmode
+- [2025-06-24 19:47:34] [INFO] Loaded command: tempvoice
+- [2025-06-24 19:47:34] [INFO] Loaded command: unban
+- [2025-06-24 19:47:34] [INFO] Loaded command: unjail
+- [2025-06-24 19:47:35] [INFO] Loaded command: unlock
+- [2025-06-24 19:47:35] [INFO] Loaded command: unmute
+- [2025-06-24 19:47:35] [INFO] Loaded command: verify
+- [2025-06-24 19:47:35] [INFO] Loaded command: warn
+- [2025-06-24 19:47:35] [INFO] Loaded command: warns
+- [2025-06-24 19:47:35] [INFO] Loaded command: afk
+- [2025-06-24 19:47:35] [INFO] Loaded command: autoreact
+- [2025-06-24 19:47:35] [INFO] Loaded command: dev
+- [2025-06-24 19:47:35] [INFO] Loaded command: massdm
+- [2025-06-24 19:47:35] [INFO] Loaded command: nuke-server
+- [2025-06-24 19:47:35] [INFO] Loaded command: premium
+- [2025-06-24 19:47:35] [INFO] Loaded command: setuproles
+- [2025-06-24 19:47:35] [INFO] Loaded command: shutdown
+- [2025-06-24 19:47:35] [INFO] Loaded command: modmail
+- [2025-06-24 19:47:35] [INFO] Loaded command: moveall
+- [2025-06-24 19:47:35] [INFO] Loaded command: rolemenu
+- [2025-06-24 19:47:35] [INFO] Loaded command: sendnotify
+- [2025-06-24 19:47:35] [INFO] Loaded command: unafk
+- [2025-06-24 19:47:35] [INFO] Loaded command: ping
+- [2025-06-24 19:47:35] [INFO] Loaded command: setembedcolor
+- [2025-06-24 19:47:35] [INFO] Loaded command: setembedfooter
+- [2025-06-24 19:47:35] [INFO] Loaded command: setembedicon
+- [2025-06-24 19:47:35] [INFO] Loaded command: avatar
+- [2025-06-24 19:47:35] [INFO] Loaded command: botinfo
+- [2025-06-24 19:47:35] [INFO] Loaded command: channelinfo
+- [2025-06-24 19:47:35] [INFO] Loaded command: help
+- [2025-06-24 19:47:35] [INFO] Loaded command: invite
+- [2025-06-24 19:47:35] [INFO] Loaded command: roleinfo
+- [2025-06-24 19:47:35] [INFO] Loaded command: serverinfo
+- [2025-06-24 19:47:35] [INFO] Loaded command: userinfo
+- [2025-06-24 19:47:35] [INFO] Loaded event: guildMemberAdd
+- [2025-06-24 19:47:35] [INFO] Loaded event: interactionCreate
+- [2025-06-24 19:47:35] [INFO] Loaded event: messageCreate
+- [2025-06-24 19:47:35] [INFO] Loaded event: messageReactionAdd
+- [2025-06-24 19:47:35] [INFO] Loaded event: messageReactionRemove
+- [2025-06-24 19:47:35] [INFO] Loaded event: ready
+- [2025-06-24 19:47:35] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 19:47:35] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 19:47:35] [INFO] Loaded slash command: ping
+- [2025-06-24 19:47:36] [INFO] Loaded slash command: setembedcolor
+- [2025-06-24 19:47:36] [INFO] Loaded slash command: setembedfooter
+- [2025-06-24 19:47:36] [INFO] Loaded slash command: setembedicon
+- [2025-06-24 19:47:36] [INFO] Initializing bot and attempting to log in...
+- [2025-06-24 19:47:37] [INFO] ✅ Database connection successful
+- [2025-06-24 19:47:38] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-24 19:47:38] [INFO] Bot is now online and ready to serve in 4 guilds.
+- [2025-06-24 19:47:38] [INFO] Registered all slash commands globally.
+- [2025-06-24 19:47:38] [INFO] Initializing configs for 4 guilds...
+- [2025-06-24 19:47:39] [INFO] ✅ Guild configurations initialized
+- [2025-06-24 19:47:40] [INFO] Successfully updated dev server status message.
+- [2025-06-24 19:47:40] [ERROR] Command leaderboard failed: Error: Received one or more errors
+- [2025-06-24 19:49:24] [INFO] Reloaded command: leaderboard
+- [2025-06-24 19:49:29] [ERROR] Command leaderboard failed: Error: Received one or more errors
+- [2025-06-24 19:50:17] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-24 19:50:17] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-24 19:50:17] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-24 19:50:17] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-24 19:50:17] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-24 19:50:17] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-24 19:50:17] [INFO] Shutdown complete. Exiting.
+- [2025-06-24 19:50:59] [INFO] Loaded command: autoban
+- [2025-06-24 19:50:59] [INFO] Loaded command: autospam
+- [2025-06-24 19:50:59] [INFO] Loaded command: leaderboard
+- [2025-06-24 19:50:59] [INFO] Loaded command: level
+- [2025-06-24 19:50:59] [INFO] Loaded command: levelrole
+- [2025-06-24 19:50:59] [INFO] Loaded command: add
+- [2025-06-24 19:50:59] [INFO] Loaded command: ban
+- [2025-06-24 19:50:59] [INFO] Loaded command: clear
+- [2025-06-24 19:50:59] [INFO] Loaded command: delwarn
+- [2025-06-24 19:50:59] [INFO] Loaded command: deny
+- [2025-06-24 19:50:59] [INFO] Loaded command: jail
+- [2025-06-24 19:50:59] [INFO] Loaded command: jailsettings
+- [2025-06-24 19:50:59] [INFO] Loaded command: kick
+- [2025-06-24 19:50:59] [INFO] Loaded command: lock
+- [2025-06-24 19:50:59] [INFO] Loaded command: move
+- [2025-06-24 19:50:59] [INFO] Loaded command: mute
+- [2025-06-24 19:50:59] [INFO] Loaded command: nickname
+- [2025-06-24 19:50:59] [INFO] Loaded command: role
+- [2025-06-24 19:50:59] [INFO] Loaded command: setautorole
+- [2025-06-24 19:50:59] [INFO] Loaded command: setjailrole
+- [2025-06-24 19:50:59] [INFO] Loaded command: setjailvoice
+- [2025-06-24 19:50:59] [INFO] Loaded command: slowmode
+- [2025-06-24 19:50:59] [INFO] Loaded command: tempvoice
+- [2025-06-24 19:50:59] [INFO] Loaded command: unban
+- [2025-06-24 19:50:59] [INFO] Loaded command: unjail
+- [2025-06-24 19:50:59] [INFO] Loaded command: unlock
+- [2025-06-24 19:50:59] [INFO] Loaded command: unmute
+- [2025-06-24 19:50:59] [INFO] Loaded command: verify
+- [2025-06-24 19:50:59] [INFO] Loaded command: warn
+- [2025-06-24 19:50:59] [INFO] Loaded command: warns
+- [2025-06-24 19:50:59] [INFO] Loaded command: afk
+- [2025-06-24 19:50:59] [INFO] Loaded command: autoreact
+- [2025-06-24 19:50:59] [INFO] Loaded command: dev
+- [2025-06-24 19:50:59] [INFO] Loaded command: massdm
+- [2025-06-24 19:50:59] [INFO] Loaded command: nuke-server
+- [2025-06-24 19:50:59] [INFO] Loaded command: premium
+- [2025-06-24 19:50:59] [INFO] Loaded command: setuproles
+- [2025-06-24 19:50:59] [INFO] Loaded command: shutdown
+- [2025-06-24 19:50:59] [INFO] Loaded command: modmail
+- [2025-06-24 19:51:00] [INFO] Loaded command: moveall
+- [2025-06-24 19:51:00] [INFO] Loaded command: rolemenu
+- [2025-06-24 19:51:00] [INFO] Loaded command: sendnotify
+- [2025-06-24 19:51:00] [INFO] Loaded command: unafk
+- [2025-06-24 19:51:00] [INFO] Loaded command: ping
+- [2025-06-24 19:51:00] [INFO] Loaded command: setembedcolor
+- [2025-06-24 19:51:00] [INFO] Loaded command: setembedfooter
+- [2025-06-24 19:51:00] [INFO] Loaded command: setembedicon
+- [2025-06-24 19:51:00] [INFO] Loaded command: avatar
+- [2025-06-24 19:51:00] [INFO] Loaded command: botinfo
+- [2025-06-24 19:51:00] [INFO] Loaded command: channelinfo
+- [2025-06-24 19:51:00] [INFO] Loaded command: help
+- [2025-06-24 19:51:00] [INFO] Loaded command: invite
+- [2025-06-24 19:51:00] [INFO] Loaded command: roleinfo
+- [2025-06-24 19:51:00] [INFO] Loaded command: serverinfo
+- [2025-06-24 19:51:00] [INFO] Loaded command: userinfo
+- [2025-06-24 19:51:00] [INFO] Loaded event: guildMemberAdd
+- [2025-06-24 19:51:00] [INFO] Loaded event: interactionCreate
+- [2025-06-24 19:51:00] [INFO] Loaded event: messageCreate
+- [2025-06-24 19:51:00] [INFO] Loaded event: messageReactionAdd
+- [2025-06-24 19:51:00] [INFO] Loaded event: messageReactionRemove
+- [2025-06-24 19:51:00] [INFO] Loaded event: ready
+- [2025-06-24 19:51:00] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 19:51:00] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 19:51:00] [INFO] Loaded slash command: ping
+- [2025-06-24 19:51:00] [INFO] Loaded slash command: setembedcolor
+- [2025-06-24 19:51:00] [INFO] Loaded slash command: setembedfooter
+- [2025-06-24 19:51:00] [INFO] Loaded slash command: setembedicon
+- [2025-06-24 19:51:00] [INFO] Initializing bot and attempting to log in...
+- [2025-06-24 19:51:02] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-24 19:51:02] [INFO] Bot is now online and ready to serve in 4 guilds.
+- [2025-06-24 19:51:03] [INFO] Registered all slash commands globally.
+- [2025-06-24 19:51:03] [INFO] Initializing configs for 4 guilds...
+- [2025-06-24 19:51:07] [INFO] ✅ Database connection successful
+- [2025-06-24 19:51:07] [INFO] ✅ Guild configurations initialized
+- [2025-06-24 19:51:08] [ERROR] Command leaderboard failed: Error: Received one or more errors
+- [2025-06-24 19:51:09] [INFO] Successfully updated dev server status message.
+- [2025-06-24 19:52:11] [INFO] Reloaded command: leaderboard
+- [2025-06-24 19:53:45] [ERROR] Query error: [object Object]
+- [2025-06-24 19:54:45] [INFO] Reloaded command: leaderboard
+- [2025-06-24 19:55:04] [ERROR] Query error: [object Object]
+- [2025-06-24 19:55:04] [ERROR] Query error: [object Object]
+- [2025-06-24 19:55:04] [ERROR] Failed to process auto-reactions for guild 1038540608396066856: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 19:56:10] [INFO] Reloaded command: leaderboard
+- [2025-06-24 19:56:58] [INFO] Reloaded command: leaderboard
+- [2025-06-24 19:57:26] [INFO] Reloaded command: leaderboard
+- [2025-06-24 19:57:51] [INFO] Reloaded command: leaderboard
+- [2025-06-24 19:58:46] [ERROR] Query error: [object Object]
+- [2025-06-24 19:58:46] [ERROR] Query error: [object Object]
+- [2025-06-24 19:58:46] [ERROR] Error getting all temp channels: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 19:59:04] [INFO] Reloaded command: leaderboard
+- [2025-06-24 19:59:46] [INFO] Reloaded command: leaderboard
+- [2025-06-24 19:59:52] [INFO] Reloaded command: leaderboard
+- [2025-06-24 20:00:01] [ERROR] Query error: [object Object]
+- [2025-06-24 20:00:01] [ERROR] Query error: [object Object]
+- [2025-06-24 20:00:01] [ERROR] Failed to process auto-reactions for guild 1038540608396066856: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 20:01:04] [ERROR] Query error: [object Object]
+- [2025-06-24 20:01:04] [ERROR] Error getting all temp channels: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 20:03:11] [INFO] Loaded command: autoban
+- [2025-06-24 20:03:11] [INFO] Loaded command: autospam
+- [2025-06-24 20:03:11] [INFO] Loaded command: leaderboard
+- [2025-06-24 20:03:11] [INFO] Loaded command: level
+- [2025-06-24 20:03:12] [INFO] Loaded command: levelrole
+- [2025-06-24 20:03:12] [INFO] Loaded command: add
+- [2025-06-24 20:03:12] [INFO] Loaded command: ban
+- [2025-06-24 20:03:12] [INFO] Loaded command: clear
+- [2025-06-24 20:03:12] [INFO] Loaded command: delwarn
+- [2025-06-24 20:03:12] [INFO] Loaded command: deny
+- [2025-06-24 20:03:12] [INFO] Loaded command: jail
+- [2025-06-24 20:03:12] [INFO] Loaded command: jailsettings
+- [2025-06-24 20:03:12] [INFO] Loaded command: kick
+- [2025-06-24 20:03:12] [INFO] Loaded command: lock
+- [2025-06-24 20:03:12] [INFO] Loaded command: move
+- [2025-06-24 20:03:12] [INFO] Loaded command: mute
+- [2025-06-24 20:03:12] [INFO] Loaded command: nickname
+- [2025-06-24 20:03:13] [INFO] Loaded command: role
+- [2025-06-24 20:03:13] [INFO] Loaded command: setautorole
+- [2025-06-24 20:03:13] [INFO] Loaded command: setjailrole
+- [2025-06-24 20:03:13] [INFO] Loaded command: setjailvoice
+- [2025-06-24 20:03:13] [INFO] Loaded command: slowmode
+- [2025-06-24 20:03:13] [INFO] Loaded command: tempvoice
+- [2025-06-24 20:03:13] [INFO] Loaded command: unban
+- [2025-06-24 20:03:13] [INFO] Loaded command: unjail
+- [2025-06-24 20:03:13] [INFO] Loaded command: unlock
+- [2025-06-24 20:03:13] [INFO] Loaded command: unmute
+- [2025-06-24 20:03:13] [INFO] Loaded command: verify
+- [2025-06-24 20:03:13] [INFO] Loaded command: warn
+- [2025-06-24 20:03:13] [INFO] Loaded command: warns
+- [2025-06-24 20:03:14] [INFO] Loaded command: afk
+- [2025-06-24 20:03:14] [INFO] Loaded command: autoreact
+- [2025-06-24 20:03:14] [INFO] Loaded command: dev
+- [2025-06-24 20:03:14] [INFO] Loaded command: massdm
+- [2025-06-24 20:03:14] [INFO] Loaded command: nuke-server
+- [2025-06-24 20:03:14] [INFO] Loaded command: premium
+- [2025-06-24 20:03:14] [INFO] Loaded command: setuproles
+- [2025-06-24 20:03:14] [INFO] Loaded command: shutdown
+- [2025-06-24 20:03:14] [INFO] Loaded command: modmail
+- [2025-06-24 20:03:15] [INFO] Loaded command: moveall
+- [2025-06-24 20:03:15] [INFO] Loaded command: rolemenu
+- [2025-06-24 20:03:15] [INFO] Loaded command: sendnotify
+- [2025-06-24 20:03:15] [INFO] Loaded command: unafk
+- [2025-06-24 20:03:15] [INFO] Loaded command: ping
+- [2025-06-24 20:03:16] [INFO] Loaded command: setembedcolor
+- [2025-06-24 20:03:16] [INFO] Loaded command: setembedfooter
+- [2025-06-24 20:03:16] [INFO] Loaded command: setembedicon
+- [2025-06-24 20:03:16] [INFO] Loaded command: avatar
+- [2025-06-24 20:03:16] [INFO] Loaded command: botinfo
+- [2025-06-24 20:03:16] [INFO] Loaded command: channelinfo
+- [2025-06-24 20:03:16] [INFO] Loaded command: help
+- [2025-06-24 20:03:16] [INFO] Loaded command: invite
+- [2025-06-24 20:03:16] [INFO] Loaded command: roleinfo
+- [2025-06-24 20:03:16] [INFO] Loaded command: serverinfo
+- [2025-06-24 20:03:16] [INFO] Loaded command: userinfo
+- [2025-06-24 20:03:16] [INFO] Loaded event: guildMemberAdd
+- [2025-06-24 20:03:17] [INFO] Loaded event: interactionCreate
+- [2025-06-24 20:03:17] [INFO] Loaded event: messageCreate
+- [2025-06-24 20:03:17] [INFO] Loaded event: messageReactionAdd
+- [2025-06-24 20:03:17] [INFO] Loaded event: messageReactionRemove
+- [2025-06-24 20:03:17] [INFO] Loaded event: ready
+- [2025-06-24 20:03:17] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 20:03:17] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 20:03:17] [INFO] Loaded slash command: ping
+- [2025-06-24 20:03:17] [INFO] Loaded slash command: setembedcolor
+- [2025-06-24 20:03:17] [INFO] Loaded slash command: setembedfooter
+- [2025-06-24 20:03:17] [INFO] Loaded slash command: setembedicon
+- [2025-06-24 20:03:17] [INFO] Initializing bot and attempting to log in...
+- [2025-06-24 20:03:20] [INFO] ✅ Database connection successful
+- [2025-06-24 20:03:23] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-24 20:03:23] [INFO] Bot is now online and ready to serve in 4 guilds.
+- [2025-06-24 20:03:24] [INFO] Registered all slash commands globally.
+- [2025-06-24 20:03:24] [INFO] Initializing configs for 4 guilds...
+- [2025-06-24 20:03:25] [INFO] ✅ Guild configurations initialized
+- [2025-06-24 20:03:27] [INFO] Successfully updated dev server status message.
+- [2025-06-24 20:04:31] [ERROR] Query error: [object Object]
+- [2025-06-24 20:04:31] [ERROR] Failed to process auto-reactions for guild 1038540608396066856: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 20:04:31] [ERROR] Query error: [object Object]
+- [2025-06-24 20:05:45] [INFO] Reloaded command: leaderboard
+- [2025-06-24 20:06:01] [ERROR] Query error: [object Object]
+- [2025-06-24 20:06:01] [ERROR] Query error: [object Object]
+- [2025-06-24 20:06:01] [ERROR] Failed to process auto-reactions for guild 1038540608396066856: Error: getaddrinfo ENOTFOUND aws-0-eu-west-3.pooler.supabase.com
+- [2025-06-24 23:32:44] [INFO] Loaded command: autoban
+- [2025-06-24 23:32:44] [INFO] Loaded command: autospam
+- [2025-06-24 23:32:44] [INFO] Loaded command: leaderboard
+- [2025-06-24 23:32:44] [INFO] Loaded command: level
+- [2025-06-24 23:32:44] [INFO] Loaded command: levelrole
+- [2025-06-24 23:32:44] [INFO] Loaded command: add
+- [2025-06-24 23:32:44] [INFO] Loaded command: ban
+- [2025-06-24 23:32:44] [INFO] Loaded command: clear
+- [2025-06-24 23:32:44] [INFO] Loaded command: delwarn
+- [2025-06-24 23:32:44] [INFO] Loaded command: deny
+- [2025-06-24 23:32:44] [INFO] Loaded command: jail
+- [2025-06-24 23:32:44] [INFO] Loaded command: jailsettings
+- [2025-06-24 23:32:44] [INFO] Loaded command: kick
+- [2025-06-24 23:32:44] [INFO] Loaded command: lock
+- [2025-06-24 23:32:44] [INFO] Loaded command: move
+- [2025-06-24 23:32:44] [INFO] Loaded command: mute
+- [2025-06-24 23:32:44] [INFO] Loaded command: nickname
+- [2025-06-24 23:32:44] [INFO] Loaded command: role
+- [2025-06-24 23:32:44] [INFO] Loaded command: setautorole
+- [2025-06-24 23:32:44] [INFO] Loaded command: setjailrole
+- [2025-06-24 23:32:44] [INFO] Loaded command: setjailvoice
+- [2025-06-24 23:32:44] [INFO] Loaded command: slowmode
+- [2025-06-24 23:32:44] [INFO] Loaded command: tempvoice
+- [2025-06-24 23:32:44] [INFO] Loaded command: unban
+- [2025-06-24 23:32:44] [INFO] Loaded command: unjail
+- [2025-06-24 23:32:44] [INFO] Loaded command: unlock
+- [2025-06-24 23:32:44] [INFO] Loaded command: unmute
+- [2025-06-24 23:32:44] [INFO] Loaded command: verify
+- [2025-06-24 23:32:44] [INFO] Loaded command: warn
+- [2025-06-24 23:32:44] [INFO] Loaded command: warns
+- [2025-06-24 23:32:44] [INFO] Loaded command: afk
+- [2025-06-24 23:32:44] [INFO] Loaded command: autoreact
+- [2025-06-24 23:32:44] [INFO] Loaded command: dev
+- [2025-06-24 23:32:44] [INFO] Loaded command: massdm
+- [2025-06-24 23:32:45] [INFO] Loaded command: nuke-server
+- [2025-06-24 23:32:45] [INFO] Loaded command: premium
+- [2025-06-24 23:32:45] [INFO] Loaded command: setuproles
+- [2025-06-24 23:32:45] [INFO] Loaded command: shutdown
+- [2025-06-24 23:32:45] [INFO] Loaded command: modmail
+- [2025-06-24 23:32:45] [INFO] Loaded command: moveall
+- [2025-06-24 23:32:45] [INFO] Loaded command: rolemenu
+- [2025-06-24 23:32:45] [INFO] Loaded command: sendnotify
+- [2025-06-24 23:32:45] [INFO] Loaded command: unafk
+- [2025-06-24 23:32:45] [INFO] Loaded command: ping
+- [2025-06-24 23:32:45] [INFO] Loaded command: setembedcolor
+- [2025-06-24 23:32:45] [INFO] Loaded command: setembedfooter
+- [2025-06-24 23:32:45] [INFO] Loaded command: setembedicon
+- [2025-06-24 23:32:45] [INFO] Loaded command: avatar
+- [2025-06-24 23:32:45] [INFO] Loaded command: botinfo
+- [2025-06-24 23:32:45] [INFO] Loaded command: channelinfo
+- [2025-06-24 23:32:45] [INFO] Loaded command: help
+- [2025-06-24 23:32:45] [INFO] Loaded command: invite
+- [2025-06-24 23:32:45] [INFO] Loaded command: roleinfo
+- [2025-06-24 23:32:45] [INFO] Loaded command: serverinfo
+- [2025-06-24 23:32:45] [INFO] Loaded command: userinfo
+- [2025-06-24 23:32:45] [INFO] Loaded event: guildMemberAdd
+- [2025-06-24 23:32:45] [INFO] Loaded event: interactionCreate
+- [2025-06-24 23:32:45] [INFO] Loaded event: messageCreate
+- [2025-06-24 23:32:45] [INFO] Loaded event: messageReactionAdd
+- [2025-06-24 23:32:45] [INFO] Loaded event: messageReactionRemove
+- [2025-06-24 23:32:45] [INFO] Loaded event: ready
+- [2025-06-24 23:32:45] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 23:32:45] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-24 23:32:45] [INFO] Loaded slash command: ping
+- [2025-06-24 23:32:45] [INFO] Loaded slash command: setembedcolor
+- [2025-06-24 23:32:45] [INFO] Loaded slash command: setembedfooter
+- [2025-06-24 23:32:45] [INFO] Loaded slash command: setembedicon
+- [2025-06-24 23:32:45] [INFO] Initializing bot and attempting to log in...
+- [2025-06-24 23:32:47] [INFO] ✅ Database connection successful
+- [2025-06-24 23:32:48] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-24 23:32:48] [INFO] Bot is now online and ready to serve in 4 guilds.
+- [2025-06-24 23:32:49] [INFO] Registered all slash commands globally.
+- [2025-06-24 23:32:49] [INFO] Initializing configs for 4 guilds...
+- [2025-06-24 23:32:49] [INFO] ✅ Guild configurations initialized
+- [2025-06-24 23:32:50] [INFO] Successfully updated dev server status message.
+- [2025-06-24 23:33:06] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-24 23:33:06] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-24 23:33:06] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-24 23:33:06] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-24 23:33:06] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-24 23:33:06] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-24 23:33:07] [INFO] Shutdown complete. Exiting.
+
+## 2025-06-29
+- [2025-06-29 18:34:06] [INFO] Loaded command: autoban
+- [2025-06-29 18:34:06] [INFO] Loaded command: autospam
+- [2025-06-29 18:34:06] [INFO] Loaded command: leaderboard
+- [2025-06-29 18:34:06] [INFO] Loaded command: level
+- [2025-06-29 18:34:06] [INFO] Loaded command: levelrole
+- [2025-06-29 18:34:06] [INFO] Loaded command: add
+- [2025-06-29 18:34:06] [INFO] Loaded command: ban
+- [2025-06-29 18:34:06] [INFO] Loaded command: clear
+- [2025-06-29 18:34:06] [INFO] Loaded command: delwarn
+- [2025-06-29 18:34:06] [INFO] Loaded command: deny
+- [2025-06-29 18:34:06] [INFO] Loaded command: jail
+- [2025-06-29 18:34:06] [INFO] Loaded command: jailsettings
+- [2025-06-29 18:34:06] [INFO] Loaded command: kick
+- [2025-06-29 18:34:06] [INFO] Loaded command: lock
+- [2025-06-29 18:34:06] [INFO] Loaded command: move
+- [2025-06-29 18:34:06] [INFO] Loaded command: mute
+- [2025-06-29 18:34:06] [INFO] Loaded command: nickname
+- [2025-06-29 18:34:06] [INFO] Loaded command: role
+- [2025-06-29 18:34:06] [INFO] Loaded command: setautorole
+- [2025-06-29 18:34:06] [INFO] Loaded command: setjailrole
+- [2025-06-29 18:34:06] [INFO] Loaded command: setjailvoice
+- [2025-06-29 18:34:06] [INFO] Loaded command: slowmode
+- [2025-06-29 18:34:06] [INFO] Loaded command: tempvoice
+- [2025-06-29 18:34:06] [INFO] Loaded command: unban
+- [2025-06-29 18:34:06] [INFO] Loaded command: unjail
+- [2025-06-29 18:34:06] [INFO] Loaded command: unlock
+- [2025-06-29 18:34:06] [INFO] Loaded command: unmute
+- [2025-06-29 18:34:06] [INFO] Loaded command: verify
+- [2025-06-29 18:34:06] [INFO] Loaded command: warn
+- [2025-06-29 18:34:06] [INFO] Loaded command: warns
+- [2025-06-29 18:34:06] [INFO] Loaded command: afk
+- [2025-06-29 18:34:06] [INFO] Loaded command: autoreact
+- [2025-06-29 18:34:06] [INFO] Loaded command: dev
+- [2025-06-29 18:34:06] [INFO] Loaded command: massdm
+- [2025-06-29 18:34:07] [INFO] Loaded command: nuke-server
+- [2025-06-29 18:34:07] [INFO] Loaded command: premium
+- [2025-06-29 18:34:07] [INFO] Loaded command: setuproles
+- [2025-06-29 18:34:07] [INFO] Loaded command: shutdown
+- [2025-06-29 18:34:07] [INFO] Loaded command: modmail
+- [2025-06-29 18:34:07] [INFO] Loaded command: moveall
+- [2025-06-29 18:34:07] [INFO] Loaded command: rolemenu
+- [2025-06-29 18:34:07] [INFO] Loaded command: sendnotify
+- [2025-06-29 18:34:07] [INFO] Loaded command: unafk
+- [2025-06-29 18:34:07] [INFO] Loaded command: ping
+- [2025-06-29 18:34:07] [INFO] Loaded command: setembedcolor
+- [2025-06-29 18:34:07] [INFO] Loaded command: setembedfooter
+- [2025-06-29 18:34:07] [INFO] Loaded command: setembedicon
+- [2025-06-29 18:34:07] [INFO] Loaded command: avatar
+- [2025-06-29 18:34:07] [INFO] Loaded command: botinfo
+- [2025-06-29 18:34:07] [INFO] Loaded command: channelinfo
+- [2025-06-29 18:34:07] [INFO] Loaded command: help
+- [2025-06-29 18:34:07] [INFO] Loaded command: invite
+- [2025-06-29 18:34:07] [INFO] Loaded command: roleinfo
+- [2025-06-29 18:34:07] [INFO] Loaded command: serverinfo
+- [2025-06-29 18:34:07] [INFO] Loaded command: userinfo
+- [2025-06-29 18:34:07] [INFO] Loaded event: guildMemberAdd
+- [2025-06-29 18:34:07] [INFO] Loaded event: interactionCreate
+- [2025-06-29 18:34:07] [INFO] Loaded event: messageCreate
+- [2025-06-29 18:34:07] [INFO] Loaded event: messageReactionAdd
+- [2025-06-29 18:34:07] [INFO] Loaded event: messageReactionRemove
+- [2025-06-29 18:34:07] [INFO] Loaded event: ready
+- [2025-06-29 18:34:07] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-29 18:34:07] [INFO] Loaded event: voiceStateUpdate
+- [2025-06-29 18:34:07] [INFO] Loaded slash command: ping
+- [2025-06-29 18:34:07] [INFO] Loaded slash command: setembedcolor
+- [2025-06-29 18:34:07] [INFO] Loaded slash command: setembedfooter
+- [2025-06-29 18:34:07] [INFO] Loaded slash command: setembedicon
+- [2025-06-29 18:34:07] [INFO] Initializing bot and attempting to log in...
+- [2025-06-29 18:34:08] [INFO] ✅ Database connection successful
+- [2025-06-29 18:34:09] [INFO] Ready! Logged in as Raymond#8365
+- [2025-06-29 18:34:09] [INFO] Bot is now online and ready to serve in 4 guilds.
+- [2025-06-29 18:34:10] [INFO] Registered all slash commands globally.
+- [2025-06-29 18:34:10] [INFO] Initializing configs for 4 guilds...
+- [2025-06-29 18:34:10] [INFO] ✅ Guild configurations initialized
+- [2025-06-29 18:34:11] [INFO] Successfully updated dev server status message.
+- [2025-06-29 18:34:56] [INFO] Received SIGINT. Shutting down gracefully...
+- [2025-06-29 18:34:56] [INFO] Starting diagnostic shutdown sequence...
+- [2025-06-29 18:34:56] [INFO] [1/2] Attempting to destroy Discord client...
+- [2025-06-29 18:34:56] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2025-06-29 18:34:56] [INFO] [2/2] Database client not found or no end method.
+- [2025-06-29 18:34:56] [INFO] Diagnostic shutdown sequence complete.
+- [2025-06-29 18:34:56] [INFO] Shutdown complete. Exiting.

@@ -1,0 +1,73 @@
+const { PermissionsBitField } = require('discord.js');
+const { sendEmbed } = require('../../handlers/functions/sendEmbed');
+
+module.exports = {
+  name: 'unmute',
+  description: 'Unmute a muted user.',
+  usage: '=unmute @user',
+  cooldown: 5,
+  permissions: [PermissionsBitField.Flags.ModerateMembers],
+  category: 'Moderation',
+  
+  async execute(message, args, client) {
+    const ownerId = process.env.OWNER_ID;
+    const isOwner = message.author.id === ownerId;
+
+    if (!isOwner && !message.member.permissions.has(PermissionsBitField.Flags.ModerateMembers)) {
+      return sendEmbed(message, {
+        title: '🚫 Permission Denied',
+        description: 'You need the **Moderate Members** permission to use this command.',
+        color: 0x23272A,
+      });
+    }
+
+    const member = message.mentions.members.first();
+    if (!member && args[0]) {
+      try {
+        member = await message.guild.members.fetch(args[0]);
+      } catch (e) {
+        // Ignore fetch error, handled below
+      }
+    }
+    if (!member) {
+      return sendEmbed(message, {
+        title: '❓ User Not Mentioned',
+        description: 'Please mention a user to unmute. or provide a valid user ID.',
+        color: 0x23272A,
+      });
+    }
+
+    const muteRole = message.guild.roles.cache.find(r => r.name.toLowerCase() === 'muted');
+    if (!muteRole) {
+      return sendEmbed(message, {
+        title: '⚠️ Muted Role Not Found',
+        description: 'No role named **Muted** found.',
+        color: 0x23272A,
+      });
+    }
+
+    if (!member.roles.cache.has(muteRole.id)) {
+      return sendEmbed(message, {
+        title: '❔ Not Muted',
+        description: `${member.user.tag} is not currently muted.`,
+        color: 0x23272A,
+      });
+    }
+
+    try {
+      await member.roles.remove(muteRole, `Unmuted by ${message.author.tag}`);
+
+      sendEmbed(message, {
+        title: '🔊 User Unmuted',
+        description: `**${member.user.tag}** has been unmuted.`,
+        color: 0x23272A,
+      });
+    } catch (err) {
+      sendEmbed(message, {
+        title: '❌ Error',
+        description: `Failed to unmute user.\n\`\`\`${err.message}\`\`\``,
+        color: 0x23272A,
+      });
+    }
+  },
+};

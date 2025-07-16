@@ -1,0 +1,234 @@
+{
+  "guild_configs": {
+    "structure": [
+      {
+        "column_name": "guild_id",
+        "data_type": "character varying"
+      },
+      {
+        "column_name": "prefix",
+        "data_type": "character varying"
+      },
+      {
+        "column_name": "settings",
+        "data_type": "jsonb"
+      },
+      {
+        "column_name": "created_at",
+        "data_type": "timestamp without time zone"
+      },
+      {
+        "column_name": "updated_at",
+        "data_type": "timestamp without time zone"
+      }
+    ],
+    "data": [
+      {
+        "guild_id": "1234950383932018759",
+        "prefix": "!",
+        "settings": {},
+        "created_at": "2025-06-16T05:52:21.120Z",
+        "updated_at": "2025-06-16T05:52:21.120Z"
+      },
+      {
+        "guild_id": "1379178614083555409",
+        "prefix": "!",
+        "settings": {},
+        "created_at": "2025-06-16T05:52:21.128Z",
+        "updated_at": "2025-06-16T05:52:21.128Z"
+      },
+      {
+        "guild_id": "1317638134871363655",
+        "prefix": "!",
+        "settings": {},
+        "created_at": "2025-06-16T05:52:21.154Z",
+        "updated_at": "2025-06-16T05:52:21.154Z"
+      },
+      {
+        "guild_id": "1038540608396066856",
+        "prefix": "!",
+        "settings": {
+          "verification": {
+            "boyRoleId": "1304487433160622210",
+            "girlRoleId": "1304487440584544270",
+            "logChannelId": "1304487993696059505",
+            "verifiedRoleId": "1304487439989211176",
+            "unverifiedRoleId": "1304487442031837240",
+            "verificatorRoleId": "1307815712416333946"
+          }
+        },
+        "created_at": "2025-06-14T01:00:58.690Z",
+        "updated_at": "2025-06-17T16:11:09.847Z"
+      },
+      {
+        "guild_id": "1379099550014505031",
+        "prefix": "!",
+        "settings": {},
+        "created_at": "2025-06-14T01:12:10.658Z",
+        "updated_at": "2025-06-15T13:46:02.286Z"
+      }
+    ]
+  },
+  "jail_settings": {
+    "structure": [
+      {
+        "column_name": "guild_id",
+        "data_type": "text"
+      },
+      {
+        "column_name": "jail_role_id",
+        "data_type": "text"
+      },
+      {
+        "column_name": "jail_voice_channel_id",
+        "data_type": "text"
+      }
+    ],
+    "data": [
+      {
+        "guild_id": "1038540608396066856",
+        "jail_role_id": "1304487443419893790",
+        "jail_voice_channel_id": "1304487816981385216"
+      }
+    ]
+  },
+  "user_warnings": {
+    "structure": [
+      {
+        "column_name": "id",
+        "data_type": "integer"
+      },
+      {
+        "column_name": "guild_id",
+        "data_type": "text"
+      },
+      {
+        "column_name": "user_id",
+        "data_type": "text"
+      },
+      {
+        "column_name": "moderator_id",
+        "data_type": "text"
+      },
+      {
+        "column_name": "reason",
+        "data_type": "text"
+      },
+      {
+        "column_name": "timestamp",
+        "data_type": "timestamp without time zone"
+      }
+    ],
+    "data": []
+  },
+  "jailed_users": {
+    "structure": [
+      {
+        "column_name": "id",
+        "data_type": "integer"
+      },
+      {
+        "column_name": "guild_id",
+        "data_type": "text"
+      },
+      {
+        "column_name": "user_id",
+        "data_type": "text"
+      },
+      {
+        "column_name": "saved_role_ids",
+        "data_type": "text"
+      },
+      {
+        "column_name": "jailed_at",
+        "data_type": "timestamp without time zone"
+      }
+    ],
+    "data": [
+      {
+        "id": 3,
+        "guild_id": "1038540608396066856",
+        "user_id": "1355342390881419375",
+        "saved_role_ids": "[\"1304487439989211176\"]",
+        "jailed_at": "2025-06-15T01:29:56.173Z"
+      },
+      {
+        "id": 5,
+        "guild_id": "1038540608396066856",
+        "user_id": "1309253273487802482",
+        "saved_role_ids": "[\"1304487404064866305\",\"1304487405293797408\",\"1304487410708648027\",\"1304487414835843073\",\"1304487415888482316\",\"1304487433160622210\",\"1304487435031416996\",\"1304487442031837240\"]",
+        "jailed_at": "2025-06-15T22:38:38.677Z"
+      },
+      {
+        "id": 6,
+        "guild_id": "1038540608396066856",
+        "user_id": "1183425856052412427",
+        "saved_role_ids": "[\"1304487439989211176\"]",
+        "jailed_at": "2025-06-16T00:22:02.748Z"
+      }
+    ]
+  },
+  "premium_guilds": {
+    "structure": [
+      {
+        "column_name": "guild_id",
+        "data_type": "character varying"
+      },
+      {
+        "column_name": "activated_at",
+        "data_type": "timestamp without time zone"
+      },
+      {
+        "column_name": "expires_at",
+        "data_type": "timestamp without time zone"
+      },
+      {
+        "column_name": "plan_type",
+        "data_type": "character varying"
+      },
+      {
+        "column_name": "buyer_id",
+        "data_type": "character varying"
+      }
+    ],
+    "data": [
+      {
+        "guild_id": "1038540608396066856",
+        "activated_at": "2025-06-14T01:05:38.309Z",
+        "expires_at": "2271-11-12T01:05:38.309Z",
+        "plan_type": "godmode",
+        "buyer_id": "1378508799568117804"
+      },
+      {
+        "guild_id": "1379099550014505031",
+        "activated_at": "2025-06-17T14:07:28.363Z",
+        "expires_at": "2299-04-02T14:07:28.363Z",
+        "plan_type": "godmode",
+        "buyer_id": "<@716381717589393499>"
+      }
+    ]
+  },
+  "guild_auto_roles": {
+    "structure": [
+      {
+        "column_name": "guild_id",
+        "data_type": "text"
+      },
+      {
+        "column_name": "role_id",
+        "data_type": "text"
+      },
+      {
+        "column_name": "member_join_log_channel_id",
+        "data_type": "text"
+      }
+    ],
+    "data": [
+      {
+        "guild_id": "1038540608396066856",
+        "role_id": "1304487442031837240",
+        "member_join_log_channel_id": "1304487985189883944"
+      }
+    ]
+  }
+}

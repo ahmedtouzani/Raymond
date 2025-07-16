@@ -1,0 +1,42 @@
+{
+  "name": "parallel-ultra-bot",
+  "version": "1.0.0",
+  "description": "A Discord bot built with Node.js and discord.js",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate": "node scripts/migrate.js",
+    "migrate:create": "node scripts/create-migration.js",
+    "dev": "nodemon src/index.js",
+    "backup": "node scripts/backup-cli.js",
+    "backup:create": "node scripts/backup-cli.js create",
+    "backup:list": "node scripts/backup-cli.js list",
+    "backup:cleanup": "node scripts/backup-cli.js cleanup",
+    "backup:schedule": "node scripts/scheduled-backup.js"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "discordjs"
+  ],
+  "author": "AHMET",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/voice": "^0.18.0",
+    "chokidar": "^4.0.3",
+    "commander": "^11.1.0",
+    "discord.js": "^14.7.1",
+    "discord.js-rate-limiter": "^1.3.2",
+    "dotenv": "^16.5.0",
+    "libsodium-wrappers": "^0.7.15",
+    "nodemon": "^3.1.10",
+    "pg": "^8.16.0",
+    "pg-connection-string": "^2.9.0",
+    "uuid": "^11.1.0",
+    "winston": "^3.8.2"
+  },
+  "bin": {
+    "db-backup": "./scripts/backup-cli.js"
+  }
+}
