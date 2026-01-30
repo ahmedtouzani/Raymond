@@ -130,18 +130,18 @@ module.exports = {
     // --- Create Embed ---
     const embed = await createEmbed(message.guild.id, {
       author: { 
-        name: `${user.username}${tag} ${user.bot ? '<:3736prmanager:1379103192784310282>' : 'No'}`,
+        name: `${user.username}${tag} ${user.bot ? '<:manager:1466826492334833665>' : 'No'}`,
         iconURL: user.displayAvatarURL({ dynamic: true })
       },
       thumbnail: user.displayAvatarURL({ dynamic: true, size: 4096 }),
       fields: [
         { 
-          name: '<:36548namoonlight:1379103329044402257> > General',
+          name: '<:manager:1466826492334833665> > General',
           value: [
             `<:arrow:1309167079231848572> **Username:** ${escapeMarkdown(user.username)}`,
             `<:arrow:1309167079231848572> **ID:** \`${user.id}\``,
             `<:arrow:1309167079231848572> **Nickname:** ${escapeMarkdown(nickname)}`,
-            `<:arrow:1309167079231848572> **Bot:** ${user.bot ? '<:3736prmanager:1379103192784310282>' : 'No'}`,
+            `<:arrow:1309167079231848572> **Bot:** ${user.bot ? '<:manager:1466826492334833665>' : 'No'}`,
             `<:arrow:1309167079231848572> **Status:** ${getStatusEmoji(member.presence?.status)} ${member.presence?.status || 'offline'}`,
             `<:arrow:1309167079231848572> **Device:** ${deviceStatus.join(' ') || 'Unknown'}`,
             `<:arrow:1309167079231848572> **Badges:** ${getUserBadges(user)}`,

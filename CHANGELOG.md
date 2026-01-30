@@ -16489,3 +16489,404 @@ message_reference[MESSAGE_REFERENCE_UNKNOWN_MESSAGE]: Unknown message
 - [2026-01-30 14:58:56] [INFO] [InteractionCreate] Received component interaction with customId: "w_toggle"
 - [2026-01-30 14:58:59] [INFO] [InteractionCreate] Received component interaction with customId: "add_role"
 - [2026-01-30 14:59:24] [INFO] [InteractionCreate] Received component interaction with customId: "finish"
+- [2026-01-30 15:47:47] [INFO] Loaded command: autoban
+- [2026-01-30 15:47:47] [INFO] Loaded command: autospam
+- [2026-01-30 15:47:47] [INFO] Loaded command: leaderboard
+- [2026-01-30 15:47:47] [INFO] Loaded command: level
+- [2026-01-30 15:47:47] [INFO] Loaded command: levelrole
+- [2026-01-30 15:47:47] [INFO] Loaded command: add
+- [2026-01-30 15:47:47] [INFO] Loaded command: ban
+- [2026-01-30 15:47:47] [INFO] Loaded command: clear
+- [2026-01-30 15:47:47] [INFO] Loaded command: delwarn
+- [2026-01-30 15:47:47] [INFO] Loaded command: deny
+- [2026-01-30 15:47:47] [INFO] Loaded command: jail
+- [2026-01-30 15:47:47] [INFO] Loaded command: jailsettings
+- [2026-01-30 15:47:47] [INFO] Loaded command: kick
+- [2026-01-30 15:47:47] [INFO] Loaded command: lock
+- [2026-01-30 15:47:47] [INFO] Loaded command: move
+- [2026-01-30 15:47:47] [INFO] Loaded command: mute
+- [2026-01-30 15:47:47] [INFO] Loaded command: nickname
+- [2026-01-30 15:47:48] [INFO] Loaded command: role
+- [2026-01-30 15:47:48] [INFO] Loaded command: setautorole
+- [2026-01-30 15:47:48] [INFO] Loaded command: setjailrole
+- [2026-01-30 15:47:48] [INFO] Loaded command: setjailvoice
+- [2026-01-30 15:47:48] [INFO] Loaded command: slowmode
+- [2026-01-30 15:47:48] [INFO] Loaded command: tempvoice
+- [2026-01-30 15:47:48] [INFO] Loaded command: unban
+- [2026-01-30 15:47:48] [INFO] Loaded command: unjail
+- [2026-01-30 15:47:48] [INFO] Loaded command: unlock
+- [2026-01-30 15:47:48] [INFO] Loaded command: unmute
+- [2026-01-30 15:47:48] [INFO] Loaded command: verify
+- [2026-01-30 15:47:48] [INFO] Loaded command: warn
+- [2026-01-30 15:47:48] [INFO] Loaded command: warns
+- [2026-01-30 15:47:48] [INFO] Loaded command: afk
+- [2026-01-30 15:47:48] [INFO] Loaded command: autoreact
+- [2026-01-30 15:47:48] [INFO] Loaded command: dev
+- [2026-01-30 15:47:48] [INFO] Loaded command: massdm
+- [2026-01-30 15:47:48] [INFO] Loaded command: nuke-server
+- [2026-01-30 15:47:48] [INFO] Loaded command: premium
+- [2026-01-30 15:47:48] [INFO] Loaded command: setuproles
+- [2026-01-30 15:47:48] [INFO] Loaded command: shutdown
+- [2026-01-30 15:47:48] [INFO] Loaded command: modmail
+- [2026-01-30 15:47:48] [INFO] Loaded command: moveall
+- [2026-01-30 15:47:48] [INFO] Loaded command: rolemenu
+- [2026-01-30 15:47:48] [INFO] Loaded command: sendnotify
+- [2026-01-30 15:47:48] [INFO] Loaded command: unafk
+- [2026-01-30 15:47:48] [INFO] Loaded command: ping
+- [2026-01-30 15:47:48] [INFO] Loaded command: setembedcolor
+- [2026-01-30 15:47:48] [INFO] Loaded command: setembedfooter
+- [2026-01-30 15:47:48] [INFO] Loaded command: setembedicon
+- [2026-01-30 15:47:48] [INFO] Loaded command: avatar
+- [2026-01-30 15:47:48] [INFO] Loaded command: botinfo
+- [2026-01-30 15:47:48] [INFO] Loaded command: channelinfo
+- [2026-01-30 15:47:48] [INFO] Loaded command: help
+- [2026-01-30 15:47:48] [INFO] Loaded command: invite
+- [2026-01-30 15:47:48] [INFO] Loaded command: roleinfo
+- [2026-01-30 15:47:48] [INFO] Loaded command: serverinfo
+- [2026-01-30 15:47:48] [INFO] Loaded command: userinfo
+- [2026-01-30 15:47:48] [INFO] Loaded event: guildMemberAdd
+- [2026-01-30 15:47:48] [INFO] Loaded event: interactionCreate
+- [2026-01-30 15:47:49] [INFO] Loaded event: messageCreate
+- [2026-01-30 15:47:49] [INFO] Loaded event: messageReactionAdd
+- [2026-01-30 15:47:49] [INFO] Loaded event: messageReactionRemove
+- [2026-01-30 15:47:49] [INFO] Loaded event: ready
+- [2026-01-30 15:47:49] [INFO] Loaded event: voiceStateUpdate
+- [2026-01-30 15:47:49] [INFO] Loaded event: voiceStateUpdate
+- [2026-01-30 15:47:49] [INFO] Loaded slash command: ping
+- [2026-01-30 15:47:49] [INFO] Loaded slash command: setembedcolor
+- [2026-01-30 15:47:49] [INFO] Loaded slash command: setembedfooter
+- [2026-01-30 15:47:49] [INFO] Loaded slash command: setembedicon
+- [2026-01-30 15:47:49] [INFO] Initializing bot and attempting to log in...
+- [2026-01-30 15:47:57] [INFO] Ready! Logged in as Raymond Reddington#0429
+- [2026-01-30 15:47:57] [INFO] Bot is now online and ready to serve in 6 guilds.
+- [2026-01-30 15:47:59] [INFO] Registered all slash commands globally.
+- [2026-01-30 15:47:59] [INFO] Initializing configs for 6 guilds...
+- [2026-01-30 15:47:59] [ERROR] ❌ Database connection failed: Error: getaddrinfo ENOTFOUND shinkansen.proxy.rlwy.net
+- [2026-01-30 15:50:55] [INFO] Loaded command: autoban
+- [2026-01-30 15:50:56] [INFO] Loaded command: autospam
+- [2026-01-30 15:50:56] [INFO] Loaded command: leaderboard
+- [2026-01-30 15:50:56] [INFO] Loaded command: level
+- [2026-01-30 15:50:56] [INFO] Loaded command: levelrole
+- [2026-01-30 15:50:56] [INFO] Loaded command: add
+- [2026-01-30 15:50:56] [INFO] Loaded command: ban
+- [2026-01-30 15:50:56] [INFO] Loaded command: clear
+- [2026-01-30 15:50:56] [INFO] Loaded command: delwarn
+- [2026-01-30 15:50:56] [INFO] Loaded command: deny
+- [2026-01-30 15:50:56] [INFO] Loaded command: jail
+- [2026-01-30 15:50:56] [INFO] Loaded command: jailsettings
+- [2026-01-30 15:50:56] [INFO] Loaded command: kick
+- [2026-01-30 15:50:56] [INFO] Loaded command: lock
+- [2026-01-30 15:50:56] [INFO] Loaded command: move
+- [2026-01-30 15:50:56] [INFO] Loaded command: mute
+- [2026-01-30 15:50:56] [INFO] Loaded command: nickname
+- [2026-01-30 15:50:56] [INFO] Loaded command: role
+- [2026-01-30 15:50:56] [INFO] Loaded command: setautorole
+- [2026-01-30 15:50:56] [INFO] Loaded command: setjailrole
+- [2026-01-30 15:50:56] [INFO] Loaded command: setjailvoice
+- [2026-01-30 15:50:56] [INFO] Loaded command: slowmode
+- [2026-01-30 15:50:56] [INFO] Loaded command: tempvoice
+- [2026-01-30 15:50:56] [INFO] Loaded command: unban
+- [2026-01-30 15:50:56] [INFO] Loaded command: unjail
+- [2026-01-30 15:50:56] [INFO] Loaded command: unlock
+- [2026-01-30 15:50:56] [INFO] Loaded command: unmute
+- [2026-01-30 15:50:56] [INFO] Loaded command: verify
+- [2026-01-30 15:50:56] [INFO] Loaded command: warn
+- [2026-01-30 15:50:56] [INFO] Loaded command: warns
+- [2026-01-30 15:50:56] [INFO] Loaded command: afk
+- [2026-01-30 15:50:56] [INFO] Loaded command: autoreact
+- [2026-01-30 15:50:56] [INFO] Loaded command: dev
+- [2026-01-30 15:50:56] [INFO] Loaded command: massdm
+- [2026-01-30 15:50:56] [INFO] Loaded command: nuke-server
+- [2026-01-30 15:50:56] [INFO] Loaded command: premium
+- [2026-01-30 15:50:56] [INFO] Loaded command: setuproles
+- [2026-01-30 15:50:56] [INFO] Loaded command: shutdown
+- [2026-01-30 15:50:56] [INFO] Loaded command: modmail
+- [2026-01-30 15:50:56] [INFO] Loaded command: moveall
+- [2026-01-30 15:50:56] [INFO] Loaded command: rolemenu
+- [2026-01-30 15:50:56] [INFO] Loaded command: sendnotify
+- [2026-01-30 15:50:56] [INFO] Loaded command: unafk
+- [2026-01-30 15:50:56] [INFO] Loaded command: ping
+- [2026-01-30 15:50:57] [INFO] Loaded command: setembedcolor
+- [2026-01-30 15:50:57] [INFO] Loaded command: setembedfooter
+- [2026-01-30 15:50:57] [INFO] Loaded command: setembedicon
+- [2026-01-30 15:50:57] [INFO] Loaded command: avatar
+- [2026-01-30 15:50:57] [INFO] Loaded command: botinfo
+- [2026-01-30 15:50:57] [INFO] Loaded command: channelinfo
+- [2026-01-30 15:50:57] [INFO] Loaded command: help
+- [2026-01-30 15:50:57] [INFO] Loaded command: invite
+- [2026-01-30 15:50:57] [INFO] Loaded command: roleinfo
+- [2026-01-30 15:50:57] [INFO] Loaded command: serverinfo
+- [2026-01-30 15:50:57] [INFO] Loaded command: userinfo
+- [2026-01-30 15:50:57] [INFO] Loaded event: guildMemberAdd
+- [2026-01-30 15:50:57] [INFO] Loaded event: interactionCreate
+- [2026-01-30 15:50:57] [INFO] Loaded event: messageCreate
+- [2026-01-30 15:50:57] [INFO] Loaded event: messageReactionAdd
+- [2026-01-30 15:50:57] [INFO] Loaded event: messageReactionRemove
+- [2026-01-30 15:50:57] [INFO] Loaded event: ready
+- [2026-01-30 15:50:57] [INFO] Loaded event: voiceStateUpdate
+- [2026-01-30 15:50:57] [INFO] Loaded event: voiceStateUpdate
+- [2026-01-30 15:50:57] [INFO] Loaded slash command: ping
+- [2026-01-30 15:50:57] [INFO] Loaded slash command: setembedcolor
+- [2026-01-30 15:50:57] [INFO] Loaded slash command: setembedfooter
+- [2026-01-30 15:50:57] [INFO] Loaded slash command: setembedicon
+- [2026-01-30 15:50:57] [INFO] Initializing bot and attempting to log in...
+- [2026-01-30 15:50:58] [INFO] ✅ Database connection successful
+- [2026-01-30 15:51:01] [INFO] Ready! Logged in as Raymond Reddington#0429
+- [2026-01-30 15:51:01] [INFO] Bot is now online and ready to serve in 6 guilds.
+- [2026-01-30 15:51:01] [ERROR] Query error: [object Object]
+- [2026-01-30 15:51:01] [ERROR] Error getting all temp voice configs for guild 1351735584548196362: error: relation "temp_voice_configs" does not exist
+- [2026-01-30 15:51:01] [ERROR] Discord client error: error: relation "temp_voice_configs" does not exist
+- [2026-01-30 15:51:01] [ERROR] Discord client error: relation "temp_voice_configs" does not exist
+- [2026-01-30 15:51:01] [INFO] Registered all slash commands globally.
+- [2026-01-30 15:51:01] [INFO] Initializing configs for 6 guilds...
+- [2026-01-30 15:51:02] [ERROR] Query error: [object Object]
+- [2026-01-30 15:51:02] [ERROR] Error getting config for guild 1038540608396066856: error: relation "guild_configs" does not exist
+- [2026-01-30 15:51:03] [ERROR] Query error: [object Object]
+- [2026-01-30 15:51:03] [ERROR] Error creating default config: error: relation "guild_configs" does not exist
+- [2026-01-30 15:51:04] [ERROR] Query error: [object Object]
+- [2026-01-30 15:51:04] [ERROR] Error getting config for guild 1219799962389446726: error: relation "guild_configs" does not exist
+- [2026-01-30 15:51:04] [ERROR] Query error: [object Object]
+- [2026-01-30 15:51:04] [ERROR] Error creating default config: error: relation "guild_configs" does not exist
+- [2026-01-30 15:51:05] [ERROR] Query error: [object Object]
+- [2026-01-30 15:51:05] [ERROR] Error getting config for guild 1351735584548196362: error: relation "guild_configs" does not exist
+- [2026-01-30 15:51:07] [ERROR] Query error: [object Object]
+- [2026-01-30 15:51:07] [ERROR] Error creating default config: error: relation "guild_configs" does not exist
+- [2026-01-30 15:51:08] [ERROR] Query error: [object Object]
+- [2026-01-30 15:51:08] [ERROR] Error getting config for guild 1379099550014505031: error: relation "guild_configs" does not exist
+- [2026-01-30 15:51:09] [ERROR] Query error: [object Object]
+- [2026-01-30 15:51:09] [ERROR] Error creating default config: error: relation "guild_configs" does not exist
+- [2026-01-30 15:51:10] [ERROR] Query error: [object Object]
+- [2026-01-30 15:51:10] [ERROR] Error getting config for guild 1412812646075596802: error: relation "guild_configs" does not exist
+- [2026-01-30 15:51:11] [ERROR] Query error: [object Object]
+- [2026-01-30 15:51:11] [ERROR] Error getting all temp voice configs for guild 1351735584548196362: error: relation "temp_voice_configs" does not exist
+- [2026-01-30 15:51:11] [ERROR] Discord client error: error: relation "temp_voice_configs" does not exist
+- [2026-01-30 15:51:11] [ERROR] Discord client error: relation "temp_voice_configs" does not exist
+- [2026-01-30 15:51:12] [ERROR] Query error: [object Object]
+- [2026-01-30 15:51:12] [ERROR] Error creating default config: error: relation "guild_configs" does not exist
+- [2026-01-30 15:51:13] [ERROR] Query error: [object Object]
+- [2026-01-30 15:51:13] [ERROR] Error getting config for guild 1450520062313103362: error: relation "guild_configs" does not exist
+- [2026-01-30 15:51:14] [ERROR] Query error: [object Object]
+- [2026-01-30 15:51:14] [ERROR] Error creating default config: error: relation "guild_configs" does not exist
+- [2026-01-30 15:51:14] [INFO] ✅ Guild configurations initialized
+- [2026-01-30 15:51:15] [ERROR] Query error: [object Object]
+- [2026-01-30 15:51:15] [ERROR] Error getting all temp channels: error: relation "temp_voice_channels" does not exist
+- [2026-01-30 15:51:16] [ERROR] Query error: [object Object]
+- [2026-01-30 15:51:16] [ERROR] Error getting config for guild 1379099550014505031: error: relation "guild_configs" does not exist
+- [2026-01-30 15:51:17] [ERROR] Query error: [object Object]
+- [2026-01-30 15:51:17] [ERROR] Error creating default config: error: relation "guild_configs" does not exist
+- [2026-01-30 15:51:19] [ERROR] Query error: [object Object]
+- [2026-01-30 15:51:19] [ERROR] Error getting config for guild 1379099550014505031: error: relation "guild_configs" does not exist
+- [2026-01-30 15:51:20] [ERROR] Query error: [object Object]
+- [2026-01-30 15:51:20] [ERROR] Error creating default config: error: relation "guild_configs" does not exist
+- [2026-01-30 15:51:20] [ERROR] Error updating config for guild 1379099550014505031: error: relation "guild_configs" does not exist
+- [2026-01-30 15:51:20] [ERROR] Failed to update dev server status: error: relation "guild_configs" does not exist
+- [2026-01-30 15:52:08] [ERROR] Query error: [object Object]
+- [2026-01-30 15:52:08] [ERROR] Error getting config for guild 1351735584548196362: error: relation "guild_configs" does not exist
+- [2026-01-30 15:52:08] [ERROR] Query error: [object Object]
+- [2026-01-30 15:52:09] [ERROR] Error creating default config: error: relation "guild_configs" does not exist
+- [2026-01-30 15:52:09] [ERROR] Query error: [object Object]
+- [2026-01-30 15:52:09] [ERROR] Error getting config for guild 1351735584548196362: error: relation "guild_configs" does not exist
+- [2026-01-30 15:52:09] [ERROR] Query error: [object Object]
+- [2026-01-30 15:52:09] [ERROR] Error creating default config: error: relation "guild_configs" does not exist
+- [2026-01-30 15:52:24] [ERROR] Query error: [object Object]
+- [2026-01-30 15:52:24] [ERROR] Error getting all temp voice configs for guild 1351735584548196362: error: relation "temp_voice_configs" does not exist
+- [2026-01-30 15:52:24] [ERROR] Discord client error: error: relation "temp_voice_configs" does not exist
+- [2026-01-30 15:52:24] [ERROR] Discord client error: relation "temp_voice_configs" does not exist
+- [2026-01-30 15:52:24] [INFO] ✅ 'schema_migrations' table ensured.
+- [2026-01-30 15:52:24] [INFO] 🔄 Applying migration: 20250617190500_initial_schema.sql...
+- [2026-01-30 15:52:25] [INFO] ✅ Migration 20250617190500_initial_schema.sql applied successfully.
+- [2026-01-30 15:52:25] [INFO] 🔄 Applying migration: 20250617193500_add_temp_voice_feature_tables.sql...
+- [2026-01-30 15:52:25] [INFO] ✅ Migration 20250617193500_add_temp_voice_feature_tables.sql applied successfully.
+- [2026-01-30 15:52:25] [INFO] 🔄 Applying migration: 20250617195000_refactor_temp_voice_configs.sql...
+- [2026-01-30 15:52:25] [INFO] ✅ Migration 20250617195000_refactor_temp_voice_configs.sql applied successfully.
+- [2026-01-30 15:52:25] [INFO] 🔄 Applying migration: 20250617200500_add_support_role_to_temp_configs.sql...
+- [2026-01-30 15:52:26] [INFO] ✅ Migration 20250617200500_add_support_role_to_temp_configs.sql applied successfully.
+- [2026-01-30 15:52:26] [INFO] 🔄 Applying migration: 20250617202000_add_cleanup_delay_to_temp_configs.sql...
+- [2026-01-30 15:52:26] [INFO] ✅ Migration 20250617202000_add_cleanup_delay_to_temp_configs.sql applied successfully.
+- [2026-01-30 15:52:26] [INFO] 🔄 Applying migration: 20250617203909_cleanup_temp_voice_configs_table.sql...
+- [2026-01-30 15:52:27] [INFO] ✅ Migration 20250617203909_cleanup_temp_voice_configs_table.sql applied successfully.
+- [2026-01-30 15:52:27] [INFO] 🔄 Applying migration: 20250617205000_remove_obsolete_temp_voice_columns.sql...
+- [2026-01-30 15:52:27] [INFO] ✅ Migration 20250617205000_remove_obsolete_temp_voice_columns.sql applied successfully.
+- [2026-01-30 15:52:27] [INFO] 🔄 Applying migration: 20250617221000_refactor_temp_voice_for_multi_config.sql...
+- [2026-01-30 15:52:27] [INFO] ✅ Migration 20250617221000_refactor_temp_voice_for_multi_config.sql applied successfully.
+- [2026-01-30 15:52:27] [INFO] 🔄 Applying migration: 20250618T00064_create_auto_reactions_table.sql...
+- [2026-01-30 15:52:28] [INFO] ✅ Migration 20250618T00064_create_auto_reactions_table.sql applied successfully.
+- [2026-01-30 15:52:28] [INFO] 🔄 Applying migration: 20250618T00085_create_auto_reactions_table.sql...
+- [2026-01-30 15:52:28] [INFO] ✅ Migration 20250618T00085_create_auto_reactions_table.sql applied successfully.
+- [2026-01-30 15:52:28] [INFO] 🔄 Applying migration: 20250624_create_level_roles.sql...
+- [2026-01-30 15:52:28] [INFO] ✅ Migration 20250624_create_level_roles.sql applied successfully.
+- [2026-01-30 15:52:28] [INFO] 🔄 Applying migration: 20250624_create_user_levels.sql...
+- [2026-01-30 15:52:29] [INFO] ✅ Migration 20250624_create_user_levels.sql applied successfully.
+- [2026-01-30 15:52:29] [INFO] 🔄 Applying migration: 20250624_update_user_levels_for_voice_and_text.sql...
+- [2026-01-30 15:52:30] [INFO] ✅ Migration 20250624_update_user_levels_for_voice_and_text.sql applied successfully.
+- [2026-01-30 15:52:30] [INFO] 🔄 Applying migration: 20260130_create_infractions_table.sql...
+- [2026-01-30 15:52:30] [INFO] ✅ Migration 20260130_create_infractions_table.sql applied successfully.
+- [2026-01-30 15:52:30] [INFO] 🔄 Applying migration: 20260130_create_role_menus.sql...
+- [2026-01-30 15:52:30] [INFO] ✅ Migration 20260130_create_role_menus.sql applied successfully.
+- [2026-01-30 15:52:30] [INFO] 🔄 Applying migration: 20260130_enhance_role_menus.sql...
+- [2026-01-30 15:52:31] [INFO] ✅ Migration 20260130_enhance_role_menus.sql applied successfully.
+- [2026-01-30 15:52:31] [INFO] Applied 16 new migration(s).
+- [2026-01-30 15:52:31] [INFO] Migrations completed.
+- [2026-01-30 15:54:38] [INFO] Loaded command: autoban
+- [2026-01-30 15:54:38] [INFO] Loaded command: autospam
+- [2026-01-30 15:54:38] [INFO] Loaded command: leaderboard
+- [2026-01-30 15:54:38] [INFO] Loaded command: level
+- [2026-01-30 15:54:38] [INFO] Loaded command: levelrole
+- [2026-01-30 15:54:38] [INFO] Loaded command: add
+- [2026-01-30 15:54:38] [INFO] Loaded command: ban
+- [2026-01-30 15:54:38] [INFO] Loaded command: clear
+- [2026-01-30 15:54:38] [INFO] Loaded command: delwarn
+- [2026-01-30 15:54:38] [INFO] Loaded command: deny
+- [2026-01-30 15:54:38] [INFO] Loaded command: jail
+- [2026-01-30 15:54:38] [INFO] Loaded command: jailsettings
+- [2026-01-30 15:54:38] [INFO] Loaded command: kick
+- [2026-01-30 15:54:38] [INFO] Loaded command: lock
+- [2026-01-30 15:54:38] [INFO] Loaded command: move
+- [2026-01-30 15:54:38] [INFO] Loaded command: mute
+- [2026-01-30 15:54:38] [INFO] Loaded command: nickname
+- [2026-01-30 15:54:38] [INFO] Loaded command: role
+- [2026-01-30 15:54:38] [INFO] Loaded command: setautorole
+- [2026-01-30 15:54:38] [INFO] Loaded command: setjailrole
+- [2026-01-30 15:54:38] [INFO] Loaded command: setjailvoice
+- [2026-01-30 15:54:38] [INFO] Loaded command: slowmode
+- [2026-01-30 15:54:38] [INFO] Loaded command: tempvoice
+- [2026-01-30 15:54:38] [INFO] Loaded command: unban
+- [2026-01-30 15:54:38] [INFO] Loaded command: unjail
+- [2026-01-30 15:54:39] [INFO] Loaded command: unlock
+- [2026-01-30 15:54:39] [INFO] Loaded command: unmute
+- [2026-01-30 15:54:39] [INFO] Loaded command: verify
+- [2026-01-30 15:54:39] [INFO] Loaded command: warn
+- [2026-01-30 15:54:39] [INFO] Loaded command: warns
+- [2026-01-30 15:54:39] [INFO] Loaded command: afk
+- [2026-01-30 15:54:39] [INFO] Loaded command: autoreact
+- [2026-01-30 15:54:39] [INFO] Loaded command: dev
+- [2026-01-30 15:54:39] [INFO] Loaded command: massdm
+- [2026-01-30 15:54:39] [INFO] Loaded command: nuke-server
+- [2026-01-30 15:54:39] [INFO] Loaded command: premium
+- [2026-01-30 15:54:39] [INFO] Loaded command: setuproles
+- [2026-01-30 15:54:39] [INFO] Loaded command: shutdown
+- [2026-01-30 15:54:39] [INFO] Loaded command: modmail
+- [2026-01-30 15:54:39] [INFO] Loaded command: moveall
+- [2026-01-30 15:54:39] [INFO] Loaded command: rolemenu
+- [2026-01-30 15:54:39] [INFO] Loaded command: sendnotify
+- [2026-01-30 15:54:39] [INFO] Loaded command: unafk
+- [2026-01-30 15:54:39] [INFO] Loaded command: ping
+- [2026-01-30 15:54:39] [INFO] Loaded command: setembedcolor
+- [2026-01-30 15:54:39] [INFO] Loaded command: setembedfooter
+- [2026-01-30 15:54:39] [INFO] Loaded command: setembedicon
+- [2026-01-30 15:54:39] [INFO] Loaded command: avatar
+- [2026-01-30 15:54:39] [INFO] Loaded command: botinfo
+- [2026-01-30 15:54:39] [INFO] Loaded command: channelinfo
+- [2026-01-30 15:54:39] [INFO] Loaded command: help
+- [2026-01-30 15:54:39] [INFO] Loaded command: invite
+- [2026-01-30 15:54:39] [INFO] Loaded command: roleinfo
+- [2026-01-30 15:54:39] [INFO] Loaded command: serverinfo
+- [2026-01-30 15:54:39] [INFO] Loaded command: userinfo
+- [2026-01-30 15:54:39] [INFO] Loaded event: guildMemberAdd
+- [2026-01-30 15:54:39] [INFO] Loaded event: interactionCreate
+- [2026-01-30 15:54:39] [INFO] Loaded event: messageCreate
+- [2026-01-30 15:54:39] [INFO] Loaded event: messageReactionAdd
+- [2026-01-30 15:54:39] [INFO] Loaded event: messageReactionRemove
+- [2026-01-30 15:54:39] [INFO] Loaded event: ready
+- [2026-01-30 15:54:39] [INFO] Loaded event: voiceStateUpdate
+- [2026-01-30 15:54:40] [INFO] Loaded event: voiceStateUpdate
+- [2026-01-30 15:54:40] [INFO] Loaded slash command: ping
+- [2026-01-30 15:54:40] [INFO] Loaded slash command: setembedcolor
+- [2026-01-30 15:54:40] [INFO] Loaded slash command: setembedfooter
+- [2026-01-30 15:54:40] [INFO] Loaded slash command: setembedicon
+- [2026-01-30 15:54:40] [INFO] Initializing bot and attempting to log in...
+- [2026-01-30 15:54:41] [INFO] ✅ Database connection successful
+- [2026-01-30 15:54:47] [INFO] Ready! Logged in as Raymond Reddington#0429
+- [2026-01-30 15:54:47] [INFO] Bot is now online and ready to serve in 6 guilds.
+- [2026-01-30 15:54:48] [INFO] Registered all slash commands globally.
+- [2026-01-30 15:54:48] [INFO] Initializing configs for 6 guilds...
+- [2026-01-30 15:54:49] [INFO] ✅ Guild configurations initialized
+- [2026-01-30 15:54:50] [INFO] Posted new dev server status message and saved its ID: 1466823981423267840
+- [2026-01-30 15:57:23] [INFO] ✅ Database connection for migrator is successful.
+- [2026-01-30 15:57:24] [INFO] ✅ 'schema_migrations' table ensured.
+- [2026-01-30 15:57:24] [INFO] Database schema is already up to date.
+- [2026-01-30 15:57:24] [INFO] Migrations completed.
+- [2026-01-30 15:59:18] [INFO] ✅ Connected to OLD database (Supabase)
+- [2026-01-30 15:59:27] [INFO] ✅ Connected to NEW database (Railway)
+- [2026-01-30 15:59:27] [INFO] 
+🚀 Starting data migration from Supabase to Railway...
+
+- [2026-01-30 15:59:27] [INFO] 📋 Tables to migrate: 14
+- [2026-01-30 15:59:27] [INFO] 
+🔄 Migrating table: guild_configs...
+- [2026-01-30 15:59:27] [INFO] 📊 Found 9 rows to migrate
+- [2026-01-30 15:59:28] [INFO] ✅ Migrated 9 rows from 'guild_configs' (0 failed)
+- [2026-01-30 15:59:28] [INFO] 
+🔄 Migrating table: premium_guilds...
+- [2026-01-30 15:59:29] [INFO] 📊 Found 4 rows to migrate
+- [2026-01-30 15:59:30] [INFO] ✅ Migrated 4 rows from 'premium_guilds' (0 failed)
+- [2026-01-30 15:59:30] [INFO] 
+🔄 Migrating table: user_warnings...
+- [2026-01-30 15:59:31] [INFO] ℹ️  Table 'user_warnings' is empty in old database. Nothing to migrate.
+- [2026-01-30 15:59:31] [INFO] 
+🔄 Migrating table: jail_settings...
+- [2026-01-30 15:59:32] [INFO] 📊 Found 1 rows to migrate
+- [2026-01-30 15:59:33] [INFO] ✅ Migrated 1 rows from 'jail_settings' (0 failed)
+- [2026-01-30 15:59:33] [INFO] 
+🔄 Migrating table: jailed_users...
+- [2026-01-30 15:59:34] [INFO] 📊 Found 3 rows to migrate
+- [2026-01-30 15:59:34] [INFO] ✅ Migrated 3 rows from 'jailed_users' (0 failed)
+- [2026-01-30 15:59:34] [INFO] 
+🔄 Migrating table: guild_auto_roles...
+- [2026-01-30 15:59:34] [INFO] ℹ️  Table 'guild_auto_roles' is empty in old database. Nothing to migrate.
+- [2026-01-30 15:59:35] [INFO] 
+🔄 Migrating table: temp_voice_configs...
+- [2026-01-30 15:59:35] [INFO] 📊 Found 2 rows to migrate
+- [2026-01-30 15:59:35] [INFO] ✅ Migrated 2 rows from 'temp_voice_configs' (0 failed)
+- [2026-01-30 15:59:35] [INFO] 
+🔄 Migrating table: temp_voice_channels...
+- [2026-01-30 15:59:35] [INFO] ℹ️  Table 'temp_voice_channels' is empty in old database. Nothing to migrate.
+- [2026-01-30 15:59:36] [INFO] 
+🔄 Migrating table: auto_reactions...
+- [2026-01-30 15:59:36] [INFO] 📊 Found 1 rows to migrate
+- [2026-01-30 15:59:36] [INFO] ✅ Migrated 1 rows from 'auto_reactions' (0 failed)
+- [2026-01-30 15:59:36] [INFO] 
+🔄 Migrating table: user_levels...
+- [2026-01-30 15:59:36] [INFO] 📊 Found 14 rows to migrate
+- [2026-01-30 15:59:38] [INFO] ✅ Migrated 14 rows from 'user_levels' (0 failed)
+- [2026-01-30 15:59:38] [INFO] 
+🔄 Migrating table: level_roles...
+- [2026-01-30 15:59:38] [INFO] 📊 Found 19 rows to migrate
+- [2026-01-30 15:59:40] [INFO] ✅ Migrated 19 rows from 'level_roles' (0 failed)
+- [2026-01-30 15:59:40] [INFO] 
+🔄 Migrating table: role_menus...
+- [2026-01-30 15:59:40] [INFO] 📊 Found 12 rows to migrate
+- [2026-01-30 15:59:41] [INFO] ✅ Migrated 12 rows from 'role_menus' (0 failed)
+- [2026-01-30 15:59:41] [INFO] 
+🔄 Migrating table: role_menu_options...
+- [2026-01-30 15:59:42] [INFO] 📊 Found 13 rows to migrate
+- [2026-01-30 15:59:43] [INFO] ✅ Migrated 13 rows from 'role_menu_options' (0 failed)
+- [2026-01-30 15:59:43] [INFO] 
+🔄 Migrating table: infractions...
+- [2026-01-30 15:59:43] [INFO] ℹ️  Table 'infractions' is empty in old database. Nothing to migrate.
+- [2026-01-30 15:59:44] [INFO] 
+============================================================
+- [2026-01-30 15:59:44] [INFO] 📊 MIGRATION SUMMARY
+- [2026-01-30 15:59:44] [INFO] ============================================================
+- [2026-01-30 15:59:44] [INFO] ✅ guild_configs: 9 rows migrated
+- [2026-01-30 15:59:44] [INFO] ✅ premium_guilds: 4 rows migrated
+- [2026-01-30 15:59:44] [INFO] ✅ user_warnings: 0 rows migrated
+- [2026-01-30 15:59:44] [INFO] ✅ jail_settings: 1 rows migrated
+- [2026-01-30 15:59:44] [INFO] ✅ jailed_users: 3 rows migrated
+- [2026-01-30 15:59:44] [INFO] ✅ guild_auto_roles: 0 rows migrated
+- [2026-01-30 15:59:44] [INFO] ✅ temp_voice_configs: 2 rows migrated
+- [2026-01-30 15:59:44] [INFO] ✅ temp_voice_channels: 0 rows migrated
+- [2026-01-30 15:59:44] [INFO] ✅ auto_reactions: 1 rows migrated
+- [2026-01-30 15:59:44] [INFO] ✅ user_levels: 14 rows migrated
+- [2026-01-30 15:59:44] [INFO] ✅ level_roles: 19 rows migrated
+- [2026-01-30 15:59:44] [INFO] ✅ role_menus: 12 rows migrated
+- [2026-01-30 15:59:44] [INFO] ✅ role_menu_options: 13 rows migrated
+- [2026-01-30 15:59:44] [INFO] ✅ infractions: 0 rows migrated
+- [2026-01-30 15:59:44] [INFO] ============================================================
+- [2026-01-30 15:59:44] [INFO] Total rows migrated: 78
+- [2026-01-30 15:59:44] [INFO] Total rows failed: 0
+- [2026-01-30 15:59:44] [INFO] Total tables skipped: 0
+- [2026-01-30 15:59:44] [INFO] ============================================================
+
+- [2026-01-30 15:59:44] [INFO] ✅ Data migration completed successfully!
+- [2026-01-30 15:59:44] [INFO] ✅ Database connections closed

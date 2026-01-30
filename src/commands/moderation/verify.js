@@ -265,7 +265,7 @@ module.exports = {
 
     // Info/help embed
     return sendEmbed(message, {
-      title: '<:3736prmanager:1379103192784310282> Verification System Help',
+      title: '<:manager:1466826492334833665> Verification System Help',
       description: 'This command manages the server\'s user verification process. Set up roles for unverified, verified, and specific genders, and then use it to verify new members.\'',
       fields: [
         {

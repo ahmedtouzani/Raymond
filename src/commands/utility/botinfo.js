@@ -120,7 +120,7 @@ module.exports = {
       },
       fields: [
         {
-          name: '<:3736prmanager:1379103192784310282> Bot Stats',
+          name: '<:manager:1466826492334833665> Bot Stats',
           value: [
             `<:arrow:1309167079231848572> **Servers:** ${guilds.toLocaleString()}`,
             `<:arrow:1309167079231848572> **Users:** ${users.toLocaleString()}`,
@@ -133,7 +133,7 @@ module.exports = {
           inline: true
         },
         {
-          name: '<:3736prmanager:1379103192784310282> System',
+          name: '<:manager:1466826492334833665> System',
           value: [
             `<:arrow:1309167079231848572> **CPU:** ${os.cpus()[0].model}`,
             `<:arrow:1309167079231848572> **Logical Cores:** ${os.cpus().length}`,
@@ -148,7 +148,7 @@ module.exports = {
           inline: true
         },
         {
-          name: '<:3736prmanager:1379103192784310282> Versions',
+          name: '<:manager:1466826492334833665> Versions',
           value: [
             `<:arrow:1309167079231848572> **Bot:** v${packageJson.version}`,
             `<:arrow:1309167079231848572> **Discord.js:** v${djsVersion}`,

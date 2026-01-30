@@ -59,7 +59,7 @@ module.exports = {
     // Add server-specific avatar info if available
     if (message.guild && message.guild.members.cache.get(target.id)?.avatar) {
       const member = message.guild.members.cache.get(target.id);
-      avatarInfo.push(`\n<:3736prmanager:1379103192784310282> **Server Avatar**`);
+      avatarInfo.push(`\n<:manager:1466826492334833665> **Server Avatar**`);
       avatarInfo.push(`<:arrow:1309167079231848572> **Updated:** ${getAvatarDate(target.id, member.avatar)}`);
     }
     

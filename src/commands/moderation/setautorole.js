@@ -96,7 +96,7 @@ module.exports = {
     const logChannelStatus = newLogChannelId ? `<#${newLogChannelId}>` : 'Not Set';
 
     sendEmbed(message, {
-      title: '<:3736prmanager:1379103192784310282> Auto Role & Member Join Log System',
+      title: '<:manager:1466826492334833665> Auto Role & Member Join Log System',
       description: 'Configure automatic role assignment for new members and a dedicated log channel for member join events.',
       fields: [
         {
