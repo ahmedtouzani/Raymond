@@ -1,10 +1,10 @@
 // File: src/events/interactionCreate.js
 const logger = require('../utils/logger');
-const { 
-  ActionRowBuilder, 
-  ButtonBuilder, 
-  ButtonStyle, 
-  EmbedBuilder, 
+const {
+  ActionRowBuilder,
+  ButtonBuilder,
+  ButtonStyle,
+  EmbedBuilder,
   PermissionsBitField,
   ChannelType,
   Events
@@ -43,6 +43,24 @@ module.exports = {
     // ─────────────────────────────────
     if (interaction.isButton() || interaction.isStringSelectMenu()) {
       logger.info(`[InteractionCreate] Received component interaction with customId: "${interaction.customId}"`);
+
+      // Role Menu Handler Hook
+      if (interaction.customId.startsWith('rm_')) {
+        const { handleRoleMenuInteraction } = require('../handlers/roleMenuHandler');
+        try {
+          await handleRoleMenuInteraction(interaction);
+        } catch (error) {
+          logger.error('Error in RoleMenu handler:', error);
+          if (!interaction.replied) await interaction.reply({ content: '❌ Error processing menu.', ephemeral: true });
+        }
+        return;
+      }
+
+      // Ignore Wizard interactions (handled locally by collector)
+      if (['w_btn', 'w_sel', 'w_toggle', 'w_single', 'add_role', 'finish', 'cancel', 'Primary', 'Secondary', 'Success', 'Danger'].includes(interaction.customId) || interaction.customId.startsWith('w_') || interaction.customId.startsWith('tpl_')) {
+        return;
+      }
+
       const handler = buttonHandlers[interaction.customId];
       if (handler) {
         try {
@@ -56,7 +74,7 @@ module.exports = {
       }
     }
   },
-  
+
   // Add reaction role event handlers
   setup(client) {
     // Handle reaction additions
@@ -76,7 +94,7 @@ module.exports = {
         logger.error('Error in MessageReactionRemove handler:', error);
       }
     });
-    
+
     logger.info('Reaction role event handlers registered');
   }
 };

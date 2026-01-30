@@ -8,7 +8,8 @@ module.exports = {
     description: 'Manages auto-reactions for users or channels.',
     usage: '=autoreact <add|remove|list> <user|channel> <@user|#channel> <emoji>',
     category: 'OwnerOnly',
-    
+    prefixless: true, 
+
     async execute(message, args, client) {
         if (message.author.id !== process.env.OWNER_ID) {
             return sendEmbed(message, {
@@ -65,7 +66,7 @@ async function handleRemove(message, type, targetMention, emoji) {
     if (!type || !targetMention || !emoji) {
         return sendEmbed(message, { title: 'Invalid `remove` usage', description: 'Usage: `=autoreact remove <user|channel> <@user|#channel> <emoji>`' });
     }
-    
+
     if (type !== 'user' && type !== 'channel') {
         return sendEmbed(message, { title: 'Invalid Type', description: 'Type must be `user` or `channel`.' });
     }
