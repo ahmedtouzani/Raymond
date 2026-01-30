@@ -1,10 +1,20 @@
 const { ChannelType, PermissionsBitField, OverwriteType } = require('discord.js');
 const tempVoiceDB = require('../database/tempVoice');
 const statsUpdater = require('../services/statsUpdater');
+const { addXp } = require('../database/levelSystem');
+const { handleLevelUpRoles } = require('../utils/levelRoleManager');
 const logger = require('../utils/logger');
 
 // This map will store the channels that are being deleted to avoid race conditions
 const deletingChannels = new Map();
+
+// Voice XP system config
+const VOICE_XP_INTERVAL = 60 * 1000; // 1 minute
+const VOICE_XP_COOLDOWN = 45 * 1000; // 45 seconds
+
+// Ensure global tracking objects are initialized
+if (!global.voiceXpTracking) global.voiceXpTracking = {};
+if (!global.voiceXpCooldown) global.voiceXpCooldown = {};
 
 async function handleChannelCreation(newState) {
   const { guild, member, channel } = newState;
@@ -118,6 +128,86 @@ async function handleChannelCleanup(oldState) {
   }
 }
 
+async function startVoiceXpTracking(newState) {
+  const { guild, member, channel } = newState;
+
+  // Only track if user joins/moves to a voice channel
+  if (
+    !channel ||
+    channel.type !== ChannelType.GuildVoice ||
+    !member ||
+    member.user.bot
+  ) return;
+
+  const key = `${guild.id}-${member.id}`;
+
+  // Don't start if already tracking
+  if (global.voiceXpTracking[key]) return;
+
+  logger.debug(`Starting voice XP tracking for ${member.user.tag} in ${channel.name}`);
+
+  global.voiceXpTracking[key] = setInterval(async () => {
+    try {
+      // Check cooldown
+      const cooldownKey = `${guild.id}-${member.id}`;
+      const now = Date.now();
+
+      if (
+        !global.voiceXpCooldown[cooldownKey] ||
+        now - global.voiceXpCooldown[cooldownKey] > VOICE_XP_COOLDOWN
+      ) {
+        global.voiceXpCooldown[cooldownKey] = now;
+
+        // Add XP (random between 10-20)
+        const xpToAdd = Math.floor(10 + Math.random() * 11);
+
+        try {
+          const { level, leveledUp } = await addXp(guild.id, member.id, xpToAdd, 'voice');
+
+          if (leveledUp) {
+            await handleLevelUpRoles(newState.client, guild.id, member.id, 'voice', level);
+
+            // Send congratulatory message via DM
+            try {
+              const dmChannel = await member.createDM();
+              await dmChannel.send({
+                content: `${member}, congrats! You reached voice level **${level}**!`
+              });
+            } catch (error) {
+              // Handle DM failure silently
+              logger.debug(`Could not send level up DM to ${member.user.tag}`);
+            }
+          }
+        } catch (err) {
+          logger.error('Error adding voice XP:', err);
+        }
+      }
+
+      // Check if still in voice and eligible
+      const currentMember = await guild.members.fetch(member.id).catch(() => null);
+      if (
+        !currentMember ||
+        !currentMember.voice.channelId ||
+        currentMember.voice.channel.type !== ChannelType.GuildVoice
+      ) {
+        stopVoiceXpTracking(guild.id, member.id);
+      }
+    } catch (err) {
+      logger.error('Voice XP interval error:', err);
+    }
+  }, VOICE_XP_INTERVAL);
+}
+
+function stopVoiceXpTracking(guildId, memberId) {
+  const key = `${guildId}-${memberId}`;
+
+  if (global.voiceXpTracking[key]) {
+    clearInterval(global.voiceXpTracking[key]);
+    delete global.voiceXpTracking[key];
+    logger.debug(`Stopped voice XP tracking for member ${memberId}`);
+  }
+}
+
 module.exports = {
   name: 'voiceStateUpdate',
   async execute(oldState, newState) {
@@ -126,11 +216,17 @@ module.exports = {
     // Scenario 1: User joins a channel or moves between channels
     if (newState.channelId && newState.channelId !== oldState.channelId) {
       await handleChannelCreation(newState);
+      await startVoiceXpTracking(newState);
     }
 
     // Scenario 2: User leaves a channel or moves
     if (oldState.channelId && oldState.channelId !== newState.channelId) {
       await handleChannelCleanup(oldState);
+
+      // Stop XP tracking if user left voice completely
+      if (oldState.member && !newState.channelId) {
+        stopVoiceXpTracking(oldState.guild.id, oldState.member.id);
+      }
     }
 
     // Update voice count stats when voice state changes
