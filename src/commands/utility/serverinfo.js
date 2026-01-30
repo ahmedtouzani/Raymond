@@ -13,10 +13,12 @@ module.exports = {
   async execute(message, args, client) {
     const guild = message.guild;
     if (!guild) {
-      return message.reply({ embeds: [await createEmbed(null, {
-        description: '❌ This command can only be used in a server.',
-        color: 0xFF3333
-      })] });
+      return message.reply({
+        embeds: [await createEmbed(null, {
+          description: '❌ This command can only be used in a server.',
+          color: 0xFF3333
+        })]
+      });
     }
 
     // Fetch guild members to get accurate counts (especially for presence)
@@ -68,7 +70,7 @@ module.exports = {
       description: 'Here\'s a detailed overview of this server.',
       fields: [
         {
-          name: '<:46910nacrownowner:1379103344286502994> General',
+          name: '<a:endlessspinne:1463992178010230906> General',
           value: [
             `<:arrow:1309167079231848572> **ID:** \`${guild.id}\``,
             `<:arrow:1309167079231848572> **Owner:** ${owner.user.tag} (${owner.id})`,
@@ -86,7 +88,7 @@ module.exports = {
           inline: false
         },
         {
-          name: '<:6911party:1379103249176592384> Member Stats',
+          name: '<a:utiliti:1466829554055381055> Member Stats',
           value: [
             `<:arrow:1309167079231848572> **Total Members:** ${totalMembers.toLocaleString()}`,
             `<:arrow:1309167079231848572> **Humans:** ${humanMembers.toLocaleString()}`,

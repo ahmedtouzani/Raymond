@@ -43,16 +43,16 @@ async function showChannelInfo(message, channel) {
       })]
     });
   }
-  
+
   // Handle DM channels
   if (!channel.guild) {
     const dmEmbed = await createEmbed(null, {
-      author: { 
+      author: {
         name: 'Channel Info: DM Channel',
         iconURL: 'https://discord.com/assets/1f4acd2c2b9de3c36c6b6c1f07c4c8e0.png'
       },
       fields: [
-        { 
+        {
           name: '<:36548namoonlight:1379103329044402257> > General',
           value: [
             `<:arrow:1309167079231848572> **Type:** DM Channel`,
@@ -62,24 +62,24 @@ async function showChannelInfo(message, channel) {
           inline: true
         }
       ],
-      footer: { 
+      footer: {
         text: `Requested by ${message.author.tag}`,
         iconURL: message.author.displayAvatarURL({ dynamic: true })
       },
       timestamp: true
     });
-    
+
     return message.reply({ embeds: [dmEmbed] });
   }
-  
+
   // Format channel information
   const createdAt = Math.floor(channel.createdTimestamp / 1000);
   const channelAge = Math.floor((Date.now() - channel.createdTimestamp) / (1000 * 60 * 60 * 24));
-  
+
   // Get channel permissions
   const everyonePerms = channel.permissionOverwrites?.cache.get(channel.guild.id);
   const botPerms = channel.permissionOverwrites?.cache.get(channel.guild.me?.id);
-  
+
   // Build basic info
   const basicInfo = [
     `<:arrow:1309167079231848572> **Name:** ${escapeMarkdown(channel.name)}`,
@@ -87,7 +87,7 @@ async function showChannelInfo(message, channel) {
     `<:arrow:1309167079231848572> **Type:** ${formatChannelType(channel.type)}`,
     channel.topic ? `<:edit:1308126154163482665> **Topic:** ${channel.topic.length > 100 ? `${channel.topic.substring(0, 97)}...` : channel.topic}` : ''
   ].filter(Boolean);
-  
+
   // Build additional info
   const additionalInfo = [
     `<:black_planet:1310547406697533492> **Created:** <t:${createdAt}:D> (${channelAge} days ago)`,
@@ -98,10 +98,10 @@ async function showChannelInfo(message, channel) {
     channel.bitrate ? `🔊 **Bitrate:** ${channel.bitrate / 1000}kbps` : '',
     channel.rtcRegion ? `🌍 **Region:** ${channel.rtcRegion === 'auto' ? 'Auto' : channel.rtcRegion}` : ''
   ].filter(Boolean);
-  
+
   // Build channel-specific info
   const channelSpecificInfo = [];
-  
+
   // Thread-specific info
   if (channel.isThread()) {
     channelSpecificInfo.push(
@@ -112,7 +112,7 @@ async function showChannelInfo(message, channel) {
       `🏷️ **Archived:** ${channel.archived ? 'Yes' : 'No'}`
     );
   }
-  
+
   // Forum channel specific info
   if (channel.isThreadOnly?.() || channel.type === 'GUILD_FORUM') {
     channelSpecificInfo.push(
@@ -120,14 +120,14 @@ async function showChannelInfo(message, channel) {
       `⏱️ **Default Slowmode:** ${channel.defaultThreadRateLimitPerUser || 0}s`,
       `🔖 **Available Tags:** ${channel.availableTags?.length || 0}`
     );
-    
+
     if (channel.defaultReactionEmoji) {
-      const emoji = channel.defaultReactionEmoji.id ? 
-        `<:${channel.defaultReactionEmoji.name}:${channel.defaultReactionEmoji.id}>` : 
+      const emoji = channel.defaultReactionEmoji.id ?
+        `<:${channel.defaultReactionEmoji.name}:${channel.defaultReactionEmoji.id}>` :
         channel.defaultReactionEmoji.name;
       channelSpecificInfo.push(`👍 **Default Reaction:** ${emoji}`);
     }
-    
+
     if (channel.defaultSortOrder) {
       const sortOrders = {
         LATEST_ACTIVITY: 'Latest Activity',
@@ -136,7 +136,7 @@ async function showChannelInfo(message, channel) {
       channelSpecificInfo.push(`🔢 **Default Sort:** ${sortOrders[channel.defaultSortOrder] || channel.defaultSortOrder}`);
     }
   }
-  
+
   // Voice channel specific info
   if (channel.isVoiceBased?.()) {
     channelSpecificInfo.push(
@@ -145,7 +145,7 @@ async function showChannelInfo(message, channel) {
       `🎙️ **RTC Region:** ${channel.rtcRegion || 'Automatic'}`
     );
   }
-  
+
   // Get member count with view channel permission
   let memberCount = 'Calculating...';
   try {
@@ -155,27 +155,27 @@ async function showChannelInfo(message, channel) {
   } catch (e) {
     memberCount = 'Unknown';
   }
-  
+
   // Build permissions info
   const permissionsInfo = [];
   if (everyonePerms) {
     const allowed = everyonePerms.allow.bitfield ? formatPermissions(everyonePerms.allow.bitfield) : 'None';
     const denied = everyonePerms.deny.bitfield ? formatPermissions(everyonePerms.deny.bitfield) : 'None';
-    
+
     if (allowed !== 'None' || denied !== 'None') {
       permissionsInfo.push(
         '**@everyone Permissions:**',
-        `<:Done:1305644486453493801> Allowed: ${allowed.split('\n').length}`, 
+        `<:Done:1305644486453493801> Allowed: ${allowed.split('\n').length}`,
         `❌ Denied: ${denied.split('\n').length}`,
         ''
       );
     }
   }
-  
+
   if (botPerms) {
     const allowed = botPerms.allow.bitfield ? formatPermissions(botPerms.allow.bitfield) : 'None';
     const denied = botPerms.deny.bitfield ? formatPermissions(botPerms.deny.bitfield) : 'None';
-    
+
     if (allowed !== 'None' || denied !== 'None') {
       permissionsInfo.push(
         '**Bot Permissions:**',
@@ -184,15 +184,15 @@ async function showChannelInfo(message, channel) {
       );
     }
   }
-  
+
   // Create embed
   const embed = await createEmbed(channel.guild.id, {
-    author: { 
+    author: {
       name: `Channel Info: #${channel.name}`,
       iconURL: channel.guild.iconURL({ dynamic: true })
     },
     fields: [
-      { 
+      {
         name: '<:36548namoonlight:1379103329044402257> > General',
         value: [
           ...basicInfo,
@@ -201,18 +201,18 @@ async function showChannelInfo(message, channel) {
         inline: true
       },
       {
-        name: '<:6911party:1379103249176592384> > Details',
+        name: '<a:utiliti:1466829554055381055> > Details',
         value: additionalInfo.join('\n') || 'No additional information',
         inline: true
       }
     ],
-    footer: { 
+    footer: {
       text: `Requested by ${message.author.tag} • ID: ${channel.id}`,
       iconURL: message.author.displayAvatarURL({ dynamic: true })
     },
     timestamp: true
   });
-  
+
   // Add channel-specific info if available
   if (channelSpecificInfo.length > 0) {
     embed.addFields({
@@ -221,7 +221,7 @@ async function showChannelInfo(message, channel) {
       inline: false
     });
   }
-  
+
   // Add permissions field if there are any
   if (permissionsInfo.length > 0) {
     embed.addFields({
@@ -230,7 +230,7 @@ async function showChannelInfo(message, channel) {
       inline: false
     });
   }
-  
+
   return message.reply({ embeds: [embed] });
 }
 
@@ -242,34 +242,34 @@ module.exports = {
   category: 'Utility',
   cooldown: 3,
   prefixless: true,
-  
+
   async execute(message, args) {
     // If no arguments, use current channel
     if (!args[0] && !message.mentions.channels.first()) {
       return showChannelInfo(message, message.channel);
     }
-    
+
     // Try to find channel by mention
     if (message.mentions.channels.first()) {
       return showChannelInfo(message, message.mentions.channels.first());
     }
-    
+
     // Try to find channel by ID
     const channelById = message.guild.channels.cache.get(args[0]);
     if (channelById) {
       return showChannelInfo(message, channelById);
     }
-    
+
     // Try to find channel by name
     const searchTerm = args.join(' ').toLowerCase();
     const channelByName = message.guild.channels.cache.find(
       c => c.name.toLowerCase().includes(searchTerm)
     );
-    
+
     if (channelByName) {
       return showChannelInfo(message, channelByName);
     }
-    
+
     // If no channel found
     return message.reply({
       embeds: [await createEmbed(message.guild.id, {

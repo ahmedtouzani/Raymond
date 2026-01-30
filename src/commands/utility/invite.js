@@ -38,27 +38,27 @@ module.exports = {
   category: 'Utility',
   cooldown: 5,
   prefixless: true,
-  
+
   async execute(message, args, client) {
     // Create the invite link
     const inviteLink = `https://discord.com/oauth2/authorize?client_id=${client.user.id}&permissions=${PERMISSIONS_INTEGER}&scope=bot%20applications.commands`;
-    
+
     // Create the embed
     const embed = await createEmbed(message.guild?.id, {
       title: '<:kicklink:1308126128078065684> Invite Parallel Universe Extra',
       description: `Thank you for wanting to add **${client.user.username}** to your server!\n\n` +
-                   'Click the button below to invite the bot with the recommended permissions.'
-                   .trim(),
+        'Click the button below to invite the bot with the recommended permissions.'
+          .trim(),
       fields: [
         {
-          name: '<:3764nawriter:1379103207925747782> > Required Permissions',
+          name: '<:manager2:1466828942177734820> > Required Permissions',
           value: REQUIRED_PERMISSIONS.length > 0
             ? REQUIRED_PERMISSIONS.map(perm => `• ${perm}`).join('\n').split('\n').map(p => `<:arrow:1309167079231848572> ${p.replace('•', '')}`).join('\n')
             : 'None',
           inline: true
         },
         {
-          name: '<:3764nawriter:1379103207925747782> > Quick Links',
+          name: '<:manager2:1466828942177734820> > Quick Links',
           value: `[Invite Bot](${inviteLink}) | [Support Server](https://discord.gg/TBUakyRNSQ)`,
           inline: false
         }
@@ -70,12 +70,12 @@ module.exports = {
       timestamp: true,
       color: message.guild?.members.me?.displayColor || 0x5865F2
     });
-    
+
     // Add the bot's avatar as thumbnail
     embed.setThumbnail(client.user.displayAvatarURL({ size: 256, format: 'png' }));
-    
+
     // Send the message with a button
-    return message.reply({ 
+    return message.reply({
       content: `\n> **[Click here to invite ${client.user.username} to your server](${inviteLink})**`,
       embeds: [embed],
       allowedMentions: { repliedUser: false }

@@ -12,7 +12,7 @@ module.exports = {
 
   async execute(message, args, client) {
     const { commands } = client;
-    
+
     // Fetch guild-specific prefix
     let prefix = process.env.GLOBAL_PREFIX; // Default to global prefix
     if (message.guild) {
@@ -28,10 +28,12 @@ module.exports = {
       const command = commands.get(name) || Array.from(commands.values()).find(c => c.aliases && c.aliases.includes(name));
 
       if (!command) {
-        return message.reply({ embeds: [await createEmbed(message.guild?.id, {
-          description: '❌ That command does not exist.',
-          color: 0xFF3333
-        })] });
+        return message.reply({
+          embeds: [await createEmbed(message.guild?.id, {
+            description: '❌ That command does not exist.',
+            color: 0xFF3333
+          })]
+        });
       }
 
       const data = [];
@@ -43,11 +45,13 @@ module.exports = {
       if (command.category) data.push(`**Category:** ${command.category}`);
       if (command.premium) data.push(`**Premium Feature:** Yes`);
 
-      return message.reply({ embeds: [await createEmbed(message.guild?.id, {
-        title: `Command: ${command.name.charAt(0).toUpperCase() + command.name.slice(1)}`,
-        description: data.join('\n'),
-        color: 0x23272A
-      })] });
+      return message.reply({
+        embeds: [await createEmbed(message.guild?.id, {
+          title: `Command: ${command.name.charAt(0).toUpperCase() + command.name.slice(1)}`,
+          description: data.join('\n'),
+          color: 0x23272A
+        })]
+      });
     }
 
     // Otherwise, list all commands by category
@@ -58,16 +62,16 @@ module.exports = {
     const utilityList = utilityCommands.map(cmd => `• \`${prefix}${cmd.name}\``).join('\n') || 'No utility commands available.';
 
     const embed = await createEmbed(message.guild?.id, {
-      title: '<:3764nawriter:1379103207925747782> Parallel Ultra Bot Help',
+      title: '<:manager2:1466828942177734820> Parallel Ultra Bot Help',
       description: 'Hello there! I\'m **Parallel Ultra Bot**, your ultimate companion for server management.\nDiscover all my features below. For detailed info on any command, use `!help [command_name]`.',
       fields: [
         {
-          name: '<:46910nacrownowner:1379103344286502994> Moderation Commands',
+          name: '<a:endlessspinne:1463992178010230906> Moderation Commands',
           value: moderationList,
           inline: false
         },
         {
-          name: '<:6911party:1379103249176592384> Utility Commands',
+          name: '<a:utiliti:1466829554055381055> Utility Commands',
           value: utilityList,
           inline: false
         }

@@ -11,7 +11,7 @@ const PERMISSIONS = {
   'history': 'Read Message History',
   'external_emojis': 'Use External Emojis',
   'external_stickers': 'Use External Stickers',
-  
+
   // Voice Permissions
   'connect': 'Connect',
   'speak': 'Speak',
@@ -47,18 +47,18 @@ module.exports = {
   botPermissions: [PermissionFlagsBits.ManageChannels],
   cooldown: 10,
   prefixless: false,
-  
+
   async execute(message, args, client) {
     const channel = message.mentions.channels.first() || message.channel;
-    const target = message.mentions.members?.first() || 
-                  message.mentions.roles.first() ||
-                  (args[0] ? (await message.guild.roles.fetch(args[0]).catch(() => null) || 
-                             await message.guild.members.fetch(args[0]).catch(() => null)) : null);
-    
+    const target = message.mentions.members?.first() ||
+      message.mentions.roles.first() ||
+      (args[0] ? (await message.guild.roles.fetch(args[0]).catch(() => null) ||
+        await message.guild.members.fetch(args[0]).catch(() => null)) : null);
+
     // Parse permissions from command arguments
     const permissions = new Set();
     let permissionFlags = 0n;
-    
+
     // Check for 'all' parameter
     if (args.some(arg => arg.toLowerCase() === 'all')) {
       // Add all available permissions
@@ -78,7 +78,7 @@ module.exports = {
         }
       }
     }
-    
+
     // If no permissions specified, grant all available permissions
     if (permissions.size === 0) {
       // Add all available permissions
@@ -89,7 +89,7 @@ module.exports = {
         }
       });
     }
-    
+
     // Check if target is valid
     if (!target) {
       const embed = await createEmbed(message.guild.id, {
@@ -98,46 +98,46 @@ module.exports = {
       });
       return message.reply({ embeds: [embed] });
     }
-    
+
     try {
       // Create permission overwrite options
       const permissionOverwrites = {
         ViewChannel: true  // Always allow viewing the channel
       };
-      
+
       // Add all specified permissions as true
       const permissionBits = new PermissionsBitField(permissionFlags);
       permissionBits.toArray().forEach(perm => {
         permissionOverwrites[perm] = true;
       });
-      
+
       // Apply the permission overwrites
       await channel.permissionOverwrites.edit(target, permissionOverwrites);
-      
+
       // Create success embed
       const permissionList = Array.from(permissions)
         .map(perm => `• ${PERMISSIONS[perm]}`)
         .join('\n');
-      
+
       const embed = await createEmbed(message.guild.id, {
         color: 0x4CAF50,
         title: '✅ Permissions Updated',
         description: `Successfully added ${target} to ${channel}`,
         fields: [
           {
-            name: '<:46910nacrownowner:1379103344286502994> Granted Permissions',
+            name: '<a:endlessspinne:1463992178010230906> Granted Permissions',
             value: permissionList ? permissionList.split('\n').map(p => `<:arrow:1309167079231848572> ${p.replace('•', '')}`).join('\n') : 'None',
           },
           {
-            name: '<:46910nacrownowner:1379103344286502994> Target Type',
+            name: '<a:endlessspinne:1463992178010230906> Target Type',
             value: target.user ? '<:arrow:1309167079231848572> User' : '<:arrow:1309167079231848572> Role',
             inline: true
           }
         ]
       });
-      
+
       return message.reply({ embeds: [embed] });
-      
+
     } catch (error) {
       console.error('Error updating channel permissions:', error);
       const embed = await createEmbed(message.guild.id, {

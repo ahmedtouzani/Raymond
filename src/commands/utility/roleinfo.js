@@ -38,12 +38,12 @@ module.exports = {
   category: 'Utility',
   cooldown: 3,
   prefixless: true,
-  
+
   async execute(message, args) {
     // Find the role from mention, ID, or name
     let role;
     const roleArg = args[0];
-    
+
     if (!roleArg) {
       return message.reply({
         embeds: [await createEmbed(message.guild.id, {
@@ -52,16 +52,16 @@ module.exports = {
         })]
       });
     }
-    
+
     // Try to find role by mention
     const mentionMatch = roleArg.match(/^<@&(\d+)>$/);
     if (mentionMatch) {
       role = message.guild.roles.cache.get(mentionMatch[1]);
-    } 
+    }
     // Try to find role by ID
     else if (/^\d+$/.test(roleArg)) {
       role = message.guild.roles.cache.get(roleArg);
-    } 
+    }
     // Try to find role by name
     else {
       const searchTerm = roleArg.toLowerCase();
@@ -69,7 +69,7 @@ module.exports = {
         r => r.name.toLowerCase().includes(searchTerm)
       );
     }
-    
+
     if (!role) {
       return message.reply({
         embeds: [await createEmbed(message.guild.id, {
@@ -78,24 +78,24 @@ module.exports = {
         })]
       });
     }
-    
+
     // Format role information
     const createdAt = Math.floor(role.createdTimestamp / 1000);
     const roleAge = Math.floor((Date.now() - role.createdTimestamp) / (1000 * 60 * 60 * 24));
-    
+
     // Get role members (first 10 to avoid rate limits)
     const members = role.members.first(10).map(m => m.user.tag);
     const memberCount = role.members.size;
-    
+
     // Create embed
     const embed = await createEmbed(message.guild.id, {
-      author: { 
+      author: {
         name: `Role Info: ${role.name}`,
         iconURL: message.guild.iconURL({ dynamic: true })
       },
       thumbnail: role.iconURL({ dynamic: true, size: 4096 }),
       fields: [
-        { 
+        {
           name: '<:36548namoonlight:1379103329044402257> > General',
           value: [
             `<:arrow:1309167079231848572>**Name:** ${escapeMarkdown(role.name)}`,
@@ -108,7 +108,7 @@ module.exports = {
           inline: true
         },
         {
-          name: '<:6911party:1379103249176592384> > Details',
+          name: '<a:utiliti:1466829554055381055> > Details',
           value: [
             `<:black_planet:1310547406697533492> **Created:** <t:${createdAt}:D> (${roleAge} days ago)`,
             `<:1288discordstaff:1379104389674827866> **Members:** ${memberCount} total`,
@@ -119,20 +119,20 @@ module.exports = {
         },
         {
           name: `<:79914memberroleicom:1379108661367931071> > Sample Members [${memberCount}]`,
-          value: members.length > 0 
+          value: members.length > 0
             ? members.join('\n') + (memberCount > 10 ? `\n...and ${memberCount - 10} more` : '')
             : 'No members with this role',
           inline: false
         }
       ],
       color: role.color || 0x5865F2,
-      footer: { 
+      footer: {
         text: `Requested by ${message.author.tag}`,
         iconURL: message.author.displayAvatarURL({ dynamic: true })
       },
       timestamp: true
     });
-    
+
     // Add permissions field if there are any
     const permissions = formatPermissions(role.permissions.bitfield);
     if (permissions !== 'None') {
@@ -140,19 +140,19 @@ module.exports = {
       const limitedPermissions = permissionLines
         .slice(0, 10) // Limit to 10 permissions
         .map(p => `<:arrow:1309167079231848572> ${p.replace('•', '')}`);
-      
+
       let permissionText = limitedPermissions.join('\n');
       if (permissionLines.length > 10) {
         permissionText += '\n...and more';
       }
-      
+
       embed.addFields({
         name: '<:4298eventer:1379103215857045637> > Key Permissions',
         value: permissionText,
         inline: false
       });
     }
-    
+
     return message.reply({ embeds: [embed] });
   },
 };

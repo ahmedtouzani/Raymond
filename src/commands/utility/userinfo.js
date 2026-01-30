@@ -12,7 +12,7 @@ function formatPermissions(permissions) {
 function getUserBadges(user) {
   const badges = [];
   const flags = user.flags?.toArray() || [];
-  
+
   if (user.bot) badges.push('<:bot:1308126157944197201> Bot');
   if (user.system) badges.push('<:staff:1308126155942006784> System');
   if (user.avatar?.startsWith('a_')) badges.push('<:nitro:1308126153399668776> Nitro');
@@ -26,7 +26,7 @@ function getUserBadges(user) {
   if (flags.includes('BugHunterLevel2')) badges.push('<:bughunter_gold:1308126149919707216> Gold Hunter');
   if (flags.includes('Partner')) badges.push('<:partner:1308126156915576883> Partner');
   if (flags.includes('Staff')) badges.push('<:staff:1308126155942006784> Staff');
-  
+
   return badges.length > 0 ? badges.join(' ') : 'None';
 }
 
@@ -54,14 +54,14 @@ module.exports = {
     // Fetch member with all intents
     let member;
     const targetId = args[0]?.replace(/[^0-9]/g, '');
-    
+
     try {
-      member = message.mentions.members.first() || 
-              (targetId ? await message.guild.members.fetch(targetId).catch(() => null) : null) || 
-              message.member;
-              
+      member = message.mentions.members.first() ||
+        (targetId ? await message.guild.members.fetch(targetId).catch(() => null) : null) ||
+        message.member;
+
       if (!member) {
-        return message.reply({ 
+        return message.reply({
           embeds: [await createEmbed(message.guild.id, {
             description: '❌ User not found in this server',
             color: 0xff3333
@@ -72,7 +72,7 @@ module.exports = {
       console.error('Error fetching member:', error);
       member = message.member;
     }
-    
+
     const user = member.user;
     const now = new Date();
 
@@ -81,21 +81,21 @@ module.exports = {
     const createdAt = Math.floor(user.createdTimestamp / 1000);
     const joinedAt = member.joinedTimestamp ? Math.floor(member.joinedTimestamp / 1000) : null;
     const accountAge = Math.floor((now - user.createdAt) / (1000 * 60 * 60 * 24));
-    
+
     // --- Member Information ---
     const nickname = member.nickname || 'None';
-    const boostingSince = member.premiumSince ? 
+    const boostingSince = member.premiumSince ?
       `<t:${Math.floor(member.premiumSince.getTime() / 1000)}:F>` : 'Not boosting';
-    
+
     // --- Roles ---
     const roles = member.roles.cache
       .filter(r => r.id !== message.guild.id)
       .sort((a, b) => b.position - a.position)
       .map(r => r.toString())
       .slice(0, 5); // Limit to 5 roles to avoid embed limits
-    
-    const rolesText = roles.length > 0 ? 
-      `${roles.join(', ')}${member.roles.cache.size - 6 > 0 ? ` (+${member.roles.cache.size - 6} more)` : ''}` : 
+
+    const rolesText = roles.length > 0 ?
+      `${roles.join(', ')}${member.roles.cache.size - 6 > 0 ? ` (+${member.roles.cache.size - 6} more)` : ''}` :
       'None';
 
     // --- Permissions ---
@@ -108,7 +108,7 @@ module.exports = {
     let activity = 'None';
     if (member.presence?.activities.length > 0) {
       const act = member.presence.activities[0];
-      switch(act.type) {
+      switch (act.type) {
         case 'PLAYING': activity = `🎮 Playing **${act.name}**`; break;
         case 'STREAMING': activity = `📺 Streaming [${act.name}](${act.url})`; break;
         case 'LISTENING': activity = `🎧 Listening to **${act.details}** by ${act.state}`; break;
@@ -129,13 +129,13 @@ module.exports = {
 
     // --- Create Embed ---
     const embed = await createEmbed(message.guild.id, {
-      author: { 
+      author: {
         name: `${user.username}${tag} ${user.bot ? '<:manager:1466826492334833665>' : 'No'}`,
         iconURL: user.displayAvatarURL({ dynamic: true })
       },
       thumbnail: user.displayAvatarURL({ dynamic: true, size: 4096 }),
       fields: [
-        { 
+        {
           name: '<:manager:1466826492334833665> > General',
           value: [
             `<:arrow:1309167079231848572> **Username:** ${escapeMarkdown(user.username)}`,
@@ -149,7 +149,7 @@ module.exports = {
           inline: true
         },
         {
-          name: '<:6911party:1379103249176592384> > Dates',
+          name: '<a:utiliti:1466829554055381055> > Dates',
           value: [
             `<:black_planet:1310547406697533492> **Created:** <t:${createdAt}:D> (${accountAge} days ago)`,
             joinedAt ? `<:8569booster:1379103272488403115> **Joined:** <t:${joinedAt}:D> (<t:${joinedAt}:R>)` : '**Joined:** Unknown',
@@ -169,7 +169,7 @@ module.exports = {
         }
       ],
       color: member.displayColor || 0x5865F2,
-      footer: { 
+      footer: {
         text: `Requested by ${message.author.tag}`,
         iconURL: message.author.displayAvatarURL({ dynamic: true })
       },

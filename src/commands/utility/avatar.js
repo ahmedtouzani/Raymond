@@ -12,7 +12,7 @@ function getAvatarDate(userId, avatarHash) {
 function getAvatarURL(user, options = {}) {
   const size = options.size || 1024;
   const format = options.format || (user.avatar?.startsWith('a_') ? 'gif' : 'png');
-  
+
   if (options.server && user.avatar) {
     return user.displayAvatarURL({
       size,
@@ -20,7 +20,7 @@ function getAvatarURL(user, options = {}) {
       forceStatic: format === 'png',
     });
   }
-  
+
   return user.displayAvatarURL({
     size,
     extension: format,
@@ -35,19 +35,19 @@ module.exports = {
   category: 'Utility',
   cooldown: 5,
   prefixless: true,
-  
+
   async execute(message, args, client) {
     // Get the target user (default to message author)
-    const target = message.mentions.users.first() || 
-                  (args[0] ? await client.users.fetch(args[0]).catch(() => null) : null) || 
-                  message.author;
-    
+    const target = message.mentions.users.first() ||
+      (args[0] ? await client.users.fetch(args[0]).catch(() => null) : null) ||
+      message.author;
+
     if (!target) {
-      return message.reply({ 
+      return message.reply({
         content: '❌ User not found. Please mention a valid user or provide a user ID.'
       });
     }
-    
+
     // Build avatar information
     const avatarInfo = [
       `<:arrow:1309167079231848572> **User ID:** \`${target.id}\``,
@@ -55,14 +55,14 @@ module.exports = {
       `<:arrow:1309167079231848572> **Avatar Type:** ${target.avatar?.startsWith('a_') ? 'Animated' : 'Static'}`,
       `<:arrow:1309167079231848572> **Last Updated:** ${getAvatarDate(target.id, target.avatar)}`
     ];
-    
+
     // Add server-specific avatar info if available
     if (message.guild && message.guild.members.cache.get(target.id)?.avatar) {
       const member = message.guild.members.cache.get(target.id);
       avatarInfo.push(`\n<:manager:1466826492334833665> **Server Avatar**`);
       avatarInfo.push(`<:arrow:1309167079231848572> **Updated:** ${getAvatarDate(target.id, member.avatar)}`);
     }
-    
+
     // Create base embed
     const embed = await createEmbed(message.guild?.id, {
       author: {
@@ -77,25 +77,25 @@ module.exports = {
       timestamp: true,
       color: message.guild?.members.me?.displayColor || 0x5865F2
     });
-    
+
     // Add avatar as image
     const avatarURL = getAvatarURL(target, { size: 1024 });
     if (avatarURL) {
       embed.setImage(avatarURL);
     }
-    
+
     // Add download buttons
     const downloadLinks = [
       `[PNG](${getAvatarURL(target, { size: 4096, format: 'png' })})`,
       `[JPG](${getAvatarURL(target, { size: 4096, format: 'jpg' })})`,
       `[WebP](${getAvatarURL(target, { size: 4096, format: 'webp' })})`
     ];
-    
+
     // Add GIF format if avatar is animated
     if (target.avatar?.startsWith('a_')) {
       downloadLinks.push(`[GIF](${getAvatarURL(target, { size: 4096, format: 'gif' })})`);
     }
-    
+
     // Add server avatar download if available
     if (message.guild?.members.cache.get(target.id)?.avatar) {
       const member = message.guild.members.cache.get(target.id);
@@ -104,14 +104,14 @@ module.exports = {
       downloadLinks.push(`[JPG](${member.displayAvatarURL({ size: 4096, extension: 'jpg' })})`);
       downloadLinks.push(`[WebP](${member.displayAvatarURL({ size: 4096, extension: 'webp' })})`);
     }
-    
+
     // Add download links to the embed
     embed.addFields({
-      name: '<:3764nawriter:1379103207925747782> > Download',
+      name: '<:manager2:1466828942177734820> > Download',
       value: downloadLinks.join(' • '),
       inline: false
     });
-    
+
     return message.reply({ embeds: [embed] });
   }
 };
