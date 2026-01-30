@@ -6,11 +6,11 @@ const statsUpdater = require('../../services/statsUpdater');
 module.exports = {
     name: 'setstats',
     description: 'Configure automatic member and voice count channels',
-    usage: '!setstats <member|voice> <#channel> [format]',
+    usage: '!setstats <member|voice> <#channel> [base name]',
     examples: [
         '!setstats member #stats',
         '!setstats voice #voice-count',
-        '!setstats member #stats 👥 Total: {count}',
+        '!setstats member #stats 👥 Members',
         '!setstats view',
         '!setstats remove member'
     ],
@@ -47,12 +47,12 @@ module.exports = {
                 fields: [
                     {
                         name: '👥 Member Counter',
-                        value: `**Channel:** ${memberChannel}\n**Format:** \`${config?.member_count_format || '👥 Members: {count}'}\``,
+                        value: `**Channel:** ${memberChannel}\n**Base Name:** \`${config?.member_count_format || 'Not Set'}\`\n**Example:** \`${config?.member_count_format || 'Members'}: 1,234\``,
                         inline: false
                     },
                     {
                         name: '🎤 Voice Counter',
-                        value: `**Channel:** ${voiceChannel}\n**Format:** \`${config?.voice_count_format || '🎤 In Voice: {count}'}\``,
+                        value: `**Channel:** ${voiceChannel}\n**Base Name:** \`${config?.voice_count_format || 'Not Set'}\`\n**Example:** \`${config?.voice_count_format || 'In Voice'}: 42\``,
                         inline: false
                     },
                     {
@@ -65,7 +65,7 @@ module.exports = {
                         value:
                             '`!setstats member #channel` - Set member counter\n' +
                             '`!setstats voice #channel` - Set voice counter\n' +
-                            '`!setstats member #channel 👥 Total: {count}` - Set with custom format\n' +
+                            '`!setstats member #channel 👥 Members` - Set with custom base name\n' +
                             '`!setstats remove member` - Remove member counter\n' +
                             '`!setstats remove voice` - Remove voice counter',
                         inline: false
@@ -125,18 +125,11 @@ module.exports = {
             });
         }
 
-        // Get custom format if provided
-        const format = args.slice(2).join(' ') || null;
-        if (format && !format.includes('{count}')) {
-            return sendEmbed(message, {
-                title: '❌ Invalid Format',
-                description: 'Format must include `{count}` placeholder.\n\n**Example:** `👥 Total Members: {count}`',
-                color: 0x23272A,
-            });
-        }
+        // Get custom base name if provided, otherwise use current channel name
+        const baseName = args.slice(2).join(' ') || channel.name;
 
-        // Save configuration
-        await setStatsChannel(message.guild.id, subCommand, channel.id, format);
+        // Save configuration with base name
+        await setStatsChannel(message.guild.id, subCommand, channel.id, baseName);
 
         // Force update the channel immediately
         if (subCommand === 'member') {
@@ -145,20 +138,23 @@ module.exports = {
             await statsUpdater.forceUpdate(message.guild, 'voice');
         }
 
-        const displayFormat = format || (subCommand === 'member' ? '👥 Members: {count}' : '🎤 In Voice: {count}');
-
         return sendEmbed(message, {
             title: '✅ Stats Channel Configured',
             description: `${subCommand === 'member' ? '👥 Member' : '🎤 Voice'} counter has been set to ${channel}`,
             fields: [
                 {
-                    name: 'Format',
-                    value: `\`${displayFormat}\``,
+                    name: 'Base Name',
+                    value: `\`${baseName}\``,
+                    inline: false
+                },
+                {
+                    name: 'Example Output',
+                    value: `\`${baseName}: 1,234\``,
                     inline: false
                 },
                 {
                     name: 'Note',
-                    value: 'The channel will update automatically (with 5-minute cooldown to prevent API rate limits).',
+                    value: 'The channel will update automatically (with 5-minute cooldown to prevent API rate limits).\n\nThe count will be appended to the base name.',
                     inline: false
                 }
             ],

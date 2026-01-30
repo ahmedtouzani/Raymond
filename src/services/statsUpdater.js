@@ -33,6 +33,7 @@ class StatsUpdater {
         this.lastUpdates.get(guildId)[type] = Date.now();
     }
 
+
     /**
      * Update member count channel
      */
@@ -54,8 +55,14 @@ class StatsUpdater {
             }
 
             const memberCount = guild.memberCount;
-            const format = config.member_count_format || '👥 Members: {count}';
-            const newName = format.replace('{count}', memberCount.toLocaleString());
+
+            // Get base name (remove any existing count)
+            let baseName = config.member_count_format || channel.name;
+            // Remove any existing count pattern like ": 123" or " - 123" at the end
+            baseName = baseName.replace(/[:\-]\s*\d{1,}$/, '').trim();
+
+            // Append new count
+            const newName = `${baseName}: ${memberCount.toLocaleString()}`;
 
             // Only update if name changed
             if (channel.name !== newName) {
@@ -73,6 +80,7 @@ class StatsUpdater {
             }
         }
     }
+
 
     /**
      * Update voice count channel
@@ -102,8 +110,13 @@ class StatsUpdater {
                 }
             });
 
-            const format = config.voice_count_format || '🎤 In Voice: {count}';
-            const newName = format.replace('{count}', voiceCount.toLocaleString());
+            // Get base name (remove any existing count)
+            let baseName = config.voice_count_format || channel.name;
+            // Remove any existing count pattern like ": 123" or " - 123" at the end
+            baseName = baseName.replace(/[:\-]\s*\d{1,}$/, '').trim();
+
+            // Append new count
+            const newName = `${baseName}: ${voiceCount.toLocaleString()}`;
 
             // Only update if name changed
             if (channel.name !== newName) {
