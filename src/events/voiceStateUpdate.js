@@ -31,47 +31,62 @@ async function handleChannelCreation(newState) {
 
 
   // --- Start of Permission Logic ---
-  const permissionOverwrites = [
-    {
-      id: member.id,
-      type: OverwriteType.Member,
-      allow: [
-        PermissionsBitField.Flags.ViewChannel,
-        PermissionsBitField.Flags.ManageChannels,
-        PermissionsBitField.Flags.MoveMembers,
-        PermissionsBitField.Flags.MuteMembers,
-        PermissionsBitField.Flags.DeafenMembers,
-        PermissionsBitField.Flags.Stream,
-        PermissionsBitField.Flags.Connect,
-        PermissionsBitField.Flags.Speak,
-      ],
-    },
-  ];
+  const baseOverwriteSource =
+    channel.permissionOverwrites.cache.size > 0
+      ? channel.permissionOverwrites.cache
+      : (channel.parent ? channel.parent.permissionOverwrites.cache : channel.permissionOverwrites.cache);
+
+  const permissionOverwrites = Array.from(baseOverwriteSource.values()).map((ow) => ({
+    id: ow.id,
+    type: ow.type,
+    allow: ow.allow.bitfield,
+    deny: ow.deny.bitfield,
+  }));
+
+  const ensureOverwrite = (id, type, requiredAllows) => {
+    const required = new PermissionsBitField(requiredAllows).bitfield;
+
+    const existingIndex = permissionOverwrites.findIndex((o) => o.id === id);
+    if (existingIndex === -1) {
+      permissionOverwrites.push({
+        id,
+        type,
+        allow: required,
+        deny: 0n,
+      });
+      return;
+    }
+
+    const existing = permissionOverwrites[existingIndex];
+    const existingAllow = BigInt(existing.allow ?? 0n);
+    const existingDeny = BigInt(existing.deny ?? 0n);
+
+    permissionOverwrites[existingIndex] = {
+      ...existing,
+      type: existing.type ?? type,
+      allow: existingAllow | required,
+      deny: existingDeny & ~required,
+    };
+  };
+
+  ensureOverwrite(member.id, OverwriteType.Member, [
+    PermissionsBitField.Flags.ViewChannel,
+    PermissionsBitField.Flags.ManageChannels,
+    PermissionsBitField.Flags.MoveMembers,
+    PermissionsBitField.Flags.MuteMembers,
+    PermissionsBitField.Flags.DeafenMembers,
+    PermissionsBitField.Flags.Stream,
+    PermissionsBitField.Flags.Connect,
+    PermissionsBitField.Flags.Speak,
+  ]);
 
   if (matchedConfig.supportRoleId) {
-    // Private support channel logic
-    permissionOverwrites.push({
-      id: guild.roles.everyone,
-      type: OverwriteType.Role,
-      deny: [PermissionsBitField.Flags.ViewChannel],
-    });
-    permissionOverwrites.push({
-      id: matchedConfig.supportRoleId,
-      type: OverwriteType.Role,
-      allow: [
-        PermissionsBitField.Flags.ViewChannel,
-        PermissionsBitField.Flags.Connect,
-        PermissionsBitField.Flags.Speak,
-        PermissionsBitField.Flags.MoveMembers,
-      ],
-    });
-  } else {
-    // Private-by-default temporary channel logic
-    permissionOverwrites.push({
-      id: guild.roles.everyone,
-      type: OverwriteType.Role,
-      deny: [PermissionsBitField.Flags.ViewChannel],
-    });
+    ensureOverwrite(matchedConfig.supportRoleId, OverwriteType.Role, [
+      PermissionsBitField.Flags.ViewChannel,
+      PermissionsBitField.Flags.Connect,
+      PermissionsBitField.Flags.Speak,
+      PermissionsBitField.Flags.MoveMembers,
+    ]);
   }
   // --- End of Permission Logic ---
 
