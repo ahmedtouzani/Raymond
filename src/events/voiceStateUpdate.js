@@ -1,5 +1,6 @@
 const { ChannelType, PermissionsBitField, OverwriteType } = require('discord.js');
 const tempVoiceDB = require('../database/tempVoice');
+const statsUpdater = require('../services/statsUpdater');
 const logger = require('../utils/logger');
 
 // This map will store the channels that are being deleted to avoid race conditions
@@ -91,7 +92,7 @@ async function handleChannelCleanup(oldState) {
   // Check if the channel is a tracked temporary channel
   const allTempChannels = await tempVoiceDB.getAllTempChannels();
   const trackedChannel = allTempChannels.find(c => c.channelId === channel.id);
-  
+
   if (!trackedChannel) return;
 
   // If the channel is empty and not already being deleted, delete it instantly
@@ -109,7 +110,7 @@ async function handleChannelCleanup(oldState) {
         logger.error(`Failed to delete temp channel ${channel.id}:`, error);
       }
       // In case of error, still try to remove from DB if it exists
-      await tempVoiceDB.removeTempChannel(channel.id).catch(() => {});
+      await tempVoiceDB.removeTempChannel(channel.id).catch(() => { });
     } finally {
       // Clean up the lock
       deletingChannels.delete(channel.id);
@@ -120,6 +121,8 @@ async function handleChannelCleanup(oldState) {
 module.exports = {
   name: 'voiceStateUpdate',
   async execute(oldState, newState) {
+    const guild = newState.guild || oldState.guild;
+
     // Scenario 1: User joins a channel or moves between channels
     if (newState.channelId && newState.channelId !== oldState.channelId) {
       await handleChannelCreation(newState);
@@ -128,6 +131,11 @@ module.exports = {
     // Scenario 2: User leaves a channel or moves
     if (oldState.channelId && oldState.channelId !== newState.channelId) {
       await handleChannelCleanup(oldState);
+    }
+
+    // Update voice count stats when voice state changes
+    if (oldState.channelId !== newState.channelId) {
+      await statsUpdater.updateVoiceCount(guild);
     }
   },
 };

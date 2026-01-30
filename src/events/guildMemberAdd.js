@@ -2,6 +2,7 @@ const { EmbedBuilder } = require('discord.js');
 const { getGuildConfig } = require('../database/guildConfig');
 const { getAutoRoleSettings } = require('../database/autoRole');
 const inviteTracker = require('../services/inviteTracker');
+const statsUpdater = require('../services/statsUpdater');
 const logger = require('../utils/logger');
 
 module.exports = {
@@ -128,6 +129,9 @@ module.exports = {
             } catch (error) {
                 logger.error('Error sending join log:', error);
             }
+
+            // Update member count stats
+            await statsUpdater.updateMemberCount(guild);
 
         } catch (error) {
             logger.error('Error in guildMemberAdd event:', error);

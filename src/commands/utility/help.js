@@ -62,7 +62,7 @@ module.exports = {
     const utilityList = utilityCommands.map(cmd => `• \`${prefix}${cmd.name}\``).join('\n') || 'No utility commands available.';
 
     const embed = await createEmbed(message.guild?.id, {
-      title: "<:manager2:1466828942177734820> Welcome To Raymond's <: pu:1463991804301938845> Help Menu",
+      title: "<:manager2:1466828942177734820> Welcome To Raymond's <:pu:1463991804301938845> Help Menu",
       description: 'Hello there! I\'m **Parallel Ultra Bot**, your ultimate companion for server management.\nDiscover all my features below. For detailed info on any command, use `!help [command_name]`.',
       fields: [
         {
