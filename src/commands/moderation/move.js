@@ -73,18 +73,30 @@ module.exports = {
         targetChannel = chanId
           ? message.guild.channels.cache.get(chanId)
           : message.guild.channels.cache.find(c =>
-              c.name.toLowerCase() === chanInput.toLowerCase() &&
-              c.type === ChannelType.GuildVoice
-            );
+            c.name.toLowerCase() === chanInput.toLowerCase() &&
+            c.type === ChannelType.GuildVoice
+          );
         if (!targetChannel || targetChannel.type !== ChannelType.GuildVoice)
           return replyWithError('Invalid Channel', `Could not find voice channel "${chanInput}".`);
       }
 
-      if (fromChannel.id === targetChannel.id)
+      if (fromChannel.id === targetChannel.id && args[1])
         return replyWithError('Same Channel', 'Source and target channel are the same.');
 
+      // Check if executor has access to the target channel
+      const executorPerms = targetChannel.permissionsFor(executor);
+      if (!executorPerms || !executorPerms.has(PermissionFlagsBits.ViewChannel) || !executorPerms.has(PermissionFlagsBits.Connect)) {
+        return replyWithError('No Channel Access', `You don't have permission to access ${targetChannel}. You cannot move members to channels you can't access.`);
+      }
+
+      // Check if bot has permission
+      const botPerms = targetChannel.permissionsFor(message.guild.members.me);
+      if (!botPerms || !botPerms.has(PermissionFlagsBits.MoveMembers)) {
+        return replyWithError('Bot Missing Permissions', `I don't have permission to move members in ${targetChannel}.`);
+      }
+
       for (const member of fromChannel.members.values()) {
-        await member.voice.setChannel(targetChannel).catch(() => {});
+        await member.voice.setChannel(targetChannel).catch(() => { });
       }
 
       return message.reply({
@@ -162,28 +174,57 @@ module.exports = {
       return replyWithError('No Target Channel', 'Please specify a valid voice channel (by mention, ID, or name) or join one.');
     }
 
-    // 4. Move each member
-    let moved = [];
-    for (const member of membersToMove) {
-      if (
-        member.voice?.channel &&
-        member.voice.channel.id !== targetChannel.id
-      ) {
-        await member.voice.setChannel(targetChannel).catch(() => {});
-        moved.push(member.displayName);
-      }
-    }
-    if (moved.length === 0) {
-      return replyWithError('No Moves', 'No mentioned users were moved (maybe they are already in the target channel or not in a voice channel).');
+    // Check if executor has access to the target channel
+    const executorPermissions = targetChannel.permissionsFor(executor);
+    if (!executorPermissions || !executorPermissions.has(PermissionFlagsBits.ViewChannel) || !executorPermissions.has(PermissionFlagsBits.Connect)) {
+      return replyWithError('No Channel Access', `You don't have permission to access ${targetChannel}. You cannot move members to channels you can't access.`);
     }
 
-    return message.reply({
-      embeds: [
-        new EmbedBuilder()
-          .setTitle('✅ Members Moved')
-          .setDescription(`Moved: ${moved.join(', ')} to ${targetChannel}`)
-          .setColor(0x00AA55)
-      ]
-    });
+    // Check if bot has permission to move members
+    const botPermissions = targetChannel.permissionsFor(message.guild.members.me);
+    if (!botPermissions || !botPermissions.has(PermissionFlagsBits.MoveMembers)) {
+      return replyWithError('Bot Missing Permissions', `I don't have permission to move members in ${targetChannel}.`);
+    }
+
+    // 4. Move each member
+    let moved = [];
+    let failed = [];
+    for (const member of membersToMove) {
+      if (!member.voice?.channel) {
+        failed.push(`${member.displayName} (not in voice)`);
+        continue;
+      }
+      if (member.voice.channel.id === targetChannel.id) {
+        failed.push(`${member.displayName} (already there)`);
+        continue;
+      }
+
+      try {
+        await member.voice.setChannel(targetChannel);
+        moved.push(member.displayName);
+      } catch (error) {
+        failed.push(`${member.displayName} (${error.message})`);
+      }
+    }
+
+    if (moved.length === 0) {
+      const failureReason = failed.length > 0 ? `\n\n**Failed:**\n${failed.join('\n')}` : '';
+      return replyWithError('No Moves', `No users were moved (maybe they are already in the target channel or not in a voice channel).${failureReason}`);
+    }
+
+    const embed = new EmbedBuilder()
+      .setTitle('✅ Members Moved')
+      .setDescription(`Moved **${moved.length}** member(s) to ${targetChannel}:\n${moved.join(', ')}`)
+      .setColor(0x00AA55);
+
+    if (failed.length > 0) {
+      embed.addFields({
+        name: '⚠️ Failed to Move',
+        value: failed.slice(0, 10).join('\n') + (failed.length > 10 ? `\n...and ${failed.length - 10} more` : ''),
+        inline: false
+      });
+    }
+
+    return message.reply({ embeds: [embed] });
   }
 };

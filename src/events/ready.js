@@ -3,6 +3,7 @@ const logger = require('../utils/logger');
 const { registerSlashCommands } = require('../handlers/slashCommandHandler');
 const { initializeGuildConfigs, getGuildConfig, setGuildConfig } = require('../database/guildConfig'); // CORRECTED
 const { getAllTempChannels, removeTempChannel } = require('../database/tempVoice');
+const inviteTracker = require('../services/inviteTracker');
 const devServerConfig = require('../config/dev-server');
 
 module.exports = {
@@ -21,12 +22,35 @@ module.exports = {
       await registerSlashCommands(client);
       await initializeGuildConfigs(client);
       await cleanupOrphanedChannels(client);
+      await cacheAllInvites(client);
       await updateDevServerStatus(client);
     } catch (error) {
       logger.error('Error during ready event execution:', error);
     }
   },
 };
+
+/**
+ * Cache invites for all guilds to enable invite tracking
+ * @param {import('discord.js').Client} client The Discord client instance.
+ */
+async function cacheAllInvites(client) {
+  try {
+    logger.info('Caching invites for all guilds...');
+    let cachedCount = 0;
+    for (const [guildId, guild] of client.guilds.cache) {
+      try {
+        await inviteTracker.cacheGuildInvites(guild);
+        cachedCount++;
+      } catch (error) {
+        logger.error(`Failed to cache invites for guild ${guild.name}:`, error);
+      }
+    }
+    logger.info(`Successfully cached invites for ${cachedCount}/${client.guilds.cache.size} guilds`);
+  } catch (error) {
+    logger.error('Error caching invites:', error);
+  }
+}
 
 /**
  * Finds and deletes any temporary voice channels that were not cleaned up
@@ -102,7 +126,7 @@ async function updateDevServerStatus(client) {
         return;
       }
     }
-    
+
     const newMessage = await statusChannel.send({ embeds: [statusEmbed] });
     // CORRECTED FUNCTION CALL
     await setGuildConfig(devServerConfig.guildId, { settings: { dev_status_message_id: newMessage.id } });
