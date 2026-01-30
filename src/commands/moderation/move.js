@@ -95,18 +95,31 @@ module.exports = {
         return replyWithError('Bot Missing Permissions', `I don't have permission to move members in ${targetChannel}.`);
       }
 
+      let movedCount = 0;
+      let failedCount = 0;
       for (const member of fromChannel.members.values()) {
-        await member.voice.setChannel(targetChannel).catch(() => { });
+        try {
+          await member.voice.setChannel(targetChannel);
+          movedCount++;
+        } catch (error) {
+          failedCount++;
+        }
       }
 
-      return message.reply({
-        embeds: [
-          new EmbedBuilder()
-            .setTitle('✅ All Members Moved')
-            .setDescription(`Moved all users from ${fromChannel} to ${targetChannel}`)
-            .setColor(0x00AA55)
-        ]
-      });
+      const embed = new EmbedBuilder()
+        .setTitle('✅ All Members Moved')
+        .setDescription(`Moved **${movedCount}** member(s) from ${fromChannel} to ${targetChannel}`)
+        .setColor(0x00AA55);
+
+      if (failedCount > 0) {
+        embed.addFields({
+          name: '⚠️ Failed to Move',
+          value: `${failedCount} member(s) could not be moved`,
+          inline: false
+        });
+      }
+
+      return message.reply({ embeds: [embed] });
     }
 
     // Otherwise: /move @user1 @user2 ... [#channel or channel name or nothing]
@@ -196,6 +209,14 @@ module.exports = {
       }
       if (member.voice.channel.id === targetChannel.id) {
         failed.push(`${member.displayName} (already there)`);
+        continue;
+      }
+
+      // Check if executor has access to the member's current channel (source channel)
+      const sourceChannel = member.voice.channel;
+      const sourcePermissions = sourceChannel.permissionsFor(executor);
+      if (!sourcePermissions || !sourcePermissions.has(PermissionFlagsBits.ViewChannel)) {
+        failed.push(`${member.displayName} (no access to their channel)`);
         continue;
       }
 
