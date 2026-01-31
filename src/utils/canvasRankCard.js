@@ -12,62 +12,56 @@ const path = require('path');
  */
 async function generateRankCard(userData, member, type = 'text', rank = 0, theme = 'dark') {
     try {
-        // Register fonts (cross-platform)
+        // Register fonts (bundled fonts first, then system fonts)
         try {
             const os = require('os');
             const fs = require('fs');
+            const path = require('path');
 
-            // Try to register Arial font based on OS
-            if (os.platform() === 'win32') {
-                // Windows
-                const arialPath = 'C:\\Windows\\Fonts\\arial.ttf';
-                const arialBoldPath = 'C:\\Windows\\Fonts\\arialbd.ttf';
-                if (fs.existsSync(arialPath)) GlobalFonts.registerFromPath(arialPath, 'Arial');
-                if (fs.existsSync(arialBoldPath)) GlobalFonts.registerFromPath(arialBoldPath, 'Arial Bold');
-            } else {
-                // Linux/Unix - try common font paths
-                const commonPaths = [
-                    // Railway/Nixpacks paths
-                    '/nix/store/*/share/fonts/truetype/LiberationSans-Regular.ttf',
-                    // Standard Linux paths
-                    '/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf',
-                    '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',
-                    '/usr/share/fonts/truetype/liberation2/LiberationSans-Regular.ttf',
-                    // Additional common paths
-                    '/usr/share/fonts/TTF/LiberationSans-Regular.ttf',
-                    '/usr/share/fonts/liberation-sans/LiberationSans-Regular.ttf'
-                ];
+            let fontRegistered = false;
 
-                let fontRegistered = false;
-                for (const fontPath of commonPaths) {
-                    try {
-                        // Handle glob patterns for Nix paths
-                        if (fontPath.includes('*')) {
-                            const glob = require('glob');
-                            const matches = glob.sync(fontPath);
-                            if (matches.length > 0 && fs.existsSync(matches[0])) {
-                                GlobalFonts.registerFromPath(matches[0], 'Arial');
-                                console.log('[RankCard] Registered font:', matches[0]);
-                                fontRegistered = true;
-                                break;
-                            }
-                        } else if (fs.existsSync(fontPath)) {
+            // Try bundled fonts first (most reliable)
+            const bundledFontPath = path.join(__dirname, '../../fonts/Arial.ttf');
+            if (fs.existsSync(bundledFontPath)) {
+                GlobalFonts.registerFromPath(bundledFontPath, 'Arial');
+                console.log('[RankCard] Registered bundled font:', bundledFontPath);
+                fontRegistered = true;
+            }
+
+            // Fallback to system fonts if bundled font not found
+            if (!fontRegistered) {
+                if (os.platform() === 'win32') {
+                    // Windows
+                    const arialPath = 'C:\\Windows\\Fonts\\arial.ttf';
+                    if (fs.existsSync(arialPath)) {
+                        GlobalFonts.registerFromPath(arialPath, 'Arial');
+                        console.log('[RankCard] Registered Windows font');
+                        fontRegistered = true;
+                    }
+                } else {
+                    // Linux/Unix - try common font paths
+                    const commonPaths = [
+                        '/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf',
+                        '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',
+                        '/usr/share/fonts/TTF/LiberationSans-Regular.ttf'
+                    ];
+
+                    for (const fontPath of commonPaths) {
+                        if (fs.existsSync(fontPath)) {
                             GlobalFonts.registerFromPath(fontPath, 'Arial');
-                            console.log('[RankCard] Registered font:', fontPath);
+                            console.log('[RankCard] Registered system font:', fontPath);
                             fontRegistered = true;
                             break;
                         }
-                    } catch (err) {
-                        // Continue to next path
                     }
                 }
+            }
 
-                if (!fontRegistered) {
-                    console.log('[RankCard] No fonts found in common paths, Canvas will use system default');
-                }
+            if (!fontRegistered) {
+                console.warn('[RankCard] WARNING: No fonts found! Text may not render correctly.');
             }
         } catch (fontError) {
-            console.log('[RankCard] Could not register custom fonts, using system defaults');
+            console.error('[RankCard] Font registration error:', fontError.message);
         }
 
 
