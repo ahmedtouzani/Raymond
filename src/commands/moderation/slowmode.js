@@ -24,11 +24,14 @@ module.exports = {
     // Parse seconds
     const seconds = parseInt(args[argOffset], 10);
     if (isNaN(seconds) || seconds < 0 || seconds > 21600) {
-      return sendEmbed(message, {
-        title: 'Invalid Slowmode',
-        description: 'Please provide a slowmode value in seconds between 0 and 21600.',
-        color: 0x23272A,
+      const { createUsageEmbed } = require('../../utils/embed');
+      const embed = await createUsageEmbed(message.guild.id, {
+        command: 'slowmode',
+        description: '<a:warningbug:905560995886411806> **Invalid Duration**\nPlease provide a slowmode value in seconds between 0 and 21600.',
+        usage: '`!slowmode [#channel] <seconds> [-ex @role]`',
+        examples: '`!slowmode 5`\n`!slowmode #general 10`'
       });
+      return message.reply({ embeds: [embed] });
     }
 
     // Parse --exempt flag and roles

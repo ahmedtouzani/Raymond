@@ -10,7 +10,7 @@ module.exports = {
   usage: '=mute @user [reason]',
   cooldown: 5,
   permissions: [PermissionsBitField.Flags.ModerateMembers],
-  prefixless: true, 
+  prefixless: true,
   category: 'Moderation',
   async execute(message, args, client) {
     const ownerId = process.env.OWNER_ID;
@@ -34,17 +34,22 @@ module.exports = {
       }
     }
     if (!member) {
-      return sendEmbed(message, {
-        title: '❓ User Not Found',
-        description: 'Please mention a user or provide a valid user ID to mute.',
-        color: 0x23272A,
-      });
+      if (!member) {
+        const { createUsageEmbed } = require('../../utils/embed');
+        const embed = await createUsageEmbed(message.guild.id, {
+          command: 'mute',
+          description: '<a:warningbug:905560995886411806> **User Not Found**\nPlease mention a user or provide a valid user ID to mute.',
+          usage: '`!mute <@user> [reason]`',
+          examples: '`!mute @User Spamming`'
+        });
+        return message.reply({ embeds: [embed] });
+      }
     }
     if (protectBotTarget(member.id, client.user.id, message.author.id, ownerId)) {
-        return sendEmbed(message, {
-          title: 'Action Denied',
-          description: 'You cannot perform this action on the bot itself.',
-        });
+      return sendEmbed(message, {
+        title: 'Action Denied',
+        description: 'You cannot perform this action on the bot itself.',
+      });
     }
     const muteRole = message.guild.roles.cache.find(r => r.name.toLowerCase() === 'muted');
     if (!muteRole) {
@@ -114,7 +119,7 @@ module.exports = {
       }
     } catch (err) {
       sendEmbed(message, {
-        title: '❌ Error',
+        title: '<a:warningbug:905560995886411806> Error',
         description: `Failed to mute user.\n\`\`\`${err.message}\`\`\``,
         color: 0x23272A,
       });

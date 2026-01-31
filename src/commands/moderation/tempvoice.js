@@ -48,7 +48,7 @@ module.exports = {
         });
 
         return sendEmbed(message, {
-          title: '✅ Temp Voice Created',
+          title: '<a:okey:1467170671351173121> Temp Voice Created',
           description: `Successfully created the **${configName}** temp voice setup. Users joining ${creatorChannel} will now get their own channel.`,
         });
       }
@@ -78,7 +78,7 @@ module.exports = {
         const description = configs.map(config => {
           const creatorChannel = message.guild.channels.cache.get(config.creatorChannelId);
           return `**${config.configName}**
-- **Creator:** ${creatorChannel || 'Not Found'}\n- **Status:** ${config.enabled ? '✅ Enabled' : '❌ Disabled'}`;
+- **Creator:** ${creatorChannel || 'Not Found'}\n- **Status:** ${config.enabled ? '<a:okey:1467170671351173121> Enabled' : ' Disabled'}`;
         }).join('\n\n');
 
         return sendEmbed(message, {
@@ -88,15 +88,14 @@ module.exports = {
       }
 
       default:
-        return sendEmbed(message, {
-          title: 'Temporary Voice Channel System',
+        const { createUsageEmbed } = require('../../utils/embed');
+        const embed = await createUsageEmbed(message.guild.id, {
+          command: 'tempvoice',
           description: 'Manage multiple, named voice-on-demand configurations for your server.',
-          fields: [
-            { name: '`=tempvoice create <#channel> <name>`', value: 'Creates a new temp voice setup.' },
-            { name: '`=tempvoice delete <#channel>`', value: 'Deletes a temp voice setup.' },
-            { name: '`=tempvoice list`', value: 'Lists all temp voice setups.' },
-          ],
+          usage: '`!tempvoice <create|delete|list|info> [args...]`',
+          examples: '`!tempvoice create #channel "My VC"`\n`!tempvoice delete #channel`\n`!tempvoice list`'
         });
+        return message.reply({ embeds: [embed] });
     }
   },
 };

@@ -5,7 +5,7 @@ const { setAutoRole, getAutoRoleSettings } = require('../../database/autoRole');
 module.exports = {
   name: 'setautorole',
   description: 'Set the auto role for new members or configure the new member join log channel.',
-  usage: 
+  usage:
     '=setautorole @role | =setautorole off | =setautorole log <#channel> | =setautorole view',
   permissions: [PermissionsBitField.Flags.ManageRoles],
   category: 'Moderation',
@@ -31,13 +31,13 @@ module.exports = {
       try {
         await setAutoRole(message.guild.id, null, newLogChannelId); // Preserve log channel
         return sendEmbed(message, {
-          title: '✅ Auto Role Disabled',
+          title: '<a:okey:1467170671351173121> Auto Role Disabled',
           description: 'Auto role assignment for new members has been **disabled**.',
           color: 0x23272A,
         });
       } catch (err) {
         return sendEmbed(message, {
-          title: '❌ Error',
+          title: '<a:warningbug:905560995886411806> Error',
           description: `Failed to disable auto role.\n\`\`\`${err.message}\`\`\``,
           color: 0x23272A,
         });
@@ -48,23 +48,26 @@ module.exports = {
     if (subCommand === 'log') {
       const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[1]?.trim());
       if (!channel || channel.type !== 0) { // Check if it's a text channel
-        return sendEmbed(message, {
-          title: '❌ Invalid Channel',
-          description: 'Please mention a valid text channel or provide its ID to set as the member join log channel.',
-          color: 0x23272A,
+        const { createUsageEmbed } = require('../../utils/embed');
+        const embed = await createUsageEmbed(message.guild.id, {
+          command: 'setautorole',
+          description: '<a:warningbug:905560995886411806> **Invalid Channel**\nPlease mention a valid text channel or provide its ID to set as the member join log channel.',
+          usage: '`!setautorole log <#channel>`',
+          examples: '`!setautorole log #welcome`'
         });
+        return message.reply({ embeds: [embed] });
       }
       newLogChannelId = channel.id;
       try {
         await setAutoRole(message.guild.id, newRoleId, newLogChannelId); // Preserve auto role
         return sendEmbed(message, {
-          title: '✅ Member Join Log Channel Set',
+          title: '<a:okey:1467170671351173121> Member Join Log Channel Set',
           description: `New member join logs will now be sent to ${channel}.`,
           color: 0x23272A,
         });
       } catch (err) {
         return sendEmbed(message, {
-          title: '❌ Error',
+          title: '<a:warningbug:905560995886411806> Error',
           description: `Failed to set member join log channel.\n\`\`\`${err.message}\`\`\``,
           color: 0x23272A,
         });
@@ -78,13 +81,13 @@ module.exports = {
       try {
         await setAutoRole(message.guild.id, newRoleId, newLogChannelId); // Preserve log channel
         return sendEmbed(message, {
-          title: '✅ Auto Role Set',
+          title: '<a:okey:1467170671351173121> Auto Role Set',
           description: `New members will now automatically receive the **${role.name}** role.`,
           color: 0x23272A,
         });
       } catch (err) {
         return sendEmbed(message, {
-          title: '❌ Error',
+          title: '<a:warningbug:905560995886411806> Error',
           description: `Failed to set auto role.\n\`\`\`${err.message}\`\`\``,
           color: 0x23272A,
         });

@@ -31,23 +31,26 @@ module.exports = {
       }
     }
     if (!member) {
-      return sendEmbed(message, {
-        title: '❓ User Not Mentioned',
-        description: 'Please mention a user whose nickname you want to change.',
-        color: 0x23272A,
+      const { createUsageEmbed } = require('../../utils/embed');
+      const embed = await createUsageEmbed(message.guild.id, {
+        command: 'nickname',
+        description: '<a:warningbug:905560995886411806> **User Not Found**\nPlease mention a user or provide a valid user ID to change nickname.',
+        usage: '`!nickname <@user> [new nickname]`',
+        examples: '`!nickname @User NewName`'
       });
+      return message.reply({ embeds: [embed] });
     }
 
     if (protectBotTarget(member.id, client.user.id, message.author.id, ownerId)) {
-        return sendEmbed(message, {
-          title: 'Action Denied',
-          description: 'You cannot perform this action on the bot itself.',
-        });
+      return sendEmbed(message, {
+        title: 'Action Denied',
+        description: 'You cannot perform this action on the bot itself.',
+      });
     }
 
     if (member.id === client.user.id) {
       return sendEmbed(message, {
-        title: '❌ Action Denied',
+        title: ' Action Denied',
         description: 'I cannot change my own nickname using this command.',
         color: 0x23272A,
       });
@@ -56,7 +59,7 @@ module.exports = {
     // Prevent changing owner's nickname accidentally
     if (member.id === ownerId) {
       return sendEmbed(message, {
-        title: '❌ Action Denied',
+        title: ' Action Denied',
         description: 'You cannot change the bot owner\'s nickname.',
         color: 0x23272A,
       });
@@ -74,7 +77,7 @@ module.exports = {
     // Check role hierarchy
     if (!message.member.roles.highest.position > member.roles.highest.position && !isOwner) {
       return sendEmbed(message, {
-        title: '❌ Action Denied',
+        title: ' Action Denied',
         description: 'You cannot change the nickname of someone with an equal or higher role.',
         color: 0x23272A,
       });
@@ -83,13 +86,13 @@ module.exports = {
     try {
       await member.setNickname(newNickname, `Nickname changed by ${message.author.tag}`);
       sendEmbed(message, {
-        title: '✅ Nickname Changed',
+        title: '<a:okey:1467170671351173121> Nickname Changed',
         description: `${member.user.tag}'s nickname has been changed to **${newNickname}**.`,
         color: 0x23272A,
       });
     } catch (error) {
       sendEmbed(message, {
-        title: '❌ Error',
+        title: '<a:warningbug:905560995886411806> Error',
         description: `Failed to change nickname: \`${error.message}\``,
         color: 0x23272A,
       });

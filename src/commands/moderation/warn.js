@@ -32,11 +32,16 @@ module.exports = {
       }
     }
     if (!member) {
-      return sendEmbed(message, {
-        title: '❓ User Not Mentioned',
-        description: 'Please mention a user to warn. or provide a valid user ID.',
-        color: 0x23272A,
-      });
+      if (!member) {
+        const { createUsageEmbed } = require('../../utils/embed');
+        const embed = await createUsageEmbed(message.guild.id, {
+          command: 'warn',
+          description: '<a:warningbug:905560995886411806> **User Not Found**\nPlease mention a user to warn, or provide a valid user ID.',
+          usage: '`!warn <@user> [reason]`',
+          examples: '`!warn @User Spamming`'
+        });
+        return message.reply({ embeds: [embed] });
+      }
     }
 
     if (protectBotTarget(member.id, client.user.id, message.author.id, ownerId)) {
@@ -49,7 +54,7 @@ module.exports = {
 
     if (member.id === message.author.id) {
       return sendEmbed(message, {
-        title: '❌ Cannot Warn Yourself',
+        title: ' Cannot Warn Yourself',
         description: 'You cannot warn yourself.',
         color: 0x23272A,
       });
@@ -67,7 +72,7 @@ module.exports = {
       });
     } catch (error) {
       return sendEmbed(message, {
-        title: '❌ Error',
+        title: '<a:warningbug:905560995886411806> Error',
         description: `An error occurred while trying to warn the user.\n\`\`\`${error.message}\`\`\``,
         color: 0x23272A,
       });

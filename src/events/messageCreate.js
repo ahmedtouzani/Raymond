@@ -55,7 +55,7 @@ module.exports = {
             }
           }
         })
-        .catch(() => {});
+        .catch(() => { });
     }
     // === END LEVEL SYSTEM ===
 
@@ -319,7 +319,7 @@ module.exports = {
         return message.reply({
           embeds: [
             new EmbedBuilder()
-              .setDescription("❌ Only administrators can change the prefix")
+              .setDescription(" Only administrators can change the prefix")
               .setColor(0x23272a),
           ],
         });
@@ -330,7 +330,7 @@ module.exports = {
         return message.reply({
           embeds: [
             new EmbedBuilder()
-              .setDescription("❌ Prefix must be 1-5 characters")
+              .setDescription(" Prefix must be 1-5 characters")
               .setColor(0x23272a),
           ],
         });
@@ -356,7 +356,7 @@ module.exports = {
         return message.reply({
           embeds: [
             new EmbedBuilder()
-              .setDescription("❌ Only administrators can reset the prefix")
+              .setDescription(" Only administrators can reset the prefix")
               .setColor(0x23272a),
           ],
         });
@@ -388,8 +388,8 @@ module.exports = {
       } catch (error) {
         logger.error(`Command ${commandName} failed:`, error);
         message
-          .reply("❌ An error occurred executing that command")
-          .catch(() => {});
+          .reply(" An error occurred executing that command")
+          .catch(() => { });
       }
     }
   },

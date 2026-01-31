@@ -53,7 +53,7 @@ module.exports = {
             return;
           }
           if (response.content.toLowerCase() === 'cancel') {
-            await promptSend('❌ Setup cancelled. No changes were made.');
+            await promptSend(' Setup cancelled. No changes were made.');
             return;
           }
           let item;
@@ -62,7 +62,7 @@ module.exports = {
           } else if (prompt.key.includes('Channel')) {
             item = response.mentions.channels.first() || message.guild.channels.cache.get(response.content.trim());
           }
-          
+
           if (item) {
             collected[prompt.key] = item.id;
             valid = true;
@@ -72,7 +72,7 @@ module.exports = {
           }
         }
         if (!valid) {
-          await promptSend('❌ Too many invalid attempts. Setup cancelled.');
+          await promptSend(' Too many invalid attempts. Setup cancelled.');
           return;
         }
       }
@@ -90,7 +90,7 @@ module.exports = {
         return;
       }
       if (confirmResp.first().content.toLowerCase() !== 'confirm') {
-        await promptSend('❌ Setup cancelled. No changes were made.');
+        await promptSend(' Setup cancelled. No changes were made.');
         return;
       }
       // Save to config
@@ -107,33 +107,42 @@ module.exports = {
       const validTypes = ['unverified', 'verified', 'boy', 'girl', 'verificator', 'log'];
 
       if (!validTypes.includes(type)) {
-        return sendEmbed(message, {
-          title: '❓ Invalid Type',
-          description: 'Type must be one of: unverified, verified, boy, girl, verificator, log.',
-          color: 0x23272A,
+        const { createUsageEmbed } = require('../../utils/embed');
+        const embed = await createUsageEmbed(message.guild.id, {
+          command: 'verify',
+          description: '<a:warningbug:905560995886411806> **Invalid Type**\nType must be one of: unverified, verified, boy, girl, verificator, log.',
+          usage: '`!verify set <type> <@role/#channel>`',
+          examples: '`!verify set boy @Boy`\n`!verify set log #verify-logs`'
         });
+        return message.reply({ embeds: [embed] });
       }
 
       if (type === 'log') {
         item = message.mentions.channels.first() || message.guild.channels.cache.get(args[2]?.trim());
         if (!item) {
-          return sendEmbed(message, {
-            title: '❓ Invalid Channel',
-            description: 'Please mention a valid log channel or provide its ID.',
-            color: 0x23272A,
+          const { createUsageEmbed } = require('../../utils/embed');
+          const embed = await createUsageEmbed(message.guild.id, {
+            command: 'verify',
+            description: '<a:warningbug:905560995886411806> **Invalid Channel**\nPlease mention a valid log channel or provide its ID.',
+            usage: '`!verify set log <#channel>`',
+            examples: '`!verify set log #verify-logs`'
           });
+          return message.reply({ embeds: [embed] });
         }
       } else {
         item = message.mentions.roles.first() || message.guild.roles.cache.get(args[2]?.trim());
         if (!item) {
-          return sendEmbed(message, {
-            title: '❓ Invalid Role',
-            description: `Please mention a valid ${type} role or provide its ID. `,
-            color: 0x23272A,
+          const { createUsageEmbed } = require('../../utils/embed');
+          const embed = await createUsageEmbed(message.guild.id, {
+            command: 'verify',
+            description: ` **Invalid Role**\nPlease mention a valid ${type} role or provide its ID.`,
+            usage: '`!verify set <type> <@role>`',
+            examples: `\`!verify set ${type} @${type.charAt(0).toUpperCase() + type.slice(1)}\``
           });
+          return message.reply({ embeds: [embed] });
         }
       }
-      
+
       config.settings.verification[`${type}RoleId`] = item.id; // This will be logChannelId for type 'log'
       await setGuildConfig(message.guild.id, config);
       return sendEmbed(message, {
@@ -159,14 +168,17 @@ module.exports = {
       if (!member && args[1]) {
         try {
           member = await message.guild.members.fetch(args[1]);
-        } catch (e) {}
+        } catch (e) { }
       }
       if (!member) {
-        return sendEmbed(message, {
-          title: '❓ User Not Found',
-          description: 'Please mention a user or provide a valid user ID to verify.',
-          color: 0x23272A,
+        const { createUsageEmbed } = require('../../utils/embed');
+        const embed = await createUsageEmbed(message.guild.id, {
+          command: 'verify',
+          description: '<a:warningbug:905560995886411806> **User Not Found**\nPlease mention a user or provide a valid user ID to verify.',
+          usage: '`!verify <boy|girl> <@user>`',
+          examples: '`!verify boy @User`'
         });
+        return message.reply({ embeds: [embed] });
       }
       // Get role IDs
       const unverified = config.settings.verification.unverifiedRoleId;
@@ -184,7 +196,7 @@ module.exports = {
       try {
         await member.roles.remove(unverified);
         await member.roles.add([verified, genderRole]);
-        
+
         const successEmbed = {
           title: 'Successfully Verified..',
           thumbnail: {
@@ -255,7 +267,7 @@ module.exports = {
 
       } catch (err) {
         sendEmbed(message, {
-          title: '❌ Error',
+          title: '<a:warningbug:905560995886411806> Error',
           description: `Failed to verify user.\n\`\`\`${err.message}\`\`\``,
           color: 0x23272A,
         });
@@ -279,12 +291,12 @@ module.exports = {
           inline: false
         },
         {
-          name: '✅ Verify a User',
+          name: '<a:okey:1467170671351173121> Verify a User',
           value: 'Verify a user as a boy or girl (requires Verificator role):\n`!verify boy @user` or `!verify girl @user`',
           inline: false
         },
         // Display current settings if available
-        { 
+        {
           name: 'Current Settings',
           value: [
             `**Unverified Role:** ${config.settings.verification.unverifiedRoleId ? `<@&${config.settings.verification.unverifiedRoleId}>` : 'Not Set'}`,

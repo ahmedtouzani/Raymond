@@ -24,11 +24,14 @@ module.exports = {
         }
 
         if (!args[0]) {
-            return sendEmbed(message, {
-                title: '❓ User Not Specified',
-                description: 'Please mention a user to delete warnings for.',
-                color: 0x23272A,
+            const { createUsageEmbed } = require('../../utils/embed');
+            const embed = await createUsageEmbed(message.guild.id, {
+                command: 'delwarn',
+                description: '<a:warningbug:905560995886411806> **User Not Specified**\nPlease mention a user to delete warnings for.',
+                usage: '`!delwarn <@user> <warningID|all>`',
+                examples: '`!delwarn @User 1`\n`!delwarn @User all`'
             });
+            return message.reply({ embeds: [embed] });
         }
 
         let member = message.mentions.members.first();
@@ -56,18 +59,21 @@ module.exports = {
         const action = args[1]?.toLowerCase();
 
         if (!action) {
-            return sendEmbed(message, {
-                title: '❓ Warning ID or "all" Required',
-                description: 'Specify the warning ID to delete a single warning, or "all" to delete all warnings for this user.',
-                color: 0x23272A,
+            const { createUsageEmbed } = require('../../utils/embed');
+            const embed = await createUsageEmbed(message.guild.id, {
+                command: 'delwarn',
+                description: '<a:warningbug:905560995886411806> **Missing Action**\nSpecify the warning ID to delete a single warning, or "all" to delete all warnings for this user.',
+                usage: '`!delwarn <@user> <warningID|all>`',
+                examples: '`!delwarn @User 1`\n`!delwarn @User all`'
             });
+            return message.reply({ embeds: [embed] });
         }
 
         try {
             if (action === 'all') {
                 await deleteAllWarnings(message.guild.id, member.id);
                 return sendEmbed(message, {
-                    title: '✅ All Warnings Deleted',
+                    title: '<a:okey:1467170671351173121> All Warnings Deleted',
                     description: `All warnings for **${member.user.tag}** have been deleted.`,
                     color: 0x23272A,
                 });
@@ -76,7 +82,7 @@ module.exports = {
             const warningId = parseInt(action, 10);
             if (isNaN(warningId)) {
                 return sendEmbed(message, {
-                    title: '❌ Invalid Warning ID',
+                    title: ' Invalid Warning ID',
                     description: 'Please provide a valid warning ID number or "all".',
                     color: 0x23272A,
                 });
@@ -86,7 +92,7 @@ module.exports = {
             const warning = await getWarningByIdGuildUser(warningId, message.guild.id, member.id);
             if (!warning) {
                 return sendEmbed(message, {
-                    title: '❌ Warning Not Found',
+                    title: ' Warning Not Found',
                     description: `No warning with ID **${warningId}** found for **${member.user.tag}** in this server.`,
                     color: 0x23272A,
                 });
@@ -101,7 +107,7 @@ module.exports = {
             });
         } catch (error) {
             return sendEmbed(message, {
-                title: '❌ Error',
+                title: '<a:warningbug:905560995886411806> Error',
                 description: `Failed to delete warning.\n\`\`\`${error.message}\`\`\``,
                 color: 0x23272A,
             });

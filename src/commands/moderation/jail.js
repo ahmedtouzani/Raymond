@@ -34,11 +34,14 @@ module.exports = {
             }
         }
         if (!member) {
-            return sendEmbed(message, {
-                title: '❓ User Not Mentioned',
-                description: 'Please mention a user to jail or provide a valid user ID.',
-                color: 0x23272A,
+            const { createUsageEmbed } = require('../../utils/embed');
+            const embed = await createUsageEmbed(message.guild.id, {
+                command: 'jail',
+                description: '<a:warningbug:905560995886411806> **User Not Found**\nPlease mention a user to jail or provide a valid user ID.',
+                usage: '`!jail <@user> [reason]`',
+                examples: '`!jail @User Spamming`'
             });
+            return message.reply({ embeds: [embed] });
         }
 
         if (protectBotTarget(member.id, client.user.id, message.author.id, ownerId)) {

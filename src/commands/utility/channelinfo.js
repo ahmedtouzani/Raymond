@@ -36,12 +36,14 @@ function formatPermissions(permissions) {
 // Helper function to display channel info
 async function showChannelInfo(message, channel) {
   if (!channel) {
-    return message.reply({
-      embeds: [await createEmbed(message.guild?.id, {
-        description: '❌ Channel not found. Please check the channel name or ID and try again.',
-        color: 0xff3333
-      })]
+    const { createUsageEmbed } = require('../../utils/embed');
+    const embed = await createUsageEmbed(message.guild?.id, {
+      command: 'channelinfo',
+      description: '<a:warningbug:905560995886411806> **Channel Not Found**\nPlease check the channel name or ID and try again.',
+      usage: '`!channelinfo [channel]`',
+      examples: '`!channelinfo #general`'
     });
+    return message.reply({ embeds: [embed] });
   }
 
   // Handle DM channels
@@ -55,7 +57,7 @@ async function showChannelInfo(message, channel) {
         {
           name: '<:36548namoonlight:1379103329044402257> > General',
           value: [
-            `<:arrow:1309167079231848572> **Type:** DM Channel`,
+            `<:arrow:1463991975610024119> **Type:** DM Channel`,
             `<:id:1308126152174563409> **ID:** \`${channel.id}\``,
             `<:created:1308126152174563409> **Created:** <t:${Math.floor(channel.createdTimestamp / 1000)}:D>`
           ].join('\n'),
@@ -82,9 +84,9 @@ async function showChannelInfo(message, channel) {
 
   // Build basic info
   const basicInfo = [
-    `<:arrow:1309167079231848572> **Name:** ${escapeMarkdown(channel.name)}`,
-    `<:arrow:1309167079231848572> **ID:** \`${channel.id}\``,
-    `<:arrow:1309167079231848572> **Type:** ${formatChannelType(channel.type)}`,
+    `<:arrow:1463991975610024119> **Name:** ${escapeMarkdown(channel.name)}`,
+    `<:arrow:1463991975610024119> **ID:** \`${channel.id}\``,
+    `<:arrow:1463991975610024119> **Type:** ${formatChannelType(channel.type)}`,
     channel.topic ? `<:edit:1308126154163482665> **Topic:** ${channel.topic.length > 100 ? `${channel.topic.substring(0, 97)}...` : channel.topic}` : ''
   ].filter(Boolean);
 
@@ -166,7 +168,7 @@ async function showChannelInfo(message, channel) {
       permissionsInfo.push(
         '**@everyone Permissions:**',
         `<:Done:1305644486453493801> Allowed: ${allowed.split('\n').length}`,
-        `❌ Denied: ${denied.split('\n').length}`,
+        ` Denied: ${denied.split('\n').length}`,
         ''
       );
     }
@@ -180,7 +182,7 @@ async function showChannelInfo(message, channel) {
       permissionsInfo.push(
         '**Bot Permissions:**',
         `<:Done:1305644486453493801> Allowed: ${allowed.split('\n').length}`,
-        `❌ Denied: ${denied.split('\n').length}`
+        ` Denied: ${denied.split('\n').length}`
       );
     }
   }
@@ -271,11 +273,13 @@ module.exports = {
     }
 
     // If no channel found
-    return message.reply({
-      embeds: [await createEmbed(message.guild.id, {
-        description: '❌ Channel not found. Please check the channel name or ID and try again.',
-        color: 0xff3333
-      })]
+    const { createUsageEmbed } = require('../../utils/embed');
+    const embed = await createUsageEmbed(message.guild.id, {
+      command: 'channelinfo',
+      description: '<a:warningbug:905560995886411806> **Channel Not Found**\nPlease check the channel name or ID and try again.',
+      usage: '`!channelinfo [channel]`',
+      examples: '`!channelinfo #general`'
     });
+    return message.reply({ embeds: [embed] });
   }
 };

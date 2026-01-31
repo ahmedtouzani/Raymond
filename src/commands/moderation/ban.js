@@ -30,38 +30,42 @@ module.exports = {
       });
     }
 
+    const { createUsageEmbed } = require('../../utils/embed');
+
+    // ... permission checks ...
+
+    if (!args.length) {
+      const embed = await createUsageEmbed(message.guild.id, {
+        command: 'ban',
+        description: 'Bans a user from the server.',
+        usage: '`!ban <@user/ID> [reason]`',
+        examples: '`!ban @User Spamming`\n`!ban 123456789012345678 Bad behavior`'
+      });
+      return message.reply({ embeds: [embed] });
+    }
+
     let member = message.mentions.members.first();
     if (!member && args[0]) {
       try {
         member = await message.guild.members.fetch(args[0]);
       } catch (e) {
-        // Ignore fetch error, handled below
+        // Ignore fetch error
       }
     }
+
     if (!member) {
-      return sendEmbed(message, {
-        title: '❓ User Not Found',
-        description: 'Please mention a user or provide a valid user ID to mute.',
-        color: 0x23272A,
+      const embed = await createUsageEmbed(message.guild.id, {
+        command: 'ban',
+        description: '<a:warningbug:905560995886411806> **User Not Found**\nPlease mention a valid user or provide a User ID.',
+        usage: '`!ban <@user/ID> [reason]`',
+        examples: '`!ban @User Spamming`'
       });
-    }
-    if (member && protectBotTarget(member.id, client.user.id, message.author.id, ownerId)) {
-      return sendEmbed(message, {
-        title: 'Action Denied',
-        description: 'You cannot perform this action on the bot itself.',
-      });
-    }
-    if (!member) {
-      return sendEmbed(message, {
-        title: '❓ User Not Mentioned',
-        description: 'Please mention a user to ban.',
-        color: 0x23272A,
-      });
+      return message.reply({ embeds: [embed] });
     }
 
     if (member.id === message.author.id) {
       return sendEmbed(message, {
-        title: '❌ Cannot Ban Yourself',
+        title: ' Cannot Ban Yourself',
         description: 'You cannot ban yourself.',
         color: 0x23272A,
       });
@@ -89,7 +93,7 @@ module.exports = {
       });
     } catch (error) {
       sendEmbed(message, {
-        title: '❌ Error',
+        title: '<a:warningbug:905560995886411806> Error',
         description: `An error occurred while trying to ban the user.\n\`\`\`${error.message}\`\`\``,
         color: 0x23272A,
       });

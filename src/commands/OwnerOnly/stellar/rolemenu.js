@@ -23,7 +23,7 @@ module.exports = {
 
     // Permission Check: Admin or Owner
     if (!message.member.permissions.has('Administrator') && message.author.id !== process.env.OWNER_ID) {
-      return message.reply('❌ You need **Administrator** permissions to use this.');
+      return message.reply(' You need **Administrator** permissions to use this.');
     }
 
     // 1. Premium Check
@@ -41,9 +41,15 @@ module.exports = {
     }
 
     // Default Help
-    return message.reply({
-      embeds: [new EmbedBuilder().setTitle('Role Menu Management').setDescription('Usage: `=rolemenu create`').setColor(0x5865F2)]
+    // Default Help
+    const { createUsageEmbed } = require('../../../utils/embed');
+    const embed = await createUsageEmbed(message.guild.id, {
+      command: 'rolemenu',
+      description: 'Manage Self Role Menus',
+      usage: '`!rolemenu create`',
+      examples: '`!rolemenu create`'
     });
+    return message.reply({ embeds: [embed] });
   }
 };
 
@@ -74,10 +80,10 @@ async function startWizard(message) {
       return collected.first();
     } catch (e) {
       if (e.message === 'cancelled') {
-        channel.send('❌ Wizard cancelled.');
+        channel.send(' Wizard cancelled.');
         return null;
       }
-      channel.send('❌ Timeout. Wizard cancelled.');
+      channel.send(' Timeout. Wizard cancelled.');
       return null;
     }
   };
@@ -111,7 +117,7 @@ async function startWizard(message) {
     const i = await tplMsg.awaitMessageComponent({ filter: i => i.user.id === authorId, time: 60000 });
     template = i.customId; // tpl_games, tpl_profile, tpl_colors, tpl_custom
     await i.deferUpdate();
-  } catch { return channel.send('❌ Timeout.'); }
+  } catch { return channel.send(' Timeout.'); }
 
   // Variables to populate
   let title, description, type, mode, embed_color, thumbnail, image, footer, author_name, author_icon;
@@ -166,7 +172,7 @@ async function startWizard(message) {
       const i = await visualMsg.awaitMessageComponent({ filter: i => i.user.id === authorId, time: 60000 });
       customizeVisuals = (i.customId === 'w_vis_yes');
       await i.deferUpdate();
-    } catch { return channel.send('❌ Timeout.'); }
+    } catch { return channel.send(' Timeout.'); }
 
     if (customizeVisuals) {
 
@@ -221,7 +227,7 @@ async function startWizard(message) {
       const i = await typeMsg.awaitMessageComponent({ filter: i => i.user.id === authorId, time: 60000 });
       type = (i.customId === 'w_btn') ? 'BUTTON' : 'SELECT';
       await i.deferUpdate();
-    } catch { return channel.send('❌ Timeout.'); }
+    } catch { return channel.send(' Timeout.'); }
 
     // 5. Mode
     const modeEmbed = new EmbedBuilder().setTitle('Step 5/8: Selection Mode').setDescription('**Toggle**: Best for Games.\n**Single**: Best for Gender/Colors.').setColor(0x5865F2);
@@ -234,7 +240,7 @@ async function startWizard(message) {
       const i = await modeMsg.awaitMessageComponent({ filter: i => i.user.id === authorId, time: 60000 });
       mode = (i.customId === 'w_toggle') ? 'TOGGLE' : 'SINGLE';
       await i.deferUpdate();
-    } catch { return channel.send('❌ Timeout.'); }
+    } catch { return channel.send(' Timeout.'); }
 
   }
 
@@ -253,7 +259,13 @@ async function startWizard(message) {
     author_name,
     author_icon
   };
-  const menu = await createRoleMenu(menuData);
+  let menu;
+  try {
+    menu = await createRoleMenu(menuData);
+  } catch (error) {
+    logger.error('[RoleMenu] Failed to create role menu (DB):', error);
+    return channel.send(' Failed to create the role menu in the database. Please try again.');
+  }
 
   // 7. Loop for Adding Roles
   let adding = true;
@@ -276,12 +288,12 @@ async function startWizard(message) {
     try {
       const i = await menuMsg.awaitMessageComponent({ filter: i => i.user.id === authorId, time: 300000 }); // 5 min timeout
       if (i.customId === 'cancel') {
-        await i.update({ content: '❌ Creation cancelled.', components: [] });
+        await i.update({ content: ' Creation cancelled.', components: [] });
         return;
       }
       if (i.customId === 'finish') {
         if (roles.length === 0) {
-          await i.reply({ content: '❌ You need at least one role!', ephemeral: true });
+          await i.reply({ content: ' You need at least one role!', ephemeral: true });
           continue;
         }
         await i.deferUpdate();
@@ -447,5 +459,5 @@ async function sendRoleMenu(message, menu, roles) {
   const { setMenuMessage } = require('../../../database/roleMenus');
   await setMenuMessage(menu.id, postedMsg.id, postedMsg.channelId);
 
-  message.channel.send('✅ **Menu Created & Posted!**');
+  message.channel.send('<a:okey:1467170671351173121> **Menu Created & Posted!**');
 }

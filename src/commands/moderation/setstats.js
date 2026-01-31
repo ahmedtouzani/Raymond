@@ -81,16 +81,19 @@ module.exports = {
         if (subCommand === 'remove') {
             const type = args[1]?.toLowerCase();
             if (!type || !['member', 'voice'].includes(type)) {
-                return sendEmbed(message, {
-                    title: '❌ Invalid Type',
-                    description: 'Please specify either `member` or `voice`.\n\n**Example:** `!setstats remove member`',
-                    color: 0x23272A,
+                const { createUsageEmbed } = require('../../utils/embed');
+                const embed = await createUsageEmbed(message.guild.id, {
+                    command: 'setstats',
+                    description: '<a:warningbug:905560995886411806> **Invalid Type**\nPlease specify either `member` or `voice`.',
+                    usage: '`!setstats remove <member|voice>`',
+                    examples: '`!setstats remove member`'
                 });
+                return message.reply({ embeds: [embed] });
             }
 
             await removeStatsChannel(message.guild.id, type);
             return sendEmbed(message, {
-                title: '✅ Stats Channel Removed',
+                title: '<a:okey:1467170671351173121> Stats Channel Removed',
                 description: `${type === 'member' ? '👥 Member' : '🎤 Voice'} counter has been disabled.`,
                 color: 0x23272A,
             });
@@ -98,28 +101,34 @@ module.exports = {
 
         // Handle setting stats channels
         if (!['member', 'voice'].includes(subCommand)) {
-            return sendEmbed(message, {
-                title: '❌ Invalid Command',
-                description: 'Please specify either `member` or `voice`.\n\n**Examples:**\n`!setstats member #channel`\n`!setstats voice #channel`',
-                color: 0x23272A,
+            const { createUsageEmbed } = require('../../utils/embed');
+            const embed = await createUsageEmbed(message.guild.id, {
+                command: 'setstats',
+                description: '<a:warningbug:905560995886411806> **Invalid Command**\nPlease specify either `member` or `voice`.',
+                usage: '`!setstats <member|voice> <#channel>`',
+                examples: '`!setstats member #stats`\n`!setstats voice #voice-count`'
             });
+            return message.reply({ embeds: [embed] });
         }
 
         // Get channel
         const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[1]?.trim());
         if (!channel || channel.type !== ChannelType.GuildVoice) {
-            return sendEmbed(message, {
-                title: '❌ Invalid Channel',
-                description: 'Please mention a valid **voice channel**.\n\n**Note:** Stats channels must be voice channels so they appear in the channel list.',
-                color: 0x23272A,
+            const { createUsageEmbed } = require('../../utils/embed');
+            const embed = await createUsageEmbed(message.guild.id, {
+                command: 'setstats',
+                description: '<a:warningbug:905560995886411806> **Invalid Channel**\nPlease mention a valid **voice channel**.\n(Stats channels must be voice channels)',
+                usage: '`!setstats <member|voice> <#channel>`',
+                examples: '`!setstats member #stats`'
             });
+            return message.reply({ embeds: [embed] });
         }
 
         // Check bot permissions
         const botPerms = channel.permissionsFor(message.guild.members.me);
         if (!botPerms || !botPerms.has(PermissionsBitField.Flags.ManageChannels)) {
             return sendEmbed(message, {
-                title: '❌ Missing Permissions',
+                title: ' Missing Permissions',
                 description: `I don't have permission to manage ${channel}.\n\nPlease give me the **Manage Channels** permission for that channel.`,
                 color: 0x23272A,
             });
@@ -139,7 +148,7 @@ module.exports = {
         }
 
         return sendEmbed(message, {
-            title: '✅ Stats Channel Configured',
+            title: '<a:okey:1467170671351173121> Stats Channel Configured',
             description: `${subCommand === 'member' ? '👥 Member' : '🎤 Voice'} counter has been set to ${channel}`,
             fields: [
                 {

@@ -11,7 +11,7 @@ const COOLDOWN_DURATION = 3600000;
 
 module.exports = {
     name: 'nuke-server',
-    aliases:['cnuke'],
+    aliases: ['cnuke'],
     description: '💣 [OWNER] Blazing-fast server channel deletion',
     category: 'Owner',
     ownerOnly: true,
@@ -34,7 +34,7 @@ module.exports = {
         if (!args[0] || !/^\d{17,20}$/.test(args[0])) {
             return message.reply({
                 embeds: [new EmbedBuilder()
-                    .setTitle('❌ Invalid Server ID')
+                    .setTitle(' Invalid Server ID')
                     .setDescription('Provide a valid server ID\n`!nuke-server 123456789012345678`')
                     .setColor(0xE74C3C)
                 ]
@@ -48,7 +48,7 @@ module.exports = {
         if (!targetServer) {
             return message.reply({
                 embeds: [new EmbedBuilder()
-                    .setTitle('❌ Server Not Found')
+                    .setTitle(' Server Not Found')
                     .setColor(0xE74C3C)
                 ]
             });
@@ -78,7 +78,7 @@ module.exports = {
             .setFooter({ text: 'Type "CONFIRM" to proceed' });
 
         const confirmation = await message.reply({ embeds: [confirmEmbed] });
-        
+
         // Collect confirmation
         try {
             const filter = m => m.author.id === message.author.id;
@@ -92,7 +92,7 @@ module.exports = {
             if (collected.first().content.toUpperCase() !== 'CONFIRM') {
                 return confirmation.edit({
                     embeds: [new EmbedBuilder()
-                        .setTitle('❌ Cancelled')
+                        .setTitle(' Cancelled')
                         .setColor(0x2ECC71)
                     ]
                 });
@@ -121,47 +121,47 @@ module.exports = {
             const allChannels = [...targetServer.channels.cache.values()];
             const nonCategoryChannels = allChannels.filter(c => c.type !== ChannelType.GuildCategory);
             const categories = allChannels.filter(c => c.type === ChannelType.GuildCategory);
-            
+
             let deletedCount = 0;
             let errorCount = 0;
-            
+
             // Delete non-category channels in parallel
-            const nonCatDeletes = nonCategoryChannels.map(channel => 
+            const nonCatDeletes = nonCategoryChannels.map(channel =>
                 deleteWithRateLimit(channel, `Nuke by ${message.author.tag}`)
             );
-            
+
             // Process results
             const nonCatResults = await Promise.allSettled(nonCatDeletes);
             nonCatResults.forEach(result => {
                 if (result.status === 'fulfilled') deletedCount++;
                 else errorCount++;
             });
-            
+
             // Delete categories in parallel
-            const catDeletes = categories.map(category => 
+            const catDeletes = categories.map(category =>
                 deleteWithRateLimit(category, `Nuke by ${message.author.tag}`)
             );
-            
+
             const catResults = await Promise.allSettled(catDeletes);
             catResults.forEach(result => {
                 if (result.status === 'fulfilled') deletedCount++;
                 else errorCount++;
             });
-            
+
             // Final results
             const duration = (Date.now() - startTime) / 1000;
             const resultEmbed = new EmbedBuilder()
-                .setTitle('✅ Server Nuked')
+                .setTitle('<a:okey:1467170671351173121> Server Nuked')
                 .setDescription(`Deleted ${deletedCount} channels in ${duration.toFixed(1)}s`)
                 .addFields(
                     { name: 'Server', value: targetServer.name, inline: true },
-                    { name: 'Speed', value: `${(deletedCount/duration).toFixed(1)} ch/s`, inline: true },
+                    { name: 'Speed', value: `${(deletedCount / duration).toFixed(1)} ch/s`, inline: true },
                     { name: 'Errors', value: errorCount.toString(), inline: true }
                 )
                 .setColor(0x2ECC71);
-            
+
             await statusMessage.edit({ embeds: [resultEmbed] });
-            
+
             // Update cooldown
             cooldowns.set(targetServerId, Date.now() + COOLDOWN_DURATION);
 
@@ -169,7 +169,7 @@ module.exports = {
             logger.error('Nuke failed:', error);
             statusMessage.edit({
                 embeds: [new EmbedBuilder()
-                    .setTitle('❌ Critical Error')
+                    .setTitle(' Critical Error')
                     .setColor(0xE74C3C)
                 ]
             });
@@ -186,7 +186,7 @@ async function deleteWithRateLimit(channel, reason) {
     if (rateLimited) {
         await new Promise(resolve => setTimeout(resolve, rateLimited));
     }
-    
+
     try {
         await channel.delete(reason);
     } catch (error) {

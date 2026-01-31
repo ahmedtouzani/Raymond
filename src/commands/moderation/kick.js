@@ -21,31 +21,45 @@ module.exports = {
         color: 0x23272A,
       });
     }
+    const { createUsageEmbed } = require('../../utils/embed');
+
+    if (!args.length) {
+      const embed = await createUsageEmbed(message.guild.id, {
+        command: 'kick',
+        description: 'Kicks a user from the server.',
+        usage: '`!kick <@user/ID> [reason]`',
+        examples: '`!kick @User Spamming`\n`!kick 123456789012345678`'
+      });
+      return message.reply({ embeds: [embed] });
+    }
+
     let member = message.mentions.members.first();
     if (!member && args[0]) {
       try {
         member = await message.guild.members.fetch(args[0]);
       } catch (e) {
-        // Ignore fetch error, handled below
+        // Ignore fetch error
       }
     }
     if (!member) {
-      return sendEmbed(message, {
-        title: '❓ User Not Found',
-        description: 'Please mention a user or provide a valid user ID to kick.',
-        color: 0x23272A,
+      const embed = await createUsageEmbed(message.guild.id, {
+        command: 'kick',
+        description: '<a:warningbug:905560995886411806> **User Not Found**\nPlease mention a valid user or provide a User ID.',
+        usage: '`!kick <@user/ID> [reason]`',
+        examples: '`!kick @User`'
       });
+      return message.reply({ embeds: [embed] });
     }
     if (protectBotTarget(member.id, client.user.id, message.author.id, ownerId)) {
-        return sendEmbed(message, {
-          title: 'Action Denied',
-          description: 'You cannot perform this action on the bot itself.',
-        });
+      return sendEmbed(message, {
+        title: 'Action Denied',
+        description: 'You cannot perform this action on the bot itself.',
+      });
     }
 
     if (member.id === message.author.id) {
       return sendEmbed(message, {
-        title: '❌ Cannot Kick Yourself',
+        title: ' Cannot Kick Yourself',
         description: 'You cannot kick yourself.',
         color: 0x23272A,
       });
@@ -71,7 +85,7 @@ module.exports = {
       });
     } catch (error) {
       sendEmbed(message, {
-        title: '❌ Error',
+        title: '<a:warningbug:905560995886411806> Error',
         description: `An error occurred while trying to kick the user.\n\`\`\`${error.message}\`\`\``,
         color: 0x23272A,
       });

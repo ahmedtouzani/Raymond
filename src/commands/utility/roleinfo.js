@@ -45,12 +45,16 @@ module.exports = {
     const roleArg = args[0];
 
     if (!roleArg) {
-      return message.reply({
-        embeds: [await createEmbed(message.guild.id, {
-          description: '❌ Please specify a role to get information about.',
-          color: 0xff3333
-        })]
-      });
+      if (!roleArg) {
+        const { createUsageEmbed } = require('../../utils/embed');
+        const embed = await createUsageEmbed(message.guild.id, {
+          command: 'roleinfo',
+          description: '<a:warningbug:905560995886411806> **Missing Argument**\nPlease specify a role to get information about.',
+          usage: '`!roleinfo [role]`',
+          examples: '`!roleinfo @Role`\n`!roleinfo "Admin"`'
+        });
+        return message.reply({ embeds: [embed] });
+      }
     }
 
     // Try to find role by mention
@@ -71,12 +75,16 @@ module.exports = {
     }
 
     if (!role) {
-      return message.reply({
-        embeds: [await createEmbed(message.guild.id, {
-          description: '❌ Role not found. Please check the role name or ID and try again.',
-          color: 0xff3333
-        })]
-      });
+      if (!role) {
+        const { createUsageEmbed } = require('../../utils/embed');
+        const embed = await createUsageEmbed(message.guild.id, {
+          command: 'roleinfo',
+          description: '<a:warningbug:905560995886411806> **Role Not Found**\nPlease check the role name or ID and try again.',
+          usage: '`!roleinfo [role]`',
+          examples: '`!roleinfo @Role`\n`!roleinfo "Admin"`'
+        });
+        return message.reply({ embeds: [embed] });
+      }
     }
 
     // Format role information
@@ -98,12 +106,12 @@ module.exports = {
         {
           name: '<:36548namoonlight:1379103329044402257> > General',
           value: [
-            `<:arrow:1309167079231848572>**Name:** ${escapeMarkdown(role.name)}`,
-            `<:arrow:1309167079231848572> **ID:** \`${role.id}\``,
-            `<:arrow:1309167079231848572> **Color:** ${formatColor(role.color)}`,
-            `<:arrow:1309167079231848572> **Position:** ${role.position} (from bottom)`,
-            `<:arrow:1309167079231848572> **Hoisted:** ${formatBoolean(role.hoist)}`,
-            `<:arrow:1309167079231848572> **Mentionable:** ${formatBoolean(role.mentionable, 'Yes', 'No')}`
+            `<:arrow:1463991975610024119>**Name:** ${escapeMarkdown(role.name)}`,
+            `<:arrow:1463991975610024119> **ID:** \`${role.id}\``,
+            `<:arrow:1463991975610024119> **Color:** ${formatColor(role.color)}`,
+            `<:arrow:1463991975610024119> **Position:** ${role.position} (from bottom)`,
+            `<:arrow:1463991975610024119> **Hoisted:** ${formatBoolean(role.hoist)}`,
+            `<:arrow:1463991975610024119> **Mentionable:** ${formatBoolean(role.mentionable, 'Yes', 'No')}`
           ].join('\n'),
           inline: true
         },
@@ -139,7 +147,7 @@ module.exports = {
       const permissionLines = permissions.split('\n');
       const limitedPermissions = permissionLines
         .slice(0, 10) // Limit to 10 permissions
-        .map(p => `<:arrow:1309167079231848572> ${p.replace('•', '')}`);
+        .map(p => `<:arrow:1463991975610024119> ${p.replace('•', '')}`);
 
       let permissionText = limitedPermissions.join('\n');
       if (permissionLines.length > 10) {

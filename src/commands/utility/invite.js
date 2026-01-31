@@ -53,7 +53,7 @@ module.exports = {
         {
           name: '<:manager2:1466828942177734820> > Required Permissions',
           value: REQUIRED_PERMISSIONS.length > 0
-            ? REQUIRED_PERMISSIONS.map(perm => `• ${perm}`).join('\n').split('\n').map(p => `<:arrow:1309167079231848572> ${p.replace('•', '')}`).join('\n')
+            ? REQUIRED_PERMISSIONS.map(perm => `• ${perm}`).join('\n').split('\n').map(p => `<:arrow:1463991975610024119> ${p.replace('•', '')}`).join('\n')
             : 'None',
           inline: true
         },

@@ -1,6 +1,16 @@
 const db = require('../services/database');
 const logger = require('../utils/logger');
 
+async function resyncRoleMenusIdSequence() {
+    try {
+        await db.query(
+            "SELECT setval(pg_get_serial_sequence('role_menus', 'id'), COALESCE((SELECT MAX(id) FROM role_menus), 0) + 1, false)"
+        );
+    } catch (error) {
+        logger.error('Failed to resync role_menus id sequence:', error);
+    }
+}
+
 /**
  * Creates a new role menu.
  * @param {object} data
@@ -12,21 +22,38 @@ async function createRoleMenu(data) {
         embed_color, thumbnail, image, footer, author_name, author_icon
     } = data;
 
-    try {
-        const { rows } = await db.query(
-            `INSERT INTO role_menus (
+    const insertQuery = `INSERT INTO role_menus (
           guild_id, name, title, description, type, mode,
           embed_color, thumbnail, image, footer, author_name, author_icon
        )
        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
-       RETURNING *`,
-            [
-                guildId, name, title, description, type, mode,
-                embed_color, thumbnail, image, footer, author_name, author_icon
-            ]
-        );
+       RETURNING *`;
+
+    const insertParams = [
+        guildId, name, title, description, type, mode,
+        embed_color, thumbnail, image, footer, author_name, author_icon
+    ];
+
+    try {
+        const { rows } = await db.query(insertQuery, insertParams);
         return rows[0];
     } catch (error) {
+        const isDuplicatePrimaryKey =
+            error &&
+            error.code === '23505' &&
+            (error.constraint === 'role_menus_pkey' || `${error.detail || ''}`.includes('role_menus_pkey'));
+
+        if (isDuplicatePrimaryKey) {
+            await resyncRoleMenusIdSequence();
+            try {
+                const { rows } = await db.query(insertQuery, insertParams);
+                return rows[0];
+            } catch (retryError) {
+                logger.error(`Error creating role menu '${name}' for guild ${guildId} after sequence resync:`, retryError);
+                throw retryError;
+            }
+        }
+
         logger.error(`Error creating role menu '${name}' for guild ${guildId}:`, error);
         throw error;
     }

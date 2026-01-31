@@ -13,12 +13,14 @@ module.exports = {
   async execute(message, args, client) {
     const guild = message.guild;
     if (!guild) {
-      return message.reply({
-        embeds: [await createEmbed(null, {
-          description: '❌ This command can only be used in a server.',
-          color: 0xFF3333
-        })]
+      const { createUsageEmbed } = require('../../utils/embed');
+      const embed = await createUsageEmbed(null, {
+        command: 'serverinfo',
+        description: '<a:warningbug:905560995886411806> **DM Not Supported**\nThis command can only be used in a server.',
+        usage: '`!serverinfo`',
+        examples: '`!serverinfo`'
       });
+      return message.reply({ embeds: [embed] });
     }
 
     // Fetch guild members to get accurate counts (especially for presence)
@@ -72,13 +74,13 @@ module.exports = {
         {
           name: '<a:endlessspinne:1463992178010230906> General',
           value: [
-            `<:arrow:1309167079231848572> **ID:** \`${guild.id}\``,
-            `<:arrow:1309167079231848572> **Owner:** ${owner.user.tag} (${owner.id})`,
-            `<:arrow:1309167079231848572> **Created:** <t:${createdAt}:D> (<t:${createdAt}:R>)`,
-            `<:arrow:1309167079231848572> **Verification Level:** ${verificationLevels[guild.verificationLevel] || 'Unknown'}`,
-            `<:arrow:1309167079231848572> **Explicit Filter:** ${explicitFilterLevels[guild.explicitContentFilter] || 'Unknown'}`,
-            `<:arrow:1309167079231848572> **NSFW Level:** ${nsfwLevels[guild.nsfwLevel] || 'Unknown'}`,
-            `<:arrow:1309167079231848572> **Locale:** ${guild.preferredLocale || 'en-US'}`
+            `<:arrow:1463991975610024119> **ID:** \`${guild.id}\``,
+            `<:arrow:1463991975610024119> **Owner:** ${owner.user.tag} (${owner.id})`,
+            `<:arrow:1463991975610024119> **Created:** <t:${createdAt}:D> (<t:${createdAt}:R>)`,
+            `<:arrow:1463991975610024119> **Verification Level:** ${verificationLevels[guild.verificationLevel] || 'Unknown'}`,
+            `<:arrow:1463991975610024119> **Explicit Filter:** ${explicitFilterLevels[guild.explicitContentFilter] || 'Unknown'}`,
+            `<:arrow:1463991975610024119> **NSFW Level:** ${nsfwLevels[guild.nsfwLevel] || 'Unknown'}`,
+            `<:arrow:1463991975610024119> **Locale:** ${guild.preferredLocale || 'en-US'}`
           ].join('\n'),
           inline: false
         },
@@ -90,10 +92,10 @@ module.exports = {
         {
           name: '<a:utiliti:1466829554055381055> Member Stats',
           value: [
-            `<:arrow:1309167079231848572> **Total Members:** ${totalMembers.toLocaleString()}`,
-            `<:arrow:1309167079231848572> **Humans:** ${humanMembers.toLocaleString()}`,
-            `<:arrow:1309167079231848572> **Bots:** ${botMembers.toLocaleString()}`,
-            `<:arrow:1309167079231848572> **Online:** ${onlineMembers.toLocaleString()}`
+            `<:arrow:1463991975610024119> **Total Members:** ${totalMembers.toLocaleString()}`,
+            `<:arrow:1463991975610024119> **Humans:** ${humanMembers.toLocaleString()}`,
+            `<:arrow:1463991975610024119> **Bots:** ${botMembers.toLocaleString()}`,
+            `<:arrow:1463991975610024119> **Online:** ${onlineMembers.toLocaleString()}`
           ].join('\n'),
           inline: true
         },
@@ -105,12 +107,12 @@ module.exports = {
         {
           name: '<:4298eventer:1379103215857045637> Channel Stats',
           value: [
-            `<:arrow:1309167079231848572> **Text:** ${textChannels.toLocaleString()}`,
-            `<:arrow:1309167079231848572> **Voice:** ${voiceChannels.toLocaleString()}`,
-            `<:arrow:1309167079231848572> **Categories:** ${categoryChannels.toLocaleString()}`,
-            `<:arrow:1309167079231848572> **Stages:** ${stageChannels.toLocaleString()}`,
-            `<:arrow:1309167079231848572> **Forums:** ${forumChannels.toLocaleString()}`,
-            `<:arrow:1309167079231848572> **Threads:** ${threadChannels.toLocaleString()}`
+            `<:arrow:1463991975610024119> **Text:** ${textChannels.toLocaleString()}`,
+            `<:arrow:1463991975610024119> **Voice:** ${voiceChannels.toLocaleString()}`,
+            `<:arrow:1463991975610024119> **Categories:** ${categoryChannels.toLocaleString()}`,
+            `<:arrow:1463991975610024119> **Stages:** ${stageChannels.toLocaleString()}`,
+            `<:arrow:1463991975610024119> **Forums:** ${forumChannels.toLocaleString()}`,
+            `<:arrow:1463991975610024119> **Threads:** ${threadChannels.toLocaleString()}`
           ].join('\n'),
           inline: true
         },
@@ -122,9 +124,9 @@ module.exports = {
         {
           name: '<:79914memberroleicom:1379108661367931071> Roles & Emojis',
           value: [
-            `<:arrow:1309167079231848572> **Roles:** ${guild.roles.cache.size.toLocaleString()}`,
-            `<:arrow:1309167079231848572> **Emojis:** ${guild.emojis.cache.size.toLocaleString()}`,
-            `<:arrow:1309167079231848572> **Stickers:** ${guild.stickers.cache.size.toLocaleString()}`
+            `<:arrow:1463991975610024119> **Roles:** ${guild.roles.cache.size.toLocaleString()}`,
+            `<:arrow:1463991975610024119> **Emojis:** ${guild.emojis.cache.size.toLocaleString()}`,
+            `<:arrow:1463991975610024119> **Stickers:** ${guild.stickers.cache.size.toLocaleString()}`
           ].join('\n'),
           inline: true
         },
@@ -136,8 +138,8 @@ module.exports = {
         {
           name: '<:8569booster:1379103272488403115> Boost Status',
           value: [
-            `<:arrow:1309167079231848572> **Level:** ${guild.premiumTier}`,
-            `<:arrow:1309167079231848572> **Boosts:** ${guild.premiumSubscriptionCount || 0}`
+            `<:arrow:1463991975610024119> **Level:** ${guild.premiumTier}`,
+            `<:arrow:1463991975610024119> **Boosts:** ${guild.premiumSubscriptionCount || 0}`
           ].join('\n'),
           inline: true
         }

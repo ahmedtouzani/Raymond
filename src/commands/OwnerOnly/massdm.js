@@ -36,7 +36,7 @@ module.exports = {
         if (args.length < 2) {
             return message.reply({
                 embeds: [new EmbedBuilder()
-                    .setTitle('❌ Missing Arguments')
+                    .setTitle(' Missing Arguments')
                     .setDescription('Provide server IDs and a message\n`!massdm all Hello!`')
                     .setColor(0xE74C3C)
                 ]
@@ -44,17 +44,17 @@ module.exports = {
         }
 
         // Parse arguments
-        const serverIds = args[0].toLowerCase() === 'all' 
+        const serverIds = args[0].toLowerCase() === 'all'
             ? Array.from(message.client.guilds.cache.keys())
             : args[0].split(',').map(id => id.trim());
-        
+
         const content = args.slice(1).join(' ');
 
         // Message validation
         if (!content) {
             return message.reply({
                 embeds: [new EmbedBuilder()
-                    .setTitle('❌ Missing Message')
+                    .setTitle(' Missing Message')
                     .setDescription('Please provide content to send')
                     .setColor(0xE74C3C)
                 ]
@@ -64,7 +64,7 @@ module.exports = {
         if (content.length > MAX_MESSAGE_LENGTH) {
             return message.reply({
                 embeds: [new EmbedBuilder()
-                    .setTitle('❌ Message Too Long')
+                    .setTitle(' Message Too Long')
                     .setDescription(`Message exceeds ${MAX_MESSAGE_LENGTH} characters`)
                     .setColor(0xE74C3C)
                 ]
@@ -76,31 +76,31 @@ module.exports = {
             .setTitle('⚠️ Confirm Mass DM')
             .setDescription(`Send to ${serverIds.length} server(s)?`)
             .addFields(
-                { 
-                    name: 'Message Preview', 
-                    value: content.length > 100 
-                        ? `${content.substring(0, 100)}...` 
+                {
+                    name: 'Message Preview',
+                    value: content.length > 100
+                        ? `${content.substring(0, 100)}...`
                         : content,
-                    inline: false 
+                    inline: false
                 },
-                { 
-                    name: 'Target Servers', 
-                    value: serverIds.length > 5 
+                {
+                    name: 'Target Servers',
+                    value: serverIds.length > 5
                         ? `${serverIds.slice(0, 5).join(', ')}... (${serverIds.length} total)`
                         : serverIds.join(', '),
-                    inline: false 
+                    inline: false
                 }
             )
             .setColor(0xF39C12)
-            .setFooter({ text: '✅ to confirm | ❌ to cancel | ⏱️ 30s' });
+            .setFooter({ text: '<a:okey:1467170671351173121> to confirm |  to cancel | ⏱️ 30s' });
 
         const confirmation = await message.reply({ embeds: [confirmEmbed] });
-        await confirmation.react('✅');
-        await confirmation.react('❌');
+        await confirmation.react('<a:okey:1467170671351173121>');
+        await confirmation.react('');
 
         // Reaction collector
-        const filter = (reaction, user) => ['✅', '❌'].includes(reaction.emoji.name) && user.id === message.author.id;
-        
+        const filter = (reaction, user) => ['<a:okey:1467170671351173121>', ''].includes(reaction.emoji.name) && user.id === message.author.id;
+
         try {
             const collected = await confirmation.awaitReactions({
                 filter,
@@ -109,10 +109,10 @@ module.exports = {
             });
 
             const reaction = collected.first();
-            if (reaction.emoji.name === '❌') {
+            if (reaction.emoji.name === '') {
                 return confirmation.edit({
                     embeds: [new EmbedBuilder()
-                        .setTitle('❌ Operation Cancelled')
+                        .setTitle(' Operation Cancelled')
                         .setColor(0xE74C3C)
                     ]
                 });
@@ -120,7 +120,7 @@ module.exports = {
 
             // Start operation
             activeOperations.set('global', true);
-            await confirmation.reactions.removeAll().catch(() => {});
+            await confirmation.reactions.removeAll().catch(() => { });
 
             const statusMessage = await message.channel.send({
                 embeds: [new EmbedBuilder()
@@ -150,11 +150,11 @@ module.exports = {
                     }
 
                     // Get members efficiently
-                    const members = await guild.members.fetch({ 
+                    const members = await guild.members.fetch({
                         withPresences: false,
-                        force: true 
+                        force: true
                     });
-                    
+
                     const nonBotMembers = members.filter(m => !m.user.bot);
                     const memberCount = nonBotMembers.size;
                     totalMembers += memberCount;
@@ -215,12 +215,12 @@ module.exports = {
             // Final results
             const duration = Math.floor((Date.now() - startTime) / 1000);
             const resultEmbed = new EmbedBuilder()
-                .setTitle('✅ Mass DM Complete')
+                .setTitle('<a:okey:1467170671351173121> Mass DM Complete')
                 .setDescription(`Processed ${processedServers}/${serverIds.length} servers in ${duration}s`)
                 .addFields(
                     { name: 'Total Members', value: totalMembers.toString(), inline: true },
-                    { name: '✅ Success', value: totalSuccess.toString(), inline: true },
-                    { name: '❌ Failed', value: totalFailed.toString(), inline: true },
+                    { name: '<a:okey:1467170671351173121> Success', value: totalSuccess.toString(), inline: true },
+                    { name: ' Failed', value: totalFailed.toString(), inline: true },
                     { name: 'Speed', value: `${Math.round(totalMembers / duration)} members/s`, inline: true }
                 )
                 .setColor(0x2ECC71);
@@ -231,7 +231,7 @@ module.exports = {
             logger.error('Mass DM error:', error);
             message.channel.send({
                 embeds: [new EmbedBuilder()
-                    .setTitle('❌ Operation Failed')
+                    .setTitle(' Operation Failed')
                     .setDescription('An error occurred during mass DM')
                     .setColor(0xE74C3C)
                 ]
@@ -278,8 +278,8 @@ async function updateStatus(message, {
                 { name: 'Progress', value: `${processedServers}/${totalServers} servers`, inline: true },
                 { name: 'Current Server', value: currentServer || 'N/A', inline: true },
                 { name: 'Members', value: memberCount.toString(), inline: true },
-                { name: '✅ Success', value: totalSuccess.toString(), inline: true },
-                { name: '❌ Failed', value: totalFailed.toString(), inline: true }
+                { name: '<a:okey:1467170671351173121> Success', value: totalSuccess.toString(), inline: true },
+                { name: ' Failed', value: totalFailed.toString(), inline: true }
             );
 
         await message.edit({ embeds: [embed] });

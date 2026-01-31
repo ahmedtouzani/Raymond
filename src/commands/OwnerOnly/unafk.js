@@ -36,7 +36,7 @@ module.exports = {
         } catch (error) {
             console.error(error);
             return sendEmbed(message, {
-                title: '❌ Disconnection Error',
+                title: ' Disconnection Error',
                 description: 'Could not leave the voice channel.',
                 color: 0xFF0000,
             });

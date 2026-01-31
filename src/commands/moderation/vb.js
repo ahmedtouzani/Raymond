@@ -35,11 +35,14 @@ module.exports = {
         }
 
         if (!member) {
-            return sendEmbed(message, {
-                title: '❓ User Not Found',
-                description: 'Please mention a user or provide a valid user ID to verify.\n\n**Usage:** `!vb @user`',
-                color: 0x23272A,
+            const { createUsageEmbed } = require('../../utils/embed');
+            const embed = await createUsageEmbed(message.guild.id, {
+                command: 'vb',
+                description: '<a:warningbug:905560995886411806> **User Not Found**\nPlease mention a user or provide a valid user ID to verify.',
+                usage: '`!vb <@user>`',
+                examples: '`!vb @User`'
             });
+            return message.reply({ embeds: [embed] });
         }
 
         // Get role IDs
@@ -61,7 +64,7 @@ module.exports = {
             await member.roles.add([verified, boyRole]);
 
             const successEmbed = {
-                title: '✅ Successfully Verified as Boy',
+                title: '<a:okey:1467170671351173121> Successfully Verified as Boy',
                 thumbnail: {
                     url: member.user.displayAvatarURL({ dynamic: true, size: 256 }),
                 },
@@ -128,7 +131,7 @@ module.exports = {
 
         } catch (err) {
             sendEmbed(message, {
-                title: '❌ Error',
+                title: '<a:warningbug:905560995886411806> Error',
                 description: `Failed to verify user.\n\`\`\`${err.message}\`\`\``,
                 color: 0x23272A,
             });

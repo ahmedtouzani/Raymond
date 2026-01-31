@@ -42,7 +42,7 @@ module.exports = {
       });
     }
     // status or default
-    const status = config.settings.spamDetectionEnabled !== false ? '<:Done:1305644486453493801> Enabled' : '❌ Disabled';
+    const status = config.settings.spamDetectionEnabled !== false ? '<:Done:1305644486453493801> Enabled' : ' Disabled';
     return sendEmbed(message, {
       title: 'Spam Automod Status',
       description: `Status: ${status}\n\nUsage:\n• !autospam on/off\n• !autospam status`,

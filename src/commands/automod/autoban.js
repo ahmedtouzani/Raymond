@@ -33,11 +33,14 @@ module.exports = {
         const fetched = await message.client.fetchInvite(inviteCode);
         const targetGuild = fetched.guild;
         if (!targetGuild) {
-          return sendEmbed(message, {
-            title: '❌ Invalid Invite',
-            description: 'Could not resolve a target server for this invite.',
-            color: 0x23272A,
+          const { createUsageEmbed } = require('../../utils/embed');
+          const embed = await createUsageEmbed(message.guild.id, {
+            command: 'autoban set',
+            description: '<a:warningbug:905560995886411806> **Invalid Invite**\nCould not resolve a target server for this invite.',
+            usage: '`!autoban set <invite>`',
+            examples: '`!autoban set discord.gg/invite`'
           });
+          return message.reply({ embeds: [embed] });
         }
         config.settings.autobanBlacklist = config.settings.autobanBlacklist.filter(e => e && e.guildId);
         if (config.settings.autobanBlacklist.some(e => e.guildId === targetGuild.id)) {
@@ -55,20 +58,23 @@ module.exports = {
           color: 0x23272A,
         });
       } catch (e) {
-        return sendEmbed(message, {
-          title: '❌ Invalid Invite',
-          description: 'Could not resolve this invite. Make sure it is a valid, non-expired invite.',
-          color: 0x23272A,
+        const { createUsageEmbed } = require('../../utils/embed');
+        const embed = await createUsageEmbed(message.guild.id, {
+          command: 'autoban set',
+          description: '<a:warningbug:905560995886411806> **Invalid Invite**\nCould not resolve this invite. Make sure it is a valid, non-expired invite.',
+          usage: '`!autoban set <invite>`',
+          examples: '`!autoban set discord.gg/invite`'
         });
+        return message.reply({ embeds: [embed] });
       }
     }
     if (sub === 'remove' && args[1]) {
       const target = args.slice(1).join(' ').trim();
-      
+
       // Get fresh config from database
       const currentConfig = await getGuildConfig(message.guild.id) || { settings: {} };
       currentConfig.settings.autobanBlacklist = (currentConfig.settings.autobanBlacklist || []).filter(e => e && e.guildId);
-      
+
       // Try to find by ID first, then by name (case insensitive)
       const index = currentConfig.settings.autobanBlacklist.findIndex(entry => {
         if (!entry) return false;
@@ -78,22 +84,25 @@ module.exports = {
         if (entry.name && entry.name.toLowerCase() === target.toLowerCase()) return true;
         return false;
       });
-      
+
       if (index === -1) {
-        return sendEmbed(message, {
-          title: '❌ Not Found',
-          description: 'This server is not in the blacklist. Use the exact server ID or name as shown in `!autoban list`.',
-          color: 0x23272A,
+        const { createUsageEmbed } = require('../../utils/embed');
+        const embed = await createUsageEmbed(message.guild.id, {
+          command: 'autoban remove',
+          description: '<a:warningbug:905560995886411806> **Not Found**\nThis server is not in the blacklist.',
+          usage: '`!autoban remove <serverID|name>`',
+          examples: '`!autoban remove 123456789012345678`'
         });
+        return message.reply({ embeds: [embed] });
       }
-      
+
       const removed = currentConfig.settings.autobanBlacklist.splice(index, 1)[0];
-      
+
       try {
         await setGuildConfig(message.guild.id, currentConfig);
         // Update local config to match
         config.settings.autobanBlacklist = [...currentConfig.settings.autobanBlacklist];
-        
+
         return sendEmbed(message, {
           title: '<:Done:1305644486453493801> Blacklist Updated',
           description: `Removed **${removed.name || `Server (${removed.guildId})`}** from the autoban blacklist.`,
@@ -102,7 +111,7 @@ module.exports = {
       } catch (error) {
         console.error('Failed to update database:', error);
         return sendEmbed(message, {
-          title: '❌ Database Error',
+          title: ' Database Error',
           description: 'Failed to update the blacklist in the database. Please try again.',
           color: 0x23272A,
         });
@@ -110,7 +119,7 @@ module.exports = {
     }
     if (sub === 'list') {
       const list = config.settings.autobanBlacklist.filter(e => e && e.guildId);
-      const spamStatus = config.settings.spamDetectionEnabled === false ? '❌ Disabled' : '<:Done:1305644486453493801> Enabled';
+      const spamStatus = config.settings.spamDetectionEnabled === false ? ' Disabled' : '<:Done:1305644486453493801> Enabled';
       return sendEmbed(message, {
         title: 'Autoban Blacklist',
         description: (list.length ? list.map(i => `• ${i.name || i.guildId} (${i.guildId})`).join('\n') : 'No servers blacklisted.') + `\n\n**Spam Detection:** ${spamStatus}`,
@@ -126,11 +135,14 @@ module.exports = {
           logChannel = message.guild.channels.cache.get(channelId);
         }
         if (!logChannel) {
-          return sendEmbed(message, {
-            title: '❓ Channel Not Found',
-            description: 'Please mention a valid channel or provide a valid channel ID.',
-            color: 0x23272A,
+          const { createUsageEmbed } = require('../../utils/embed');
+          const embed = await createUsageEmbed(message.guild.id, {
+            command: 'autoban log',
+            description: '<a:warningbug:905560995886411806> **Channel Not Found**\nPlease mention a valid channel or provide a valid channel ID.',
+            usage: '`!autoban log <#channel/id>`',
+            examples: '`!autoban log #autoban-logs`'
           });
+          return message.reply({ embeds: [embed] });
         }
         config.settings.autobanLogChannel = logChannel.id;
         await setGuildConfig(message.guild.id, config);
@@ -154,17 +166,17 @@ module.exports = {
       const target = args.slice(1).join(' ').trim();
       const currentConfig = await getGuildConfig(message.guild.id) || { settings: {} };
       const blacklist = (currentConfig.settings.autobanBlacklist || []).filter(e => e && e.guildId);
-      
+
       // Check if the target is in the blacklist
       const isBlacklisted = blacklist.some(entry => {
         if (!entry) return false;
-        return entry.guildId === target || 
-               (entry.name && entry.name.toLowerCase() === target.toLowerCase());
+        return entry.guildId === target ||
+          (entry.name && entry.name.toLowerCase() === target.toLowerCase());
       });
-      
+
       if (isBlacklisted) {
-        const entry = blacklist.find(e => 
-          e.guildId === target || 
+        const entry = blacklist.find(e =>
+          e.guildId === target ||
           (e.name && e.name.toLowerCase() === target.toLowerCase())
         );
         return sendEmbed(message, {
@@ -184,11 +196,11 @@ module.exports = {
     return sendEmbed(message, {
       title: 'Autoban Blacklist Help',
       description: 'Add: `!autoban set <invite>` (by invite link/code; the server will be resolved and blacklisted)\n' +
-                 'Remove: `!autoban remove <server id|name>`\n' +
-                 'Check: `!autoban check <server id|name>`\n' +
-                 'List: `!autoban list`\n' +
-                 'Log: `!autoban log <#channel/id>`\n' +
-                 'Spam: `!autoban spam <on|off>` (toggle spam detection for this server)',
+        'Remove: `!autoban remove <server id|name>`\n' +
+        'Check: `!autoban check <server id|name>`\n' +
+        'List: `!autoban list`\n' +
+        'Log: `!autoban log <#channel/id>`\n' +
+        'Spam: `!autoban spam <on|off>` (toggle spam detection for this server)',
       color: 0x23272A,
     });
   },

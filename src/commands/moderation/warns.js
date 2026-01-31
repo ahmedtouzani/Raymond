@@ -29,11 +29,14 @@ module.exports = {
     }
 
     if (!args[0]) {
-      return sendEmbed(message, {
-        title: '❓ User Not Specified',
-        description: 'Please mention a user or provide their user ID to view warnings.',
-        color: 0x23272A,
+      const { createUsageEmbed } = require('../../utils/embed');
+      const embed = await createUsageEmbed(message.guild.id, {
+        command: 'warns',
+        description: '<a:warningbug:905560995886411806> **User Not Specified**\nPlease mention a user or provide their user ID to view warnings.',
+        usage: '`!warns <@user/ID>`',
+        examples: '`!warns @User`\n`!warns 123456789012345678`'
       });
+      return message.reply({ embeds: [embed] });
     }
 
     // Try to get member from mention first, fallback to fetching by ID
@@ -85,7 +88,7 @@ module.exports = {
       });
     } catch (error) {
       return sendEmbed(message, {
-        title: '❌ Error',
+        title: '<a:warningbug:905560995886411806> Error',
         description: `Failed to fetch warnings.\n\`\`\`${error.message}\`\`\``,
         color: 0x23272A,
       });

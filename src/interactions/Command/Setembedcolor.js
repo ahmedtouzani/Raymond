@@ -19,7 +19,7 @@ module.exports = {
     // Validate hex color
     if (!/^#?[0-9A-Fa-f]{6}$/.test(color)) {
       return sendEmbed(interaction, {
-        title: '❌ Invalid Color',
+        title: '<a:warningbug:905560995886411806> Invalid Color',
         description: 'Please provide a valid hex color code (e.g. #ffcc00).',
         color: '#ff0000'
       }, true);

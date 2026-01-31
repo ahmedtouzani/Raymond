@@ -26,11 +26,14 @@ module.exports = {
     // 2. Argument Parsing & Validation
     const action = args[0]?.toLowerCase();
     if (!['add', 'remove'].includes(action)) {
-      return sendEmbed(message, {
-        title: 'Invalid Action',
-        description: 'Please specify `add` or `remove` as the first argument.\nUsage: `=role <add|remove> <@user|userId> <@role|roleId>`',
-        color: 0x23272A,
+      const { createUsageEmbed } = require('../../utils/embed');
+      const embed = await createUsageEmbed(message.guild.id, {
+        command: 'role',
+        description: '<a:warningbug:905560995886411806> **Invalid Action**\nPlease specify `add` or `remove` as the first argument.',
+        usage: '`!role <add|remove> <@user> <@role>`',
+        examples: '`!role add @User @Role`\n`!role remove @User @Role`'
       });
+      return message.reply({ embeds: [embed] });
     }
 
     // Resolve Member

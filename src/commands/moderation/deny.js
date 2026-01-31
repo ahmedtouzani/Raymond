@@ -11,7 +11,7 @@ const PERMISSIONS = {
   'history': 'Read Message History',
   'external_emojis': 'Use External Emojis',
   'external_stickers': 'Use External Stickers',
-  
+
   // Voice Permissions
   'connect': 'Connect',
   'speak': 'Speak',
@@ -47,18 +47,18 @@ module.exports = {
   botPermissions: [PermissionFlagsBits.ManageChannels],
   cooldown: 10,
   prefixless: false,
-  
+
   async execute(message, args, client) {
     const channel = message.mentions.channels.first() || message.channel;
-    const target = message.mentions.members?.first() || 
-                  message.mentions.roles.first() ||
-                  (args[0] ? (await message.guild.roles.fetch(args[0]).catch(() => null) || 
-                             await message.guild.members.fetch(args[0]).catch(() => null)) : null);
-    
+    const target = message.mentions.members?.first() ||
+      message.mentions.roles.first() ||
+      (args[0] ? (await message.guild.roles.fetch(args[0]).catch(() => null) ||
+        await message.guild.members.fetch(args[0]).catch(() => null)) : null);
+
     // Parse permissions from command arguments
     const permissions = new Set();
     let permissionFlags = 0n;
-    
+
     // Parse permission arguments
     for (const arg of args) {
       const perm = arg.toLowerCase();
@@ -67,7 +67,7 @@ module.exports = {
         permissionFlags |= PERMISSION_FLAGS[perm] || 0n;
       }
     }
-    
+
     // If no permissions specified, deny all permissions
     if (permissions.size === 0) {
       // Add all available permissions to deny
@@ -78,40 +78,43 @@ module.exports = {
         }
       });
     }
-    
+
     // Check if target is valid
     if (!target) {
-      const embed = await createEmbed(message.guild.id, {
-        color: 0xFF3333,
-        description: '❌ Please mention a valid user or role to deny permissions from.'
+      const { createUsageEmbed } = require('../../utils/embed');
+      const embed = await createUsageEmbed(message.guild.id, {
+        command: 'deny',
+        description: '<a:warningbug:905560995886411806> **Target Not Found**\nPlease mention a valid user or role to deny permissions from.',
+        usage: '`!deny <@user/@role> [permission] (Optional: all)`',
+        examples: '`!deny @user send`\n`!deny @role view connect`'
       });
       return message.reply({ embeds: [embed] });
     }
-    
+
     try {
       // Get current permissions
       const currentOverwrites = channel.permissionOverwrites.cache.get(target.id);
       const currentDeny = currentOverwrites?.deny.bitfield || 0n;
       const currentAllow = currentOverwrites?.allow.bitfield || 0n;
-      
+
       // Calculate new permissions
       const newDeny = currentDeny | permissionFlags;
       const newAllow = currentAllow & ~permissionFlags; // Remove from allowed if present
-      
+
       // Update permissions
       await channel.permissionOverwrites.edit(target, {
         ...new PermissionsBitField(newAllow),
         ...(new PermissionsBitField(newDeny).toArray().reduce((a, v) => ({ ...a, [v]: false }), {}))
       });
-      
+
       // Create success embed
       const permissionList = Array.from(permissions)
         .map(perm => `• ${PERMISSIONS[perm]}`)
         .join('\n');
-      
+
       const embed = await createEmbed(message.guild.id, {
         color: 0x4CAF50,
-        title: '✅ Permissions Updated',
+        title: '<a:okey:1467170671351173121> Permissions Updated',
         description: `Successfully updated permissions for ${target} in ${channel}`,
         fields: [
           {
@@ -126,14 +129,14 @@ module.exports = {
           }
         ]
       });
-      
+
       return message.reply({ embeds: [embed] });
-      
+
     } catch (error) {
       console.error('Error updating channel permissions:', error);
       const embed = await createEmbed(message.guild.id, {
         color: 0xFF3333,
-        description: '❌ An error occurred while updating channel permissions. Please check my permissions and try again.'
+        description: ' An error occurred while updating channel permissions. Please check my permissions and try again.'
       });
       return message.reply({ embeds: [embed] });
     }

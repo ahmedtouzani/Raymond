@@ -21,8 +21,8 @@ const EMOJIS = {
     BELL: '🔔',
     TOOLS: '🛠️',
     ARROW: '➡️',
-    CHECK: '✅',
-    CROSS: '❌',
+    CHECK: '<a:okey:1467170671351173121>',
+    CROSS: '',
     INFO: 'ℹ️'
 };
 
@@ -36,15 +36,15 @@ module.exports = {
     guildOnly: true,
     ownerOnly: true, // Only the bot owner can use this command
     premiumOnly: true, // Custom flag to indicate this is a premium feature
-    
+
     async execute(message, args, client) {
         try {
             // Check if this is the premium server
             if (message.guild.id !== PREMIUM_SERVER_ID) {
                 return message.reply({
-                    content: '❌ This command is only available in the premium server.'
+                    content: ' This command is only available in the premium server.'
                 }).then(msg => setTimeout(() => msg.delete().catch(console.error), 5000))
-                .catch(console.error);
+                    .catch(console.error);
             }
 
 
@@ -55,7 +55,7 @@ module.exports = {
             try {
                 // Ensure required roles exist
                 await ensureReactionRoles(message.guild);
-                
+
                 // Create the modern embed message
                 const embed = new EmbedBuilder()
                     .setColor(COLORS.PRIMARY)
@@ -96,25 +96,25 @@ module.exports = {
                 const roleMessage = await message.channel.send({ embeds: [embed] });
                 await roleMessage.react('🔔');
                 await roleMessage.react('🛠️');
-                
+
                 logger.info(`Reaction role message created with ID: ${roleMessage.id} in channel ${roleMessage.channel.id}`);
-                
+
                 // Delete the processing message and command message
                 await processingMsg.delete().catch(console.error);
                 await message.delete().catch(console.error);
-                
+
                 // Send success message that will auto-delete
-                const successMsg = await message.channel.send('✅ Successfully created reaction role message!');
+                const successMsg = await message.channel.send('<a:okey:1467170671351173121> Successfully created reaction role message!');
                 setTimeout(() => successMsg.delete().catch(console.error), 5000);
 
             } catch (error) {
                 logger.error('Error in reaction role setup:', error);
-                await processingMsg.edit('❌ Failed to set up reaction roles. Please check the bot permissions and try again.');
+                await processingMsg.edit(' Failed to set up reaction roles. Please check the bot permissions and try again.');
             }
 
         } catch (error) {
             logger.error('Unexpected error in sendnotify command:', error);
-            message.channel.send('❌ An unexpected error occurred while creating the reaction role message.')
+            message.channel.send(' An unexpected error occurred while creating the reaction role message.')
                 .then(msg => setTimeout(() => msg.delete().catch(console.error), 5000))
                 .catch(console.error);
         }

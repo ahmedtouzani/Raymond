@@ -28,12 +28,14 @@ module.exports = {
       const command = commands.get(name) || Array.from(commands.values()).find(c => c.aliases && c.aliases.includes(name));
 
       if (!command) {
-        return message.reply({
-          embeds: [await createEmbed(message.guild?.id, {
-            description: '❌ That command does not exist.',
-            color: 0xFF3333
-          })]
+        const { createUsageEmbed } = require('../../utils/embed');
+        const embed = await createUsageEmbed(message.guild?.id, {
+          command: 'help',
+          description: '<a:warningbug:905560995886411806> **Command Not Found**\nThat command does not exist.',
+          usage: '`!help [command_name]`',
+          examples: '`!help ban`\n`!help userinfo`'
         });
+        return message.reply({ embeds: [embed] });
       }
 
       const data = [];

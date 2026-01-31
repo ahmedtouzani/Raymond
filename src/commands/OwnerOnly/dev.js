@@ -30,7 +30,14 @@ module.exports = {
     switch (subCommand) {
       case 'announce': {
         if (!content) {
-          return sendEmbed(message, { title: 'Error', description: 'Please provide a message to announce. Usage: `=dev announce <message>`', type: 'error' }, { ephemeral: true });
+          const { createUsageEmbed } = require('../../utils/embed');
+          const embed = await createUsageEmbed(message.guild.id, {
+            command: 'dev announce',
+            description: '<a:warningbug:905560995886411806> **Missing Content**\nPlease provide a message to announce.',
+            usage: '`!dev announce <message>`',
+            examples: '`!dev announce Update coming soon!`'
+          });
+          return message.reply({ embeds: [embed] });
         }
 
         const announceChannel = await guild.channels.fetch(devServerConfig.channels.announcements).catch(() => null);
@@ -64,7 +71,14 @@ module.exports = {
         const description = args.slice(2).join(' ');
 
         if (!version || !description) {
-          return sendEmbed(message, { title: 'Error', description: 'Please provide a version and description. Usage: `=dev update <version> <description>`', type: 'error' }, { ephemeral: true });
+          const { createUsageEmbed } = require('../../utils/embed');
+          const embed = await createUsageEmbed(message.guild.id, {
+            command: 'dev update',
+            description: '<a:warningbug:905560995886411806> **Missing Arguments**\nPlease provide a version and description.',
+            usage: '`!dev update <version> <description>`',
+            examples: '`!dev update v2.0.0 Major rewrite`'
+          });
+          return message.reply({ embeds: [embed] });
         }
 
         const updateChannel = await guild.channels.fetch(devServerConfig.channels.updates).catch(() => null);

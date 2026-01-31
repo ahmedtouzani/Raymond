@@ -25,23 +25,26 @@ module.exports = {
         const channel = message.guild.channels.cache.get(channelId);
 
         if (!channel || channel.type !== 2) {
-            return sendEmbed(message, {
-                title: '❌ Invalid Channel',
-                description: 'Please provide a valid voice channel ID or mention.',
-                color: 0x23272A,
+            const { createUsageEmbed } = require('../../utils/embed');
+            const embed = await createUsageEmbed(message.guild.id, {
+                command: 'setjailvoice',
+                description: '<a:warningbug:905560995886411806> **Invalid Channel**\nPlease provide a valid voice channel ID or mention.',
+                usage: '`!setjailvoice <channel_id>`',
+                examples: '`!setjailvoice 123456789012345678`'
             });
+            return message.reply({ embeds: [embed] });
         }
 
         try {
             await setJailVoiceChannel(message.guild.id, channelId);
             return sendEmbed(message, {
-                title: '✅ Jail Voice Channel Set',
+                title: '<a:okey:1467170671351173121> Jail Voice Channel Set',
                 description: `Jailed users will now be moved to <#${channelId}>.`,
                 color: 0x23272A,
             });
         } catch (error) {
             return sendEmbed(message, {
-                title: '❌ Error',
+                title: '<a:warningbug:905560995886411806> Error',
                 description: `Failed to set jail voice channel.\n\`\`\`${error.message}\`\`\``,
                 color: 0x23272A,
             });

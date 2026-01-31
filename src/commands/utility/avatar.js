@@ -43,24 +43,29 @@ module.exports = {
       message.author;
 
     if (!target) {
-      return message.reply({
-        content: '❌ User not found. Please mention a valid user or provide a user ID.'
+      const { createUsageEmbed } = require('../../utils/embed');
+      const embed = await createUsageEmbed(message.guild?.id, {
+        command: 'avatar',
+        description: '<a:warningbug:905560995886411806> **User Not Found**\nPlease mention a valid user or provide a User ID.',
+        usage: '`!avatar [user]`',
+        examples: '`!avatar @User`'
       });
+      return message.reply({ embeds: [embed] });
     }
 
     // Build avatar information
     const avatarInfo = [
-      `<:arrow:1309167079231848572> **User ID:** \`${target.id}\``,
-      `<:arrow:1309167079231848572> **Created:** <t:${Math.floor(target.createdTimestamp / 1000)}:D>`,
-      `<:arrow:1309167079231848572> **Avatar Type:** ${target.avatar?.startsWith('a_') ? 'Animated' : 'Static'}`,
-      `<:arrow:1309167079231848572> **Last Updated:** ${getAvatarDate(target.id, target.avatar)}`
+      `<:arrow:1463991975610024119> **User ID:** \`${target.id}\``,
+      `<:arrow:1463991975610024119> **Created:** <t:${Math.floor(target.createdTimestamp / 1000)}:D>`,
+      `<:arrow:1463991975610024119> **Avatar Type:** ${target.avatar?.startsWith('a_') ? 'Animated' : 'Static'}`,
+      `<:arrow:1463991975610024119> **Last Updated:** ${getAvatarDate(target.id, target.avatar)}`
     ];
 
     // Add server-specific avatar info if available
     if (message.guild && message.guild.members.cache.get(target.id)?.avatar) {
       const member = message.guild.members.cache.get(target.id);
       avatarInfo.push(`\n<:manager:1466826492334833665> **Server Avatar**`);
-      avatarInfo.push(`<:arrow:1309167079231848572> **Updated:** ${getAvatarDate(target.id, member.avatar)}`);
+      avatarInfo.push(`<:arrow:1463991975610024119> **Updated:** ${getAvatarDate(target.id, member.avatar)}`);
     }
 
     // Create base embed

@@ -61,12 +61,14 @@ module.exports = {
         message.member;
 
       if (!member) {
-        return message.reply({
-          embeds: [await createEmbed(message.guild.id, {
-            description: '❌ User not found in this server',
-            color: 0xff3333
-          })]
+        const { createUsageEmbed } = require('../../utils/embed');
+        const embed = await createUsageEmbed(message.guild.id, {
+          command: 'userinfo',
+          description: '<a:warningbug:905560995886411806> **User Not Found**\nPlease mention a valid user or provide a User ID.',
+          usage: '`!userinfo [user]`',
+          examples: '`!userinfo @User`'
         });
+        return message.reply({ embeds: [embed] });
       }
     } catch (error) {
       console.error('Error fetching member:', error);
@@ -138,13 +140,13 @@ module.exports = {
         {
           name: '<:manager:1466826492334833665> > General',
           value: [
-            `<:arrow:1309167079231848572> **Username:** ${escapeMarkdown(user.username)}`,
-            `<:arrow:1309167079231848572> **ID:** \`${user.id}\``,
-            `<:arrow:1309167079231848572> **Nickname:** ${escapeMarkdown(nickname)}`,
-            `<:arrow:1309167079231848572> **Bot:** ${user.bot ? '<:manager:1466826492334833665>' : 'No'}`,
-            `<:arrow:1309167079231848572> **Status:** ${getStatusEmoji(member.presence?.status)} ${member.presence?.status || 'offline'}`,
-            `<:arrow:1309167079231848572> **Device:** ${deviceStatus.join(' ') || 'Unknown'}`,
-            `<:arrow:1309167079231848572> **Badges:** ${getUserBadges(user)}`,
+            `<:arrow:1463991975610024119> **Username:** ${escapeMarkdown(user.username)}`,
+            `<:arrow:1463991975610024119> **ID:** \`${user.id}\``,
+            `<:arrow:1463991975610024119> **Nickname:** ${escapeMarkdown(nickname)}`,
+            `<:arrow:1463991975610024119> **Bot:** ${user.bot ? '<:manager:1466826492334833665>' : 'No'}`,
+            `<:arrow:1463991975610024119> **Status:** ${getStatusEmoji(member.presence?.status)} ${member.presence?.status || 'offline'}`,
+            `<:arrow:1463991975610024119> **Device:** ${deviceStatus.join(' ') || 'Unknown'}`,
+            `<:arrow:1463991975610024119> **Badges:** ${getUserBadges(user)}`,
           ].join('\n'),
           inline: true
         },
@@ -164,7 +166,7 @@ module.exports = {
         },
         {
           name: '<:4298eventer:1379103215857045637> > Key Permissions',
-          value: keyPermissions ? keyPermissions.split('\n').map(p => `<:arrow:1309167079231848572> ${p.replace('•', '')}`).join('\n') : 'None',
+          value: keyPermissions ? keyPermissions.split('\n').map(p => `<:arrow:1463991975610024119> ${p.replace('•', '')}`).join('\n') : 'None',
           inline: false
         }
       ],

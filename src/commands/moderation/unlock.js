@@ -21,6 +21,18 @@ module.exports = {
       });
     }
 
+    // Check usage
+    if (args[0] === 'help') {
+      const { createUsageEmbed } = require('../../utils/embed');
+      const embed = await createUsageEmbed(message.guild.id, {
+        command: 'unlock',
+        description: '🔓 **Unlock Channel**\nAllows members to send message in the channel again.',
+        usage: '`!unlock`',
+        examples: '`!unlock`'
+      });
+      return message.reply({ embeds: [embed] });
+    }
+
     const everyoneRole = message.guild.roles.everyone;
 
     try {
@@ -35,7 +47,7 @@ module.exports = {
       });
     } catch (err) {
       sendEmbed(message, {
-        title: '❌ Error',
+        title: '<a:warningbug:905560995886411806> Error',
         description: `Failed to unlock the channel.\n\`\`\`${err.message}\`\`\``,
         color: 0x23272A,
       });

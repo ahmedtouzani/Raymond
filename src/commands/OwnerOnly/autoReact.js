@@ -8,7 +8,7 @@ module.exports = {
     description: 'Manages auto-reactions for users or channels.',
     usage: '=autoreact <add|remove|list> <user|channel> <@user|#channel> <emoji>',
     category: 'OwnerOnly',
-    prefixless: true, 
+    prefixless: true,
 
     async execute(message, args, client) {
         if (message.author.id !== process.env.OWNER_ID) {
@@ -56,7 +56,7 @@ async function handleAdd(message, type, targetMention, emoji) {
 
     const added = await addAutoReaction(message.guild.id, targetMention.id, type, emoji);
     if (added) {
-        return sendEmbed(message, { title: '✅ Success', description: `Now auto-reacting to ${targetMention} with ${emoji}.` });
+        return sendEmbed(message, { title: '<a:okey:1467170671351173121> Success', description: `Now auto-reacting to ${targetMention} with ${emoji}.` });
     } else {
         return sendEmbed(message, { title: 'Already Exists', description: `I am already set to react to ${targetMention} with ${emoji}.` });
     }
@@ -73,7 +73,7 @@ async function handleRemove(message, type, targetMention, emoji) {
 
     const removed = await removeAutoReaction(message.guild.id, targetMention.id, emoji);
     if (removed) {
-        return sendEmbed(message, { title: '✅ Success', description: `Stopped auto-reacting to ${targetMention} with ${emoji}.` });
+        return sendEmbed(message, { title: '<a:okey:1467170671351173121> Success', description: `Stopped auto-reacting to ${targetMention} with ${emoji}.` });
     } else {
         return sendEmbed(message, { title: 'Not Found', description: `I was not configured to react to ${targetMention} with ${emoji}.` });
     }

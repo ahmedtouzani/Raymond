@@ -29,21 +29,21 @@ async function getGuildConfig(guildId, forceRefresh = false) {
       'SELECT * FROM guild_configs WHERE guild_id = $1',
       [guildId]
     );
-    
+
     // If no config exists, create a default one
     const config = rows[0] || await createDefaultConfig(guildId);
-    
+
     // Ensure settings is always an object
     if (!config.settings || typeof config.settings !== 'object') {
       config.settings = {};
     }
-    
+
     // Update cache
     guildConfigs.set(guildId, {
       data: config,
       cachedAt: Date.now()
     });
-    
+
     return config;
   } catch (error) {
     logger.error(`Error getting config for guild ${guildId}:`, error);
@@ -77,7 +77,7 @@ async function createDefaultConfig(guildId) {
   } catch (error) {
     logger.error('Error creating default config:', error);
   }
-  
+
   return defaultConfig;
 }
 
@@ -96,7 +96,7 @@ async function setGuildConfig(guildId, updates) {
     return await db.transaction(async (client) => {
       // Get current config (bypass cache)
       const current = await getGuildConfig(guildId, true);
-      
+
       // Merge updates with current settings
       const updatedConfig = {
         ...current,
@@ -152,7 +152,7 @@ async function setGuildPrefix(guildId, prefix) {
       'UPDATE guild_configs SET prefix = $1, updated_at = NOW() WHERE guild_id = $2',
       [prefix, guildId]
     );
-    
+
     // Invalidate cache
     clearCache(guildId);
     return true;
@@ -172,7 +172,7 @@ async function setGuildPrefix(guildId, prefix) {
 async function setGuildEmbedSetting(guildId, key, value) {
   try {
     const config = await getGuildConfig(guildId);
-    
+
     // Create a new settings object with the updated value
     const newSettings = {
       ...config.settings,
@@ -181,7 +181,7 @@ async function setGuildEmbedSetting(guildId, key, value) {
         [key]: value
       }
     };
-    
+
     await setGuildConfig(guildId, { settings: newSettings });
     return true;
   } catch (error) {
@@ -197,11 +197,11 @@ async function setGuildEmbedSetting(guildId, key, value) {
  */
 async function initializeGuildConfigs(client) {
   try {
-    
+
     // For each guild the bot is in, ensure it has a config
     const guilds = client.guilds.cache;
     logger.info(`Initializing configs for ${guilds.size} guilds...`);
-    
+
     for (const [guildId, guild] of guilds) {
       try {
         await getGuildConfig(guildId); // This will create default config if it doesn't exist
@@ -209,8 +209,8 @@ async function initializeGuildConfigs(client) {
         logger.error(`Error initializing config for guild ${guildId}:`, error);
       }
     }
-    
-    logger.info('✅ Guild configurations initialized');
+
+    logger.info('<a:okey:1467170671351173121> Guild configurations initialized');
     return { success: true, guildCount: guilds.size };
   } catch (error) {
     logger.error('❌ Error initializing guild configs:', error);

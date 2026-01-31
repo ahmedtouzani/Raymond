@@ -10,7 +10,7 @@ module.exports = {
   async execute(message, args) {
     if (!message.member.permissions.has(PermissionsBitField.Flags.ManageRoles) && !message.member.permissions.has(PermissionsBitField.Flags.Administrator)) {
       return message.reply({
-        embeds: [new EmbedBuilder().setDescription('❌ You need Manage Roles or Administrator to use this command.').setColor(0x23272A)]
+        embeds: [new EmbedBuilder().setDescription(' You need Manage Roles or Administrator to use this command.').setColor(0x23272A)]
       });
     }
     const sub = args[0];
@@ -22,14 +22,14 @@ module.exports = {
         return message.reply({ embeds: [new EmbedBuilder().setDescription('Usage: levelrole set <text|voice> <level> @role').setColor(0x23272A)] });
       }
       await setLevelRole(message.guild.id, ladder, level, role.id);
-      return message.reply({ embeds: [new EmbedBuilder().setDescription(`✅ Set ${role} as reward for ${ladder} level ${level}.`).setColor(0x57F287)] });
+      return message.reply({ embeds: [new EmbedBuilder().setDescription(`<a:okey:1467170671351173121> Set ${role} as reward for ${ladder} level ${level}.`).setColor(0x57F287)] });
     } else if (sub === 'remove') {
       const level = parseInt(args[2], 10);
       if (!level) {
         return message.reply({ embeds: [new EmbedBuilder().setDescription('Usage: levelrole remove <text|voice> <level>').setColor(0x23272A)] });
       }
       await removeLevelRole(message.guild.id, ladder, level);
-      return message.reply({ embeds: [new EmbedBuilder().setDescription(`✅ Removed reward role for ${ladder} level ${level}.`).setColor(0x57F287)] });
+      return message.reply({ embeds: [new EmbedBuilder().setDescription(`<a:okey:1467170671351173121> Removed reward role for ${ladder} level ${level}.`).setColor(0x57F287)] });
     } else if (sub === 'list') {
       const argLadder = args[1];
 

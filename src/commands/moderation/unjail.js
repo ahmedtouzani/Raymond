@@ -9,7 +9,7 @@ module.exports = {
     cooldown: 5,
     permissions: [PermissionsBitField.Flags.ManageRoles],
     category: 'Moderation',
-    
+
     async execute(message, args, client) {
         const ownerId = process.env.OWNER_ID;
         const isOwner = message.author.id === ownerId;
@@ -31,11 +31,14 @@ module.exports = {
             }
         }
         if (!member) {
-            return sendEmbed(message, {
-                title: '❓ User Not Found',
-                description: 'Please mention a user or provide a valid user ID to mute.',
-                color: 0x23272A,
+            const { createUsageEmbed } = require('../../utils/embed');
+            const embed = await createUsageEmbed(message.guild.id, {
+                command: 'unjail',
+                description: '<a:warningbug:905560995886411806> **User Not Found**\nPlease mention a user or provide a valid user ID to unjail.',
+                usage: '`!unjail <@user>`',
+                examples: '`!unjail @User`'
             });
+            return message.reply({ embeds: [embed] });
         }
 
         const guildSettings = await getJailSettings(message.guild.id);

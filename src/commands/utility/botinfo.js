@@ -85,7 +85,14 @@ module.exports = {
   async execute(message, args, client) {
     // Check if the command user is the bot owner
     if (message.author.id !== '716381717589393499') {
-      return message.reply({ content: '❌ This command is restricted to the bot owner only.' });
+      const { createUsageEmbed } = require('../../utils/embed');
+      const embed = await createUsageEmbed(message.guild?.id, {
+        command: 'botinfo',
+        description: '<a:warningbug:905560995886411806> **Access Denied**\nThis command is restricted to the bot owner only.',
+        usage: '`!botinfo`',
+        examples: '`!botinfo`'
+      });
+      return message.reply({ embeds: [embed] });
     }
 
     // Calculate memory usage
@@ -122,38 +129,38 @@ module.exports = {
         {
           name: '<:manager:1466826492334833665> Bot Stats',
           value: [
-            `<:arrow:1309167079231848572> **Servers:** ${guilds.toLocaleString()}`,
-            `<:arrow:1309167079231848572> **Users:** ${users.toLocaleString()}`,
-            `<:arrow:1309167079231848572> **Channels:** ${channels.toLocaleString()}`,
-            `<:arrow:1309167079231848572> **Commands:** ${commands.toLocaleString()}`,
-            `<:arrow:1309167079231848572> **Ping:** ${ping}ms`,
-            `<:arrow:1309167079231848572> **Uptime:** ${formatUptime(uptime)}`,
-            `<:arrow:1309167079231848572> **Shards:** ${shards}`
+            `<:arrow:1463991975610024119> **Servers:** ${guilds.toLocaleString()}`,
+            `<:arrow:1463991975610024119> **Users:** ${users.toLocaleString()}`,
+            `<:arrow:1463991975610024119> **Channels:** ${channels.toLocaleString()}`,
+            `<:arrow:1463991975610024119> **Commands:** ${commands.toLocaleString()}`,
+            `<:arrow:1463991975610024119> **Ping:** ${ping}ms`,
+            `<:arrow:1463991975610024119> **Uptime:** ${formatUptime(uptime)}`,
+            `<:arrow:1463991975610024119> **Shards:** ${shards}`
           ].join('\n'),
           inline: true
         },
         {
           name: '<:manager:1466826492334833665> System',
           value: [
-            `<:arrow:1309167079231848572> **CPU:** ${os.cpus()[0].model}`,
-            `<:arrow:1309167079231848572> **Logical Cores:** ${os.cpus().length}`,
-            `<:arrow:1309167079231848572> **CPU Load:** ${getSystemCpuLoad()}%`,
-            `<:arrow:1309167079231848572> **Bot CPU Usage:** ${cpuUsage}%`,
-            `<:arrow:1309167079231848572> **Memory:** ${formatBytes(usedMemory)} / ${formatBytes(totalMemory)}`,
-            `<:arrow:1309167079231848572> **Heap:** ${formatBytes(heapUsed)} / ${formatBytes(heapTotal)}`,
-            `<:arrow:1309167079231848572> **Disk Usage:** ${getDiskUsage()}`,
-            `<:arrow:1309167079231848572> **Platform:** ${os.platform()} (${os.arch()})`,
-            `<:arrow:1309167079231848572> **OS Uptime:** ${formatUptime(osUptime)}`
+            `<:arrow:1463991975610024119> **CPU:** ${os.cpus()[0].model}`,
+            `<:arrow:1463991975610024119> **Logical Cores:** ${os.cpus().length}`,
+            `<:arrow:1463991975610024119> **CPU Load:** ${getSystemCpuLoad()}%`,
+            `<:arrow:1463991975610024119> **Bot CPU Usage:** ${cpuUsage}%`,
+            `<:arrow:1463991975610024119> **Memory:** ${formatBytes(usedMemory)} / ${formatBytes(totalMemory)}`,
+            `<:arrow:1463991975610024119> **Heap:** ${formatBytes(heapUsed)} / ${formatBytes(heapTotal)}`,
+            `<:arrow:1463991975610024119> **Disk Usage:** ${getDiskUsage()}`,
+            `<:arrow:1463991975610024119> **Platform:** ${os.platform()} (${os.arch()})`,
+            `<:arrow:1463991975610024119> **OS Uptime:** ${formatUptime(osUptime)}`
           ].join('\n'),
           inline: true
         },
         {
           name: '<:manager:1466826492334833665> Versions',
           value: [
-            `<:arrow:1309167079231848572> **Bot:** v${packageJson.version}`,
-            `<:arrow:1309167079231848572> **Discord.js:** v${djsVersion}`,
-            `<:arrow:1309167079231848572> **Commit:** ${commitHash}`,
-            `**<:arrow:1309167079231848572> Last Restart:** <t:${Math.floor((Date.now() - (uptime * 1000)) / 1000)}:R>`
+            `<:arrow:1463991975610024119> **Bot:** v${packageJson.version}`,
+            `<:arrow:1463991975610024119> **Discord.js:** v${djsVersion}`,
+            `<:arrow:1463991975610024119> **Commit:** ${commitHash}`,
+            `**<:arrow:1463991975610024119> Last Restart:** <t:${Math.floor((Date.now() - (uptime * 1000)) / 1000)}:R>`
           ].join('\n'),
           inline: false
         }

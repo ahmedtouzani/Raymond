@@ -4,7 +4,7 @@ const { getGuildConfig } = require('../database/guildConfig');
 // Default branding
 const DEFAULT_COLOR = 0x131416; // Discord dark theme#131416
 const DEFAULT_FOOTER = {
-  text: 'Parallel Ultra Bot',
+  text: 'Powerd By Parallel Universe',
   iconURL: 'https://cdn.discordapp.com/attachments/1378500623967981600/1378530914182627481/pu.jpg?ex=683cf075&is=683b9ef5&hm=ddde0abba25b5431ff9d65670ee0317457bc66db8713313e58fe3dfe25d12336&' // Replace with your bot's icon URL
 };
 
@@ -35,10 +35,10 @@ async function createEmbed(guildId, { title, description, fields = [], color, fo
   const guildConfig = await getGuildEmbedConfig(guildId);
   const embed = new EmbedBuilder()
     .setColor(color || guildConfig.color);
-  
+
   if (title) embed.setTitle(title);
   if (description) embed.setDescription(description);
-  
+
   if (fields && fields.length > 0) embed.addFields(fields);
   embed.setFooter(footer || guildConfig.footer);
   embed.setTimestamp();
@@ -54,7 +54,7 @@ async function createEmbed(guildId, { title, description, fields = [], color, fo
 // Centralized error embed helper
 async function createErrorEmbed(guildId, { title = 'Error', description }) {
   const embed = await createEmbed(guildId, {
-    title: `❌ ${title}`,
+    title: `<a:offline:1467158828909859059> ${title}`,
     description,
     color: DEFAULT_COLOR // Dark theme
   });
@@ -71,4 +71,34 @@ async function createSystemEmbed(guildId, { title = 'Success', description }) {
   return embed;
 }
 
-module.exports = { createEmbed, getGuildEmbedConfig, createErrorEmbed, createSystemEmbed };
+// ... existing exports ...
+
+/**
+ * Creates a standardized usage embed for command errors/help.
+ * Design: Blue color, specific emoji title, "Usage" & "Examples" fields.
+ */
+async function createUsageEmbed(guildId, { command, description, usage, examples }) {
+  const brandTitle = `<:pu:1463991804301938845> Command: ${command}`;
+  const brandColor = 0x000001; // Pitch Black (Darkest Dark)
+  const brandThumbnail = 'https://cdn.discordapp.com/banners/1038540608396066856/a_d7b13b74fae7e97e33c0c2f34063a772.gif?size=4096';
+
+  const embed = new EmbedBuilder()
+    .setTitle(brandTitle)
+    .setColor(brandColor)
+    .setThumbnail(brandThumbnail)
+    .setFooter({ text: 'Powered By Parallel Universe', iconURL: brandThumbnail }); // Using same icon for footer if not specified otherwise
+
+  if (description) embed.setDescription(description);
+
+  embed.addFields(
+    { name: 'Usage:', value: usage, inline: false },
+    { name: 'Examples:', value: examples, inline: false }
+  );
+
+  // Add Timestamp
+  embed.setTimestamp();
+
+  return embed;
+}
+
+module.exports = { createEmbed, getGuildEmbedConfig, createErrorEmbed, createSystemEmbed, createUsageEmbed };

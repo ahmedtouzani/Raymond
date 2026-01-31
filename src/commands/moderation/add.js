@@ -92,9 +92,12 @@ module.exports = {
 
     // Check if target is valid
     if (!target) {
-      const embed = await createEmbed(message.guild.id, {
-        color: 0xFF3333,
-        description: '❌ Please mention a valid user or role to add to the channel.'
+      const { createUsageEmbed } = require('../../utils/embed');
+      const embed = await createUsageEmbed(message.guild.id, {
+        command: 'add',
+        description: '<a:warningbug:905560995886411806> **Target Not Found**\nPlease mention a valid user or role to add permissions to.',
+        usage: '`!add <@user/@role> [permission] (Optional: all)`',
+        examples: '`!add @user send`\n`!add @role view connect`'
       });
       return message.reply({ embeds: [embed] });
     }
@@ -121,16 +124,16 @@ module.exports = {
 
       const embed = await createEmbed(message.guild.id, {
         color: 0x4CAF50,
-        title: '✅ Permissions Updated',
+        title: '<a:okey:1467170671351173121> Permissions Updated',
         description: `Successfully added ${target} to ${channel}`,
         fields: [
           {
             name: '<a:endlessspinne:1463992178010230906> Granted Permissions',
-            value: permissionList ? permissionList.split('\n').map(p => `<:arrow:1309167079231848572> ${p.replace('•', '')}`).join('\n') : 'None',
+            value: permissionList ? permissionList.split('\n').map(p => `<:arrow:1463991975610024119> ${p.replace('•', '')}`).join('\n') : 'None',
           },
           {
             name: '<a:endlessspinne:1463992178010230906> Target Type',
-            value: target.user ? '<:arrow:1309167079231848572> User' : '<:arrow:1309167079231848572> Role',
+            value: target.user ? '<:arrow:1463991975610024119> User' : '<:arrow:1463991975610024119> Role',
             inline: true
           }
         ]
@@ -142,7 +145,7 @@ module.exports = {
       console.error('Error updating channel permissions:', error);
       const embed = await createEmbed(message.guild.id, {
         color: 0xFF3333,
-        description: '❌ An error occurred while updating channel permissions. Please check my permissions and try again.'
+        description: ' An error occurred while updating channel permissions. Please check my permissions and try again.'
       });
       return message.reply({ embeds: [embed] });
     }

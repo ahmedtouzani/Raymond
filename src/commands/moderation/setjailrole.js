@@ -21,11 +21,14 @@ module.exports = {
 
     const role = message.mentions.roles.first();
     if (!role) {
-      return sendEmbed(message, {
-        title: 'Missing Role',
-        description: 'Please mention a role to set as the jail role.',
-        color: 0x23272A,
+      const { createUsageEmbed } = require('../../utils/embed');
+      const embed = await createUsageEmbed(message.guild.id, {
+        command: 'setjailrole',
+        description: '<a:warningbug:905560995886411806> **Missing Role**\nPlease mention a role to set as the jail role.',
+        usage: '`!setjailrole @role`',
+        examples: '`!setjailrole @Jailed`'
       });
+      return message.reply({ embeds: [embed] });
     }
 
     try {

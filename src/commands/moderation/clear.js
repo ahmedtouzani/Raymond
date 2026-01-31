@@ -10,7 +10,7 @@ module.exports = {
   cooldown: 5,
   permissions: [PermissionsBitField.Flags.ManageMessages],
   category: 'Moderation',
-  prefixless: true, 
+  prefixless: true,
 
   async execute(message, args, client) {
     const ownerId = process.env.OWNER_ID;
@@ -28,11 +28,14 @@ module.exports = {
     // Validate and parse the argument.
     let amount = parseInt(args[0], 10);
     if (!amount || isNaN(amount)) {
-      return sendEmbed(message, {
-        title: '❓ Invalid Amount',
-        description: 'Please provide a valid number of messages to delete.\nUsage: `=clear [amount]`',
-        color: 0x23272A,
+      const { createUsageEmbed } = require('../../utils/embed');
+      const embed = await createUsageEmbed(message.guild.id, {
+        command: 'clear',
+        description: '<a:warningbug:905560995886411806> **Invalid Amount**\nPlease provide a valid number of messages to delete.',
+        usage: '`!clear [amount]`',
+        examples: '`!clear 5`\n`!clear 50`'
       });
+      return message.reply({ embeds: [embed] });
     }
 
     /* 
@@ -71,7 +74,7 @@ module.exports = {
         // Try to send the error message without replying to the original message
         await message.channel.send({
           embeds: [{
-            title: '❌ Error',
+            title: '<a:warningbug:905560995886411806> Error',
             description: `Failed to delete messages: \`${error.message}\`\nNote: Discord only allows bulk deletion of messages under 14 days old.`,
             color: 0x23272A,
             footer: {

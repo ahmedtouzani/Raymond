@@ -24,15 +24,15 @@ async function isPremiumGuild(guildId) {
       'SELECT 1 FROM premium_guilds WHERE guild_id = $1 AND (expires_at IS NULL OR expires_at > NOW())',
       [guildId]
     );
-    
+
     const isPremium = rowCount > 0;
-    
+
     // Update cache
     premiumCache.set(guildId, {
       data: isPremium,
       cachedAt: Date.now()
     });
-    
+
     return isPremium;
   } catch (error) {
     logger.error(`Error checking premium status for guild ${guildId}:`, error);
@@ -54,7 +54,7 @@ async function addPremiumGuild(guildId) {
        DO UPDATE SET activated_at = NOW()`,
       [guildId]
     );
-    
+
     // Invalidate cache
     premiumCache.delete(guildId);
     return true;
@@ -75,7 +75,7 @@ async function addPremiumGuild(guildId) {
 async function addPremiumGuildWithExpiry(guildId, buyerId, planType = 'basic', days = 30) {
   const expiryDate = new Date();
   expiryDate.setDate(expiryDate.getDate() + days);
-  
+
   try {
     await db.query(
       `INSERT INTO premium_guilds (guild_id, expires_at, plan_type, buyer_id, activated_at)
@@ -91,7 +91,7 @@ async function addPremiumGuildWithExpiry(guildId, buyerId, planType = 'basic', d
          END`,
       [guildId, expiryDate, planType, buyerId]
     );
-    
+
     // Invalidate cache
     premiumCache.delete(guildId);
     return true;
@@ -128,7 +128,7 @@ async function listPremiumGuildsDetails() {
 async function removePremiumGuild(guildId) {
   try {
     await db.query('DELETE FROM premium_guilds WHERE guild_id = $1', [guildId]);
-    
+
     // Invalidate cache
     premiumCache.delete(guildId);
     return true;
@@ -164,7 +164,7 @@ async function listPremiumGuilds() {
  * @returns {Promise<boolean>}
  */
 async function ready() {
-  logger.info('✅ Premium system ready');
+  logger.info('<a:okey:1467170671351173121> Premium system ready');
   return true;
 }
 

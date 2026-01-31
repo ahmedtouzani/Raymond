@@ -41,7 +41,7 @@ module.exports = {
         } catch (error) {
             console.error(error);
             return sendEmbed(message, {
-                title: '❌ Connection Error',
+                title: ' Connection Error',
                 description: 'Could not join the voice channel.',
                 color: 0xFF0000,
             });

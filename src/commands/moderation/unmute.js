@@ -8,7 +8,7 @@ module.exports = {
   cooldown: 5,
   permissions: [PermissionsBitField.Flags.ModerateMembers],
   category: 'Moderation',
-  
+
   async execute(message, args, client) {
     const ownerId = process.env.OWNER_ID;
     const isOwner = message.author.id === ownerId;
@@ -30,11 +30,14 @@ module.exports = {
       }
     }
     if (!member) {
-      return sendEmbed(message, {
-        title: '❓ User Not Mentioned',
-        description: 'Please mention a user to unmute. or provide a valid user ID.',
-        color: 0x23272A,
+      const { createUsageEmbed } = require('../../utils/embed');
+      const embed = await createUsageEmbed(message.guild.id, {
+        command: 'unmute',
+        description: '<a:warningbug:905560995886411806> **User Not Found**\nPlease mention a user to unmute, or provide a valid user ID.',
+        usage: '`!unmute <@user>`',
+        examples: '`!unmute @User`'
       });
+      return message.reply({ embeds: [embed] });
     }
 
     const muteRole = message.guild.roles.cache.find(r => r.name.toLowerCase() === 'muted');
@@ -64,7 +67,7 @@ module.exports = {
       });
     } catch (err) {
       sendEmbed(message, {
-        title: '❌ Error',
+        title: '<a:warningbug:905560995886411806> Error',
         description: `Failed to unmute user.\n\`\`\`${err.message}\`\`\``,
         color: 0x23272A,
       });

@@ -74,9 +74,12 @@ module.exports = {
                         }
                     }
                     if (modRoleIDs.length === 0) {
-                        const embed = await createErrorEmbed(message.guild.id, {
-                            title: 'Invalid Usage',
-                            description: 'Please mention or supply one or more valid role IDs to set as mod roles for modmail notifications.'
+                        const { createUsageEmbed } = require('../../../utils/embed');
+                        const embed = await createUsageEmbed(message.guild.id, {
+                            command: 'modmail setroles',
+                            description: '<a:warningbug:905560995886411806> **Invalid Usage**\nPlease mention or supply one or more valid role IDs to set as mod roles.',
+                            usage: '`!modmail setroles <@role/ID>`',
+                            examples: '`!modmail setroles @Moderator`'
                         });
                         return message.reply({ embeds: [embed] });
                     }
@@ -107,9 +110,12 @@ module.exports = {
                         if (fetched && fetched.type === 4) category = fetched;
                     }
                     if (!category) {
-                        const embed = await createErrorEmbed(message.guild.id, {
-                            title: 'Invalid Usage',
-                            description: 'Please mention a category or supply a valid category ID to use as the ticket parent category.'
+                        const { createUsageEmbed } = require('../../../utils/embed');
+                        const embed = await createUsageEmbed(message.guild.id, {
+                            command: 'modmail setcategory',
+                            description: '<a:warningbug:905560995886411806> **Invalid Category**\nPlease mention a category or supply a valid category ID.',
+                            usage: '`!modmail setcategory <categoryID>`',
+                            examples: '`!modmail setcategory 123456789012345678`'
                         });
                         return message.reply({ embeds: [embed] });
                     }
@@ -135,9 +141,12 @@ module.exports = {
                         channel = message.guild.channels.cache.get(channelId);
                     }
                     if (!channel) {
-                        const embed = await createErrorEmbed(message.guild.id, {
-                            title: 'Invalid Usage',
-                            description: 'Please mention a channel or supply a valid channel ID to use as the modmail notification channel.'
+                        const { createUsageEmbed } = require('../../../utils/embed');
+                        const embed = await createUsageEmbed(message.guild.id, {
+                            command: 'modmail setchannel',
+                            description: '<a:warningbug:905560995886411806> **Invalid Channel**\nPlease mention a channel or supply a valid channel ID.',
+                            usage: '`!modmail setchannel <#channel>`',
+                            examples: '`!modmail setchannel #mod-logs`'
                         });
                         return message.reply({ embeds: [embed] });
                     }
@@ -191,9 +200,12 @@ module.exports = {
                 case 'broadcast': {
                     // Broadcast a message (Admin-only) to all moderators in this server
                     if (args.length < 2) {
-                        const embed = await createErrorEmbed(message.guild.id, {
-                            title: 'Invalid Usage',
-                            description: 'Please provide a message to broadcast to all mods.'
+                        const { createUsageEmbed } = require('../../../utils/embed');
+                        const embed = await createUsageEmbed(message.guild.id, {
+                            command: 'modmail broadcast',
+                            description: '<a:warningbug:905560995886411806> **Missing Message**\nPlease provide a message to broadcast to all mods.',
+                            usage: '`!modmail broadcast <message>`',
+                            examples: '`!modmail broadcast Important Meeting!`'
                         });
                         return message.reply({ embeds: [embed] });
                     }

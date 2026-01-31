@@ -21,7 +21,7 @@ module.exports = {
     if (!message.guild) {
       return message.reply({
         embeds: [new EmbedBuilder()
-          .setTitle('❌ Server Only Command')
+          .setTitle(' Server Only Command')
           .setDescription('This command requires a server environment')
           .setColor(0xE74C3C)
         ]
@@ -58,7 +58,7 @@ module.exports = {
     if (args.length < 2) {
       return message.reply({
         embeds: [new EmbedBuilder()
-          .setTitle('❌ Missing Arguments')
+          .setTitle(' Missing Arguments')
           .setDescription(`**Usage:** \`${this.usage}\`\nExample: \`!moveall "General VC" Afk\``)
           .setColor(0xE74C3C)
         ]
@@ -74,7 +74,7 @@ module.exports = {
       if (!executor.permissions.has(PermissionFlagsBits.MoveMembers)) {
         return message.reply({
           embeds: [new EmbedBuilder()
-            .setTitle('❌ Permission Denied')
+            .setTitle(' Permission Denied')
             .setDescription('You need **Move Members** permission')
             .setColor(0xE74C3C)
           ]
@@ -84,7 +84,7 @@ module.exports = {
       if (!botMember.permissions.has(PermissionFlagsBits.MoveMembers)) {
         return message.reply({
           embeds: [new EmbedBuilder()
-            .setTitle('❌ Bot Permission Missing')
+            .setTitle(' Bot Permission Missing')
             .setDescription('I need **Move Members** permission')
             .setColor(0xE74C3C)
           ]
@@ -108,8 +108,8 @@ module.exports = {
         // Name search (fuzzy match)
         const normalizedInput = input.toLowerCase();
         channel = message.guild.channels.cache.find(
-          c => c.name.toLowerCase().includes(normalizedInput) && 
-               c.type === ChannelType.GuildVoice
+          c => c.name.toLowerCase().includes(normalizedInput) &&
+            c.type === ChannelType.GuildVoice
         );
         if (channel) return channel;
         // Try fetch all channels and search
@@ -187,8 +187,8 @@ module.exports = {
       }
 
       // Check target capacity
-      if (targetChannel.userLimit > 0 && 
-          targetChannel.members.size + membersToMove.size > targetChannel.userLimit) {
+      if (targetChannel.userLimit > 0 &&
+        targetChannel.members.size + membersToMove.size > targetChannel.userLimit) {
         if (message.channel) {
           return message.reply({
             embeds: [new EmbedBuilder()
@@ -224,16 +224,16 @@ module.exports = {
       // Bulk move operation - optimized for speed
       const moveStart = Date.now();
       const moveResults = await bulkMoveMembers(
-        membersToMove, 
-        targetChannel, 
+        membersToMove,
+        targetChannel,
         `Moved by ${executor.displayName}`
       );
-      
+
       const moveTime = Date.now() - moveStart;
-      
+
       // Results embed
       const resultEmbed = new EmbedBuilder()
-        .setTitle('✅ Move Complete')
+        .setTitle('<a:okey:1467170671351173121> Move Complete')
         .setDescription(`Moved ${moveResults.successCount} members in ${moveTime}ms`)
         .addFields(
           { name: 'Source', value: sourceChannel.toString(), inline: true },
@@ -241,15 +241,15 @@ module.exports = {
           { name: 'Speed', value: `${moveTime}ms`, inline: true }
         )
         .setColor(0x2ECC71);
-      
+
       if (moveResults.failedCount > 0) {
         resultEmbed
           .setTitle('⚠️ Partial Completion')
           .setColor(0xF39C12)
           .addFields({
-            name: `❌ Failed (${moveResults.failedCount})`,
-            value: moveResults.failedMembers.slice(0, 5).join('\n') + 
-                  (moveResults.failedMembers.length > 5 ? `\n...and ${moveResults.failedMembers.length - 5} more` : ''),
+            name: ` Failed (${moveResults.failedCount})`,
+            value: moveResults.failedMembers.slice(0, 5).join('\n') +
+              (moveResults.failedMembers.length > 5 ? `\n...and ${moveResults.failedMembers.length - 5} more` : ''),
             inline: false
           });
       }
@@ -270,7 +270,7 @@ module.exports = {
         if (message.channel) {
           return message.reply({
             embeds: [new EmbedBuilder()
-              .setTitle('❌ Unknown Channel')
+              .setTitle(' Unknown Channel')
               .setDescription('One or more channels could not be found or I lost access. Please check channel IDs and my permissions.')
               .setColor(0xE74C3C)
             ]
@@ -284,7 +284,7 @@ module.exports = {
         if (message.channel) {
           return message.reply({
             embeds: [new EmbedBuilder()
-              .setTitle('❌ Channel Not Cached')
+              .setTitle(' Channel Not Cached')
               .setDescription('Could not find the channel in cache. Please try again or check bot permissions.')
               .setColor(0xE74C3C)
             ]
@@ -327,10 +327,10 @@ async function bulkMoveMembers(members, targetChannel, reason) {
     failedCount: 0,
     failedMembers: []
   };
-  
+
   // Prepare all move operations
   const moveOperations = [];
-  
+
   for (const [, member] of members) {
     // Skip if not in voice
     if (!member.voice?.channel) {
@@ -338,14 +338,14 @@ async function bulkMoveMembers(members, targetChannel, reason) {
       results.failedMembers.push(`${member.displayName} (not in voice)`);
       continue;
     }
-    
+
     // Skip if already in target
     if (member.voice.channel.id === targetChannel.id) {
       results.failedCount++;
       results.failedMembers.push(`${member.displayName} (already in target)`);
       continue;
     }
-    
+
     // Queue move operation
     moveOperations.push(
       member.voice.setChannel(targetChannel, reason)
@@ -354,38 +354,38 @@ async function bulkMoveMembers(members, targetChannel, reason) {
         })
         .catch(error => {
           results.failedCount++;
-          
-          const errorType = 
+
+          const errorType =
             error.code === 40032 ? 'Already in channel' :
-            error.code === 40041 ? 'Wrong channel type' :
-            error.code === 50013 ? 'Permission denied' :
-            'Unknown error';
-            
+              error.code === 40041 ? 'Wrong channel type' :
+                error.code === 50013 ? 'Permission denied' :
+                  'Unknown error';
+
           results.failedMembers.push(`${member.displayName} (${errorType})`);
         })
     );
   }
-  
+
   // Execute all moves simultaneously with safety
   const BATCH_SIZE = 10; // Discord's API can handle ~10 concurrent moves
   const totalBatches = Math.ceil(moveOperations.length / BATCH_SIZE);
-  
+
   for (let i = 0; i < totalBatches; i++) {
     const batchStart = i * BATCH_SIZE;
     const batchEnd = batchStart + BATCH_SIZE;
     const batch = moveOperations.slice(batchStart, batchEnd);
-    
+
     try {
       await Promise.all(batch);
     } catch {
       // Individual errors are handled, so we ignore batch errors
     }
-    
+
     // Add minimal delay between batches to prevent flooding
     if (i < totalBatches - 1) {
       await new Promise(resolve => setTimeout(resolve, 50)); // 50ms delay
     }
   }
-  
+
   return results;
 }
