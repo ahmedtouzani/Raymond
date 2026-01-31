@@ -27,17 +27,43 @@ async function generateRankCard(userData, member, type = 'text', rank = 0, theme
             } else {
                 // Linux/Unix - try common font paths
                 const commonPaths = [
+                    // Railway/Nixpacks paths
+                    '/nix/store/*/share/fonts/truetype/LiberationSans-Regular.ttf',
+                    // Standard Linux paths
                     '/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf',
                     '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',
-                    '/usr/share/fonts/truetype/liberation2/LiberationSans-Regular.ttf'
+                    '/usr/share/fonts/truetype/liberation2/LiberationSans-Regular.ttf',
+                    // Additional common paths
+                    '/usr/share/fonts/TTF/LiberationSans-Regular.ttf',
+                    '/usr/share/fonts/liberation-sans/LiberationSans-Regular.ttf'
                 ];
 
+                let fontRegistered = false;
                 for (const fontPath of commonPaths) {
-                    if (fs.existsSync(fontPath)) {
-                        GlobalFonts.registerFromPath(fontPath, 'Arial');
-                        console.log('[RankCard] Registered font:', fontPath);
-                        break;
+                    try {
+                        // Handle glob patterns for Nix paths
+                        if (fontPath.includes('*')) {
+                            const glob = require('glob');
+                            const matches = glob.sync(fontPath);
+                            if (matches.length > 0 && fs.existsSync(matches[0])) {
+                                GlobalFonts.registerFromPath(matches[0], 'Arial');
+                                console.log('[RankCard] Registered font:', matches[0]);
+                                fontRegistered = true;
+                                break;
+                            }
+                        } else if (fs.existsSync(fontPath)) {
+                            GlobalFonts.registerFromPath(fontPath, 'Arial');
+                            console.log('[RankCard] Registered font:', fontPath);
+                            fontRegistered = true;
+                            break;
+                        }
+                    } catch (err) {
+                        // Continue to next path
                     }
+                }
+
+                if (!fontRegistered) {
+                    console.log('[RankCard] No fonts found in common paths, Canvas will use system default');
                 }
             }
         } catch (fontError) {

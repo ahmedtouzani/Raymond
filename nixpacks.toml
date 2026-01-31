@@ -1,0 +1,10 @@
+# Nixpacks configuration for Railway
+# This installs fonts needed for Canvas rank cards
+
+[phases.setup]
+nixPkgs = ["...", "liberation_ttf"]
+
+[phases.install]
+cmds = [
+  "npm install"
+]
