@@ -25,7 +25,7 @@ function scanCommands(dir) {
         const category = path.basename(path.dirname(filePath));
         if (!categories[category]) categories[category] = [];
         categories[category].push({ name, description, filePath });
-      } catch (e) {}
+      } catch (e) { }
     }
   }
   return categories;
@@ -35,16 +35,25 @@ const prefixCategories = scanCommands(path.join(__dirname, '../../commands'));
 
 module.exports = {
   create_ticket: async (interaction) => {
+    // CRITICAL: Defer immediately to prevent 3-second timeout
     try {
-      await interaction.deferReply({ ephemeral: true });
+      await interaction.deferReply({ flags: 64 }); // flags: 64 = ephemeral
+    } catch (deferError) {
+      console.error('Failed to defer interaction:', deferError);
+      return; // Can't proceed if we can't defer
+    }
+
+    try {
       const guild = interaction.guild;
       const ticketChannelName = `ticket-${interaction.user.username}-${interaction.user.discriminator}`;
+
       // Check if the user already has an open ticket
       const existingChannel = guild.channels.cache.find(ch =>
         ch.name.startsWith('ticket-') &&
         ch.topic &&
         ch.topic.includes(interaction.user.id)
       );
+
       if (existingChannel) {
         await interaction.editReply({ content: 'You already have an open ticket!' });
         return;
@@ -53,10 +62,11 @@ module.exports = {
       // Retrieve the guild configuration to get the ticket category ID
       const guildConfig = await getGuildConfig(guild.id);
       if (!guildConfig || !guildConfig.settings || !guildConfig.settings.ticketCategoryId) {
-        throw new Error('Ticket category not set in guild configuration.');
+        await interaction.editReply({ content: '❌ Ticket system is not configured. Please contact an administrator.' });
+        return;
       }
       const ticketCategoryId = guildConfig.settings.ticketCategoryId;
-      
+
       // Build permission overwrites array
       const overwrites = [
         {
@@ -72,6 +82,7 @@ module.exports = {
           ],
         }
       ];
+
       // Add all mod roles from per-guild config
       const modRoleIds = (guildConfig.settings.modRoles || []);
       for (const roleId of modRoleIds) {
@@ -116,7 +127,7 @@ module.exports = {
         .setColor(0x131416)
         .setTitle('Ticket Created')
         .setDescription(
-          'Thank you for opening a ticket! Please describe your issue in detail. A moderator will be with you shortly.\n\nWhen your issue is resolved, click the **Close Ticket** button below.'
+          'Thank you for opening a ticket! Please describe your issue in detail. A moderator will be with you shortly.\\n\\nWhen your issue is resolved, click the **Close Ticket** button below.'
         )
         .setTimestamp();
 
@@ -124,19 +135,20 @@ module.exports = {
         embeds: [ticketEmbed],
         components: [row],
       });
+
       await interaction.editReply({ content: `Your ticket has been created: ${ticketChannel}` });
     } catch (error) {
       console.error('Error creating ticket channel:', error);
-      if (interaction.deferred || interaction.replied) {
-        await interaction.editReply({ content: 'There was an error creating your ticket. Please try again later.' });
-      } else {
-        await interaction.reply({ content: 'There was an error creating your ticket. Please try again later.', ephemeral: true });
+      try {
+        await interaction.editReply({ content: 'There was an error creating your ticket. Please try again later.' }).catch(() => { });
+      } catch (err) {
+        console.error('Could not reply to interaction error:', err);
       }
     }
   },
   close_ticket: async (interaction) => {
     try {
-      await interaction.deferReply({ ephemeral: true });
+      await interaction.deferReply({ flags: 64 });
       const ticketChannel = interaction.channel;
       // Verify if the user is allowed to close the ticket.
       // Check whether the channel's topic contains the ticket creator's ID.
@@ -155,7 +167,7 @@ module.exports = {
       if (interaction.deferred || interaction.replied) {
         await interaction.editReply({ content: 'There was an error closing the ticket. Please try again later.' });
       } else {
-        await interaction.reply({ content: 'There was an error closing the ticket. Please try again later.', ephemeral: true });
+        await interaction.reply({ content: 'There was an error closing the ticket. Please try again later.', flags: 64 });
       }
     }
   },

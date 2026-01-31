@@ -42,7 +42,8 @@ module.exports = {
     // ─ Button Interaction Handling ─
     // ─────────────────────────────────
     if (interaction.isButton() || interaction.isStringSelectMenu()) {
-      logger.info(`[InteractionCreate] Received component interaction with customId: "${interaction.customId}"`);
+      logger.info(`[InteractionCreate] Received component interaction with customId: "${interaction.customId}" (ID: ${interaction.id})`);
+      console.log(`[DEBUG] Listener Count for interactionCreate: ${interaction.client.listenerCount('interactionCreate')}`);
 
       // Role Menu Handler Hook
       if (interaction.customId.startsWith('rm_')) {
@@ -67,7 +68,9 @@ module.exports = {
           await handler(interaction);
         } catch (error) {
           logger.error(`Error handling button ${interaction.customId}:`, error);
-          await interaction.reply({ content: 'There was an error handling this button.', flags: 64 });
+          if (!interaction.replied && !interaction.deferred) {
+            await interaction.reply({ content: 'There was an error handling this button.', flags: 64 }).catch(() => { });
+          }
         }
       } else {
         await interaction.reply({ content: 'Unknown button interaction.', flags: 64 });
