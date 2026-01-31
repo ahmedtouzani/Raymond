@@ -12,12 +12,36 @@ const path = require('path');
  */
 async function generateRankCard(userData, member, type = 'text', rank = 0, theme = 'dark') {
     try {
-        // Register system fonts (Windows)
+        // Register fonts (cross-platform)
         try {
-            GlobalFonts.registerFromPath('C:\\Windows\\Fonts\\arial.ttf', 'Arial');
-            GlobalFonts.registerFromPath('C:\\Windows\\Fonts\\arialbd.ttf', 'Arial Bold');
+            const os = require('os');
+            const fs = require('fs');
+
+            // Try to register Arial font based on OS
+            if (os.platform() === 'win32') {
+                // Windows
+                const arialPath = 'C:\\Windows\\Fonts\\arial.ttf';
+                const arialBoldPath = 'C:\\Windows\\Fonts\\arialbd.ttf';
+                if (fs.existsSync(arialPath)) GlobalFonts.registerFromPath(arialPath, 'Arial');
+                if (fs.existsSync(arialBoldPath)) GlobalFonts.registerFromPath(arialBoldPath, 'Arial Bold');
+            } else {
+                // Linux/Unix - try common font paths
+                const commonPaths = [
+                    '/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf',
+                    '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',
+                    '/usr/share/fonts/truetype/liberation2/LiberationSans-Regular.ttf'
+                ];
+
+                for (const fontPath of commonPaths) {
+                    if (fs.existsSync(fontPath)) {
+                        GlobalFonts.registerFromPath(fontPath, 'Arial');
+                        console.log('[RankCard] Registered font:', fontPath);
+                        break;
+                    }
+                }
+            }
         } catch (fontError) {
-            console.log('[RankCard] Could not register fonts, using defaults');
+            console.log('[RankCard] Could not register custom fonts, using system defaults');
         }
 
 
