@@ -1,6 +1,7 @@
-const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, AttachmentBuilder } = require('discord.js');
+const { ActionRowBuilder, ButtonBuilder, ButtonStyle, AttachmentBuilder } = require('discord.js');
 const { getLeaderboard } = require('../database/levelSystem');
-const { generateRankCard } = require('../utils/canvasRankCard');
+const { generateLeaderboard } = require('../utils/canvasLeaderboard');
+const { getGuildTheme } = require('../database/levelSettings');
 
 // Helper: create a progress bar for XP
 function createProgressBar(xp, nextLevelXp, length = 14) {
@@ -11,7 +12,7 @@ function createProgressBar(xp, nextLevelXp, length = 14) {
 
 module.exports = {
   name: 'leaderboard',
-  aliases: ['lb', 'top'],
+  aliases: ['lb'],
   description: 'Show the top users by level (text or voice) in this server.',
   usage: 'leaderboard [text|voice] [page]',
   prefixless: true,
@@ -50,50 +51,55 @@ module.exports = {
 
     const pageData = leaderboard.slice(offset, offset + usersPerPage);
 
-    // Build leaderboard embed
-    const medals = ["🥇", "🥈", "🥉"];
-    const formatXP = n => n.toLocaleString();
-
-    let description = '';
+    // Prepare user data for Canvas
+    const users = [];
     for (let i = 0; i < pageData.length; i++) {
       const globalRank = offset + i + 1;
       const user = pageData[i];
-      const medal = globalRank <= 3 ? medals[globalRank - 1] : `**${globalRank}.**`;
 
       try {
         const member = await message.guild.members.fetch(user.user_id);
         const nextLevelXp = user.next_level_xp || calculateNextLevelXp(user.level);
-        const bar = createProgressBar(user.xp, nextLevelXp, 12);
 
-        description += `${medal} ${member.user.username}\n`;
-        description += `Level **${user.level}** • ${formatXP(user.xp)} / ${formatXP(nextLevelXp)} XP\n`;
-        description += `${bar}\n\n`;
+        users.push({
+          rank: globalRank,
+          username: member.user.username,
+          avatarURL: member.user.displayAvatarURL({ extension: 'png', size: 128 }),
+          level: user.level,
+          currentXP: user.xp,
+          nextLevelXP: nextLevelXp,
+          totalXP: user.xp // For display purposes
+        });
       } catch (error) {
         // Skip users who left the server
         continue;
       }
     }
 
-    if (!description) {
-      description = 'No active users found.';
+    if (users.length === 0) {
+      return message.reply('No active users found on this page.');
     }
 
-    const embed = new EmbedBuilder()
-      .setTitle(`${type === 'text' ? '📝 Text' : '🎤 Voice'} Leaderboard`)
-      .setDescription(description)
-      .setColor(type === 'text' ? 0x5865F2 : 0xED4245)
-      .setFooter({ text: `Page ${page}/${totalPages} • ${leaderboard.length} total users` })
-      .setTimestamp();
+    // Get server theme
+    const theme = await getGuildTheme(message.guild.id);
 
-    // Add top user's avatar as thumbnail
-    if (leaderboard[0]) {
-      try {
-        const topMember = await message.guild.members.fetch(leaderboard[0].user_id);
-        embed.setThumbnail(topMember.user.displayAvatarURL({ extension: 'png', size: 128 }));
-      } catch (error) {
-        // Ignore if top user left
-      }
+    // Generate Canvas leaderboard
+    let imageBuffer;
+    try {
+      imageBuffer = await generateLeaderboard({
+        users,
+        guild: message.guild,
+        type,
+        page,
+        totalPages,
+        theme
+      });
+    } catch (error) {
+      console.error('[Leaderboard] Error generating Canvas:', error);
+      return message.reply('❌ Failed to generate leaderboard image.');
     }
+
+    const attachment = new AttachmentBuilder(imageBuffer, { name: 'leaderboard.png' });
 
     // Navigation buttons
     const row = new ActionRowBuilder();
@@ -123,17 +129,7 @@ module.exports = {
         .setStyle(ButtonStyle.Success)
     );
 
-    // Server stats
-    const totalXP = leaderboard.reduce((sum, u) => sum + u.xp, 0);
-    const avgLevel = Math.round(leaderboard.reduce((sum, u) => sum + u.level, 0) / leaderboard.length);
-
-    embed.addFields({
-      name: '📊 Server Stats',
-      value: `Total XP: **${formatXP(totalXP)}**\nAverage Level: **${avgLevel}**`,
-      inline: false
-    });
-
-    await message.reply({ embeds: [embed], components: [row] });
+    await message.reply({ files: [attachment], components: [row] });
   }
 };
 

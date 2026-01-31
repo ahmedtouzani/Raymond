@@ -4,7 +4,7 @@ const { generateRankCard } = require('../utils/canvasRankCard');
 
 module.exports = {
   name: 'level',
-  aliases: ['rank', 'xp'],
+  aliases: ['r', 'rank', 'xp'],
   description: 'Show your (or another user\'s) level and XP with a professional rank card.',
   usage: 'level [@user] [text|voice] [theme]',
   prefixless: true,

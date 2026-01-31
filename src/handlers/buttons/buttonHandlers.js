@@ -36,6 +36,9 @@ const prefixCategories = scanCommands(path.join(__dirname, '../../commands'));
 // Helper function for leaderboard pagination
 async function handleLeaderboardPage(interaction, type, page, isRefresh = false) {
   const { getLeaderboard } = require('../../database/levelSystem');
+  const { generateLeaderboard } = require('../../utils/canvasLeaderboard');
+  const { getGuildTheme } = require('../../database/levelSettings');
+  const { AttachmentBuilder } = require('discord.js');
 
   try {
     // Interaction is already deferred by the routing layer
@@ -52,15 +55,6 @@ async function handleLeaderboardPage(interaction, type, page, isRefresh = false)
     const totalPages = Math.ceil(leaderboard.length / usersPerPage);
     const pageData = leaderboard.slice(offset, offset + usersPerPage);
 
-    const medals = ["🥇", "🥈", "🥉"];
-    const formatXP = n => n.toLocaleString();
-
-    function createProgressBar(xp, nextLevelXp, length = 12) {
-      const percent = Math.min(1, xp / nextLevelXp);
-      const filled = Math.round(percent * length);
-      return `▰`.repeat(filled) + `▱`.repeat(length - filled);
-    }
-
     function calculateNextLevelXp(level) {
       if (level >= 100) return 0;
       if (level < 30) {
@@ -70,52 +64,51 @@ async function handleLeaderboardPage(interaction, type, page, isRefresh = false)
       }
     }
 
-    let description = '';
+    // Prepare user data for Canvas
+    const users = [];
     for (let i = 0; i < pageData.length; i++) {
       const globalRank = offset + i + 1;
       const user = pageData[i];
-      const medal = globalRank <= 3 ? medals[globalRank - 1] : `**${globalRank}.**`;
 
       try {
         const member = await interaction.guild.members.fetch(user.user_id);
         const nextLevelXp = user.next_level_xp || calculateNextLevelXp(user.level);
-        const bar = createProgressBar(user.xp, nextLevelXp);
 
-        description += `${medal} ${member.user.username}\n`;
-        description += `Level **${user.level}** • ${formatXP(user.xp)} / ${formatXP(nextLevelXp)} XP\n`;
-        description += `${bar}\n\n`;
+        users.push({
+          rank: globalRank,
+          username: member.user.username,
+          avatarURL: member.user.displayAvatarURL({ extension: 'png', size: 128 }),
+          level: user.level,
+          currentXP: user.xp,
+          nextLevelXP: nextLevelXp,
+          totalXP: user.xp
+        });
       } catch (error) {
         continue;
       }
     }
 
-    if (!description) {
-      description = 'No active users found.';
+    if (users.length === 0) {
+      await interaction.editReply({ content: 'No active users found on this page.', components: [] });
+      return;
     }
 
-    const embed = new EmbedBuilder()
-      .setTitle(`${type === 'text' ? '📝 Text' : '🎤 Voice'} Leaderboard`)
-      .setDescription(description)
-      .setColor(type === 'text' ? 0x5865F2 : 0xED4245)
-      .setFooter({ text: `Page ${page}/${totalPages} • ${leaderboard.length} total users${isRefresh ? ' • Refreshed' : ''}` })
-      .setTimestamp();
+    // Get server theme
+    const theme = await getGuildTheme(interaction.guild.id);
 
-    if (leaderboard[0]) {
-      try {
-        const topMember = await interaction.guild.members.fetch(leaderboard[0].user_id);
-        embed.setThumbnail(topMember.user.displayAvatarURL({ extension: 'png', size: 128 }));
-      } catch (error) { }
-    }
-
-    const totalXP = leaderboard.reduce((sum, u) => sum + u.xp, 0);
-    const avgLevel = Math.round(leaderboard.reduce((sum, u) => sum + u.level, 0) / leaderboard.length);
-
-    embed.addFields({
-      name: '📊 Server Stats',
-      value: `Total XP: **${formatXP(totalXP)}**\nAverage Level: **${avgLevel}**`,
-      inline: false
+    // Generate Canvas leaderboard
+    const imageBuffer = await generateLeaderboard({
+      users,
+      guild: interaction.guild,
+      type,
+      page,
+      totalPages,
+      theme
     });
 
+    const attachment = new AttachmentBuilder(imageBuffer, { name: 'leaderboard.png' });
+
+    // Navigation buttons
     const row = new ActionRowBuilder();
     row.addComponents(
       new ButtonBuilder()
@@ -144,7 +137,7 @@ async function handleLeaderboardPage(interaction, type, page, isRefresh = false)
 
     // Only edit if interaction was deferred or replied
     if (interaction.deferred || interaction.replied) {
-      await interaction.editReply({ embeds: [embed], components: [row] });
+      await interaction.editReply({ files: [attachment], components: [row] });
     }
   } catch (error) {
     console.error('Error handling leaderboard page:', error);
