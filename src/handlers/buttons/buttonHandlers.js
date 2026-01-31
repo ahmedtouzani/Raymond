@@ -33,6 +33,128 @@ function scanCommands(dir) {
 
 const prefixCategories = scanCommands(path.join(__dirname, '../../commands'));
 
+// Helper function for leaderboard pagination
+async function handleLeaderboardPage(interaction, type, page, isRefresh = false) {
+  const { getLeaderboard } = require('../../database/levelSystem');
+
+  try {
+    // Interaction is already deferred by the routing layer
+    const usersPerPage = 10;
+    const offset = (page - 1) * usersPerPage;
+
+    const leaderboard = await getLeaderboard(interaction.guild.id, type, 100);
+
+    if (!leaderboard || leaderboard.length === 0) {
+      await interaction.editReply({ content: `No ${type} XP data available yet.`, components: [] });
+      return;
+    }
+
+    const totalPages = Math.ceil(leaderboard.length / usersPerPage);
+    const pageData = leaderboard.slice(offset, offset + usersPerPage);
+
+    const medals = ["🥇", "🥈", "🥉"];
+    const formatXP = n => n.toLocaleString();
+
+    function createProgressBar(xp, nextLevelXp, length = 12) {
+      const percent = Math.min(1, xp / nextLevelXp);
+      const filled = Math.round(percent * length);
+      return `▰`.repeat(filled) + `▱`.repeat(length - filled);
+    }
+
+    function calculateNextLevelXp(level) {
+      if (level >= 100) return 0;
+      if (level < 30) {
+        return 500 * level * level - 500 * level + 1000;
+      } else {
+        return 200000 + (level - 30) * 50000;
+      }
+    }
+
+    let description = '';
+    for (let i = 0; i < pageData.length; i++) {
+      const globalRank = offset + i + 1;
+      const user = pageData[i];
+      const medal = globalRank <= 3 ? medals[globalRank - 1] : `**${globalRank}.**`;
+
+      try {
+        const member = await interaction.guild.members.fetch(user.user_id);
+        const nextLevelXp = user.next_level_xp || calculateNextLevelXp(user.level);
+        const bar = createProgressBar(user.xp, nextLevelXp);
+
+        description += `${medal} ${member.user.username}\n`;
+        description += `Level **${user.level}** • ${formatXP(user.xp)} / ${formatXP(nextLevelXp)} XP\n`;
+        description += `${bar}\n\n`;
+      } catch (error) {
+        continue;
+      }
+    }
+
+    if (!description) {
+      description = 'No active users found.';
+    }
+
+    const embed = new EmbedBuilder()
+      .setTitle(`${type === 'text' ? '📝 Text' : '🎤 Voice'} Leaderboard`)
+      .setDescription(description)
+      .setColor(type === 'text' ? 0x5865F2 : 0xED4245)
+      .setFooter({ text: `Page ${page}/${totalPages} • ${leaderboard.length} total users${isRefresh ? ' • Refreshed' : ''}` })
+      .setTimestamp();
+
+    if (leaderboard[0]) {
+      try {
+        const topMember = await interaction.guild.members.fetch(leaderboard[0].user_id);
+        embed.setThumbnail(topMember.user.displayAvatarURL({ extension: 'png', size: 128 }));
+      } catch (error) { }
+    }
+
+    const totalXP = leaderboard.reduce((sum, u) => sum + u.xp, 0);
+    const avgLevel = Math.round(leaderboard.reduce((sum, u) => sum + u.level, 0) / leaderboard.length);
+
+    embed.addFields({
+      name: '📊 Server Stats',
+      value: `Total XP: **${formatXP(totalXP)}**\nAverage Level: **${avgLevel}**`,
+      inline: false
+    });
+
+    const row = new ActionRowBuilder();
+    row.addComponents(
+      new ButtonBuilder()
+        .setCustomId(`lb_${type}_${Math.max(1, page - 1)}`)
+        .setLabel('◀️ Previous')
+        .setStyle(ButtonStyle.Primary)
+        .setDisabled(page === 1),
+
+      new ButtonBuilder()
+        .setCustomId(`lb_page_${type}_${page}`)
+        .setLabel(`Page ${page}/${totalPages}`)
+        .setStyle(ButtonStyle.Secondary)
+        .setDisabled(true),
+
+      new ButtonBuilder()
+        .setCustomId(`lb_${type}_${Math.min(totalPages, page + 1)}`)
+        .setLabel('Next ▶️')
+        .setStyle(ButtonStyle.Primary)
+        .setDisabled(page === totalPages),
+
+      new ButtonBuilder()
+        .setCustomId(`lb_refresh_${type}_${page}`)
+        .setLabel('🔄 Refresh')
+        .setStyle(ButtonStyle.Success)
+    );
+
+    // Only edit if interaction was deferred or replied
+    if (interaction.deferred || interaction.replied) {
+      await interaction.editReply({ embeds: [embed], components: [row] });
+    }
+  } catch (error) {
+    console.error('Error handling leaderboard page:', error);
+    // Only edit if interaction was deferred or replied
+    if (interaction.deferred || interaction.replied) {
+      await interaction.editReply({ content: '❌ Failed to load leaderboard.', components: [] }).catch(() => { });
+    }
+  }
+}
+
 module.exports = {
   create_ticket: async (interaction) => {
     // CRITICAL: Defer immediately to prevent 3-second timeout
@@ -170,5 +292,18 @@ module.exports = {
         await interaction.reply({ content: 'There was an error closing the ticket. Please try again later.', flags: 64 });
       }
     }
+  },
+
+  // Leaderboard pagination handlers
+  lb_text_handler: async (interaction, page) => {
+    await handleLeaderboardPage(interaction, 'text', page);
+  },
+
+  lb_voice_handler: async (interaction, page) => {
+    await handleLeaderboardPage(interaction, 'voice', page);
+  },
+
+  lb_refresh_handler: async (interaction, type, page) => {
+    await handleLeaderboardPage(interaction, type, page, true);
   },
 };

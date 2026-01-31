@@ -1,5 +1,6 @@
-const { EmbedBuilder } = require('discord.js');
+const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, AttachmentBuilder } = require('discord.js');
 const { getLeaderboard } = require('../database/levelSystem');
+const { generateRankCard } = require('../utils/canvasRankCard');
 
 // Helper: create a progress bar for XP
 function createProgressBar(xp, nextLevelXp, length = 14) {
@@ -12,99 +13,136 @@ module.exports = {
   name: 'leaderboard',
   aliases: ['lb', 'top'],
   description: 'Show the top users by level (text or voice) in this server.',
-  usage: 'leaderboard',
+  usage: 'leaderboard [text|voice] [page]',
   prefixless: true,
   async execute(message, args) {
-    // Defensive: always default to array
-    let textTop = [];
-    let voiceTop = [];
+    // Parse arguments
+    let type = 'text';
+    let page = 1;
+
+    for (const arg of args) {
+      const lower = arg.toLowerCase();
+      if (['text', 'voice'].includes(lower)) {
+        type = lower;
+      } else if (!isNaN(arg)) {
+        page = Math.max(1, parseInt(arg));
+      }
+    }
+
+    const usersPerPage = 10;
+    const offset = (page - 1) * usersPerPage;
+
+    // Fetch leaderboard data
+    let leaderboard = [];
     try {
-      const [text, voice] = await Promise.all([
-        getLeaderboard(message.guild.id, 'text', 10),
-        getLeaderboard(message.guild.id, 'voice', 10)
-      ]);
-      // Only assign if they're arrays
-      if (Array.isArray(text)) textTop = text;
-      if (Array.isArray(voice)) voiceTop = voice;
-    } catch {
-      // If any error, keep as empty arrays
+      leaderboard = await getLeaderboard(message.guild.id, type, 100);
+    } catch (error) {
+      console.error('Error fetching leaderboard:', error);
+      return message.reply('❌ Failed to fetch leaderboard data.');
     }
 
-    const medals = ["<:60486gold:1379102737874030744>", "<:11128bronze:1379102709944156180>", "<:11128silver:1379102714490912901>"];
+    if (!leaderboard || leaderboard.length === 0) {
+      return message.reply(`No ${type} XP data available yet.`);
+    }
+
+    const totalPages = Math.ceil(leaderboard.length / usersPerPage);
+    page = Math.min(page, totalPages);
+
+    const pageData = leaderboard.slice(offset, offset + usersPerPage);
+
+    // Build leaderboard embed
+    const medals = ["🥇", "🥈", "🥉"];
     const formatXP = n => n.toLocaleString();
-    const fetchAvatar = async userId => {
+
+    let description = '';
+    for (let i = 0; i < pageData.length; i++) {
+      const globalRank = offset + i + 1;
+      const user = pageData[i];
+      const medal = globalRank <= 3 ? medals[globalRank - 1] : `**${globalRank}.**`;
+
       try {
-        const member = await message.guild.members.fetch(userId);
-        return member.user.displayAvatarURL({ extension: 'png', size: 64 });
-      } catch { return null; }
-    };
+        const member = await message.guild.members.fetch(user.user_id);
+        const nextLevelXp = user.next_level_xp || calculateNextLevelXp(user.level);
+        const bar = createProgressBar(user.xp, nextLevelXp, 12);
 
-    // Modern text ladder
-    let textDescArr = [];
-    if (textTop.length) {
-      textDescArr = await Promise.all(textTop.map(async (u, i) => {
-        try {
-          const medal = medals[i] || `**${i+1}.**`;
-          const avatar = await fetchAvatar(u.user_id);
-          const nextLevelXp = u.next_level_xp || (u.level < 100 ? 500 * u.level * u.level - 500 * u.level + 1000 : 0);
-          const bar = createProgressBar(u.xp, nextLevelXp);
-          return `${medal} <@${u.user_id}>\nLevel **${u.level}**\n${formatXP(u.xp)} / ${formatXP(nextLevelXp)} XP\n${bar}`;
-        } catch {
-          return null;
-        }
-      }));
+        description += `${medal} ${member.user.username}\n`;
+        description += `Level **${user.level}** • ${formatXP(user.xp)} / ${formatXP(nextLevelXp)} XP\n`;
+        description += `${bar}\n\n`;
+      } catch (error) {
+        // Skip users who left the server
+        continue;
+      }
     }
-    // Filter to only non-empty strings, ensure fallback is always a valid string
-    let textDesc = Array.isArray(textDescArr) ? textDescArr.filter(x => typeof x === 'string' && x.trim()).join("\n\n") : '';
-    if (!textDesc || typeof textDesc !== 'string' || textDesc.trim().length === 0) textDesc = 'No data.';
 
-    // Modern voice ladder
-    let voiceDescArr = [];
-    if (Array.isArray(voiceTop) && voiceTop.length) {
-      voiceDescArr = await Promise.all(voiceTop.map(async (u, i) => {
-        try {
-          const medal = medals[i] || `**${i+1}.**`;
-          const avatar = await fetchAvatar(u.user_id);
-          const nextLevelXp = u.next_level_xp || (u.level < 100 ? 500 * u.level * u.level - 500 * u.level + 1000 : 0);
-          const bar = createProgressBar(u.xp, nextLevelXp);
-          return `${medal} <@${u.user_id}>\nLevel **${u.level}**\n${formatXP(u.xp)} / ${formatXP(nextLevelXp)} XP\n${bar}`;
-        } catch {
-          return null;
-        }
-      }));
+    if (!description) {
+      description = 'No active users found.';
     }
-    // Filter to only non-empty strings, ensure fallback is always a valid string
-    let voiceDesc = Array.isArray(voiceDescArr) ? voiceDescArr.filter(x => typeof x === 'string' && x.trim()).join("\n\n") : '';
-    if (!voiceDesc || typeof voiceDesc !== 'string' || voiceDesc.trim().length === 0) voiceDesc = 'No data.';
-
-    // Truncate embed fields to Discord's 1024 character limit
-    function truncateField(str, max = 1024) {
-      if (typeof str !== 'string') return 'No data.';
-      if (str.length <= max) return str;
-      const cut = str.lastIndexOf('\n\n', max - 10);
-      return (cut > 0 ? str.slice(0, cut) : str.slice(0, max - 3)) + '\n...';
-    }
-    const safeTextDesc = truncateField(textDesc);
-    const safeVoiceDesc = truncateField(voiceDesc);
-
 
     const embed = new EmbedBuilder()
-      .setTitle('<:mvp:1305642262079868969> Server Leaderboards')
-      .setColor(0x5865F2)
-      .addFields(
-        { name: '<a:arrow_gn2:1309168756827623525> Text Ladder', value: safeTextDesc, inline: true },
-        { name: '<a:arrow_gn2:1309168756827623525> Voice Ladder', value: safeVoiceDesc, inline: true }
-      )
-      .setTimestamp(Date.now())
-      .setFooter({ text: `Leaderboard • ${message.guild.name}` });
+      .setTitle(`${type === 'text' ? '📝 Text' : '🎤 Voice'} Leaderboard`)
+      .setDescription(description)
+      .setColor(type === 'text' ? 0x5865F2 : 0xED4245)
+      .setFooter({ text: `Page ${page}/${totalPages} • ${leaderboard.length} total users` })
+      .setTimestamp();
 
-    // Show top text user avatar as thumbnail if available
-    try {
-      if (textTop[0]) {
-        const member = await message.guild.members.fetch(textTop[0].user_id);
-        embed.setThumbnail(member.user.displayAvatarURL({ extension: 'png', size: 128 }));
+    // Add top user's avatar as thumbnail
+    if (leaderboard[0]) {
+      try {
+        const topMember = await message.guild.members.fetch(leaderboard[0].user_id);
+        embed.setThumbnail(topMember.user.displayAvatarURL({ extension: 'png', size: 128 }));
+      } catch (error) {
+        // Ignore if top user left
       }
-    } catch {}
-    return message.reply({ embeds: [embed] });
+    }
+
+    // Navigation buttons
+    const row = new ActionRowBuilder();
+
+    row.addComponents(
+      new ButtonBuilder()
+        .setCustomId(`lb_${type}_${Math.max(1, page - 1)}`)
+        .setLabel('◀️ Previous')
+        .setStyle(ButtonStyle.Primary)
+        .setDisabled(page === 1),
+
+      new ButtonBuilder()
+        .setCustomId(`lb_page_${type}_${page}`)
+        .setLabel(`Page ${page}/${totalPages}`)
+        .setStyle(ButtonStyle.Secondary)
+        .setDisabled(true),
+
+      new ButtonBuilder()
+        .setCustomId(`lb_${type}_${Math.min(totalPages, page + 1)}`)
+        .setLabel('Next ▶️')
+        .setStyle(ButtonStyle.Primary)
+        .setDisabled(page === totalPages),
+
+      new ButtonBuilder()
+        .setCustomId(`lb_refresh_${type}_${page}`)
+        .setLabel('🔄 Refresh')
+        .setStyle(ButtonStyle.Success)
+    );
+
+    // Server stats
+    const totalXP = leaderboard.reduce((sum, u) => sum + u.xp, 0);
+    const avgLevel = Math.round(leaderboard.reduce((sum, u) => sum + u.level, 0) / leaderboard.length);
+
+    embed.addFields({
+      name: '📊 Server Stats',
+      value: `Total XP: **${formatXP(totalXP)}**\nAverage Level: **${avgLevel}**`,
+      inline: false
+    });
+
+    await message.reply({ embeds: [embed], components: [row] });
   }
 };
+
+// Helper function to calculate next level XP
+function calculateNextLevelXp(level) {
+  if (level >= 100) return 0;
+  if (level < 30) {
+    return 500 * level * level - 500 * level + 1000;
+  } else {
+    return 200000 + (level - 30) * 50000;
+  }
+}

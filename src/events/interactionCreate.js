@@ -43,7 +43,6 @@ module.exports = {
     // ─────────────────────────────────
     if (interaction.isButton() || interaction.isStringSelectMenu()) {
       logger.info(`[InteractionCreate] Received component interaction with customId: "${interaction.customId}" (ID: ${interaction.id})`);
-      console.log(`[DEBUG] Listener Count for interactionCreate: ${interaction.client.listenerCount('interactionCreate')}`);
 
       // Role Menu Handler Hook
       if (interaction.customId.startsWith('rm_')) {
@@ -59,6 +58,44 @@ module.exports = {
 
       // Ignore Wizard interactions (handled locally by collector)
       if (['w_btn', 'w_sel', 'w_toggle', 'w_single', 'add_role', 'finish', 'cancel', 'Primary', 'Secondary', 'Success', 'Danger'].includes(interaction.customId) || interaction.customId.startsWith('w_') || interaction.customId.startsWith('tpl_')) {
+        return;
+      }
+
+      // Leaderboard pagination handler
+      if (interaction.customId.startsWith('lb_')) {
+        const parts = interaction.customId.split('_');
+
+        // Defer immediately to prevent timeout
+        try {
+          await interaction.deferUpdate();
+        } catch (deferError) {
+          // If already acknowledged, continue anyway (e.g., multiple bot instances)
+          if (deferError.code !== 40060) {
+            throw deferError;
+          }
+        }
+
+        if (parts[1] === 'refresh') {
+          // lb_refresh_text_1 or lb_refresh_voice_1
+          const type = parts[2];
+          const page = parseInt(parts[3]) || 1;
+          await buttonHandlers.lb_refresh_handler(interaction, type, page);
+        } else if (parts[1] === 'page') {
+          // lb_page_text_1 - page indicator button (disabled, should not trigger)
+          // Already deferred above, nothing else to do
+        } else {
+          // lb_text_1 or lb_voice_1
+          const type = parts[1];
+          const page = parseInt(parts[2]) || 1;
+          if (type === 'text') {
+            await buttonHandlers.lb_text_handler(interaction, page);
+          } else if (type === 'voice') {
+            await buttonHandlers.lb_voice_handler(interaction, page);
+          } else {
+            // Unknown leaderboard button type
+            await interaction.editReply({ content: '❌ Unknown leaderboard button.' }).catch(() => { });
+          }
+        }
         return;
       }
 
