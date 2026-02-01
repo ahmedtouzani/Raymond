@@ -362,36 +362,47 @@ module.exports = {
       const settings = await getGuildSettingsWithDefaults(interaction.guild.id);
 
       const embed = new EmbedBuilder()
-        .setTitle('🎨 Theme Selection')
-        .setDescription('Choose a theme for rank cards and leaderboards')
+        .setTitle('🎨 Theme Settings')
+        .setDescription('Configure theme for rank cards and leaderboards')
         .setColor(0x5865F2)
         .addFields(
-          { name: 'Current Theme', value: `**${settings.theme_preset}**`, inline: false },
-          { name: 'Available Themes', value: '• **Dark** - Classic dark theme\n• **Light** - Clean light theme\n• **Neon** - Vibrant neon colors\n• **Gradient** - Purple gradient', inline: false }
+          { name: 'Server Theme', value: `**${settings.theme_preset}**`, inline: true },
+          { name: 'Force for All Users', value: settings.force_theme ? '✅ Enabled' : '❌ Disabled', inline: true },
+          { name: '\u200b', value: '\u200b', inline: true }, // Spacer
+          { name: 'Available Themes', value: '• **Dark** - Classic dark theme\n• **Light** - Clean light theme\n• **Neon** - Vibrant neon colors\n• **Gradient** - Purple gradient', inline: false },
+          { name: 'Force Theme Info', value: 'When enabled, all users will see the server theme regardless of their personal preference set via `!ranktheme`.', inline: false }
         );
 
-      const row = new ActionRowBuilder()
+      const row1 = new ActionRowBuilder()
         .addComponents(
           new StringSelectMenuBuilder()
             .setCustomId('levelsetup_theme_select')
             .setPlaceholder('Select a theme')
             .addOptions([
-              { label: 'Dark', value: 'dark', description: 'Classic dark theme', emoji: '🌑' },
+              { label: 'Dark', value: 'dark', description: 'Classic dark theme', emoji: '🌙' },
               { label: 'Light', value: 'light', description: 'Clean light theme', emoji: '☀️' },
-              { label: 'Neon', value: 'neon', description: 'Vibrant neon colors', emoji: '💜' },
+              { label: 'Neon', value: 'neon', description: 'Vibrant neon colors', emoji: '✨' },
               { label: 'Gradient', value: 'gradient', description: 'Purple gradient', emoji: '🌈' }
             ])
         );
 
-      const backButton = new ActionRowBuilder()
+      const row2 = new ActionRowBuilder()
         .addComponents(
+          new ButtonBuilder()
+            .setCustomId('levelsetup_theme_force_toggle')
+            .setLabel(settings.force_theme ? '🔓 Disable Force Theme' : '🔒 Enable Force Theme')
+            .setStyle(settings.force_theme ? ButtonStyle.Danger : ButtonStyle.Success),
+          new ButtonBuilder()
+            .setCustomId('levelsetup_theme_reset_all')
+            .setLabel('🔄 Reset All User Themes')
+            .setStyle(ButtonStyle.Secondary),
           new ButtonBuilder()
             .setCustomId('levelsetup_back')
             .setLabel('← Back')
             .setStyle(ButtonStyle.Secondary)
         );
 
-      await interaction.editReply({ embeds: [embed], components: [row, backButton] });
+      await interaction.editReply({ embeds: [embed], components: [row1, row2] });
     } catch (error) {
       console.error('[LevelSetup] Theme menu error:', error);
     }
@@ -417,19 +428,39 @@ module.exports = {
           { name: 'Excluded Channels', value: (settings.excluded_channels && settings.excluded_channels.length > 0) ? settings.excluded_channels.map(id => `<#${id}>`).join(', ') : 'None', inline: false }
         );
 
-      const row = new ActionRowBuilder()
+      const row1 = new ActionRowBuilder()
         .addComponents(
           new ButtonBuilder()
             .setCustomId('levelsetup_xp_multiplier')
-            .setLabel('Set Multiplier')
+            .setLabel('⚡ Multiplier')
             .setStyle(ButtonStyle.Primary),
+          new ButtonBuilder()
+            .setCustomId('levelsetup_text_xp_range')
+            .setLabel('💬 Text XP')
+            .setStyle(ButtonStyle.Primary),
+          new ButtonBuilder()
+            .setCustomId('levelsetup_voice_xp_rate')
+            .setLabel('🎤 Voice XP')
+            .setStyle(ButtonStyle.Primary)
+        );
+
+      const row2 = new ActionRowBuilder()
+        .addComponents(
+          new ButtonBuilder()
+            .setCustomId('levelsetup_xp_cooldown')
+            .setLabel('⏱️ Cooldown')
+            .setStyle(ButtonStyle.Primary),
+          new ButtonBuilder()
+            .setCustomId('levelsetup_excluded_channels')
+            .setLabel('🚫 Excluded Channels')
+            .setStyle(ButtonStyle.Secondary),
           new ButtonBuilder()
             .setCustomId('levelsetup_back')
             .setLabel('← Back')
             .setStyle(ButtonStyle.Secondary)
         );
 
-      await interaction.editReply({ embeds: [embed], components: [row] });
+      await interaction.editReply({ embeds: [embed], components: [row1, row2] });
     } catch (error) {
       console.error('[LevelSetup] XP menu error:', error);
     }
@@ -597,16 +628,86 @@ module.exports = {
         .setDescription(`Server theme is now set to **${selected}**.`)
         .setColor(0x57F287);
 
-      const backButton = new ActionRowBuilder().addComponents(
-        new ButtonBuilder()
-          .setCustomId('levelsetup_back')
-          .setLabel('← Back to Menu')
-          .setStyle(ButtonStyle.Secondary)
-      );
+      const backButton = new ActionRowBuilder()
+        .addComponents(
+          new ButtonBuilder()
+            .setCustomId('levelsetup_theme')
+            .setLabel('← Back to Theme Settings')
+            .setStyle(ButtonStyle.Secondary)
+        );
 
       await interaction.editReply({ embeds: [embed], components: [backButton] });
     } catch (error) {
       console.error('[LevelSetup] Theme select error:', error);
+    }
+  },
+
+  levelsetup_theme_force_toggle: async (interaction) => {
+    const { getGuildSettingsWithDefaults, updateGuildSettings } = require('../../database/levelSettings');
+
+    if (await denyIfNotAdmin(interaction)) return;
+
+    try {
+      await safeDeferUpdate(interaction);
+
+      const settings = await getGuildSettingsWithDefaults(interaction.guild.id);
+      const newValue = !settings.force_theme;
+
+      await updateGuildSettings(interaction.guild.id, { force_theme: newValue });
+
+      const embed = new EmbedBuilder()
+        .setTitle(newValue ? '🔒 Force Theme Enabled' : '🔓 Force Theme Disabled')
+        .setDescription(
+          newValue
+            ? 'All users will now see the server theme, regardless of their personal preference.'
+            : 'Users can now use their personal theme preference set via `!ranktheme`.'
+        )
+        .setColor(newValue ? 0x57F287 : 0x5865F2);
+
+      const backButton = new ActionRowBuilder()
+        .addComponents(
+          new ButtonBuilder()
+            .setCustomId('levelsetup_theme')
+            .setLabel('← Back to Theme Settings')
+            .setStyle(ButtonStyle.Secondary)
+        );
+
+      await interaction.editReply({ embeds: [embed], components: [backButton] });
+    } catch (error) {
+      console.error('[LevelSetup] Force theme toggle error:', error);
+    }
+  },
+
+  levelsetup_theme_reset_all: async (interaction) => {
+    const db = require('../../services/database');
+
+    if (await denyIfNotAdmin(interaction)) return;
+
+    try {
+      await safeDeferUpdate(interaction);
+
+      // Delete all user theme preferences for this guild
+      const result = await db.query(
+        'DELETE FROM user_preferences WHERE guild_id = $1 AND preference_key = $2',
+        [interaction.guild.id, 'rank_theme']
+      );
+
+      const embed = new EmbedBuilder()
+        .setTitle('🔄 User Themes Reset')
+        .setDescription(`Reset ${result.rowCount || 0} user theme preferences. All users will now use the server theme or default theme.`)
+        .setColor(0x57F287);
+
+      const backButton = new ActionRowBuilder()
+        .addComponents(
+          new ButtonBuilder()
+            .setCustomId('levelsetup_theme')
+            .setLabel('← Back to Theme Settings')
+            .setStyle(ButtonStyle.Secondary)
+        );
+
+      await interaction.editReply({ embeds: [embed], components: [backButton] });
+    } catch (error) {
+      console.error('[LevelSetup] Reset themes error:', error);
     }
   },
 

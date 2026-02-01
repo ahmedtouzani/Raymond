@@ -44,6 +44,7 @@ async function getGuildSettingsWithDefaults(guildId) {
         guild_id: guildId,
         theme_preset: 'dark',
         custom_theme: null,
+        force_theme: false,
         xp_multiplier: 1.0,
         text_xp_min: 15,
         text_xp_max: 25,
