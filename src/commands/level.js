@@ -24,15 +24,27 @@ module.exports = {
       }
     }
 
-    // Fetch user's theme preference if not specified in args
+    // Fetch theme preference if not specified in args
     if (!theme) {
       try {
         const db = require('../services/database');
-        const { rows } = await db.query(
-          'SELECT rank_card_theme FROM user_preferences WHERE guild_id = $1 AND user_id = $2',
-          [message.guild.id, target.id]
-        );
-        theme = rows[0]?.rank_card_theme || 'dark';
+        const { getGuildSettingsWithDefaults } = require('../database/levelSettings');
+
+        // Get guild settings
+        const guildSettings = await getGuildSettingsWithDefaults(message.guild.id);
+
+        // If force_theme is enabled, use guild theme
+        if (guildSettings.force_theme) {
+          theme = guildSettings.theme_preset;
+        } else {
+          // Otherwise, check user's personal preference
+          const { rows } = await db.query(
+            'SELECT rank_card_theme FROM user_preferences WHERE guild_id = $1 AND user_id = $2',
+            [message.guild.id, target.id]
+          );
+          // Use user preference, or fall back to guild theme, or default to dark
+          theme = rows[0]?.rank_card_theme || guildSettings.theme_preset || 'dark';
+        }
       } catch (error) {
         console.error('Error fetching theme preference:', error);
         theme = 'dark'; // Fallback to dark theme
