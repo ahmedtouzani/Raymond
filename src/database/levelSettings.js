@@ -72,8 +72,6 @@ async function updateGuildSettings(guildId, settings) {
     try {
         // Build SET clause dynamically
         const fields = [];
-        const values = [guildId];
-        let paramIndex = 2;
 
         const allowedFields = [
             'theme_preset', 'custom_theme', 'xp_multiplier', 'text_xp_min',
@@ -82,11 +80,12 @@ async function updateGuildSettings(guildId, settings) {
             'levelup_include_card', 'role_rewards', 'role_rewards_remove_previous'
         ];
 
+        // Map settings fields to their correct parameter index in the allValues array
+        // $1 is guild_id, so allowedFields[i] corresponds to $(i + 2)
         for (const [key, value] of Object.entries(settings)) {
             if (allowedFields.includes(key)) {
-                fields.push(`${key} = $${paramIndex}`);
-                values.push(value);
-                paramIndex++;
+                const index = allowedFields.indexOf(key);
+                fields.push(`${key} = $${index + 2}`);
             }
         }
 
@@ -102,7 +101,9 @@ async function updateGuildSettings(guildId, settings) {
       RETURNING *
     `;
 
+        // $1 is guildId, followed by all allowed fields in order (null if not provided)
         const allValues = [guildId, ...allowedFields.map(f => settings[f] !== undefined ? settings[f] : null)];
+
         const { rows } = await db.query(query, allValues);
         settingsCache.delete(guildId);
         return rows[0];
