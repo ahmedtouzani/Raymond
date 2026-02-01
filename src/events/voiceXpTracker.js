@@ -12,6 +12,7 @@ function VOICE_XP_AMOUNT() {
 if (!global.voiceXpTracking) global.voiceXpTracking = {};
 
 module.exports = {
+  disabled: true,
   name: 'voiceStateUpdate',
   async execute(oldState, newState) {
     // Only track if user joins/moves channels

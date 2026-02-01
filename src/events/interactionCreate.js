@@ -38,6 +38,26 @@ module.exports = {
       return;
     }
 
+    if (interaction.isModalSubmit()) {
+      logger.info(`[InteractionCreate] Received modal submit with customId: "${interaction.customId}" (ID: ${interaction.id})`);
+      const handler = buttonHandlers[interaction.customId];
+      if (handler) {
+        try {
+          await handler(interaction);
+        } catch (error) {
+          logger.error(`Error handling modal ${interaction.customId}:`, error);
+          if (interaction.replied || interaction.deferred) {
+            await interaction.followUp({ content: 'There was an error handling this form.', flags: 64 }).catch(() => { });
+          } else {
+            await interaction.reply({ content: 'There was an error handling this form.', flags: 64 }).catch(() => { });
+          }
+        }
+      } else {
+        await interaction.reply({ content: 'Unknown form submission.', flags: 64 }).catch(() => { });
+      }
+      return;
+    }
+
     // ─────────────────────────────────
     // ─ Button Interaction Handling ─
     // ─────────────────────────────────

@@ -54,7 +54,8 @@ const { setGuildConfig } = require('./database/guildConfig');
 // --- Auto-create config when bot joins a new guild ---
 client.on('guildCreate', async (guild) => {
   try {
-    await setGuildConfig(guild.id, { prefix: process.env.GLOBAL_PREFIX, settings: {} });
+    const defaultPrefix = process.env.GLOBAL_PREFIX || process.env.PREFIX;
+    await setGuildConfig(guild.id, { prefix: defaultPrefix, settings: {} });
     logger.info(`Created config for new guild: ${guild.name} (${guild.id})`);
     updateChangelog('INFO', `Created config for new guild: ${guild.name} (${guild.id})`);
   } catch (err) {
@@ -68,9 +69,9 @@ client.on('guildCreate', async (guild) => {
 // Initialize AntiNukeSystem
 
 // Load the bot token from the .env file
-const TOKEN = process.env.BOT_TOKEN;
+const TOKEN = process.env.BOT_TOKEN || process.env.DISCORD_TOKEN || process.env.DISCORDTOKEN;
 if (!TOKEN) {
-  console.error('ERROR: BOT_TOKEN is not set in the .env file.');
+  console.error('ERROR: BOT_TOKEN (or DISCORD_TOKEN) is not set in the .env file.');
   process.exit(1);
 }
 

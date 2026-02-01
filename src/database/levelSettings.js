@@ -1,5 +1,8 @@
 const db = require('../services/database');
 
+const settingsCache = new Map();
+const SETTINGS_CACHE_TTL = 60 * 1000;
+
 /**
  * Database functions for guild level settings
  */
@@ -11,11 +14,17 @@ const db = require('../services/database');
  */
 async function getGuildSettings(guildId) {
     try {
+        const cached = settingsCache.get(guildId);
+        if (cached && (Date.now() - cached.cachedAt < SETTINGS_CACHE_TTL)) {
+            return cached.data;
+        }
         const { rows } = await db.query(
             'SELECT * FROM guild_level_settings WHERE guild_id = $1',
             [guildId]
         );
-        return rows[0] || null;
+        const settings = rows[0] || null;
+        settingsCache.set(guildId, { data: settings, cachedAt: Date.now() });
+        return settings;
     } catch (error) {
         console.error('[LevelSettings] Error fetching guild settings:', error);
         return null;
@@ -94,6 +103,7 @@ async function updateGuildSettings(guildId, settings) {
 
         const allValues = [guildId, ...allowedFields.map(f => settings[f] !== undefined ? settings[f] : null)];
         const { rows } = await db.query(query, allValues);
+        settingsCache.delete(guildId);
         return rows[0];
     } catch (error) {
         console.error('[LevelSettings] Error updating guild settings:', error);
@@ -109,6 +119,7 @@ async function updateGuildSettings(guildId, settings) {
 async function resetGuildSettings(guildId) {
     try {
         await db.query('DELETE FROM guild_level_settings WHERE guild_id = $1', [guildId]);
+        settingsCache.delete(guildId);
         return true;
     } catch (error) {
         console.error('[LevelSettings] Error resetting guild settings:', error);

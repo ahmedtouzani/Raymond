@@ -1,4 +1,4 @@
-const { ChannelType, PermissionsBitField, OverwriteType } = require('discord.js');
+const { ChannelType, PermissionsBitField, OverwriteType, AttachmentBuilder } = require('discord.js');
 const tempVoiceDB = require('../database/tempVoice');
 const statsUpdater = require('../services/statsUpdater');
 const { addXp } = require('../database/levelSystem');
@@ -163,18 +163,28 @@ async function startVoiceXpTracking(newState) {
 
   global.voiceXpTracking[key] = setInterval(async () => {
     try {
+      const { getGuildSettingsWithDefaults } = require('../database/levelSettings');
+      const levelSettings = await getGuildSettingsWithDefaults(guild.id).catch(() => null);
+
+      if (levelSettings?.excluded_channels?.includes(channel.id)) {
+        return;
+      }
+
+      const intervalMs = VOICE_XP_INTERVAL;
+      const voiceRatePerMinute = levelSettings?.voice_xp_rate ?? 10;
+      const multiplier = levelSettings?.xp_multiplier ?? 1;
+      const baseXp = Math.round((voiceRatePerMinute * intervalMs) / (60 * 1000));
+      const xpToAdd = Math.max(0, Math.round(baseXp * multiplier));
+
       // Check cooldown
       const cooldownKey = `${guild.id}-${member.id}`;
       const now = Date.now();
 
       if (
         !global.voiceXpCooldown[cooldownKey] ||
-        now - global.voiceXpCooldown[cooldownKey] > VOICE_XP_COOLDOWN
+        now - global.voiceXpCooldown[cooldownKey] > ((levelSettings?.xp_cooldown ?? 60) * 1000)
       ) {
         global.voiceXpCooldown[cooldownKey] = now;
-
-        // Add XP (random between 10-20)
-        const xpToAdd = Math.floor(10 + Math.random() * 11);
 
         try {
           const { level, leveledUp } = await addXp(guild.id, member.id, xpToAdd, 'voice');
@@ -182,15 +192,32 @@ async function startVoiceXpTracking(newState) {
           if (leveledUp) {
             await handleLevelUpRoles(newState.client, guild.id, member.id, 'voice', level);
 
-            // Send congratulatory message via DM
-            try {
-              const dmChannel = await member.createDM();
-              await dmChannel.send({
-                content: `${member}, congrats! You reached voice level **${level}**!`
-              });
-            } catch (error) {
-              // Handle DM failure silently
-              logger.debug(`Could not send level up DM to ${member.user.tag}`);
+            if (levelSettings?.levelup_enabled) {
+              const channelId = levelSettings?.levelup_channel_id;
+              const targetChannel = channelId
+                ? guild.channels.cache.get(channelId) || null
+                : null;
+
+              if (targetChannel && targetChannel.isTextBased()) {
+                const template = levelSettings?.levelup_message || 'Congratulations {user}! You reached level {level}!';
+                const content = template
+                  .replaceAll('{user}', `<@${member.id}>`)
+                  .replaceAll('{level}', String(level));
+
+                try {
+                  if (levelSettings?.levelup_include_card) {
+                    const { getUserLevel } = require('../database/levelSystem');
+                    const { generateRankCard } = require('../utils/canvasRankCard');
+                    const userData = await getUserLevel(guild.id, member.id);
+                    const buffer = await generateRankCard(userData, member, 'voice', 0, levelSettings?.theme_preset || 'dark');
+                    const attachment = new AttachmentBuilder(buffer, { name: 'level-up.png' });
+                    await targetChannel.send({ content, files: [attachment] });
+                  } else {
+                    await targetChannel.send({ content });
+                  }
+                } catch (error) {
+                }
+              }
             }
           }
         } catch (err) {
@@ -213,6 +240,13 @@ async function startVoiceXpTracking(newState) {
   }, VOICE_XP_INTERVAL);
 }
 
+function restartVoiceXpTracking(newState) {
+  const { guild, member } = newState;
+  if (!guild || !member) return;
+  stopVoiceXpTracking(guild.id, member.id);
+  startVoiceXpTracking(newState);
+}
+
 function stopVoiceXpTracking(guildId, memberId) {
   const key = `${guildId}-${memberId}`;
 
@@ -231,7 +265,7 @@ module.exports = {
     // Scenario 1: User joins a channel or moves between channels
     if (newState.channelId && newState.channelId !== oldState.channelId) {
       await handleChannelCreation(newState);
-      await startVoiceXpTracking(newState);
+      restartVoiceXpTracking(newState);
     }
 
     // Scenario 2: User leaves a channel or moves

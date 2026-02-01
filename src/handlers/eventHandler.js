@@ -8,6 +8,10 @@ function loadEvents(client, eventsPath = path.join(__dirname, '../events')) {
   for (const file of eventFiles) {
     try {
       const event = require(path.join(eventsPath, file));
+      if (event && event.disabled) {
+        logger.info(`Skipped disabled event: ${file}`);
+        continue;
+      }
       if (event && event.name && typeof event.execute === 'function') {
         if (event.once) {
           client.once(event.name, (...args) => event.execute(...args, client));
@@ -33,6 +37,10 @@ function reloadEvent(client, file) {
   try {
     delete require.cache[require.resolve(file)];
     const event = require(file);
+    if (event && event.disabled) {
+      logger.info(`Skipped disabled event on reload: ${path.basename(file)}`);
+      return;
+    }
     if (event && event.name && typeof event.execute === 'function') {
       client.removeAllListeners(event.name);
       if (event.once) {
