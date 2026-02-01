@@ -1,0 +1,1001 @@
+2026-02-01T20:25:19.316319735Z [inf]  - [2026-02-01 10:45:33] [INFO] ✅ Database connection successful
+2026-02-01T20:25:21.117839883Z [inf]  - [2026-02-01 10:45:38] [INFO] Ready! Logged in as Parallel Universe#9387
+2026-02-01T20:25:21.117845374Z [inf]  - [2026-02-01 10:45:38] [INFO] Bot is now online and ready to serve in 1 guilds.
+2026-02-01T20:25:21.117852078Z [inf]  - [2026-02-01 10:45:40] [INFO] Ready! Logged in as Parallel Universe#9387
+2026-02-01T20:25:21.117857666Z [inf]  - [2026-02-01 10:45:40] [INFO] Bot is now online and ready to serve in 1 guilds.
+2026-02-01T20:25:21.117863270Z [inf]  - [2026-02-01 10:45:41] [INFO] Registered all slash commands globally.
+2026-02-01T20:25:21.117869066Z [inf]  - [2026-02-01 10:45:41] [INFO] Initializing configs for 1 guilds...
+2026-02-01T20:25:21.117874075Z [inf]  - [2026-02-01 10:45:41] [INFO] <a:okey:1467170671351173121> Guild configurations initialized
+2026-02-01T20:25:21.117879630Z [inf]  - [2026-02-01 10:45:41] [INFO] Registered all slash commands globally.
+2026-02-01T20:25:21.117884884Z [inf]  - [2026-02-01 10:45:41] [INFO] Initializing configs for 1 guilds...
+2026-02-01T20:25:21.117890639Z [inf]  - [2026-02-01 10:45:41] [INFO] Caching invites for all guilds...
+2026-02-01T20:25:21.117896494Z [inf]  - [2026-02-01 10:45:42] [INFO] <a:okey:1467170671351173121> Guild configurations initialized
+2026-02-01T20:25:21.117901895Z [inf]  - [2026-02-01 10:45:42] [INFO] Caching invites for all guilds...
+2026-02-01T20:25:21.117907459Z [inf]  - [2026-02-01 10:46:19] [INFO] Cached 168 invites for guild Parallel Universe
+2026-02-01T20:25:21.117912744Z [inf]  - [2026-02-01 10:46:19] [INFO] Successfully cached invites for 1/1 guilds
+2026-02-01T20:25:21.117918048Z [inf]  - [2026-02-01 10:46:20] [INFO] Reloaded command: top
+2026-02-01T20:25:21.117923405Z [inf]  - [2026-02-01 10:46:20] [INFO] Reloaded command: top
+2026-02-01T20:25:21.117928684Z [inf]  - [2026-02-01 10:46:25] [INFO] Loaded command: levelsetup
+2026-02-01T20:25:21.117934532Z [inf]  - [2026-02-01 10:46:25] [INFO] Loaded command: autoban
+2026-02-01T20:25:23.315343996Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: level
+2026-02-01T20:25:23.315564855Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: levelrole
+2026-02-01T20:25:23.315584120Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: add
+2026-02-01T20:25:23.315593286Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: ban
+2026-02-01T20:25:23.315602160Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: clear
+2026-02-01T20:25:23.315611004Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: delwarn
+2026-02-01T20:25:23.315619681Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: deny
+2026-02-01T20:25:23.315627912Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: jail
+2026-02-01T20:25:23.315637149Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: jailsettings
+2026-02-01T20:25:23.315645871Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: kick
+2026-02-01T20:25:23.315653354Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: lock
+2026-02-01T20:25:23.315662299Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: move
+2026-02-01T20:25:23.315670437Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: mute
+2026-02-01T20:25:23.315679037Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: nickname
+2026-02-01T20:25:23.315687439Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: role
+2026-02-01T20:25:23.315697415Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: setautorole
+2026-02-01T20:25:23.315887804Z [inf]  - [2026-02-01 10:46:25] [INFO] Loaded command: autospam
+2026-02-01T20:25:23.315893522Z [inf]  - [2026-02-01 10:46:25] [INFO] Loaded command: levelsetup
+2026-02-01T20:25:23.315898935Z [inf]  - [2026-02-01 10:46:25] [INFO] Loaded command: autoban
+2026-02-01T20:25:23.316740366Z [inf]  - [2026-02-01 10:46:25] [INFO] Loaded command: autospam
+2026-02-01T20:25:23.316762740Z [inf]  - [2026-02-01 10:46:25] [INFO] Loaded command: leaderboard
+2026-02-01T20:25:26.054015656Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: setjailrole
+2026-02-01T20:25:26.054022509Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: setjailvoice
+2026-02-01T20:25:26.054029092Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: setstats
+2026-02-01T20:25:26.054035112Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: slowmode
+2026-02-01T20:25:26.054042335Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: tempvoice
+2026-02-01T20:25:26.054049055Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: unban
+2026-02-01T20:25:26.054054942Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: unjail
+2026-02-01T20:25:26.054060923Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: unlock
+2026-02-01T20:25:26.054067394Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: unmute
+2026-02-01T20:25:26.054073547Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: vb
+2026-02-01T20:25:26.054079289Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: leaderboard
+2026-02-01T20:25:26.054085241Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: verify
+2026-02-01T20:25:26.054091032Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: vg
+2026-02-01T20:25:26.054096973Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: level
+2026-02-01T20:25:26.054102885Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: warn
+2026-02-01T20:25:26.054109174Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: warns
+2026-02-01T20:25:26.054115366Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: levelrole
+2026-02-01T20:25:26.054121341Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: add
+2026-02-01T20:25:26.054127777Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: ban
+2026-02-01T20:25:26.054133709Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: clear
+2026-02-01T20:25:26.054139467Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: delwarn
+2026-02-01T20:25:28.089051949Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: deny
+2026-02-01T20:25:28.089058619Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: jail
+2026-02-01T20:25:28.089064593Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: jailsettings
+2026-02-01T20:25:28.089070592Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: kick
+2026-02-01T20:25:28.089076283Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: lock
+2026-02-01T20:25:28.089083307Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: move
+2026-02-01T20:25:28.089097432Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: mute
+2026-02-01T20:25:28.089104017Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: nickname
+2026-02-01T20:25:28.089111699Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: role
+2026-02-01T20:25:28.089118548Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: setautorole
+2026-02-01T20:25:28.089126156Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: setjailrole
+2026-02-01T20:25:28.089132905Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: setjailvoice
+2026-02-01T20:25:28.089140414Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: setstats
+2026-02-01T20:25:28.089147203Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: slowmode
+2026-02-01T20:25:28.089155154Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: tempvoice
+2026-02-01T20:25:28.089163255Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: unban
+2026-02-01T20:25:28.089169818Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: unjail
+2026-02-01T20:25:28.089177600Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: unlock
+2026-02-01T20:25:28.089185078Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: unmute
+2026-02-01T20:25:28.089193143Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: vb
+2026-02-01T20:25:28.089199671Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: verify
+2026-02-01T20:25:30.745368764Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: nuke-server
+2026-02-01T20:25:30.745369029Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: rolemenu
+2026-02-01T20:25:30.745371486Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: setembedicon
+2026-02-01T20:25:30.745380317Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: premium
+2026-02-01T20:25:30.745380705Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: sendnotify
+2026-02-01T20:25:30.745389666Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: setuproles
+2026-02-01T20:25:30.745391043Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: unafk
+2026-02-01T20:25:30.745393235Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: ping
+2026-02-01T20:25:30.745397512Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: shutdown
+2026-02-01T20:25:30.745408368Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: modmail
+2026-02-01T20:25:30.745412080Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: ranktheme
+2026-02-01T20:25:30.745418858Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: moveall
+2026-02-01T20:25:30.745421604Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: setembedcolor
+2026-02-01T20:25:30.745428149Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: setembedfooter
+2026-02-01T20:25:30.745448592Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: vg
+2026-02-01T20:25:30.745455453Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: warn
+2026-02-01T20:25:30.745461676Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: warns
+2026-02-01T20:25:30.745468391Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: afk
+2026-02-01T20:25:30.745475234Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: autoreact
+2026-02-01T20:25:30.745481715Z [inf]  - [2026-02-01 10:46:26] [INFO] Loaded command: dev
+2026-02-01T20:25:30.745487441Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: massdm
+2026-02-01T20:25:32.532412942Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: top
+2026-02-01T20:25:32.532421003Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: avatar
+2026-02-01T20:25:32.532428227Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: botinfo
+2026-02-01T20:25:32.532435629Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: channelinfo
+2026-02-01T20:25:32.532444484Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: help
+2026-02-01T20:25:32.532452064Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: invite
+2026-02-01T20:25:32.532458691Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: roleinfo
+2026-02-01T20:25:32.532465825Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: serverinfo
+2026-02-01T20:25:32.532673519Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: userinfo
+2026-02-01T20:25:32.532685712Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded event: guildMemberAdd
+2026-02-01T20:25:32.532692668Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded event: guildMemberRemove
+2026-02-01T20:25:32.532698603Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded event: interactionCreate
+2026-02-01T20:25:32.532705282Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded event: inviteCreate
+2026-02-01T20:25:32.532714871Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded event: inviteDelete
+2026-02-01T20:25:32.532721769Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: afk
+2026-02-01T20:25:32.532731198Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded event: messageCreate
+2026-02-01T20:25:32.532737630Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded event: messageReactionAdd
+2026-02-01T20:25:32.532744509Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: autoreact
+2026-02-01T20:25:32.532754027Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded event: messageReactionRemove
+2026-02-01T20:25:32.532761220Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: dev
+2026-02-01T20:25:34.151691876Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded event: ready
+2026-02-01T20:25:34.151698109Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded event: voiceStateUpdate
+2026-02-01T20:25:34.151704403Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: massdm
+2026-02-01T20:25:34.151711653Z [inf]  - [2026-02-01 10:46:27] [INFO] Skipped disabled event: voiceXpTracker.js
+2026-02-01T20:25:34.151717343Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded slash command: ping
+2026-02-01T20:25:34.151723894Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded slash command: setembedcolor
+2026-02-01T20:25:34.151729773Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded slash command: setembedfooter
+2026-02-01T20:25:34.151735311Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: nuke-server
+2026-02-01T20:25:34.151747319Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded slash command: setembedicon
+2026-02-01T20:25:34.151754039Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: premium
+2026-02-01T20:25:34.151760317Z [inf]  - [2026-02-01 10:46:27] [INFO] Initializing bot and attempting to log in...
+2026-02-01T20:25:34.151766179Z [inf]  - [2026-02-01 10:46:27] [INFO] Loaded command: setuproles
+2026-02-01T20:25:34.151773202Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded command: shutdown
+2026-02-01T20:25:34.151778936Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded command: modmail
+2026-02-01T20:25:34.151784809Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded command: moveall
+2026-02-01T20:25:34.151791890Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded command: rolemenu
+2026-02-01T20:25:34.151798036Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded command: sendnotify
+2026-02-01T20:25:34.151804952Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded command: unafk
+2026-02-01T20:25:34.151810930Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded command: ping
+2026-02-01T20:25:34.151816908Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded command: ranktheme
+2026-02-01T20:25:36.180107675Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded command: setembedcolor
+2026-02-01T20:25:36.180114139Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded command: setembedfooter
+2026-02-01T20:25:36.180120089Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded command: setembedicon
+2026-02-01T20:25:36.180125429Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded command: top
+2026-02-01T20:25:36.180131222Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded command: avatar
+2026-02-01T20:25:36.180136660Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded command: botinfo
+2026-02-01T20:25:36.180144989Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded command: channelinfo
+2026-02-01T20:25:36.180150691Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded command: help
+2026-02-01T20:25:36.180157526Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded command: invite
+2026-02-01T20:25:36.180163121Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded command: roleinfo
+2026-02-01T20:25:36.180168928Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded command: serverinfo
+2026-02-01T20:25:36.180176144Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded command: userinfo
+2026-02-01T20:25:36.180181770Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded event: guildMemberAdd
+2026-02-01T20:25:36.180187463Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded event: guildMemberRemove
+2026-02-01T20:25:36.180192666Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded event: interactionCreate
+2026-02-01T20:25:36.180218358Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded event: inviteCreate
+2026-02-01T20:25:36.180224517Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded event: inviteDelete
+2026-02-01T20:25:36.180230587Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded event: messageCreate
+2026-02-01T20:25:36.180236581Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded event: messageReactionAdd
+2026-02-01T20:25:36.180242721Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded event: messageReactionRemove
+2026-02-01T20:25:38.119534326Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded event: ready
+2026-02-01T20:25:38.119542238Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded event: voiceStateUpdate
+2026-02-01T20:25:38.119550246Z [inf]  - [2026-02-01 10:46:28] [INFO] Skipped disabled event: voiceXpTracker.js
+2026-02-01T20:25:38.119559435Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded slash command: ping
+2026-02-01T20:25:38.122726983Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded slash command: setembedcolor
+2026-02-01T20:25:38.122742150Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded slash command: setembedfooter
+2026-02-01T20:25:38.122748689Z [inf]  - [2026-02-01 10:46:28] [INFO] Loaded slash command: setembedicon
+2026-02-01T20:25:38.122753914Z [inf]  - [2026-02-01 10:46:28] [INFO] Initializing bot and attempting to log in...
+2026-02-01T20:25:38.122759190Z [inf]  - [2026-02-01 10:46:29] [INFO] ✅ Database connection successful
+2026-02-01T20:25:38.122765071Z [inf]  - [2026-02-01 10:46:30] [INFO] ✅ Database connection successful
+2026-02-01T20:25:38.122770331Z [inf]  - [2026-02-01 10:46:34] [INFO] Ready! Logged in as Parallel Universe#9387
+2026-02-01T20:25:38.122775908Z [inf]  - [2026-02-01 10:46:34] [INFO] Bot is now online and ready to serve in 1 guilds.
+2026-02-01T20:25:38.122781574Z [inf]  - [2026-02-01 10:46:37] [INFO] Registered all slash commands globally.
+2026-02-01T20:25:38.122787728Z [inf]  - [2026-02-01 10:46:37] [INFO] Initializing configs for 1 guilds...
+2026-02-01T20:25:38.122793043Z [inf]  - [2026-02-01 10:46:37] [INFO] Ready! Logged in as Parallel Universe#9387
+2026-02-01T20:25:38.122798699Z [inf]  - [2026-02-01 10:46:37] [INFO] Bot is now online and ready to serve in 1 guilds.
+2026-02-01T20:25:38.122804059Z [inf]  - [2026-02-01 10:46:37] [INFO] <a:okey:1467170671351173121> Guild configurations initialized
+2026-02-01T20:25:38.122809116Z [inf]  - [2026-02-01 10:46:38] [INFO] Caching invites for all guilds...
+2026-02-01T20:25:39.968940345Z [inf]  - [2026-02-01 10:48:41] [INFO] Received SIGINT. Shutting down gracefully...
+2026-02-01T20:25:39.968953327Z [inf]  - [2026-02-01 10:54:02] [INFO] Updated voice count for Parallel Universe: 6
+2026-02-01T20:25:39.971165118Z [inf]  - [2026-02-01 10:47:05] [INFO] [InteractionCreate] Received component interaction with customId: "levelsetup_xp" (ID: 1467471315064852623)
+2026-02-01T20:25:39.971171748Z [inf]  - [2026-02-01 10:47:06] [INFO] [InteractionCreate] Received component interaction with customId: "levelsetup_xp" (ID: 1467471315064852623)
+2026-02-01T20:25:39.971182881Z [inf]  - [2026-02-01 10:47:12] [INFO] Registered all slash commands globally.
+2026-02-01T20:25:39.971189209Z [inf]  - [2026-02-01 10:47:12] [INFO] Initializing configs for 1 guilds...
+2026-02-01T20:25:39.971194675Z [inf]  - [2026-02-01 10:47:12] [INFO] <a:okey:1467170671351173121> Guild configurations initialized
+2026-02-01T20:25:39.971200677Z [inf]  - [2026-02-01 10:47:12] [INFO] Caching invites for all guilds...
+2026-02-01T20:25:39.971209049Z [inf]  - [2026-02-01 10:47:16] [INFO] Cached 168 invites for guild Parallel Universe
+2026-02-01T20:25:39.971214798Z [inf]  - [2026-02-01 10:47:16] [INFO] Successfully cached invites for 1/1 guilds
+2026-02-01T20:25:39.971220816Z [inf]  - [2026-02-01 10:47:17] [WARN] Could not find the dev server with ID: 1379099550014505031
+2026-02-01T20:25:39.971226818Z [inf]  - [2026-02-01 10:47:18] [INFO] Invite created: GtZ9aN7Dc by aji.dab.11
+2026-02-01T20:25:39.971235323Z [inf]  - [2026-02-01 10:47:20] [INFO] Invite created: GtZ9aN7Dc by aji.dab.11
+2026-02-01T20:25:39.975284219Z [inf]  - [2026-02-01 10:47:47] [INFO] Cached 168 invites for guild Parallel Universe
+2026-02-01T20:25:39.975601539Z [inf]  - [2026-02-01 10:47:47] [INFO] Successfully cached invites for 1/1 guilds
+2026-02-01T20:25:39.975634173Z [inf]  - [2026-02-01 10:47:48] [WARN] Could not find the dev server with ID: 1379099550014505031
+2026-02-01T20:25:42.106433997Z [inf]  - [2026-02-01 10:54:03] [INFO] Updated voice count for Parallel Universe: 7
+2026-02-01T20:25:42.106440658Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: levelsetup
+2026-02-01T20:25:42.106447662Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: autoban
+2026-02-01T20:25:42.106453475Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: autospam
+2026-02-01T20:25:42.106477024Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: leaderboard
+2026-02-01T20:25:42.106485813Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: level
+2026-02-01T20:25:42.106492721Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: levelrole
+2026-02-01T20:25:42.106499603Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: add
+2026-02-01T20:25:42.106506973Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: ban
+2026-02-01T20:25:42.106513581Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: clear
+2026-02-01T20:25:42.106520960Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: delwarn
+2026-02-01T20:25:42.106528253Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: deny
+2026-02-01T20:25:42.106535389Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: jail
+2026-02-01T20:25:42.106544594Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: jailsettings
+2026-02-01T20:25:42.106551062Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: kick
+2026-02-01T20:25:42.106558852Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: lock
+2026-02-01T20:25:42.106565882Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: move
+2026-02-01T20:25:42.106574676Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: mute
+2026-02-01T20:25:42.106581530Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: nickname
+2026-02-01T20:25:42.106588885Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: role
+2026-02-01T20:25:42.106596902Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: setautorole
+2026-02-01T20:25:44.883330359Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: setjailrole
+2026-02-01T20:25:44.883337471Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: setjailvoice
+2026-02-01T20:25:44.883343891Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: setstats
+2026-02-01T20:25:44.883349845Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: slowmode
+2026-02-01T20:25:44.883356439Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: tempvoice
+2026-02-01T20:25:44.883362604Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: unban
+2026-02-01T20:25:44.883369263Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: unjail
+2026-02-01T20:25:44.883375118Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: unlock
+2026-02-01T20:25:44.883385682Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: unmute
+2026-02-01T20:25:44.884440963Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: vb
+2026-02-01T20:25:44.884452567Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: verify
+2026-02-01T20:25:44.884459034Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: vg
+2026-02-01T20:25:44.884464630Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: warn
+2026-02-01T20:25:44.884470425Z [inf]  - [2026-02-01 10:56:36] [INFO] Loaded command: warns
+2026-02-01T20:25:44.884476531Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded command: afk
+2026-02-01T20:25:44.884482319Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded command: autoreact
+2026-02-01T20:25:44.884488600Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded command: dev
+2026-02-01T20:25:44.884494355Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded command: massdm
+2026-02-01T20:25:44.884500752Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded command: nuke-server
+2026-02-01T20:25:44.884506631Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded command: premium
+2026-02-01T20:25:47.911809585Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded command: setuproles
+2026-02-01T20:25:47.911816544Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded command: shutdown
+2026-02-01T20:25:47.911823194Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded command: modmail
+2026-02-01T20:25:47.911830793Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded command: moveall
+2026-02-01T20:25:47.911837030Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded command: rolemenu
+2026-02-01T20:25:47.911842856Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded command: sendnotify
+2026-02-01T20:25:47.911849530Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded command: unafk
+2026-02-01T20:25:47.911858129Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded command: ping
+2026-02-01T20:25:47.911865448Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded command: ranktheme
+2026-02-01T20:25:47.911871466Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded command: setembedcolor
+2026-02-01T20:25:47.911877718Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded command: setembedfooter
+2026-02-01T20:25:47.911883713Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded command: setembedicon
+2026-02-01T20:25:47.911888984Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded command: top
+2026-02-01T20:25:47.911894472Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded command: avatar
+2026-02-01T20:25:47.911900236Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded command: botinfo
+2026-02-01T20:25:47.911906158Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded command: channelinfo
+2026-02-01T20:25:47.911918724Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded command: help
+2026-02-01T20:25:47.911929783Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded command: invite
+2026-02-01T20:25:47.911935336Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded command: roleinfo
+2026-02-01T20:25:47.911941231Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded command: serverinfo
+2026-02-01T20:25:47.911947199Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded command: userinfo
+2026-02-01T20:25:47.911953138Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded event: guildMemberAdd
+2026-02-01T20:25:49.976856844Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded event: guildMemberRemove
+2026-02-01T20:25:49.976864037Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded event: interactionCreate
+2026-02-01T20:25:49.976924987Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded event: inviteCreate
+2026-02-01T20:25:49.976933407Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded event: inviteDelete
+2026-02-01T20:25:49.976941757Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded event: messageCreate
+2026-02-01T20:25:49.976948670Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded event: messageReactionAdd
+2026-02-01T20:25:49.976954780Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded event: messageReactionRemove
+2026-02-01T20:25:49.976961753Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded event: ready
+2026-02-01T20:25:49.976968942Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded event: voiceStateUpdate
+2026-02-01T20:25:49.976976379Z [inf]  - [2026-02-01 10:56:37] [INFO] Skipped disabled event: voiceXpTracker.js
+2026-02-01T20:25:49.976984574Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded slash command: ping
+2026-02-01T20:25:49.976991359Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded slash command: setembedcolor
+2026-02-01T20:25:49.976997383Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded slash command: setembedfooter
+2026-02-01T20:25:49.977004445Z [inf]  - [2026-02-01 10:56:37] [INFO] Loaded slash command: setembedicon
+2026-02-01T20:25:49.977012041Z [inf]  - [2026-02-01 10:56:37] [INFO] Initializing bot and attempting to log in...
+2026-02-01T20:25:49.977019672Z [inf]  - [2026-02-01 10:56:38] [INFO] ✅ Database connection successful
+2026-02-01T20:25:49.977026762Z [inf]  - [2026-02-01 10:56:54] [INFO] Ready! Logged in as Raymond Reddington#0429
+2026-02-01T20:25:49.977033052Z [inf]  - [2026-02-01 10:56:54] [INFO] Bot is now online and ready to serve in 4 guilds.
+2026-02-01T20:25:49.977039190Z [inf]  - [2026-02-01 10:56:57] [INFO] Registered all slash commands globally.
+2026-02-01T20:25:51.780446524Z [inf]  - [2026-02-01 10:56:57] [INFO] Initializing configs for 4 guilds...
+2026-02-01T20:25:51.780452946Z [inf]  - [2026-02-01 10:56:59] [INFO] <a:okey:1467170671351173121> Guild configurations initialized
+2026-02-01T20:25:51.780462575Z [inf]  - [2026-02-01 10:57:00] [INFO] Caching invites for all guilds...
+2026-02-01T20:25:51.780469929Z [inf]  - [2026-02-01 10:57:10] [INFO] Cached 35 invites for guild Parallel Universe - We Back
+2026-02-01T20:25:51.780477417Z [inf]  - [2026-02-01 10:57:15] [INFO] Received SIGINT. Shutting down gracefully...
+2026-02-01T20:25:51.780484625Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: levelsetup
+2026-02-01T20:25:51.780490990Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: autoban
+2026-02-01T20:25:51.780497992Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: autospam
+2026-02-01T20:25:51.780505403Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: leaderboard
+2026-02-01T20:25:51.780512003Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: level
+2026-02-01T20:25:51.780519579Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: levelrole
+2026-02-01T20:25:51.780525983Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: add
+2026-02-01T20:25:51.780533199Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: ban
+2026-02-01T20:25:51.780539714Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: clear
+2026-02-01T20:25:51.780546252Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: delwarn
+2026-02-01T20:25:51.780553511Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: deny
+2026-02-01T20:25:51.780559960Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: jail
+2026-02-01T20:25:51.780567910Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: jailsettings
+2026-02-01T20:25:51.780573784Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: kick
+2026-02-01T20:25:51.780580735Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: lock
+2026-02-01T20:25:53.879683858Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: setstats
+2026-02-01T20:25:53.879697768Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: slowmode
+2026-02-01T20:25:53.879706172Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: tempvoice
+2026-02-01T20:25:53.879712379Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: unban
+2026-02-01T20:25:53.879718157Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: unjail
+2026-02-01T20:25:53.879725357Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: unlock
+2026-02-01T20:25:53.879731888Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: unmute
+2026-02-01T20:25:53.879740075Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: vb
+2026-02-01T20:25:53.879746170Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: verify
+2026-02-01T20:25:53.879751833Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: vg
+2026-02-01T20:25:53.879756755Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: warn
+2026-02-01T20:25:53.879761153Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: warns
+2026-02-01T20:25:53.879769410Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded command: afk
+2026-02-01T20:25:53.879774647Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded command: autoreact
+2026-02-01T20:25:53.880601232Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: move
+2026-02-01T20:25:53.880610994Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: mute
+2026-02-01T20:25:53.881648055Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: nickname
+2026-02-01T20:25:53.881660075Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: role
+2026-02-01T20:25:53.881670155Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: setautorole
+2026-02-01T20:25:53.881682861Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: setjailrole
+2026-02-01T20:25:53.881693054Z [inf]  - [2026-02-01 11:01:12] [INFO] Loaded command: setjailvoice
+2026-02-01T20:25:55.742613773Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded command: nuke-server
+2026-02-01T20:25:55.742654583Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded command: top
+2026-02-01T20:25:55.742779697Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded command: premium
+2026-02-01T20:25:55.742791215Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded command: setuproles
+2026-02-01T20:25:55.742800391Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded command: shutdown
+2026-02-01T20:25:55.742809479Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded command: modmail
+2026-02-01T20:25:55.742819179Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded command: moveall
+2026-02-01T20:25:55.742828134Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded command: rolemenu
+2026-02-01T20:25:55.742837379Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded command: sendnotify
+2026-02-01T20:25:55.742847424Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded command: unafk
+2026-02-01T20:25:55.742871047Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded command: avatar
+2026-02-01T20:25:55.742878094Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded command: ping
+2026-02-01T20:25:55.742887348Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded command: ranktheme
+2026-02-01T20:25:55.742899629Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded command: setembedcolor
+2026-02-01T20:25:55.742903172Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded command: botinfo
+2026-02-01T20:25:55.742916190Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded command: setembedfooter
+2026-02-01T20:25:55.742921396Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded command: channelinfo
+2026-02-01T20:25:55.742933949Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded command: setembedicon
+2026-02-01T20:25:55.742939661Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded command: help
+2026-02-01T20:25:55.743111705Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded command: dev
+2026-02-01T20:25:55.743119863Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded command: massdm
+2026-02-01T20:25:58.035233500Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded event: guildMemberRemove
+2026-02-01T20:25:58.035248354Z [inf]  - [2026-02-01 11:01:14] [INFO] Loaded event: interactionCreate
+2026-02-01T20:25:58.035256295Z [inf]  - [2026-02-01 11:01:14] [INFO] Loaded event: inviteCreate
+2026-02-01T20:25:58.035264938Z [inf]  - [2026-02-01 11:01:14] [INFO] Loaded event: inviteDelete
+2026-02-01T20:25:58.035604975Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded command: invite
+2026-02-01T20:25:58.035615424Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded command: roleinfo
+2026-02-01T20:25:58.035624865Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded command: serverinfo
+2026-02-01T20:25:58.035634587Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded command: userinfo
+2026-02-01T20:25:58.035645947Z [inf]  - [2026-02-01 11:01:13] [INFO] Loaded event: guildMemberAdd
+2026-02-01T20:25:58.035937408Z [inf]  - [2026-02-01 11:01:14] [INFO] Loaded event: messageCreate
+2026-02-01T20:25:58.035950830Z [inf]  - [2026-02-01 11:01:14] [INFO] Loaded event: messageReactionAdd
+2026-02-01T20:25:58.035959579Z [inf]  - [2026-02-01 11:01:14] [INFO] Loaded event: messageReactionRemove
+2026-02-01T20:25:58.035968005Z [inf]  - [2026-02-01 11:01:14] [INFO] Loaded event: ready
+2026-02-01T20:25:58.035982571Z [inf]  - [2026-02-01 11:01:14] [INFO] Loaded event: voiceStateUpdate
+2026-02-01T20:25:58.035990787Z [inf]  - [2026-02-01 11:01:14] [INFO] Skipped disabled event: voiceXpTracker.js
+2026-02-01T20:25:58.035998754Z [inf]  - [2026-02-01 11:01:14] [INFO] Loaded slash command: ping
+2026-02-01T20:25:58.036004799Z [inf]  - [2026-02-01 11:01:14] [INFO] Loaded slash command: setembedcolor
+2026-02-01T20:25:58.036012155Z [inf]  - [2026-02-01 11:01:14] [INFO] Loaded slash command: setembedfooter
+2026-02-01T20:25:58.036019898Z [inf]  - [2026-02-01 11:01:14] [INFO] Loaded slash command: setembedicon
+2026-02-01T20:25:58.036029161Z [inf]  - [2026-02-01 11:01:14] [INFO] Initializing bot and attempting to log in...
+2026-02-01T20:26:01.226873346Z [inf]  - [2026-02-01 11:01:16] [INFO] ✅ Database connection successful
+2026-02-01T20:26:01.226880765Z [inf]  - [2026-02-01 11:01:28] [INFO] Ready! Logged in as Raymond Reddington#0429
+2026-02-01T20:26:01.226890815Z [inf]  - [2026-02-01 11:01:28] [INFO] Bot is now online and ready to serve in 4 guilds.
+2026-02-01T20:26:01.226898169Z [inf]  - [2026-02-01 11:01:30] [INFO] Registered all slash commands globally.
+2026-02-01T20:26:01.226905883Z [inf]  - [2026-02-01 11:01:30] [INFO] Initializing configs for 4 guilds...
+2026-02-01T20:26:01.226912980Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: levelsetup
+2026-02-01T20:26:01.226921207Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: autoban
+2026-02-01T20:26:01.226928176Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: autospam
+2026-02-01T20:26:01.226935100Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: leaderboard
+2026-02-01T20:26:01.226941792Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: level
+2026-02-01T20:26:01.226949435Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: levelrole
+2026-02-01T20:26:01.226957332Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: add
+2026-02-01T20:26:01.226964981Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: ban
+2026-02-01T20:26:01.226974163Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: clear
+2026-02-01T20:26:01.226983073Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: delwarn
+2026-02-01T20:26:01.226990925Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: deny
+2026-02-01T20:26:01.226998449Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: jail
+2026-02-01T20:26:01.227005659Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: jailsettings
+2026-02-01T20:26:01.227013086Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: kick
+2026-02-01T20:26:01.227019964Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: lock
+2026-02-01T20:26:03.108704524Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: move
+2026-02-01T20:26:03.108710624Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: mute
+2026-02-01T20:26:03.108716499Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: nickname
+2026-02-01T20:26:03.108722658Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: role
+2026-02-01T20:26:03.108729865Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: setautorole
+2026-02-01T20:26:03.108735077Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: setjailrole
+2026-02-01T20:26:03.108743871Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: setjailvoice
+2026-02-01T20:26:03.108750427Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: setstats
+2026-02-01T20:26:03.108756447Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: slowmode
+2026-02-01T20:26:03.108763723Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: tempvoice
+2026-02-01T20:26:03.108770834Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: unban
+2026-02-01T20:26:03.108776669Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: unjail
+2026-02-01T20:26:03.108782819Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: unlock
+2026-02-01T20:26:03.108788924Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: unmute
+2026-02-01T20:26:03.108793422Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: vb
+2026-02-01T20:26:03.108798111Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: verify
+2026-02-01T20:26:03.108802904Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: vg
+2026-02-01T20:26:03.108806929Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: warn
+2026-02-01T20:26:03.108810883Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: warns
+2026-02-01T20:26:03.108814822Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: afk
+2026-02-01T20:26:03.108818911Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: autoreact
+2026-02-01T20:26:04.375657532Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: dev
+2026-02-01T20:26:04.375662490Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: massdm
+2026-02-01T20:26:04.375668583Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: nuke-server
+2026-02-01T20:26:04.375673786Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: premium
+2026-02-01T20:26:04.375678773Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: setuproles
+2026-02-01T20:26:04.375683633Z [inf]  - [2026-02-01 11:01:33] [INFO] Loaded command: shutdown
+2026-02-01T20:26:04.375688834Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded command: modmail
+2026-02-01T20:26:04.375696149Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded command: moveall
+2026-02-01T20:26:04.375702229Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded command: rolemenu
+2026-02-01T20:26:04.375707598Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded command: sendnotify
+2026-02-01T20:26:04.375712501Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded command: unafk
+2026-02-01T20:26:04.375719410Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded command: ping
+2026-02-01T20:26:04.375725284Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded command: ranktheme
+2026-02-01T20:26:04.375730062Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded command: setembedcolor
+2026-02-01T20:26:04.375736057Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded command: setembedfooter
+2026-02-01T20:26:04.376045513Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded command: setembedicon
+2026-02-01T20:26:04.376056729Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded command: top
+2026-02-01T20:26:04.376063885Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded command: avatar
+2026-02-01T20:26:04.376070631Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded command: botinfo
+2026-02-01T20:26:04.376079548Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded command: channelinfo
+2026-02-01T20:26:04.376086515Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded command: help
+2026-02-01T20:26:06.239270141Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded command: userinfo
+2026-02-01T20:26:06.239285972Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded event: guildMemberAdd
+2026-02-01T20:26:06.239544717Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded command: invite
+2026-02-01T20:26:06.239552440Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded command: roleinfo
+2026-02-01T20:26:06.239558727Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded command: serverinfo
+2026-02-01T20:26:06.239627587Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded event: guildMemberRemove
+2026-02-01T20:26:06.239634739Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded event: interactionCreate
+2026-02-01T20:26:06.239641149Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded event: inviteCreate
+2026-02-01T20:26:06.239647800Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded event: inviteDelete
+2026-02-01T20:26:06.239655184Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded event: messageCreate
+2026-02-01T20:26:06.239661644Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded event: messageReactionAdd
+2026-02-01T20:26:06.239668820Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded event: messageReactionRemove
+2026-02-01T20:26:06.239675489Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded event: ready
+2026-02-01T20:26:06.239683286Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded event: voiceStateUpdate
+2026-02-01T20:26:06.239690675Z [inf]  - [2026-02-01 11:01:34] [INFO] Skipped disabled event: voiceXpTracker.js
+2026-02-01T20:26:06.239697657Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded slash command: ping
+2026-02-01T20:26:06.239704531Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded slash command: setembedcolor
+2026-02-01T20:26:06.239710723Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded slash command: setembedfooter
+2026-02-01T20:26:06.239716998Z [inf]  - [2026-02-01 11:01:34] [INFO] Loaded slash command: setembedicon
+2026-02-01T20:26:06.239723166Z [inf]  - [2026-02-01 11:01:34] [INFO] Initializing bot and attempting to log in...
+2026-02-01T20:26:08.422224811Z [inf]  - [2026-02-01 11:01:34] [INFO] <a:okey:1467170671351173121> Guild configurations initialized
+2026-02-01T20:26:08.422229422Z [inf]  - [2026-02-01 11:01:35] [INFO] Caching invites for all guilds...
+2026-02-01T20:26:08.422233815Z [inf]  - [2026-02-01 11:01:36] [INFO] ✅ Database connection successful
+2026-02-01T20:26:08.422239872Z [inf]  - [2026-02-01 11:01:48] [INFO] Cached 35 invites for guild Parallel Universe - We Back
+2026-02-01T20:26:08.422244702Z [inf]  - [2026-02-01 11:01:48] [INFO] Ready! Logged in as Raymond Reddington#0429
+2026-02-01T20:26:08.422251801Z [inf]  - [2026-02-01 11:01:48] [INFO] Bot is now online and ready to serve in 4 guilds.
+2026-02-01T20:26:08.422255980Z [inf]  - [2026-02-01 11:01:49] [INFO] Registered all slash commands globally.
+2026-02-01T20:26:08.422259767Z [inf]  - [2026-02-01 11:01:49] [INFO] Initializing configs for 4 guilds...
+2026-02-01T20:26:08.422263533Z [inf]  - [2026-02-01 11:01:51] [INFO] <a:okey:1467170671351173121> Guild configurations initialized
+2026-02-01T20:26:08.422268531Z [inf]  - [2026-02-01 11:01:52] [INFO] Caching invites for all guilds...
+2026-02-01T20:26:08.422272487Z [inf]  - [2026-02-01 11:02:00] [INFO] Cached 35 invites for guild Parallel Universe - We Back
+2026-02-01T20:26:08.422276272Z [inf]  - [2026-02-01 11:02:17] [INFO] Cached 169 invites for guild Parallel Universe
+2026-02-01T20:26:08.422281517Z [inf]  - [2026-02-01 11:02:18] [INFO] Cached 2 invites for guild Parallel Universe Dev
+2026-02-01T20:26:08.422285280Z [inf]  - [2026-02-01 11:02:18] [INFO] Cached 1 invites for guild DEBANA
+2026-02-01T20:26:08.422289142Z [inf]  - [2026-02-01 11:02:18] [INFO] Successfully cached invites for 4/4 guilds
+2026-02-01T20:26:08.422293101Z [inf]  - [2026-02-01 11:02:19] [INFO] Successfully updated dev server status message.
+2026-02-01T20:26:08.422296955Z [inf]  - [2026-02-01 11:02:24] [INFO] Cached 169 invites for guild Parallel Universe
+2026-02-01T20:26:10.286585056Z [inf]  - [2026-02-01 11:03:20] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:10.286599254Z [inf]  - [2026-02-01 11:03:20] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:10.286607266Z [inf]  - [2026-02-01 11:03:20] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:10.286614333Z [inf]  - [2026-02-01 11:03:20] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:10.286622317Z [inf]  - [2026-02-01 11:03:22] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:10.286630876Z [inf]  - [2026-02-01 11:03:22] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:10.286639201Z [inf]  - [2026-02-01 11:03:23] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:10.286661116Z [inf]  - [2026-02-01 11:03:23] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:10.286670016Z [inf]  - [2026-02-01 11:03:19] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:10.287203212Z [inf]  - [2026-02-01 11:02:25] [INFO] Cached 2 invites for guild Parallel Universe Dev
+2026-02-01T20:26:10.287209339Z [inf]  - [2026-02-01 11:02:25] [INFO] Cached 1 invites for guild DEBANA
+2026-02-01T20:26:10.287214362Z [inf]  - [2026-02-01 11:02:25] [INFO] Successfully cached invites for 4/4 guilds
+2026-02-01T20:26:10.287219840Z [inf]  - [2026-02-01 11:02:26] [INFO] Successfully updated dev server status message.
+2026-02-01T20:26:10.287226570Z [inf]  - [2026-02-01 11:03:12] [INFO] Updated voice count for Parallel Universe: 8
+2026-02-01T20:26:10.287234947Z [inf]  - [2026-02-01 11:03:19] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:12.417199095Z [inf]  - [2026-02-01 11:03:30] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:12.417204845Z [inf]  - [2026-02-01 11:03:30] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:12.417210790Z [inf]  - [2026-02-01 11:03:31] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:12.417216317Z [inf]  - [2026-02-01 11:03:31] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:12.417221811Z [inf]  - [2026-02-01 11:03:45] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:12.417226729Z [inf]  - [2026-02-01 11:03:45] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:12.417231637Z [inf]  - [2026-02-01 11:03:45] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:12.417236611Z [inf]  - [2026-02-01 11:03:45] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:12.417241712Z [inf]  - [2026-02-01 11:03:54] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:12.417246737Z [inf]  - [2026-02-01 11:03:54] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:12.417259175Z [inf]  - [2026-02-01 11:03:57] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:12.417264393Z [inf]  - [2026-02-01 11:03:57] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:12.417268799Z [inf]  - [2026-02-01 11:04:03] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:12.417273078Z [inf]  - [2026-02-01 11:04:03] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:14.272919697Z [inf]  - [2026-02-01 11:04:04] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:14.272930295Z [inf]  - [2026-02-01 11:04:04] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:14.272957402Z [inf]  - [2026-02-01 11:04:07] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:14.272969464Z [inf]  - [2026-02-01 11:04:07] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:14.272979540Z [inf]  - [2026-02-01 11:04:12] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:14.272996229Z [inf]  - [2026-02-01 11:04:12] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:14.273024647Z [inf]  - [2026-02-01 11:04:14] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:14.273034455Z [inf]  - [2026-02-01 11:04:14] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:14.273044032Z [inf]  - [2026-02-01 11:04:14] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:14.273053063Z [inf]  - [2026-02-01 11:04:14] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:14.273061494Z [inf]  - [2026-02-01 11:04:16] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:14.273069668Z [inf]  - [2026-02-01 11:04:16] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:14.273077337Z [inf]  - [2026-02-01 11:04:18] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:14.273087262Z [inf]  - [2026-02-01 11:04:18] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:15.813553518Z [inf]  - [2026-02-01 11:04:21] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:15.813557909Z [inf]  - [2026-02-01 11:04:21] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:15.813563887Z [inf]  - [2026-02-01 11:04:22] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:15.813568349Z [inf]  - [2026-02-01 11:04:22] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:15.813572627Z [inf]  - [2026-02-01 11:04:26] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:15.813578232Z [inf]  - [2026-02-01 11:04:26] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:15.813582478Z [inf]  - [2026-02-01 11:04:30] [INFO] Received SIGINT. Shutting down gracefully...
+2026-02-01T20:26:15.813587412Z [inf]  - [2026-02-01 11:05:18] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:15.813592291Z [inf]  - [2026-02-01 11:05:18] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:15.813596410Z [inf]  - [2026-02-01 11:05:20] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:15.813600348Z [inf]  - [2026-02-01 11:05:20] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:15.813604535Z [inf]  - [2026-02-01 11:05:21] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:15.813608787Z [inf]  - [2026-02-01 11:05:21] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:15.813613933Z [inf]  - [2026-02-01 11:05:23] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:18.134916406Z [inf]  - [2026-02-01 11:05:23] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:18.134924664Z [inf]  - [2026-02-01 11:05:25] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:18.134931274Z [inf]  - [2026-02-01 11:05:25] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:18.134937462Z [inf]  - [2026-02-01 11:05:26] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:18.134944022Z [inf]  - [2026-02-01 11:05:26] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:18.134950655Z [inf]  - [2026-02-01 11:05:27] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:18.134957401Z [inf]  - [2026-02-01 11:05:27] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:18.134963857Z [inf]  - [2026-02-01 11:05:32] [ERROR] Unhandled Promise Rejection: Error: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:18.134970802Z [inf]  - [2026-02-01 11:05:32] [ERROR] Unhandled Promise Rejection: Cannot perform IP discovery - socket closed
+2026-02-01T20:26:18.134977606Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:18.134983395Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:18.134989578Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:18.134996571Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:18.135003524Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:18.135009515Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:20.565052240Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:20.565059811Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:20.565067122Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:20.565074258Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:20.565081791Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:20.565088697Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:20.565095954Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:20.565103875Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:20.565112178Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:20.565119095Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:20.565126155Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:20.565134375Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:20.565141540Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:20.565148258Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:20.565155535Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:20.565164388Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:20.565171188Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:22.594117917Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:22.594125705Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:22.594133864Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:22.594141462Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:22.594160282Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:22.594169315Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:22.594282675Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:22.594292219Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:22.594304073Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:22.594311529Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:22.594318888Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:22.594325257Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:22.594333041Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:22.594338710Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:22.594346206Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:22.594355031Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:22.594362395Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:24.706117736Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:24.706126121Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:24.706132536Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:24.706140204Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:24.706150743Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:24.706157019Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:24.706164620Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:24.706174558Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:24.706180932Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:24.706188370Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:24.706196088Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:24.706205687Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:24.709321470Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:24.709336009Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:24.709343981Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:24.709351389Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:24.709358787Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:26.192382620Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:26.192393364Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:26.192415334Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:26.192422487Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:26.192428357Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:26.192435123Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:26.192523111Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:26.192533224Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:26.192546354Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:26.192548365Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:26.192553399Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:26.192570975Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:26.192571725Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:26.192573385Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:26.192581861Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:26.192590376Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:26.192591431Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:28.089891180Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:28.089902831Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:28.089913816Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:28.089923465Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:28.089936301Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:28.089948426Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:28.089961875Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:28.089971253Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:28.089991826Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:28.090003316Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:28.090024112Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:28.090045380Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:28.090056106Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:28.090073059Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:28.090090596Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:28.090107943Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:28.090120509Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:30.710549529Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:30.710555886Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:30.710561806Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:30.710567729Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:30.710595615Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:30.710603188Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:30.710609737Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:30.710616673Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:30.710624364Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:30.710630570Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:30.710637170Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:30.710644054Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:30.710650114Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:30.710658433Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:30.710665046Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:30.710672069Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:30.710677960Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:33.126478687Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:33.126484500Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:33.126490832Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:33.126498041Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:33.126505637Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:33.126511486Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:33.126517176Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:33.126524031Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:33.126530795Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:33.126537329Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:33.126543737Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:33.126551161Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:33.126557034Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:33.126564262Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:33.126570689Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:33.126579870Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:33.126586287Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:35.327233688Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:35.327239308Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:35.327246329Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:35.327253564Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:35.327259194Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:35.327265014Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:35.327270650Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:35.327276322Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:35.327281518Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:35.327287098Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:35.327293504Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:35.327300841Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:35.327309192Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:35.327315381Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:35.327320442Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:35.327325751Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:35.327332574Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:37.450570572Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:37.450576624Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:37.450582420Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:37.450588694Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:37.450594835Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:37.450601986Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:37.450608348Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:37.450614908Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:37.450620371Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:37.450626389Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:37.450646550Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:37.450653645Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:37.450660290Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:37.450669596Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:37.450675884Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:37.450682406Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:37.450688335Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:39.085403848Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:39.085409802Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:39.085416014Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:39.085421351Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:39.085427094Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:39.085432973Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:39.085439077Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: Error: EPIPE: broken pipe, write
+2026-02-01T20:26:39.085444901Z [inf]  - [2026-02-01 11:05:32] [ERROR] Uncaught Exception: EPIPE: broken pipe, write
+2026-02-01T20:26:39.085466674Z [inf]  - [2026-02-01 11:05:32] [INFO] Received UNCAUGHT_EXCEPTION. Shutting down gracefully...
+2026-02-01T20:26:39.085473763Z [inf]  - [2026-02-01 11:05:32] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:39.085479708Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:39.085486288Z [inf]  - [2026-02-01 11:05:32] [INFO] [1/2] ✅ Discord client destroyed successfully.
+2026-02-01T20:26:39.085491953Z [inf]  - [2026-02-01 11:05:32] [INFO] [2/2] Database client not found or no end method.
+2026-02-01T20:26:39.085498141Z [inf]  - [2026-02-01 11:05:32] [INFO] Diagnostic shutdown sequence complete.
+2026-02-01T20:26:39.085504291Z [inf]  - [2026-02-01 11:05:32] [INFO] Shutdown complete. Exiting.
+2026-02-01T20:26:39.085510852Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: levelsetup
+2026-02-01T20:26:39.085517495Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: afk
+2026-02-01T20:26:39.085523927Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: autoreact
+2026-02-01T20:26:40.910691193Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: autoban
+2026-02-01T20:26:40.910699821Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: dev
+2026-02-01T20:26:40.910703391Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: autospam
+2026-02-01T20:26:40.910712690Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: massdm
+2026-02-01T20:26:40.910725756Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: rolemenu
+2026-02-01T20:26:40.910727272Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: nuke-server
+2026-02-01T20:26:40.910739576Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: delwarn
+2026-02-01T20:26:40.910743696Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: premium
+2026-02-01T20:26:40.910748572Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: sendnotify
+2026-02-01T20:26:40.910759457Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: setuproles
+2026-02-01T20:26:40.910764550Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: deny
+2026-02-01T20:26:40.910766759Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: unafk
+2026-02-01T20:26:40.910775427Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: shutdown
+2026-02-01T20:26:40.910778096Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: modmail
+2026-02-01T20:26:40.910782684Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: leaderboard
+2026-02-01T20:26:40.910790501Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: moveall
+2026-02-01T20:26:40.910791907Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: level
+2026-02-01T20:26:40.910813369Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: levelrole
+2026-02-01T20:26:40.910816796Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: ban
+2026-02-01T20:26:40.910830918Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: add
+2026-02-01T20:26:40.910832733Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: clear
+2026-02-01T20:26:42.945305221Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: jail
+2026-02-01T20:26:42.945311812Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: jailsettings
+2026-02-01T20:26:42.945318474Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: kick
+2026-02-01T20:26:42.945325007Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: lock
+2026-02-01T20:26:42.945331470Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: move
+2026-02-01T20:26:42.945337836Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: mute
+2026-02-01T20:26:42.945343769Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: nickname
+2026-02-01T20:26:42.945350357Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: role
+2026-02-01T20:26:42.945355970Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: setautorole
+2026-02-01T20:26:42.945362352Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: setjailrole
+2026-02-01T20:26:42.945369144Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: setjailvoice
+2026-02-01T20:26:42.945375868Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: setstats
+2026-02-01T20:26:42.945382676Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: slowmode
+2026-02-01T20:26:42.945389295Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: tempvoice
+2026-02-01T20:26:42.945395750Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: unban
+2026-02-01T20:26:42.945401254Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: unjail
+2026-02-01T20:26:42.945406966Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: unlock
+2026-02-01T20:26:42.945414986Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: unmute
+2026-02-01T20:26:42.945420819Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: vb
+2026-02-01T20:26:42.945428979Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: verify
+2026-02-01T20:26:42.945435522Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: vg
+2026-02-01T20:26:44.953986366Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: warn
+2026-02-01T20:26:44.953990834Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: warns
+2026-02-01T20:26:44.953994820Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: ping
+2026-02-01T20:26:44.954000930Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: ranktheme
+2026-02-01T20:26:44.954005692Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: setembedcolor
+2026-02-01T20:26:44.954010114Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: setembedfooter
+2026-02-01T20:26:44.954014509Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: setembedicon
+2026-02-01T20:26:44.954021181Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: top
+2026-02-01T20:26:44.954025518Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: avatar
+2026-02-01T20:26:44.954031705Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: botinfo
+2026-02-01T20:26:44.954037720Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: channelinfo
+2026-02-01T20:26:44.954043773Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: help
+2026-02-01T20:26:44.954050265Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: invite
+2026-02-01T20:26:44.954056964Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: roleinfo
+2026-02-01T20:26:44.954062491Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: serverinfo
+2026-02-01T20:26:44.954067883Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded command: userinfo
+2026-02-01T20:26:44.954073544Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded event: guildMemberAdd
+2026-02-01T20:26:44.954085517Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded event: guildMemberRemove
+2026-02-01T20:26:44.954092147Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded event: interactionCreate
+2026-02-01T20:26:44.954098723Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded event: inviteCreate
+2026-02-01T20:26:44.954105672Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded event: inviteDelete
+2026-02-01T20:26:46.760003253Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded event: messageCreate
+2026-02-01T20:26:46.760009743Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded event: messageReactionAdd
+2026-02-01T20:26:46.760016888Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded event: messageReactionRemove
+2026-02-01T20:26:46.760024116Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded event: ready
+2026-02-01T20:26:46.760030702Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded event: voiceStateUpdate
+2026-02-01T20:26:46.760037428Z [inf]  - [2026-02-01 20:21:55] [INFO] Skipped disabled event: voiceXpTracker.js
+2026-02-01T20:26:46.760044050Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded slash command: setembedcolor
+2026-02-01T20:26:46.760050243Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded slash command: ping
+2026-02-01T20:26:46.760056607Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded slash command: setembedfooter
+2026-02-01T20:26:46.760062707Z [inf]  - [2026-02-01 20:21:55] [INFO] Loaded slash command: setembedicon
+2026-02-01T20:26:46.760069618Z [inf]  - [2026-02-01 20:21:55] [INFO] Initializing bot and attempting to log in...
+2026-02-01T20:26:46.760076551Z [inf]  - [2026-02-01 20:21:56] [INFO] Ready! Logged in as Raymond Reddington#0429
+2026-02-01T20:26:46.760084015Z [inf]  - [2026-02-01 20:21:56] [INFO] Bot is now online and ready to serve in 4 guilds.
+2026-02-01T20:26:46.760089794Z [inf]  - [2026-02-01 20:21:56] [ERROR] ❌ Database connection failed: Error: read ECONNRESET
+2026-02-01T20:26:46.760096904Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: levelsetup
+2026-02-01T20:26:46.760103840Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: afk
+2026-02-01T20:26:46.760109954Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: autoreact
+2026-02-01T20:26:46.760116138Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: dev
+2026-02-01T20:26:46.760122401Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: massdm
+2026-02-01T20:26:48.533414579Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: delwarn
+2026-02-01T20:26:48.533423023Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: deny
+2026-02-01T20:26:48.533429771Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: jail
+2026-02-01T20:26:48.533496372Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: jailsettings
+2026-02-01T20:26:48.533610312Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: nuke-server
+2026-02-01T20:26:48.533617370Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: premium
+2026-02-01T20:26:48.533623616Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: setuproles
+2026-02-01T20:26:48.533630011Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: shutdown
+2026-02-01T20:26:48.533648921Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: modmail
+2026-02-01T20:26:48.533656002Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: moveall
+2026-02-01T20:26:48.533662941Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: rolemenu
+2026-02-01T20:26:48.533669085Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: sendnotify
+2026-02-01T20:26:48.533675586Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: unafk
+2026-02-01T20:26:48.533681584Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: autoban
+2026-02-01T20:26:48.533687816Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: autospam
+2026-02-01T20:26:48.533756614Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: leaderboard
+2026-02-01T20:26:48.533813151Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: level
+2026-02-01T20:26:48.533823420Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: levelrole
+2026-02-01T20:26:48.533829809Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: add
+2026-02-01T20:26:48.533861545Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: ban
+2026-02-01T20:26:48.533868883Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: clear
+2026-02-01T20:26:50.638857962Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: setjailvoice
+2026-02-01T20:26:50.638871463Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: setstats
+2026-02-01T20:26:50.638988319Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: kick
+2026-02-01T20:26:50.639001083Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: lock
+2026-02-01T20:26:50.639008841Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: move
+2026-02-01T20:26:50.639016266Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: mute
+2026-02-01T20:26:50.639023303Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: nickname
+2026-02-01T20:26:50.639034479Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: role
+2026-02-01T20:26:50.639042334Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: setautorole
+2026-02-01T20:26:50.639050041Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: setjailrole
+2026-02-01T20:26:50.639080661Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: slowmode
+2026-02-01T20:26:50.639088337Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: tempvoice
+2026-02-01T20:26:50.639095427Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: unban
+2026-02-01T20:26:50.639102473Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: unjail
+2026-02-01T20:26:50.639109866Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: unlock
+2026-02-01T20:26:50.639117287Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: unmute
+2026-02-01T20:26:50.639124132Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: vb
+2026-02-01T20:26:50.639131294Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: verify
+2026-02-01T20:26:50.639139328Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: vg
+2026-02-01T20:26:50.639147240Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: warn
+2026-02-01T20:26:50.639157143Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: warns
+2026-02-01T20:26:53.097325998Z [inf]  - [2026-02-01 20:22:00] [INFO] Loaded event: messageReactionAdd
+2026-02-01T20:26:53.097326399Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: channelinfo
+2026-02-01T20:26:53.097341493Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: help
+2026-02-01T20:26:53.097350190Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: ping
+2026-02-01T20:26:53.097353143Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: invite
+2026-02-01T20:26:53.097359552Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: ranktheme
+2026-02-01T20:26:53.097364401Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: roleinfo
+2026-02-01T20:26:53.097369475Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: setembedcolor
+2026-02-01T20:26:53.097376228Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: serverinfo
+2026-02-01T20:26:53.097379020Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: setembedfooter
+2026-02-01T20:26:53.097389066Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: setembedicon
+2026-02-01T20:26:53.097389479Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: userinfo
+2026-02-01T20:26:53.097400094Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded event: guildMemberAdd
+2026-02-01T20:26:53.097403168Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: top
+2026-02-01T20:26:53.097410751Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded event: guildMemberRemove
+2026-02-01T20:26:53.097413581Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: avatar
+2026-02-01T20:26:53.097422165Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded event: interactionCreate
+2026-02-01T20:26:53.097423006Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded command: botinfo
+2026-02-01T20:26:53.097433173Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded event: inviteCreate
+2026-02-01T20:26:53.097441408Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded event: inviteDelete
+2026-02-01T20:26:53.097450030Z [inf]  - [2026-02-01 20:21:59] [INFO] Loaded event: messageCreate
+2026-02-01T20:26:55.141735901Z [inf]  - [2026-02-01 20:22:00] [INFO] Loaded event: messageReactionRemove
+2026-02-01T20:26:55.141741954Z [inf]  - [2026-02-01 20:22:00] [INFO] Loaded event: ready
+2026-02-01T20:26:55.141748846Z [inf]  - [2026-02-01 20:22:00] [INFO] Loaded event: voiceStateUpdate
+2026-02-01T20:26:55.141755619Z [inf]  - [2026-02-01 20:22:00] [INFO] Skipped disabled event: voiceXpTracker.js
+2026-02-01T20:26:55.141763436Z [inf]  - [2026-02-01 20:22:00] [INFO] Loaded slash command: setembedcolor
+2026-02-01T20:26:55.141770082Z [inf]  - [2026-02-01 20:22:00] [INFO] Loaded slash command: ping
+2026-02-01T20:26:55.141777757Z [inf]  - [2026-02-01 20:22:00] [INFO] Loaded slash command: setembedfooter
+2026-02-01T20:26:55.141783899Z [inf]  - [2026-02-01 20:22:00] [INFO] Loaded slash command: setembedicon
+2026-02-01T20:26:55.141792463Z [inf]  - [2026-02-01 20:22:00] [INFO] Initializing bot and attempting to log in...
+2026-02-01T20:26:55.141798776Z [inf]  - [2026-02-01 20:22:01] [INFO] ✅ Database connection successful
+2026-02-01T20:26:55.141805198Z [inf]  - [2026-02-01 20:22:01] [INFO] Ready! Logged in as Raymond Reddington#0429
+2026-02-01T20:26:55.141811500Z [inf]  - [2026-02-01 20:22:01] [INFO] Bot is now online and ready to serve in 4 guilds.
+2026-02-01T20:26:55.141818377Z [inf]  - [2026-02-01 20:22:01] [INFO] Registered all slash commands globally.
+2026-02-01T20:26:55.141825462Z [inf]  - [2026-02-01 20:22:01] [INFO] Initializing configs for 4 guilds...
+2026-02-01T20:26:55.141832109Z [inf]  - [2026-02-01 20:22:02] [INFO] <a:okey:1467170671351173121> Guild configurations initialized
+2026-02-01T20:26:55.141838076Z [inf]  - [2026-02-01 20:22:02] [INFO] Caching invites for all guilds...
+2026-02-01T20:26:55.141843748Z [inf]  - [2026-02-01 20:22:08] [INFO] Cached 35 invites for guild Parallel Universe - We Back
+2026-02-01T20:26:55.141849860Z [inf]  - [2026-02-01 20:22:34] [INFO] Cached 169 invites for guild Parallel Universe
+2026-02-01T20:26:57.343581780Z [inf]  - [2026-02-01 20:22:35] [INFO] Successfully updated dev server status message.
+2026-02-01T20:26:57.344097985Z [inf]  - [2026-02-01 20:22:34] [INFO] Cached 2 invites for guild Parallel Universe Dev
+2026-02-01T20:26:57.344105423Z [inf]  - [2026-02-01 20:22:35] [INFO] Cached 1 invites for guild DEBANA
+2026-02-01T20:26:57.344112031Z [inf]  - [2026-02-01 20:22:35] [INFO] Successfully cached invites for 4/4 guilds
+2026-02-01T20:26:57.348101128Z [inf]  - [2026-02-01 20:23:41] [INFO] Updated voice count for Parallel Universe: 8
+2026-02-01T20:26:57.348114901Z [inf]  - [2026-02-01 20:24:39] [INFO] Received SIGTERM. Shutting down gracefully...
+2026-02-01T20:26:57.348121625Z [inf]  - [2026-02-01 20:24:39] [INFO] Starting diagnostic shutdown sequence...
+2026-02-01T20:26:57.348128803Z [inf]  - [2026-02-01 20:24:39] [INFO] [1/2] Attempting to destroy Discord client...
+2026-02-01T20:26:57.348134655Z [inf]  - [2026-02-01 20:24:39] [INFO] [1/2] ✅ Discord client destroyed successfully.
+2026-02-01T20:26:57.348140582Z [inf]  - [2026-02-01 20:24:39] [INFO] [2/2] Database client not found or no end method.
+2026-02-01T20:26:57.348146499Z [inf]  - [2026-02-01 20:24:39] [INFO] Diagnostic shutdown sequence complete.
+2026-02-01T20:26:57.348152493Z [inf]  - [2026-02-01 20:24:39] [INFO] Shutdown complete. Exiting.
+2026-02-01T20:26:57.348159675Z [inf]  
+2026-02-01T20:26:57.348175357Z [inf]  ===================================================
+2026-02-01T20:26:57.348182867Z [inf]  [32minfo[39m: Loaded command: levelsetup {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:26:57.348189341Z [inf]  [32minfo[39m: Loaded command: afk {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:26:57.348344499Z [inf]  [32minfo[39m: Loaded command: autoreact {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:26:57.348353821Z [inf]  [32minfo[39m: Loaded command: dev {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:00.545778229Z [inf]  [32minfo[39m: Loaded command: rolemenu {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:00.545785193Z [inf]  [32minfo[39m: Loaded command: sendnotify {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:00.545791546Z [inf]  [32minfo[39m: Loaded command: unafk {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:00.545797995Z [inf]  [32minfo[39m: Loaded command: autoban {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:00.545803757Z [inf]  [32minfo[39m: Loaded command: autospam {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:00.545811082Z [inf]  [32minfo[39m: Loaded command: leaderboard {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:00.545818145Z [inf]  [32minfo[39m: Loaded command: level {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:00.545825298Z [inf]  [32minfo[39m: Loaded command: levelrole {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:00.545892061Z [inf]  [32minfo[39m: Loaded command: massdm {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:00.545898880Z [inf]  [32minfo[39m: Loaded command: nuke-server {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:00.545905187Z [inf]  [32minfo[39m: Loaded command: premium {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:00.545911570Z [inf]  [32minfo[39m: Loaded command: setuproles {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:00.545918135Z [inf]  [32minfo[39m: Loaded command: shutdown {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:00.545926363Z [inf]  [32minfo[39m: Loaded command: modmail {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:00.545933565Z [inf]  [32minfo[39m: Loaded command: moveall {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:03.291008766Z [inf]  [32minfo[39m: Loaded command: add {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:03.291013396Z [inf]  [32minfo[39m: Loaded command: ban {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:03.291018827Z [inf]  [32minfo[39m: Loaded command: clear {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:03.291023696Z [inf]  [32minfo[39m: Loaded command: delwarn {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:03.291029452Z [inf]  [32minfo[39m: Loaded command: deny {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:03.291035443Z [inf]  [32minfo[39m: Loaded command: jail {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:03.291041801Z [inf]  [32minfo[39m: Loaded command: jailsettings {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:03.291048423Z [inf]  [32minfo[39m: Loaded command: kick {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:03.291055215Z [inf]  [32minfo[39m: Loaded command: lock {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:03.291062293Z [inf]  [32minfo[39m: Loaded command: move {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:03.291068556Z [inf]  [32minfo[39m: Loaded command: mute {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:03.291075521Z [inf]  [32minfo[39m: Loaded command: nickname {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:03.291082321Z [inf]  [32minfo[39m: Loaded command: role {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:03.291088975Z [inf]  [32minfo[39m: Loaded command: setautorole {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:03.291095053Z [inf]  [32minfo[39m: Loaded command: setjailrole {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:05.147711416Z [inf]  [32minfo[39m: Loaded command: setjailvoice {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:05.147718657Z [inf]  [32minfo[39m: Loaded command: setstats {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:05.147729990Z [inf]  [32minfo[39m: Loaded command: slowmode {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:05.147739784Z [inf]  [32minfo[39m: Loaded command: tempvoice {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:05.147754425Z [inf]  [32minfo[39m: Loaded command: unban {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:05.147763110Z [inf]  [32minfo[39m: Loaded command: unjail {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:05.147769384Z [inf]  [32minfo[39m: Loaded command: unlock {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:05.147784453Z [inf]  [32minfo[39m: Loaded command: unmute {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:05.147792696Z [inf]  [32minfo[39m: Loaded command: vb {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:05.147800671Z [inf]  [32minfo[39m: Loaded command: verify {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:05.147808705Z [inf]  [32minfo[39m: Loaded command: vg {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:05.147818817Z [inf]  [32minfo[39m: Loaded command: warn {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:05.147826458Z [inf]  [32minfo[39m: Loaded command: warns {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:05.147833567Z [inf]  [32minfo[39m: Loaded command: ping {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:05.147845322Z [inf]  [32minfo[39m: Loaded command: ranktheme {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:07.285688467Z [inf]  [32minfo[39m: Loaded command: setembedcolor {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:07.285694765Z [inf]  [32minfo[39m: Loaded command: setembedfooter {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:07.285701301Z [inf]  [32minfo[39m: Loaded command: setembedicon {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:07.285707414Z [inf]  [32minfo[39m: Loaded command: top {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:07.285712218Z [inf]  [32minfo[39m: Loaded command: avatar {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:07.285716506Z [inf]  [32minfo[39m: Loaded command: botinfo {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:07.285721254Z [inf]  [32minfo[39m: Loaded command: channelinfo {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:07.285725821Z [inf]  [32minfo[39m: Loaded command: help {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:07.285749931Z [inf]  [32minfo[39m: Loaded command: invite {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:07.285754839Z [inf]  [32minfo[39m: Loaded command: roleinfo {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:07.285759222Z [inf]  [32minfo[39m: Loaded command: serverinfo {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:07.285765545Z [inf]  [32minfo[39m: Loaded command: userinfo {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:07.285770143Z [inf]  [32minfo[39m: Loaded event: guildMemberAdd {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:07.285774354Z [inf]  [32minfo[39m: Loaded event: guildMemberRemove {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:07.285778504Z [inf]  [32minfo[39m: Loaded event: interactionCreate {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:09.168493033Z [inf]  [32minfo[39m: Loaded event: inviteCreate {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:09.168504567Z [inf]  [32minfo[39m: Loaded event: inviteDelete {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:09.168511346Z [inf]  [32minfo[39m: Loaded event: messageCreate {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:09.168518008Z [inf]  [32minfo[39m: Loaded event: messageReactionAdd {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:09.168524090Z [inf]  [32minfo[39m: Loaded event: messageReactionRemove {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:09.168529950Z [inf]  [32minfo[39m: Loaded event: ready {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:09.168537849Z [inf]  [32minfo[39m: Loaded event: voiceStateUpdate {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:09.168544022Z [inf]  [32minfo[39m: Skipped disabled event: voiceXpTracker.js {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:09.168550432Z [inf]  [32minfo[39m: Loaded slash command: setembedcolor {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:09.168556957Z [inf]  [32minfo[39m: Loaded slash command: ping {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:09.168563027Z [inf]  [32minfo[39m: Loaded slash command: setembedfooter {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:09.168570420Z [inf]  [32minfo[39m: Loaded slash command: setembedicon {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:09.168576224Z [inf]  [32minfo[39m: Initializing bot and attempting to log in... {"service":"discord-bot","timestamp":"2026-02-01 20:24:42"}
+2026-02-01T20:27:09.168581905Z [inf]  [32minfo[39m: Ready! Logged in as Raymond Reddington#0429 {"service":"discord-bot","timestamp":"2026-02-01 20:24:43"}
+2026-02-01T20:27:10.794343128Z [inf]  [32minfo[39m: Bot is now online and ready to serve in 4 guilds. {"service":"discord-bot","timestamp":"2026-02-01 20:24:43"}
+2026-02-01T20:27:10.794349753Z [inf]  [32minfo[39m: ✅ Database connection successful {"service":"discord-bot","timestamp":"2026-02-01 20:24:43"}
+2026-02-01T20:27:10.794355803Z [inf]  [32minfo[39m: Registered all slash commands globally. {"service":"discord-bot","timestamp":"2026-02-01 20:24:44"}
+2026-02-01T20:27:10.794363418Z [inf]  [32minfo[39m: Initializing configs for 4 guilds... {"service":"discord-bot","timestamp":"2026-02-01 20:24:44"}
+2026-02-01T20:27:10.794369906Z [inf]  [32minfo[39m: <a:okey:1467170671351173121> Guild configurations initialized {"service":"discord-bot","timestamp":"2026-02-01 20:24:44"}
+2026-02-01T20:27:10.794377612Z [inf]  [32minfo[39m: Caching invites for all guilds... {"service":"discord-bot","timestamp":"2026-02-01 20:24:44"}
+2026-02-01T20:27:10.794384275Z [inf]  [32minfo[39m: Cached 35 invites for guild Parallel Universe - We Back {"service":"discord-bot","timestamp":"2026-02-01 20:24:50"}
+2026-02-01T20:27:10.794390426Z [inf]  [32minfo[39m: Cached 168 invites for guild Parallel Universe {"service":"discord-bot","timestamp":"2026-02-01 20:25:16"}
+2026-02-01T20:27:10.794399132Z [inf]  [32minfo[39m: Cached 2 invites for guild Parallel Universe Dev {"service":"discord-bot","timestamp":"2026-02-01 20:25:17"}
+2026-02-01T20:27:10.794410033Z [inf]  [32minfo[39m: Cached 1 invites for guild DEBANA {"service":"discord-bot","timestamp":"2026-02-01 20:25:17"}
+2026-02-01T20:27:10.794416804Z [inf]  [32minfo[39m: Successfully cached invites for 4/4 guilds {"service":"discord-bot","timestamp":"2026-02-01 20:25:17"}
+2026-02-01T20:27:10.794424503Z [inf]  [32minfo[39m: Successfully updated dev server status message. {"service":"discord-bot","timestamp":"2026-02-01 20:25:17"}
+2026-02-01T20:27:10.794433747Z [inf]  [RankCard] Registered bundled font: /app/fonts/Arial.ttf
+2026-02-01T20:27:13.450985859Z [inf]  [32minfo[39m: [InteractionCreate] Received component interaction with customId: "levelsetup_xp" (ID: 1467617128235532288) {"service":"discord-bot","timestamp":"2026-02-01 20:26:30"}
+2026-02-01T20:27:13.450991612Z [inf]  [32minfo[39m: [InteractionCreate] Received component interaction with customId: "levelsetup_text_xp_range" (ID: 1467617159093026967) {"service":"discord-bot","timestamp":"2026-02-01 20:26:37"}
+2026-02-01T20:27:13.450997490Z [inf]  [32minfo[39m: [InteractionCreate] Received modal submit with customId: "levelsetup_text_xp_range_modal" (ID: 1467617212297904420) {"service":"discord-bot","timestamp":"2026-02-01 20:26:50"}
+2026-02-01T20:27:13.451007157Z [inf]  [31merror[39m: Query error: {"error":"column \"text_xp_min\" is of type integer but expression is of type text","params":["1351735584548196362",null,null,null,10,30,null,null,null,null,null,null,null,null,null],"query":"\n      INSERT INTO guild_level_settings (guild_id, theme_preset, custom_theme, xp_multiplier, text_xp_min, text_xp_max, voice_xp_rate, xp_cooldown, excluded_channels, levelup_enabled, levelup_channel_id, levelup_message, levelup_include_card, role_rewards, role_rewards_remove_previous)\n      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15)\n      ON CONFLICT (guild_id) \n      DO UPDATE SET text_xp_min = $2, text_xp_max = $3\n      RETURNING *\n    ","service":"discord-bot","stack":"error: column \"text_xp_min\" is of type integer but expression is of type text\n    at /app/node_modules/pg-pool/index.js:45:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async DatabaseService.query (/app/src/services/database.js:31:21)\n    at async updateGuildSettings (/app/src/database/levelSettings.js:106:26)\n    at async levelsetup_text_xp_range_modal (/app/src/handlers/buttons/buttonHandlers.js:806:7)\n    at async Object.execute (/app/src/events/interactionCreate.js:46:11)","timestamp":"2026-02-01 20:26:51"}
+2026-02-01T20:27:16.244629454Z [err]  [LevelSettings] Error updating guild settings: error: column "text_xp_min" is of type integer but expression is of type text
+2026-02-01T20:27:16.244635554Z [err]      at /app/node_modules/pg-pool/index.js:45:11
+2026-02-01T20:27:16.244647405Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-02-01T20:27:16.244653777Z [err]      at async DatabaseService.query (/app/src/services/database.js:31:21)
+2026-02-01T20:27:16.244660264Z [err]      at async updateGuildSettings (/app/src/database/levelSettings.js:106:26)
+2026-02-01T20:27:16.244667495Z [err]      at async levelsetup_text_xp_range_modal (/app/src/handlers/buttons/buttonHandlers.js:806:7)
+2026-02-01T20:27:16.244675568Z [err]      at async Object.execute (/app/src/events/interactionCreate.js:46:11) {
+2026-02-01T20:27:16.244681760Z [err]    length: 197,
+2026-02-01T20:27:16.244687490Z [err]    severity: 'ERROR',
+2026-02-01T20:27:16.244693358Z [err]    code: '42804',
+2026-02-01T20:27:16.244699847Z [err]    detail: undefined,
+2026-02-01T20:27:16.244705881Z [err]    hint: 'You will need to rewrite or cast the expression.',
+2026-02-01T20:27:16.244712057Z [err]    position: '432',
+2026-02-01T20:27:16.244719460Z [err]    internalPosition: undefined,
+2026-02-01T20:27:16.244726124Z [err]    internalQuery: undefined,
+2026-02-01T20:27:16.244733225Z [err]    where: undefined,
+2026-02-01T20:27:16.244739255Z [err]    schema: undefined,
+2026-02-01T20:27:16.244748809Z [err]    table: undefined,
+2026-02-01T20:27:16.244755557Z [err]    column: undefined,
+2026-02-01T20:27:16.244761830Z [err]    dataType: undefined,
+2026-02-01T20:27:16.244769344Z [err]    constraint: undefined,
+2026-02-01T20:27:16.244775740Z [err]    file: 'parse_target.c',
+2026-02-01T20:27:16.244783216Z [err]    line: '585',
+2026-02-01T20:27:16.244789473Z [err]    routine: 'transformAssignedExpr'
+2026-02-01T20:27:18.664002765Z [err]  }
+2026-02-01T20:27:37.600115472Z [inf]  [32minfo[39m: [InteractionCreate] Received component interaction with customId: "levelsetup_back" (ID: 1467617369227788392) {"service":"discord-bot","timestamp":"2026-02-01 20:27:27"}
