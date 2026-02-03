@@ -448,9 +448,11 @@ IMPORTANT:
         const summary = failures
             .map(f => `${f.model}${f.status ? ` (${f.status})` : ''}: ${f.message}`)
             .join(' | ');
-        const err = new Error(`All OpenRouter models failed. Tried: ${candidates.join(', ')}. Errors: ${summary}`);
-        console.error('[AI Service] Error generating response:', err);
-        throw err;
+
+        console.error('[AI Service] All models failed. Details:', summary);
+
+        // Throw a clean, short message for the user
+        throw new Error('⚠️ **AI Service Unavailable**\nAll available models are currently overloaded or rate-limited. Please try again in a few minutes.');
     }
 }
 
