@@ -363,6 +363,7 @@ module.exports = {
         try {
           const response = await aiService.generateResponse(prompt, {
             userName: message.author.username,
+            userId: message.author.id,
             guildName: message.guild.name
           });
           if (effectiveLimit > 0 && Number.isFinite(dayLimit)) {

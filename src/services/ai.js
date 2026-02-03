@@ -162,7 +162,7 @@ class AIService {
         return await this._getDiscoveredFreeModels({ refresh: Boolean(refresh) });
     }
 
-    async _getMemories(prompt) {
+    async _getMemories(prompt, context = {}) {
         if (!this.memoryEnabled) return [];
 
         if (!aiMemory) {
@@ -170,33 +170,54 @@ class AIService {
         }
 
         const now = Date.now();
-        const isFresh = this.memoriesCache.fetchedAt && (now - this.memoriesCache.fetchedAt) < this.memoryCacheTtlMs;
         const query = String(prompt || '').trim();
+        const userName = String(context.userName || '').trim();
+        const userId = String(context.userId || '').trim();
 
-        const minQueryChars = Number.isFinite(this.memoryMinQueryChars) ? Math.max(0, this.memoryMinQueryChars) : 12;
-        const minWordChars = Number.isFinite(this.memoryMinWordChars) ? Math.max(1, this.memoryMinWordChars) : 3;
-        const longEnough = query.length >= minQueryChars;
-        const hasWord = query.split(/\s+/).some(w => w.length >= minWordChars);
-        if (!longEnough || !hasWord) {
-            this.memoriesCache = { fetchedAt: now, query, items: [] };
-            return [];
-        }
+        // Check cache (key based on prompt+user+id)
+        const cacheKey = `${query}|${userName}|${userId}`;
+        const isFresh = this.memoriesCache.fetchedAt && (now - this.memoriesCache.fetchedAt) < this.memoryCacheTtlMs;
 
-        if (isFresh && this.memoriesCache.query === query && Array.isArray(this.memoriesCache.items)) {
+        if (isFresh && this.memoriesCache.query === cacheKey && Array.isArray(this.memoriesCache.items)) {
             return this.memoriesCache.items;
         }
 
-        const topK = Number.isFinite(this.memoryTopK) ? Math.max(0, Math.min(20, this.memoryTopK)) : 5;
-        if (topK <= 0) {
-            this.memoriesCache = { fetchedAt: now, query, items: [] };
-            return [];
-        }
+        const topK = Number.isFinite(this.memoryTopK) ? Math.max(1, this.memoryTopK) : 3;
 
         try {
-            const rows = await aiMemory.searchMemories(query, { limit: topK });
-            this.memoriesCache = { fetchedAt: now, query, items: rows };
-            return rows;
-        } catch {
+            const promises = [];
+
+            // 1. Search by Prompt (Contextual)
+            if (query.length >= (this.memoryMinQueryChars || 10)) {
+                promises.push(aiMemory.searchMemories(query, { limit: topK }));
+            }
+
+            // 2. Search by Username (Relational/Identity)
+            if (userName.length >= 2) {
+                promises.push(aiMemory.searchMemories(userName, { limit: topK }));
+            }
+
+            // 3. Search by User ID (Mention format)
+            if (userId) {
+                promises.push(aiMemory.searchMemories(userId, { limit: topK }));
+            }
+
+            const results = await Promise.all(promises);
+            const allRows = results.flat();
+
+            // Deduplicate by ID
+            const uniqueMap = new Map();
+            for (const row of allRows) {
+                if (row && row.id) uniqueMap.set(row.id, row);
+            }
+
+            // Sort by relevance/recency (simple id sort for now or created_at)
+            const merged = Array.from(uniqueMap.values()).sort((a, b) => b.id - a.id).slice(0, topK * 2);
+
+            this.memoriesCache = { fetchedAt: now, query: cacheKey, items: merged };
+            return merged;
+        } catch (error) {
+            console.error('[AI Service] Memory search failed:', error.message);
             return [];
         }
     }
@@ -274,7 +295,11 @@ class AIService {
                     messages: [
                         {
                             role: 'system',
-                            content: 'You are Raymond Reddington, a charming, intelligent, and dangerous criminal mastermind from "The Blacklist". You are helpful but maintain your enigmatic, sophisticated, and storytelling persona. Keep responses concise for Discord.'
+                            content: `You are Raymond Reddington from "The Blacklist". Charming, dangerous, sophisticated, and always in control.
+IMPORTANT:
+1. If asked about a user you don't know (e.g. "Who is @Busy"), NEVER say "I don't have access to the database" or "I am an AI". Instead, act in character: "I haven't had the pleasure of vetting that individual yet", "They are merely a ghost in the machine", or "I verify everyone, but they haven't crossed my desk."
+2. Never break character. You are NOT a bot. You are the Concierge of Crime.
+3. Keep responses concise (under 100 words) for Discord, unless telling a story.`
                         },
                         ...(extraSystemContext ? [{ role: 'system', content: extraSystemContext }] : []),
                         {
@@ -344,7 +369,7 @@ class AIService {
         }
 
         const model = context.model || null;
-        const memories = await this._getMemories(prompt);
+        const memories = await this._getMemories(prompt, context);
         const extraSystemContext = this._buildExtraSystemContext(memories, context);
 
         const candidatesAll = await this._getModelCandidates(model);
@@ -381,6 +406,12 @@ class AIService {
                     throw error;
                 }
             }
+        }
+
+        // Analyze failures to give a better error message
+        const isRateLimited = failures.every(f => f.status === 429 || String(f.message).includes('Rate limit'));
+        if (isRateLimited) {
+            throw new Error('❌ **Daily Limit Reached**\nThe OpenRouter free tier limit has been hit (20 reqs/day). It resets tomorrow (UTC).');
         }
 
         const summary = failures
