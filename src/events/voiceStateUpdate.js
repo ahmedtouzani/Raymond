@@ -71,10 +71,6 @@ async function handleChannelCreation(newState) {
 
   ensureOverwrite(member.id, OverwriteType.Member, [
     PermissionsBitField.Flags.ViewChannel,
-    PermissionsBitField.Flags.ManageChannels,
-    PermissionsBitField.Flags.MoveMembers,
-    PermissionsBitField.Flags.MuteMembers,
-    PermissionsBitField.Flags.DeafenMembers,
     PermissionsBitField.Flags.Stream,
     PermissionsBitField.Flags.Connect,
     PermissionsBitField.Flags.Speak,
@@ -85,7 +81,6 @@ async function handleChannelCreation(newState) {
       PermissionsBitField.Flags.ViewChannel,
       PermissionsBitField.Flags.Connect,
       PermissionsBitField.Flags.Speak,
-      PermissionsBitField.Flags.MoveMembers,
     ]);
   }
   // --- End of Permission Logic ---
