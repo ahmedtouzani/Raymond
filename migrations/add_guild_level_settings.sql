@@ -43,6 +43,8 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+DROP TRIGGER IF EXISTS trigger_update_guild_level_settings_timestamp ON guild_level_settings;
+
 CREATE TRIGGER trigger_update_guild_level_settings_timestamp
 BEFORE UPDATE ON guild_level_settings
 FOR EACH ROW

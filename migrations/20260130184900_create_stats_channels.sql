@@ -13,4 +13,4 @@ CREATE TABLE IF NOT EXISTS stats_channels (
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE INDEX idx_stats_channels_guild ON stats_channels(guild_id);
+CREATE INDEX IF NOT EXISTS idx_stats_channels_guild ON stats_channels(guild_id);

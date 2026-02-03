@@ -6,6 +6,8 @@ const {
 const { AttachmentBuilder, EmbedBuilder, PermissionsBitField } = require("discord.js");
 const logger = require("../utils/logger"); // Unified logger
 const { getAutoReactionsForGuild } = require("../database/autoReactSettings");
+const aiService = require("../services/ai");
+const aiChatUsage = require("../database/aiChatUsage");
 
 module.exports = {
   name: "messageCreate",
@@ -297,9 +299,87 @@ module.exports = {
       }
     }
 
+    const isPrefixCommand = message.content.startsWith(prefix);
+    const autoChatEnabled = String(process.env.AI_AUTO_CHAT_ENABLED || 'true').toLowerCase() !== 'false';
+    const mentionedBot = message.mentions && message.mentions.users && message.mentions.users.has(client.user.id);
+
+    let repliedMessage = null;
+    if (message.reference?.messageId) {
+      repliedMessage = await message.channel.messages.fetch(message.reference.messageId).catch(() => null);
+    }
+    const repliedToBot = Boolean(repliedMessage && repliedMessage.author && repliedMessage.author.id === client.user.id);
+
+    // Check permissions immediately if auto-chat is on
+    if (autoChatEnabled && !isPrefixCommand) {
+      const ownerId = String(process.env.OWNER_ID || '').trim();
+      const isOwner = ownerId && message.author.id === ownerId;
+
+      const settings = (config && config.settings && typeof config.settings === 'object') ? (config.settings.ai_chat || {}) : {};
+      const envAllowedUsers = String(process.env.AI_ALLOWED_USERS || '').split(',').map(s => s.trim()).filter(Boolean);
+      const envAllowedRoles = String(process.env.AI_ALLOWED_ROLES || '').split(',').map(s => s.trim()).filter(Boolean);
+
+      const allowedUsers = Array.isArray(settings.allowed_users) ? settings.allowed_users : (Array.isArray(config.settings.ai_allowed_users) ? config.settings.ai_allowed_users : []);
+      const allowedRoles = Array.isArray(settings.allowed_roles) ? settings.allowed_roles : (Array.isArray(config.settings.ai_allowed_roles) ? config.settings.ai_allowed_roles : []);
+
+      const userAllowed = isOwner ||
+        envAllowedUsers.includes(message.author.id) ||
+        allowedUsers.includes(message.author.id) ||
+        (message.member && message.member.roles && message.member.roles.cache && (
+          envAllowedRoles.some(r => message.member.roles.cache.has(r)) ||
+          allowedRoles.some(r => message.member.roles.cache.has(r))
+        ));
+
+      // Trigger if: Mentioned OR Replied OR "Raymond" is in text
+      // REMOVED: Automatic trigger for allowed users (too spammy)
+      const contentLower = message.content.toLowerCase();
+      const calledByName = contentLower.includes('raymond');
+
+      if ((mentionedBot || repliedToBot || calledByName) && userAllowed) {
+
+        // Re-check userAllowed for permissions (already done above)
+
+        const dayLimit = isOwner
+          ? Infinity
+          : Number(settings.daily_limit ?? process.env.AI_DAILY_LIMIT ?? 5);
+
+        const effectiveLimit = Number.isFinite(dayLimit) ? Math.max(0, Math.floor(dayLimit)) : 0;
+        if (effectiveLimit > 0) {
+          const used = await aiChatUsage.getUsageCount(message.guild.id, message.author.id).catch(() => 0);
+          if (used >= effectiveLimit) {
+            return message.reply(`Daily AI limit reached (${effectiveLimit}).`);
+          }
+        }
+
+        let prompt = String(message.content || '').trim();
+        if (mentionedBot) {
+          const mentionRegex = new RegExp(`<@!?${client.user.id}>`, 'g');
+          prompt = prompt.replace(mentionRegex, '').trim();
+        }
+
+        if (!prompt) return;
+
+        await message.channel.sendTyping().catch(() => { });
+
+        try {
+          const response = await aiService.generateResponse(prompt, {
+            userName: message.author.username,
+            guildName: message.guild.name
+          });
+          if (effectiveLimit > 0 && Number.isFinite(dayLimit)) {
+            await aiChatUsage.incrementUsage(message.guild.id, message.author.id).catch(() => { });
+          }
+
+          const safe = response.length > 1900 ? response.slice(0, 1900) + '…' : response;
+          return message.reply(safe);
+        } catch (error) {
+          const errText = `❌ Error: ${error.message}`;
+          return message.reply(errText.length > 1900 ? errText.slice(0, 1900) + '…' : errText);
+        }
+      }
+    }
+
     // Unified command handling
     const args = message.content.trim().split(/\s+/);
-    const isPrefixCommand = message.content.startsWith(prefix);
     let commandName = "";
     let argsArr = [];
 
@@ -400,8 +480,11 @@ module.exports = {
         (cmd) => cmd.aliases && cmd.aliases.includes(commandName)
       );
 
+    console.log(`[MessageCreate] CommandName: '${commandName}', Found: ${!!command}`);
+
     if (command) {
       try {
+        console.log(`[MessageCreate] Executing command: ${command.name}`);
         await command.execute(message, argsArr, client);
       } catch (error) {
         logger.error(`Command ${commandName} failed:`, error);

@@ -9,18 +9,18 @@
 
 module.exports = {
   // The ID of the official development server
-  guildId: '1379099550014505031',
+  guildId: '1351735584548196362',
 
   // Channel IDs for specific functions
   // anoncement and updates
   channels: {
     // Channel for official bot announcements
-    announcements: '1379170285508624389',
+    announcements: '1458940812741185607',
 
     // Channel for bot update logs and changelogs
-    updates: '1379170330869764208',
+    updates: '1458940812741185607',
 
     // Channel for a persistent bot status message
-    status: '1379170381901860864',
+    status: '1458940812741185607',
   },
 };
