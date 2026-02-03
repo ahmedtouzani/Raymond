@@ -47,6 +47,14 @@ module.exports = {
     return rows;
   },
 
+  async getMemoriesByUserId(userId, { limit = 5 } = {}) {
+    const { rows } = await db.query(
+      'SELECT * FROM ai_memory WHERE created_by = $1 ORDER BY created_at DESC LIMIT $2',
+      [String(userId), limit]
+    );
+    return rows;
+  },
+
   async deleteMemory(id) {
     const { rowCount } = await db.query('DELETE FROM ai_memory WHERE id = $1', [id]);
     return rowCount > 0;
@@ -58,5 +66,14 @@ module.exports = {
       'UPDATE ai_memory SET last_accessed_at = CURRENT_TIMESTAMP WHERE id = ANY($1)',
       [ids]
     );
+  },
+
+  async getMemoriesByUserId(userId, { limit = 5 } = {}) {
+    // Search by created_by column which stores the Discord User ID
+    const { rows } = await db.query(
+      'SELECT * FROM ai_memory WHERE created_by = $1 ORDER BY created_at DESC LIMIT $2',
+      [String(userId), limit]
+    );
+    return rows;
   }
 };

@@ -361,10 +361,26 @@ module.exports = {
         await message.channel.sendTyping().catch(() => { });
 
         try {
+          // Fetch last 10 messages for context
+          const history = [];
+          try {
+            const pastMessages = await message.channel.messages.fetch({ limit: 11, before: message.id });
+            pastMessages.reverse().forEach(msg => {
+              if (msg.content && !msg.author.bot) {
+                history.push({ role: 'user', content: `${msg.author.username}: ${msg.content}` });
+              } else if (msg.author.id === client.user.id && msg.content) {
+                history.push({ role: 'assistant', content: msg.content });
+              }
+            });
+          } catch (e) {
+            console.warn('Failed to fetch message history:', e);
+          }
+
           const response = await aiService.generateResponse(prompt, {
             userName: message.author.username,
             userId: message.author.id,
-            guildName: message.guild.name
+            guildName: message.guild.name,
+            history
           });
           if (effectiveLimit > 0 && Number.isFinite(dayLimit)) {
             await aiChatUsage.incrementUsage(message.guild.id, message.author.id).catch(() => { });

@@ -24,7 +24,7 @@ class AIService {
         this.memoryEnabled = String(process.env.AI_MEMORY_ENABLED || 'true').toLowerCase() !== 'false';
         this.memoryLimit = Number(process.env.AI_MEMORY_LIMIT || 10);
         this.memoryTopK = Number(process.env.AI_MEMORY_TOP_K || 3); // Reduced from 5 to save tokens
-        this.maxOutputTokens = Number(process.env.AI_MAX_OUTPUT_TOKENS || 400); // Limit output length
+        this.maxOutputTokens = Number(process.env.AI_MAX_OUTPUT_TOKENS || 200); // Limit output length
         this.memoryMaxChars = Number(process.env.AI_MEMORY_MAX_CHARS || 1200);
         this.memoryMinQueryChars = Number(process.env.AI_MEMORY_MIN_QUERY_CHARS || 12);
         this.memoryMinWordChars = Number(process.env.AI_MEMORY_MIN_WORD_CHARS || 3);
@@ -197,9 +197,13 @@ class AIService {
                 promises.push(aiMemory.searchMemories(userName, { limit: topK }));
             }
 
-            // 3. Search by User ID (Mention format)
+            // 3. Search by User ID (Created By Column - Correct Relational Lookup)
             if (userId) {
-                promises.push(aiMemory.searchMemories(userId, { limit: topK }));
+                if (typeof aiMemory.getMemoriesByUserId === 'function') {
+                    promises.push(aiMemory.getMemoriesByUserId(userId, { limit: topK }));
+                } else {
+                    promises.push(aiMemory.searchMemories(userId, { limit: topK }));
+                }
             }
 
             const results = await Promise.all(promises);
@@ -272,7 +276,7 @@ class AIService {
         return lines.length ? lines.join('\n') : null;
     }
 
-    async _requestCompletion(prompt, selectedModel, extraSystemContext = null) {
+    async _requestCompletion(prompt, selectedModel, context = {}, extraSystemContext = null) {
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), this.timeoutMs);
 
@@ -280,6 +284,38 @@ class AIService {
         const cleanPrompt = String(prompt || '').slice(0, 1200);
 
         try {
+            const messages = [
+                {
+                    role: 'system',
+                    content: `You are Raymond Reddington from "The Blacklist". Charming, dangerous, sophisticated, and always in control.
+IMPORTANT:
+1. If asked about a user you don't know (e.g. "Who is @Busy"), NEVER say "I don't have access to the database" or "I am an AI". Instead, act in character: "I haven't had the pleasure of vetting that individual yet", "They are merely a ghost in the machine", or "I verify everyone, but they haven't crossed my desk."
+2. Never break character. You are NOT a bot. You are the Concierge of Crime.
+3. Keep responses EXTREMELY concise (under 50 words) to save tokens. Only elaborate if explicitly asked.
+4. **CRITICAL**: Do NOT output your internal reasoning or "meta" commentary. If you need to think, wrap it in <thinking> tags. I will parse them out. Valid output starts DIRECTLY with your spoken response.`
+                },
+                ...(extraSystemContext ? [{ role: 'system', content: extraSystemContext }] : [])
+            ];
+
+            // Add conversation history if available
+            if (Array.isArray(context.history)) {
+                // Ensure history items have valid role/content
+                const cleanHistory = context.history.map(msg => ({
+                    role: msg.role === 'user' || msg.role === 'assistant' ? msg.role : 'user',
+                    content: String(msg.content || '').slice(0, 500) // Truncate old messages to save tokens
+                }));
+                messages.push(...cleanHistory);
+            }
+
+            // check if last message in history is identical to current prompt to avoid duplication?
+            // Actually, messageCreate usually excludes the current prompt from history or handles it?
+            // checking messageCreate.js: it fetches "before: message.id", so the current prompt is NOT in history. Good.
+
+            messages.push({
+                role: 'user',
+                content: cleanPrompt
+            });
+
             const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
                 method: 'POST',
                 headers: {
@@ -292,21 +328,7 @@ class AIService {
                     model: selectedModel,
                     max_tokens: this.maxOutputTokens,
                     temperature: 0.7, // Concise & Focused
-                    messages: [
-                        {
-                            role: 'system',
-                            content: `You are Raymond Reddington from "The Blacklist". Charming, dangerous, sophisticated, and always in control.
-IMPORTANT:
-1. If asked about a user you don't know (e.g. "Who is @Busy"), NEVER say "I don't have access to the database" or "I am an AI". Instead, act in character: "I haven't had the pleasure of vetting that individual yet", "They are merely a ghost in the machine", or "I verify everyone, but they haven't crossed my desk."
-2. Never break character. You are NOT a bot. You are the Concierge of Crime.
-3. Keep responses concise (under 100 words) for Discord, unless telling a story.`
-                        },
-                        ...(extraSystemContext ? [{ role: 'system', content: extraSystemContext }] : []),
-                        {
-                            role: 'user',
-                            content: cleanPrompt
-                        }
-                    ]
+                    messages: messages
                 }),
                 signal: controller.signal
             });
@@ -330,11 +352,19 @@ IMPORTANT:
 
             const data = await response.json();
 
-            const content = data?.choices?.[0]?.message?.content;
+            let content = data?.choices?.[0]?.message?.content;
             if (!content) {
                 const err = new Error('No response generated from AI.');
                 err.retryable = true;
                 throw err;
+            }
+
+            // Strip <thinking> tags if present
+            content = content.replace(/<thinking>[\s\S]*?<\/thinking>/g, '').trim();
+            // Fallback: Strip "Alright, the user..." type preambles if common (simple heuristic)
+            if (content.startsWith("Alright,") && content.includes('"')) {
+                const match = content.match(/"([^"]+)"/);
+                if (match) content = match[1];
             }
 
             return content;
@@ -383,7 +413,7 @@ IMPORTANT:
 
         for (const selectedModel of candidates) {
             try {
-                const content = await this._requestCompletion(prompt, selectedModel, extraSystemContext);
+                const content = await this._requestCompletion(prompt, selectedModel, context, extraSystemContext);
                 if (!model) this.lastGoodModel = selectedModel;
                 if (Array.isArray(memories) && memories.length) {
                     if (!aiMemory) {

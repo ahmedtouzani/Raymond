@@ -8,7 +8,8 @@ module.exports = {
     usage: 'ai <prompt>',
     aliases: ['ask', 'gpt', 'gemini'],
     category: 'OwnerOnly', // Ensures it's categorized correctly
-
+    prefixless: true,
+    
     async execute(message, args) {
         console.log('[AI Command] Triggered by:', message.author.id, message.author.tag);
 
