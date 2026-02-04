@@ -9,7 +9,7 @@ module.exports = {
     aliases: ['ask', 'gpt', 'gemini'],
     category: 'OwnerOnly', // Ensures it's categorized correctly
     prefixless: true,
-    
+
     async execute(message, args) {
         console.log('[AI Command] Triggered by:', message.author.id, message.author.tag);
 
@@ -26,7 +26,14 @@ module.exports = {
         }
 
         if (!args.length) {
-            return message.reply('Please provide a prompt. Usage: `!ai <question>`');
+            const { createUsageEmbed } = require('../../utils/embed');
+            const embed = await createUsageEmbed(message.guild.id, {
+                command: 'ai',
+                description: 'Talk to **Raymond Reddington** (DeepSeek/Gemini AI).\nHe learns from your conversation and remembers what you tell him.',
+                usage: '`!ai <message>`\n`!ai remember <fact>`\n`!ai memories`\n`!ai forget <id>`',
+                examples: '`!ai Who is the president?`\n`!ai remember My name is Ahmed`\n`!ai memories`'
+            });
+            return message.reply({ embeds: [embed] });
         }
 
         const sub = String(args[0] || '').toLowerCase();
