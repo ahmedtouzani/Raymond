@@ -77,7 +77,7 @@ module.exports = {
       }
 
       // Ignore Wizard interactions (handled locally by collector)
-      if (['w_btn', 'w_sel', 'w_toggle', 'w_single', 'add_role', 'finish', 'cancel', 'Primary', 'Secondary', 'Success', 'Danger'].includes(interaction.customId) || interaction.customId.startsWith('w_') || interaction.customId.startsWith('tpl_')) {
+      if (['w_btn', 'w_sel', 'w_toggle', 'w_single', 'add_role', 'finish', 'cancel', 'Primary', 'Secondary', 'Success', 'Danger', 'help_menu'].includes(interaction.customId) || interaction.customId.startsWith('w_') || interaction.customId.startsWith('tpl_')) {
         return;
       }
 

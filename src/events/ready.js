@@ -119,16 +119,27 @@ async function updateDevServerStatus(client) {
       });
 
     if (statusMessageId) {
-      const oldMessage = await statusChannel.messages.fetch(statusMessageId).catch(() => null);
-      if (oldMessage) {
-        await oldMessage.edit({ embeds: [statusEmbed] });
-        logger.info('Successfully updated dev server status message.');
-        return;
+      try {
+        const oldMessage = await statusChannel.messages.fetch(statusMessageId).catch(() => null);
+        if (oldMessage) {
+          if (oldMessage.author.id === client.user.id) {
+            await oldMessage.edit({ embeds: [statusEmbed] });
+            logger.info('Successfully updated dev server status message.');
+            return;
+          } else {
+            // Message exists but not ours (e.g. from previous bot instance/token)
+            // Try to delete it (might fail if no perms) or just ignore and send new one
+            await oldMessage.delete().catch(() => { });
+          }
+        }
+      } catch (err) {
+        // If error is 50005 (Cannot edit), 10008 (Unknown Message), or 404, we just carry on to send a new one
+        logger.warn(`Could not edit existing status message, sending a new one. Reason: ${err.message}`);
       }
     }
 
     const newMessage = await statusChannel.send({ embeds: [statusEmbed] });
-    // CORRECTED FUNCTION CALL
+    // Update config with new message ID
     await setGuildConfig(devServerConfig.guildId, { settings: { dev_status_message_id: newMessage.id } });
     logger.info(`Posted new dev server status message and saved its ID: ${newMessage.id}`);
 
