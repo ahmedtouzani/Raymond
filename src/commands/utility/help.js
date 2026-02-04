@@ -56,7 +56,8 @@ module.exports = {
       'Utility': { emoji: '<a:utiliti:1466829554055381055>', description: 'Useful tools and information.' },
       'Leveling': { emoji: '📊', description: 'XP, Ranks, and Leaderboards.' },
       'AI': { emoji: '🧠', description: 'Raymond Reddington AI Assistant.' },
-      'OwnerOnly': { emoji: '🔒', description: 'Bot Owner commands.' }
+      'OwnerOnly': { emoji: '🔒', description: 'Bot Owner commands.' },
+      'Admin': { emoji: '🛡️', description: 'Server Administrator commands.' }
     };
 
     // Group commands
@@ -69,8 +70,11 @@ module.exports = {
 
     // Determine standard categories to show
     const isOwner = message.author.id === process.env.OWNER_ID;
+    const isAdmin = message.member.permissions.has(PermissionsBitField.Flags.Administrator);
+
     const categoryKeys = Object.keys(commandGroups).filter(cat => {
       if (cat === 'OwnerOnly' && !isOwner) return false;
+      if (cat === 'Admin' && !isAdmin && !isOwner) return false;
       return true;
     });
 
