@@ -2,7 +2,8 @@ const {
   EmbedBuilder,
   ActionRowBuilder,
   StringSelectMenuBuilder,
-  ComponentType
+  ComponentType,
+  PermissionsBitField
 } = require('discord.js');
 const { getGuildConfig } = require('../../database/guildConfig');
 const { createUsageEmbed } = require('../../utils/embed');
