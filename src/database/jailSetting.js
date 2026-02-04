@@ -7,6 +7,24 @@ async function getJailSettings(guildId) {
 }
 
 // Set jail role for guild
+async function setJailRole(guildId, roleId) {
+  await db.query(`
+    INSERT INTO jail_settings (guild_id, jail_role_id)
+    VALUES ($1, $2)
+    ON CONFLICT (guild_id) DO UPDATE SET jail_role_id = EXCLUDED.jail_role_id
+  `, [guildId, roleId]);
+}
+
+// Set jail voice channel for guild
+async function setJailVoiceChannel(guildId, channelId) {
+  await db.query(`
+    INSERT INTO jail_settings (guild_id, jail_voice_channel_id)
+    VALUES ($1, $2)
+    ON CONFLICT (guild_id) DO UPDATE SET jail_voice_channel_id = EXCLUDED.jail_voice_channel_id
+  `, [guildId, channelId]);
+}
+
+// Set both jail settings (Legacy support)
 async function setJailSettings(guildId, jailRoleId, jailVoiceChannelId) {
   await db.query(`
     INSERT INTO jail_settings (guild_id, jail_role_id, jail_voice_channel_id)
@@ -49,6 +67,8 @@ async function unjailUser(guildId, userId) {
 module.exports = {
   getJailSettings,
   setJailSettings,
+  setJailRole,
+  setJailVoiceChannel,
   jailUser,
   getJailedUser,
   unjailUser,
