@@ -23,7 +23,7 @@ module.exports = {
         "**The Premium Discord Server Operating System**\n\n" +
         "Raymond is not just a bot; it's an **autonomous neural interface** designed to elevate your community. " +
         "Built on the **Parallel Universe Engine**, it combines high-fidelity graphics generation with a context-aware AI core.\n\n" +
-        "**⚡ Core Capabilities:**\n" +
+        "**<:kings:1469338954330542136> Core Capabilities:**\n" +
         "• **Neural Core:** Powered by `DeepSeek` & `Gemini` with Smart Fallback.\n" +
         "• **Visual Engine:** 4K Canvas rendering for Ranks & Leaderboards.\n" +
         "• **Autonomous Admin:** No-code dashboard & self-healing systems."
