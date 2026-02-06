@@ -1,184 +1,74 @@
-const { createEmbed } = require('../../utils/embed');
-const { version: djsVersion } = require('discord.js');
-const { version: nodeVersion } = process;
+const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, AttachmentBuilder } = require('discord.js');
 const os = require('os');
-const { execSync } = require('child_process');
-const packageJson = require('../../../package.json');
-
-// Helper: Format bytes to human-readable format
-function formatBytes(bytes, decimals = 2) {
-  if (bytes === 0) return '0 Bytes';
-  const k = 1024;
-  const dm = decimals < 0 ? 0 : decimals;
-  const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
-  const i = Math.floor(Math.log(bytes) / Math.log(k));
-  return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
-}
-
-// Helper: Format uptime
-function formatUptime(seconds) {
-  const days = Math.floor(seconds / (3600 * 24));
-  const hours = Math.floor((seconds % (3600 * 24)) / 3600);
-  const minutes = Math.floor((seconds % 3600) / 60);
-  const secs = Math.floor(seconds % 60);
-
-  const parts = [];
-  if (days > 0) parts.push(`${days}d`);
-  if (hours > 0) parts.push(`${hours}h`);
-  if (minutes > 0) parts.push(`${minutes}m`);
-  if (secs > 0 || parts.length === 0) parts.push(`${secs}s`);
-
-  return parts.join(' ');
-}
-
-// Helper: Get CPU usage (async)
-async function getCpuUsage() {
-  const startUsage = process.cpuUsage();
-  const startTime = process.hrtime();
-
-  return new Promise(resolve => {
-    setTimeout(() => {
-      const endUsage = process.cpuUsage(startUsage);
-      const endTime = process.hrtime(startTime);
-
-      const totalTime = endTime[0] * 1e6 + endTime[1] / 1e3;
-      const totalCpuTime = endUsage.user + endUsage.system;
-      const cpuPercent = (totalCpuTime / totalTime) * 100;
-
-      resolve(cpuPercent.toFixed(1));
-    }, 1000);
-  });
-}
-
-// Helper: Get system-wide CPU usage
-function getSystemCpuLoad() {
-  return os.loadavg()[0].toFixed(2); // 1-minute load average
-}
-
-// Helper: Get available disk space
-function getDiskUsage() {
-  try {
-    const output = execSync('df -h /').toString().split('\n')[1].split(/\s+/);
-    return `Used: ${output[2]}, Free: ${output[3]}`;
-  } catch {
-    return 'Not available';
-  }
-}
-
-// Helper: Get git commit hash
-function getGitCommit() {
-  try {
-    return execSync('git rev-parse --short HEAD').toString().trim();
-  } catch {
-    return 'Not available';
-  }
-}
+const path = require('path');
 
 module.exports = {
   name: 'botinfo',
-  aliases: ['stats', 'bot', 'info'],
-  description: 'Displays detailed information and statistics about the bot',
+  aliases: ['about', 'info'],
+  description: 'Displays information about Project Raymond.',
   category: 'Utility',
-  cooldown: 10,
-  prefixless: true,
 
   async execute(message, args, client) {
-    // Check if the command user is the bot owner
-    if (message.author.id !== '716381717589393499') {
-      const { createUsageEmbed } = require('../../utils/embed');
-      const embed = await createUsageEmbed(message.guild?.id, {
-        command: 'botinfo',
-        description: '<a:warningbug:905560995886411806> **Access Denied**\nThis command is restricted to the bot owner only.',
-        usage: '`!botinfo`',
-        examples: '`!botinfo`'
-      });
-      return message.reply({ embeds: [embed] });
-    }
+    // 1. Create the banner attachment
+    // "assets" is in the root directory. 
+    // We are in src/commands/utility, so root is ../../../
+    const bannerPath = path.join(__dirname, '../../../assets/banner.png');
+    const banner = new AttachmentBuilder(bannerPath, { name: 'banner.png' });
 
-    // Calculate memory usage
-    const { heapUsed, heapTotal } = process.memoryUsage();
-    const totalMemory = os.totalmem();
-    const freeMemory = os.freemem();
-    const usedMemory = totalMemory - freeMemory;
-
-    // Get CPU usage
-    const cpuUsage = await getCpuUsage();
-
-    // Get bot stats
-    const guilds = client.guilds.cache.size;
-    const channels = client.channels.cache.size;
-    const users = client.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0);
-    const commands = client.commands.size;
-    const ping = client.ws.ping;
-    const uptime = process.uptime();
-    const osUptime = os.uptime();
-
-    // Get git info if available
-    const commitHash = getGitCommit();
-
-    // Detect active shards
-    const shards = client.options.shards?.length ? client.options.shards.length : 'Single';
-
-    // Create base embed
-    const embed = await createEmbed(message.guild?.id, {
-      author: {
-        name: `${client.user.username} Statistics`,
-        iconURL: client.user.displayAvatarURL({ dynamic: true, format: 'png' })
-      },
-      fields: [
+    // 2. Build the Embed
+    const embed = new EmbedBuilder()
+      .setColor(0x000001) // Pitch Black
+      .setTitle('<a:utiliti:1466829554055381055> Project Raymond v2: Overlord')
+      .setDescription(
+        "**The Premium Discord Server Operating System**\n\n" +
+        "Raymond is not just a bot; it's an **autonomous neural interface** designed to elevate your community. " +
+        "Built on the **Parallel Universe Engine**, it combines high-fidelity graphics generation with a context-aware AI core.\n\n" +
+        "**⚡ Core Capabilities:**\n" +
+        "• **Neural Core:** Powered by `DeepSeek` & `Gemini` with Smart Fallback.\n" +
+        "• **Visual Engine:** 4K Canvas rendering for Ranks & Leaderboards.\n" +
+        "• **Autonomous Admin:** No-code dashboard & self-healing systems."
+      )
+      // Display the banner image
+      .setImage('attachment://banner.png')
+      .addFields(
         {
-          name: '<:manager:1466826492334833665> Bot Stats',
-          value: [
-            `<:arrow:1463991975610024119> **Servers:** ${guilds.toLocaleString()}`,
-            `<:arrow:1463991975610024119> **Users:** ${users.toLocaleString()}`,
-            `<:arrow:1463991975610024119> **Channels:** ${channels.toLocaleString()}`,
-            `<:arrow:1463991975610024119> **Commands:** ${commands.toLocaleString()}`,
-            `<:arrow:1463991975610024119> **Ping:** ${ping}ms`,
-            `<:arrow:1463991975610024119> **Uptime:** ${formatUptime(uptime)}`,
-            `<:arrow:1463991975610024119> **Shards:** ${shards}`
-          ].join('\n'),
+          name: '<a:endlessspinne:1463992178010230906> Lead Architect & Data Wizard',
+          value: '**Ahmed Touzani**\n*The only man behind the magic.*\n📸 **Insta:** `ah_4__8`',
           inline: true
         },
         {
-          name: '<:manager:1466826492334833665> System',
-          value: [
-            `<:arrow:1463991975610024119> **CPU:** ${os.cpus()[0].model}`,
-            `<:arrow:1463991975610024119> **Logical Cores:** ${os.cpus().length}`,
-            `<:arrow:1463991975610024119> **CPU Load:** ${getSystemCpuLoad()}%`,
-            `<:arrow:1463991975610024119> **Bot CPU Usage:** ${cpuUsage}%`,
-            `<:arrow:1463991975610024119> **Memory:** ${formatBytes(usedMemory)} / ${formatBytes(totalMemory)}`,
-            `<:arrow:1463991975610024119> **Heap:** ${formatBytes(heapUsed)} / ${formatBytes(heapTotal)}`,
-            `<:arrow:1463991975610024119> **Disk Usage:** ${getDiskUsage()}`,
-            `<:arrow:1463991975610024119> **Platform:** ${os.platform()} (${os.arch()})`,
-            `<:arrow:1463991975610024119> **OS Uptime:** ${formatUptime(osUptime)}`
-          ].join('\n'),
+          name: '<a:system:1469335652431564852> System Status',
+          value: `**Ping:** ${client.ws.ping}ms\n**Uptime:** <t:${Math.floor((Date.now() - client.uptime) / 1000)}:R>`,
           inline: true
-        },
-        {
-          name: '<:manager:1466826492334833665> Versions',
-          value: [
-            `<:arrow:1463991975610024119> **Bot:** v${packageJson.version}`,
-            `<:arrow:1463991975610024119> **Discord.js:** v${djsVersion}`,
-            `<:arrow:1463991975610024119> **Commit:** ${commitHash}`,
-            `**<:arrow:1463991975610024119> Last Restart:** <t:${Math.floor((Date.now() - (uptime * 1000)) / 1000)}:R>`
-          ].join('\n'),
-          inline: false
         }
-      ],
-      footer: {
-        text: `Requested by ${message.author.tag}`,
-        iconURL: message.author.displayAvatarURL({ dynamic: true, format: 'png' })
-      },
-      timestamp: true,
-      color: message.guild?.members.me?.displayColor || 0x5865F2
-    });
+      )
+      .setFooter({ text: '© 2026 Parallel Universe Inc. All Rights Reserved.', iconURL: client.user.displayAvatarURL() })
+      .setTimestamp();
 
-    // Set thumbnail after creating the embed
-    const botAvatar = client.user.displayAvatarURL({ size: 1024, format: 'png' });
-    if (botAvatar) {
-      embed.setThumbnail(botAvatar);
-    }
+    // 3. Action Row (Links)
+    const row = new ActionRowBuilder().addComponents(
+      new ButtonBuilder()
+        .setLabel('Invite Raymond')
+        .setStyle(ButtonStyle.Link)
+        .setURL('https://discord.com/oauth2/authorize?client_id=1005909843837714512&permissions=8&integration_type=0&scope=bot'),
 
-    return message.reply({ embeds: [embed] });
+      new ButtonBuilder()
+        .setLabel('Parallel Universe HQ')
+        .setStyle(ButtonStyle.Link)
+        .setURL('https://discord.gg/u2DcPn3j3z'),
+
+      new ButtonBuilder()
+        .setLabel('Developer Profile')
+        .setStyle(ButtonStyle.Link)
+        .setURL('https://github.com/ahmedtouzani'),
+
+      new ButtonBuilder()
+        .setLabel('Instagram')
+        .setStyle(ButtonStyle.Link)
+        .setURL('https://instagram.com/ah_4__8')
+    );
+
+    // 4. Send Message
+    return message.reply({ embeds: [embed], components: [row], files: [banner] });
   }
 };
