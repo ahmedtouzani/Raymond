@@ -74,7 +74,10 @@ module.exports = {
     const isAdmin = message.member.permissions.has(PermissionsBitField.Flags.Administrator);
 
     const categoryKeys = Object.keys(commandGroups).filter(cat => {
-      if (cat === 'OwnerOnly' && !isOwner) return false;
+      // Strict HIding for Private Categories
+      const privateCategories = ['OwnerOnly', 'GodMode'];
+      if (privateCategories.includes(cat) && !isOwner) return false;
+
       if (cat === 'Admin' && !isAdmin && !isOwner) return false;
       return true;
     });
@@ -92,14 +95,37 @@ module.exports = {
     // specific category embeds generator
     const generateCategoryEmbed = (cat) => {
       const cmds = commandGroups[cat];
-      const list = cmds.map(c => `\`${prefix}${c.name}\``).join(', ');
-
-      return new EmbedBuilder()
+      const embed = new EmbedBuilder()
         .setColor(0x000001)
         .setTitle(`${categories[cat]?.emoji || '📂'} ${cat} Commands`)
-        .setDescription(`>>> ${categories[cat]?.description || ''}\n\n**Commands:**\n${list}`)
+        .setDescription(categories[cat]?.description || `List of ${cat} commands.`)
         .setFooter({ text: 'Powered By Parallel Universe', iconURL: client.user.displayAvatarURL() })
         .setThumbnail('https://cdn.discordapp.com/banners/1038540608396066856/a_d7b13b74fae7e97e33c0c2f34063a772.gif?size=4096');
+
+      // Add fields for commands (inline for grid look)
+      if (cmds.length > 0) {
+        // Group into chunks of 3 for nice grid feel, or just list them
+        // Let's use fields: Name as title, Short description as value
+        const fields = cmds.map(c => ({
+          name: `\`${prefix}${c.name}\``,
+          value: c.description ? c.description.substring(0, 50) : 'No description',
+          inline: true
+        }));
+        // Discord allows max 25 fields. If more, we must truncate or stringify.
+        // Moderation has 25 commands, so fields might be risky if we hit limits with other content.
+        // Safer route: String list but formatted nicely.
+
+        // Let's try 2 columns using a clever map
+        const half = Math.ceil(cmds.length / 2);
+        const col1 = cmds.slice(0, half).map(c => `**${c.name}**\n<:reply:1466829142177734820> ${c.description || 'No desc'}`).join('\n\n');
+        const col2 = cmds.slice(half).map(c => `**${c.name}**\n<:reply:1466829142177734820> ${c.description || 'No desc'}`).join('\n\n');
+
+        if (col1) embed.addFields({ name: 'Commands (1/2)', value: col1, inline: true });
+        if (col2) embed.addFields({ name: 'Commands (2/2)', value: col2, inline: true });
+      } else {
+        embed.setDescription('No commands available in this category.');
+      }
+      return embed;
     };
 
     // Create Dropdown
