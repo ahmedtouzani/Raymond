@@ -76,7 +76,43 @@
 
 ---
 
-## 🚀 Deployment & Setup
+## 🏗️ System Architecture
+
+### 🧠 The Smart AI Engine
+How "Project Reddington" maintains 99.9% availability using intelligent fallbacks.
+
+```mermaid
+graph LR
+    User[User] -->|!ai Prompt| Bot[Raymond Bot]
+    Bot -->|Request| Switcher{Smart Switcher}
+    Switcher -->|Primary| DeepSeek[DeepSeek V3]
+    DeepSeek --x|Error/Limit| Switcher
+    Switcher -->|Fallback| Gemini[Gemini 2.0]
+    DeepSeek -->|Response| Bot
+    Gemini -->|Response| Bot
+    Bot -->|Reply| User
+    style Switcher fill:#f9f,stroke:#333
+```
+
+### 🎨 The Canvas Pipeline
+How we generate High-Fidelity graphics in milliseconds.
+
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant B as Bot (Core)
+    participant DB as Postgres DB
+    participant G as Graphics Engine
+    
+    U->>B: !rank
+    B->>DB: Fetch XP & Level
+    DB-->>B: Return Data
+    B->>G: Load Avatar & Theme
+    G->>G: Render Canvas (4K)
+    G-->>B: Buffer Stream
+    B->>U: Send Image Attachment
+```
+
 
 ---
 
