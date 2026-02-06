@@ -1,3 +1,77 @@
+# 🌌 Raymond v2 - Project Overlord: Architecture & Progress Report
+> **Last Updated:** February 2026 (v2.0.9 Enterprise)
+
+## 1. The "Project Overlord" Evolution
+Raymond v2 represents a paradigm shift from the legacy "Parallel Ultra Bot". Moving beyond simple administration commands, v2 acts as a **Neural & Visual Operating System** for Discord.
+
+### Core Pillars
+1.  **Neural Intelligence:** Dual-model AI (DeepSeek/Gemini) with context awareness.
+2.  **Visual Interaction:** Dynamic image generation for Leaderboards, Welcomers, and Ranks.
+3.  **Autonomous Control:** No-code `!levelsetup` dashboards and self-healing configurations.
+
+---
+
+## 2. Updated Architecture Diagrams (v2.0.9)
+
+### 🧠 The "Smart Switcher" AI Core
+How the bot maintains high availability by intelligently routing prompts between DeepSeek V3 and Gemini 2.0.
+
+```mermaid
+graph TD
+    User([User Message]) -->|Trigger| Bot[Raymond Core]
+    Bot -->|Route| Switcher{Smart Model Switcher}
+    
+    Switcher -->|Primary Path| DeepSeek[DeepSeek V3 API]
+    Switcher -->|Failure/Latency| Fallback[Gemini 2.0 Flash]
+    
+    DeepSeek -->|Response| Context[Memory Manager]
+    Fallback -->|Response| Context
+    Context -->|Format| Reply([Discord Reply])
+    
+    style Switcher fill:#f96,stroke:#333,stroke-width:2px
+    style DeepSeek fill:#9cf,stroke:#333,stroke-width:2px
+```
+
+### 🎨 The Visual Graphics Pipeline
+How the new Canvas Engine renders 4K assets like Rank Cards and Leaderboards on the fly, replacing old text lists.
+
+```mermaid
+graph LR
+    Cmd[/Command: !rank/] -->|Execute| Engine[Canvas Graphics Engine]
+    
+    subgraph Data Layer
+    DB[(PostgreSQL)] -->|XP/Level| Engine
+    Config[Guild Config] -->|Theme: Dark/Neon| Engine
+    end
+    
+    Engine -->|Load Assets| Local[Local Assets]
+    Engine -->|Render| Buffer[Image Buffer]
+    Buffer -->|Upload| Discord[Discord Attachment]
+    
+    style Engine fill:#bbf,stroke:#333
+    style DB fill:#bfb,stroke:#333
+```
+
+---
+
+## 3. Key Feature Additions (Last Month)
+
+### 🤖 Neural Core Integration
+*   **Smart Fallback:** If DeepSeek is overloaded, Gemini takes over instantly.
+*   **Persona Engine:** Enforced "Helpful Mastermind" personality via system prompts.
+
+### 🖼️ Visual System Overhaul
+*   **Image Leaderboards:** Replaced strictly text-based lists with generated podium images.
+*   **Dynamic Themes:** Added "Pitch Black" and "Neon" themes adapt to server preference.
+
+### 🎛️ The Application Dashboard
+*   **No-Code Config:** `!levelsetup` now opens a GUI with Buttons and Dropdowns.
+*   **Live Previews:** Admins can preview Level Up messages before saving.
+
+---
+👇 **LEGACY DOCUMENTATION (Parallel Ultra Bot v1.0)** 👇
+---
+
 # Parallel Ultra Bot – Project Architecture & Progress Summary
 
 ## Overview
