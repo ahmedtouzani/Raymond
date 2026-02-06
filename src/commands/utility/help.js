@@ -95,37 +95,27 @@ module.exports = {
     // specific category embeds generator
     const generateCategoryEmbed = (cat) => {
       const cmds = commandGroups[cat];
-      const embed = new EmbedBuilder()
-        .setColor(0x000001)
-        .setTitle(`${categories[cat]?.emoji || '📂'} ${cat} Commands`)
-        .setDescription(categories[cat]?.description || `List of ${cat} commands.`)
-        .setFooter({ text: 'Powered By Parallel Universe', iconURL: client.user.displayAvatarURL() })
-        .setThumbnail('https://cdn.discordapp.com/banners/1038540608396066856/a_d7b13b74fae7e97e33c0c2f34063a772.gif?size=4096');
 
-      // Add fields for commands (inline for grid look)
-      if (cmds.length > 0) {
-        // Group into chunks of 3 for nice grid feel, or just list them
-        // Let's use fields: Name as title, Short description as value
-        const fields = cmds.map(c => ({
-          name: `\`${prefix}${c.name}\``,
-          value: c.description ? c.description.substring(0, 50) : 'No description',
-          inline: true
-        }));
-        // Discord allows max 25 fields. If more, we must truncate or stringify.
-        // Moderation has 25 commands, so fields might be risky if we hit limits with other content.
-        // Safer route: String list but formatted nicely.
-
-        // Let's try 2 columns using a clever map
-        const half = Math.ceil(cmds.length / 2);
-        const col1 = cmds.slice(0, half).map(c => `**${c.name}**\n<:reply:1466829142177734820> ${c.description || 'No desc'}`).join('\n\n');
-        const col2 = cmds.slice(half).map(c => `**${c.name}**\n<:reply:1466829142177734820> ${c.description || 'No desc'}`).join('\n\n');
-
-        if (col1) embed.addFields({ name: 'Commands (1/2)', value: col1, inline: true });
-        if (col2) embed.addFields({ name: 'Commands (2/2)', value: col2, inline: true });
-      } else {
-        embed.setDescription('No commands available in this category.');
+      if (cmds.length === 0) {
+        return new EmbedBuilder()
+          .setColor(0x000001)
+          .setTitle(`${categories[cat]?.emoji || '📂'} ${cat} Commands`)
+          .setDescription('No commands available in this category.')
+          .setFooter({ text: 'Powered By Parallel Universe', iconURL: client.user.displayAvatarURL() });
       }
-      return embed;
+
+      // Create a clean list with bullet points
+      const commandList = cmds.map(c => {
+        const desc = c.description ? c.description.substring(0, 60) : 'No description';
+        return `\`${prefix}${c.name}\` • ${desc}`;
+      }).join('\n');
+
+      return new EmbedBuilder()
+        .setColor(0x000001)
+        .setTitle(`${categories[cat]?.emoji || '📂'} ${cat} Module`)
+        .setDescription(`>>> ${categories[cat]?.description || ''}\n\n**Available Commands:**\n${commandList}`)
+        .setFooter({ text: `${cmds.length} commands • Use ${prefix}help <command> for details`, iconURL: client.user.displayAvatarURL() })
+        .setThumbnail('https://cdn.discordapp.com/banners/1038540608396066856/a_d7b13b74fae7e97e33c0c2f34063a772.gif?size=4096');
     };
 
     // Create Dropdown
