@@ -46,27 +46,29 @@ class MemoryExtractor {
 
         try {
             const extractionPrompt = `Analyze this conversation and extract ONLY clearly stated facts worth remembering long-term.
+You can respond in ENGLISH or ARABIC - use the same language as the conversation.
 
-Focus on:
-- Personal information (name, age, location, occupation, hobbies)
-- Preferences (likes, dislikes, favorites)
-- Relationships (who knows who, family, friends)
-- Important events or dates
-- Current projects or goals
+Focus on / ركز على:
+- Personal information (name, age, location, occupation, hobbies) / معلومات شخصية (الاسم، العمر، الموقع، المهنة، الهوايات)
+- Preferences (likes, dislikes, favorites) / التفضيلات (الإعجابات، عدم الإعجاب، المفضلات)
+- Relationships (who knows who, family, friends) / العلاقات (من يعرف من، العائلة، الأصدقاء)
+- Important events or dates / الأحداث أو التواريخ المهمة
+- Current projects or goals / المشاريع أو الأهداف الحالية
 
-Rules:
-- Only extract facts that are EXPLICITLY stated
-- Each fact should be a short, clear statement (max 100 characters)
-- Don't make assumptions or inferences
-- Don't extract greetings, questions, or casual chat
-- Format: One fact per line, starting with "- "
-- Maximum 3 facts per conversation
+Rules / القواعد:
+- Only extract facts that are EXPLICITLY stated / استخرج فقط الحقائق المذكورة صراحة
+- Each fact should be a short, clear statement (max 100 characters) / كل حقيقة يجب أن تكون عبارة قصيرة وواضحة
+- Don't make assumptions or inferences / لا تفترض أو تستنتج
+- Don't extract greetings, questions, or casual chat / لا تستخرج التحيات أو الأسئلة أو الدردشة العادية
+- Format: One fact per line, starting with "- " / التنسيق: حقيقة واحدة في كل سطر، تبدأ بـ "-"
+- Maximum 3 facts per conversation / 3 حقائق كحد أقصى لكل محادثة
+- Use the SAME LANGUAGE as the user's message / استخدم نفس لغة رسالة المستخدم
 
 Conversation:
 User (${userName}): ${userMessage}
 Bot: ${botResponse}
 
-Facts to remember (or "None" if nothing important):`;
+Facts to remember (or "None" if nothing important) / حقائق للتذكر (أو "لا شيء" إذا لم يكن هناك شيء مهم):`;
 
             // Use AI to extract facts
             const response = await aiService.generateResponse(extractionPrompt, {
@@ -93,7 +95,7 @@ Facts to remember (or "None" if nothing important):`;
      * Parse facts from AI response
      */
     _parseFacts(response, userName) {
-        if (!response || response.toLowerCase().includes('none')) {
+        if (!response || response.toLowerCase().includes('none') || response.includes('لا شيء')) {
             return [];
         }
 
@@ -109,8 +111,8 @@ Facts to remember (or "None" if nothing important):`;
             // Skip if too short or too long
             if (fact.length < 10 || fact.length > 150) continue;
 
-            // Skip if it's just a greeting or question
-            if (fact.match(/^(hi|hello|hey|thanks|thank you|ok|okay)/i)) continue;
+            // Skip if it's just a greeting or question (English or Arabic)
+            if (fact.match(/^(hi|hello|hey|thanks|thank you|ok|okay|مرحبا|أهلا|شكرا|حسنا)/i)) continue;
 
             facts.push(fact);
         }
