@@ -1,7 +1,7 @@
 {
   "name": "parallel-ultra-bot",
-  "version": "1.0.0",
-  "description": "A Discord bot built with Node.js and discord.js",
+  "version": "3.0.0",
+  "description": "An advanced Discord bot with AI-powered conversations, semantic memory, and bilingual support",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
