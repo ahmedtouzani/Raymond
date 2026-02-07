@@ -1,6 +1,9 @@
 // Native fetch is available in Node.js 18+
 // Removed 'node-fetch' dependency to fix MODULE_NOT_FOUND error
 
+const personas = require('../config/personas');
+const embeddings = require('./embeddings');
+const logger = require('../utils/logger');
 
 let aiMemory = null;
 
@@ -29,9 +32,15 @@ class AIService {
         this.memoryMinQueryChars = Number(process.env.AI_MEMORY_MIN_QUERY_CHARS || 12);
         this.memoryMinWordChars = Number(process.env.AI_MEMORY_MIN_WORD_CHARS || 3);
         this.memoryCacheTtlMs = Number(process.env.AI_MEMORY_CACHE_TTL_MS || 60_000);
+        this.maxContextTokens = Number(process.env.AI_MAX_CONTEXT_TOKENS || 1000);
+        this.similarityThreshold = Number(process.env.AI_MEMORY_SIMILARITY_THRESHOLD || 0.7);
         this.lastGoodModel = null;
         this.freeModelsCache = { fetchedAt: 0, models: [], modelSet: new Set() };
         this.memoriesCache = { fetchedAt: 0, query: '', items: [] };
+
+        // Load persona configuration
+        const personaName = (process.env.AI_PERSONA || 'raymond').trim().toLowerCase();
+        this.persona = personas[personaName] || personas.raymond;
 
         const envPriority = (process.env.OPENROUTER_MODEL_PRIORITY || '').trim();
         this.modelPriority = envPriority
@@ -185,43 +194,57 @@ class AIService {
         const topK = Number.isFinite(this.memoryTopK) ? Math.max(1, this.memoryTopK) : 3;
 
         try {
-            const promises = [];
+            const results = [];
 
-            // 1. Search by Prompt (Contextual)
+            // 1. Semantic Search by Prompt (if query is long enough)
             if (query.length >= (this.memoryMinQueryChars || 10)) {
-                promises.push(aiMemory.searchMemories(query, { limit: topK }));
+                const semanticResults = await aiMemory.searchMemories(query, {
+                    limit: topK,
+                    threshold: this.similarityThreshold
+                });
+                results.push(...semanticResults);
             }
 
-            // 2. Search by Username (Relational/Identity)
-            if (userName.length >= 2) {
-                promises.push(aiMemory.searchMemories(userName, { limit: topK }));
+            // 2. Search by Username (if provided)
+            if (userName.length >= 2 && results.length < topK) {
+                const userResults = await aiMemory.searchMemories(userName, {
+                    limit: topK - results.length,
+                    threshold: this.similarityThreshold
+                });
+                results.push(...userResults);
             }
 
-            // 3. Search by User ID (Created By Column - Correct Relational Lookup)
-            if (userId) {
-                if (typeof aiMemory.getMemoriesByUserId === 'function') {
-                    promises.push(aiMemory.getMemoriesByUserId(userId, { limit: topK }));
-                } else {
-                    promises.push(aiMemory.searchMemories(userId, { limit: topK }));
-                }
+            // 3. Search by User ID (Created By Column)
+            if (userId && results.length < topK) {
+                const userIdResults = await aiMemory.getMemoriesByUserId(userId, {
+                    limit: topK - results.length
+                });
+                results.push(...userIdResults);
             }
-
-            const results = await Promise.all(promises);
-            const allRows = results.flat();
 
             // Deduplicate by ID
             const uniqueMap = new Map();
-            for (const row of allRows) {
+            for (const row of results) {
                 if (row && row.id) uniqueMap.set(row.id, row);
             }
 
-            // Sort by relevance/recency (simple id sort for now or created_at)
-            const merged = Array.from(uniqueMap.values()).sort((a, b) => b.id - a.id).slice(0, topK * 2);
+            // Sort by similarity score (if available) then by recency
+            const merged = Array.from(uniqueMap.values())
+                .sort((a, b) => {
+                    // Primary sort: similarity score (descending)
+                    const simA = a.similarity || 0;
+                    const simB = b.similarity || 0;
+                    if (simA !== simB) return simB - simA;
+
+                    // Secondary sort: recency (newer first)
+                    return b.id - a.id;
+                })
+                .slice(0, topK * 2);
 
             this.memoriesCache = { fetchedAt: now, query: cacheKey, items: merged };
             return merged;
         } catch (error) {
-            console.error('[AI Service] Memory search failed:', error.message);
+            logger.error('[AI Service] Memory search failed:', error.message);
             return [];
         }
     }
@@ -245,10 +268,33 @@ class AIService {
         }
 
         if (context.userName) {
-            lines.push(`IMPORTANT: You are currently talking to a user named "${context.userName}". Address them by this name if asked.`);
+            // Check if current user is the owner
+            const ownerId = String(process.env.OWNER_ID || '').trim();
+            const isOwner = ownerId && context.userId && context.userId === ownerId;
+
+            if (isOwner) {
+                lines.push(`CRITICAL: You are currently talking to ${context.userName}, who is YOUR OWNER (the person who created you). This is the most important person. When they ask "who am I?" or similar, acknowledge they are your owner/creator.`);
+            } else {
+                lines.push(`You are currently talking to a user named "${context.userName}".`);
+            }
         }
         if (context.guildName) {
             lines.push(`Current Server: ${context.guildName}.`);
+        }
+
+        // Add mentioned users context
+        if (context.mentionedUsers && Array.isArray(context.mentionedUsers) && context.mentionedUsers.length > 0) {
+            lines.push('Users mentioned in this conversation:');
+            for (const user of context.mentionedUsers) {
+                lines.push(`- ${user.displayName} (@${user.username}, ID: ${user.id})`);
+                if (user.roles && user.roles.length > 0) {
+                    lines.push(`  Roles: ${user.roles.join(', ')}`);
+                }
+                if (user.joinedAt) {
+                    const joinDate = new Date(user.joinedAt).toLocaleDateString();
+                    lines.push(`  Joined: ${joinDate}`);
+                }
+            }
         }
 
         const items = Array.isArray(memories) ? memories : [];
@@ -256,7 +302,7 @@ class AIService {
             return lines.length ? lines.join('\n') : null;
         }
 
-        const header = 'Facts you should consider:';
+        const header = 'Relevant memories from past conversations:';
         const headerCost = (lines.length ? 1 : 0) + header.length;
         if ((lines.join('\n').length + headerCost) <= maxChars) {
             lines.push(header);
@@ -266,7 +312,10 @@ class AIService {
         for (const m of items) {
             const formatted = this._formatMemoryLine(m);
             if (!formatted) continue;
-            const line = `- ${formatted}`;
+
+            // Add similarity score if available
+            const score = m.similarity ? ` (${(m.similarity * 100).toFixed(0)}% match)` : '';
+            const line = `- ${formatted}${score}`;
             const extra = (used ? 1 : 0) + line.length;
             if (used + extra > maxChars) break;
             lines.push(line);
@@ -287,13 +336,7 @@ class AIService {
             const messages = [
                 {
                     role: 'system',
-                    content: `You are Raymond Reddington from "The Blacklist". Charming, dangerous, sophisticated, and always in control.
-IMPORTANT:
-1. If asked about a user you don't know (e.g. "Who is @Busy"), NEVER say "I don't have access to the database" or "I am an AI". Instead, act in character: "I haven't had the pleasure of vetting that individual yet", "They are merely a ghost in the machine", or "I verify everyone, but they haven't crossed my desk."
-2. Never break character. You are NOT a bot. You are the Concierge of Crime.
-3. Keep responses EXTREMELY concise (under 50 words) to save tokens. Only elaborate if explicitly asked.
-4. **CRITICAL**: Do NOT output your internal reasoning or "meta" commentary. If you need to think, wrap it in <thinking> tags. I will parse them out. Valid output starts DIRECTLY with your spoken response.
-5. **LANGUAGE**: You are a polyglot. Detect and speak Arabic or Moroccan Darija fluently if addressed in them. Maintain your sophisticated persona in any language.`
+                    content: this.persona.systemPrompt
                 },
                 ...(extraSystemContext ? [{ role: 'system', content: extraSystemContext }] : [])
             ];
@@ -327,8 +370,8 @@ IMPORTANT:
                 },
                 body: JSON.stringify({
                     model: selectedModel,
-                    max_tokens: this.maxOutputTokens,
-                    temperature: 0.7, // Concise & Focused
+                    max_tokens: this.persona.maxTokens || this.maxOutputTokens,
+                    temperature: this.persona.temperature || 0.7,
                     messages: messages
                 }),
                 signal: controller.signal

@@ -8,6 +8,8 @@ const logger = require("../utils/logger"); // Unified logger
 const { getAutoReactionsForGuild } = require("../database/autoReactSettings");
 const aiService = require("../services/ai");
 const aiChatUsage = require("../database/aiChatUsage");
+const aiChatUsageHourly = require("../database/aiChatUsageHourly");
+const aiConversationHistory = require("../database/aiConversationHistory");
 
 module.exports = {
   name: "messageCreate",
@@ -321,7 +323,12 @@ module.exports = {
       const allowedUsers = Array.isArray(settings.allowed_users) ? settings.allowed_users : (Array.isArray(config.settings.ai_allowed_users) ? config.settings.ai_allowed_users : []);
       const allowedRoles = Array.isArray(settings.allowed_roles) ? settings.allowed_roles : (Array.isArray(config.settings.ai_allowed_roles) ? config.settings.ai_allowed_roles : []);
 
+      // Check database whitelist for access control
+      const aiWhitelist = require('../database/aiWhitelist');
+      const isDbWhitelisted = await aiWhitelist.isWhitelisted(message.guild.id, message.author.id).catch(() => false);
+
       const userAllowed = isOwner ||
+        isDbWhitelisted ||  // NEW: Database whitelist grants access
         envAllowedUsers.includes(message.author.id) ||
         allowedUsers.includes(message.author.id) ||
         (message.member && message.member.roles && message.member.roles.cache && (
@@ -338,16 +345,18 @@ module.exports = {
 
         // Re-check userAllowed for permissions (already done above)
 
-        const dayLimit = isOwner
-          ? Infinity
-          : Number(settings.daily_limit ?? process.env.AI_DAILY_LIMIT ?? 5);
+        // Use hourly rate limiting instead of daily
+        const rateLimit = await aiChatUsageHourly.checkRateLimit(message.guild.id, message.author.id);
 
-        const effectiveLimit = Number.isFinite(dayLimit) ? Math.max(0, Math.floor(dayLimit)) : 0;
-        if (effectiveLimit > 0) {
-          const used = await aiChatUsage.getUsageCount(message.guild.id, message.author.id).catch(() => 0);
-          if (used >= effectiveLimit) {
-            return message.reply(`Daily AI limit reached (${effectiveLimit}).`);
-          }
+        if (!rateLimit.allowed) {
+          const resetTime = new Date();
+          resetTime.setMinutes(0, 0, 0);
+          resetTime.setHours(resetTime.getHours() + 1);
+          const minutesLeft = Math.ceil((resetTime - Date.now()) / 60000);
+
+          return message.reply(
+            `⏱️ **Hourly limit reached** (${rateLimit.used}/${rateLimit.limit} messages).\nTry again in ${minutesLeft} minute${minutesLeft !== 1 ? 's' : ''}.`
+          );
         }
 
         let prompt = String(message.content || '').trim();
@@ -361,33 +370,74 @@ module.exports = {
         await message.channel.sendTyping().catch(() => { });
 
         try {
-          // Fetch last 10 messages for context
-          const history = [];
-          try {
-            const pastMessages = await message.channel.messages.fetch({ limit: 11, before: message.id });
-            pastMessages.reverse().forEach(msg => {
-              if (msg.content && !msg.author.bot) {
-                history.push({ role: 'user', content: `${msg.author.username}: ${msg.content}` });
-              } else if (msg.author.id === client.user.id && msg.content) {
-                history.push({ role: 'assistant', content: msg.content });
+          // Extract mentioned users (excluding the bot)
+          const mentionedUsers = message.mentions.users;
+          const mentionContext = [];
+
+          if (mentionedUsers.size > 0) {
+            for (const [userId, user] of mentionedUsers) {
+              // Skip if mentioning the bot itself
+              if (userId === client.user.id) continue;
+
+              // Get guild member info
+              const member = await message.guild.members.fetch(userId).catch(() => null);
+
+              if (member) {
+                mentionContext.push({
+                  id: userId,
+                  username: user.username,
+                  displayName: member.displayName,
+                  roles: member.roles.cache.map(r => r.name).filter(n => n !== '@everyone'),
+                  joinedAt: member.joinedAt
+                });
               }
-            });
-          } catch (e) {
-            console.warn('Failed to fetch message history:', e);
+            }
           }
+
+          // Fetch conversation history from database (last 3 messages for this user)
+          const history = await aiConversationHistory.getUserConversationHistory(
+            message.guild.id,
+            message.author.id,
+            3
+          ).catch(() => []);
 
           const response = await aiService.generateResponse(prompt, {
             userName: message.author.username,
             userId: message.author.id,
             guildName: message.guild.name,
+            mentionedUsers: mentionContext,
             history
           });
-          if (effectiveLimit > 0 && Number.isFinite(dayLimit)) {
-            await aiChatUsage.incrementUsage(message.guild.id, message.author.id).catch(() => { });
-          }
+
+          // Increment hourly usage counter
+          await aiChatUsageHourly.incrementHourlyUsage(message.guild.id, message.author.id).catch(() => { });
+
+          // Save conversation to database
+          await aiConversationHistory.saveUserMessage(
+            message.guild.id,
+            message.author.id,
+            prompt,
+            message.id
+          ).catch(() => { });
 
           const safe = response.length > 1900 ? response.slice(0, 1900) + '…' : response;
-          return message.reply(safe);
+          const reply = await message.reply(safe);
+
+          // Save bot response to database
+          await aiConversationHistory.saveBotResponse(
+            message.guild.id,
+            message.author.id,
+            safe,
+            reply.id
+          ).catch(() => { });
+
+          // Cleanup old conversation history (keep last 10 messages)
+          await aiConversationHistory.cleanupOldHistory(
+            message.guild.id,
+            message.author.id,
+            10
+          ).catch(() => { });
+
         } catch (error) {
           const errText = `❌ Error: ${error.message}`;
           return message.reply(errText.length > 1900 ? errText.slice(0, 1900) + '…' : errText);

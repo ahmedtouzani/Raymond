@@ -1,4 +1,4 @@
-# Parallel Ultra Bot – Core Logic & Architecture Documentation
+  # Parallel Ultra Bot – Core Logic & Architecture Documentation
 
 ## Overview
 

@@ -210,7 +210,7 @@ async function initializeGuildConfigs(client) {
       }
     }
 
-    logger.info('<a:okey:1467170671351173121> Guild configurations initialized');
+    logger.info('✅ Guild configurations initialized');
     return { success: true, guildCount: guilds.size };
   } catch (error) {
     logger.error('❌ Error initializing guild configs:', error);
