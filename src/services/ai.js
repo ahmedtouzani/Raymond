@@ -12,6 +12,47 @@ let aiMemory = null;
  */
 class AIService {
     constructor() {
+        // ========================================
+        // FLEXIBLE API POOLS (v4.0.0)
+        // ========================================
+
+        // Load Groq API keys dynamically (1-10 keys)
+        this.groqKeys = [];
+        for (let i = 1; i <= 10; i++) {
+            const key = process.env[`GROQ_API_KEY_${i}`];
+            if (key && key.trim()) {
+                this.groqKeys.push(key.trim());
+            }
+        }
+
+        // Load Gemini API keys dynamically (2-5 keys)
+        this.geminiKeys = [];
+        for (let i = 1; i <= 5; i++) {
+            const key = process.env[`GEMINI_API_KEY_${i}`];
+            if (key && key.trim()) {
+                this.geminiKeys.push(key.trim());
+            }
+        }
+
+        // Validate minimum requirements
+        if (this.groqKeys.length < 1) {
+            throw new Error('[AI Service] At least 1 Groq API key required (GROQ_API_KEY_1)');
+        }
+        if (this.geminiKeys.length < 2) {
+            throw new Error('[AI Service] At least 2 Gemini API keys required (GEMINI_API_KEY_1, GEMINI_API_KEY_2)');
+        }
+
+        // API pool state
+        this.currentGroqIndex = 0;
+        this.currentGeminiIndex = 0;
+        this.failedKeys = new Map(); // key -> failedUntil timestamp
+        this.keyUsageStats = new Map(); // key -> usage count
+
+        logger.info(`[AI Service] Loaded ${this.groqKeys.length} Groq keys, ${this.geminiKeys.length} Gemini keys`);
+
+        // ========================================
+        // LEGACY OPENROUTER SUPPORT (Fallback)
+        // ========================================
         this.apiKey = process.env.OPENROUTER_API_KEY;
         this.defaultModel = process.env.OPENROUTER_MODEL || 'openrouter/free';
         this.timeoutMs = Number(process.env.OPENROUTER_TIMEOUT_MS || 10_000);
@@ -24,10 +65,14 @@ class AIService {
         this.siteName = process.env.SITE_NAME || 'Raymond Bot';
         this.creatorName = (process.env.BOT_CREATOR_NAME || '').trim();
         this.creatorId = (process.env.OWNER_ID || '').trim();
+
+        // ========================================
+        // MEMORY CONFIGURATION
+        // ========================================
         this.memoryEnabled = String(process.env.AI_MEMORY_ENABLED || 'true').toLowerCase() !== 'false';
         this.memoryLimit = Number(process.env.AI_MEMORY_LIMIT || 10);
-        this.memoryTopK = Number(process.env.AI_MEMORY_TOP_K || 3); // Reduced from 5 to save tokens
-        this.maxOutputTokens = Number(process.env.AI_MAX_OUTPUT_TOKENS || 200); // Limit output length
+        this.memoryTopK = Number(process.env.AI_MEMORY_TOP_K || 3);
+        this.maxOutputTokens = Number(process.env.AI_MAX_OUTPUT_TOKENS || 200);
         this.memoryMaxChars = Number(process.env.AI_MEMORY_MAX_CHARS || 1200);
         this.memoryMinQueryChars = Number(process.env.AI_MEMORY_MIN_QUERY_CHARS || 12);
         this.memoryMinWordChars = Number(process.env.AI_MEMORY_MIN_WORD_CHARS || 3);
@@ -38,7 +83,9 @@ class AIService {
         this.freeModelsCache = { fetchedAt: 0, models: [], modelSet: new Set() };
         this.memoriesCache = { fetchedAt: 0, query: '', items: [] };
 
-        // Load persona configuration
+        // ========================================
+        // PERSONA CONFIGURATION
+        // ========================================
         const personaName = (process.env.AI_PERSONA || 'raymond').trim().toLowerCase();
         this.persona = personas[personaName] || personas.raymond;
 
@@ -52,6 +99,271 @@ class AIService {
                 'openrouter/free'
             ];
     }
+
+    // ========================================
+    // API POOL MANAGEMENT (v4.0.0)
+    // ========================================
+
+    /**
+     * Get next available Groq API key using round-robin
+     * @returns {string} Groq API key
+     */
+    _getNextGroqKey() {
+        const key = this.groqKeys[this.currentGroqIndex];
+        this.currentGroqIndex = (this.currentGroqIndex + 1) % this.groqKeys.length;
+
+        // Track usage
+        this.keyUsageStats.set(key, (this.keyUsageStats.get(key) || 0) + 1);
+
+        return key;
+    }
+
+    /**
+     * Get next available Gemini API key using round-robin
+     * @returns {string} Gemini API key
+     */
+    _getNextGeminiKey() {
+        const key = this.geminiKeys[this.currentGeminiIndex];
+        this.currentGeminiIndex = (this.currentGeminiIndex + 1) % this.geminiKeys.length;
+
+        // Track usage
+        this.keyUsageStats.set(key, (this.keyUsageStats.get(key) || 0) + 1);
+
+        return key;
+    }
+
+    /**
+     * Check if an API key is available (not rate-limited)
+     * @param {string} key - API key to check
+     * @returns {boolean} True if key is available
+     */
+    _isKeyAvailable(key) {
+        const failedUntil = this.failedKeys.get(key);
+        if (!failedUntil) return true;
+
+        const now = Date.now();
+        if (now > failedUntil) {
+            this.failedKeys.delete(key); // Reset after cooldown
+            logger.info(`[API Pool] Key recovered: ${key.substring(0, 10)}...`);
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Mark an API key as failed (rate-limited)
+     * @param {string} key - API key that failed
+     * @param {number} cooldownMs - Cooldown duration in milliseconds (default: 5 minutes)
+     */
+    _markKeyFailed(key, cooldownMs = 300000) {
+        const failedUntil = Date.now() + cooldownMs;
+        this.failedKeys.set(key, failedUntil);
+        logger.warn(`[API Pool] Key rate-limited: ${key.substring(0, 10)}... (cooldown: ${cooldownMs / 1000}s)`);
+    }
+
+    /**
+     * Get API pool health statistics
+     * @returns {object} Pool health metrics
+     */
+    getPoolHealth() {
+        const groqAvailable = this.groqKeys.filter(k => this._isKeyAvailable(k)).length;
+        const geminiAvailable = this.geminiKeys.filter(k => this._isKeyAvailable(k)).length;
+
+        return {
+            groq: {
+                total: this.groqKeys.length,
+                available: groqAvailable,
+                failed: this.groqKeys.length - groqAvailable
+            },
+            gemini: {
+                total: this.geminiKeys.length,
+                available: geminiAvailable,
+                failed: this.geminiKeys.length - geminiAvailable
+            },
+            usage: Object.fromEntries(
+                Array.from(this.keyUsageStats.entries()).map(([key, count]) => [
+                    key.substring(0, 15) + '...',
+                    count
+                ])
+            )
+        };
+    }
+
+    // ========================================
+    // LEGACY METHODS (OpenRouter)
+    // ========================================
+
+    // ========================================
+    // GROQ API INTEGRATION (v4.0.0)
+    // ========================================
+
+    /**
+     * Call Groq API with a specific key
+     * @param {string} prompt - User prompt
+     * @param {string} apiKey - Groq API key
+     * @param {object} context - Request context
+     * @returns {Promise<string>} AI response
+     */
+    async _callGroq(prompt, apiKey, context = {}) {
+        const model = context.groqModel || process.env.GROQ_MODEL || 'llama-3.3-70b-versatile';
+        const messages = this._buildMessages(prompt, context);
+
+        try {
+            const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${apiKey}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    model,
+                    messages,
+                    temperature: this.persona.temperature || 0.8,
+                    max_tokens: this.maxOutputTokens || 200,
+                    top_p: 0.9
+                }),
+                signal: AbortSignal.timeout(this.timeoutMs)
+            });
+
+            // Check for rate limit
+            if (response.status === 429) {
+                const error = new Error('Rate limit exceeded');
+                error.status = 429;
+                throw error;
+            }
+
+            if (!response.ok) {
+                const errorText = await response.text().catch(() => 'Unknown error');
+                throw new Error(`Groq API error (${response.status}): ${errorText}`);
+            }
+
+            const data = await response.json();
+
+            if (!data.choices || !data.choices[0] || !data.choices[0].message) {
+                throw new Error('Invalid Groq API response format');
+            }
+
+            return data.choices[0].message.content;
+        } catch (error) {
+            if (error.status === 429) {
+                throw error; // Re-throw rate limit errors for failover
+            }
+            logger.error(`[Groq] API call failed: ${error.message}`);
+            throw error;
+        }
+    }
+
+    // ========================================
+    // GEMINI API INTEGRATION (v4.0.0)
+    // ========================================
+
+    /**
+     * Call Gemini API with a specific key
+     * @param {string} prompt - User prompt
+     * @param {string} apiKey - Gemini API key
+     * @param {object} context - Request context
+     * @returns {Promise<string>} AI response
+     */
+    async _callGemini(prompt, apiKey, context = {}) {
+        const model = context.geminiModel || process.env.GEMINI_MODEL || 'gemini-2.0-flash-exp';
+        const messages = this._buildMessages(prompt, context);
+
+        try {
+            // Convert messages to Gemini format
+            const contents = messages.map(msg => ({
+                role: msg.role === 'assistant' ? 'model' : 'user',
+                parts: [{ text: msg.content }]
+            }));
+
+            const response = await fetch(
+                `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
+                {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents,
+                        generationConfig: {
+                            temperature: this.persona.temperature || 0.8,
+                            maxOutputTokens: this.maxOutputTokens || 200,
+                            topP: 0.9
+                        }
+                    }),
+                    signal: AbortSignal.timeout(this.timeoutMs)
+                }
+            );
+
+            // Check for rate limit
+            if (response.status === 429) {
+                const error = new Error('Rate limit exceeded');
+                error.status = 429;
+                throw error;
+            }
+
+            if (!response.ok) {
+                const errorText = await response.text().catch(() => 'Unknown error');
+                throw new Error(`Gemini API error (${response.status}): ${errorText}`);
+            }
+
+            const data = await response.json();
+
+            if (!data.candidates || !data.candidates[0] || !data.candidates[0].content) {
+                throw new Error('Invalid Gemini API response format');
+            }
+
+            const content = data.candidates[0].content.parts[0].text;
+            return content;
+        } catch (error) {
+            if (error.status === 429) {
+                throw error; // Re-throw rate limit errors for failover
+            }
+            logger.error(`[Gemini] API call failed: ${error.message}`);
+            throw error;
+        }
+    }
+
+    /**
+     * Build messages array for API calls
+     * @param {string} prompt - User prompt
+     * @param {object} context - Request context
+     * @returns {Array} Messages array
+     */
+    _buildMessages(prompt, context = {}) {
+        const messages = [];
+
+        // Add system prompt
+        if (this.persona.systemPrompt) {
+            messages.push({
+                role: 'system',
+                content: this.persona.systemPrompt
+            });
+        }
+
+        // Add conversation history if provided
+        if (context.conversationHistory && Array.isArray(context.conversationHistory)) {
+            messages.push(...context.conversationHistory);
+        }
+
+        // Add memory context if provided
+        if (context.memoryContext) {
+            messages.push({
+                role: 'system',
+                content: `Relevant memories:\n${context.memoryContext}`
+            });
+        }
+
+        // Add user prompt
+        messages.push({
+            role: 'user',
+            content: prompt
+        });
+
+        return messages;
+    }
+
+    // ========================================
+    // LEGACY OPENROUTER METHODS
+    // ========================================
 
     _isFreeModel(model) {
         if (!model || typeof model !== 'string') return false;
@@ -432,71 +744,118 @@ class AIService {
     }
 
     /**
-     * Generate a response from the AI
-     * @param {string} prompt - The user's prompt
-     * @param {string} [model] - Optional model override
+     * Generate AI response using Groq pool with Gemini failover
+     * @param {string} prompt - User's message
+     * @param {object} context - Additional context (memories, conversation history, etc.)
      * @returns {Promise<string>} The AI's response
      */
     async generateResponse(prompt, context = {}) {
-        if (!this.apiKey) {
-            throw new Error('OPENROUTER_API_KEY is not configured in .env');
-        }
-
-        const model = context.model || null;
+        // ========================================
+        // MEMORY RETRIEVAL
+        // ========================================
         const skipMemory = context.skipMemory || false;
         const memories = skipMemory ? [] : await this._getMemories(prompt, context);
-        const extraSystemContext = this._buildExtraSystemContext(memories, context);
 
-        const candidatesAll = await this._getModelCandidates(model);
-        const candidates = Number.isFinite(this.maxModelAttempts) && this.maxModelAttempts > 0
-            ? candidatesAll.slice(0, this.maxModelAttempts)
-            : candidatesAll;
-        if (!candidates.length) {
-            throw new Error('No free OpenRouter models configured. Set OPENROUTER_MODEL to openrouter/free or use :free models in OPENROUTER_MODEL_PRIORITY.');
+        // Build memory context for messages
+        if (memories && memories.length > 0) {
+            const memoryText = memories.map(m => `- ${m.value}`).join('\n');
+            context.memoryContext = memoryText;
         }
-        const failures = [];
 
-        for (const selectedModel of candidates) {
+        // ========================================
+        // GROQ POOL (Primary)
+        // ========================================
+        logger.info(`[AI Service] Trying Groq pool (${this.groqKeys.length} keys available)`);
+
+        for (let attempt = 0; attempt < this.groqKeys.length; attempt++) {
+            const key = this._getNextGroqKey();
+
+            if (!this._isKeyAvailable(key)) {
+                logger.debug(`[Groq] Key ${key.substring(0, 10)}... is rate-limited, skipping`);
+                continue;
+            }
+
             try {
-                const content = await this._requestCompletion(prompt, selectedModel, context, extraSystemContext);
-                if (!model) this.lastGoodModel = selectedModel;
-                if (Array.isArray(memories) && memories.length) {
+                logger.debug(`[Groq] Attempting with key ${key.substring(0, 10)}... (attempt ${attempt + 1}/${this.groqKeys.length})`);
+                const response = await this._callGroq(prompt, key, context);
+
+                // Touch memories to update last_accessed_at
+                if (memories && memories.length > 0) {
                     if (!aiMemory) {
                         aiMemory = require('../database/aiMemory');
                     }
                     const ids = memories.map(m => m?.id).filter(Boolean);
                     aiMemory.touchMemories(ids).catch(() => { });
                 }
-                return content;
-            } catch (error) {
-                failures.push({
-                    model: selectedModel,
-                    status: error?.status,
-                    retryable: Boolean(error?.retryable),
-                    message: error?.message || String(error)
-                });
 
-                if (!error?.retryable) {
-                    console.error('[AI Service] Error generating response:', error);
-                    throw error;
+                logger.info(`[Groq] Success with key ${key.substring(0, 10)}...`);
+                return response;
+            } catch (error) {
+                if (error.status === 429) {
+                    this._markKeyFailed(key, 300000); // 5 min cooldown
+                    logger.warn(`[Groq] Rate limit hit on key ${key.substring(0, 10)}..., trying next key`);
+                    continue;
+                } else {
+                    logger.error(`[Groq] Error with key ${key.substring(0, 10)}...: ${error.message}`);
+                    // For non-rate-limit errors, try next key
+                    continue;
                 }
             }
         }
 
-        // Analyze failures to give a better error message
-        const isRateLimited = failures.every(f => f.status === 429 || String(f.message).includes('Rate limit'));
-        if (isRateLimited) {
-            throw new Error('❌ **Daily Limit Reached**\nThe OpenRouter free tier limit has been hit (20 reqs/day). It resets tomorrow (UTC).');
+        // ========================================
+        // GEMINI POOL (Failover)
+        // ========================================
+        logger.warn(`[AI Service] Groq pool exhausted, failing over to Gemini pool (${this.geminiKeys.length} keys available)`);
+
+        for (let attempt = 0; attempt < this.geminiKeys.length; attempt++) {
+            const key = this._getNextGeminiKey();
+
+            if (!this._isKeyAvailable(key)) {
+                logger.debug(`[Gemini] Key ${key.substring(0, 10)}... is rate-limited, skipping`);
+                continue;
+            }
+
+            try {
+                logger.debug(`[Gemini] Attempting with key ${key.substring(0, 10)}... (attempt ${attempt + 1}/${this.geminiKeys.length})`);
+                const response = await this._callGemini(prompt, key, context);
+
+                // Touch memories
+                if (memories && memories.length > 0) {
+                    if (!aiMemory) {
+                        aiMemory = require('../database/aiMemory');
+                    }
+                    const ids = memories.map(m => m?.id).filter(Boolean);
+                    aiMemory.touchMemories(ids).catch(() => { });
+                }
+
+                logger.info(`[Gemini] Success with key ${key.substring(0, 10)}...`);
+                return response;
+            } catch (error) {
+                if (error.status === 429) {
+                    this._markKeyFailed(key, 300000); // 5 min cooldown
+                    logger.warn(`[Gemini] Rate limit hit on key ${key.substring(0, 10)}..., trying next key`);
+                    continue;
+                } else {
+                    logger.error(`[Gemini] Error with key ${key.substring(0, 10)}...: ${error.message}`);
+                    continue;
+                }
+            }
         }
 
-        const summary = failures
-            .map(f => `${f.model}${f.status ? ` (${f.status})` : ''}: ${f.message}`)
-            .join(' | ');
+        // ========================================
+        // ALL KEYS EXHAUSTED
+        // ========================================
+        const poolHealth = this.getPoolHealth();
+        logger.error('[AI Service] All API keys exhausted', poolHealth);
 
-        console.error('[AI Service] All models failed. Details:', summary);
-
-        // Throw a clean, short message for the user
-        throw new Error('⚠️ **AI Service Unavailable**\nAll available models are currently overloaded or rate-limited. Please try again in a few minutes.');
+        throw new Error(
+            '⚠️ **AI Service Unavailable**\n' +
+            `All API keys are currently rate-limited.\n` +
+            `Groq: ${poolHealth.groq.failed}/${poolHealth.groq.total} failed\n` +
+            `Gemini: ${poolHealth.gemini.failed}/${poolHealth.gemini.total} failed\n` +
+            `Please try again in a few minutes.`
+        );
     }
 }
 

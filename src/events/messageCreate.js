@@ -431,7 +431,21 @@ module.exports = {
             reply.id
           ).catch(() => { });
 
-          // Auto-learn facts from conversation (async, non-blocking)
+          // ========================================
+          // AUTONOMOUS MEMORY MANAGEMENT (v4.0.0)
+          // ========================================
+
+          // Queue conversation for Gemini Memory Agent (non-blocking, batched)
+          const memoryAgent = require('../services/memoryAgent');
+          memoryAgent.queueConversation(
+            prompt,
+            safe,
+            message.guild.id,
+            message.author.id,
+            message.author.username
+          );
+
+          // Legacy auto-memory extractor (will be deprecated)
           const memoryExtractor = require('../services/memoryExtractor');
           memoryExtractor.processConversation(
             prompt,
