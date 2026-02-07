@@ -109,7 +109,7 @@ graph LR
     J --> I
     
     I --> K[Embeddings Service]
-    K --> L[@xenova/transformers]
+    K --> L[Xenova Transformers]
 ```
 
 ### Directory Structure
@@ -386,9 +386,9 @@ sequenceDiagram
     AI->>B: Return response
     B->>U: Reply
     B->>E: Process conversation
-    E->>AI: Extract facts (skipMemory=true)
+    E->>AI: Extract facts
     AI->>E: Return facts
-    E->>E: Parse & validate
+    E->>E: Parse and validate
     E->>DB: Check for duplicates
     DB->>E: Similarity results
     E->>DB: Save new facts
