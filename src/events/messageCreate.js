@@ -431,6 +431,15 @@ module.exports = {
             reply.id
           ).catch(() => { });
 
+          // Auto-learn facts from conversation (async, non-blocking)
+          const memoryExtractor = require('../services/memoryExtractor');
+          memoryExtractor.processConversation(
+            prompt,
+            safe,
+            message.author.id,
+            message.author.username
+          ).catch(err => logger.error('[Auto-Memory] Failed:', err.message));
+
           // Cleanup old conversation history (keep last 10 messages)
           await aiConversationHistory.cleanupOldHistory(
             message.guild.id,

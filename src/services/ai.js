@@ -443,7 +443,8 @@ class AIService {
         }
 
         const model = context.model || null;
-        const memories = await this._getMemories(prompt, context);
+        const skipMemory = context.skipMemory || false;
+        const memories = skipMemory ? [] : await this._getMemories(prompt, context);
         const extraSystemContext = this._buildExtraSystemContext(memories, context);
 
         const candidatesAll = await this._getModelCandidates(model);
