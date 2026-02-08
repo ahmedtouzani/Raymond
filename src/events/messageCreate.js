@@ -394,11 +394,11 @@ module.exports = {
             }
           }
 
-          // Fetch conversation history from database (last 3 messages for this user)
+          // Fetch conversation history from database (last 5 messages for better context)
           const history = await aiConversationHistory.getUserConversationHistory(
             message.guild.id,
             message.author.id,
-            3
+            5
           ).catch(() => []);
 
           const response = await aiService.generateResponse(prompt, {
