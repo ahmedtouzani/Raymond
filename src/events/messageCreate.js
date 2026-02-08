@@ -394,11 +394,11 @@ module.exports = {
             }
           }
 
-          // Fetch conversation history from database (last 5 messages for better context)
+          // Fetch conversation history from database (last 3 messages - optimized for token usage)
           const history = await aiConversationHistory.getUserConversationHistory(
             message.guild.id,
             message.author.id,
-            5
+            3
           ).catch(() => []);
 
           const response = await aiService.generateResponse(prompt, {
