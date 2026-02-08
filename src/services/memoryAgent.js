@@ -9,9 +9,9 @@ const db = require('../services/database');
  */
 class MemoryAgent {
     constructor() {
-        // Load Gemini API keys for memory agent
+        // Load Gemini API keys for memory agent (up to 10 keys supported)
         this.geminiKeys = [];
-        for (let i = 1; i <= 5; i++) {
+        for (let i = 1; i <= 10; i++) {
             const key = process.env[`GEMINI_API_KEY_${i}`];
             if (key && key.trim()) {
                 this.geminiKeys.push(key.trim());
