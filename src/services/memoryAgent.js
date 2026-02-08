@@ -1,6 +1,7 @@
 const logger = require('../utils/logger');
 const aiMemory = require('../database/aiMemory');
 const db = require('../services/database');
+const apiKeyManager = require('./apiKeyManager');
 
 /**
  * Gemini Memory Agent (v4.0.0)
@@ -9,32 +10,28 @@ const db = require('../services/database');
  */
 class MemoryAgent {
     constructor() {
-        // Load Gemini API keys for memory agent (up to 10 keys supported)
-        this.geminiKeys = [];
-        for (let i = 1; i <= 10; i++) {
-            const key = process.env[`GEMINI_API_KEY_${i}`];
-            if (key && key.trim()) {
-                this.geminiKeys.push(key.trim());
-            }
-        }
+        // ========================================
+        // CENTRALIZED API KEY MANAGEMENT (v4.1.0)
+        // ========================================
+        // All key management now delegated to apiKeyManager singleton
+        // This ensures shared state with AIService
 
-        // Validate minimum requirements
-        if (this.geminiKeys.length < 2) {
+        // Check if we have enough Gemini keys
+        const health = apiKeyManager.getPoolHealth();
+        if (health.gemini.total < 2) {
             logger.warn('[Memory Agent] Less than 2 Gemini keys found. Agent will not start.');
             this.enabled = false;
             return;
         }
 
         this.enabled = String(process.env.MEMORY_AGENT_ENABLED || 'true').toLowerCase() === 'true';
-        this.currentGeminiIndex = 0;
         this.conversationQueue = [];
         this.batchInterval = Number(process.env.MEMORY_AGENT_BATCH_INTERVAL_MS || 300000); // 5 minutes
         this.messageThreshold = Number(process.env.MEMORY_AGENT_MESSAGE_THRESHOLD || 20);
         this.maxBatchSize = Number(process.env.MEMORY_AGENT_MAX_BATCH_SIZE || 50);
         this.isProcessing = false;
-        this.failedKeys = new Map();
 
-        logger.info(`[Memory Agent] Initialized with ${this.geminiKeys.length} Gemini keys`);
+        logger.info(`[Memory Agent] Initialized with ${health.gemini.total} Gemini keys (shared pool)`);
         logger.info(`[Memory Agent] Batch interval: ${this.batchInterval / 1000}s, Message threshold: ${this.messageThreshold}`);
 
         // Start background processor if enabled
@@ -104,10 +101,33 @@ class MemoryAgent {
             const batch = this.conversationQueue.splice(0, this.maxBatchSize);
             logger.info(`[Memory Agent] Processing batch of ${batch.length} conversations`);
 
-            for (const conv of batch) {
+            for (let i = 0; i < batch.length; i++) {
+                const conv = batch[i];
                 try {
                     await this._processConversation(conv);
+
+                    // THROTTLE: 5-second delay after each conversation (except last)
+                    if (i < batch.length - 1) {
+                        logger.debug('[Memory Agent] Throttling: waiting 5s before next conversation');
+                        await new Promise(resolve => setTimeout(resolve, 5000));
+                    }
                 } catch (error) {
+                    // Enhanced error handling: if 429, stop batch and re-queue
+                    if (error.message.includes('Rate limit') || error.message.includes('429') || error.status === 429) {
+                        logger.error('[Memory Agent] 429 Rate Limit detected! Stopping batch and entering cooldown');
+
+                        // Re-queue remaining conversations
+                        const remaining = batch.slice(i + 1);
+                        if (remaining.length > 0) {
+                            this.conversationQueue.unshift(...remaining);
+                            logger.info(`[Memory Agent] Re-queued ${remaining.length} conversations`);
+                        }
+
+                        // Enter 5-minute global cooldown
+                        logger.warn('[Memory Agent] Entering 5-minute global cooldown...');
+                        await new Promise(resolve => setTimeout(resolve, 300000));
+                        break; // Stop processing this batch
+                    }
                     logger.error(`[Memory Agent] Failed to process conversation for user ${conv.userId}:`, error.message);
                 }
             }
@@ -123,7 +143,7 @@ class MemoryAgent {
      * @private
      */
     async _processConversation({ userMessage, botResponse, guildId, userId, username }) {
-        const MAX_ITERATIONS = 5; // Circuit breaker: prevent infinite loops
+        const MAX_ITERATIONS = 2; // Reduced from 5 to 2 for faster, decisive processing
         const ITERATION_TIMEOUT_MS = 30000; // 30 seconds per iteration
         const MAX_TOTAL_TIME_MS = 120000; // 2 minutes total timeout
 
@@ -344,7 +364,7 @@ class MemoryAgent {
         // The instruction "Remove duplicate model declaration" is interpreted as not applicable here,
         // as 'model' is a local constant and not duplicated.
         const model = process.env.GEMINI_MODEL || 'models/gemini-2.5-flash';
-        const maxAttempts = this.geminiKeys.length;
+        const maxAttempts = apiKeyManager.getPoolHealth().gemini.total;
 
         for (let attempt = 0; attempt < maxAttempts; attempt++) {
             // Get next Gemini key with round-robin
@@ -605,6 +625,7 @@ NOW ANALYZE THE CONVERSATION AND DECIDE WHAT'S WORTH REMEMBERING.`;
  */
     _parseGeminiResponse(data) {
         const tool_calls = [];
+        let text = null;
 
         if (data.candidates && data.candidates[0]) {
             const candidate = data.candidates[0];
@@ -617,11 +638,15 @@ NOW ANALYZE THE CONVERSATION AND DECIDE WHAT'S WORTH REMEMBERING.`;
                             args: part.functionCall.args || {}
                         });
                     }
+                    // Also extract text response if present
+                    if (part.text) {
+                        text = part.text;
+                    }
                 }
             }
         }
 
-        return { tool_calls };
+        return { tool_calls, text };
     }
 
     /**
@@ -644,11 +669,18 @@ NOW ANALYZE THE CONVERSATION AND DECIDE WHAT'S WORTH REMEMBERING.`;
                         threshold: 0.6
                     });
 
+                    // Early exit: if high similarity found (>0.85), signal to force loop termination
+                    const highSimilarity = results.find(r => r.similarity && r.similarity > 0.85);
+                    if (highSimilarity) {
+                        logger.info(`[Memory Agent] High similarity (${(highSimilarity.similarity * 100).toFixed(0)}%) found, forcing early exit`);
+                    }
+
                     logger.info(`[Memory Agent] fetch_and_verify found ${results.length} memories for query "${query}"`);
 
                     return {
                         success: true,
                         count: results.length,
+                        earlyExit: highSimilarity ? true : false, // Signal to stop iterations
                         results: results.map(m => ({
                             id: m.id,
                             content: m.value,
@@ -775,64 +807,39 @@ NOW ANALYZE THE CONVERSATION AND DECIDE WHAT'S WORTH REMEMBERING.`;
     }
 
     /**
-     * Check if an API key is available (not rate-limited)
-     * @param {string} key - API key to check
-     * @returns {boolean} True if key is available
-     */
-    _isKeyAvailable(key) {
-        const failedUntil = this.failedKeys.get(key);
-        if (!failedUntil) return true;
-
-        const now = Date.now();
-        if (now > failedUntil) {
-            this.failedKeys.delete(key); // Reset after cooldown
-            logger.info(`[Memory Agent] Key recovered: ${key.substring(0, 10)}...`);
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
-     * Mark an API key as failed (rate-limited)
-     * @param {string} key - API key that failed
-     * @param {number} cooldownMs - Cooldown duration in milliseconds (default: 5 minutes)
-     */
-    _markKeyFailed(key, cooldownMs = 300000) {
-        const failedUntil = Date.now() + cooldownMs;
-        this.failedKeys.set(key, failedUntil);
-        logger.warn(`[Memory Agent] Key rate-limited: ${key.substring(0, 10)}... (cooldown: ${cooldownMs / 1000}s)`);
-    }
-
-    /**
-     * Get next Gemini key using round-robin
+     * Get next Gemini key using round-robin (delegates to apiKeyManager)
      * @private
      */
     _getNextGeminiKey() {
-        const key = this.geminiKeys[this.currentGeminiIndex];
-        this.currentGeminiIndex = (this.currentGeminiIndex + 1) % this.geminiKeys.length;
-        return key;
+        return apiKeyManager.getNextGeminiKey();
     }
 
     /**
-     * Mark a key as failed (rate-limited)
+     * Check if an API key is available (delegates to apiKeyManager)
+     * @private
+     */
+    _isKeyAvailable(key) {
+        return apiKeyManager.isKeyAvailable(key);
+    }
+
+    /**
+     * Mark a key as failed (delegates to apiKeyManager)
      * @private
      */
     _markKeyFailed(key, cooldownMs = 300000) {
-        const failedUntil = Date.now() + cooldownMs;
-        this.failedKeys.set(key, failedUntil);
-        logger.warn(`[Memory Agent] Key rate-limited: ${key.substring(0, 10)}... (cooldown: ${cooldownMs / 1000}s)`);
+        apiKeyManager.markKeyFailed(key, cooldownMs);
     }
 
     /**
      * Get agent statistics
      */
     getStats() {
+        const health = apiKeyManager.getPoolHealth();
         return {
             enabled: this.enabled,
             queueSize: this.conversationQueue.length,
             isProcessing: this.isProcessing,
-            geminiKeys: this.geminiKeys.length,
+            geminiKeys: health.gemini.total,
             batchInterval: this.batchInterval,
             messageThreshold: this.messageThreshold
         };

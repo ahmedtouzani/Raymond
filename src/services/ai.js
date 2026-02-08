@@ -4,6 +4,7 @@
 const personas = require('../config/personas');
 const embeddings = require('./embeddings');
 const logger = require('../utils/logger');
+const apiKeyManager = require('./apiKeyManager');
 
 let aiMemory = null;
 
@@ -13,42 +14,10 @@ let aiMemory = null;
 class AIService {
     constructor() {
         // ========================================
-        // FLEXIBLE API POOLS (v4.0.0)
+        // CENTRALIZED API KEY MANAGEMENT (v4.1.0)
         // ========================================
-
-        // Load Groq API keys dynamically (1-10 keys)
-        this.groqKeys = [];
-        for (let i = 1; i <= 10; i++) {
-            const key = process.env[`GROQ_API_KEY_${i}`];
-            if (key && key.trim()) {
-                this.groqKeys.push(key.trim());
-            }
-        }
-
-        // Load Gemini API keys dynamically (2-5 keys)
-        this.geminiKeys = [];
-        for (let i = 1; i <= 5; i++) {
-            const key = process.env[`GEMINI_API_KEY_${i}`];
-            if (key && key.trim()) {
-                this.geminiKeys.push(key.trim());
-            }
-        }
-
-        // Validate minimum requirements
-        if (this.groqKeys.length < 1) {
-            throw new Error('[AI Service] At least 1 Groq API key required (GROQ_API_KEY_1)');
-        }
-        if (this.geminiKeys.length < 2) {
-            throw new Error('[AI Service] At least 2 Gemini API keys required (GEMINI_API_KEY_1, GEMINI_API_KEY_2)');
-        }
-
-        // API pool state
-        this.currentGroqIndex = 0;
-        this.currentGeminiIndex = 0;
-        this.failedKeys = new Map(); // key -> failedUntil timestamp
-        this.keyUsageStats = new Map(); // key -> usage count
-
-        logger.info(`[AI Service] Loaded ${this.groqKeys.length} Groq keys, ${this.geminiKeys.length} Gemini keys`);
+        // All key management now delegated to apiKeyManager singleton
+        // This ensures shared state between AIService and MemoryAgent
 
         // ========================================
         // LEGACY OPENROUTER SUPPORT (Fallback)
@@ -109,13 +78,7 @@ class AIService {
      * @returns {string} Groq API key
      */
     _getNextGroqKey() {
-        const key = this.groqKeys[this.currentGroqIndex];
-        this.currentGroqIndex = (this.currentGroqIndex + 1) % this.groqKeys.length;
-
-        // Track usage
-        this.keyUsageStats.set(key, (this.keyUsageStats.get(key) || 0) + 1);
-
-        return key;
+        return apiKeyManager.getNextGroqKey();
     }
 
     /**
@@ -123,13 +86,7 @@ class AIService {
      * @returns {string} Gemini API key
      */
     _getNextGeminiKey() {
-        const key = this.geminiKeys[this.currentGeminiIndex];
-        this.currentGeminiIndex = (this.currentGeminiIndex + 1) % this.geminiKeys.length;
-
-        // Track usage
-        this.keyUsageStats.set(key, (this.keyUsageStats.get(key) || 0) + 1);
-
-        return key;
+        return apiKeyManager.getNextGeminiKey();
     }
 
     /**
@@ -138,17 +95,7 @@ class AIService {
      * @returns {boolean} True if key is available
      */
     _isKeyAvailable(key) {
-        const failedUntil = this.failedKeys.get(key);
-        if (!failedUntil) return true;
-
-        const now = Date.now();
-        if (now > failedUntil) {
-            this.failedKeys.delete(key); // Reset after cooldown
-            logger.info(`[API Pool] Key recovered: ${key.substring(0, 10)}...`);
-            return true;
-        }
-
-        return false;
+        return apiKeyManager.isKeyAvailable(key);
     }
 
     /**
@@ -157,9 +104,7 @@ class AIService {
      * @param {number} cooldownMs - Cooldown duration in milliseconds (default: 5 minutes)
      */
     _markKeyFailed(key, cooldownMs = 300000) {
-        const failedUntil = Date.now() + cooldownMs;
-        this.failedKeys.set(key, failedUntil);
-        logger.warn(`[API Pool] Key rate-limited: ${key.substring(0, 10)}... (cooldown: ${cooldownMs / 1000}s)`);
+        apiKeyManager.markKeyFailed(key, cooldownMs);
     }
 
     /**
@@ -167,27 +112,7 @@ class AIService {
      * @returns {object} Pool health metrics
      */
     getPoolHealth() {
-        const groqAvailable = this.groqKeys.filter(k => this._isKeyAvailable(k)).length;
-        const geminiAvailable = this.geminiKeys.filter(k => this._isKeyAvailable(k)).length;
-
-        return {
-            groq: {
-                total: this.groqKeys.length,
-                available: groqAvailable,
-                failed: this.groqKeys.length - groqAvailable
-            },
-            gemini: {
-                total: this.geminiKeys.length,
-                available: geminiAvailable,
-                failed: this.geminiKeys.length - geminiAvailable
-            },
-            usage: Object.fromEntries(
-                Array.from(this.keyUsageStats.entries()).map(([key, count]) => [
-                    key.substring(0, 15) + '...',
-                    count
-                ])
-            )
-        };
+        return apiKeyManager.getPoolHealth();
     }
 
     // ========================================
@@ -296,6 +221,13 @@ class AIService {
                 parts: [{ text: msg.content }]
             }));
 
+            // Conditional token limits based on owner status
+            const ownerId = String(process.env.OWNER_ID || '').trim();
+            const isOwner = ownerId && context.userId && context.userId === ownerId;
+
+            // Owner gets 300 tokens (~200 words), regular users get 60 tokens (~40 words)
+            const maxTokens = isOwner ? 300 : (this.persona.maxTokens || 60);
+
             const response = await fetch(
                 `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
                 {
@@ -305,7 +237,7 @@ class AIService {
                         contents,
                         generationConfig: {
                             temperature: this.persona.temperature || 0.8,
-                            maxOutputTokens: this.maxOutputTokens || 200,
+                            maxOutputTokens: maxTokens,
                             topP: 0.9
                         }
                     }),
@@ -608,7 +540,18 @@ class AIService {
             const isOwner = ownerId && context.userId && context.userId === ownerId;
 
             if (isOwner) {
-                lines.push(`CRITICAL: You are currently talking to ${context.userName}, who is YOUR OWNER (the person who created you). This is the most important person. When they ask "who am I?" or similar, acknowledge they are your owner/creator.`);
+                lines.push(`CRITICAL: You are talking to ${context.userName}, YOUR CREATOR AND OWNER.
+                
+This is Ahmed, the developer who built you. Key points:
+- He created you and maintains your codebase
+- When he asks "who am I?" acknowledge he's your creator/owner  
+- Be extra helpful with technical/development questions - he's working on improving you
+- If he asks about your code, architecture, or features, provide honest technical insights
+- You can discuss your internals, limitations, and suggestions for improvements with him
+- He has full access to your databases, memories, and systems
+- Support his development work - you're partners in making yourself better
+
+Treat this as a development collaboration session.`);
             } else {
                 lines.push(`You are currently talking to a user named "${context.userName}".`);
             }
@@ -789,9 +732,10 @@ class AIService {
         // ========================================
         // GROQ POOL (Primary)
         // ========================================
-        logger.info(`[AI Service] Trying Groq pool (${this.groqKeys.length} keys available)`);
+        const health = apiKeyManager.getPoolHealth();
+        logger.info(`[AI Service] Trying Groq pool (${health.groq.total} keys available)`);
 
-        for (let attempt = 0; attempt < this.groqKeys.length; attempt++) {
+        for (let attempt = 0; attempt < health.groq.total; attempt++) {
             const key = this._getNextGroqKey();
 
             if (!this._isKeyAvailable(key)) {
@@ -800,7 +744,7 @@ class AIService {
             }
 
             try {
-                logger.debug(`[Groq] Attempting with key ${key.substring(0, 10)}... (attempt ${attempt + 1}/${this.groqKeys.length})`);
+                logger.debug(`[Groq] Attempting with key ${key.substring(0, 10)}... (attempt ${attempt + 1}/${health.groq.total})`);
                 const response = await this._callGroq(prompt, key, context);
 
                 // Touch memories to update last_accessed_at
@@ -830,9 +774,9 @@ class AIService {
         // ========================================
         // GEMINI POOL (Failover)
         // ========================================
-        logger.warn(`[AI Service] Groq pool exhausted, failing over to Gemini pool (${this.geminiKeys.length} keys available)`);
+        logger.warn(`[AI Service] Groq pool exhausted, failing over to Gemini pool (${health.gemini.total} keys available)`);
 
-        for (let attempt = 0; attempt < this.geminiKeys.length; attempt++) {
+        for (let attempt = 0; attempt < health.gemini.total; attempt++) {
             const key = this._getNextGeminiKey();
 
             if (!this._isKeyAvailable(key)) {
@@ -841,7 +785,7 @@ class AIService {
             }
 
             try {
-                logger.debug(`[Gemini] Attempting with key ${key.substring(0, 10)}... (attempt ${attempt + 1}/${this.geminiKeys.length})`);
+                logger.debug(`[Gemini] Attempting with key ${key.substring(0, 10)}... (attempt ${attempt + 1}/${health.gemini.total})`);
                 const response = await this._callGemini(prompt, key, context);
 
                 // Touch memories
