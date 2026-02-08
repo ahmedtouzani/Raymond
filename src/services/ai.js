@@ -153,6 +153,13 @@ class AIService {
         const model = context.groqModel || process.env.GROQ_MODEL || 'llama-3.3-70b-versatile';
         const messages = this._buildMessages(prompt, context);
 
+        // Conditional token limits based on owner status
+        const ownerId = String(process.env.OWNER_ID || '').trim();
+        const isOwner = ownerId && context.userId && context.userId === ownerId;
+
+        // Owner gets 300 tokens (~200 words), regular users get 60 tokens (~40 words)
+        const maxTokens = isOwner ? 400 : (this.persona.maxTokens || 60);
+
         try {
             const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
                 method: 'POST',
@@ -164,7 +171,7 @@ class AIService {
                     model,
                     messages,
                     temperature: this.persona.temperature || 0.8,
-                    max_tokens: this.maxOutputTokens || 200,
+                    max_tokens: maxTokens,
                     top_p: 0.9
                 }),
                 signal: AbortSignal.timeout(this.timeoutMs)
@@ -226,7 +233,7 @@ class AIService {
             const isOwner = ownerId && context.userId && context.userId === ownerId;
 
             // Owner gets 300 tokens (~200 words), regular users get 60 tokens (~40 words)
-            const maxTokens = isOwner ? 300 : (this.persona.maxTokens || 60);
+            const maxTokens = isOwner ? 500 : (this.persona.maxTokens || 60);
 
             const response = await fetch(
                 `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
