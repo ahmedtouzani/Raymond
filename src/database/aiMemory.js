@@ -3,21 +3,48 @@ const embeddings = require('../services/embeddings');
 const logger = require('../utils/logger');
 
 // Ensure table exists
+// Ensure table and columns exist
 (async () => {
   try {
+    // 1. Create ai_memories if not exists
     await db.query(`
             CREATE TABLE IF NOT EXISTS ai_memories (
                 id SERIAL PRIMARY KEY,
                 key TEXT,
                 value TEXT NOT NULL,
                 created_by TEXT,
+                guild_id TEXT, -- Added for v4.0.0 isolation
                 last_accessed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )
         `);
+
+    // 2. Add guild_id column if it doesn't exist (migration for v4.0.0)
+    await db.query(`
+        DO $$ 
+        BEGIN 
+            IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='ai_memories' AND column_name='guild_id') THEN 
+                ALTER TABLE ai_memories ADD COLUMN guild_id TEXT; 
+            END IF; 
+        END $$;
+    `);
+
+    // 3. Create agent_audit_log table (v4.0.0)
+    await db.query(`
+        CREATE TABLE IF NOT EXISTS ai_agent_audit_log (
+            id SERIAL PRIMARY KEY,
+            agent_name TEXT NOT NULL,
+            action TEXT NOT NULL,
+            details JSONB,
+            guild_id TEXT,
+            performed_by TEXT, -- 'auto' or user_id
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    `);
+
   } catch (error) {
-    console.error('Failed to init ai_memories table:', error);
+    console.error('Failed to init database tables:', error);
   }
 })();
 
@@ -61,10 +88,11 @@ module.exports = {
    * @param {string} value - Memory content
    * @param {object} options - Options
    * @param {string} options.createdBy - User ID who created the memory
+   * @param {string} options.guildId - Guild ID (required for v4.0.0)
    * @param {string} options.key - Optional key/category for the memory
    * @returns {Promise<object>} Created memory record
    */
-  async addMemory(value, { createdBy, key } = {}) {
+  async addMemory(value, { createdBy, guildId, key } = {}) {
     const text = String(value || '').trim();
     if (!text) {
       throw new Error('Memory value cannot be empty');
@@ -96,16 +124,16 @@ module.exports = {
     // Insert with or without embedding
     if (hasEmbeddings && embedding) {
       const { rows } = await db.query(
-        `INSERT INTO ai_memories (value, created_by, key, embedding, embedding_model, embedding_updated_at)
-         VALUES ($1, $2, $3, $4::vector, $5, NOW())
+        `INSERT INTO ai_memories (value, created_by, guild_id, key, embedding, embedding_model, embedding_updated_at)
+         VALUES ($1, $2, $3, $4, $5::vector, $6, NOW())
          RETURNING *`,
-        [text, createdBy, key, embedding, embeddingModel]
+        [text, createdBy, guildId, key, embedding, embeddingModel]
       );
       return rows[0];
     } else {
       const { rows } = await db.query(
-        'INSERT INTO ai_memories (value, created_by, key) VALUES ($1, $2, $3) RETURNING *',
-        [text, createdBy, key]
+        'INSERT INTO ai_memories (value, created_by, guild_id, key) VALUES ($1, $2, $3, $4) RETURNING *',
+        [text, createdBy, guildId, key]
       );
       return rows[0];
     }
@@ -129,11 +157,12 @@ module.exports = {
    * Search memories using hybrid approach (semantic + keyword fallback)
    * @param {string} query - Search query
    * @param {object} options - Options
+   * @param {string} options.guildId - Guild ID (required for v4.0.0)
    * @param {number} options.limit - Maximum number of results
    * @param {number} options.threshold - Similarity threshold (0-1, default: 0.7)
    * @returns {Promise<Array>} Array of matching memories with similarity scores
    */
-  async searchMemories(query, { limit = 5, threshold = 0.7 } = {}) {
+  async searchMemories(query, { guildId, limit = 5, threshold = 0.7 } = {}) {
     const queryText = String(query || '').trim();
     if (!queryText) {
       return [];
@@ -149,7 +178,7 @@ module.exports = {
         const vec = await embeddings.embedText(queryText);
 
         if (vec && vec.length) {
-          const results = await this.searchMemoriesBySimilarity(vec, { limit, threshold });
+          const results = await this.searchMemoriesBySimilarity(vec, { guildId, limit, threshold });
 
           // If we got good results, return them
           if (results.length > 0) {
@@ -167,14 +196,26 @@ module.exports = {
     }
 
     // Fallback to keyword search (ILIKE)
-    const { rows } = await db.query(
-      `SELECT *, NULL as similarity 
-       FROM ai_memories 
-       WHERE value ILIKE $1 OR key ILIKE $1
-       ORDER BY updated_at DESC 
-       LIMIT $2`,
-      [`%${queryText}%`, limit]
-    );
+    // Supports both old (null guild_id) and new memories if guildId is not provided (for backward compatibility during migration)
+    // But for strict security, we should enforce it if provided.
+
+    let sql = `SELECT *, NULL as similarity 
+               FROM ai_memories 
+               WHERE (value ILIKE $1 OR key ILIKE $1)`;
+    const params = [`%${queryText}%`];
+
+    if (guildId) {
+      sql += ` AND (guild_id = $${params.length + 1} OR guild_id IS NULL)`; // Include NULL for backward compatibility? Or STRICT?
+      // Decision: Strict isolation for new system. But for legacy data (null guild_id), maybe allow?
+      // Let's enforce strict if provided, but maybe allow NULL guild_id results if we want global memories (persona?)
+      // For now, let's include NULL guild_id to avoid hiding old memories.
+      params.push(String(guildId));
+    }
+
+    sql += ` ORDER BY updated_at DESC LIMIT $${params.length + 1}`;
+    params.push(limit);
+
+    const { rows } = await db.query(sql, params);
 
     return rows;
   },
@@ -183,11 +224,12 @@ module.exports = {
    * Search memories by similarity using vector embeddings
    * @param {Array<number>} embedding - Query embedding vector
    * @param {object} options - Options
+   * @param {string} options.guildId - Guild ID (required for v4.0.0)
    * @param {number} options.limit - Maximum number of results
    * @param {number} options.threshold - Similarity threshold (0-1)
    * @returns {Promise<Array>} Array of matching memories with similarity scores
    */
-  async searchMemoriesBySimilarity(embedding, { limit = 5, threshold = 0.7 } = {}) {
+  async searchMemoriesBySimilarity(embedding, { guildId, limit = 5, threshold = 0.7 } = {}) {
     if (!embedding || !Array.isArray(embedding) || embedding.length === 0) {
       return [];
     }
@@ -204,16 +246,23 @@ module.exports = {
     const embeddingLiteral = `[${embedding.join(',')}]`;
 
     try {
-      const { rows } = await db.query(
-        `SELECT *,
-                1 - (embedding <=> $1::vector) as similarity
-         FROM ai_memories
-         WHERE embedding IS NOT NULL
-           AND 1 - (embedding <=> $1::vector) >= $2
-         ORDER BY embedding <=> $1::vector
-         LIMIT $3`,
-        [embeddingLiteral, similarityThreshold, limit]
-      );
+      let sql = `SELECT *,
+                 1 - (embedding <=> $1::vector) as similarity
+          FROM ai_memories
+          WHERE embedding IS NOT NULL
+            AND 1 - (embedding <=> $1::vector) >= $2`;
+
+      const params = [embeddingLiteral, similarityThreshold];
+
+      if (guildId) {
+        sql += ` AND (guild_id = $${params.length + 1} OR guild_id IS NULL)`;
+        params.push(String(guildId));
+      }
+
+      sql += ` ORDER BY embedding <=> $1::vector LIMIT $${params.length + 1}`;
+      params.push(limit);
+
+      const { rows } = await db.query(sql, params);
 
       return rows;
     } catch (error) {
@@ -229,11 +278,19 @@ module.exports = {
    * @param {number} options.limit - Maximum number of results
    * @returns {Promise<Array>} Array of memories created by the user
    */
-  async getMemoriesByUserId(userId, { limit = 5 } = {}) {
-    const { rows } = await db.query(
-      'SELECT * FROM ai_memories WHERE created_by = $1 ORDER BY created_at DESC LIMIT $2',
-      [String(userId), limit]
-    );
+  async getMemoriesByUserId(userId, { guildId, limit = 5 } = {}) {
+    let sql = 'SELECT * FROM ai_memories WHERE created_by = $1';
+    const params = [String(userId)];
+
+    if (guildId) {
+      sql += ` AND (guild_id = $${params.length + 1} OR guild_id IS NULL)`;
+      params.push(String(guildId));
+    }
+
+    sql += ` ORDER BY created_at DESC LIMIT $${params.length + 1}`;
+    params.push(limit);
+
+    const { rows } = await db.query(sql, params);
     return rows;
   },
 
@@ -245,6 +302,90 @@ module.exports = {
   async deleteMemory(id) {
     const { rowCount } = await db.query('DELETE FROM ai_memories WHERE id = $1', [id]);
     return rowCount > 0;
+  },
+
+  /**
+   * Delete all memories (optionally filtered by user)
+   * @param {string} [userId] - Optional user ID to filter by
+   * @returns {Promise<number>} Number of deleted memories
+   */
+  async deleteAllMemories(userId = null) {
+    let query = 'DELETE FROM ai_memories';
+    const params = [];
+
+    if (userId) {
+      query += ' WHERE created_by = $1';
+      params.push(String(userId));
+    }
+
+    const { rowCount } = await db.query(query, params);
+    return rowCount;
+  },
+
+  /**
+   * Update last_used_at timestamp for memories
+   * @param {Array<number>} ids - Array of memory IDs
+   * @returns {Promise<void>}
+   */
+  async updateMemory(id, value, { guildId } = {}) {
+    let embedding = null;
+    let embeddingModel = null;
+    const hasEmbeddings = await hasEmbeddingColumns();
+
+    if (hasEmbeddings) {
+      try {
+        const vec = await embeddings.embedText(value);
+        if (vec && vec.length) {
+          embedding = `[${vec.join(',')}]`;
+          embeddingModel = embeddings.getEmbeddingModelId();
+        }
+      } catch (err) {
+        logger.warn('Failed to generate embedding for memory update:', err.message);
+      }
+    }
+
+    let sql = 'UPDATE ai_memories SET value = $1, updated_at = CURRENT_TIMESTAMP';
+    const params = [value];
+
+    if (embedding) {
+      sql += `, embedding = $${params.length + 1}::vector, embedding_model = $${params.length + 2}, embedding_updated_at = NOW()`;
+      params.push(embedding, embeddingModel);
+    }
+
+    sql += ` WHERE id = $${params.length + 1}`;
+    params.push(id);
+
+    if (guildId) {
+      sql += ` AND (guild_id = $${params.length + 1} OR guild_id IS NULL)`;
+      params.push(String(guildId));
+    }
+
+    sql += ' RETURNING *';
+
+    const { rows } = await db.query(sql, params);
+    return rows[0];
+  },
+
+  /**
+   * Delete multiple memories by ID
+   * @param {Array<number>} ids - Array of memory IDs
+   * @param {object} options - Options
+   * @param {string} options.guildId - Guild ID for isolation
+   * @returns {Promise<number>} Number of deleted memories
+   */
+  async deleteMemories(ids, { guildId } = {}) {
+    if (!ids || !ids.length) return 0;
+
+    let sql = 'DELETE FROM ai_memories WHERE id = ANY($1)';
+    const params = [ids];
+
+    if (guildId) {
+      sql += ` AND (guild_id = $${params.length + 1} OR guild_id IS NULL)`;
+      params.push(String(guildId));
+    }
+
+    const { rowCount } = await db.query(sql, params);
+    return rowCount;
   },
 
   /**

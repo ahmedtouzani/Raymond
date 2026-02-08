@@ -38,6 +38,7 @@ module.exports = {
             try {
                 const saved = await aiMemory.addMemory(value, {
                     createdBy: message.author.id,
+                    guildId: message.guild.id, // Required for guild isolation
                 });
                 return message.reply(`✅ Saved memory (#${saved.id}) with embedding.`);
             } catch (error) {
@@ -52,7 +53,10 @@ module.exports = {
 
             const limit = Number(args[1] || 10);
             try {
-                const rows = await aiMemory.listMemories({ limit });
+                const rows = await aiMemory.listMemories({
+                    limit,
+                    guildId: message.guild.id // Only show memories from this guild
+                });
                 if (!rows.length) return message.reply('No memories saved yet.');
 
                 const text = rows
@@ -80,11 +84,23 @@ module.exports = {
         if (sub === 'forget' || sub === 'delete') {
             if (!isOwner) return message.reply('Only the bot owner can modify AI memory.');
 
-            const id = Number(args[1]);
-            if (!Number.isInteger(id) || id <= 0) return message.reply('Usage: `!ai forget <id>`');
+            const target = args[1]; // can be 'all' or an ID
+
+            if (target === 'all') {
+                try {
+                    const count = await aiMemory.deleteAllMemories();
+                    return message.reply(`✅ Deleted **${count}** memories (wiped database).`);
+                } catch (error) {
+                    console.error('[AI Command] Memory wipe error:', error);
+                    return message.reply(`❌ Error wiping memories: ${error.message}`);
+                }
+            }
+
+            const id = Number(target);
+            if (!Number.isInteger(id) || id <= 0) return message.reply('Usage: `!ai forget <id>` or `!ai forget all`');
 
             try {
-                const ok = await aiMemory.deleteMemory(id);
+                const ok = await aiMemory.deleteMemory(id, message.guild.id); // Guild-scoped deletion
                 return message.reply(ok ? `✅ Deleted memory (#${id}).` : `Memory (#${id}) not found.`);
             } catch (error) {
                 console.error('[AI Command] Memory forget error:', error);
@@ -123,6 +139,7 @@ module.exports = {
             const response = await aiService.generateResponse(prompt, {
                 userName: message.author.username,
                 userId: message.author.id,
+                guildId: message.guild.id, // CRITICAL: Required for memory retrieval
                 guildName: message.guild.name,
                 history
             });

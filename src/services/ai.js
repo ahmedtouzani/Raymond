@@ -266,7 +266,7 @@ class AIService {
      * @returns {Promise<string>} AI response
      */
     async _callGemini(prompt, apiKey, context = {}) {
-        const model = context.geminiModel || process.env.GEMINI_MODEL || 'gemini-2.0-flash-exp';
+        const model = context.geminiModel || process.env.GEMINI_MODEL || 'gemini-2.5-flash';
         const messages = this._buildMessages(prompt, context);
 
         try {
@@ -494,9 +494,10 @@ class AIService {
         const query = String(prompt || '').trim();
         const userName = String(context.userName || '').trim();
         const userId = String(context.userId || '').trim();
+        const guildId = String(context.guildId || '').trim(); // Added for v4.0.0
 
         // Check cache (key based on prompt+user+id)
-        const cacheKey = `${query}|${userName}|${userId}`;
+        const cacheKey = `${query}|${userName}|${userId}|${guildId}`;
         const isFresh = this.memoriesCache.fetchedAt && (now - this.memoriesCache.fetchedAt) < this.memoryCacheTtlMs;
 
         if (isFresh && this.memoriesCache.query === cacheKey && Array.isArray(this.memoriesCache.items)) {
@@ -511,6 +512,7 @@ class AIService {
             // 1. Semantic Search by Prompt (if query is long enough)
             if (query.length >= (this.memoryMinQueryChars || 10)) {
                 const semanticResults = await aiMemory.searchMemories(query, {
+                    guildId, // Pass guildId for isolation
                     limit: topK,
                     threshold: this.similarityThreshold
                 });
@@ -520,6 +522,7 @@ class AIService {
             // 2. Search by Username (if provided)
             if (userName.length >= 2 && results.length < topK) {
                 const userResults = await aiMemory.searchMemories(userName, {
+                    guildId, // Pass guildId for isolation
                     limit: topK - results.length,
                     threshold: this.similarityThreshold
                 });
@@ -614,10 +617,11 @@ class AIService {
             return lines.length ? lines.join('\n') : null;
         }
 
-        const header = 'Relevant memories from past conversations:';
+        const header = '**IMPORTANT - What you KNOW about this user:**';
         const headerCost = (lines.length ? 1 : 0) + header.length;
         if ((lines.join('\n').length + headerCost) <= maxChars) {
             lines.push(header);
+            lines.push('USE these facts in your responses. If asked about something listed here, answer confidently based on these facts:');
         }
 
         let used = lines.join('\n').length;

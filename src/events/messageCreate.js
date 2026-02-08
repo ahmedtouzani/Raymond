@@ -404,6 +404,7 @@ module.exports = {
           const response = await aiService.generateResponse(prompt, {
             userName: message.author.username,
             userId: message.author.id,
+            guildId: message.guild.id, // Added for v4.0.0 isolation
             guildName: message.guild.name,
             mentionedUsers: mentionContext,
             history
@@ -445,14 +446,15 @@ module.exports = {
             message.author.username
           );
 
-          // Legacy auto-memory extractor (will be deprecated)
-          const memoryExtractor = require('../services/memoryExtractor');
-          memoryExtractor.processConversation(
-            prompt,
-            safe,
-            message.author.id,
-            message.author.username
-          ).catch(err => logger.error('[Auto-Memory] Failed:', err.message));
+          // Legacy auto-memory extractor (DISABLED - replaced by Memory Agent v4.0.0)
+          // The old extractor was incorrectly storing bot responses as user memories
+          // const memoryExtractor = require('../services/memoryExtractor');
+          // memoryExtractor.processConversation(
+          //   prompt,
+          //   safe,
+          //   message.author.id,
+          //   message.author.username
+          // ).catch(err => logger.error('[Auto-Memory] Failed:', err.message));
 
           // Cleanup old conversation history (keep last 10 messages)
           await aiConversationHistory.cleanupOldHistory(

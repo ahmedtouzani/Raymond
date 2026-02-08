@@ -1,5 +1,6 @@
 const logger = require('../utils/logger');
 const aiMemory = require('../database/aiMemory');
+const db = require('../services/database');
 
 /**
  * Gemini Memory Agent (v4.0.0)
@@ -125,6 +126,7 @@ class MemoryAgent {
         try {
             // Step 1: Fetch existing memories for context
             const existingMemories = await aiMemory.searchMemories(userMessage, {
+                guildId, // Pass guildId for isolation
                 createdBy: userId,
                 limit: 10,
                 similarityThreshold: 0.6
@@ -149,7 +151,7 @@ class MemoryAgent {
                     await this._executeToolCall(toolCall, guildId, userId, username);
                 }
             } else {
-                logger.debug(`[Memory Agent] No memory actions needed for user ${username}`);
+                logger.info(`[Memory Agent] Gemini decided no memory actions needed for: "${userMessage}"`);
             }
         } catch (error) {
             logger.error(`[Memory Agent] Error processing conversation:`, error.message);
@@ -233,7 +235,7 @@ class MemoryAgent {
     async _callGeminiWithTools(context, tools) {
         // Get next Gemini key with round-robin
         const key = this._getNextGeminiKey();
-        const model = process.env.GEMINI_MODEL || 'gemini-2.0-flash-exp';
+        const model = process.env.GEMINI_MODEL || 'gemini-2.5-flash'; // Free model with function calling
 
         try {
             const response = await fetch(
@@ -285,40 +287,71 @@ class MemoryAgent {
             ? context.existingMemories.map(m => `- [ID: ${m.id}] ${m.value}`).join('\n')
             : 'No existing memories found.';
 
-        return `You are Raymond's Memory Management Agent. Analyze this conversation and decide what memory actions to take.
+        return `You are Raymond's Memory Management Agent. Extract and manage facts about the USER.
 
 **Conversation:**
 User (${context.username}): ${context.userMessage}
 Bot: ${context.botResponse}
 
-**Existing Memories for this user:**
+**Existing Memories for this User:**
 ${existingMemoriesText}
 
-**Your Tasks:**
-1. Extract new important facts (personal info, preferences, relationships, goals)
-2. Check if facts conflict with existing memories
-3. Update outdated information
-4. Delete contradictory or redundant memories
+**CRITICAL WORKFLOW - FOLLOW THESE STEPS:**
 
-**Guidelines:**
-- Only extract EXPLICITLY stated facts
-- Each memory should be clear and concise (max 100 chars)
-- Don't make assumptions or inferences
-- Don't extract greetings or casual chat
-- Provide clear reasons for all actions
+**STEP 1: Identify User Facts**
+Extract ONLY facts from "${context.username}"'s message (NOT the bot's response):
+- Personal info: name, age, location, occupation
+- Preferences: likes, dislikes, favorites
+- Facts: relationships, goals, habits, experiences
+
+**STEP 2: Check for Conflicts**
+Look at the Existing Memories above. Does the NEW fact contradict any EXISTING memory?
+
+Example:
+- Existing: "User's name is Mohamed" (ID: 65)
+- New fact: User says "my name is ahmed"
+- CONFLICT DETECTED! ✓
+
+**STEP 3: Take Action**
+
+IF there's a CONFLICT:
+1. First call: fetch_and_verify(query="User's name", context="search for name memories")
+2. Then call: update_memory(id=<old_memory_id>, content="User's name is Ahmed", reason="User corrected their name")
+
+IF it's a NEW fact (no conflict):
+1. Call: update_memory(content="...", reason="User stated...")
+
+IF it's a correction WITHOUT prior memory:
+1. Call: update_memory(content="...", reason="User stated...")
+
+**EXAMPLE 1: Correction**
+User says: "No my name is ahmed"
+Existing: [ID: 65] "User's name is Mohamed"
+→ Actions:
+1. fetch_and_verify(query="User's name", context="name")
+2. update_memory(id=65, content="User's name is Ahmed", reason="User corrected their name from Mohamed to Ahmed")
+
+**EXAMPLE 2: New Info**
+User says: "I love pizza"
+Existing: No food preferences
+→ Action:
+1. update_memory(content="User loves pizza", reason="User stated food preference")
+
+**DO NOT** save:
+- Greetings, questions, or casual chat
+- Bot responses
+- Vague statements
 
 **Available Tools:**
-- fetch_and_verify: Search for related memories
-- update_memory: Create or update a memory
-- prune_conflicts: Delete obsolete memories
-
-Use the tools to manage memories efficiently. If no action is needed, don't call any tools.`;
+- fetch_and_verify(query, context) - SEARCH existing memories first
+- update_memory(content, reason, id?) - CREATE (no id) or UPDATE (with id)
+- prune_conflicts(ids, reason) - DELETE obsolete memories`;
     }
 
     /**
-     * Parse Gemini response and extract tool calls
-     * @private
-     */
+ * Parse Gemini response and extract tool calls
+ * @private
+ */
     _parseGeminiResponse(data) {
         const tool_calls = [];
 
@@ -361,13 +394,30 @@ Use the tools to manage memories efficiently. If no action is needed, don't call
                     if (args.id && args.id > 0) {
                         // Update existing memory
                         logger.info(`[Memory Agent] Updating memory ${args.id}: ${args.content}`);
-                        // TODO: Implement update logic
+                        const updated = await aiMemory.updateMemory(args.id, args.content, { guildId });
+                        if (updated) {
+                            await this._logAudit(guildId, 'UPDATE_MEMORY', {
+                                memoryId: args.id,
+                                oldValue: '(hidden)',
+                                newValue: args.content,
+                                reason: args.reason,
+                                userId
+                            });
+                        }
                     } else {
                         // Create new memory
                         logger.info(`[Memory Agent] Creating new memory: ${args.content} (Reason: ${args.reason})`);
-                        await aiMemory.addMemory(args.content, {
+                        const newMemory = await aiMemory.addMemory(args.content, {
+                            guildId,
                             createdBy: userId,
                             key: `auto:${username}`
+                        });
+
+                        await this._logAudit(guildId, 'CREATE_MEMORY', {
+                            memoryId: newMemory ? newMemory.id : 'unknown',
+                            content: args.content,
+                            reason: args.reason,
+                            userId
                         });
                     }
                     break;
@@ -375,10 +425,14 @@ Use the tools to manage memories efficiently. If no action is needed, don't call
                 case 'prune_conflicts':
                     if (args.ids && Array.isArray(args.ids) && args.ids.length > 0) {
                         logger.info(`[Memory Agent] Pruning ${args.ids.length} conflicting memories (Reason: ${args.reason})`);
-                        // TODO: Implement bulk delete logic
-                        for (const id of args.ids) {
-                            logger.debug(`[Memory Agent] Would delete memory ${id}`);
-                        }
+                        const deletedCount = await aiMemory.deleteMemories(args.ids, { guildId });
+
+                        await this._logAudit(guildId, 'PRUNE_MEMORIES', {
+                            memoryIds: args.ids,
+                            count: deletedCount,
+                            reason: args.reason,
+                            userId
+                        });
                     }
                     break;
 
@@ -387,6 +441,21 @@ Use the tools to manage memories efficiently. If no action is needed, don't call
             }
         } catch (error) {
             logger.error(`[Memory Agent] Tool execution failed for ${name}:`, error.message);
+        }
+    }
+
+    /**
+     * Log an action to the audit table
+     * @private
+     */
+    async _logAudit(guildId, action, details) {
+        try {
+            await db.query(
+                'INSERT INTO ai_agent_audit_log (agent_name, action, details, guild_id) VALUES ($1, $2, $3, $4)',
+                ['MemoryAgent', action, details, guildId]
+            );
+        } catch (error) {
+            logger.error('[Memory Agent] Failed to write audit log:', error.message);
         }
     }
 
