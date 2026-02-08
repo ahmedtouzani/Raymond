@@ -60,7 +60,7 @@ module.exports = {
 
         // Model preferences
         temperature: 0.85, // Higher for linguistic creativity
-        maxTokens: 300,
+        maxTokens: 150, // ~50 words max
 
         // Constraints
         constraints: [
