@@ -110,6 +110,87 @@ module.exports = {
         }
       }
 
+      case 'pool': {
+        // Check API pool health
+        const apiKeyManager = require('../../services/apiKeyManager');
+        const health = apiKeyManager.getPoolHealth();
+
+        const poolEmbed = new EmbedBuilder()
+          .setColor(embedSettings.default_color || '#3498DB')
+          .setTitle('🔑 API Pool Health')
+          .setDescription('Current status of API key pools')
+          .addFields(
+            {
+              name: '🟢 Groq Pool',
+              value: `**Total:** ${health.groq.total}\n**Available:** ${health.groq.available}\n**Failed:** ${health.groq.failed}`,
+              inline: true
+            },
+            {
+              name: '🔵 Gemini Pool',
+              value: `**Total:** ${health.gemini.total}\n**Available:** ${health.gemini.available}\n**Failed:** ${health.gemini.failed}`,
+              inline: true
+            }
+          )
+          .setTimestamp()
+          .setFooter({
+            text: embedSettings.footer_text || message.guild.name,
+            iconURL: embedSettings.footer_icon_url || message.guild.iconURL(),
+          });
+
+        return message.reply({ embeds: [poolEmbed] });
+      }
+
+      case 'stats': {
+        // Memory Agent statistics
+        const memoryAgent = require('../../services/memoryAgent');
+        const stats = memoryAgent.getStats();
+
+        const statsEmbed = new EmbedBuilder()
+          .setColor(embedSettings.default_color || '#9B59B6')
+          .setTitle('🧠 Memory Agent Statistics')
+          .setDescription('Current Memory Agent status and metrics')
+          .addFields(
+            { name: 'Status', value: stats.enabled ? '✅ Enabled' : '❌ Disabled', inline: true },
+            { name: 'Processing', value: stats.isProcessing ? '🔄 Active' : '⏸️ Idle', inline: true },
+            { name: 'Queue Size', value: `${stats.queueSize} conversations`, inline: true },
+            { name: 'Gemini Keys', value: `${stats.geminiKeys} keys`, inline: true },
+            { name: 'Batch Interval', value: `${stats.batchInterval}ms`, inline: true },
+            { name: 'Message Threshold', value: `${stats.messageThreshold} messages`, inline: true }
+          )
+          .setTimestamp()
+          .setFooter({
+            text: embedSettings.footer_text || message.guild.name,
+            iconURL: embedSettings.footer_icon_url || message.guild.iconURL(),
+          });
+
+        return message.reply({ embeds: [statsEmbed] });
+      }
+
+      case 'queue': {
+        // View processing queue
+        const memoryAgent = require('../../services/memoryAgent');
+        const stats = memoryAgent.getStats();
+
+        const queueEmbed = new EmbedBuilder()
+          .setColor(embedSettings.default_color || '#E67E22')
+          .setTitle('📋 Memory Agent Queue')
+          .setDescription(stats.queueSize > 0
+            ? `**${stats.queueSize}** conversation(s) waiting to be processed`
+            : 'Queue is empty ✅')
+          .addFields(
+            { name: 'Processing Status', value: stats.isProcessing ? '🔄 Currently processing' : '⏸️ Idle', inline: true },
+            { name: 'Batch Interval', value: `${stats.batchInterval / 1000}s`, inline: true },
+            { name: 'Message Threshold', value: `${stats.messageThreshold} msgs`, inline: true }
+          )
+          .setTimestamp()
+          .setFooter({
+            text: embedSettings.footer_text || message.guild.name,
+            iconURL: embedSettings.footer_icon_url || message.guild.iconURL(),
+          });
+
+        return message.reply({ embeds: [queueEmbed] });
+      }
+
       case 'status': {
         return sendEmbed(message, { title: 'Deprecated', description: 'This subcommand is deprecated. The bot\'s status is now updated automatically on startup.', type: 'error' }, { ephemeral: true });
       }
@@ -118,11 +199,16 @@ module.exports = {
         const helpEmbed = new EmbedBuilder()
           .setColor(embedSettings.default_color || '#95A5A6')
           .setTitle('ℹ️ Development Command Help')
-          .setDescription('Use the subcommands below to manage development server announcements and updates.')
+          .setDescription('Use the subcommands below to manage development server and monitor v4.0 features.')
           .setThumbnail(message.client.user.displayAvatarURL())
           .addFields(
+            { name: '📢 Announcements & Updates', value: '━━━━━━━━━━━━━━━━━━━', inline: false },
             { name: '`!dev announce <message>`', value: 'Posts a rich announcement embed to the designated channel.' },
-            { name: '`!dev update <version> <description>`', value: 'Posts a structured update log with version and changes.' }
+            { name: '`!dev update <version> <description>`', value: 'Posts a structured update log with version and changes.' },
+            { name: '\n🔧 v4.0 Monitoring', value: '━━━━━━━━━━━━━━━━━━━', inline: false },
+            { name: '`!dev pool`', value: 'Check API pool health (Groq & Gemini)' },
+            { name: '`!dev stats`', value: 'Memory Agent statistics' },
+            { name: '`!dev queue`', value: 'View Memory Agent processing queue' }
           )
           .setTimestamp()
           .setFooter({
