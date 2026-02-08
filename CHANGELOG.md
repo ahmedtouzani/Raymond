@@ -1,4 +1,29 @@
 
+## [v4.0.0] - 2026-02-08
+
+### 🧠 Autonomous Memory Agent Refactor
+- **True Multi-Turn Reasoning**: The agent now uses a feedback loop (Search -> Decide -> Act) instead of one-shot execution.
+- **Search-First Protocol**: Strict enforcement of `fetch_and_verify` before any memory creation to prevent duplicates.
+- **Gemini 2.5-Flash**: Upgraded Memory Agent to use the faster, smarter Gemini 2.5 model.
+- **Guild Isolation**: All memory operations are strictly scoped to `guild_id` to prevent cross-server data leakage.
+
+### 🎭 Persona: Raymond Reddington (Dariya Raqiya)
+- **Sophisticated Dialect**: Updated persona to speak "Dariya Raqiya" (Elevated Moroccan Arabic).
+- **Character Depth**: Responses are now mysterious, wise, and cynical, matching the "Concierge of Crime" identity.
+- **Bilingual Support**: Added explicit examples for handling Arabic/English facts while storing them in English for consistency.
+
+### ⚡ Performance & Architecture
+- **Non-Blocking Execution**: Chat responses (Groq) are now completely independent of Memory Agent (Gemini) background tasks.
+- **API Pool Management**: 
+  - Chat: 10 Groq Keys
+  - Memory: 5 Gemini Keys
+  - Failover logic implemented for robust uptime.
+- **Context Fix**: Resolved a critical bug where conversation history was not being passed correctly to the AI service.
+
+### 🧹 Cleanup
+- **Deprecated**: `memoryExtractor.js` (legacy logic removed).
+- **Cleanup**: Removed `<thinking>` tags from AI responses for cleaner output.
+
 ## 2026-02-08
 - [2026-02-08 01:14:19] [INFO] ✅ Database connection for migrator is successful.
 - [2026-02-08 01:14:19] [INFO] ✅ 'schema_migrations' table ensured.
@@ -4008,3 +4033,50 @@
 - [2026-02-08 04:10:43] [INFO] [Memory Agent] Multi-turn processing complete in 4936ms (8 messages)
 - [2026-02-08 04:10:43] [INFO] [Memory Agent] Batch processing complete
 - [2026-02-08 04:10:49] [INFO] Updated voice count for Parallel Universe: 16
+- [2026-02-08 05:07:16] [INFO] [Memory Agent] Initialized with 4 Gemini keys
+- [2026-02-08 05:07:16] [INFO] [Memory Agent] Batch interval: 10s, Message threshold: 2
+- [2026-02-08 05:07:16] [INFO] [Memory Agent] Background processor started
+- [2026-02-08 05:07:17] [INFO] ✅ Database connection successful
+- [2026-02-08 05:07:26] [INFO] [Memory Agent] Timer triggered, processing 1 queued conversations
+- [2026-02-08 05:07:26] [INFO] [Memory Agent] Processing batch of 1 conversations
+- [2026-02-08 05:07:26] [INFO] [Memory Agent] Turn 1/5 for user TestUser
+- [2026-02-08 05:07:35] [INFO] [Memory Agent] Turn 1 completed in 8830ms
+- [2026-02-08 05:07:35] [INFO] [Memory Agent] Turn 1: 1 tool call(s)
+- [2026-02-08 05:07:35] [INFO] [Memory Agent] Executing tool: fetch_and_verify for user TestUser
+- [2026-02-08 05:07:35] [INFO] [Memory Agent] fetch_and_verify found 0 memories for query "User's name"
+- [2026-02-08 05:07:35] [INFO] [Memory Agent] Turn 2/5 for user TestUser
+- [2026-02-08 05:07:36] [INFO] [Memory Agent] Turn 2 completed in 1536ms
+- [2026-02-08 05:07:41] [INFO] [Memory Agent] Turn 2: 1 tool call(s)
+- [2026-02-08 05:07:41] [INFO] [Memory Agent] Executing tool: update_memory for user TestUser
+- [2026-02-08 05:07:42] [INFO] [Memory Agent] Created new memory #87: User's name is Ahmed (Reason: User stated their name for first time)
+- [2026-02-08 05:07:42] [INFO] [Memory Agent] Turn 3/5 for user TestUser
+- [2026-02-08 05:07:44] [INFO] [Memory Agent] Turn 3 completed in 2672ms
+- [2026-02-08 05:07:44] [INFO] [Memory Agent] Turn 3: No tool calls, reasoning complete
+- [2026-02-08 05:07:44] [INFO] [Memory Agent] Multi-turn processing complete in 18705ms (8 messages)
+- [2026-02-08 05:07:44] [INFO] [Memory Agent] Batch processing complete
+- [2026-02-08 05:07:46] [INFO] [Memory Agent] Timer triggered, processing 1 queued conversations
+- [2026-02-08 05:07:46] [INFO] [Memory Agent] Processing batch of 1 conversations
+- [2026-02-08 05:07:46] [INFO] [Memory Agent] Turn 1/5 for user TestUser
+- [2026-02-08 05:07:48] [INFO] [Memory Agent] Turn 1 completed in 1949ms
+- [2026-02-08 05:07:48] [INFO] [Memory Agent] Turn 1: 1 tool call(s)
+- [2026-02-08 05:07:48] [INFO] [Memory Agent] Executing tool: fetch_and_verify for user TestUser
+- [2026-02-08 05:07:49] [INFO] [Memory Agent] fetch_and_verify found 1 memories for query "User's name"
+- [2026-02-08 05:07:49] [INFO] [Memory Agent] Turn 2/5 for user TestUser
+- [2026-02-08 05:07:50] [INFO] [Memory Agent] Turn 2 completed in 1567ms
+- [2026-02-08 05:07:50] [INFO] [Memory Agent] Turn 2: 1 tool call(s)
+- [2026-02-08 05:07:50] [INFO] [Memory Agent] Executing tool: update_memory for user TestUser
+- [2026-02-08 05:07:51] [INFO] [Memory Agent] Updated memory #87: User's name is Mohamed (Reason: User corrected name from Ahmed to Mohamed)
+- [2026-02-08 05:07:51] [INFO] [Memory Agent] Turn 3/5 for user TestUser
+- [2026-02-08 05:07:51] [WARN] [Memory Agent] Key rate-limited: AIzaSyBdkw... (cooldown: 300s)
+- [2026-02-08 05:07:51] [ERROR] [Memory Agent] Gemini API call failed: Rate limit exceeded
+- [2026-02-08 05:07:51] [ERROR] [Memory Agent] Error in multi-turn processing: Rate limit exceeded
+- [2026-02-08 05:07:51] [ERROR] [Memory Agent] Failed to process conversation for user 9876543210: Rate limit exceeded
+- [2026-02-08 05:07:51] [INFO] [Memory Agent] Batch processing complete
+- [2026-02-08 05:07:56] [INFO] [Memory Agent] Timer triggered, processing 1 queued conversations
+- [2026-02-08 05:07:56] [INFO] [Memory Agent] Processing batch of 1 conversations
+- [2026-02-08 05:07:56] [INFO] [Memory Agent] Turn 1/5 for user TestUser
+- [2026-02-08 05:07:56] [WARN] [Memory Agent] Key rate-limited: AIzaSyDLCZ... (cooldown: 300s)
+- [2026-02-08 05:07:56] [ERROR] [Memory Agent] Gemini API call failed: Rate limit exceeded
+- [2026-02-08 05:07:56] [ERROR] [Memory Agent] Error in multi-turn processing: Rate limit exceeded
+- [2026-02-08 05:07:56] [ERROR] [Memory Agent] Failed to process conversation for user 9876543210: Rate limit exceeded
+- [2026-02-08 05:07:56] [INFO] [Memory Agent] Batch processing complete

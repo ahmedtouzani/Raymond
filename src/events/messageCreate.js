@@ -407,7 +407,7 @@ module.exports = {
             guildId: message.guild.id, // Added for v4.0.0 isolation
             guildName: message.guild.name,
             mentionedUsers: mentionContext,
-            history
+            conversationHistory: history // Fixed context mismatch (was 'history')
           });
 
           // Increment hourly usage counter
