@@ -199,6 +199,25 @@ class AIService {
     // ========================================
 
     /**
+     * Strip XML-style tags (like <thinking>, <analysis>, etc.) from response
+     * @param {string} text - AI response text
+     * @returns {string} Cleaned text without XML tags
+     * @private
+     */
+    _stripThinkingTags(text) {
+        if (!text) return text;
+
+        // Remove all XML-style tags and their content
+        // Matches: <thinking>...</thinking>, <analysis>...</analysis>, etc.
+        return text
+            .replace(/<thinking>[\s\S]*?<\/thinking>/gi, '')
+            .replace(/<analysis>[\s\S]*?<\/analysis>/gi, '')
+            .replace(/<reasoning>[\s\S]*?<\/reasoning>/gi, '')
+            .replace(/<reflection>[\s\S]*?<\/reflection>/gi, '')
+            .trim();
+    }
+
+    /**
      * Call Groq API with a specific key
      * @param {string} prompt - User prompt
      * @param {string} apiKey - Groq API key
@@ -244,7 +263,8 @@ class AIService {
                 throw new Error('Invalid Groq API response format');
             }
 
-            return data.choices[0].message.content;
+            const rawResponse = data.choices[0].message.content;
+            return this._stripThinkingTags(rawResponse);
         } catch (error) {
             if (error.status === 429) {
                 throw error; // Re-throw rate limit errors for failover
@@ -307,12 +327,12 @@ class AIService {
 
             const data = await response.json();
 
-            if (!data.candidates || !data.candidates[0] || !data.candidates[0].content) {
-                throw new Error('Invalid Gemini API response format');
+            if (!data.candidates || data.candidates.length === 0) {
+                throw new Error('No candidates in Gemini response');
             }
 
-            const content = data.candidates[0].content.parts[0].text;
-            return content;
+            const rawText = data.candidates[0].content.parts[0].text;
+            return this._stripThinkingTags(rawText);
         } catch (error) {
             if (error.status === 429) {
                 throw error; // Re-throw rate limit errors for failover

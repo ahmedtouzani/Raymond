@@ -413,9 +413,9 @@ ${existingMemoriesText}
 Before creating OR updating ANY memory, you MUST call fetch_and_verify.
 
 Examples of what to search for:
-- User says "my name is Ahmed" → fetch_and_verify(query="User's name", context="name fact")
-- User says "I'm 25 years old" → fetch_and_verify(query="User's age", context="age fact")
-- User says "I love pizza" → fetch_and_verify(query="User's food preferences", context="food likes")
+- User says "my name is Ahmed" OR "اسمي أحمد" → fetch_and_verify(query="User's name", context="name fact")
+- User says "I'm 25 years old" OR "عمري 25 سنة" → fetch_and_verify(query="User's age", context="age fact")
+- User says "I love pizza" OR "أحب البيتزا" → fetch_and_verify(query="User's food preferences", context="food likes")
 
 🚫 **NEVER** skip this step, even if existing memories look empty!
 
@@ -431,7 +431,7 @@ After seeing search results:
 
 🎯 **COMPLETE EXAMPLES:**
 
-**Example 1: First mention of name**
+**Example 1: First mention of name (English)**
 Turn 1:
 User: "my name is Ahmed"
 YOU: fetch_and_verify(query="User's name", context="searching for name")
@@ -440,18 +440,27 @@ Turn 2:
 SYSTEM: {"success": true, "count": 0, "results": []}
 YOU: update_memory(content="User's name is Ahmed", reason="User stated their name for first time")
 
-**Example 2: Correcting name**
+**Example 2: First mention of name (Arabic)**
 Turn 1:
-User: "actually my name is Mohamed"
+User: "اسمي أحمد"
+YOU: fetch_and_verify(query="User's name", context="searching for name")
+
+Turn 2:
+SYSTEM: {"success": true, "count": 0, "results": []}
+YOU: update_memory(content="User's name is Ahmed", reason="User stated their name in Arabic")
+
+**Example 3: Correcting name**
+Turn 1:
+User: "actually my name is Mohamed" OR "في الحقيقه اسمي محمد"
 YOU: fetch_and_verify(query="User's name", context="name correction")
 
 Turn 2:
 SYSTEM: {"success": true, "count": 1, "results": [{"id": 83, "content": "User's name is Ahmed"}]}
 YOU: update_memory(id=83, content="User's name is Mohamed", reason="User corrected name from Ahmed to Mohamed")
 
-**Example 3: Adding new fact**
+**Example 4: Adding location**
 Turn 1:
-User: "I live in Morocco"
+User: "I live in Morocco" OR "أنا أعيش في المغرب"
 YOU: fetch_and_verify(query="User's location", context="location fact")
 
 Turn 2:
@@ -461,9 +470,16 @@ YOU: update_memory(content="User lives in Morocco", reason="User stated location
 🚨 **CRITICAL RULES:**
 1. **ALWAYS call fetch_and_verify FIRST** - No exceptions!
 2. Extract facts ONLY from user's message (NOT bot's response)
-3. Ignore greetings, questions, casual chat
-4. One fact at a time
-5. Use clear, concise memory text
+3. **Handle BOTH English AND Arabic** - Store facts in English for consistency
+4. Ignore greetings, questions, casual chat (both languages)
+5. One fact at a time
+6. Use clear, concise memory text in English
+
+🌍 **BILINGUAL HANDLING:**
+- User can write in English or Arabic
+- ALWAYS store memories in ENGLISH for consistency
+- Search queries should be in English
+- Examples: "اسمي أحمد" → store as "User's name is Ahmed"
 
 **Tools Available:**
 - fetch_and_verify(query, context) - REQUIRED FIRST STEP
