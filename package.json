@@ -9,7 +9,7 @@
     "migrate": "node scripts/migrate.js",
     "migrate:create": "node scripts/create-migration.js",
     "ai:embeddings:backfill": "node scripts/backfill-ai-embeddings.js",
-    "dev": "nodemon src/index.js",
+    "dev": "nodemon -e js,json,env src/index.js",
     "backup": "node scripts/backup-cli.js",
     "backup:create": "node scripts/backup-cli.js create",
     "backup:list": "node scripts/backup-cli.js list",

@@ -1,6 +1,10 @@
 const { EmbedBuilder, PermissionFlagsBits } = require('discord.js');
 const aiWhitelist = require('../../database/aiWhitelist');
 
+// DYNAMIC VALUES
+const whitelistLimit = process.env.AI_HOURLY_LIMIT_WHITELISTED || 6;
+const regularLimit = process.env.AI_HOURLY_LIMIT_REGULAR || 3;
+
 module.exports = {
     name: 'aiwhitelist',
     description: 'Manage AI whitelist (higher rate limits)',
@@ -19,9 +23,9 @@ module.exports = {
             const { createUsageEmbed } = require('../../utils/embed');
             const embed = await createUsageEmbed(message.guild.id, {
                 command: 'aiwhitelist',
-                description: 'Manage users with higher AI rate limits (6 messages/hour instead of 3).',
-                usage: '`!aiwhitelist add @user [reason]`\\n`!aiwhitelist remove @user`\\n`!aiwhitelist list`\\n`!aiwhitelist clear`',
-                examples: '`!aiwhitelist add @Busy VIP member`\\n`!aiwhitelist remove @Busy`\\n`!aiwhitelist list`'
+                description: `Manage users with higher AI rate limits (${whitelistLimit} messages/hour instead of ${regularLimit}).`,
+                usage: '`!aiwhitelist add @user [reason]`\n`!aiwhitelist remove @user`\n`!aiwhitelist list`\n`!aiwhitelist clear`',
+                examples: '`!aiwhitelist add @Busy VIP member`\n`!aiwhitelist remove @Busy`\n`!aiwhitelist list`'
             });
             return message.reply({ embeds: [embed] });
         }
@@ -51,7 +55,7 @@ module.exports = {
                     .setTitle('✅ User Whitelisted')
                     .setDescription(`**${mentionedUser.tag}** has been added to the AI whitelist.`)
                     .addFields(
-                        { name: 'Rate Limit', value: '6 messages/hour (instead of 3)', inline: true },
+                        { name: 'Rate Limit', value: `${whitelistLimit} messages/hour (instead of ${regularLimit})`, inline: true },
                         { name: 'Reason', value: reason, inline: false }
                     )
                     .setTimestamp();
@@ -83,7 +87,7 @@ module.exports = {
                         .setTitle('✅ User Removed from Whitelist')
                         .setDescription(`**${mentionedUser.tag}** has been removed from the AI whitelist.`)
                         .addFields(
-                            { name: 'Rate Limit', value: '3 messages/hour (regular)', inline: true }
+                            { name: 'Rate Limit', value: `${regularLimit} messages/hour (regular)`, inline: true }
                         )
                         .setTimestamp();
 
@@ -112,15 +116,15 @@ module.exports = {
                         const username = user ? user.tag : `Unknown (${entry.user_id})`;
                         const addedDate = new Date(entry.added_at).toLocaleDateString();
                         const reason = entry.reason || 'No reason';
-                        return `• **${username}**\\n  Added: ${addedDate} | Reason: ${reason}`;
+                        return `• **${username}**\n  Added: ${addedDate} | Reason: ${reason}`;
                     })
                 );
 
                 const embed = new EmbedBuilder()
                     .setColor(0x5865F2)
                     .setTitle('🎯 AI Whitelist')
-                    .setDescription(userList.join('\\n\\n'))
-                    .setFooter({ text: `${whitelisted.length} whitelisted user(s) | 6 messages/hour` })
+                    .setDescription(userList.join('\n\n'))
+                    .setFooter({ text: `${whitelisted.length} whitelisted user(s) | ${whitelistLimit} messages/hour` })
                     .setTimestamp();
 
                 return message.reply({ embeds: [embed] });

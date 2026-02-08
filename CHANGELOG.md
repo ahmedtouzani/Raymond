@@ -87,3 +87,272 @@
 - [2026-02-08 09:26:37] [INFO] Cached 201 invites for guild Parallel Universe
 - [2026-02-08 09:26:37] [INFO] Successfully cached invites for 1/1 guilds
 - [2026-02-08 09:26:44] [INFO] Posted new dev server status message and saved its ID: 1469987804665610401
+- [2026-02-08 09:30:35] [INFO] Invite created: RrbYfT8m by mrahmet48
+- [2026-02-08 09:30:41] [INFO] Invite created: YMxXQASWyF by mrahmet48
+- [2026-02-08 09:35:26] [INFO] Updated voice count for Parallel Universe: 9
+- [2026-02-08 09:36:36] [INFO] Received SIGINT. Shutting down gracefully...
+- [2026-02-08 09:36:36] [INFO] Starting diagnostic shutdown sequence...
+- [2026-02-08 09:36:36] [INFO] [1/2] Attempting to destroy Discord client...
+- [2026-02-08 21:33:56] [INFO] ✅ Database connection successful
+- [2026-02-08 21:35:43] [INFO] Loaded command: levelsetup
+- [2026-02-08 21:35:43] [INFO] Loaded command: autoban
+- [2026-02-08 21:35:43] [INFO] Loaded command: autospam
+- [2026-02-08 21:35:44] [INFO] Loaded command: leaderboard
+- [2026-02-08 21:35:44] [INFO] Loaded command: level
+- [2026-02-08 21:35:44] [INFO] Loaded command: levelrole
+- [2026-02-08 21:35:44] [INFO] Loaded command: add
+- [2026-02-08 21:35:44] [INFO] Loaded command: ban
+- [2026-02-08 21:35:44] [INFO] Loaded command: clear
+- [2026-02-08 21:35:44] [INFO] Loaded command: delwarn
+- [2026-02-08 21:35:44] [INFO] Loaded command: deny
+- [2026-02-08 21:35:44] [INFO] Loaded command: jail
+- [2026-02-08 21:35:44] [INFO] Loaded command: kick
+- [2026-02-08 21:35:44] [INFO] Loaded command: lock
+- [2026-02-08 21:35:44] [INFO] Loaded command: move
+- [2026-02-08 21:35:44] [INFO] Loaded command: mute
+- [2026-02-08 21:35:44] [INFO] Loaded command: nickname
+- [2026-02-08 21:35:44] [INFO] Loaded command: role
+- [2026-02-08 21:35:44] [INFO] Loaded command: setautorole
+- [2026-02-08 21:35:44] [INFO] Loaded command: setstats
+- [2026-02-08 21:35:44] [INFO] Loaded command: slowmode
+- [2026-02-08 21:35:44] [INFO] Loaded command: tempvoice
+- [2026-02-08 21:35:44] [INFO] Loaded command: unban
+- [2026-02-08 21:35:44] [INFO] Loaded command: unjail
+- [2026-02-08 21:35:44] [INFO] Loaded command: unlock
+- [2026-02-08 21:35:44] [INFO] Loaded command: unmute
+- [2026-02-08 21:35:44] [INFO] Loaded command: vb
+- [2026-02-08 21:35:44] [INFO] Loaded command: verify
+- [2026-02-08 21:35:44] [INFO] Loaded command: vg
+- [2026-02-08 21:35:44] [INFO] Loaded command: warn
+- [2026-02-08 21:35:44] [INFO] Loaded command: warns
+- [2026-02-08 21:35:44] [INFO] Loaded command: afk
+- [2026-02-08 21:35:44] [INFO] [API Key Manager] Initialized: 4 Groq keys, 4 Gemini keys
+- [2026-02-08 21:35:44] [INFO] Loaded command: ai
+- [2026-02-08 21:35:44] [INFO] Loaded command: aiwhitelist
+- [2026-02-08 21:35:44] [INFO] Loaded command: autoreact
+- [2026-02-08 21:35:44] [INFO] Loaded command: dev
+- [2026-02-08 21:35:44] [INFO] Loaded command: massdm
+- [2026-02-08 21:35:44] [INFO] Loaded command: nuke-server
+- [2026-02-08 21:35:44] [INFO] Loaded command: premium
+- [2026-02-08 21:35:44] [INFO] Loaded command: setuproles
+- [2026-02-08 21:35:44] [INFO] Loaded command: shutdown
+- [2026-02-08 21:35:44] [INFO] Loaded command: modmail
+- [2026-02-08 21:35:44] [INFO] Loaded command: moveall
+- [2026-02-08 21:35:44] [INFO] Loaded command: rolemenu
+- [2026-02-08 21:35:45] [INFO] Loaded command: sendnotify
+- [2026-02-08 21:35:45] [INFO] Loaded command: unafk
+- [2026-02-08 21:35:45] [INFO] Loaded command: ping
+- [2026-02-08 21:35:45] [INFO] Loaded command: ranktheme
+- [2026-02-08 21:35:45] [INFO] Loaded command: setembedcolor
+- [2026-02-08 21:35:45] [INFO] Loaded command: setembedfooter
+- [2026-02-08 21:35:45] [INFO] Loaded command: setembedicon
+- [2026-02-08 21:35:45] [INFO] Loaded command: top
+- [2026-02-08 21:35:45] [INFO] Loaded command: avatar
+- [2026-02-08 21:35:45] [INFO] Loaded command: botinfo
+- [2026-02-08 21:35:45] [INFO] Loaded command: channelinfo
+- [2026-02-08 21:35:45] [INFO] Loaded command: help
+- [2026-02-08 21:35:45] [INFO] Loaded command: invite
+- [2026-02-08 21:35:45] [INFO] Loaded command: roleinfo
+- [2026-02-08 21:35:45] [INFO] Loaded command: serverinfo
+- [2026-02-08 21:35:45] [INFO] Loaded command: userinfo
+- [2026-02-08 21:35:45] [INFO] Loaded event: guildMemberAdd
+- [2026-02-08 21:35:45] [INFO] Loaded event: guildMemberRemove
+- [2026-02-08 21:35:45] [INFO] Loaded event: interactionCreate
+- [2026-02-08 21:35:45] [INFO] Loaded event: inviteCreate
+- [2026-02-08 21:35:45] [INFO] Loaded event: inviteDelete
+- [2026-02-08 21:35:45] [INFO] Loaded event: messageCreate
+- [2026-02-08 21:35:45] [INFO] Loaded event: messageReactionAdd
+- [2026-02-08 21:35:45] [INFO] Loaded event: messageReactionRemove
+- [2026-02-08 21:35:45] [INFO] Loaded event: ready
+- [2026-02-08 21:35:45] [INFO] Loaded event: voiceStateUpdate
+- [2026-02-08 21:35:45] [INFO] Skipped disabled event: voiceXpTracker.js
+- [2026-02-08 21:35:45] [INFO] Loaded slash command: ping
+- [2026-02-08 21:35:45] [INFO] Loaded slash command: setembedcolor
+- [2026-02-08 21:35:45] [INFO] Loaded slash command: setembedfooter
+- [2026-02-08 21:35:45] [INFO] Loaded slash command: setembedicon
+- [2026-02-08 21:35:45] [INFO] Initializing bot and attempting to log in...
+- [2026-02-08 21:35:47] [INFO] ✅ Database connection successful
+- [2026-02-08 21:35:50] [INFO] Ready! Logged in as Parallel Universe#9387
+- [2026-02-08 21:35:50] [INFO] Bot is now online and ready to serve in 1 guilds.
+- [2026-02-08 21:35:51] [INFO] Registered all slash commands globally.
+- [2026-02-08 21:35:51] [INFO] Initializing configs for 1 guilds...
+- [2026-02-08 21:35:51] [INFO] ✅ Guild configurations initialized
+- [2026-02-08 21:35:51] [INFO] Caching invites for all guilds...
+- [2026-02-08 21:36:38] [INFO] Cached 214 invites for guild Parallel Universe
+- [2026-02-08 21:36:38] [INFO] Successfully cached invites for 1/1 guilds
+- [2026-02-08 21:36:40] [INFO] Posted new dev server status message and saved its ID: 1470171508570849341
+- [2026-02-08 21:38:53] [INFO] Reloaded command: aiwhitelist
+- [2026-02-08 21:38:59] [INFO] Loaded command: levelsetup
+- [2026-02-08 21:38:59] [INFO] Loaded command: autoban
+- [2026-02-08 21:38:59] [INFO] Loaded command: autospam
+- [2026-02-08 21:38:59] [INFO] Loaded command: leaderboard
+- [2026-02-08 21:38:59] [INFO] Loaded command: level
+- [2026-02-08 21:38:59] [INFO] Loaded command: levelrole
+- [2026-02-08 21:38:59] [INFO] Loaded command: add
+- [2026-02-08 21:38:59] [INFO] Loaded command: ban
+- [2026-02-08 21:38:59] [INFO] Loaded command: clear
+- [2026-02-08 21:38:59] [INFO] Loaded command: delwarn
+- [2026-02-08 21:38:59] [INFO] Loaded command: deny
+- [2026-02-08 21:38:59] [INFO] Loaded command: jail
+- [2026-02-08 21:38:59] [INFO] Loaded command: kick
+- [2026-02-08 21:38:59] [INFO] Loaded command: lock
+- [2026-02-08 21:38:59] [INFO] Loaded command: move
+- [2026-02-08 21:38:59] [INFO] Loaded command: mute
+- [2026-02-08 21:38:59] [INFO] Loaded command: nickname
+- [2026-02-08 21:38:59] [INFO] Loaded command: role
+- [2026-02-08 21:38:59] [INFO] Loaded command: setautorole
+- [2026-02-08 21:38:59] [INFO] Loaded command: setstats
+- [2026-02-08 21:38:59] [INFO] Loaded command: slowmode
+- [2026-02-08 21:38:59] [INFO] Loaded command: tempvoice
+- [2026-02-08 21:38:59] [INFO] Loaded command: unban
+- [2026-02-08 21:38:59] [INFO] Loaded command: unjail
+- [2026-02-08 21:38:59] [INFO] Loaded command: unlock
+- [2026-02-08 21:38:59] [INFO] Loaded command: unmute
+- [2026-02-08 21:38:59] [INFO] Loaded command: vb
+- [2026-02-08 21:38:59] [INFO] Loaded command: verify
+- [2026-02-08 21:38:59] [INFO] Loaded command: vg
+- [2026-02-08 21:38:59] [INFO] Loaded command: warn
+- [2026-02-08 21:38:59] [INFO] Loaded command: warns
+- [2026-02-08 21:38:59] [INFO] Loaded command: afk
+- [2026-02-08 21:38:59] [INFO] [API Key Manager] Initialized: 4 Groq keys, 4 Gemini keys
+- [2026-02-08 21:39:00] [INFO] Loaded command: ai
+- [2026-02-08 21:39:00] [INFO] Loaded command: aiwhitelist
+- [2026-02-08 21:39:00] [INFO] Loaded command: autoreact
+- [2026-02-08 21:39:00] [INFO] Loaded command: dev
+- [2026-02-08 21:39:00] [INFO] Loaded command: massdm
+- [2026-02-08 21:39:00] [INFO] Loaded command: nuke-server
+- [2026-02-08 21:39:00] [INFO] Loaded command: premium
+- [2026-02-08 21:39:00] [INFO] Loaded command: setuproles
+- [2026-02-08 21:39:00] [INFO] Loaded command: shutdown
+- [2026-02-08 21:39:00] [INFO] Loaded command: modmail
+- [2026-02-08 21:39:00] [INFO] Loaded command: moveall
+- [2026-02-08 21:39:00] [INFO] Loaded command: rolemenu
+- [2026-02-08 21:39:00] [INFO] Loaded command: sendnotify
+- [2026-02-08 21:39:00] [INFO] Loaded command: unafk
+- [2026-02-08 21:39:00] [INFO] Loaded command: ping
+- [2026-02-08 21:39:00] [INFO] Loaded command: ranktheme
+- [2026-02-08 21:39:00] [INFO] Loaded command: setembedcolor
+- [2026-02-08 21:39:00] [INFO] Loaded command: setembedfooter
+- [2026-02-08 21:39:00] [INFO] Loaded command: setembedicon
+- [2026-02-08 21:39:00] [INFO] Loaded command: top
+- [2026-02-08 21:39:00] [INFO] Loaded command: avatar
+- [2026-02-08 21:39:00] [INFO] Loaded command: botinfo
+- [2026-02-08 21:39:00] [INFO] Loaded command: channelinfo
+- [2026-02-08 21:39:00] [INFO] Loaded command: help
+- [2026-02-08 21:39:00] [INFO] Loaded command: invite
+- [2026-02-08 21:39:00] [INFO] Loaded command: roleinfo
+- [2026-02-08 21:39:00] [INFO] Loaded command: serverinfo
+- [2026-02-08 21:39:00] [INFO] Loaded command: userinfo
+- [2026-02-08 21:39:00] [INFO] Loaded event: guildMemberAdd
+- [2026-02-08 21:39:00] [INFO] Loaded event: guildMemberRemove
+- [2026-02-08 21:39:00] [INFO] Loaded event: interactionCreate
+- [2026-02-08 21:39:00] [INFO] Loaded event: inviteCreate
+- [2026-02-08 21:39:00] [INFO] Loaded event: inviteDelete
+- [2026-02-08 21:39:00] [INFO] Loaded event: messageCreate
+- [2026-02-08 21:39:00] [INFO] Loaded event: messageReactionAdd
+- [2026-02-08 21:39:00] [INFO] Loaded event: messageReactionRemove
+- [2026-02-08 21:39:00] [INFO] Loaded event: ready
+- [2026-02-08 21:39:00] [INFO] Loaded event: voiceStateUpdate
+- [2026-02-08 21:39:00] [INFO] Skipped disabled event: voiceXpTracker.js
+- [2026-02-08 21:39:00] [INFO] Loaded slash command: ping
+- [2026-02-08 21:39:00] [INFO] Loaded slash command: setembedcolor
+- [2026-02-08 21:39:00] [INFO] Loaded slash command: setembedfooter
+- [2026-02-08 21:39:00] [INFO] Loaded slash command: setembedicon
+- [2026-02-08 21:39:00] [INFO] Initializing bot and attempting to log in...
+- [2026-02-08 21:39:02] [INFO] ✅ Database connection successful
+- [2026-02-08 21:39:06] [INFO] Ready! Logged in as Parallel Universe#9387
+- [2026-02-08 21:39:06] [INFO] Bot is now online and ready to serve in 1 guilds.
+- [2026-02-08 21:39:07] [INFO] Registered all slash commands globally.
+- [2026-02-08 21:39:07] [INFO] Initializing configs for 1 guilds...
+- [2026-02-08 21:39:07] [INFO] ✅ Guild configurations initialized
+- [2026-02-08 21:39:07] [INFO] Caching invites for all guilds...
+- [2026-02-08 21:39:49] [INFO] Cached 214 invites for guild Parallel Universe
+- [2026-02-08 21:39:49] [INFO] Successfully cached invites for 1/1 guilds
+- [2026-02-08 21:39:50] [INFO] Successfully updated dev server status message.
+- [2026-02-08 21:40:42] [INFO] Loaded command: levelsetup
+- [2026-02-08 21:40:42] [INFO] Loaded command: autoban
+- [2026-02-08 21:40:42] [INFO] Loaded command: autospam
+- [2026-02-08 21:40:43] [INFO] Loaded command: leaderboard
+- [2026-02-08 21:40:43] [INFO] Loaded command: level
+- [2026-02-08 21:40:43] [INFO] Loaded command: levelrole
+- [2026-02-08 21:40:43] [INFO] Loaded command: add
+- [2026-02-08 21:40:43] [INFO] Loaded command: ban
+- [2026-02-08 21:40:43] [INFO] Loaded command: clear
+- [2026-02-08 21:40:43] [INFO] Loaded command: delwarn
+- [2026-02-08 21:40:43] [INFO] Loaded command: deny
+- [2026-02-08 21:40:43] [INFO] Loaded command: jail
+- [2026-02-08 21:40:43] [INFO] Loaded command: kick
+- [2026-02-08 21:40:43] [INFO] Loaded command: lock
+- [2026-02-08 21:40:43] [INFO] Loaded command: move
+- [2026-02-08 21:40:43] [INFO] Loaded command: mute
+- [2026-02-08 21:40:43] [INFO] Loaded command: nickname
+- [2026-02-08 21:40:43] [INFO] Loaded command: role
+- [2026-02-08 21:40:43] [INFO] Loaded command: setautorole
+- [2026-02-08 21:40:43] [INFO] Loaded command: setstats
+- [2026-02-08 21:40:43] [INFO] Loaded command: slowmode
+- [2026-02-08 21:40:43] [INFO] Loaded command: tempvoice
+- [2026-02-08 21:40:43] [INFO] Loaded command: unban
+- [2026-02-08 21:40:43] [INFO] Loaded command: unjail
+- [2026-02-08 21:40:43] [INFO] Loaded command: unlock
+- [2026-02-08 21:40:43] [INFO] Loaded command: unmute
+- [2026-02-08 21:40:43] [INFO] Loaded command: vb
+- [2026-02-08 21:40:43] [INFO] Loaded command: verify
+- [2026-02-08 21:40:43] [INFO] Loaded command: vg
+- [2026-02-08 21:40:43] [INFO] Loaded command: warn
+- [2026-02-08 21:40:43] [INFO] Loaded command: warns
+- [2026-02-08 21:40:43] [INFO] Loaded command: afk
+- [2026-02-08 21:40:43] [INFO] [API Key Manager] Initialized: 4 Groq keys, 4 Gemini keys
+- [2026-02-08 21:40:43] [INFO] Loaded command: ai
+- [2026-02-08 21:40:43] [INFO] Loaded command: aiwhitelist
+- [2026-02-08 21:40:43] [INFO] Loaded command: autoreact
+- [2026-02-08 21:40:43] [INFO] Loaded command: dev
+- [2026-02-08 21:40:43] [INFO] Loaded command: massdm
+- [2026-02-08 21:40:43] [INFO] Loaded command: nuke-server
+- [2026-02-08 21:40:43] [INFO] Loaded command: premium
+- [2026-02-08 21:40:43] [INFO] Loaded command: setuproles
+- [2026-02-08 21:40:43] [INFO] Loaded command: shutdown
+- [2026-02-08 21:40:43] [INFO] Loaded command: modmail
+- [2026-02-08 21:40:43] [INFO] Loaded command: moveall
+- [2026-02-08 21:40:43] [INFO] Loaded command: rolemenu
+- [2026-02-08 21:40:43] [INFO] Loaded command: sendnotify
+- [2026-02-08 21:40:43] [INFO] Loaded command: unafk
+- [2026-02-08 21:40:43] [INFO] Loaded command: ping
+- [2026-02-08 21:40:43] [INFO] Loaded command: ranktheme
+- [2026-02-08 21:40:43] [INFO] Loaded command: setembedcolor
+- [2026-02-08 21:40:43] [INFO] Loaded command: setembedfooter
+- [2026-02-08 21:40:43] [INFO] Loaded command: setembedicon
+- [2026-02-08 21:40:43] [INFO] Loaded command: top
+- [2026-02-08 21:40:43] [INFO] Loaded command: avatar
+- [2026-02-08 21:40:43] [INFO] Loaded command: botinfo
+- [2026-02-08 21:40:43] [INFO] Loaded command: channelinfo
+- [2026-02-08 21:40:43] [INFO] Loaded command: help
+- [2026-02-08 21:40:43] [INFO] Loaded command: invite
+- [2026-02-08 21:40:43] [INFO] Loaded command: roleinfo
+- [2026-02-08 21:40:43] [INFO] Loaded command: serverinfo
+- [2026-02-08 21:40:43] [INFO] Loaded command: userinfo
+- [2026-02-08 21:40:43] [INFO] Loaded event: guildMemberAdd
+- [2026-02-08 21:40:43] [INFO] Loaded event: guildMemberRemove
+- [2026-02-08 21:40:44] [INFO] Loaded event: interactionCreate
+- [2026-02-08 21:40:44] [INFO] Loaded event: inviteCreate
+- [2026-02-08 21:40:44] [INFO] Loaded event: inviteDelete
+- [2026-02-08 21:40:44] [INFO] Loaded event: messageCreate
+- [2026-02-08 21:40:44] [INFO] Loaded event: messageReactionAdd
+- [2026-02-08 21:40:44] [INFO] Loaded event: messageReactionRemove
+- [2026-02-08 21:40:44] [INFO] Loaded event: ready
+- [2026-02-08 21:40:44] [INFO] Loaded event: voiceStateUpdate
+- [2026-02-08 21:40:44] [INFO] Skipped disabled event: voiceXpTracker.js
+- [2026-02-08 21:40:44] [INFO] Loaded slash command: ping
+- [2026-02-08 21:40:44] [INFO] Loaded slash command: setembedcolor
+- [2026-02-08 21:40:44] [INFO] Loaded slash command: setembedfooter
+- [2026-02-08 21:40:44] [INFO] Loaded slash command: setembedicon
+- [2026-02-08 21:40:44] [INFO] Initializing bot and attempting to log in...
+- [2026-02-08 21:40:46] [INFO] ✅ Database connection successful
+- [2026-02-08 21:40:48] [INFO] Ready! Logged in as Parallel Universe#9387
+- [2026-02-08 21:40:48] [INFO] Bot is now online and ready to serve in 1 guilds.
+- [2026-02-08 21:40:49] [INFO] Registered all slash commands globally.
+- [2026-02-08 21:40:49] [INFO] Initializing configs for 1 guilds...
+- [2026-02-08 21:40:50] [INFO] ✅ Guild configurations initialized
+- [2026-02-08 21:40:50] [INFO] Caching invites for all guilds...
+- [2026-02-08 21:41:33] [INFO] Cached 214 invites for guild Parallel Universe
+- [2026-02-08 21:41:33] [INFO] Successfully cached invites for 1/1 guilds
+- [2026-02-08 21:41:35] [INFO] Successfully updated dev server status message.
