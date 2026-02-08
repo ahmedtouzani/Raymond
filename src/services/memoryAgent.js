@@ -119,42 +119,150 @@ class MemoryAgent {
     }
 
     /**
-     * Process a single conversation for memory extraction
+     * Process a single conversation with multi-turn reasoning (v4.0.0)
      * @private
      */
     async _processConversation({ userMessage, botResponse, guildId, userId, username }) {
+        const MAX_ITERATIONS = 5; // Circuit breaker: prevent infinite loops
+        const ITERATION_TIMEOUT_MS = 30000; // 30 seconds per iteration
+        const MAX_TOTAL_TIME_MS = 120000; // 2 minutes total timeout
+
+        const startTime = Date.now();
+        const conversationHistory = []; // Track full conversation with Gemini
+
         try {
             // Step 1: Fetch existing memories for context
             const existingMemories = await aiMemory.searchMemories(userMessage, {
-                guildId, // Pass guildId for isolation
-                createdBy: userId,
-                limit: 10,
-                similarityThreshold: 0.6
+                guildId,
+                limit: 5,
+                threshold: 0.6
             });
 
-            // Step 2: Call Gemini with function calling
+            // Step 2: Build tools definition
             const tools = this._getMemoryTools();
-            const response = await this._callGeminiWithTools({
-                userMessage,
-                botResponse,
-                existingMemories,
-                guildId,
-                userId,
-                username
-            }, tools);
 
-            // Step 3: Execute tool calls if present
-            if (response.tool_calls && response.tool_calls.length > 0) {
-                logger.info(`[Memory Agent] Executing ${response.tool_calls.length} tool call(s) for user ${username}`);
-
-                for (const toolCall of response.tool_calls) {
-                    await this._executeToolCall(toolCall, guildId, userId, username);
+            // Multi-turn loop
+            for (let iteration = 1; iteration <= MAX_ITERATIONS; iteration++) {
+                // Safety: Check total timeout
+                const elapsed = Date.now() - startTime;
+                if (elapsed > MAX_TOTAL_TIME_MS) {
+                    logger.warn(`[Memory Agent] Total timeout (${elapsed}ms) reached after ${iteration - 1} iterations`);
+                    break;
                 }
-            } else {
-                logger.info(`[Memory Agent] Gemini decided no memory actions needed for: "${userMessage}"`);
+
+                logger.info(`[Memory Agent] Turn ${iteration}/${MAX_ITERATIONS} for user ${username}`);
+
+                // Build prompt for this iteration
+                const isFirstTurn = iteration === 1;
+                let prompt;
+
+                if (isFirstTurn) {
+                    // First turn: Send full context with existing memories
+                    prompt = this._buildMemoryPrompt({
+                        userMessage,
+                        botResponse,
+                        userId,
+                        username,
+                        guildId,
+                        existingMemories
+                    });
+                } else {
+                    // Subsequent turns: Ask Gemini to process tool results
+                    prompt = "Based on the tool results above, decide what action to take next. If the task is complete, respond with text only (no tool calls).";
+                }
+
+                // Add current turn to conversation history
+                conversationHistory.push({
+                    role: 'user',
+                    parts: [{ text: prompt }]
+                });
+
+                try {
+                    // Call Gemini with timeout for this iteration
+                    const iterationStartTime = Date.now();
+                    const response = await Promise.race([
+                        this._callGeminiWithTools({ conversationHistory }, tools),
+                        new Promise((_, reject) =>
+                            setTimeout(() => reject(new Error('Iteration timeout')), ITERATION_TIMEOUT_MS)
+                        )
+                    ]);
+
+                    const iterationTime = Date.now() - iterationStartTime;
+                    logger.info(`[Memory Agent] Turn ${iteration} completed in ${iterationTime}ms`);
+
+                    // Build model response
+                    const modelResponse = {
+                        role: 'model',
+                        parts: []
+                    };
+
+                    // Check if Gemini made tool calls
+                    if (response.tool_calls && response.tool_calls.length > 0) {
+                        logger.info(`[Memory Agent] Turn ${iteration}: ${response.tool_calls.length} tool call(s)`);
+
+                        // Execute each tool and collect results
+                        const toolResults = [];
+
+                        for (const toolCall of response.tool_calls) {
+                            const result = await this._executeToolCall(toolCall, guildId, userId, username);
+                            toolResults.push({
+                                tool: toolCall.name,
+                                result
+                            });
+                        }
+
+                        // Add tool calls to model response (for history)
+                        if (response.text) {
+                            modelResponse.parts.push({ text: response.text });
+                        }
+
+                        conversationHistory.push(modelResponse);
+
+                        // Add tool results back to conversation for next iteration
+                        const resultsText = toolResults.map(tr =>
+                            `Tool: ${tr.tool}\nResult: ${JSON.stringify(tr.result, null, 2)}`
+                        ).join('\n\n');
+
+                        conversationHistory.push({
+                            role: 'user',
+                            parts: [{ text: `Tool execution results:\n\n${resultsText}` }]
+                        });
+
+                        // Continue to next iteration for Gemini to process results
+                        continue;
+
+                    } else {
+                        // No more tool calls - Gemini is done
+                        if (response.text) {
+                            modelResponse.parts.push({ text: response.text });
+                            logger.info(`[Memory Agent] Turn ${iteration}: ${response.text}`);
+                        } else {
+                            logger.info(`[Memory Agent] Turn ${iteration}: No tool calls, reasoning complete`);
+                        }
+                        conversationHistory.push(modelResponse);
+                        break; // Exit loop - task complete
+                    }
+
+                } catch (iterationError) {
+                    if (iterationError.message === 'Iteration timeout') {
+                        logger.warn(`[Memory Agent] Turn ${iteration} timed out after ${ITERATION_TIMEOUT_MS}ms`);
+                        break;
+                    } else {
+                        throw iterationError;
+                    }
+                }
             }
+
+            // Check if we hit max iterations (circuit breaker activated)
+            if (conversationHistory.filter(m => m.role === 'model').length >= MAX_ITERATIONS) {
+                logger.warn(`[Memory Agent] Circuit breaker: Max iterations (${MAX_ITERATIONS}) reached`);
+            }
+
+            const totalTime = Date.now() - startTime;
+            logger.info(`[Memory Agent] Multi-turn processing complete in ${totalTime}ms (${conversationHistory.length} messages)`);
+
         } catch (error) {
-            logger.error(`[Memory Agent] Error processing conversation:`, error.message);
+            logger.error(`[Memory Agent] Error in multi-turn processing:`, error.message);
             throw error;
         }
     }
@@ -229,27 +337,30 @@ class MemoryAgent {
     }
 
     /**
-     * Call Gemini API with function calling
+     * Call Gemini API with function calling (v4.0.0 - supports multi-turn)
      * @private
      */
     async _callGeminiWithTools(context, tools) {
         // Get next Gemini key with round-robin
         const key = this._getNextGeminiKey();
-        const model = process.env.GEMINI_MODEL || 'gemini-2.5-flash'; // Free model with function calling
+        const model = process.env.GEMINI_MODEL || 'models/gemini-2.5-flash';
 
         try {
+            // Support both old (single-turn) and new (multi-turn) calling patterns
+            const contents = context.conversationHistory || [{
+                role: 'user',
+                parts: [{
+                    text: this._buildMemoryPrompt(context)
+                }]
+            }];
+
             const response = await fetch(
                 `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`,
                 {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        contents: [{
-                            role: 'user',
-                            parts: [{
-                                text: this._buildMemoryPrompt(context)
-                            }]
-                        }],
+                        contents,
                         tools: [{ function_declarations: tools }],
                         generationConfig: {
                             temperature: 0.3, // Lower for consistency
@@ -287,65 +398,77 @@ class MemoryAgent {
             ? context.existingMemories.map(m => `- [ID: ${m.id}] ${m.value}`).join('\n')
             : 'No existing memories found.';
 
-        return `You are Raymond's Memory Management Agent. Extract and manage facts about the USER.
+        return `You are Raymond's Memory Management Agent with STRICT search-first protocol.
 
 **Conversation:**
 User (${context.username}): ${context.userMessage}
 Bot: ${context.botResponse}
 
-**Existing Memories for this User:**
+**Existing Memories (may be incomplete - always verify):**
 ${existingMemoriesText}
 
-**CRITICAL WORKFLOW - FOLLOW THESE STEPS:**
+**MANDATORY WORKFLOW - FOLLOW IN ORDER:**
 
-**STEP 1: Identify User Facts**
-Extract ONLY facts from "${context.username}"'s message (NOT the bot's response):
-- Personal info: name, age, location, occupation
-- Preferences: likes, dislikes, favorites
-- Facts: relationships, goals, habits, experiences
+🔍 **STEP 1: ALWAYS SEARCH FIRST (REQUIRED)**
+Before creating OR updating ANY memory, you MUST call fetch_and_verify.
 
-**STEP 2: Check for Conflicts**
-Look at the Existing Memories above. Does the NEW fact contradict any EXISTING memory?
+Examples of what to search for:
+- User says "my name is Ahmed" → fetch_and_verify(query="User's name", context="name fact")
+- User says "I'm 25 years old" → fetch_and_verify(query="User's age", context="age fact")
+- User says "I love pizza" → fetch_and_verify(query="User's food preferences", context="food likes")
 
-Example:
-- Existing: "User's name is Mohamed" (ID: 65)
-- New fact: User says "my name is ahmed"
-- CONFLICT DETECTED! ✓
+🚫 **NEVER** skip this step, even if existing memories look empty!
 
-**STEP 3: Take Action**
+⏸️ **STEP 2: WAIT FOR SEARCH RESULTS**
+System will return what was found. This happens in the NEXT turn.
 
-IF there's a CONFLICT:
-1. First call: fetch_and_verify(query="User's name", context="search for name memories")
-2. Then call: update_memory(id=<old_memory_id>, content="User's name is Ahmed", reason="User corrected their name")
+✅ **STEP 3: DECIDE BASED ON RESULTS**
+After seeing search results:
 
-IF it's a NEW fact (no conflict):
-1. Call: update_memory(content="...", reason="User stated...")
+- **If ID found** → update_memory(id=<found_id>, content="...", reason="...")
+- **If nothing found** → update_memory(content="...", reason="...")
+- **If multiple found** → prune_conflicts(ids=[...], reason="...") then update_memory(...)
 
-IF it's a correction WITHOUT prior memory:
-1. Call: update_memory(content="...", reason="User stated...")
+🎯 **COMPLETE EXAMPLES:**
 
-**EXAMPLE 1: Correction**
-User says: "No my name is ahmed"
-Existing: [ID: 65] "User's name is Mohamed"
-→ Actions:
-1. fetch_and_verify(query="User's name", context="name")
-2. update_memory(id=65, content="User's name is Ahmed", reason="User corrected their name from Mohamed to Ahmed")
+**Example 1: First mention of name**
+Turn 1:
+User: "my name is Ahmed"
+YOU: fetch_and_verify(query="User's name", context="searching for name")
 
-**EXAMPLE 2: New Info**
-User says: "I love pizza"
-Existing: No food preferences
-→ Action:
-1. update_memory(content="User loves pizza", reason="User stated food preference")
+Turn 2:
+SYSTEM: {"success": true, "count": 0, "results": []}
+YOU: update_memory(content="User's name is Ahmed", reason="User stated their name for first time")
 
-**DO NOT** save:
-- Greetings, questions, or casual chat
-- Bot responses
-- Vague statements
+**Example 2: Correcting name**
+Turn 1:
+User: "actually my name is Mohamed"
+YOU: fetch_and_verify(query="User's name", context="name correction")
 
-**Available Tools:**
-- fetch_and_verify(query, context) - SEARCH existing memories first
-- update_memory(content, reason, id?) - CREATE (no id) or UPDATE (with id)
-- prune_conflicts(ids, reason) - DELETE obsolete memories`;
+Turn 2:
+SYSTEM: {"success": true, "count": 1, "results": [{"id": 83, "content": "User's name is Ahmed"}]}
+YOU: update_memory(id=83, content="User's name is Mohamed", reason="User corrected name from Ahmed to Mohamed")
+
+**Example 3: Adding new fact**
+Turn 1:
+User: "I live in Morocco"
+YOU: fetch_and_verify(query="User's location", context="location fact")
+
+Turn 2:
+SYSTEM: {"success": true, "count": 0, "results": []}
+YOU: update_memory(content="User lives in Morocco", reason="User stated location")
+
+🚨 **CRITICAL RULES:**
+1. **ALWAYS call fetch_and_verify FIRST** - No exceptions!
+2. Extract facts ONLY from user's message (NOT bot's response)
+3. Ignore greetings, questions, casual chat
+4. One fact at a time
+5. Use clear, concise memory text
+
+**Tools Available:**
+- fetch_and_verify(query, context) - REQUIRED FIRST STEP
+- update_memory(content, reason, id?) - Use after search
+- prune_conflicts(ids, reason) - Delete obsolete memories`;
     }
 
     /**
@@ -374,73 +497,137 @@ Existing: No food preferences
     }
 
     /**
-     * Execute a tool call
+     * Execute a tool call (v4.0.0 - returns structured results)
      * @private
      */
     async _executeToolCall(toolCall, guildId, userId, username) {
         const { name, args } = toolCall;
 
         logger.info(`[Memory Agent] Executing tool: ${name} for user ${username}`);
-        logger.debug(`[Memory Agent] Tool args:`, args);
 
         try {
             switch (name) {
-                case 'fetch_and_verify':
-                    // This is just for AI context, no action needed
-                    logger.debug(`[Memory Agent] Fetch and verify: ${args.query}`);
-                    break;
+                case 'fetch_and_verify': {
+                    const { query } = args;
 
-                case 'update_memory':
-                    if (args.id && args.id > 0) {
+                    const results = await aiMemory.searchMemories(query, {
+                        guildId,
+                        limit: 5,
+                        threshold: 0.6
+                    });
+
+                    logger.info(`[Memory Agent] fetch_and_verify found ${results.length} memories for query "${query}"`);
+
+                    return {
+                        success: true,
+                        count: results.length,
+                        results: results.map(m => ({
+                            id: m.id,
+                            content: m.value,
+                            created_at: m.created_at,
+                            similarity: m.similarity ? `${(m.similarity * 100).toFixed(0)}%` : null
+                        }))
+                    };
+                }
+
+                case 'update_memory': {
+                    const { id, content, reason } = args;
+
+                    if (id && id > 0) {
                         // Update existing memory
-                        logger.info(`[Memory Agent] Updating memory ${args.id}: ${args.content}`);
-                        const updated = await aiMemory.updateMemory(args.id, args.content, { guildId });
-                        if (updated) {
-                            await this._logAudit(guildId, 'UPDATE_MEMORY', {
-                                memoryId: args.id,
-                                oldValue: '(hidden)',
-                                newValue: args.content,
-                                reason: args.reason,
-                                userId
-                            });
+                        const updated = await aiMemory.updateMemory(id, content, { guildId });
+
+                        if (!updated) {
+                            return {
+                                success: false,
+                                error: `Memory #${id} not found or does not belong to guild`
+                            };
                         }
+
+                        // Log to audit
+                        await this._logAction('UPDATE_MEMORY', {
+                            memoryId: id,
+                            userId,
+                            content,
+                            reason
+                        }, guildId, 'auto');
+
+                        logger.info(`[Memory Agent] Updated memory #${id}: ${content} (Reason: ${reason})`);
+
+                        return {
+                            success: true,
+                            action: 'updated',
+                            memoryId: id,
+                            content
+                        };
                     } else {
                         // Create new memory
-                        logger.info(`[Memory Agent] Creating new memory: ${args.content} (Reason: ${args.reason})`);
-                        const newMemory = await aiMemory.addMemory(args.content, {
-                            guildId,
+                        const created = await aiMemory.addMemory(content, {
                             createdBy: userId,
-                            key: `auto:${username}`
+                            guildId
                         });
 
-                        await this._logAudit(guildId, 'CREATE_MEMORY', {
-                            memoryId: newMemory ? newMemory.id : 'unknown',
-                            content: args.content,
-                            reason: args.reason,
-                            userId
-                        });
+                        // Log to audit
+                        await this._logAction('CREATE_MEMORY', {
+                            memoryId: created.id,
+                            userId,
+                            content,
+                            reason
+                        }, guildId, 'auto');
+
+                        logger.info(`[Memory Agent] Created new memory #${created.id}: ${content} (Reason: ${reason})`);
+
+                        return {
+                            success: true,
+                            action: 'created',
+                            memoryId: created.id,
+                            content
+                        };
                     }
-                    break;
+                }
 
-                case 'prune_conflicts':
-                    if (args.ids && Array.isArray(args.ids) && args.ids.length > 0) {
-                        logger.info(`[Memory Agent] Pruning ${args.ids.length} conflicting memories (Reason: ${args.reason})`);
-                        const deletedCount = await aiMemory.deleteMemories(args.ids, { guildId });
+                case 'prune_conflicts': {
+                    const { ids, reason } = args;
 
-                        await this._logAudit(guildId, 'PRUNE_MEMORIES', {
-                            memoryIds: args.ids,
-                            count: deletedCount,
-                            reason: args.reason,
-                            userId
-                        });
+                    if (!Array.isArray(ids) || ids.length === 0) {
+                        return {
+                            success: false,
+                            error: 'No IDs provided for pruning'
+                        };
                     }
-                    break;
+
+                    const deleted = await aiMemory.deleteMemories(ids, { guildId });
+
+                    // Log to audit
+                    await this._logAction('DELETE_MEMORIES', {
+                        memoryIds: ids,
+                        count: deleted,
+                        reason
+                    }, guildId, 'auto');
+
+                    logger.info(`[Memory Agent] Deleted ${deleted} memories: [${ids.join(', ')}] (Reason: ${reason})`);
+
+                    return {
+                        success: true,
+                        deleted,
+                        ids
+                    };
+                }
 
                 default:
                     logger.warn(`[Memory Agent] Unknown tool: ${name}`);
+                    return {
+                        success: false,
+                        error: `Unknown tool: ${name}`
+                    };
             }
+
         } catch (error) {
-            logger.error(`[Memory Agent] Tool execution failed for ${name}:`, error.message);
+            logger.error(`[Memory Agent] Tool execution error (${name}):`, error.message);
+            return {
+                success: false,
+                error: error.message
+            };
         }
     }
 
@@ -448,14 +635,14 @@ Existing: No food preferences
      * Log an action to the audit table
      * @private
      */
-    async _logAudit(guildId, action, details) {
+    async _logAction(action, details, guildId, source = 'manual') {
         try {
             await db.query(
                 'INSERT INTO ai_agent_audit_log (agent_name, action, details, guild_id) VALUES ($1, $2, $3, $4)',
                 ['MemoryAgent', action, details, guildId]
             );
         } catch (error) {
-            logger.error('[Memory Agent] Failed to write audit log:', error.message);
+            logger.error('[Memory Agent] Failed to log audit:', error.message);
         }
     }
 
