@@ -13,10 +13,28 @@ module.exports = {
     logger.info(`Ready! Logged in as ${client.user.tag}`);
     logger.info(`Bot is now online and ready to serve in ${client.guilds.cache.size} guilds.`);
 
-    client.user.setPresence({
-      activities: [{ name: 'your commands', type: ActivityType.Listening }],
-      status: 'online',
-    });
+    // v4.0 Rotating Status Messages
+    const statusMessages = [
+      { name: 'v4.0 - The Intelligence Update', type: ActivityType.Playing },
+      { name: 'conversations with Memory Agent 🧠', type: ActivityType.Watching },
+      { name: 'your server | !help', type: ActivityType.Listening },
+      { name: 'Zero Rate Limits ✨', type: ActivityType.Competing }
+    ];
+
+    let currentStatus = 0;
+    const rotateStatus = () => {
+      client.user.setPresence({
+        activities: [statusMessages[currentStatus]],
+        status: 'online',
+      });
+      currentStatus = (currentStatus + 1) % statusMessages.length;
+    };
+
+    // Set initial status
+    rotateStatus();
+
+    // Rotate every 30 seconds
+    setInterval(rotateStatus, 30000);
 
     try {
       await registerSlashCommands(client);
