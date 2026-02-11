@@ -22,6 +22,9 @@ ON ai_memories(guild_id, created_by);
 -- ========================================
 -- 2. Create AI Agent Audit Log Table
 -- ========================================
+-- ========================================
+-- 2. Create AI Agent Audit Log Table
+-- ========================================
 CREATE TABLE IF NOT EXISTS ai_agent_audit_log (
     id SERIAL PRIMARY KEY,
     agent_name TEXT NOT NULL,
@@ -31,6 +34,11 @@ CREATE TABLE IF NOT EXISTS ai_agent_audit_log (
     performed_by TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+-- Ensure columns exist if table was created previously without them
+ALTER TABLE ai_agent_audit_log ADD COLUMN IF NOT EXISTS guild_id TEXT;
+ALTER TABLE ai_agent_audit_log ADD COLUMN IF NOT EXISTS performed_by TEXT;
+ALTER TABLE ai_agent_audit_log ADD COLUMN IF NOT EXISTS created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
 
 -- Create index for faster guild-based audit queries
 CREATE INDEX IF NOT EXISTS idx_audit_log_guild_id 

@@ -356,3 +356,235 @@
 - [2026-02-08 21:41:33] [INFO] Cached 214 invites for guild Parallel Universe
 - [2026-02-08 21:41:33] [INFO] Successfully cached invites for 1/1 guilds
 - [2026-02-08 21:41:35] [INFO] Successfully updated dev server status message.
+- [2026-02-08 21:43:34] [INFO] Received SIGINT. Shutting down gracefully...
+- [2026-02-08 21:43:34] [INFO] Starting diagnostic shutdown sequence...
+
+## 2026-02-11
+- [2026-02-11 07:26:43] [INFO] ✅ Database connection for migrator is successful.
+- [2026-02-11 07:26:44] [INFO] ✅ 'schema_migrations' table ensured.
+- [2026-02-11 07:26:44] [INFO] 🔄 Applying migration: 20260208_add_guild_isolation_to_ai_memories.sql...
+- [2026-02-11 07:26:44] [ERROR] ❌ Failed to apply migration 20260208_add_guild_isolation_to_ai_memories.sql: error: column "created_at" does not exist
+- [2026-02-11 07:26:44] [ERROR] Migration process failed. error: column "created_at" does not exist
+- [2026-02-11 07:29:05] [INFO] ✅ Database connection for migrator is successful.
+- [2026-02-11 07:29:05] [INFO] ✅ 'schema_migrations' table ensured.
+- [2026-02-11 07:29:05] [INFO] 🔄 Applying migration: 20260208_add_guild_isolation_to_ai_memories.sql...
+- [2026-02-11 07:29:05] [INFO] ✅ Migration 20260208_add_guild_isolation_to_ai_memories.sql applied successfully.
+- [2026-02-11 07:29:05] [INFO] 🔄 Applying migration: 20260211_create_applications_table.sql...
+- [2026-02-11 07:29:06] [INFO] ✅ Migration 20260211_create_applications_table.sql applied successfully.
+- [2026-02-11 07:29:06] [INFO] Applied 2 new migration(s).
+- [2026-02-11 07:29:06] [INFO] Migrations completed.
+- [2026-02-11 07:34:11] [INFO] Loaded command: levelsetup
+- [2026-02-11 07:34:11] [INFO] Loaded command: setupapps
+- [2026-02-11 07:34:11] [INFO] Loaded command: autoban
+- [2026-02-11 07:34:11] [INFO] Loaded command: autospam
+- [2026-02-11 07:34:12] [INFO] Loaded command: leaderboard
+- [2026-02-11 07:34:12] [INFO] Loaded command: level
+- [2026-02-11 07:34:12] [INFO] Loaded command: levelrole
+- [2026-02-11 07:34:12] [INFO] Loaded command: add
+- [2026-02-11 07:34:12] [INFO] Loaded command: ban
+- [2026-02-11 07:34:12] [INFO] Loaded command: clear
+- [2026-02-11 07:34:12] [INFO] Loaded command: delwarn
+- [2026-02-11 07:34:12] [INFO] Loaded command: deny
+- [2026-02-11 07:34:12] [INFO] Loaded command: jail
+- [2026-02-11 07:34:12] [INFO] Loaded command: kick
+- [2026-02-11 07:34:12] [INFO] Loaded command: lock
+- [2026-02-11 07:34:12] [INFO] Loaded command: move
+- [2026-02-11 07:34:12] [INFO] Loaded command: mute
+- [2026-02-11 07:34:12] [INFO] Loaded command: nickname
+- [2026-02-11 07:34:12] [INFO] Loaded command: role
+- [2026-02-11 07:34:12] [INFO] Loaded command: setautorole
+- [2026-02-11 07:34:12] [INFO] Loaded command: setstats
+- [2026-02-11 07:34:12] [INFO] Loaded command: slowmode
+- [2026-02-11 07:34:12] [INFO] Loaded command: tempvoice
+- [2026-02-11 07:34:12] [INFO] Loaded command: unban
+- [2026-02-11 07:34:12] [INFO] Loaded command: unjail
+- [2026-02-11 07:34:12] [INFO] Loaded command: unlock
+- [2026-02-11 07:34:12] [INFO] Loaded command: unmute
+- [2026-02-11 07:34:12] [INFO] Loaded command: vb
+- [2026-02-11 07:34:12] [INFO] Loaded command: verify
+- [2026-02-11 07:34:12] [INFO] Loaded command: vg
+- [2026-02-11 07:34:12] [INFO] Loaded command: warn
+- [2026-02-11 07:34:12] [INFO] Loaded command: warns
+- [2026-02-11 07:34:12] [INFO] Loaded command: afk
+- [2026-02-11 07:34:12] [INFO] [API Key Manager] Initialized: 4 Groq keys, 4 Gemini keys
+- [2026-02-11 07:34:12] [INFO] Loaded command: ai
+- [2026-02-11 07:34:12] [INFO] Loaded command: aiwhitelist
+- [2026-02-11 07:34:12] [INFO] Loaded command: autoreact
+- [2026-02-11 07:34:12] [INFO] Loaded command: dev
+- [2026-02-11 07:34:12] [INFO] Loaded command: massdm
+- [2026-02-11 07:34:12] [INFO] Loaded command: nuke-server
+- [2026-02-11 07:34:12] [INFO] Loaded command: premium
+- [2026-02-11 07:34:12] [INFO] Loaded command: setuproles
+- [2026-02-11 07:34:12] [INFO] Loaded command: shutdown
+- [2026-02-11 07:34:12] [INFO] Loaded command: modmail
+- [2026-02-11 07:34:12] [INFO] Loaded command: moveall
+- [2026-02-11 07:34:12] [INFO] Loaded command: rolemenu
+- [2026-02-11 07:34:12] [INFO] Loaded command: sendnotify
+- [2026-02-11 07:34:12] [INFO] Loaded command: unafk
+- [2026-02-11 07:34:13] [INFO] Loaded command: ping
+- [2026-02-11 07:34:13] [INFO] Loaded command: ranktheme
+- [2026-02-11 07:34:13] [INFO] Loaded command: setembedcolor
+- [2026-02-11 07:34:13] [INFO] Loaded command: setembedfooter
+- [2026-02-11 07:34:13] [INFO] Loaded command: setembedicon
+- [2026-02-11 07:34:13] [INFO] Loaded command: top
+- [2026-02-11 07:34:13] [INFO] Loaded command: avatar
+- [2026-02-11 07:34:13] [INFO] Loaded command: botinfo
+- [2026-02-11 07:34:13] [INFO] Loaded command: channelinfo
+- [2026-02-11 07:34:13] [INFO] Loaded command: help
+- [2026-02-11 07:34:13] [INFO] Loaded command: invite
+- [2026-02-11 07:34:13] [INFO] Loaded command: roleinfo
+- [2026-02-11 07:34:13] [INFO] Loaded command: serverinfo
+- [2026-02-11 07:34:13] [INFO] Loaded command: userinfo
+- [2026-02-11 07:34:13] [INFO] Loaded event: guildMemberAdd
+- [2026-02-11 07:34:13] [INFO] Loaded event: guildMemberRemove
+- [2026-02-11 07:34:13] [INFO] Loaded event: interactionCreate
+- [2026-02-11 07:34:13] [INFO] Loaded event: inviteCreate
+- [2026-02-11 07:34:13] [INFO] Loaded event: inviteDelete
+- [2026-02-11 07:34:13] [INFO] Loaded event: messageCreate
+- [2026-02-11 07:34:13] [INFO] Loaded event: messageReactionAdd
+- [2026-02-11 07:34:13] [INFO] Loaded event: messageReactionRemove
+- [2026-02-11 07:34:13] [INFO] Loaded event: ready
+- [2026-02-11 07:34:13] [INFO] Loaded event: voiceStateUpdate
+- [2026-02-11 07:34:13] [INFO] Skipped disabled event: voiceXpTracker.js
+- [2026-02-11 07:34:13] [INFO] Loaded slash command: ping
+- [2026-02-11 07:34:13] [INFO] Loaded slash command: setembedcolor
+- [2026-02-11 07:34:13] [INFO] Loaded slash command: setembedfooter
+- [2026-02-11 07:34:13] [INFO] Loaded slash command: setembedicon
+- [2026-02-11 07:34:13] [INFO] Initializing bot and attempting to log in...
+- [2026-02-11 07:34:19] [INFO] ✅ Database connection successful
+- [2026-02-11 07:34:21] [INFO] Ready! Logged in as Parallel Universe#9387
+- [2026-02-11 07:34:21] [INFO] Bot is now online and ready to serve in 1 guilds.
+- [2026-02-11 07:34:21] [INFO] Registered all slash commands globally.
+- [2026-02-11 07:34:21] [INFO] Initializing configs for 1 guilds...
+- [2026-02-11 07:34:21] [INFO] ✅ Guild configurations initialized
+- [2026-02-11 07:34:21] [INFO] Caching invites for all guilds...
+- [2026-02-11 07:34:37] [ERROR] Command setupapps failed: TypeError: Cannot read properties of undefined (reading 'permissions')
+- [2026-02-11 07:34:42] [INFO] Cached 232 invites for guild Parallel Universe
+- [2026-02-11 07:34:42] [INFO] Successfully cached invites for 1/1 guilds
+- [2026-02-11 07:34:43] [INFO] Posted new dev server status message and saved its ID: 1471046783667802112
+- [2026-02-11 07:36:18] [INFO] Reloaded command: setupapps
+- [2026-02-11 07:41:07] [INFO] Reloaded command: setupapps
+- [2026-02-11 07:41:33] [WARN] Database query failed (attempt 1/3), retrying in 1000ms... Error: getaddrinfo ENOTFOUND shinkansen.proxy.rlwy.net
+- [2026-02-11 07:41:36] [INFO] Assigned auto role ・Unverified to ussser.xx
+- [2026-02-11 07:43:18] [WARN] Failed to apply auto-reaction '<a:lovely:1466773684692975743>' in guild 1351735584548196362: Unknown Message
+- [2026-02-11 07:43:47] [WARN] Failed to apply auto-reaction '<a:lovely:1466773684692975743>' in guild 1351735584548196362: Unknown Message
+- [2026-02-11 07:43:55] [WARN] Failed to apply auto-reaction '<a:lovely:1466773684692975743>' in guild 1351735584548196362: Unknown Message
+- [2026-02-11 07:44:06] [WARN] Failed to apply auto-reaction '<a:lovely:1466773684692975743>' in guild 1351735584548196362: Unknown Message
+- [2026-02-11 07:46:50] [INFO] Reloaded command: setupapps
+- [2026-02-11 07:47:14] [INFO] Received SIGINT. Shutting down gracefully...
+- [2026-02-11 07:47:14] [INFO] Starting diagnostic shutdown sequence...
+- [2026-02-11 07:47:14] [INFO] [1/2] Attempting to destroy Discord client...
+- [2026-02-11 07:47:14] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2026-02-11 07:47:14] [INFO] [2/2] Database client not found or no end method.
+- [2026-02-11 07:47:14] [INFO] Diagnostic shutdown sequence complete.
+- [2026-02-11 07:47:14] [INFO] Shutdown complete. Exiting.
+- [2026-02-11 07:47:26] [INFO] Loaded command: levelsetup
+- [2026-02-11 07:47:26] [INFO] Loaded command: setupapps
+- [2026-02-11 07:47:26] [INFO] Loaded command: autoban
+- [2026-02-11 07:47:26] [INFO] Loaded command: autospam
+- [2026-02-11 07:47:26] [INFO] Loaded command: leaderboard
+- [2026-02-11 07:47:26] [INFO] Loaded command: level
+- [2026-02-11 07:47:26] [INFO] Loaded command: levelrole
+- [2026-02-11 07:47:26] [INFO] Loaded command: add
+- [2026-02-11 07:47:26] [INFO] Loaded command: ban
+- [2026-02-11 07:47:26] [INFO] Loaded command: clear
+- [2026-02-11 07:47:26] [INFO] Loaded command: delwarn
+- [2026-02-11 07:47:26] [INFO] Loaded command: deny
+- [2026-02-11 07:47:26] [INFO] Loaded command: jail
+- [2026-02-11 07:47:26] [INFO] Loaded command: kick
+- [2026-02-11 07:47:26] [INFO] Loaded command: lock
+- [2026-02-11 07:47:26] [INFO] Loaded command: move
+- [2026-02-11 07:47:26] [INFO] Loaded command: mute
+- [2026-02-11 07:47:26] [INFO] Loaded command: nickname
+- [2026-02-11 07:47:26] [INFO] Loaded command: role
+- [2026-02-11 07:47:26] [INFO] Loaded command: setautorole
+- [2026-02-11 07:47:26] [INFO] Loaded command: setstats
+- [2026-02-11 07:47:26] [INFO] Loaded command: slowmode
+- [2026-02-11 07:47:26] [INFO] Loaded command: tempvoice
+- [2026-02-11 07:47:26] [INFO] Loaded command: unban
+- [2026-02-11 07:47:26] [INFO] Loaded command: unjail
+- [2026-02-11 07:47:26] [INFO] Loaded command: unlock
+- [2026-02-11 07:47:26] [INFO] Loaded command: unmute
+- [2026-02-11 07:47:26] [INFO] Loaded command: vb
+- [2026-02-11 07:47:26] [INFO] Loaded command: verify
+- [2026-02-11 07:47:26] [INFO] Loaded command: vg
+- [2026-02-11 07:47:26] [INFO] Loaded command: warn
+- [2026-02-11 07:47:26] [INFO] Loaded command: warns
+- [2026-02-11 07:47:27] [INFO] Loaded command: afk
+- [2026-02-11 07:47:27] [INFO] [API Key Manager] Initialized: 4 Groq keys, 4 Gemini keys
+- [2026-02-11 07:47:27] [INFO] Loaded command: ai
+- [2026-02-11 07:47:27] [INFO] Loaded command: aiwhitelist
+- [2026-02-11 07:47:27] [INFO] Loaded command: autoreact
+- [2026-02-11 07:47:27] [INFO] Loaded command: dev
+- [2026-02-11 07:47:27] [INFO] Loaded command: massdm
+- [2026-02-11 07:47:27] [INFO] Loaded command: nuke-server
+- [2026-02-11 07:47:27] [INFO] Loaded command: premium
+- [2026-02-11 07:47:27] [INFO] Loaded command: setuproles
+- [2026-02-11 07:47:27] [INFO] Loaded command: shutdown
+- [2026-02-11 07:47:27] [INFO] Loaded command: modmail
+- [2026-02-11 07:47:27] [INFO] Loaded command: moveall
+- [2026-02-11 07:47:27] [INFO] Loaded command: rolemenu
+- [2026-02-11 07:47:27] [INFO] Loaded command: sendnotify
+- [2026-02-11 07:47:27] [INFO] Loaded command: unafk
+- [2026-02-11 07:47:27] [INFO] Loaded command: ping
+- [2026-02-11 07:47:27] [INFO] Loaded command: ranktheme
+- [2026-02-11 07:47:27] [INFO] Loaded command: setembedcolor
+- [2026-02-11 07:47:27] [INFO] Loaded command: setembedfooter
+- [2026-02-11 07:47:27] [INFO] Loaded command: setembedicon
+- [2026-02-11 07:47:27] [INFO] Loaded command: top
+- [2026-02-11 07:47:27] [INFO] Loaded command: avatar
+- [2026-02-11 07:47:27] [INFO] Loaded command: botinfo
+- [2026-02-11 07:47:27] [INFO] Loaded command: channelinfo
+- [2026-02-11 07:47:27] [INFO] Loaded command: help
+- [2026-02-11 07:47:27] [INFO] Loaded command: invite
+- [2026-02-11 07:47:27] [INFO] Loaded command: roleinfo
+- [2026-02-11 07:47:27] [INFO] Loaded command: serverinfo
+- [2026-02-11 07:47:27] [INFO] Loaded command: userinfo
+- [2026-02-11 07:47:27] [INFO] Loaded event: guildMemberAdd
+- [2026-02-11 07:47:27] [INFO] Loaded event: guildMemberRemove
+- [2026-02-11 07:47:27] [INFO] Loaded event: interactionCreate
+- [2026-02-11 07:47:27] [INFO] Loaded event: inviteCreate
+- [2026-02-11 07:47:27] [INFO] Loaded event: inviteDelete
+- [2026-02-11 07:47:27] [INFO] Loaded event: messageCreate
+- [2026-02-11 07:47:27] [INFO] Loaded event: messageReactionAdd
+- [2026-02-11 07:47:27] [INFO] Loaded event: messageReactionRemove
+- [2026-02-11 07:47:27] [INFO] Loaded event: ready
+- [2026-02-11 07:47:27] [INFO] Loaded event: voiceStateUpdate
+- [2026-02-11 07:47:27] [INFO] Skipped disabled event: voiceXpTracker.js
+- [2026-02-11 07:47:27] [INFO] Loaded slash command: ping
+- [2026-02-11 07:47:27] [INFO] Loaded slash command: setembedcolor
+- [2026-02-11 07:47:27] [INFO] Loaded slash command: setembedfooter
+- [2026-02-11 07:47:27] [INFO] Loaded slash command: setembedicon
+- [2026-02-11 07:47:27] [INFO] Initializing bot and attempting to log in...
+- [2026-02-11 07:47:34] [INFO] ✅ Database connection successful
+- [2026-02-11 07:47:36] [INFO] Ready! Logged in as Parallel Universe#9387
+- [2026-02-11 07:47:36] [INFO] Bot is now online and ready to serve in 1 guilds.
+- [2026-02-11 07:47:36] [INFO] Registered all slash commands globally.
+- [2026-02-11 07:47:36] [INFO] Initializing configs for 1 guilds...
+- [2026-02-11 07:47:36] [INFO] ✅ Guild configurations initialized
+- [2026-02-11 07:47:36] [INFO] Caching invites for all guilds...
+- [2026-02-11 07:47:52] [WARN] Failed to apply auto-reaction '<a:lovely:1466773684692975743>' in guild 1351735584548196362: Unknown Message
+- [2026-02-11 07:47:56] [INFO] Cached 232 invites for guild Parallel Universe
+- [2026-02-11 07:47:56] [INFO] Successfully cached invites for 1/1 guilds
+- [2026-02-11 07:47:57] [INFO] Successfully updated dev server status message.
+- [2026-02-11 07:48:15] [WARN] Failed to apply auto-reaction '<a:lovely:1466773684692975743>' in guild 1351735584548196362: Unknown Message
+- [2026-02-11 07:48:30] [WARN] Failed to apply auto-reaction '<a:lovely:1466773684692975743>' in guild 1351735584548196362: Unknown Message
+- [2026-02-11 07:48:43] [WARN] Failed to apply auto-reaction '<a:lovely:1466773684692975743>' in guild 1351735584548196362: Unknown Message
+- [2026-02-11 07:48:54] [INFO] [InteractionCreate] Received component interaction with customId: "view_app_moderator" (ID: 1471050353490395287)
+- [2026-02-11 07:49:10] [INFO] [InteractionCreate] Received component interaction with customId: "start_app_moderator" (ID: 1471050421194719262)
+- [2026-02-11 07:49:21] [INFO] [InteractionCreate] Received modal submit with customId: "apply_modal_moderator" (ID: 1471050465667055747)
+- [2026-02-11 07:50:05] [INFO] [InteractionCreate] Received component interaction with customId: "app_accept_1" (ID: 1471050650669285376)
+- [2026-02-11 07:50:33] [WARN] Failed to apply auto-reaction '<a:lovely:1466773684692975743>' in guild 1351735584548196362: Unknown Message
+- [2026-02-11 07:51:06] [WARN] Failed to apply auto-reaction '<a:lovely:1466773684692975743>' in guild 1351735584548196362: Unknown Message
+- [2026-02-11 07:51:52] [WARN] Failed to apply auto-reaction '<a:lovely:1466773684692975743>' in guild 1351735584548196362: Unknown Message
+- [2026-02-11 07:52:14] [WARN] Failed to apply auto-reaction '<a:lovely:1466773684692975743>' in guild 1351735584548196362: Unknown Message
+- [2026-02-11 07:52:24] [WARN] Failed to apply auto-reaction '<a:lovely:1466773684692975743>' in guild 1351735584548196362: Unknown Message
+- [2026-02-11 07:52:44] [WARN] Failed to apply auto-reaction '<a:lovely:1466773684692975743>' in guild 1351735584548196362: Unknown Message
+- [2026-02-11 07:52:44] [WARN] Failed to apply auto-reaction '<a:lovely:1466773684692975743>' in guild 1351735584548196362: Unknown Message
+- [2026-02-11 07:54:45] [INFO] Received SIGINT. Shutting down gracefully...
+- [2026-02-11 07:54:45] [INFO] Starting diagnostic shutdown sequence...
+- [2026-02-11 07:54:45] [INFO] [1/2] Attempting to destroy Discord client...
+- [2026-02-11 07:54:45] [INFO] [1/2] ✅ Discord client destroyed successfully.
+- [2026-02-11 07:54:45] [INFO] [2/2] Database client not found or no end method.
+- [2026-02-11 07:54:45] [INFO] Diagnostic shutdown sequence complete.
+- [2026-02-11 07:54:45] [INFO] Shutdown complete. Exiting.

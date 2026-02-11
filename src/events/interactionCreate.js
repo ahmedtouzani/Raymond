@@ -40,6 +40,20 @@ module.exports = {
 
     if (interaction.isModalSubmit()) {
       logger.info(`[InteractionCreate] Received modal submit with customId: "${interaction.customId}" (ID: ${interaction.id})`);
+
+      // Staff Application Modal Routing
+      if (interaction.customId.startsWith('apply_modal_')) {
+        try {
+          await buttonHandlers.handleApplicationModal(interaction);
+        } catch (error) {
+          logger.error(`Error handling application modal ${interaction.customId}:`, error);
+           if (!interaction.replied && !interaction.deferred) {
+             await interaction.reply({ content: '❌ Error processing application.', flags: 64 });
+           }
+        }
+        return;
+      }
+
       const handler = buttonHandlers[interaction.customId];
       if (handler) {
         try {
@@ -118,6 +132,25 @@ module.exports = {
           }
         }
         return;
+      }
+
+      // Staff Application Decision Routing (app_accept_ID, app_reject_ID)
+      if (interaction.customId.startsWith('app_')) {
+         const parts = interaction.customId.split('_');
+         // expected: app, accept/reject, id
+         if (parts.length >= 3 && (parts[1] === 'accept' || parts[1] === 'reject')) {
+            const action = parts[1];
+            const appId = parts[2];
+            try {
+               await buttonHandlers.handleApplicationDecision(interaction, action, appId);
+            } catch (error) {
+               logger.error(`Error handling application decision ${interaction.customId}:`, error);
+               if (!interaction.replied && !interaction.deferred) {
+                  await interaction.reply({ content: '❌ Error processing decision.', flags: 64 });
+               }
+            }
+            return;
+         }
       }
 
       const handler = buttonHandlers[interaction.customId];
