@@ -120,16 +120,22 @@ test('log-channel messages are ignored without hiding changes to log-channel per
   assert.equal(context.queued.length,1);
 });
 
-test('event dispatch observes activity once and keeps business actions working after a logger failure',async()=>{
-  const { EventEmitter }=require('node:events');
-  const client=new EventEmitter(),calls=[];
-  const handler=loadModule('src/handlers/eventHandler.js',{
-    fs:{readdirSync:()=>['messageCreate.js']},path:require('node:path'),chokidar:{},'../utils/logger':silentLogger,
-    '../services/auditEvents':{supported:['messageCreate','messageDelete'],observe:async name=>{calls.push(name);throw new Error('Audit unavailable');}},
-    '/events/messageCreate.js':{name:'messageCreate',execute:async()=>calls.push('business')},
+for (const [platform, paths, eventsPath] of [
+  ['native', require('node:path'), require('node:path').resolve('fixtures', 'events')],
+  ['POSIX', require('node:path').posix, '/fixtures/events'],
+  ['Windows', require('node:path').win32, 'C:\\fixtures\\events'],
+]) {
+  test(`event dispatch on ${platform} observes once and preserves business actions after logger failure`, async () => {
+    const { EventEmitter } = require('node:events');
+    const client = new EventEmitter(), calls = [];
+    const handler = loadModule('src/handlers/eventHandler.js', {
+      fs: { readdirSync: () => ['messageCreate.js'] }, path: paths, chokidar: {}, '../utils/logger': silentLogger,
+      '../services/auditEvents': { supported: ['messageCreate', 'messageDelete'], observe: async name => { calls.push(name); throw new Error('Audit unavailable'); } },
+      [paths.join(eventsPath, 'messageCreate.js')]: { name: 'messageCreate', execute: async () => calls.push('business') },
+    });
+    handler.loadEvents(client, eventsPath);
+    assert.equal(client.listenerCount('messageCreate'), 1); assert.equal(client.listenerCount('messageDelete'), 1);
+    await client.listeners('messageCreate')[0]({});
+    assert.equal(calls.join(','), 'messageCreate,business');
   });
-  handler.loadEvents(client,'/events');
-  assert.equal(client.listenerCount('messageCreate'),1);assert.equal(client.listenerCount('messageDelete'),1);
-  await client.listeners('messageCreate')[0]({});
-  assert.equal(calls.join(','),'messageCreate,business');
-});
+}

@@ -3,14 +3,14 @@ const { getGuildConfig } = require('../../database/guildConfig');
 const { getMemberCheckData } = require('../../database/memberCheck');
 const { canVerify } = require('../../services/verificationPermissions');
 const { inspectMember } = require('./verifycheck');
-const { buildMemberReport, visibleServers } = require('../../services/memberCheck');
+const { buildMemberReport } = require('../../services/memberCheck');
 const { sendEmbed } = require('../../handlers/functions/sendEmbed');
 const { canReadRecords } = require('../../services/moderationRecords');
 
 module.exports = {
   name: 'checker', aliases: ['ck', 'check', 'membercheck'], prefixless: true, guildOnly: true,
   category: 'Moderation', cooldown: 10,
-  description: 'Inspect a member’s account, join source, moderation record and servers shared with the bot.',
+  description: 'Inspect a member’s account, join source and moderation record in this server.',
   usage: 'checker @member / ID',
   async execute(message, args = []) {
     const config = await getGuildConfig(message.guild.id, true);
@@ -24,8 +24,8 @@ module.exports = {
     if (!member) return sendEmbed(message, { title: 'Member Not Found', description: 'That member is not available in this server.' });
     await message.channel.sendTyping().catch(() => {});
     await message.guild.members.fetchMe();
-    const [data, shared] = await Promise.all([getMemberCheckData(message.guild.id, member.id, canReadRecords(message.member, message.author.id)), visibleServers(message.client, member)]);
+    const data = await getMemberCheckData(message.guild.id, member.id, canReadRecords(message.member, message.author.id));
     const report = inspectMember(member, verification, message.guild.members.me);
-    return sendEmbed(message, buildMemberReport(member, data, shared, report), { allowedMentions: { parse: [] } });
+    return sendEmbed(message, buildMemberReport(member, data, report), { allowedMentions: { parse: [] } });
   },
 };

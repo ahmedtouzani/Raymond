@@ -20,26 +20,7 @@ function joinSource(member, data) {
   }
   return 'Unknown · Could be Discovery, a deleted invite, or another join method.';
 }
-async function visibleServers(client, member) {
-  const guilds = [...client.guilds.cache.values()].filter(guild => guild.id !== member.guild.id);
-  const matches = [{ id: member.guild.id, name: member.guild.name, owner: member.guild.ownerId === member.id }];
-  let unavailable = 0;
-  // Limit in-flight Discord requests and overall work on very large bot installations.
-  const candidates = guilds.slice(0, 50);
-  for (let start = 0; start < candidates.length; start += 5) {
-    await Promise.all(candidates.slice(start, start + 5).map(async guild => {
-      try {
-        const found = await guild.members.fetch(member.id);
-        if (found) matches.push({ id: guild.id, name: guild.name, owner: guild.ownerId === member.id });
-      } catch (error) {
-        if (error.code !== 10007) unavailable++;
-      }
-    }));
-  }
-  matches.sort((a, b) => a.id.localeCompare(b.id));
-  return { matches, unavailable, limited: guilds.length > candidates.length };
-}
-function buildMemberReport(member, data, shared, verification) {
+function buildMemberReport(member, data, verification) {
   const user = member.user;
   const roles = [...member.roles.cache.values()].filter(role => role.id !== member.guild.id)
     .sort((a, b) => b.position - a.position);
@@ -49,10 +30,6 @@ function buildMemberReport(member, data, shared, verification) {
   if (data.warnings) alerts.push(`${data.warnings} recorded warning(s) in this server.`);
   if (data.jail) alerts.push('Currently recorded as jailed.');
   alerts.push(...verification.issues);
-  const servers = shared.matches.slice(0, 12).map(guild => `• ${escapeMarkdown(guild.name).slice(0, 70)}${guild.owner ? ' · Owner' : ''}`);
-  if (shared.matches.length > 12) servers.push(`+${shared.matches.length - 12} more shared servers`);
-  if (shared.unavailable || shared.limited) servers.push('Some servers could not be checked.');
-  servers.push('Only servers shared with this bot are visible.');
   const permissions = ['Administrator', 'ManageGuild', 'ManageRoles', 'BanMembers', 'KickMembers', 'ModerateMembers']
     .filter(permission => member.permissions.has(Flags[permission]));
   return {
@@ -68,9 +45,8 @@ function buildMemberReport(member, data, shared, verification) {
       ...(data.recordsIncluded ? [{ name: 'Staff Records', value: `Cases: **${data.caseCount ?? 'Unavailable'}** · Active notes: **${data.noteCount ?? 'Unavailable'}**\nUse \`case @member\` or \`mn @member\` for private details.` }] : []),
       { name: `Roles · ${roles.length}`, value: roles.length ? `${roles.slice(0, 15).map(role => `<@&${role.id}>`).join(' ')}${roles.length > 15 ? ` (+${roles.length - 15} more)` : ''}` : 'No roles' },
       { name: 'Key Permissions', value: permissions.join(' · ') || 'None' },
-      { name: `Shared Servers · ${shared.matches.length}${shared.limited || shared.unavailable ? '+' : ''}`, value: servers.join('\n').slice(0, 1000) },
       { name: 'Review Notes', value: alerts.length ? `${emojis.warning} ${alerts.slice(0, 10).join('\n• ')}`.slice(0, 1000) : `${emojis.success} No issues found in the available records.` },
     ], footer: { text: 'Moderation overview • This check does not change roles or settings' },
   };
 }
-module.exports = { buildMemberReport, visibleServers, joinSource };
+module.exports = { buildMemberReport, joinSource };

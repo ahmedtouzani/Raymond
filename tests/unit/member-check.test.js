@@ -11,15 +11,14 @@ function member() {
     roles: { cache: new Map() }, permissions: { has: () => false } };
 }
 
-test('member report includes account/join ages, moderation data and shared server ownership', () => {
+test('member report includes account/join ages and moderation data scoped to the current server', () => {
   const target = member();
   const data = { inviteAvailable: true, invite: { inviter_id: 'inviter', join_method: 'invite', joined_at: new Date(target.joinedTimestamp) }, warnings: 2, jail: true };
-  const shared = { matches: [{ id: 'current', name: 'Current Server', owner: false }, { id: 'owned', name: 'Owned Server', owner: true }] };
-  const report = service.buildMemberReport(target, data, shared, { status: 'Verified', type: 'Boy', issues: [] });
+  const report = service.buildMemberReport(target, data, { status: 'Verified', type: 'Boy', issues: [] });
   assert(report.fields.find(field => field.name === 'Account Created').value.includes('10 days old'));
   assert(report.fields.find(field => field.name === 'Joined This Server').value.includes('1 days here'));
   assert(report.fields.find(field => field.name === 'Join Source').value.includes('<@inviter>'));
-  assert(report.fields.find(field => field.name.startsWith('Shared Servers')).value.includes('Owned Server · Owner'));
+  assert.equal(report.fields.some(field => field.name.startsWith('Shared Servers')), false);
   assert(report.fields.find(field => field.name === 'Review Notes').value.includes('2 recorded warning'));
 });
 
@@ -31,17 +30,36 @@ test('inviter attribution does not invent history or reuse an earlier join recor
   assert.match(service.joinSource(target, { inviteAvailable: true, invite: { joined_at: new Date(target.joinedTimestamp), join_method: 'vanity' } }), /No individual inviter/);
 });
 
-test('shared server lookup distinguishes nonmembership from inaccessible servers', async () => {
-  const target = member();
-  const guild = (id, fetch) => ({ id, name: id, ownerId: target.id, members: { fetch } });
-  const client = { guilds: { cache: new Map([
-    ['current', target.guild], ['shared', guild('shared', async () => target)],
-    ['absent', guild('absent', async () => { throw { code: 10007 }; })],
-    ['inaccessible', guild('inaccessible', async () => { throw { code: 50013 }; })],
-  ]) } };
-  const result = await service.visibleServers(client, target);
-  assert.equal(result.matches.length, 2); assert.equal(result.unavailable, 1);
-  assert.equal(result.matches.find(item => item.id === 'shared').owner, true);
+test('checker never accesses another guild or discloses cross-server membership', async () => {
+  const target = member(); target.id = '123456789012345678';
+  target.user.id = target.id;
+  const reports = [], queries = [];
+  const bot = {};
+  const guild = { id: target.guild.id, members: {
+    me: bot, fetchMe: async () => bot,
+    fetch: async options => { assert.equal(options.user, target.id); return target; },
+  } };
+  const command = loadModule('src/commands/moderation/checker.js', {
+    '../../database/guildConfig': { getGuildConfig: async () => ({ settings: { verification: {} } }) },
+    '../../database/memberCheck': { getMemberCheckData: async (...args) => {
+      queries.push(args); return { inviteAvailable: true, invite: null, warnings: 0, jail: false };
+    } },
+    '../../services/verificationPermissions': { canVerify: () => true },
+    './verifycheck': { inspectMember: () => ({ status: 'Verified', type: 'Boy', issues: [] }) },
+    '../../services/memberCheck': service,
+    '../../handlers/functions/sendEmbed': { sendEmbed: async (_, report) => reports.push(report) },
+    '../../services/moderationRecords': { canReadRecords: () => true },
+  });
+  const client = {};
+  Object.defineProperty(client, 'guilds', { get() { throw new Error('Cross-guild access forbidden'); } });
+  await command.execute({ guild, client, author: { id: 'staff' }, member: {},
+    mentions: { members: { first: () => target } }, channel: { sendTyping: async () => {} },
+  });
+  assert.equal(queries.length, 1);
+  assert.deepEqual(queries[0], [guild.id, target.id, true]);
+  assert.equal(reports.length, 1);
+  assert.equal(reports[0].fields.some(field => /shared servers/i.test(field.name)), false);
+  assert.equal(service.visibleServers, undefined);
 });
 
 test('checker database queries stay scoped to one guild/user and keep unavailable data explicit', async () => {
