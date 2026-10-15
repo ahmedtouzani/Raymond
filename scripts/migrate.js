@@ -52,8 +52,8 @@ class Migrator {
     }
   }
 
-  async ensureMigrationsTable() {
-    await this.pool.query(`
+  async ensureMigrationsTable(client = this.pool) {
+    await client.query(`
       CREATE TABLE IF NOT EXISTS ${MIGRATIONS_TABLE} (
         id SERIAL PRIMARY KEY,
         name VARCHAR(255) NOT NULL UNIQUE,
@@ -63,53 +63,41 @@ class Migrator {
     logger.info(`✅ '${MIGRATIONS_TABLE}' table ensured.`);
   }
 
-  async getExecutedMigrations() {
-    const { rows } = await this.pool.query(`SELECT name FROM ${MIGRATIONS_TABLE} ORDER BY name`);
+  async getExecutedMigrations(client = this.pool) {
+    const { rows } = await client.query(`SELECT name FROM ${MIGRATIONS_TABLE} ORDER BY name`);
     return new Set(rows.map(row => row.name));
   }
 
   async run() {
     await this.connect();
-    await this.ensureMigrationsTable();
-
-    const executedMigrations = await this.getExecutedMigrations();
-    const migrationFiles = orderMigrations((await fs.readdir(MIGRATIONS_DIR))
-      .filter(file => file.endsWith('.sql')));
-
-    if (migrationFiles.length === 0) {
-      logger.info('No migration files found.');
-      return;
-    }
-
-    let appliedCount = 0;
-    for (const file of migrationFiles) {
-      if (executedMigrations.has(file)) {
-        continue;
-      }
-
-      logger.info(`🔄 Applying migration: ${file}...`);
-      const sql = await fs.readFile(path.join(MIGRATIONS_DIR, file), 'utf8');
-      const client = await this.pool.connect();
-      try {
-        await client.query('BEGIN');
+    const client = await this.pool.connect();
+    try {
+      await client.query('BEGIN');
+      // The transaction lock is released automatically on commit, rollback or
+      // disconnect, and works with transaction-pooled PostgreSQL connections.
+      await client.query('SELECT pg_advisory_xact_lock($1)', [1460237138]);
+      await this.ensureMigrationsTable(client);
+      const executedMigrations = await this.getExecutedMigrations(client);
+      const migrationFiles = orderMigrations((await fs.readdir(MIGRATIONS_DIR))
+        .filter(file => file.endsWith('.sql')));
+      let appliedCount = 0;
+      for (const file of migrationFiles) {
+        if (executedMigrations.has(file)) continue;
+        logger.info(`🔄 Applying migration: ${file}...`);
+        const sql = await fs.readFile(path.join(MIGRATIONS_DIR, file), 'utf8');
         await client.query(migrationSql(sql));
         await client.query(`INSERT INTO ${MIGRATIONS_TABLE} (name) VALUES ($1)`, [file]);
-        await client.query('COMMIT');
-        logger.info(`✅ Migration ${file} applied successfully.`);
         appliedCount++;
-      } catch (error) {
-        await client.query('ROLLBACK');
-        logger.error(`❌ Failed to apply migration ${file}:`, error);
-        throw error;
-      } finally {
-        client.release();
       }
-    }
-
-    if (appliedCount === 0) {
-      logger.info('Database schema is already up to date.');
-    } else {
-      logger.info(`Applied ${appliedCount} new migration(s).`);
+      await client.query('COMMIT');
+      if (appliedCount) logger.info(`Committed ${appliedCount} new migration(s).`);
+      else logger.info('Database schema is already up to date.');
+    } catch (error) {
+      await client.query('ROLLBACK');
+      logger.error('Migration batch failed and was rolled back:', error);
+      throw error;
+    } finally {
+      client.release();
     }
   }
 

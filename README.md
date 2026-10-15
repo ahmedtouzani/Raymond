@@ -18,7 +18,6 @@ Discord server moderation, audit logging and community tools built with Node.js,
 Use a supported Node.js version (the development workspace runs Node.js 24) and PostgreSQL. Install dependencies with `npm ci`, configure `BOT_TOKEN`, `DATABASE_URL` and `OWNER_ID` privately using `.env.example`, then run:
 
 ```bash
-npm run migrate
 npm start
 ```
 
@@ -39,4 +38,4 @@ See [tests/README.md](tests/README.md). Integration checks use their own disposa
 
 AI commands, automatic chat, conversation history, memory processing, provider integration and model dependencies have been removed. There are no AI API keys or pgvector requirements.
 
-Migration `20261015010000_remove_ai_features.sql` permanently removes AI tables and their stored data, clears AI guild settings and removes pgvector if no other database objects depend on it. It preserves moderation, leveling, setup and Audit Logs. Historical migrations and release notes remain as installation and release history; they do not describe active AI features. Running migrations on an older installation applies this data deletion to the selected database.
+Migration `20261015010000_remove_ai_features.sql` permanently removes AI tables and their stored data, clears AI guild settings and removes pgvector if no other database objects depend on it. It preserves moderation, leveling, setup and Audit Logs. Historical migrations and release notes remain as installation and release history; they do not describe active AI features. Every `npm start` applies pending migrations to `DATABASE_URL` before starting the bot, including this permanent AI cleanup on older installations. Back up an existing production database before its first startup with this version. Startup stops if migration fails; applied migrations are not repeated.

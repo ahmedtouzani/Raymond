@@ -8,3 +8,7 @@ nixPkgs = ["...", "liberation_ttf"]
 cmds = [
   "npm install"
 ]
+
+# Migrate the database before loading any bot services or logging in to Discord.
+[start]
+cmd = "npm start"

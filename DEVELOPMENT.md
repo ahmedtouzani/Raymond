@@ -17,7 +17,7 @@ The two equals signs in the dotenv prefix entries mean the value is `=`. Update 
 
 ## Database and tests
 
-Run `npm run migrate` against the local database before starting the bot. AI features have been removed. Migration `20261015010000_remove_ai_features.sql` permanently deletes their tables and stored data and removes their guild configuration keys. Review the selected database before running migrations; the cloud development helper uses only the local database. Historical migration names are preserved; the runner orders the level-settings dependency correctly and owns SQL transactions and ledger updates.
+The canonical entry point `src/index.js` runs pending migrations before loading bot services and connecting to Discord. Both `npm start` and `npm run dev` use it; Railway/Nixpacks starts with `npm start`. A migration failure exits with a nonzero status and prevents bot startup. You can still run `npm run migrate` separately for diagnostics. AI features have been removed. Migration `20261015010000_remove_ai_features.sql` permanently deletes their tables and stored data and removes their guild configuration keys. Review the selected database before running migrations; the cloud development helper uses only the local database. Historical migration names are preserved; the runner orders the level-settings dependency correctly and commits pending SQL and ledger changes together under a PostgreSQL transaction advisory lock. Concurrent startups serialize before reading the migration ledger; failed batches roll back together.
 
 ```bash
 DATABASE_URL='postgresql:///raymond_dev?host=/workspace/.raymond/socket&user=raymond' npm run migrate

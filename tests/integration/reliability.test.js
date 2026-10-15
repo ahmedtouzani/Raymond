@@ -299,6 +299,37 @@ describe('Database reliability', { skip: !adminUrl }, () => {
     assert.equal((await pool.query("SELECT to_regclass('rollback_probe') AS name")).rows[0].name, null);
   });
 
+  it('concurrent migration runners apply the same pending migration exactly once', async () => {
+    const Migrator = loadModule('scripts/migrate.js', {
+      pg: { Pool }, path: require('node:path'), dotenv: { config() {} },
+      '../src/config/database': require('../../src/config/database'), '../src/utils/logger': silentLogger,
+      fs: { promises: { readdir: async () => ['concurrent_probe.sql'], readFile: async () =>
+        'CREATE TABLE concurrent_probe (id INTEGER PRIMARY KEY); SELECT pg_sleep(0.1); INSERT INTO concurrent_probe VALUES (1);' } },
+    }, { DATABASE_URL: url });
+    const first = new Migrator(), second = new Migrator();
+    try { await Promise.all([first.run(), second.run()]); }
+    finally { await Promise.all([first.close(), second.close()]); }
+    assert.equal((await pool.query('SELECT count(*)::int AS count FROM concurrent_probe')).rows[0].count, 1);
+    assert.equal((await pool.query("SELECT count(*)::int AS count FROM schema_migrations WHERE name='concurrent_probe.sql'")).rows[0].count, 1);
+  });
+
+  it('a failing migration rolls back earlier pending files and their ledger entries', async () => {
+    const Migrator = loadModule('scripts/migrate.js', {
+      pg: { Pool }, path: require('node:path'), dotenv: { config() {} },
+      '../src/config/database': require('../../src/config/database'), '../src/utils/logger': silentLogger,
+      fs: { promises: {
+        readdir: async () => ['batch_1_probe.sql', 'batch_2_probe.sql'],
+        readFile: async file => String(file).endsWith('batch_1_probe.sql') ?
+          'CREATE TABLE batch_rollback_probe (id INTEGER);' : 'INSERT INTO missing_batch_probe VALUES (1);',
+      } },
+    }, { DATABASE_URL: url });
+    const migrator = new Migrator();
+    try { await assert.rejects(() => migrator.run(), /missing_batch_probe/); }
+    finally { await migrator.close(); }
+    assert.equal((await pool.query("SELECT to_regclass('batch_rollback_probe') AS name")).rows[0].name, null);
+    assert.equal((await pool.query("SELECT count(*)::int AS count FROM schema_migrations WHERE name IN ('batch_1_probe.sql','batch_2_probe.sql')")).rows[0].count, 0);
+  });
+
   it('simultaneous text and voice updates preserve both counters for new users', async () => {
     await Promise.all(Array.from({ length: 20 }, (_, index) => levels.addXp('guild', 'user', index % 2 ? 10 : 15, index % 2 ? 'voice' : 'text')));
     const user = await levels.getUserLevel('guild', 'user');
