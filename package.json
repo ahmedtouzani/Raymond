@@ -24,7 +24,7 @@
   "author": "AHMET",
   "license": "ISC",
   "dependencies": {
-    "@discordjs/voice": "^0.18.0",
+    "@discordjs/voice": "^0.19.2",
     "@napi-rs/canvas": "^0.1.89",
     "chokidar": "^4.0.3",
     "commander": "^11.1.0",
@@ -41,5 +41,8 @@
   },
   "bin": {
     "db-backup": "./scripts/backup-cli.js"
+  },
+  "engines": {
+    "node": ">=22.12.0"
   }
 }

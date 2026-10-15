@@ -84,3 +84,8 @@ Message text capture is opt-in and disabled by default. Uncached content is unav
 ### Setup presentation
 
 `setup` uses Components V2, matching the Help command. The home view has section cards; section views have Configure buttons and a feature selector. Editors focus on the selected field and show related settings from the same group. Collection pagination, native selectors, modal editing, permission checks and draft/CAS save behavior remain in place. Closing or expiring a panel replaces its controls with a Components V2 session notice. Existing open panels should be reopened after a bot restart.
+
+
+### AFK voice connections
+
+`afk` and `unafk` remain private owner commands. AFK requires View Channel and Connect, waits for a fully ready voice connection and closes failed sessions. Repeated calls to the same ready channel reuse the existing connection; `unafk` cancels a pending attempt. A Discord connection failure is handled separately from a text-response failure. Voice uses `@discordjs/voice` 0.19.2+ with DAVE support, requiring Node.js 22.12+; Nixpacks selects Node.js 24. Hosts must permit Discord Voice WebSocket and UDP traffic. The managed development cloud returned HTTP 403 on Voice handshakes; a successful Gateway login does not validate live Voice transport.

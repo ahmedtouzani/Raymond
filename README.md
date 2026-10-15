@@ -15,7 +15,7 @@ Discord server moderation, audit logging and community tools built with Node.js,
 
 ## Setup
 
-Use a supported Node.js version (the development workspace runs Node.js 24) and PostgreSQL. Install dependencies with `npm ci`, configure `BOT_TOKEN`, `DATABASE_URL` and `OWNER_ID` privately using `.env.example`, then run:
+Use Node.js 22.12 or newer (Node.js 24 recommended) and PostgreSQL. Install dependencies with `npm ci`, configure `BOT_TOKEN`, `DATABASE_URL` and `OWNER_ID` privately using `.env.example`, then run:
 
 ```bash
 npm start

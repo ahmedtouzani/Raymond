@@ -12,3 +12,6 @@ cmds = [
 # Migrate the database before loading any bot services or logging in to Discord.
 [start]
 cmd = "npm start"
+
+[variables]
+NIXPACKS_NODE_VERSION = "24"
