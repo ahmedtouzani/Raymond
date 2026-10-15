@@ -10,7 +10,8 @@ const MIGRATIONS_DIR = path.join(__dirname, '../migrations');
 const MIGRATIONS_TABLE = 'schema_migrations';
 
 function orderMigrations(files) {
-  const dependencies = { 'add_force_theme.sql': ['add_guild_level_settings.sql'] };
+  const dependencies = { 'add_force_theme.sql': ['add_guild_level_settings.sql'],
+    '20261015020000_leveling_signature.sql': ['add_guild_level_settings.sql'] };
   const ordered = [], visited = new Set();
   function visit(file) {
     if (visited.has(file)) return;

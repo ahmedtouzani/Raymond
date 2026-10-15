@@ -55,6 +55,13 @@ module.exports = {
     try {
       await registerSlashCommands(client);
       await initializeGuildConfigs(client);
+      if (!require('../config/development').isDevelopment()) {
+        const voiceXp = require('../services/voiceXp');
+        for (const guild of client.guilds.cache.values()) {
+          for (const state of guild.voiceStates.cache.values()) voiceXp.sync(state);
+        }
+        client.on('guildDelete', guild => voiceXp.stopGuild(guild.id));
+      }
       await cleanupOrphanedChannels(client);
       await cacheAllInvites(client);
       await updateDevServerStatus(client);

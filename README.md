@@ -8,7 +8,8 @@ Discord server moderation, audit logging and community tools built with Node.js,
 - Verification, jail, moderation cases and private staff notes.
 - Member checks with account age, join information and recorded invitation attribution.
 - Configurable staff Audit Logs for moderation, messages, members, server changes and voice.
-- Text/voice leveling, rank cards, leaderboards and reward roles.
+- Text/voice leveling, unified Raymond signature rank/leaderboard/podium cards and reward roles.
+- Per-server XP controls, voice eligibility rules and configurable level-up announcements.
 - Temporary voice channels, join roles, staff applications, role menus and Modmail.
 - Custom emoji importing, including animated emojis, with an explicit preview.
 - Declared command shortcuts that work without a prefix.

@@ -4,7 +4,7 @@ const {
   setGuildConfig,
   setGuildPrefix,
 } = require("../database/guildConfig");
-const { AttachmentBuilder, EmbedBuilder, PermissionsBitField } = require("discord.js");
+const { EmbedBuilder, PermissionsBitField } = require("discord.js");
 const logger = require("../utils/logger"); // Unified logger
 const { getAutoReactionsForGuild } = require("../database/autoReactSettings");
 const { authorizeCommand } = require('../handlers/commandAuthorization');
@@ -25,71 +25,32 @@ module.exports = {
       if (!knownShortcut) return;
     }
 
-    // === LEVEL SYSTEM: TEXT XP ===
-    const { addXp } = require("../database/levelSystem");
-    const { getGuildSettingsWithDefaults } = require("../database/levelSettings");
-    const { handleLevelUpRoles } = require("../utils/levelRoleManager");
-    const levelSettings = await getGuildSettingsWithDefaults(message.guild.id).catch(() => null);
-    const COOLDOWN = ((levelSettings?.xp_cooldown ?? 60) * 1000);
-    if (!global.textXpCooldown) global.textXpCooldown = {};
-    const cooldownKey = `${message.guild.id}-${message.author.id}`;
-    const now = Date.now();
-    if (
-      !development && (
-        !global.textXpCooldown[cooldownKey] ||
-        now - global.textXpCooldown[cooldownKey] > COOLDOWN)
-    ) {
-      global.textXpCooldown[cooldownKey] = now;
-      if (!levelSettings?.excluded_channels?.includes(message.channel.id)) {
-        const minXp = levelSettings?.text_xp_min ?? 15;
-        const maxXp = levelSettings?.text_xp_max ?? 25;
-        const multiplier = levelSettings?.xp_multiplier ?? 1;
-        const rawXp = Math.floor(minXp + Math.random() * (maxXp - minXp + 1));
-        const xpToAdd = Math.max(0, Math.round(rawXp * multiplier));
-
-        addXp(message.guild.id, message.author.id, xpToAdd, "text")
-          .then(async ({ level, leveledUp }) => {
-            if (!leveledUp) return;
-
-            await handleLevelUpRoles(
-              message.client,
-              message.guild.id,
-              message.author.id,
-              "text",
-              level
-            );
-
-            if (!levelSettings?.levelup_enabled) return;
-
-            const channelId = levelSettings?.levelup_channel_id;
-            const targetChannel = channelId
-              ? message.guild.channels.cache.get(channelId) || null
-              : message.channel;
-            if (!targetChannel || !targetChannel.isTextBased()) return;
-
-            const template = levelSettings?.levelup_message || 'Congratulations {user}! You reached level {level}!';
-            const content = template
-              .replaceAll('{user}', `<@${message.author.id}>`)
-              .replaceAll('{level}', String(level));
-
-            try {
-              if (levelSettings?.levelup_include_card) {
-                const { getUserLevel } = require("../database/levelSystem");
-                const { generateRankCard } = require("../utils/canvasRankCard");
-                const userData = await getUserLevel(message.guild.id, message.author.id);
-                const buffer = await generateRankCard(userData, message.member, 'text', 0, levelSettings?.theme_preset || 'dark');
-                const attachment = new AttachmentBuilder(buffer, { name: 'level-up.png' });
-                await targetChannel.send(asEmbed({ content, files: [attachment] }));
-              } else {
-                await targetChannel.send(asEmbed({ content }));
-              }
-            } catch (err) {
-            }
-          })
-          .catch(() => { });
+    // Guild settings are coalesced/cached; messages on cooldown perform no XP write.
+    if (!development) {
+      const { getGuildSettingsWithDefaults } = require('../database/levelSettings');
+      const settings = await getGuildSettingsWithDefaults(message.guild.id).catch(() => null);
+      if (settings?.text_xp_enabled !== false && settings && !settings.excluded_channels?.includes(message.channel.id)) {
+        if (!global.textXpCooldown) global.textXpCooldown = new Map();
+        const cooldowns = global.textXpCooldown;
+        const key = `${message.guild.id}:${message.author.id}`, now = Date.now();
+        if ((cooldowns.get(key) || 0) <= now) {
+          cooldowns.set(key, now + (settings.xp_cooldown ?? 60) * 1000);
+          // Expired entries are swept with a bounded map instead of retaining every member forever.
+          if (cooldowns.size > 20000) {
+            for (const [id, until] of cooldowns) if (until <= now) cooldowns.delete(id);
+            while (cooldowns.size > 20000) cooldowns.delete(cooldowns.keys().next().value);
+          }
+          const amount = Math.max(0, Math.round(((settings.text_xp_min ?? 15) + Math.floor(Math.random() * ((settings.text_xp_max ?? 25) - (settings.text_xp_min ?? 15) + 1))) * (settings.xp_multiplier ?? 1)));
+          require('../database/levelSystem').addXp(message.guild.id, message.author.id, amount, 'text')
+            .then(async result => {
+              if (result.leveledUp) await require('../services/levelAnnouncements').announceLevelUp(message.guild, message.member, 'text', result.level, settings, message.channel);
+            }).catch(error => {
+              // A Discord announcement failure must not refund successfully committed XP.
+              logger.warn('Text XP or announcement failed', { guildId: message.guild.id, code: error.code || error.name });
+            });
+        }
       }
     }
-    // === END LEVEL SYSTEM ===
 
     // --- Auto-Reaction Logic ---
     try {

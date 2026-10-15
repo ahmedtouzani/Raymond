@@ -13,7 +13,7 @@ const membership = {
   setup: ['setup', 'auditlogs', 'setupapps', 'tempvoice', 'setautorole', 'setstats', 'setembedcolor', 'setembedfooter', 'setembedicon', 'autoban', 'autospam', 'levelsetup', 'setprefix'],
   verification: ['verify', 'vb', 'vg', 'verifycheck'],
   moderation: ['checker', 'case', 'modnote'],
-  leveling: ['level', 'leaderboard', 'top', 'ranktheme', 'levelrole'],
+  leveling: ['level', 'leaderboard', 'top', 'levelrole'],
   community: ['stealemoji', 'rolemenu', 'modmail'],
 };
 // Detailed guidance for workflows whose legacy command metadata lacks examples or access rules.
@@ -31,7 +31,7 @@ const docs = {
   modnote: { description: 'Keep internal staff notes on members, separate from warnings and sanctions.', usage: ['mn add @member <note>', 'mn @member [page]', 'mn delete <noteID>'], examples: ['mn add @member Follow up on the reported incident', 'mn @member'], access: 'Moderation permissions', note: 'Use a staff channel. Details arrive by DM; removing another moderator’s note requires Administrator, Manage Server or the bot owner.' },
   stealemoji: { description: 'Preview and import static or animated custom emojis from another server.', usage: ['se <custom emoji> [new_name]', 'se <emoji1> <emoji2>'], examples: ['se <a:warningbug:1467300628907954300> Warning'], access: 'Create Expressions or Manage Expressions', botAccess: 'Create Expressions or Manage Expressions', note: 'Up to 10 emojis per preview. Nothing is added until you confirm. Unicode emojis cannot be imported.' },
   move: { description: 'Move members to a voice channel using mentions, IDs or names.', examples: ['aji @member', 'aji @member #voice-channel'], note: 'When no channel is provided, your current voice channel is used.' },
-  level: { description: 'Show a member’s text or voice rank card, level and XP progress.', examples: ['r', 'r @member voice', 'r text neon'] },
+  level: { description: 'Show a member’s text or voice rank card, level and XP progress.', examples: ['r', 'r @member voice', 'r text'] },
   leaderboard: { examples: ['lb text', 'lb voice 2'] },
   top: { examples: ['top text', 'top voice'] },
   avatar: { examples: ['a', 'a @member'] },
@@ -44,7 +44,6 @@ const docs = {
   setembedcolor: { examples: ['setembedcolor #8594F0'], access: 'Administrator' },
   setembedfooter: { examples: ['setembedfooter Welcome to our community'], access: 'Administrator' },
   setembedicon: { examples: ['setembedicon https://example.com/icon.png'], access: 'Administrator' },
-  ranktheme: { examples: ['ranktheme dark', 'ranktheme neon'], note: 'A forced server theme overrides personal preferences.' },
 };
 function ownerCommand(command) {
   const category = String(command.category || '').toLowerCase();

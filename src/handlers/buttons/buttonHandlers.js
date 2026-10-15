@@ -88,116 +88,13 @@ async function safeDeferUpdate(interaction) {
 
 // Helper function for leaderboard pagination
 async function handleLeaderboardPage(interaction, type, page, isRefresh = false) {
-  const { getLeaderboard } = require('../../database/levelSystem');
-  const { generateLeaderboard } = require('../../utils/canvasLeaderboard');
-  const { getGuildTheme } = require('../../database/levelSettings');
-  const { AttachmentBuilder } = require('discord.js');
-
   try {
-    // Interaction is already deferred by the routing layer
-    const usersPerPage = 10;
-    const offset = (page - 1) * usersPerPage;
-
-    const leaderboard = await getLeaderboard(interaction.guild.id, type, 100);
-
-    if (!leaderboard || leaderboard.length === 0) {
-      await interaction.editReply(asEmbed({ content: `No ${type} XP data available yet.`, components: [] }));
-      return;
-    }
-
-    const totalPages = Math.ceil(leaderboard.length / usersPerPage);
-    const pageData = leaderboard.slice(offset, offset + usersPerPage);
-
-    function calculateNextLevelXp(level) {
-      if (level >= 100) return 0;
-      if (level < 30) {
-        return 500 * level * level - 500 * level + 1000;
-      } else {
-        return 200000 + (level - 30) * 50000;
-      }
-    }
-
-    // Prepare user data for Canvas
-    const users = [];
-    for (let i = 0; i < pageData.length; i++) {
-      const globalRank = offset + i + 1;
-      const user = pageData[i];
-
-      try {
-        const member = await interaction.guild.members.fetch(user.user_id);
-        const nextLevelXp = user.next_level_xp || calculateNextLevelXp(user.level);
-
-        users.push({
-          rank: globalRank,
-          username: member.user.username,
-          avatarURL: member.user.displayAvatarURL({ extension: 'png', size: 128 }),
-          level: user.level,
-          currentXP: user.xp,
-          nextLevelXP: nextLevelXp,
-          totalXP: user.xp
-        });
-      } catch (error) {
-        continue;
-      }
-    }
-
-    if (users.length === 0) {
-      await interaction.editReply(asEmbed({ content: 'No active users found on this page.', components: [] }));
-      return;
-    }
-
-    // Get server theme
-    const theme = await getGuildTheme(interaction.guild.id);
-
-    // Generate Canvas leaderboard
-    const imageBuffer = await generateLeaderboard({
-      users,
-      guild: interaction.guild,
-      type,
-      page,
-      totalPages,
-      theme
-    });
-
-    const attachment = new AttachmentBuilder(imageBuffer, { name: 'leaderboard.png' });
-
-    // Navigation buttons
-    const row = new ActionRowBuilder();
-    row.addComponents(
-      new ButtonBuilder()
-        .setCustomId(`lb_${type}_${Math.max(1, page - 1)}`)
-        .setLabel('◀️ Previous')
-        .setStyle(ButtonStyle.Primary)
-        .setDisabled(page === 1),
-
-      new ButtonBuilder()
-        .setCustomId(`lb_page_${type}_${page}`)
-        .setLabel(`Page ${page}/${totalPages}`)
-        .setStyle(ButtonStyle.Secondary)
-        .setDisabled(true),
-
-      new ButtonBuilder()
-        .setCustomId(`lb_${type}_${Math.min(totalPages, page + 1)}`)
-        .setLabel('Next ▶️')
-        .setStyle(ButtonStyle.Primary)
-        .setDisabled(page === totalPages),
-
-      new ButtonBuilder()
-        .setCustomId(`lb_refresh_${type}_${page}`)
-        .setLabel('🔄 Refresh')
-        .setStyle(ButtonStyle.Success)
-    );
-
-    // Only edit if interaction was deferred or replied
-    if (interaction.deferred || interaction.replied) {
-      await interaction.editReply({ files: [attachment], components: [row] });
-    }
+    const { leaderboardMessage } = require('../../services/levelCards');
+    const payload = await leaderboardMessage(interaction.guild, type, page, isRefresh);
+    await interaction.editReply(payload);
   } catch (error) {
-    console.error('Error handling leaderboard page:', error);
-    // Only edit if interaction was deferred or replied
-    if (interaction.deferred || interaction.replied) {
-      await interaction.editReply(asEmbed({ content: '❌ Failed to load leaderboard.', components: [] })).catch(() => { });
-    }
+    console.error('Could not update leaderboard:', error.message);
+    await interaction.editReply(asEmbed({ content: 'Could not update the leaderboard. Please try again.', components: [], attachments: [] })).catch(() => {});
   }
 }
 
@@ -355,61 +252,13 @@ module.exports = {
 
   // Level Setup handlers
   levelsetup_theme: async (interaction) => {
-    const { getGuildSettingsWithDefaults, updateGuildSettings } = require('../../database/levelSettings');
-
-    try {
-      await safeDeferUpdate(interaction);
-
-      const settings = await getGuildSettingsWithDefaults(interaction.guild.id);
-
-      const embed = new EmbedBuilder()
-        .setTitle('🎨 Theme Settings')
-        .setDescription('Configure theme for rank cards and leaderboards')
-        .setColor(0x5865F2)
-        .addFields(
-          { name: 'Server Theme', value: `**${settings.theme_preset}**`, inline: true },
-          { name: 'Force for All Users', value: settings.force_theme ? '✅ Enabled' : '❌ Disabled', inline: true },
-          { name: '\u200b', value: '\u200b', inline: true }, // Spacer
-          { name: 'Available Themes', value: '• **Dark** - Classic dark theme\n• **Light** - Clean light theme\n• **Neon** - Vibrant neon colors\n• **Gradient** - Purple gradient', inline: false },
-          { name: 'Force Theme Info', value: 'When enabled, all users will see the server theme regardless of their personal preference set via `!ranktheme`.', inline: false }
-        );
-
-      const row1 = new ActionRowBuilder()
-        .addComponents(
-          new StringSelectMenuBuilder()
-            .setCustomId('levelsetup_theme_select')
-            .setPlaceholder('Select a theme')
-            .addOptions([
-              { label: 'Dark', value: 'dark', description: 'Classic dark theme', emoji: '🌙' },
-              { label: 'Light', value: 'light', description: 'Clean light theme', emoji: '☀️' },
-              { label: 'Neon', value: 'neon', description: 'Vibrant neon colors', emoji: '✨' },
-              { label: 'Gradient', value: 'gradient', description: 'Purple gradient', emoji: '🌈' }
-            ])
-        );
-
-      const row2 = new ActionRowBuilder()
-        .addComponents(
-          new ButtonBuilder()
-            .setCustomId('levelsetup_theme_force_toggle')
-            .setLabel(settings.force_theme ? '🔓 Disable Force Theme' : '🔒 Enable Force Theme')
-            .setStyle(settings.force_theme ? ButtonStyle.Danger : ButtonStyle.Success),
-          new ButtonBuilder()
-            .setCustomId('levelsetup_theme_reset_all')
-            .setLabel('🔄 Reset All User Themes')
-            .setStyle(ButtonStyle.Secondary),
-          new ButtonBuilder()
-            .setCustomId('levelsetup_back')
-            .setLabel('← Back')
-            .setStyle(ButtonStyle.Secondary)
-        );
-
-      await interaction.editReply({ embeds: [embed], components: [row1, row2] });
-    } catch (error) {
-      console.error('[LevelSetup] Theme menu error:', error);
-    }
+    if (await denyIfNotAdmin(interaction)) return;
+    await safeDeferUpdate(interaction);
+    await interaction.editReply(asEmbed({ content: 'Raymond uses one signature card design in every server. Customize XP, rewards and announcements in setup → Levels / XP.', components: [], attachments: [] }));
   },
 
   levelsetup_xp: async (interaction) => {
+    if (await denyIfNotAdmin(interaction)) return;
     const { getGuildSettingsWithDefaults } = require('../../database/levelSettings');
 
     try {
@@ -468,6 +317,7 @@ module.exports = {
   },
 
   levelsetup_levelup: async (interaction) => {
+    if (await denyIfNotAdmin(interaction)) return;
     const { getGuildSettingsWithDefaults, updateGuildSettings } = require('../../database/levelSettings');
 
     try {
@@ -521,6 +371,7 @@ module.exports = {
   },
 
   levelsetup_back: async (interaction) => {
+    if (await denyIfNotAdmin(interaction)) return;
     const { getGuildSettingsWithDefaults } = require('../../database/levelSettings');
 
     try {
@@ -533,7 +384,7 @@ module.exports = {
         .setDescription('Configure your server\'s level system settings')
         .setColor(0x5865F2)
         .addFields(
-          { name: '🎨 Theme', value: `Current: **${settings.theme_preset}**`, inline: true },
+          { name: 'Card Design', value: 'Raymond Signature · Shared across all servers', inline: true },
           { name: '⚡ XP Multiplier', value: `**${settings.xp_multiplier}x**`, inline: true },
           { name: '📢 Level-Up Messages', value: settings.levelup_enabled ? '✅ Enabled' : '❌ Disabled', inline: true },
           { name: '🎁 Role Rewards', value: `${Object.keys(settings.role_rewards || {}).length} configured`, inline: true },
@@ -546,8 +397,8 @@ module.exports = {
       const row1 = new ActionRowBuilder()
         .addComponents(
           new ButtonBuilder()
-            .setCustomId('levelsetup_theme')
-            .setLabel('🎨 Theme')
+            .setCustomId('levelsetup_preview')
+            .setLabel('Card Preview')
             .setStyle(ButtonStyle.Primary),
           new ButtonBuilder()
             .setCustomId('levelsetup_xp')
@@ -566,10 +417,6 @@ module.exports = {
             .setLabel('🎁 Role Rewards')
             .setStyle(ButtonStyle.Primary),
           new ButtonBuilder()
-            .setCustomId('levelsetup_preview')
-            .setLabel('👁️ Preview')
-            .setStyle(ButtonStyle.Secondary),
-          new ButtonBuilder()
             .setCustomId('levelsetup_reset')
             .setLabel('🔄 Reset to Defaults')
             .setStyle(ButtonStyle.Danger)
@@ -582,6 +429,7 @@ module.exports = {
   },
 
   levelsetup_levelup_toggle: async (interaction) => {
+    if (await denyIfNotAdmin(interaction)) return;
     const { getGuildSettingsWithDefaults, updateGuildSettings } = require('../../database/levelSettings');
 
     try {
@@ -614,103 +462,24 @@ module.exports = {
   },
 
   levelsetup_theme_select: async (interaction) => {
-    const { updateGuildSettings } = require('../../database/levelSettings');
-
     if (await denyIfNotAdmin(interaction)) return;
-
-    try {
-      await safeDeferUpdate(interaction);
-      const selected = interaction.values?.[0];
-      if (!selected) return;
-      await updateGuildSettings(interaction.guild.id, { theme_preset: selected });
-
-      const embed = new EmbedBuilder()
-        .setTitle('✅ Theme Updated')
-        .setDescription(`Server theme is now set to **${selected}**.`)
-        .setColor(0x57F287);
-
-      const backButton = new ActionRowBuilder()
-        .addComponents(
-          new ButtonBuilder()
-            .setCustomId('levelsetup_theme')
-            .setLabel('← Back to Theme Settings')
-            .setStyle(ButtonStyle.Secondary)
-        );
-
-      await interaction.editReply({ embeds: [embed], components: [backButton] });
-    } catch (error) {
-      console.error('[LevelSetup] Theme select error:', error);
-    }
+    await safeDeferUpdate(interaction);
+    await interaction.editReply(asEmbed({ content: 'Theme selection has been retired. All cards now use the Raymond signature design.', components: [], attachments: [] }));
   },
 
   levelsetup_theme_force_toggle: async (interaction) => {
-    const { getGuildSettingsWithDefaults, updateGuildSettings } = require('../../database/levelSettings');
-
     if (await denyIfNotAdmin(interaction)) return;
-
-    try {
-      await safeDeferUpdate(interaction);
-
-      const settings = await getGuildSettingsWithDefaults(interaction.guild.id);
-      const newValue = !settings.force_theme;
-
-      await updateGuildSettings(interaction.guild.id, { force_theme: newValue });
-
-      const embed = new EmbedBuilder()
-        .setTitle(newValue ? '🔒 Force Theme Enabled' : '🔓 Force Theme Disabled')
-        .setDescription(
-          newValue
-            ? 'All users will now see the server theme, regardless of their personal preference.'
-            : 'Users can now use their personal theme preference set via `!ranktheme`.'
-        )
-        .setColor(newValue ? 0x57F287 : 0x5865F2);
-
-      const backButton = new ActionRowBuilder()
-        .addComponents(
-          new ButtonBuilder()
-            .setCustomId('levelsetup_theme')
-            .setLabel('← Back to Theme Settings')
-            .setStyle(ButtonStyle.Secondary)
-        );
-
-      await interaction.editReply({ embeds: [embed], components: [backButton] });
-    } catch (error) {
-      console.error('[LevelSetup] Force theme toggle error:', error);
-    }
+    await safeDeferUpdate(interaction);
+    await interaction.editReply(asEmbed({ content: 'Theme selection has been retired. All cards now use the Raymond signature design.', components: [], attachments: [] }));
   },
 
   levelsetup_theme_reset_all: async (interaction) => {
-    const db = require('../../services/database');
-
     if (await denyIfNotAdmin(interaction)) return;
-
-    try {
-      await safeDeferUpdate(interaction);
-
-      // Delete all user theme preferences for this guild
-      const result = await db.query(
-        'DELETE FROM user_preferences WHERE guild_id = $1 AND preference_key = $2',
-        [interaction.guild.id, 'rank_theme']
-      );
-
-      const embed = new EmbedBuilder()
-        .setTitle('🔄 User Themes Reset')
-        .setDescription(`Reset ${result.rowCount || 0} user theme preferences. All users will now use the server theme or default theme.`)
-        .setColor(0x57F287);
-
-      const backButton = new ActionRowBuilder()
-        .addComponents(
-          new ButtonBuilder()
-            .setCustomId('levelsetup_theme')
-            .setLabel('← Back to Theme Settings')
-            .setStyle(ButtonStyle.Secondary)
-        );
-
-      await interaction.editReply({ embeds: [embed], components: [backButton] });
-    } catch (error) {
-      console.error('[LevelSetup] Reset themes error:', error);
-    }
+    await safeDeferUpdate(interaction);
+    await interaction.editReply(asEmbed({ content: 'Theme selection has been retired. All cards now use the Raymond signature design.', components: [], attachments: [] }));
   },
+
+
 
   levelsetup_xp_multiplier: async (interaction) => {
     if (await denyIfNotAdmin(interaction)) return;
@@ -1127,12 +896,12 @@ module.exports = {
         voice_next_level_xp: 200
       };
 
-      const buffer = await generateRankCard(fakeUserData, member, 'text', 1, settings.theme_preset || 'dark');
+      const buffer = await generateRankCard(fakeUserData, member, 'text', 1);
       const attachment = new AttachmentBuilder(buffer, { name: 'level-preview.png' });
 
       const embed = new EmbedBuilder()
         .setTitle('👁️ Preview')
-        .setDescription('This is how your rank cards will look with the current server theme.')
+        .setDescription('The Raymond signature design is shared across every server.')
         .setColor(0x5865F2);
 
       const backButton = new ActionRowBuilder().addComponents(

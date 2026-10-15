@@ -94,3 +94,16 @@ Message text capture is opt-in and disabled by default. Uncached content is unav
 ### Text response presentation
 
 Legacy text responses use `asEmbed` from `src/utils/responses.js` at their send/reply/edit call sites. Usage hints, permission denials, failures and confirmations appear as dark embeds with a timestamp and footer. The formatter is synchronous and performs no database requests, so it also works when an error concerns database availability. It preserves ephemeral flags, explicit mention settings, attachments and controls. Existing embed messages and Components V2 panels keep their own presentation. Content is cleared on converted edits so earlier plain text does not remain above the embed.
+
+
+### Signature leveling system
+
+All rank cards, leaderboards, podiums and level-up cards use one dark/gold Raymond signature design across guilds. Personal/server theme selectors and the `ranktheme` command are retired; historical theme columns are ignored and existing levels/XP are preserved. `levelsetup` opens the Levels / XP section of the Components V2 setup panel directly, including a private Card Preview button. Existing XP multipliers/ranges, cooldowns, excluded channels, reward roles and message templates remain configurable.
+
+Migration `20261015020000_leveling_signature.sql` adds ranking indexes and independent Text XP/Voice XP switches. Voice defaults require two eligible human members, exclude the server AFK channel and deafened members, and allow muted listeners; all except the AFK exclusion can be configured in setup. Voice XP uses one minute scheduler per guild, reads settings once per tick, uses current cached VoiceStates, prevents overlapping ticks and limits concurrent writes to four. Voice rate is per minute, independently of the text-message cooldown. Tracking is seeded for already connected members at startup and stopped before database shutdown; development mode still disables automated XP.
+
+Rank uses a guild-scoped SQL position query with deterministic member-ID tie breaks, covering members beyond the old 1,000-row limit. Leaderboards fetch ten rows per page, clamp invalid/high pages and use unique navigation IDs even on a single page. Podiums fetch three rows; Combined orders by lifetime XP reconstructed from the existing level curve instead of comparing only within-level remainders. Unavailable/departed members retain their stored rank position and are labelled instead of silently skipping rows.
+
+Settings reads and repeated image work coalesce. Ranking pages cache for five seconds and invalidate on XP writes; Refresh bypasses the page cache. Avatar images cache for five minutes (64 entries); generated PNGs cache for 15 seconds (24 entries / 8 MiB). Render work is bounded to four active jobs and 24 waiting jobs. Font registration and number formatter setup happen once; PNG encoding uses the asynchronous native encoder. The font is bundled; failed avatar downloads use initials rather than failing the whole card.
+
+Local synthetic-avatar preview measured about 36 ms for a cold rank render and under 1 ms for an identical cached render. These are renderer-only observations, excluding Discord, member hydration and database/network latency. Production performance was not benchmarked.

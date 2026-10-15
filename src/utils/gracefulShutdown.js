@@ -10,6 +10,7 @@ async function gracefulShutdown(signal, client, dbClient, exitCode = 0) {
     for (const timer of Object.values(global.voiceXpTracking || {})) clearInterval(timer);
     for (const close of [
       () => require('../services/auditLogs').stop(),
+      () => require('../services/voiceXp').stop(),
       () => client?.destroy?.(),
       () => dbClient?.end?.(),
     ]) {

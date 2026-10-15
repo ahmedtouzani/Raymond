@@ -43,6 +43,9 @@ client.on('guildCreate', async (guild) => {
   try {
     const defaultPrefix = process.env.GLOBAL_PREFIX || process.env.PREFIX;
     await setGuildConfig(guild.id, { prefix: defaultPrefix, settings: {} });
+    if (!require('./config/development').isDevelopment()) {
+      for (const state of guild.voiceStates.cache.values()) require('./services/voiceXp').sync(state);
+    }
     logger.info(`Created config for new guild: ${guild.name} (${guild.id})`);
     updateChangelog('INFO', `Created config for new guild: ${guild.name} (${guild.id})`);
   } catch (err) {

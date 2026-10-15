@@ -13,22 +13,14 @@ const SETTINGS_CACHE_TTL = 60 * 1000;
  * @returns {Object|null} Guild settings or null if not found
  */
 async function getGuildSettings(guildId) {
-    try {
-        const cached = settingsCache.get(guildId);
-        if (cached && (Date.now() - cached.cachedAt < SETTINGS_CACHE_TTL)) {
-            return cached.data;
-        }
-        const { rows } = await db.query(
-            'SELECT * FROM guild_level_settings WHERE guild_id = $1',
-            [guildId]
-        );
-        const settings = rows[0] || null;
-        settingsCache.set(guildId, { data: settings, cachedAt: Date.now() });
-        return settings;
-    } catch (error) {
-        console.error('[LevelSettings] Error fetching guild settings:', error);
-        return null;
-    }
+    const cached = settingsCache.get(guildId);
+    if (cached && cached.until > Date.now()) return cached.promise;
+    const entry = { until: Date.now() + SETTINGS_CACHE_TTL };
+    entry.promise = db.query('SELECT * FROM guild_level_settings WHERE guild_id = $1', [guildId])
+      .then(({ rows }) => rows[0] || null).catch(error => { if (settingsCache.get(guildId) === entry) settingsCache.delete(guildId); throw error; });
+    settingsCache.set(guildId, entry);
+    while (settingsCache.size > 2048) settingsCache.delete(settingsCache.keys().next().value);
+    return entry.promise;
 }
 
 /**
@@ -42,9 +34,8 @@ async function getGuildSettingsWithDefaults(guildId) {
     // Default settings
     const defaults = {
         guild_id: guildId,
-        theme_preset: 'dark',
-        custom_theme: null,
-        force_theme: false,
+        text_xp_enabled: true, voice_xp_enabled: true,
+        voice_min_members: 2, voice_ignore_muted: false, voice_ignore_deafened: true,
         xp_multiplier: 1.0,
         text_xp_min: 15,
         text_xp_max: 25,
@@ -59,7 +50,7 @@ async function getGuildSettingsWithDefaults(guildId) {
         role_rewards_remove_previous: false
     };
 
-    return settings ? { ...defaults, ...settings } : defaults;
+    return settings ? { ...defaults, ...Object.fromEntries(Object.entries(settings).filter(([, value]) => value != null)) } : defaults;
 }
 
 /**
@@ -69,48 +60,17 @@ async function getGuildSettingsWithDefaults(guildId) {
  * @returns {Object|null} Updated settings or null on error
  */
 async function updateGuildSettings(guildId, settings) {
-    try {
-        // Build SET clause dynamically
-        const fields = [];
-
-        const allowedFields = [
-            'theme_preset', 'custom_theme', 'xp_multiplier', 'text_xp_min',
-            'text_xp_max', 'voice_xp_rate', 'xp_cooldown', 'excluded_channels',
-            'levelup_enabled', 'levelup_channel_id', 'levelup_message',
-            'levelup_include_card', 'role_rewards', 'role_rewards_remove_previous'
-        ];
-
-        // Map settings fields to their correct parameter index in the allValues array
-        // $1 is guild_id, so allowedFields[i] corresponds to $(i + 2)
-        for (const [key, value] of Object.entries(settings)) {
-            if (allowedFields.includes(key)) {
-                const index = allowedFields.indexOf(key);
-                fields.push(`${key} = $${index + 2}`);
-            }
-        }
-
-        if (fields.length === 0) {
-            return await getGuildSettings(guildId);
-        }
-
-        const query = `
-      INSERT INTO guild_level_settings (guild_id, ${allowedFields.join(', ')})
-      VALUES ($1, ${allowedFields.map((_, i) => `$${i + 2}`).join(', ')})
-      ON CONFLICT (guild_id) 
-      DO UPDATE SET ${fields.join(', ')}
-      RETURNING *
-    `;
-
-        // $1 is guildId, followed by all allowed fields in order (null if not provided)
-        const allValues = [guildId, ...allowedFields.map(f => settings[f] !== undefined ? settings[f] : null)];
-
-        const { rows } = await db.query(query, allValues);
-        settingsCache.delete(guildId);
-        return rows[0];
-    } catch (error) {
-        console.error('[LevelSettings] Error updating guild settings:', error);
-        return null;
-    }
+    const allowed = ['text_xp_enabled', 'voice_xp_enabled', 'voice_min_members', 'voice_ignore_muted', 'voice_ignore_deafened',
+      'xp_multiplier', 'text_xp_min', 'text_xp_max', 'voice_xp_rate', 'xp_cooldown', 'excluded_channels',
+      'levelup_enabled', 'levelup_channel_id', 'levelup_message', 'levelup_include_card', 'role_rewards', 'role_rewards_remove_previous'];
+    const keys = Object.keys(settings).filter(key => allowed.includes(key) && settings[key] !== undefined);
+    if (!keys.length) return getGuildSettings(guildId);
+    const values = keys.map(key => settings[key]);
+    const { rows } = await db.query(`INSERT INTO guild_level_settings (guild_id, ${keys.join(',')})
+      VALUES ($1, ${keys.map((_, i) => `$${i+2}`).join(',')}) ON CONFLICT (guild_id)
+      DO UPDATE SET ${keys.map(key => `${key}=EXCLUDED.${key}`).join(',')} RETURNING *`, [guildId, ...values]);
+    settingsCache.delete(guildId);
+    return rows[0];
 }
 
 /**
@@ -129,32 +89,7 @@ async function resetGuildSettings(guildId) {
     }
 }
 
-/**
- * Get guild theme (server theme or default)
- * @param {string} guildId - Guild ID
- * @returns {string} Theme name
- */
-async function getGuildTheme(guildId) {
-    const settings = await getGuildSettings(guildId);
-    return settings?.theme_preset || 'dark';
-}
-
-/**
- * Get custom theme colors
- * @param {string} guildId - Guild ID
- * @returns {Object|null} Custom theme object or null
- */
-async function getCustomTheme(guildId) {
-    const settings = await getGuildSettings(guildId);
-    return settings?.custom_theme || null;
-}
-
 module.exports = {
     clearSettingsCache: guildId => settingsCache.delete(guildId),
-    getGuildSettings,
-    getGuildSettingsWithDefaults,
-    updateGuildSettings,
-    resetGuildSettings,
-    getGuildTheme,
-    getCustomTheme
+    getGuildSettings, getGuildSettingsWithDefaults, updateGuildSettings, resetGuildSettings,
 };

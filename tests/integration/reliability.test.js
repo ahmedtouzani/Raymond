@@ -100,7 +100,7 @@ describe('Database reliability', { skip: !adminUrl }, () => {
     const drafts = {
       autorole: { role_id: 'join-role', member_join_log_channel_id: 'join-log' },
       stats: { ...registry.defaults(registry.modules.stats), member_count_channel_id: 'members', voice_count_channel_id: 'voice', member_count_format: 'Members: {count}' },
-      levels: { ...registry.defaults(registry.modules.levels), xp_multiplier: 2.5, text_xp_min: 30, text_xp_max: 50, excluded_channels: ['excluded'], force_theme: true, role_rewards_remove_previous: true },
+      levels: { ...registry.defaults(registry.modules.levels), xp_multiplier: 2.5, text_xp_min: 30, text_xp_max: 50, excluded_channels: ['excluded'], role_rewards_remove_previous: true },
       automod: { ...registry.defaults(registry.modules.automod), spamDetectionEnabled: false, autobanBlacklist: [{ guildId: '123456789012345678', name: 'Blocked' }], autobanLogChannel: 'ban-log' },
       applications: { staff_review_channel: 'reviews', role_moderator: 'mod', role_designer: 'design', role_developer: 'dev' },
       modmail: { modRoleIDs: ['support'], ticketCategoryId: 'tickets', modNotificationChannelID: 'notifications' },
@@ -328,6 +328,45 @@ describe('Database reliability', { skip: !adminUrl }, () => {
     finally { await migrator.close(); }
     assert.equal((await pool.query("SELECT to_regclass('batch_rollback_probe') AS name")).rows[0].name, null);
     assert.equal((await pool.query("SELECT count(*)::int AS count FROM schema_migrations WHERE name IN ('batch_1_probe.sql','batch_2_probe.sql')")).rows[0].count, 0);
+  });
+
+  it('rank lookup works past 1000 members, stays guild-scoped and clamps page boundaries', async () => {
+    await pool.query(`INSERT INTO user_levels (guild_id,user_id,text_level,text_xp,text_next_level_xp)
+      SELECT 'large-rank', 'member-'||lpad(n::text,4,'0'), 2, 1206-n, 2000 FROM generate_series(1,1205) n`);
+    await levels.addXp('other-rank', 'member-1205', 100000);
+    const user = await levels.getRankedUserLevel('large-rank', 'member-1205', 'text');
+    assert.equal(user.rank, 1205);
+    const page = await levels.getLeaderboardPage('large-rank', 'text', 999999);
+    assert.equal(page.page, 121); assert.equal(page.totalPages, 121); assert.equal(page.users.length, 5);
+    assert.equal(page.users[4].user_id, 'member-1205');
+    await levels.addXp('large-rank', 'new-top', 100000);
+    const updated = await levels.getLeaderboardPage('large-rank', 'text', 1);
+    assert.equal(updated.total, 1206); assert.equal(updated.users[0].user_id, 'new-top');
+    await pool.query(`INSERT INTO user_levels (guild_id,user_id,text_level,text_xp)
+      VALUES ('tie-rank','z',2,100),('tie-rank','a',2,100)`);
+    assert.equal((await levels.getRankedUserLevel('tie-rank','a','text')).rank, 1);
+    assert.equal((await levels.getRankedUserLevel('tie-rank','z','text')).rank, 2);
+    assert.equal((await levels.getLeaderboard('tie-rank','text',10)).map(row => row.user_id).join(','), 'a,z');
+  });
+
+  it('combined podium uses lifetime XP rather than just the remainder within the current level', async () => {
+    await pool.query(`INSERT INTO user_levels (guild_id,user_id,text_level,text_xp,voice_level,voice_xp)
+      VALUES ('combined-rank','experienced',5,0,1,0), ('combined-rank','beginner',1,900,1,900)`);
+    const users = await levels.getLeaderboard('combined-rank', 'combined', 3);
+    assert.equal(users[0].user_id, 'experienced'); assert.equal(Number(users[0].total_xp), 14000);
+    assert.equal(Number(users[1].total_xp), 1800);
+    await assert.rejects(levels.getLeaderboard('combined-rank', 'text; DROP TABLE user_levels', 3));
+  });
+
+  it('partial level configuration updates retain database defaults and unrelated values', async () => {
+    const settings = loadModule('src/database/levelSettings.js', { '../services/database': db });
+    await settings.updateGuildSettings('partial-level', { xp_multiplier: 2.5 });
+    const initial = await settings.getGuildSettingsWithDefaults('partial-level');
+    assert.equal(initial.text_xp_min, 15); assert.equal(initial.text_xp_max, 25);
+    assert.equal(initial.voice_xp_enabled, true); assert.equal(initial.voice_min_members, 2);
+    await settings.updateGuildSettings('partial-level', { voice_min_members: 4, voice_ignore_muted: true });
+    const updated = await settings.getGuildSettingsWithDefaults('partial-level');
+    assert.equal(Number(updated.xp_multiplier), 2.5); assert.equal(updated.voice_min_members, 4); assert.equal(updated.voice_ignore_muted, true);
   });
 
   it('simultaneous text and voice updates preserve both counters for new users', async () => {

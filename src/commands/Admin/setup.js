@@ -79,7 +79,7 @@ const featureDescriptions = {
   jail: 'Set the jail role and optional voice channel.', automod: 'Manage anti-spam and blocked server invites.',
   autorole: 'Welcome members with a join role and logs.', tempvoice: 'Build and manage join-to-create voice channels.',
   applications: 'Choose application reviewers and staff roles.', modmail: 'Connect members with your support team.',
-  levels: 'Tune XP, rank themes and level-up announcements.', rewards: 'Give members roles when they reach a level.',
+  levels: 'Tune XP, voice eligibility and level-up announcements.', rewards: 'Give members roles when they reach a level.',
   reactions: 'Create automatic reactions for users or channels.', rolemenus: 'Design self-service role menus.',
   stats: 'Display live member and voice counters.', embeds: 'Customize message colors and footer details.', general: 'Choose the command prefix for this server.',
 };
@@ -167,6 +167,7 @@ function renderPanel(state, guild) {
     button(definition.collection ? 'items' : 'back', definition.collection ? 'Back to List' : 'Back'));
   if (!field.required) controls.addComponents(button('clear', 'Clear Selection'));
   if (definition.collection) controls.addComponents(button('remove', 'Remove Entry', ButtonStyle.Danger));
+  if (state.module === 'levels') controls.addComponents(button('preview', 'Card Preview').setEmoji(emojis.designer));
   controls.addComponents(button('cancel', 'Close'));
   container.addSeparatorComponents(separator()).addActionRowComponents(controls)
     .addTextDisplayComponents(textDisplay(definition.collection ? '-# Done returns to the list · Save Changes on the list applies all entries' : '-# Save applies this feature · Back or Close discards unsaved changes'));
@@ -202,7 +203,7 @@ async function parseInput(field, value, client, original) {
 module.exports = {
   name: 'setup', description: 'Configure server features from one interactive panel.', category: 'Admin', guildOnly: true,
   permissions: [PermissionsBitField.Flags.Administrator], usage: 'setup',
-  async execute(message) {
+  async execute(message, args = []) {
     const key = `${message.guild.id}:${message.author.id}`, previous = sessions.get(key);
     if (previous) return message.reply(asEmbed({ content: `You already have an open panel: ${previous.url}`, allowedMentions: { parse: [] } }));
     sessions.set(key, { url: message.url });
@@ -211,6 +212,10 @@ module.exports = {
       const owner = isBotOwner(message.author.id), premium = await hasStellarOrHigher(message.guild.id);
       const access = Object.fromEntries(Object.entries(modules).map(([name, definition]) => [name, !definition.ownerOnly || owner]));
       const state = { settings: await readSetupSettings(message.guild.id), module: null, notice: '', access, premium };
+      if (args[0] === 'levels') {
+        state.module = 'levels'; state.original = structuredClone(state.settings.levels); state.draft = structuredClone(state.original);
+        state.field = modules.levels.fields[0].key; state.item = null;
+      }
       const panel = await message.reply(asEmbed(renderPanel(state, message.guild)));
       sessions.set(key, panel);
       const collector = panel.createMessageComponentCollector({ time: 15 * 60_000, idle: 5 * 60_000, filter: interaction => interaction.customId.startsWith('setup:') });
@@ -283,6 +288,14 @@ module.exports = {
               if (!authorization.allowed) { await interaction.followUp(asEmbed({ content: authorization.message, flags: 64 })); return; }
               collector.stop('launch');
               await command.execute(message, definition.launcher.args, message.client);
+              return;
+            }
+            if (action === 'preview' && state.module === 'levels') {
+              const { generateRankCard } = require('../../utils/canvasRankCard');
+              const { AttachmentBuilder } = require('discord.js');
+              const member = await message.guild.members.fetch(message.author.id);
+              const buffer = await generateRankCard({ text_level: 10, text_xp: 18400, text_next_level_xp: 46000 }, member, 'text', 1);
+              await interaction.followUp({ files: [new AttachmentBuilder(buffer, { name: 'rank-preview.png' })], flags: 64 });
               return;
             }
             if (action === 'item' && definition.collection) {
