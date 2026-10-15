@@ -34,6 +34,24 @@ module.exports = {
     // Rotate every 30 seconds
     setInterval(rotateStatus, 30000);
 
+    // Keep the public application bio aligned with the features in this version.
+    // Application descriptions persist separately from Gateway presence updates.
+    try {
+      const description = [
+        'Raymond • Your Server, Organized.',
+        'Moderation • Verification • Audit Logs',
+        'Levels • TempVoice • Community Tools',
+        'Use help to explore commands.',
+      ].join('\n');
+      const application = await client.application.fetch();
+      if (application.description !== description) {
+        await application.edit({ description });
+        logger.info('Updated application bio to the current server tools profile.');
+      }
+    } catch (error) {
+      logger.warn('Could not update application bio:', error.message);
+    }
+
     try {
       await registerSlashCommands(client);
       await initializeGuildConfigs(client);
