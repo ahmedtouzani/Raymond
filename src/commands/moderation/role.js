@@ -29,7 +29,7 @@ module.exports = {
       const { createUsageEmbed } = require('../../utils/embed');
       const embed = await createUsageEmbed(message.guild.id, {
         command: 'role',
-        description: '<a:warningbug:905560995886411806> **Invalid Action**\nPlease specify `add` or `remove` as the first argument.',
+        description: '<a:warningbug:1467300628907954300> **Invalid Action**\nPlease specify `add` or `remove` as the first argument.',
         usage: '`!role <add|remove> <@user> <@role>`',
         examples: '`!role add @User @Role`\n`!role remove @User @Role`'
       });

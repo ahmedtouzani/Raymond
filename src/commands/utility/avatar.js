@@ -46,7 +46,7 @@ module.exports = {
       const { createUsageEmbed } = require('../../utils/embed');
       const embed = await createUsageEmbed(message.guild?.id, {
         command: 'avatar',
-        description: '<a:warningbug:905560995886411806> **User Not Found**\nPlease mention a valid user or provide a User ID.',
+        description: '<a:warningbug:1467300628907954300> **User Not Found**\nPlease mention a valid user or provide a User ID.',
         usage: '`!avatar [user]`',
         examples: '`!avatar @User`'
       });

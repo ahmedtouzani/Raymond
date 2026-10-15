@@ -80,6 +80,17 @@ class InviteTracker {
             // Fetch current invites
             const currentInvites = await guild.invites.fetch();
 
+            const increased = [...currentInvites.values()].filter(invite => {
+                const cached = cachedInvites.get(invite.code);
+                return cached && invite.uses > cached.uses;
+            });
+            if (increased.length > 1 || increased.some(invite => invite.uses - cachedInvites.get(invite.code).uses > 1)) {
+                await this.cacheGuildInvites(guild);
+                const result = { method: 'unknown', inviter: null, code: null };
+                await this.saveMemberInvite(guild.id, member.id, result);
+                return result;
+            }
+
             // Compare uses to find which invite was used
             for (const [code, currentInvite] of currentInvites) {
                 const cachedInvite = cachedInvites.get(code);
@@ -132,8 +143,9 @@ class InviteTracker {
             }
 
             // Check if a new invite was created (bypass detection)
+            const newUsedInvites = [...currentInvites.values()].filter(invite => !cachedInvites.has(invite.code) && invite.uses === 1);
             for (const [code, currentInvite] of currentInvites) {
-                if (!cachedInvites.has(code)) {
+                if (!cachedInvites.has(code) && currentInvite.uses === 1 && newUsedInvites.length === 1) {
                     // New invite detected - likely created just for this user
                     const result = {
                         method: 'new_invite',
@@ -189,7 +201,8 @@ class InviteTracker {
         ON CONFLICT (guild_id, member_id) DO UPDATE 
         SET inviter_id = EXCLUDED.inviter_id, 
             invite_code = EXCLUDED.invite_code,
-            join_method = EXCLUDED.join_method
+            join_method = EXCLUDED.join_method,
+            joined_at = CURRENT_TIMESTAMP
       `, [
                 guildId,
                 memberId,

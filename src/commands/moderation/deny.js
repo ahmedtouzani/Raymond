@@ -84,7 +84,7 @@ module.exports = {
       const { createUsageEmbed } = require('../../utils/embed');
       const embed = await createUsageEmbed(message.guild.id, {
         command: 'deny',
-        description: '<a:warningbug:905560995886411806> **Target Not Found**\nPlease mention a valid user or role to deny permissions from.',
+        description: '<a:warningbug:1467300628907954300> **Target Not Found**\nPlease mention a valid user or role to deny permissions from.',
         usage: '`!deny <@user/@role> [permission] (Optional: all)`',
         examples: '`!deny @user send`\n`!deny @role view connect`'
       });

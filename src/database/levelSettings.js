@@ -150,6 +150,7 @@ async function getCustomTheme(guildId) {
 }
 
 module.exports = {
+    clearSettingsCache: guildId => settingsCache.delete(guildId),
     getGuildSettings,
     getGuildSettingsWithDefaults,
     updateGuildSettings,

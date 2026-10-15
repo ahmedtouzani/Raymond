@@ -1055,8 +1055,8 @@ module.exports = {
     try {
       await interaction.deferUpdate();
       const embed = new EmbedBuilder()
-        .setTitle('⚠️ Reset Level Settings')
-        .setDescription('This will reset all level system settings for this server back to defaults.')
+        .setTitle('Reset Level Settings')
+        .setDescription('<a:warningbug:1467300628907954300> This will reset all level system settings for this server back to defaults.')
         .setColor(0xED4245);
 
       const row = new ActionRowBuilder().addComponents(

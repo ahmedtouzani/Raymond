@@ -1,3 +1,4 @@
+const { recordAction } = require('../../services/moderationRecords');
 const { PermissionsBitField } = require('discord.js');
 const { sendEmbed } = require('../../handlers/functions/sendEmbed');
 const { getJailSettings, getJailedUser, unjailUser } = require('../../database/jailSetting');
@@ -34,7 +35,7 @@ module.exports = {
             const { createUsageEmbed } = require('../../utils/embed');
             const embed = await createUsageEmbed(message.guild.id, {
                 command: 'unjail',
-                description: '<a:warningbug:905560995886411806> **User Not Found**\nPlease mention a user or provide a valid user ID to unjail.',
+                description: '<a:warningbug:1467300628907954300> **User Not Found**\nPlease mention a user or provide a valid user ID to unjail.',
                 usage: '`!unjail <@user>`',
                 examples: '`!unjail @User`'
             });
@@ -78,6 +79,7 @@ module.exports = {
 
             // Remove from DB
             await unjailUser(message.guild.id, member.id);
+            await recordAction(message, member.id, 'unjail');
 
             sendEmbed(message, {
                 title: 'User Unjailed',

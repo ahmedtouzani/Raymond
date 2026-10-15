@@ -37,7 +37,7 @@ module.exports = {
         });
       } catch (err) {
         return sendEmbed(message, {
-          title: '<a:warningbug:905560995886411806> Error',
+          title: '<a:warningbug:1467300628907954300> Error',
           description: `Failed to disable auto role.\n\`\`\`${err.message}\`\`\``,
           color: 0x23272A,
         });
@@ -51,7 +51,7 @@ module.exports = {
         const { createUsageEmbed } = require('../../utils/embed');
         const embed = await createUsageEmbed(message.guild.id, {
           command: 'setautorole',
-          description: '<a:warningbug:905560995886411806> **Invalid Channel**\nPlease mention a valid text channel or provide its ID to set as the member join log channel.',
+          description: '<a:warningbug:1467300628907954300> **Invalid Channel**\nPlease mention a valid text channel or provide its ID to set as the member join log channel.',
           usage: '`!setautorole log <#channel>`',
           examples: '`!setautorole log #welcome`'
         });
@@ -67,7 +67,7 @@ module.exports = {
         });
       } catch (err) {
         return sendEmbed(message, {
-          title: '<a:warningbug:905560995886411806> Error',
+          title: '<a:warningbug:1467300628907954300> Error',
           description: `Failed to set member join log channel.\n\`\`\`${err.message}\`\`\``,
           color: 0x23272A,
         });
@@ -87,7 +87,7 @@ module.exports = {
         });
       } catch (err) {
         return sendEmbed(message, {
-          title: '<a:warningbug:905560995886411806> Error',
+          title: '<a:warningbug:1467300628907954300> Error',
           description: `Failed to set auto role.\n\`\`\`${err.message}\`\`\``,
           color: 0x23272A,
         });

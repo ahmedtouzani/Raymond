@@ -4,6 +4,7 @@ const statsUpdater = require('../services/statsUpdater');
 const { addXp } = require('../database/levelSystem');
 const { handleLevelUpRoles } = require('../utils/levelRoleManager');
 const logger = require('../utils/logger');
+const { isDevelopment } = require('../config/development');
 
 // This map will store the channels that are being deleted to avoid race conditions
 const deletingChannels = new Map();
@@ -255,6 +256,7 @@ function stopVoiceXpTracking(guildId, memberId) {
 module.exports = {
   name: 'voiceStateUpdate',
   async execute(oldState, newState) {
+    if (isDevelopment()) return;
     const guild = newState.guild || oldState.guild;
 
     // Scenario 1: User joins a channel or moves between channels

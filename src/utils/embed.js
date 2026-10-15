@@ -32,6 +32,17 @@ async function getGuildEmbedConfig(guildId) {
  * @returns {Promise<EmbedBuilder>}
  */
 async function createEmbed(guildId, { title, description, fields = [], color, footer, thumbnail, image }) {
+  // Discord does not render custom emojis in embed titles; descriptions and field values do.
+  const warning = '<a:warningbug:1467300628907954300>';
+  if (title?.includes(warning)) {
+    title = title.replaceAll(warning, '').trim();
+    if (!description?.includes(warning)) description = `${warning} ${description || ''}`.trim();
+  }
+  fields = fields.map(field => {
+    if (!field.name.includes(warning)) return field;
+    return { ...field, name: field.name.replaceAll(warning, '').trim() || 'Warning',
+      value: field.value.includes(warning) ? field.value : `${warning} ${field.value}` };
+  });
   const guildConfig = await getGuildEmbedConfig(guildId);
   const embed = new EmbedBuilder()
     .setColor(color || guildConfig.color);

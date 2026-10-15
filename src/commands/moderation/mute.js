@@ -1,3 +1,4 @@
+const { recordAction } = require('../../services/moderationRecords');
 const { PermissionsBitField } = require('discord.js');
 const { sendEmbed } = require('../../handlers/functions/sendEmbed');
 const { protectBotTarget } = require('../../handlers/functions/botProtection');
@@ -38,7 +39,7 @@ module.exports = {
         const { createUsageEmbed } = require('../../utils/embed');
         const embed = await createUsageEmbed(message.guild.id, {
           command: 'mute',
-          description: '<a:warningbug:905560995886411806> **User Not Found**\nPlease mention a user or provide a valid user ID to mute.',
+          description: '<a:warningbug:1467300628907954300> **User Not Found**\nPlease mention a user or provide a valid user ID to mute.',
           usage: '`!mute <@user> [reason]`',
           examples: '`!mute @User Spamming`'
         });
@@ -54,7 +55,7 @@ module.exports = {
     const muteRole = message.guild.roles.cache.find(r => r.name.toLowerCase() === 'muted');
     if (!muteRole) {
       return sendEmbed(message, {
-        title: '⚠️ Muted Role Not Found',
+        title: '<a:warningbug:1467300628907954300> Muted Role Not Found',
         description: 'No role named **Muted** found. Please create one and set permissions.',
         color: 0x23272A,
       });
@@ -89,6 +90,7 @@ module.exports = {
 
     try {
       await member.roles.add(muteRole, `Muted by ${message.author.tag} | ${reason}`);
+      await recordAction(message, member.id, 'mute', reason);
 
       sendEmbed(message, {
         title: '🔇 User Muted',
@@ -105,6 +107,7 @@ module.exports = {
           try {
             if (member.roles.cache.has(muteRole.id)) {
               await member.roles.remove(muteRole, 'Mute duration expired');
+              await recordAction(message, member.id, 'unmute', 'Mute duration expired', { automatic: true });
               sendEmbed(message.channel, {
                 title: '🔊 User Unmuted',
                 description: `**${member.user.tag}** has been automatically unmuted after ${durationStr}.`,
@@ -119,7 +122,7 @@ module.exports = {
       }
     } catch (err) {
       sendEmbed(message, {
-        title: '<a:warningbug:905560995886411806> Error',
+        title: '<a:warningbug:1467300628907954300> Error',
         description: `Failed to mute user.\n\`\`\`${err.message}\`\`\``,
         color: 0x23272A,
       });

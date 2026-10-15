@@ -1,3 +1,4 @@
+const { recordAction } = require('../../services/moderationRecords');
 const { PermissionsBitField } = require('discord.js');
 const { sendEmbed } = require('../../handlers/functions/sendEmbed');
 const { protectBotTarget } = require('../../handlers/functions/botProtection');
@@ -68,7 +69,7 @@ module.exports = {
             // Show usage if no valid subcommand or member found
             const embed = await createUsageEmbed(message.guild.id, {
                 command: 'jail',
-                description: '<a:warningbug:905560995886411806> **User Not Found**',
+                description: '<a:warningbug:1467300628907954300> **User Not Found**',
                 usage: '`!jail <@user> [reason]`\n`!jail setup` - Configure settings',
                 examples: '`!jail @User Spamming`\n`!jail setup`'
             });
@@ -86,7 +87,7 @@ module.exports = {
 
         if (!jailRole) {
             return sendEmbed(message, {
-                title: '⚠️ System Not Ready',
+                title: '<a:warningbug:1467300628907954300> System Not Ready',
                 description: 'The Jail Role is not configured!\nRun `!jail setup` to configure it.',
                 color: 0xFF0000
             });
@@ -100,6 +101,7 @@ module.exports = {
             await jailUser(message.guild.id, member.id, savedRoleIds);
             await member.roles.remove(rolesToRemove);
             await member.roles.add(jailRole);
+            await recordAction(message, member.id, 'jail', args.slice(1).join(' ') || 'No reason provided');
 
             // Optional: Move to voice
             if (guildSettings.jail_voice_channel_id && member.voice.channel) {

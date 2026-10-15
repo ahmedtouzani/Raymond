@@ -16,7 +16,7 @@ module.exports = {
       const { createUsageEmbed } = require('../../utils/embed');
       const embed = await createUsageEmbed(null, {
         command: 'serverinfo',
-        description: '<a:warningbug:905560995886411806> **DM Not Supported**\nThis command can only be used in a server.',
+        description: '<a:warningbug:1467300628907954300> **DM Not Supported**\nThis command can only be used in a server.',
         usage: '`!serverinfo`',
         examples: '`!serverinfo`'
       });

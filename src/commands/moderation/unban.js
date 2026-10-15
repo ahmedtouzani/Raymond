@@ -1,5 +1,6 @@
 const { PermissionsBitField } = require('discord.js');
 const { sendEmbed } = require('../../handlers/functions/sendEmbed');
+const { recordAction } = require('../../services/moderationRecords');
 
 module.exports = {
   name: 'unban',
@@ -26,7 +27,7 @@ module.exports = {
       const { createUsageEmbed } = require('../../utils/embed');
       const embed = await createUsageEmbed(message.guild.id, {
         command: 'unban',
-        description: '<a:warningbug:905560995886411806> **Invalid ID**\nPlease provide a valid user ID to unban.',
+        description: '<a:warningbug:1467300628907954300> **Invalid ID**\nPlease provide a valid user ID to unban.',
         usage: '`!unban <userID> [reason]`',
         examples: '`!unban 123456789012345678`'
       });
@@ -41,13 +42,14 @@ module.exports = {
 
       if (!bannedUser) {
         return sendEmbed(message, {
-          title: '⚠️ User Not Banned',
+          title: '<a:warningbug:1467300628907954300> User Not Banned',
           description: `No banned user found with ID: \`${userId}\`.`,
           color: 0x23272A,
         });
       }
 
       await message.guild.members.unban(userId, `${reason} | Unbanned by ${message.author.tag}`);
+      await recordAction(message, userId, 'unban', reason);
 
       sendEmbed(message, {
         title: '<a:okey:1467170671351173121> User Unbanned',
@@ -56,7 +58,7 @@ module.exports = {
       });
     } catch (error) {
       sendEmbed(message, {
-        title: '<a:warningbug:905560995886411806> Error',
+        title: '<a:warningbug:1467300628907954300> Error',
         description: `An error occurred while trying to unban the user.\n\`\`\`${error.message}\`\`\``,
         color: 0x23272A,
       });

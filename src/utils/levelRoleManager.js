@@ -1,4 +1,5 @@
 const { getLevelRoles, getRoleForLevel } = require('../database/levelRoles');
+const { getGuildSettingsWithDefaults } = require('../database/levelSettings');
 
 /**
  * Assigns/removes level reward roles for a user after a level up.
@@ -28,7 +29,8 @@ async function handleLevelUpRoles(client, guildId, userId, ladder, newLevel) {
     .map(r => r.role_id)
     .filter(roleId => member.roles.cache.has(roleId));
 
-  if (otherRoleIds.length > 0) {
+  const settings = await getGuildSettingsWithDefaults(guildId);
+  if (settings.role_rewards_remove_previous && otherRoleIds.length > 0) {
     await member.roles.remove(otherRoleIds).catch(() => {});
   }
   // Add the new role if not already present

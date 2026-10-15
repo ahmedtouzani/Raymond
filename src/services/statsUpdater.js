@@ -62,7 +62,9 @@ class StatsUpdater {
             baseName = baseName.replace(/[:\-]\s*\d{1,}$/, '').trim();
 
             // Append new count
-            const newName = `${baseName}: ${memberCount.toLocaleString()}`;
+            const newName = (baseName.includes('{count}')
+                ? baseName.replaceAll('{count}', memberCount.toLocaleString())
+                : `${baseName}: ${memberCount.toLocaleString()}`).slice(0, 100);
 
             // Only update if name changed
             if (channel.name !== newName) {
@@ -116,7 +118,9 @@ class StatsUpdater {
             baseName = baseName.replace(/[:\-]\s*\d{1,}$/, '').trim();
 
             // Append new count
-            const newName = `${baseName}: ${voiceCount.toLocaleString()}`;
+            const newName = (baseName.includes('{count}')
+                ? baseName.replaceAll('{count}', voiceCount.toLocaleString())
+                : `${baseName}: ${voiceCount.toLocaleString()}`).slice(0, 100);
 
             // Only update if name changed
             if (channel.name !== newName) {

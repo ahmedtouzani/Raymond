@@ -49,7 +49,7 @@ module.exports = {
         const { createUsageEmbed } = require('../../utils/embed');
         const embed = await createUsageEmbed(message.guild.id, {
           command: 'roleinfo',
-          description: '<a:warningbug:905560995886411806> **Missing Argument**\nPlease specify a role to get information about.',
+          description: '<a:warningbug:1467300628907954300> **Missing Argument**\nPlease specify a role to get information about.',
           usage: '`!roleinfo [role]`',
           examples: '`!roleinfo @Role`\n`!roleinfo "Admin"`'
         });
@@ -79,7 +79,7 @@ module.exports = {
         const { createUsageEmbed } = require('../../utils/embed');
         const embed = await createUsageEmbed(message.guild.id, {
           command: 'roleinfo',
-          description: '<a:warningbug:905560995886411806> **Role Not Found**\nPlease check the role name or ID and try again.',
+          description: '<a:warningbug:1467300628907954300> **Role Not Found**\nPlease check the role name or ID and try again.',
           usage: '`!roleinfo [role]`',
           examples: '`!roleinfo @Role`\n`!roleinfo "Admin"`'
         });

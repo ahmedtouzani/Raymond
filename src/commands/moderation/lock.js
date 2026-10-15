@@ -58,7 +58,7 @@ module.exports = {
       });
     } catch (err) {
       sendEmbed(message, {
-        title: '<a:warningbug:905560995886411806> Error',
+        title: '<a:warningbug:1467300628907954300> Error',
         description: `Failed to ${isUnlock ? 'unlock' : 'lock'} the channel.\n\`\`\`${err.message}\`\`\``,
         color: 0x23272A,
       });

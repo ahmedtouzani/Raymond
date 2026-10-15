@@ -244,7 +244,8 @@ module.exports = {
 
       if (moveResults.failedCount > 0) {
         resultEmbed
-          .setTitle('⚠️ Partial Completion')
+          .setTitle('Partial Completion')
+          .setDescription('<a:warningbug:1467300628907954300> ' + (resultEmbed.data.description || 'Some members could not be moved.'))
           .setColor(0xF39C12)
           .addFields({
             name: ` Failed (${moveResults.failedCount})`,
@@ -298,8 +299,8 @@ module.exports = {
       if (message.channel) {
         return message.reply({
           embeds: [new EmbedBuilder()
-            .setTitle('⚠️ Critical Error')
-            .setDescription('An unexpected error occurred. Please try again later.')
+            .setTitle('Critical Error')
+            .setDescription('<a:warningbug:1467300628907954300> An unexpected error occurred. Please try again later.')
             .setColor(0xE74C3C)
           ]
         });

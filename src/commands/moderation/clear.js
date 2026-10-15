@@ -31,7 +31,7 @@ module.exports = {
       const { createUsageEmbed } = require('../../utils/embed');
       const embed = await createUsageEmbed(message.guild.id, {
         command: 'clear',
-        description: '<a:warningbug:905560995886411806> **Invalid Amount**\nPlease provide a valid number of messages to delete.',
+        description: '<a:warningbug:1467300628907954300> **Invalid Amount**\nPlease provide a valid number of messages to delete.',
         usage: '`!clear [amount]`',
         examples: '`!clear 5`\n`!clear 50`'
       });
@@ -74,7 +74,7 @@ module.exports = {
         // Try to send the error message without replying to the original message
         await message.channel.send({
           embeds: [{
-            title: '<a:warningbug:905560995886411806> Error',
+            title: '<a:warningbug:1467300628907954300> Error',
             description: `Failed to delete messages: \`${error.message}\`\nNote: Discord only allows bulk deletion of messages under 14 days old.`,
             color: 0x23272A,
             footer: {

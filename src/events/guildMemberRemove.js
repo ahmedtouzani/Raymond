@@ -1,9 +1,11 @@
+const { allowsAutomation } = require('../config/development');
 const statsUpdater = require('../services/statsUpdater');
 const logger = require('../utils/logger');
 
 module.exports = {
     name: 'guildMemberRemove',
     async execute(member) {
+        if (!allowsAutomation(member.guild.id)) return;
         try {
             const { guild } = member;
 

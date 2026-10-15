@@ -1,49 +1,24 @@
-const logger = require('../utils/logger');
+const logger = require('./logger');
+let shuttingDown = false;
 
-/**
- * Gracefully shuts down the bot and closes resources.
- * @param {string} signal - The signal or source of shutdown (e.g., 'SIGINT', 'COMMAND')
- * @param {Client} client - The Discord.js client instance
- * @param {object} dbClient - The database client instance (optional)
- */
-async function gracefulShutdown(signal, client, dbClient) {
+async function gracefulShutdown(signal, client, dbClient, exitCode = 0) {
+  if (shuttingDown) return;
+  shuttingDown = true;
   logger.info(`Received ${signal}. Shutting down gracefully...`);
-
-  // Set a hard timeout to prevent the process from hanging indefinitely
-  const shutdownTimeout = setTimeout(() => {
-    logger.warn('Shutdown timed out. Forcing exit.');
-    process.exit(1);
-  }, 5000); // 5-second hard limit
-
+  const timeout = setTimeout(() => { logger.warn('Shutdown timed out'); process.exit(1); }, 5000);
   try {
-    // --- Diagnostic Shutdown Sequence ---
-    logger.info('Starting diagnostic shutdown sequence...');
-
-    if (client && client.destroy) {
-      logger.info('[1/2] Attempting to destroy Discord client...');
-      await client.destroy();
-      logger.info('[1/2] ✅ Discord client destroyed successfully.');
-    } else {
-      logger.info('[1/2] Discord client not found or already destroyed.');
+    for (const timer of Object.values(global.voiceXpTracking || {})) clearInterval(timer);
+    for (const close of [
+      () => require('../services/auditLogs').stop(),
+      () => client?.destroy?.(),
+      () => dbClient?.end?.(),
+    ]) {
+      try { await close(); } catch { exitCode = 1; logger.error('Failed to close a resource during shutdown'); }
     }
-
-    if (dbClient && dbClient.end) {
-      logger.info('[2/2] Attempting to close database connection...');
-      await dbClient.end();
-      logger.info('[2/2] ✅ Database connection closed successfully.');
-    } else {
-      logger.info('[2/2] Database client not found or no end method.');
-    }
-
-    logger.info('Diagnostic shutdown sequence complete.');
-
-  } catch (err) {
-    logger.error('Error during shutdown:', err);
   } finally {
-    clearTimeout(shutdownTimeout);
-    logger.info('Shutdown complete. Exiting.');
-    process.exit(0);
+    clearTimeout(timeout);
+    logger.info('Shutdown complete');
+    process.exit(exitCode);
   }
 }
-
 module.exports = { gracefulShutdown };

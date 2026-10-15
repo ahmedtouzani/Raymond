@@ -181,7 +181,7 @@ async function startWizard(message) {
       if (!colorMsg) return;
       embed_color = colorMsg.content.toLowerCase() === 'skip' ? null : colorMsg.content;
 
-      if (embed_color && embed_color.length > 20) { channel.send('⚠️ Color code too long! Defaulting to Grey.'); embed_color = null; }
+      if (embed_color && embed_color.length > 20) { channel.send('<a:warningbug:1467300628907954300> Color code too long! Defaulting to Grey.'); embed_color = null; }
 
       // Ask Thumbnail
       const thumbMsg = await ask(new EmbedBuilder().setDescription('🖼️ **Thumbnail URL?** (Small image top right, or `skip`)').setColor(0x5865F2));

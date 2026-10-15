@@ -13,12 +13,10 @@ module.exports = {
     logger.info(`Ready! Logged in as ${client.user.tag}`);
     logger.info(`Bot is now online and ready to serve in ${client.guilds.cache.size} guilds.`);
 
-    // v4.0 Rotating Status Messages
     const statusMessages = [
-      { name: 'v4.0 - The Intelligence Update', type: ActivityType.Playing },
-      { name: 'conversations with Memory Agent 🧠', type: ActivityType.Watching },
-      { name: 'your server | !help', type: ActivityType.Listening },
-      { name: 'Zero Rate Limits ✨', type: ActivityType.Competing }
+      { name: 'your community', type: ActivityType.Watching },
+      { name: 'server moderation', type: ActivityType.Playing },
+      { name: `${process.env.GLOBAL_PREFIX || process.env.PREFIX || '!'}help | Server tools`, type: ActivityType.Listening },
     ];
 
     let currentStatus = 0;

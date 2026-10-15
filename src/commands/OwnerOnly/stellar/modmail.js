@@ -77,7 +77,7 @@ module.exports = {
                         const { createUsageEmbed } = require('../../../utils/embed');
                         const embed = await createUsageEmbed(message.guild.id, {
                             command: 'modmail setroles',
-                            description: '<a:warningbug:905560995886411806> **Invalid Usage**\nPlease mention or supply one or more valid role IDs to set as mod roles.',
+                            description: '<a:warningbug:1467300628907954300> **Invalid Usage**\nPlease mention or supply one or more valid role IDs to set as mod roles.',
                             usage: '`!modmail setroles <@role/ID>`',
                             examples: '`!modmail setroles @Moderator`'
                         });
@@ -113,7 +113,7 @@ module.exports = {
                         const { createUsageEmbed } = require('../../../utils/embed');
                         const embed = await createUsageEmbed(message.guild.id, {
                             command: 'modmail setcategory',
-                            description: '<a:warningbug:905560995886411806> **Invalid Category**\nPlease mention a category or supply a valid category ID.',
+                            description: '<a:warningbug:1467300628907954300> **Invalid Category**\nPlease mention a category or supply a valid category ID.',
                             usage: '`!modmail setcategory <categoryID>`',
                             examples: '`!modmail setcategory 123456789012345678`'
                         });
@@ -144,7 +144,7 @@ module.exports = {
                         const { createUsageEmbed } = require('../../../utils/embed');
                         const embed = await createUsageEmbed(message.guild.id, {
                             command: 'modmail setchannel',
-                            description: '<a:warningbug:905560995886411806> **Invalid Channel**\nPlease mention a channel or supply a valid channel ID.',
+                            description: '<a:warningbug:1467300628907954300> **Invalid Channel**\nPlease mention a channel or supply a valid channel ID.',
                             usage: '`!modmail setchannel <#channel>`',
                             examples: '`!modmail setchannel #mod-logs`'
                         });
@@ -203,7 +203,7 @@ module.exports = {
                         const { createUsageEmbed } = require('../../../utils/embed');
                         const embed = await createUsageEmbed(message.guild.id, {
                             command: 'modmail broadcast',
-                            description: '<a:warningbug:905560995886411806> **Missing Message**\nPlease provide a message to broadcast to all mods.',
+                            description: '<a:warningbug:1467300628907954300> **Missing Message**\nPlease provide a message to broadcast to all mods.',
                             usage: '`!modmail broadcast <message>`',
                             examples: '`!modmail broadcast Important Meeting!`'
                         });

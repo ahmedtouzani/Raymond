@@ -36,7 +36,7 @@ module.exports = {
           const { createUsageEmbed } = require('../../utils/embed');
           const embed = await createUsageEmbed(message.guild.id, {
             command: 'autoban set',
-            description: '<a:warningbug:905560995886411806> **Invalid Invite**\nCould not resolve a target server for this invite.',
+            description: '<a:warningbug:1467300628907954300> **Invalid Invite**\nCould not resolve a target server for this invite.',
             usage: '`!autoban set <invite>`',
             examples: '`!autoban set discord.gg/invite`'
           });
@@ -61,7 +61,7 @@ module.exports = {
         const { createUsageEmbed } = require('../../utils/embed');
         const embed = await createUsageEmbed(message.guild.id, {
           command: 'autoban set',
-          description: '<a:warningbug:905560995886411806> **Invalid Invite**\nCould not resolve this invite. Make sure it is a valid, non-expired invite.',
+          description: '<a:warningbug:1467300628907954300> **Invalid Invite**\nCould not resolve this invite. Make sure it is a valid, non-expired invite.',
           usage: '`!autoban set <invite>`',
           examples: '`!autoban set discord.gg/invite`'
         });
@@ -89,7 +89,7 @@ module.exports = {
         const { createUsageEmbed } = require('../../utils/embed');
         const embed = await createUsageEmbed(message.guild.id, {
           command: 'autoban remove',
-          description: '<a:warningbug:905560995886411806> **Not Found**\nThis server is not in the blacklist.',
+          description: '<a:warningbug:1467300628907954300> **Not Found**\nThis server is not in the blacklist.',
           usage: '`!autoban remove <serverID|name>`',
           examples: '`!autoban remove 123456789012345678`'
         });
@@ -138,7 +138,7 @@ module.exports = {
           const { createUsageEmbed } = require('../../utils/embed');
           const embed = await createUsageEmbed(message.guild.id, {
             command: 'autoban log',
-            description: '<a:warningbug:905560995886411806> **Channel Not Found**\nPlease mention a valid channel or provide a valid channel ID.',
+            description: '<a:warningbug:1467300628907954300> **Channel Not Found**\nPlease mention a valid channel or provide a valid channel ID.',
             usage: '`!autoban log <#channel/id>`',
             examples: '`!autoban log #autoban-logs`'
           });

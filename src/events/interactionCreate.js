@@ -11,6 +11,8 @@ const {
 } = require('discord.js');
 const { hasStellarOrHigher } = require('../premium/premium');
 const { getGuildConfig } = require('../database/guildConfig');
+const { authorizeCommand } = require('../handlers/commandAuthorization');
+const { allowsGuild } = require('../config/development');
 const buttonHandlers = require('../handlers/buttons/buttonHandlers');
 
 // Import the reaction role handler
@@ -19,13 +21,22 @@ const { handleReaction } = require('./reactionRoles');
 module.exports = {
   name: 'interactionCreate',
   async execute(interaction) {
+    if (!allowsGuild(interaction.guildId || interaction.guild?.id)) {
+      return interaction.reply({ content: 'This development bot is restricted to its test server.', flags: 64 });
+    }
+    // Setup panels own their component collectors, including role/channel selectors.
+    if (['setup:', 'emojiimport:', 'help:'].some(prefix => interaction.customId?.startsWith(prefix))) return;
     // ─────────────────────────────
     // ─ Slash Command Handling ─
     // ─────────────────────────────
     if (interaction.isCommand()) {
-      const command = interaction.client.commands.get(interaction.commandName);
+      const command = interaction.client.slashCommands.get(interaction.commandName);
       if (!command) return;
       try {
+        const authorization = authorizeCommand(command, interaction);
+        if (!authorization.allowed) {
+          return interaction.reply({ content: authorization.message, flags: 64, allowedMentions: { parse: [] } });
+        }
         await command.execute(interaction);
       } catch (error) {
         logger.error('Error executing slash command:', error);

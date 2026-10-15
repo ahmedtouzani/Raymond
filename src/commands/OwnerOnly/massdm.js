@@ -25,8 +25,8 @@ module.exports = {
         if (activeOperations.has('global')) {
             return message.reply({
                 embeds: [new EmbedBuilder()
-                    .setTitle('⚠️ Operation In Progress')
-                    .setDescription('A mass DM operation is already running.')
+                    .setTitle('Operation In Progress')
+                    .setDescription('<a:warningbug:1467300628907954300> A mass DM operation is already running.')
                     .setColor(0xF39C12)
                 ]
             });
@@ -73,8 +73,8 @@ module.exports = {
 
         // Confirmation flow
         const confirmEmbed = new EmbedBuilder()
-            .setTitle('⚠️ Confirm Mass DM')
-            .setDescription(`Send to ${serverIds.length} server(s)?`)
+            .setTitle('Confirm Mass DM')
+            .setDescription(`<a:warningbug:1467300628907954300> Send to ${serverIds.length} server(s)?`)
             .addFields(
                 {
                     name: 'Message Preview',

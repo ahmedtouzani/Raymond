@@ -1,14 +1,10 @@
 const { Pool } = require('pg');
 const logger = require('../utils/logger');
+const { getDatabaseOptions } = require('../config/database');
 
 class DatabaseService {
   constructor() {
-    this.pool = new Pool({
-      connectionString: process.env.DATABASE_URL,
-      ssl: process.env.DATABASE_URL && process.env.DATABASE_URL.includes('supabase.co')
-        ? { rejectUnauthorized: false }
-        : undefined,
-    });
+    this.pool = new Pool(getDatabaseOptions());
 
     // Test the connection
     this.testConnection();

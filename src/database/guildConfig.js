@@ -237,4 +237,5 @@ module.exports = {
   setGuildPrefix,
   setGuildEmbedSetting,
   initializeGuildConfigs,
+  clearCache,
 };

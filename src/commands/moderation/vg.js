@@ -1,27 +1,26 @@
+const { recordAction } = require('../../services/moderationRecords');
 const { PermissionsBitField } = require('discord.js');
 const { sendEmbed } = require('../../handlers/functions/sendEmbed');
 const { getGuildConfig, setGuildConfig } = require('../../database/guildConfig');
+const { canVerify } = require('../../services/verificationPermissions');
 
 module.exports = {
     name: 'vg',
     description: 'Quick verify user as girl. Shortcut for !verify girl @user',
     usage: '!vg @user',
     permissions: [],
+    guildOnly: true,
     category: 'Moderation',
 
     async execute(message, args) {
-        const ownerId = process.env.OWNER_ID;
-        const isOwner = message.author.id === ownerId;
-
         const config = await getGuildConfig(message.guild.id) || { settings: {} };
         config.settings.verification = config.settings.verification || {};
 
-        // Permission: only verificator or owner
-        const vRoleId = config.settings.verification.verificatorRoleId;
-        if (!isOwner && (!vRoleId || !message.member.roles.cache.has(vRoleId))) {
+        // Administrators, the bot owner, and the configured Verificator role can verify.
+        if (!canVerify(message.member, message.author.id, config.settings.verification)) {
             return sendEmbed(message, {
                 title: '🚫 Permission Denied',
-                description: 'You need the **Verificator** role to verify users.',
+                description: 'You need **Administrator** permission or the **Verificator** role to verify users.',
                 color: 0x23272A,
             });
         }
@@ -38,7 +37,7 @@ module.exports = {
             const { createUsageEmbed } = require('../../utils/embed');
             const embed = await createUsageEmbed(message.guild.id, {
                 command: 'vg',
-                description: '<a:warningbug:905560995886411806> **User Not Found**\nPlease mention a user or provide a valid user ID to verify.',
+                description: '<a:warningbug:1467300628907954300> **User Not Found**\nPlease mention a user or provide a valid user ID to verify.',
                 usage: '`!vg <@user>`',
                 examples: '`!vg @User`'
             });
@@ -53,7 +52,7 @@ module.exports = {
 
         if (!unverified || !verified || !girlRole) {
             return sendEmbed(message, {
-                title: '⚠️ Roles Not Set',
+                title: '<a:warningbug:1467300628907954300> Roles Not Set',
                 description: 'Please set up all verification roles with `!verify setup` first.',
                 color: 0x23272A,
             });
@@ -62,6 +61,7 @@ module.exports = {
         try {
             await member.roles.remove(unverified);
             await member.roles.add([verified, girlRole]);
+            await recordAction(message, member.id, 'verify', 'Verified as girl', { type: 'girl' });
 
             const successEmbed = {
                 title: '<a:okey:1467170671351173121> Successfully Verified as Girl',
@@ -131,7 +131,7 @@ module.exports = {
 
         } catch (err) {
             sendEmbed(message, {
-                title: '<a:warningbug:905560995886411806> Error',
+                title: '<a:warningbug:1467300628907954300> Error',
                 description: `Failed to verify user.\n\`\`\`${err.message}\`\`\``,
                 color: 0x23272A,
             });

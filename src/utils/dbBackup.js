@@ -4,6 +4,7 @@ const { Pool } = require('pg');
 const { parse } = require('pg-connection-string');
 const path = require('path');
 const logger = require('./logger');
+const { getDatabaseOptions } = require('../config/database');
 
 const BACKUP_DIR = path.join(__dirname, '../../backups');
 
@@ -20,13 +21,7 @@ async function initDb() {
       throw new Error('DATABASE_URL environment variable is not set');
     }
     
-    // Basic connection configuration
-    const config = {
-      connectionString: dbUrl,
-      ssl: false
-    };
-    
-    pool = new Pool(config);
+    pool = new Pool(getDatabaseOptions(dbUrl));
     
     // Test the connection
     await pool.query('SELECT NOW()');

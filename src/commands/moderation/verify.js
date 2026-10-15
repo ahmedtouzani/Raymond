@@ -1,25 +1,29 @@
+const { recordAction } = require('../../services/moderationRecords');
 const { PermissionsBitField } = require('discord.js');
 const { sendEmbed } = require('../../handlers/functions/sendEmbed');
 const { getGuildConfig, setGuildConfig } = require('../../database/guildConfig');
+const { canVerify } = require('../../services/verificationPermissions');
 
 module.exports = {
   name: 'verify',
   description: 'Verification system: set roles and verify users as boy/girl. Usage: !verify set <type> @role | !verify girl @user | !verify boy @user',
-  usage: '!verify set <unverified|verified|boy|girl|verificator> @role | !verify girl @user | !verify boy @user',
-  permissions: [PermissionsBitField.Flags.ManageRoles],
+  usage: 'verify <boy|girl> @user | verify check [@user] | verify setup',
+  guildOnly: true,
+  permissions: [],
   category: 'Moderation',
 
   async execute(message, args) {
     const ownerId = process.env.OWNER_ID;
     const isOwner = message.author.id === ownerId;
-    if (!isOwner && !message.member.permissions.has(PermissionsBitField.Flags.ManageRoles)) {
+    const sub = args[0]?.toLowerCase();
+    if (sub === 'check') return require('./verifycheck').execute(message, args.slice(1));
+    if (!['boy', 'girl'].includes(sub) && !isOwner && !message.member.permissions.has(PermissionsBitField.Flags.ManageRoles)) {
       return sendEmbed(message, {
         title: '🚫 Permission Denied',
         description: 'You need the **Manage Roles** permission to use this command.',
         color: 0x23272A,
       });
     }
-    const sub = args[0]?.toLowerCase();
     const config = await getGuildConfig(message.guild.id) || { settings: {} };
     config.settings.verification = config.settings.verification || {};
 
@@ -110,7 +114,7 @@ module.exports = {
         const { createUsageEmbed } = require('../../utils/embed');
         const embed = await createUsageEmbed(message.guild.id, {
           command: 'verify',
-          description: '<a:warningbug:905560995886411806> **Invalid Type**\nType must be one of: unverified, verified, boy, girl, verificator, log.',
+          description: '<a:warningbug:1467300628907954300> **Invalid Type**\nType must be one of: unverified, verified, boy, girl, verificator, log.',
           usage: '`!verify set <type> <@role/#channel>`',
           examples: '`!verify set boy @Boy`\n`!verify set log #verify-logs`'
         });
@@ -123,7 +127,7 @@ module.exports = {
           const { createUsageEmbed } = require('../../utils/embed');
           const embed = await createUsageEmbed(message.guild.id, {
             command: 'verify',
-            description: '<a:warningbug:905560995886411806> **Invalid Channel**\nPlease mention a valid log channel or provide its ID.',
+            description: '<a:warningbug:1467300628907954300> **Invalid Channel**\nPlease mention a valid log channel or provide its ID.',
             usage: '`!verify set log <#channel>`',
             examples: '`!verify set log #verify-logs`'
           });
@@ -143,7 +147,7 @@ module.exports = {
         }
       }
 
-      config.settings.verification[`${type}RoleId`] = item.id; // This will be logChannelId for type 'log'
+      config.settings.verification[type === 'log' ? 'logChannelId' : `${type}RoleId`] = item.id;
       await setGuildConfig(message.guild.id, config);
       return sendEmbed(message, {
         title: '<:Done:1305644486453493801> Verification Setting Updated',
@@ -154,12 +158,11 @@ module.exports = {
 
     // Verification: !verify girl @user or id | !verify boy @user or id
     if ((sub === 'girl' || sub === 'boy') && args[1]) {
-      // Permission: only verificator or owner
-      const vRoleId = config.settings.verification.verificatorRoleId;
-      if (!isOwner && (!vRoleId || !message.member.roles.cache.has(vRoleId))) {
+      // Administrators, the bot owner, and the configured Verificator role can verify.
+      if (!canVerify(message.member, message.author.id, config.settings.verification)) {
         return sendEmbed(message, {
           title: '🚫 Permission Denied',
-          description: 'You need the **Verificator** role to verify users.',
+          description: 'You need **Administrator** permission or the **Verificator** role to verify users.',
           color: 0x23272A,
         });
       }
@@ -174,7 +177,7 @@ module.exports = {
         const { createUsageEmbed } = require('../../utils/embed');
         const embed = await createUsageEmbed(message.guild.id, {
           command: 'verify',
-          description: '<a:warningbug:905560995886411806> **User Not Found**\nPlease mention a user or provide a valid user ID to verify.',
+          description: '<a:warningbug:1467300628907954300> **User Not Found**\nPlease mention a user or provide a valid user ID to verify.',
           usage: '`!verify <boy|girl> <@user>`',
           examples: '`!verify boy @User`'
         });
@@ -188,7 +191,7 @@ module.exports = {
 
       if (!unverified || !verified || !genderRole) {
         return sendEmbed(message, {
-          title: '⚠️ Roles Not Set',
+          title: '<a:warningbug:1467300628907954300> Roles Not Set',
           description: 'Please set up all verification roles with `!verify set <type> @role` or use `!verify setup`.',
           color: 0x23272A,
         });
@@ -196,6 +199,7 @@ module.exports = {
       try {
         await member.roles.remove(unverified);
         await member.roles.add([verified, genderRole]);
+        await recordAction(message, member.id, 'verify', `Verified as ${sub}`, { type: sub });
 
         const successEmbed = {
           title: 'Successfully Verified..',
@@ -267,7 +271,7 @@ module.exports = {
 
       } catch (err) {
         sendEmbed(message, {
-          title: '<a:warningbug:905560995886411806> Error',
+          title: '<a:warningbug:1467300628907954300> Error',
           description: `Failed to verify user.\n\`\`\`${err.message}\`\`\``,
           color: 0x23272A,
         });
@@ -281,6 +285,11 @@ module.exports = {
       description: 'This command manages the server\'s user verification process. Set up roles for unverified, verified, and specific genders, and then use it to verify new members.\'',
       fields: [
         {
+          name: 'Verification Check',
+          value: 'Use `verify check` to inspect setup, or `vcheck @member` to check a member’s roles. Administrators can verify without a Verificator role.',
+          inline: false
+        },
+        {
           name: '🛠️ Setup Wizard',
           value: 'Use `!verify setup` to run an interactive wizard to configure all verification roles step-by-step.',
           inline: false
@@ -292,7 +301,7 @@ module.exports = {
         },
         {
           name: '<a:okey:1467170671351173121> Verify a User',
-          value: 'Verify a user as a boy or girl (requires Verificator role):\n`!verify boy @user` or `!verify girl @user`',
+          value: 'Verify a user as a boy or girl (requires Administrator or Verificator role):\n`!verify boy @user` or `!verify girl @user`',
           inline: false
         },
         // Display current settings if available

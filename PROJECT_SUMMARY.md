@@ -1,3 +1,5 @@
+> Historical project notes. AI functionality described below was removed in October 2026. See README.md and DEVELOPMENT.md for the current implementation.
+
 # 🌌 Raymond v2 - Project Overlord: Architecture & Progress Report
 > **Last Updated:** February 2026 (v2.0.9 Enterprise)
 

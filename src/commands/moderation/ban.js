@@ -1,3 +1,4 @@
+const { recordAction } = require('../../services/moderationRecords');
 const { PermissionsBitField } = require('discord.js');
 const { sendEmbed } = require('../../handlers/functions/sendEmbed');
 const { protectBotTarget } = require('../../handlers/functions/botProtection');
@@ -56,7 +57,7 @@ module.exports = {
     if (!member) {
       const embed = await createUsageEmbed(message.guild.id, {
         command: 'ban',
-        description: '<a:warningbug:905560995886411806> **User Not Found**\nPlease mention a valid user or provide a User ID.',
+        description: '<a:warningbug:1467300628907954300> **User Not Found**\nPlease mention a valid user or provide a User ID.',
         usage: '`!ban <@user/ID> [reason]`',
         examples: '`!ban @User Spamming`'
       });
@@ -73,7 +74,7 @@ module.exports = {
 
     if (!member.bannable) {
       return sendEmbed(message, {
-        title: '⚠️ Ban Failed',
+        title: '<a:warningbug:1467300628907954300> Ban Failed',
         description: 'I cannot ban this user. Check my permissions and role hierarchy.',
         color: 0x23272A,
       });
@@ -85,6 +86,7 @@ module.exports = {
       await member.ban({
         reason: `${reason} | Banned by ${message.author.tag}`,
       });
+      await recordAction(message, member.id, 'ban', reason);
 
       sendEmbed(message, {
         title: '🔨 User Banned',
@@ -93,7 +95,7 @@ module.exports = {
       });
     } catch (error) {
       sendEmbed(message, {
-        title: '<a:warningbug:905560995886411806> Error',
+        title: '<a:warningbug:1467300628907954300> Error',
         description: `An error occurred while trying to ban the user.\n\`\`\`${error.message}\`\`\``,
         color: 0x23272A,
       });

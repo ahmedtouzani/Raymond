@@ -1,3 +1,4 @@
+const { recordAction } = require('../../services/moderationRecords');
 const { PermissionsBitField } = require('discord.js');
 const { sendEmbed } = require('../../handlers/functions/sendEmbed');
 
@@ -33,7 +34,7 @@ module.exports = {
       const { createUsageEmbed } = require('../../utils/embed');
       const embed = await createUsageEmbed(message.guild.id, {
         command: 'unmute',
-        description: '<a:warningbug:905560995886411806> **User Not Found**\nPlease mention a user to unmute, or provide a valid user ID.',
+        description: '<a:warningbug:1467300628907954300> **User Not Found**\nPlease mention a user to unmute, or provide a valid user ID.',
         usage: '`!unmute <@user>`',
         examples: '`!unmute @User`'
       });
@@ -43,7 +44,7 @@ module.exports = {
     const muteRole = message.guild.roles.cache.find(r => r.name.toLowerCase() === 'muted');
     if (!muteRole) {
       return sendEmbed(message, {
-        title: '⚠️ Muted Role Not Found',
+        title: '<a:warningbug:1467300628907954300> Muted Role Not Found',
         description: 'No role named **Muted** found.',
         color: 0x23272A,
       });
@@ -59,6 +60,7 @@ module.exports = {
 
     try {
       await member.roles.remove(muteRole, `Unmuted by ${message.author.tag}`);
+      await recordAction(message, member.id, 'unmute');
 
       sendEmbed(message, {
         title: '🔊 User Unmuted',
@@ -67,7 +69,7 @@ module.exports = {
       });
     } catch (err) {
       sendEmbed(message, {
-        title: '<a:warningbug:905560995886411806> Error',
+        title: '<a:warningbug:1467300628907954300> Error',
         description: `Failed to unmute user.\n\`\`\`${err.message}\`\`\``,
         color: 0x23272A,
       });

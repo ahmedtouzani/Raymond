@@ -6,15 +6,23 @@ const {
 const { AttachmentBuilder, EmbedBuilder, PermissionsBitField } = require("discord.js");
 const logger = require("../utils/logger"); // Unified logger
 const { getAutoReactionsForGuild } = require("../database/autoReactSettings");
-const aiService = require("../services/ai");
-const aiChatUsage = require("../database/aiChatUsage");
-const aiChatUsageHourly = require("../database/aiChatUsageHourly");
-const aiConversationHistory = require("../database/aiConversationHistory");
+const { authorizeCommand } = require('../handlers/commandAuthorization');
+const { isDevelopment, allowsGuild } = require('../config/development');
 
 module.exports = {
   name: "messageCreate",
   async execute(message, client) {
-    if (message.author.bot || !message.guild) return;
+    if (message.author.bot || !message.guild || !allowsGuild(message.guild.id)) return;
+    const development = isDevelopment();
+    const config = await getGuildConfig(message.guild.id);
+    const prefix = config.prefix || process.env.GLOBAL_PREFIX || '!';
+    if (development && !message.content.startsWith(prefix)) {
+      const name = message.content.trim().split(/\s+/)[0].toLowerCase();
+      const knownShortcut = [...client.commands.values()].some(command => command.prefixless && (
+        command.name.toLowerCase() === name || command.aliases?.some(alias => alias.toLowerCase() === name)
+      ));
+      if (!knownShortcut) return;
+    }
 
     // === LEVEL SYSTEM: TEXT XP ===
     const { addXp } = require("../database/levelSystem");
@@ -26,8 +34,9 @@ module.exports = {
     const cooldownKey = `${message.guild.id}-${message.author.id}`;
     const now = Date.now();
     if (
-      !global.textXpCooldown[cooldownKey] ||
-      now - global.textXpCooldown[cooldownKey] > COOLDOWN
+      !development && (
+        !global.textXpCooldown[cooldownKey] ||
+        now - global.textXpCooldown[cooldownKey] > COOLDOWN)
     ) {
       global.textXpCooldown[cooldownKey] = now;
       if (!levelSettings?.excluded_channels?.includes(message.channel.id)) {
@@ -83,7 +92,7 @@ module.exports = {
 
     // --- Auto-Reaction Logic ---
     try {
-      const autoReactions = await getAutoReactionsForGuild(message.guild.id);
+      const autoReactions = development ? [] : await getAutoReactionsForGuild(message.guild.id);
       if (autoReactions.length > 0) {
         const reactionsToApply = new Set();
 
@@ -126,19 +135,8 @@ module.exports = {
     }
     // --- End Auto-Reaction Logic ---
 
-    // Fetch config once and reuse
-    let config = await getGuildConfig(message.guild.id);
-    if (!config) {
-      await setGuildConfig(message.guild.id, {
-        prefix: process.env.GLOBAL_PREFIX,
-        settings: {},
-      });
-      config = await getGuildConfig(message.guild.id);
-    }
-    const prefix = config.prefix || process.env.GLOBAL_PREFIX || "!";
-
     // Enhanced spam detection (per-guild tracking)
-    if (config.settings.spamDetectionEnabled !== false) {
+    if (!development && config.settings.spamDetectionEnabled !== false) {
       const now = Date.now();
       const trackerKey = `${message.guild.id}-${message.author.id}`;
 
@@ -217,7 +215,7 @@ module.exports = {
     const inviteRegex = /discord(?:app)?\.(?:com\/invite|gg)\/[a-z0-9]+/gi;
     const hasInvites = inviteRegex.test(message.content);
 
-    if (hasInvites && config.settings.autobanBlacklist?.length) {
+    if (!development && hasInvites && config.settings.autobanBlacklist?.length) {
       try {
         const blacklist = config.settings.autobanBlacklist;
         const inviteCodes = [...message.content.matchAll(inviteRegex)].map(
@@ -302,174 +300,6 @@ module.exports = {
     }
 
     const isPrefixCommand = message.content.startsWith(prefix);
-    const autoChatEnabled = String(process.env.AI_AUTO_CHAT_ENABLED || 'true').toLowerCase() !== 'false';
-    const mentionedBot = message.mentions && message.mentions.users && message.mentions.users.has(client.user.id);
-
-    let repliedMessage = null;
-    if (message.reference?.messageId) {
-      repliedMessage = await message.channel.messages.fetch(message.reference.messageId).catch(() => null);
-    }
-    const repliedToBot = Boolean(repliedMessage && repliedMessage.author && repliedMessage.author.id === client.user.id);
-
-    // Check permissions immediately if auto-chat is on
-    if (autoChatEnabled && !isPrefixCommand) {
-      const ownerId = String(process.env.OWNER_ID || '').trim();
-      const isOwner = ownerId && message.author.id === ownerId;
-
-      const settings = (config && config.settings && typeof config.settings === 'object') ? (config.settings.ai_chat || {}) : {};
-      const envAllowedUsers = String(process.env.AI_ALLOWED_USERS || '').split(',').map(s => s.trim()).filter(Boolean);
-      const envAllowedRoles = String(process.env.AI_ALLOWED_ROLES || '').split(',').map(s => s.trim()).filter(Boolean);
-
-      const allowedUsers = Array.isArray(settings.allowed_users) ? settings.allowed_users : (Array.isArray(config.settings.ai_allowed_users) ? config.settings.ai_allowed_users : []);
-      const allowedRoles = Array.isArray(settings.allowed_roles) ? settings.allowed_roles : (Array.isArray(config.settings.ai_allowed_roles) ? config.settings.ai_allowed_roles : []);
-
-      // Check database whitelist for access control
-      const aiWhitelist = require('../database/aiWhitelist');
-      const isDbWhitelisted = await aiWhitelist.isWhitelisted(message.guild.id, message.author.id).catch(() => false);
-
-      const userAllowed = isOwner ||
-        isDbWhitelisted ||  // NEW: Database whitelist grants access
-        envAllowedUsers.includes(message.author.id) ||
-        allowedUsers.includes(message.author.id) ||
-        (message.member && message.member.roles && message.member.roles.cache && (
-          envAllowedRoles.some(r => message.member.roles.cache.has(r)) ||
-          allowedRoles.some(r => message.member.roles.cache.has(r))
-        ));
-
-      // Trigger if: Mentioned OR Replied OR "Raymond" is in text
-      // REMOVED: Automatic trigger for allowed users (too spammy)
-      const contentLower = message.content.toLowerCase();
-      const calledByName = contentLower.includes('raymond');
-
-      if ((mentionedBot || repliedToBot || calledByName) && userAllowed) {
-
-        // Re-check userAllowed for permissions (already done above)
-
-        // Use hourly rate limiting instead of daily
-        const rateLimit = await aiChatUsageHourly.checkRateLimit(message.guild.id, message.author.id);
-
-        if (!rateLimit.allowed) {
-          const resetTime = new Date();
-          resetTime.setMinutes(0, 0, 0);
-          resetTime.setHours(resetTime.getHours() + 1);
-          const minutesLeft = Math.ceil((resetTime - Date.now()) / 60000);
-
-          return message.reply(
-            `⏱️ **Hourly limit reached** (${rateLimit.used}/${rateLimit.limit} messages).\nTry again in ${minutesLeft} minute${minutesLeft !== 1 ? 's' : ''}.`
-          );
-        }
-
-        let prompt = String(message.content || '').trim();
-        if (mentionedBot) {
-          const mentionRegex = new RegExp(`<@!?${client.user.id}>`, 'g');
-          prompt = prompt.replace(mentionRegex, '').trim();
-        }
-
-        if (!prompt) return;
-
-        await message.channel.sendTyping().catch(() => { });
-
-        try {
-          // Extract mentioned users (excluding the bot)
-          const mentionedUsers = message.mentions.users;
-          const mentionContext = [];
-
-          if (mentionedUsers.size > 0) {
-            for (const [userId, user] of mentionedUsers) {
-              // Skip if mentioning the bot itself
-              if (userId === client.user.id) continue;
-
-              // Get guild member info
-              const member = await message.guild.members.fetch(userId).catch(() => null);
-
-              if (member) {
-                mentionContext.push({
-                  id: userId,
-                  username: user.username,
-                  displayName: member.displayName,
-                  roles: member.roles.cache.map(r => r.name).filter(n => n !== '@everyone'),
-                  joinedAt: member.joinedAt
-                });
-              }
-            }
-          }
-
-          // Fetch conversation history from database (last 3 messages - optimized for token usage)
-          const history = await aiConversationHistory.getUserConversationHistory(
-            message.guild.id,
-            message.author.id,
-            3
-          ).catch(() => []);
-
-          const response = await aiService.generateResponse(prompt, {
-            userName: message.author.username,
-            userId: message.author.id,
-            guildId: message.guild.id, // Added for v4.0.0 isolation
-            guildName: message.guild.name,
-            mentionedUsers: mentionContext,
-            conversationHistory: history // Fixed context mismatch (was 'history')
-          });
-
-          // Increment hourly usage counter
-          await aiChatUsageHourly.incrementHourlyUsage(message.guild.id, message.author.id).catch(() => { });
-
-          // Save conversation to database
-          await aiConversationHistory.saveUserMessage(
-            message.guild.id,
-            message.author.id,
-            prompt,
-            message.id
-          ).catch(() => { });
-
-          const safe = response.length > 1900 ? response.slice(0, 1900) + '…' : response;
-          const reply = await message.reply(safe);
-
-          // Save bot response to database
-          await aiConversationHistory.saveBotResponse(
-            message.guild.id,
-            message.author.id,
-            safe,
-            reply.id
-          ).catch(() => { });
-
-          // ========================================
-          // AUTONOMOUS MEMORY MANAGEMENT (v4.0.0)
-          // ========================================
-
-          // Queue conversation for Gemini Memory Agent (non-blocking, batched)
-          const memoryAgent = require('../services/memoryAgent');
-          memoryAgent.queueConversation(
-            prompt,
-            safe,
-            message.guild.id,
-            message.author.id,
-            message.author.username
-          );
-
-          // Legacy auto-memory extractor (DISABLED - replaced by Memory Agent v4.0.0)
-          // The old extractor was incorrectly storing bot responses as user memories
-          // const memoryExtractor = require('../services/memoryExtractor');
-          // memoryExtractor.processConversation(
-          //   prompt,
-          //   safe,
-          //   message.author.id,
-          //   message.author.username
-          // ).catch(err => logger.error('[Auto-Memory] Failed:', err.message));
-
-          // Cleanup old conversation history (keep last 10 messages)
-          await aiConversationHistory.cleanupOldHistory(
-            message.guild.id,
-            message.author.id,
-            10
-          ).catch(() => { });
-
-        } catch (error) {
-          const errText = `❌ Error: ${error.message}`;
-          return message.reply(errText.length > 1900 ? errText.slice(0, 1900) + '…' : errText);
-        }
-      }
-    }
-
     // Unified command handling
     const args = message.content.trim().split(/\s+/);
     let commandName = "";
@@ -576,6 +406,10 @@ module.exports = {
 
     if (command) {
       try {
+        const authorization = authorizeCommand(command, message);
+        if (!authorization.allowed) {
+          return message.reply({ content: authorization.message, allowedMentions: { parse: [] } });
+        }
         console.log(`[MessageCreate] Executing command: ${command.name}`);
         await command.execute(message, argsArr, client);
       } catch (error) {

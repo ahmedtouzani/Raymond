@@ -84,7 +84,7 @@ module.exports = {
                 const { createUsageEmbed } = require('../../utils/embed');
                 const embed = await createUsageEmbed(message.guild.id, {
                     command: 'setstats',
-                    description: '<a:warningbug:905560995886411806> **Invalid Type**\nPlease specify either `member` or `voice`.',
+                    description: '<a:warningbug:1467300628907954300> **Invalid Type**\nPlease specify either `member` or `voice`.',
                     usage: '`!setstats remove <member|voice>`',
                     examples: '`!setstats remove member`'
                 });
@@ -104,7 +104,7 @@ module.exports = {
             const { createUsageEmbed } = require('../../utils/embed');
             const embed = await createUsageEmbed(message.guild.id, {
                 command: 'setstats',
-                description: '<a:warningbug:905560995886411806> **Invalid Command**\nPlease specify either `member` or `voice`.',
+                description: '<a:warningbug:1467300628907954300> **Invalid Command**\nPlease specify either `member` or `voice`.',
                 usage: '`!setstats <member|voice> <#channel>`',
                 examples: '`!setstats member #stats`\n`!setstats voice #voice-count`'
             });
@@ -117,7 +117,7 @@ module.exports = {
             const { createUsageEmbed } = require('../../utils/embed');
             const embed = await createUsageEmbed(message.guild.id, {
                 command: 'setstats',
-                description: '<a:warningbug:905560995886411806> **Invalid Channel**\nPlease mention a valid **voice channel**.\n(Stats channels must be voice channels)',
+                description: '<a:warningbug:1467300628907954300> **Invalid Channel**\nPlease mention a valid **voice channel**.\n(Stats channels must be voice channels)',
                 usage: '`!setstats <member|voice> <#channel>`',
                 examples: '`!setstats member #stats`'
             });

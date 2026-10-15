@@ -1,20 +1,7 @@
-const fs = require('fs');
-const path = require('path');
 const { Client, GatewayIntentBits, Partials } = require('discord.js');
 const logger = require('./utils/logger');
 const { updateChangelog } = require('./utils/changelog');
 const { retryOperation } = require('./utils/retry');
-
-// Print the full changelog to the terminal before starting the bot
-const changelogPath = path.join(__dirname, '../CHANGELOG.md');
-try {
-  const changelog = fs.readFileSync(changelogPath, 'utf8');
-  console.log('==================== CHANGELOG ====================');
-  console.log(changelog);
-  console.log('===================================================');
-} catch (err) {
-  console.log('No CHANGELOG.md found or could not read changelog.');
-}
 
 require('dotenv').config();
 
@@ -23,7 +10,7 @@ const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
     GatewayIntentBits.GuildMembers,
-    GatewayIntentBits.GuildBans,
+    GatewayIntentBits.GuildModeration,
     GatewayIntentBits.GuildEmojisAndStickers,
     GatewayIntentBits.GuildIntegrations,
     GatewayIntentBits.GuildWebhooks,
@@ -85,6 +72,7 @@ const { loadSlashCommands, registerSlashCommands } = require('./handlers/slashCo
 
 loadCommands(client);
 loadEvents(client);
+client.once('ready', () => require('./services/auditLogs').start(client));
 loadSlashCommands(client);
 
 if (process.env.NODE_ENV !== 'production') {
@@ -117,15 +105,15 @@ process.on('unhandledRejection', error => {
 const { gracefulShutdown } = require('./utils/gracefulShutdown');
 
 // Listen for termination signals
-process.on('SIGINT', () => gracefulShutdown('SIGINT', client /*, dbClient */));
-process.on('SIGTERM', () => gracefulShutdown('SIGTERM', client /*, dbClient */));
+process.on('SIGINT', () => gracefulShutdown('SIGINT', client, require('./services/database')));
+process.on('SIGTERM', () => gracefulShutdown('SIGTERM', client, require('./services/database')));
 
 // Catch uncaught exceptions globally and shut down gracefully
 process.on('uncaughtException', error => {
   logger.error('Uncaught Exception:', error);
   updateChangelog('ERROR', 'Uncaught Exception: ' + (error && error.message ? error.message : error));
   // Gracefully shut down after an uncaught exception
-  gracefulShutdown('UNCAUGHT_EXCEPTION', client /*, dbClient */);
+  gracefulShutdown('UNCAUGHT_EXCEPTION', client, require('./services/database'), 1);
 });
 
 logger.info('Initializing bot and attempting to log in...');

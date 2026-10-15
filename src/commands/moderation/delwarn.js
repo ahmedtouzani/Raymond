@@ -27,7 +27,7 @@ module.exports = {
             const { createUsageEmbed } = require('../../utils/embed');
             const embed = await createUsageEmbed(message.guild.id, {
                 command: 'delwarn',
-                description: '<a:warningbug:905560995886411806> **User Not Specified**\nPlease mention a user to delete warnings for.',
+                description: '<a:warningbug:1467300628907954300> **User Not Specified**\nPlease mention a user to delete warnings for.',
                 usage: '`!delwarn <@user> <warningID|all>`',
                 examples: '`!delwarn @User 1`\n`!delwarn @User all`'
             });
@@ -62,7 +62,7 @@ module.exports = {
             const { createUsageEmbed } = require('../../utils/embed');
             const embed = await createUsageEmbed(message.guild.id, {
                 command: 'delwarn',
-                description: '<a:warningbug:905560995886411806> **Missing Action**\nSpecify the warning ID to delete a single warning, or "all" to delete all warnings for this user.',
+                description: '<a:warningbug:1467300628907954300> **Missing Action**\nSpecify the warning ID to delete a single warning, or "all" to delete all warnings for this user.',
                 usage: '`!delwarn <@user> <warningID|all>`',
                 examples: '`!delwarn @User 1`\n`!delwarn @User all`'
             });
@@ -107,7 +107,7 @@ module.exports = {
             });
         } catch (error) {
             return sendEmbed(message, {
-                title: '<a:warningbug:905560995886411806> Error',
+                title: '<a:warningbug:1467300628907954300> Error',
                 description: `Failed to delete warning.\n\`\`\`${error.message}\`\`\``,
                 color: 0x23272A,
             });

@@ -1,3 +1,4 @@
+const { recordAction } = require('../../services/moderationRecords');
 const { PermissionsBitField } = require('discord.js');
 const { sendEmbed } = require('../../handlers/functions/sendEmbed');
 const { addWarning, countWarnings } = require('../../database/warns');
@@ -36,7 +37,7 @@ module.exports = {
         const { createUsageEmbed } = require('../../utils/embed');
         const embed = await createUsageEmbed(message.guild.id, {
           command: 'warn',
-          description: '<a:warningbug:905560995886411806> **User Not Found**\nPlease mention a user to warn, or provide a valid user ID.',
+          description: '<a:warningbug:1467300628907954300> **User Not Found**\nPlease mention a user to warn, or provide a valid user ID.',
           usage: '`!warn <@user> [reason]`',
           examples: '`!warn @User Spamming`'
         });
@@ -64,15 +65,16 @@ module.exports = {
 
     try {
       await addWarning(message.guild.id, member.id, message.author.id, reason);
+      await recordAction(message, member.id, 'warn', reason);
       const total = await countWarnings(message.guild.id, member.id);
       return sendEmbed(message, {
-        title: '⚠️ User Warned',
+        title: '<a:warningbug:1467300628907954300> User Warned',
         description: `**${member.user.tag}** has been warned.\n📝 **Reason:** ${reason}\n\nTotal warnings: **${total}**`,
         color: 0x23272A,
       });
     } catch (error) {
       return sendEmbed(message, {
-        title: '<a:warningbug:905560995886411806> Error',
+        title: '<a:warningbug:1467300628907954300> Error',
         description: `An error occurred while trying to warn the user.\n\`\`\`${error.message}\`\`\``,
         color: 0x23272A,
       });

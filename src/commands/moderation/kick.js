@@ -1,3 +1,4 @@
+const { recordAction } = require('../../services/moderationRecords');
 const { PermissionsBitField } = require('discord.js');
 const { sendEmbed } = require('../../handlers/functions/sendEmbed');
 const { protectBotTarget } = require('../../handlers/functions/botProtection');
@@ -44,7 +45,7 @@ module.exports = {
     if (!member) {
       const embed = await createUsageEmbed(message.guild.id, {
         command: 'kick',
-        description: '<a:warningbug:905560995886411806> **User Not Found**\nPlease mention a valid user or provide a User ID.',
+        description: '<a:warningbug:1467300628907954300> **User Not Found**\nPlease mention a valid user or provide a User ID.',
         usage: '`!kick <@user/ID> [reason]`',
         examples: '`!kick @User`'
       });
@@ -67,7 +68,7 @@ module.exports = {
 
     if (!member.kickable) {
       return sendEmbed(message, {
-        title: '⚠️ Kick Failed',
+        title: '<a:warningbug:1467300628907954300> Kick Failed',
         description: 'I cannot kick this user. Check my permissions and role hierarchy.',
         color: 0x23272A,
       });
@@ -77,6 +78,7 @@ module.exports = {
 
     try {
       await member.kick(`${reason} | Kicked by ${message.author.tag}`);
+      await recordAction(message, member.id, 'kick', reason);
 
       sendEmbed(message, {
         title: '👢 User Kicked',
@@ -85,7 +87,7 @@ module.exports = {
       });
     } catch (error) {
       sendEmbed(message, {
-        title: '<a:warningbug:905560995886411806> Error',
+        title: '<a:warningbug:1467300628907954300> Error',
         description: `An error occurred while trying to kick the user.\n\`\`\`${error.message}\`\`\``,
         color: 0x23272A,
       });

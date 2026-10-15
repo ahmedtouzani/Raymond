@@ -27,7 +27,7 @@ module.exports = {
       const { createUsageEmbed } = require('../../utils/embed');
       const embed = await createUsageEmbed(message.guild.id, {
         command: 'slowmode',
-        description: '<a:warningbug:905560995886411806> **Invalid Duration**\nPlease provide a slowmode value in seconds between 0 and 21600.',
+        description: '<a:warningbug:1467300628907954300> **Invalid Duration**\nPlease provide a slowmode value in seconds between 0 and 21600.',
         usage: '`!slowmode [#channel] <seconds> [-ex @role]`',
         examples: '`!slowmode 5`\n`!slowmode #general 10`'
       });

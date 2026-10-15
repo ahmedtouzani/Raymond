@@ -38,60 +38,31 @@ function randomXpForLevel(level) {
 }
 
 async function addXp(guildId, userId, amount, type = 'text') {
-  // type: 'text' or 'voice'
-  const user = await getUserLevel(guildId, userId);
-  let xp, level, nextLevelXp;
-  if (type === 'text') {
-    xp = user.text_xp + amount;
-    level = user.text_level;
-    nextLevelXp = user.text_next_level_xp;
-  } else {
-    xp = user.voice_xp + amount;
-    level = user.voice_level;
-    nextLevelXp = user.voice_next_level_xp;
+  if (!['text', 'voice'].includes(type) || !Number.isSafeInteger(amount) || amount < 0) {
+    throw new Error('Invalid XP update');
   }
-  let leveledUp = false;
-  let newNextLevelXp = nextLevelXp;
-  while (level < 100 && xp >= newNextLevelXp) {
-    xp -= newNextLevelXp;
-    level++;
-    newNextLevelXp = randomXpForLevel(level);
-    leveledUp = true;
-  }
-  // Cap at level 100
-  if (level > 100) level = 100;
-  // Prepare update
-  let update;
-  if (type === 'text') {
-    update = {
-      text_xp: xp,
-      text_level: level,
-      text_next_level_xp: newNextLevelXp
-    };
-  } else {
-    update = {
-      voice_xp: xp,
-      voice_level: level,
-      voice_next_level_xp: newNextLevelXp
-    };
-  }
-  await db.query(
-    `INSERT INTO user_levels (guild_id, user_id, text_xp, text_level, text_next_level_xp, voice_xp, voice_level, voice_next_level_xp, last_message_at)
-     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, NOW())
-     ON CONFLICT (guild_id, user_id)
-     DO UPDATE SET text_xp = $3, text_level = $4, text_next_level_xp = $5, voice_xp = $6, voice_level = $7, voice_next_level_xp = $8, last_message_at = NOW()`,
-    [
-      guildId,
-      userId,
-      update.text_xp ?? user.text_xp,
-      update.text_level ?? user.text_level,
-      update.text_next_level_xp ?? user.text_next_level_xp,
-      update.voice_xp ?? user.voice_xp,
-      update.voice_level ?? user.voice_level,
-      update.voice_next_level_xp ?? user.voice_next_level_xp
-    ]
-  );
-  return { xp, level, leveledUp };
+  return db.transaction(async client => {
+    await client.query(
+      `INSERT INTO user_levels (guild_id, user_id, text_xp, text_level, text_next_level_xp, voice_xp, voice_level, voice_next_level_xp)
+       VALUES ($1, $2, 0, 1, $3, 0, 1, $3) ON CONFLICT (guild_id, user_id) DO NOTHING`,
+      [guildId, userId, randomXpForLevel(1)]
+    );
+    const { rows } = await client.query('SELECT * FROM user_levels WHERE guild_id = $1 AND user_id = $2 FOR UPDATE', [guildId, userId]);
+    const user = rows[0];
+    let xp = user[`${type}_xp`] + amount;
+    let level = user[`${type}_level`];
+    let nextLevelXp = user[`${type}_next_level_xp`];
+    let leveledUp = false;
+    while (level < 100 && xp >= nextLevelXp) {
+      xp -= nextLevelXp; level++;
+      nextLevelXp = randomXpForLevel(level); leveledUp = true;
+    }
+    await client.query(
+      `UPDATE user_levels SET ${type}_xp = $3, ${type}_level = $4, ${type}_next_level_xp = $5, last_message_at = NOW()
+       WHERE guild_id = $1 AND user_id = $2`, [guildId, userId, xp, level, nextLevelXp]
+    );
+    return { xp, level, leveledUp };
+  });
 }
 
 /**

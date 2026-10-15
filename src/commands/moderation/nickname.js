@@ -34,7 +34,7 @@ module.exports = {
       const { createUsageEmbed } = require('../../utils/embed');
       const embed = await createUsageEmbed(message.guild.id, {
         command: 'nickname',
-        description: '<a:warningbug:905560995886411806> **User Not Found**\nPlease mention a user or provide a valid user ID to change nickname.',
+        description: '<a:warningbug:1467300628907954300> **User Not Found**\nPlease mention a user or provide a valid user ID to change nickname.',
         usage: '`!nickname <@user> [new nickname]`',
         examples: '`!nickname @User NewName`'
       });
@@ -92,7 +92,7 @@ module.exports = {
       });
     } catch (error) {
       sendEmbed(message, {
-        title: '<a:warningbug:905560995886411806> Error',
+        title: '<a:warningbug:1467300628907954300> Error',
         description: `Failed to change nickname: \`${error.message}\``,
         color: 0x23272A,
       });

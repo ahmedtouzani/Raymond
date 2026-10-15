@@ -39,7 +39,7 @@ async function showChannelInfo(message, channel) {
     const { createUsageEmbed } = require('../../utils/embed');
     const embed = await createUsageEmbed(message.guild?.id, {
       command: 'channelinfo',
-      description: '<a:warningbug:905560995886411806> **Channel Not Found**\nPlease check the channel name or ID and try again.',
+      description: '<a:warningbug:1467300628907954300> **Channel Not Found**\nPlease check the channel name or ID and try again.',
       usage: '`!channelinfo [channel]`',
       examples: '`!channelinfo #general`'
     });
@@ -276,7 +276,7 @@ module.exports = {
     const { createUsageEmbed } = require('../../utils/embed');
     const embed = await createUsageEmbed(message.guild.id, {
       command: 'channelinfo',
-      description: '<a:warningbug:905560995886411806> **Channel Not Found**\nPlease check the channel name or ID and try again.',
+      description: '<a:warningbug:1467300628907954300> **Channel Not Found**\nPlease check the channel name or ID and try again.',
       usage: '`!channelinfo [channel]`',
       examples: '`!channelinfo #general`'
     });

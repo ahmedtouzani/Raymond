@@ -95,7 +95,7 @@ module.exports = {
       const { createUsageEmbed } = require('../../utils/embed');
       const embed = await createUsageEmbed(message.guild.id, {
         command: 'add',
-        description: '<a:warningbug:905560995886411806> **Target Not Found**\nPlease mention a valid user or role to add permissions to.',
+        description: '<a:warningbug:1467300628907954300> **Target Not Found**\nPlease mention a valid user or role to add permissions to.',
         usage: '`!add <@user/@role> [permission] (Optional: all)`',
         examples: '`!add @user send`\n`!add @role view connect`'
       });

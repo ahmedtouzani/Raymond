@@ -1,3 +1,4 @@
+const { allowsAutomation, allowsGuild } = require('../config/development');
 const { EmbedBuilder } = require('discord.js');
 const { getGuildConfig } = require('../database/guildConfig');
 const { getAutoRoleSettings } = require('../database/autoRole');
@@ -8,11 +9,14 @@ const logger = require('../utils/logger');
 module.exports = {
     name: 'guildMemberAdd',
     async execute(member) {
+        if (!allowsGuild(member.guild.id)) return;
         try {
             const { guild, user } = member;
 
             // Track invite used (smart detection with bypass tracking)
             const inviteData = await inviteTracker.findUsedInvite(guild, member);
+            // Keep passive join records in development without assigning roles or sending join logs.
+            if (!allowsAutomation(guild.id)) return;
 
             // 1. Assign auto role if set
             let autoRole = null;
@@ -59,7 +63,7 @@ module.exports = {
                     }
 
                     if (inviteData.method === 'new_invite') {
-                        inviteInfo += '\n⚠️ **New invite detected** (created recently)';
+                        inviteInfo += '\n<a:warningbug:1467300628907954300> **New invite detected** (created recently)';
                     }
                 } else if (inviteData.method === 'vanity') {
                     inviterField.value = '✨ Vanity URL';
@@ -68,7 +72,7 @@ module.exports = {
                     inviterField.value = '❓ Unknown';
                     inviteInfo = 'Possible methods: OAuth2, Widget, Discovery, or deleted invite';
                 } else if (inviteData.method === 'error') {
-                    inviterField.value = '⚠️ Error tracking';
+                    inviterField.value = '<a:warningbug:1467300628907954300> Error tracking';
                     inviteInfo = `Error: ${inviteData.error}`;
                 }
 
@@ -83,7 +87,7 @@ module.exports = {
                     .setDescription(`${user} has joined **${guild.name}**!`)
                     .addFields(
                         { name: '📅 Account Created', value: `<t:${Math.floor(user.createdTimestamp / 1000)}:R>`, inline: true },
-                        { name: '⏰ Account Age', value: `${accountAge} days${isNewAccount ? ' ⚠️' : ''}`, inline: true },
+                        { name: '⏰ Account Age', value: `${accountAge} days${isNewAccount ? ' <a:warningbug:1467300628907954300>' : ''}`, inline: true },
                         { name: '👥 Member Count', value: `${guild.memberCount}`, inline: true }
                     );
 
@@ -110,11 +114,11 @@ module.exports = {
                 // Add warning for suspicious joins
                 if (isSuspicious) {
                     const warnings = [];
-                    if (isNewAccount) warnings.push('⚠️ New account (< 7 days)');
-                    if (inviteData.suspicious) warnings.push('⚠️ Suspicious invite pattern');
+                    if (isNewAccount) warnings.push('<a:warningbug:1467300628907954300> New account (< 7 days)');
+                    if (inviteData.suspicious) warnings.push('<a:warningbug:1467300628907954300> Suspicious invite pattern');
 
                     joinEmbed.addFields({
-                        name: '⚠️ Security Alerts',
+                        name: 'Security Alerts',
                         value: warnings.join('\n'),
                         inline: false
                     });
