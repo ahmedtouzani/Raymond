@@ -13,6 +13,7 @@ function loadModule(file, dependencies, env = {}, globals = {}) {
     require(name) {
       if (Object.hasOwn(dependencies, name)) return dependencies[name];
       if (name === 'discord.js') return require('discord.js');
+      if (/^(?:\.\.?\/)+utils\/responses$/.test(name)) return require('../../src/utils/responses');
       if (name === '../config/development') return require('../../src/config/development');
       throw new Error(`Unexpected dependency in ${file}: ${name}`);
     },

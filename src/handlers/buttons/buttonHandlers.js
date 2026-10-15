@@ -1,3 +1,4 @@
+const { asEmbed } = require('../../utils/responses');
 const { PermissionsBitField, ChannelType, ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder, StringSelectMenuBuilder, ModalBuilder, TextInputBuilder, TextInputStyle } = require('discord.js');
 const { getGuildConfig } = require('../../database/guildConfig');
 const { createEmbed } = require('../../utils/embed');
@@ -23,7 +24,7 @@ function hasAdminPermission(interaction) {
 async function denyIfNotAdmin(interaction) {
   if (hasAdminPermission(interaction)) return false;
   if (!interaction.replied && !interaction.deferred) {
-    await interaction.reply({ content: '❌ You need Administrator permission to use this.', flags: 64 }).catch(() => { });
+    await interaction.reply(asEmbed({ content: '❌ You need Administrator permission to use this.', flags: 64 })).catch(() => { });
   }
   return true;
 }
@@ -100,7 +101,7 @@ async function handleLeaderboardPage(interaction, type, page, isRefresh = false)
     const leaderboard = await getLeaderboard(interaction.guild.id, type, 100);
 
     if (!leaderboard || leaderboard.length === 0) {
-      await interaction.editReply({ content: `No ${type} XP data available yet.`, components: [] });
+      await interaction.editReply(asEmbed({ content: `No ${type} XP data available yet.`, components: [] }));
       return;
     }
 
@@ -141,7 +142,7 @@ async function handleLeaderboardPage(interaction, type, page, isRefresh = false)
     }
 
     if (users.length === 0) {
-      await interaction.editReply({ content: 'No active users found on this page.', components: [] });
+      await interaction.editReply(asEmbed({ content: 'No active users found on this page.', components: [] }));
       return;
     }
 
@@ -195,7 +196,7 @@ async function handleLeaderboardPage(interaction, type, page, isRefresh = false)
     console.error('Error handling leaderboard page:', error);
     // Only edit if interaction was deferred or replied
     if (interaction.deferred || interaction.replied) {
-      await interaction.editReply({ content: '❌ Failed to load leaderboard.', components: [] }).catch(() => { });
+      await interaction.editReply(asEmbed({ content: '❌ Failed to load leaderboard.', components: [] })).catch(() => { });
     }
   }
 }
@@ -222,14 +223,14 @@ module.exports = {
       );
 
       if (existingChannel) {
-        await interaction.editReply({ content: 'You already have an open ticket!' });
+        await interaction.editReply(asEmbed({ content: 'You already have an open ticket!' }));
         return;
       }
 
       // Retrieve the guild configuration to get the ticket category ID
       const guildConfig = await getGuildConfig(guild.id);
       if (!guildConfig || !guildConfig.settings || !guildConfig.settings.ticketCategoryId) {
-        await interaction.editReply({ content: '❌ Ticket system is not configured. Please contact an administrator.' });
+        await interaction.editReply(asEmbed({ content: '❌ Ticket system is not configured. Please contact an administrator.' }));
         return;
       }
       const ticketCategoryId = guildConfig.settings.ticketCategoryId;
@@ -277,10 +278,10 @@ module.exports = {
       // Mention mod roles and greet them in the new ticket channel
       const modRoleIDs = (guildConfig.settings.modRoleIDs || guildConfig.settings.modRoles || []);
       const modMentions = modRoleIDs.map(id => `<@&${id}>`).join(' ');
-      await ticketChannel.send({
+      await ticketChannel.send(asEmbed({
         content: `Hi ${modMentions}, this member ${interaction.user} needs you!`,
         allowedMentions: { roles: modRoleIDs }
-      });
+      }));
 
       // Create a Close Ticket button
       const closeTicketButton = new ButtonBuilder()
@@ -303,11 +304,11 @@ module.exports = {
         components: [row],
       });
 
-      await interaction.editReply({ content: `Your ticket has been created: ${ticketChannel}` });
+      await interaction.editReply(asEmbed({ content: `Your ticket has been created: ${ticketChannel}` }));
     } catch (error) {
       console.error('Error creating ticket channel:', error);
       try {
-        await interaction.editReply({ content: 'There was an error creating your ticket. Please try again later.' }).catch(() => { });
+        await interaction.editReply(asEmbed({ content: 'There was an error creating your ticket. Please try again later.' })).catch(() => { });
       } catch (err) {
         console.error('Could not reply to interaction error:', err);
       }
@@ -322,19 +323,19 @@ module.exports = {
       if (!ticketChannel.topic || !ticketChannel.topic.includes(interaction.user.id)) {
         // If not the ticket owner, require Administrator permissions.
         if (!interaction.member.permissions.has(PermissionsBitField.Flags.Administrator)) {
-          await interaction.editReply({ content: "You don't have permission to close this ticket." });
+          await interaction.editReply(asEmbed({ content: "You don't have permission to close this ticket." }));
           return;
         }
       }
-      await interaction.editReply({ content: 'Closing ticket...' });
+      await interaction.editReply(asEmbed({ content: 'Closing ticket...' }));
       // Delay deletion for confirmation (3 seconds)
       setTimeout(() => ticketChannel.delete('Ticket closed'), 3000);
     } catch (error) {
       console.error('Error closing ticket channel:', error);
       if (interaction.deferred || interaction.replied) {
-        await interaction.editReply({ content: 'There was an error closing the ticket. Please try again later.' });
+        await interaction.editReply(asEmbed({ content: 'There was an error closing the ticket. Please try again later.' }));
       } else {
-        await interaction.reply({ content: 'There was an error closing the ticket. Please try again later.', flags: 64 });
+        await interaction.reply(asEmbed({ content: 'There was an error closing the ticket. Please try again later.', flags: 64 }));
       }
     }
   },
@@ -743,15 +744,15 @@ module.exports = {
       const raw = interaction.fields.getTextInputValue('multiplier');
       const value = clampNumber(raw, 0.1, 10);
       if (value === null) {
-        await interaction.editReply({ content: '❌ Invalid multiplier. Use a number between 0.1 and 10.' });
+        await interaction.editReply(asEmbed({ content: '❌ Invalid multiplier. Use a number between 0.1 and 10.' }));
         return;
       }
 
       await updateGuildSettings(interaction.guild.id, { xp_multiplier: value });
-      await interaction.editReply({ content: `✅ XP multiplier updated to **${value}x**.` });
+      await interaction.editReply(asEmbed({ content: `✅ XP multiplier updated to **${value}x**.` }));
     } catch (error) {
       console.error('[LevelSetup] xp multiplier modal submit error:', error);
-      await interaction.editReply({ content: '❌ Failed to update multiplier.' }).catch(() => { });
+      await interaction.editReply(asEmbed({ content: '❌ Failed to update multiplier.' })).catch(() => { });
     }
   },
 
@@ -799,15 +800,15 @@ module.exports = {
       const min = clampNumber(minRaw, 1, 500);
       const max = clampNumber(maxRaw, 1, 500);
       if (min === null || max === null || min > max) {
-        await interaction.editReply({ content: '❌ Invalid range. Ensure both are numbers and min <= max.' });
+        await interaction.editReply(asEmbed({ content: '❌ Invalid range. Ensure both are numbers and min <= max.' }));
         return;
       }
 
       await updateGuildSettings(interaction.guild.id, { text_xp_min: min, text_xp_max: max });
-      await interaction.editReply({ content: `✅ Text XP range updated to **${min}-${max}**.` });
+      await interaction.editReply(asEmbed({ content: `✅ Text XP range updated to **${min}-${max}**.` }));
     } catch (error) {
       console.error('[LevelSetup] text xp range modal submit error:', error);
-      await interaction.editReply({ content: '❌ Failed to update text XP range.' }).catch(() => { });
+      await interaction.editReply(asEmbed({ content: '❌ Failed to update text XP range.' })).catch(() => { });
     }
   },
 
@@ -843,15 +844,15 @@ module.exports = {
       const raw = interaction.fields.getTextInputValue('rate');
       const value = clampNumber(raw, 0, 1000);
       if (value === null) {
-        await interaction.editReply({ content: '❌ Invalid voice XP rate. Use a number between 0 and 1000.' });
+        await interaction.editReply(asEmbed({ content: '❌ Invalid voice XP rate. Use a number between 0 and 1000.' }));
         return;
       }
 
       await updateGuildSettings(interaction.guild.id, { voice_xp_rate: value });
-      await interaction.editReply({ content: `✅ Voice XP rate updated to **${value}/min**.` });
+      await interaction.editReply(asEmbed({ content: `✅ Voice XP rate updated to **${value}/min**.` }));
     } catch (error) {
       console.error('[LevelSetup] voice xp rate modal submit error:', error);
-      await interaction.editReply({ content: '❌ Failed to update voice XP rate.' }).catch(() => { });
+      await interaction.editReply(asEmbed({ content: '❌ Failed to update voice XP rate.' })).catch(() => { });
     }
   },
 
@@ -887,15 +888,15 @@ module.exports = {
       const raw = interaction.fields.getTextInputValue('cooldown');
       const value = clampNumber(raw, 0, 3600);
       if (value === null) {
-        await interaction.editReply({ content: '❌ Invalid cooldown. Use a number between 0 and 3600.' });
+        await interaction.editReply(asEmbed({ content: '❌ Invalid cooldown. Use a number between 0 and 3600.' }));
         return;
       }
 
       await updateGuildSettings(interaction.guild.id, { xp_cooldown: value });
-      await interaction.editReply({ content: `✅ XP cooldown updated to **${value}s**.` });
+      await interaction.editReply(asEmbed({ content: `✅ XP cooldown updated to **${value}s**.` }));
     } catch (error) {
       console.error('[LevelSetup] cooldown modal submit error:', error);
-      await interaction.editReply({ content: '❌ Failed to update cooldown.' }).catch(() => { });
+      await interaction.editReply(asEmbed({ content: '❌ Failed to update cooldown.' })).catch(() => { });
     }
   },
 
@@ -936,10 +937,10 @@ module.exports = {
       const raw = interaction.fields.getTextInputValue('channels');
       const ids = parseChannelIdsFromInput(raw);
       await updateGuildSettings(interaction.guild.id, { excluded_channels: ids });
-      await interaction.editReply({ content: `✅ Excluded channels updated. Count: **${ids.length}**.` });
+      await interaction.editReply(asEmbed({ content: `✅ Excluded channels updated. Count: **${ids.length}**.` }));
     } catch (error) {
       console.error('[LevelSetup] excluded channels modal submit error:', error);
-      await interaction.editReply({ content: '❌ Failed to update excluded channels.' }).catch(() => { });
+      await interaction.editReply(asEmbed({ content: '❌ Failed to update excluded channels.' })).catch(() => { });
     }
   },
 
@@ -996,10 +997,10 @@ module.exports = {
       const ids = parseChannelIdsFromInput(raw);
       const channelId = ids[0] || null;
       await updateGuildSettings(interaction.guild.id, { levelup_channel_id: channelId });
-      await interaction.editReply({ content: channelId ? `✅ Level-up channel set to <#${channelId}>.` : '✅ Level-up channel set to current channel.' });
+      await interaction.editReply(asEmbed({ content: channelId ? `✅ Level-up channel set to <#${channelId}>.` : '✅ Level-up channel set to current channel.' }));
     } catch (error) {
       console.error('[LevelSetup] set channel modal submit error:', error);
-      await interaction.editReply({ content: '❌ Failed to update level-up channel.' }).catch(() => { });
+      await interaction.editReply(asEmbed({ content: '❌ Failed to update level-up channel.' })).catch(() => { });
     }
   },
 
@@ -1038,14 +1039,14 @@ module.exports = {
       await interaction.deferReply({ flags: 64 });
       const message = interaction.fields.getTextInputValue('message');
       if (!message || message.length > 1500) {
-        await interaction.editReply({ content: '❌ Message is required and must be under 1500 characters.' });
+        await interaction.editReply(asEmbed({ content: '❌ Message is required and must be under 1500 characters.' }));
         return;
       }
       await updateGuildSettings(interaction.guild.id, { levelup_message: message });
-      await interaction.editReply({ content: '✅ Level-up message updated.' });
+      await interaction.editReply(asEmbed({ content: '✅ Level-up message updated.' }));
     } catch (error) {
       console.error('[LevelSetup] set message modal submit error:', error);
-      await interaction.editReply({ content: '❌ Failed to update message.' }).catch(() => { });
+      await interaction.editReply(asEmbed({ content: '❌ Failed to update message.' })).catch(() => { });
     }
   },
 
@@ -1210,7 +1211,7 @@ module.exports = {
       // Better: check if user has permission to manage channels or is admin.
       if (!interaction.member.permissions.has(PermissionsBitField.Flags.Administrator) && 
           !interaction.member.permissions.has(PermissionsBitField.Flags.ManageGuild)) {
-          return interaction.reply({ content: '❌ You do not have permission to review applications.', flags: 64 });
+          return interaction.reply(asEmbed({ content: '❌ You do not have permission to review applications.', flags: 64 }));
       }
 
       await interaction.deferReply({ flags: 64 });
@@ -1218,12 +1219,12 @@ module.exports = {
       // Fetch application
       const res = await db.query('SELECT * FROM applications WHERE id = $1', [appId]);
       if (res.rows.length === 0) {
-          return interaction.editReply('❌ Application not found.');
+          return interaction.editReply(asEmbed('❌ Application not found.'));
       }
       const app = res.rows[0];
 
       if (app.status !== 'pending') {
-          return interaction.editReply(`❌ This application has already been ${app.status}.`);
+          return interaction.editReply(asEmbed(`❌ This application has already been ${app.status}.`));
       }
 
       // Execute Action
@@ -1272,7 +1273,7 @@ module.exports = {
       
       await interaction.message.edit({ embeds: [originalEmbed], components: [] });
 
-      await interaction.editReply(`✅ Application ${action}ed.${dmSent ? ' User notified.' : ' User could not be DM\'d.'}`);
+      await interaction.editReply(asEmbed(`✅ Application ${action}ed.${dmSent ? ' User notified.' : ' User could not be DM\'d.'}`));
   },
 
   handleApplicationModal: async (interaction) => {
@@ -1311,14 +1312,14 @@ module.exports = {
       if (!reviewChannelId) {
         // Log warning, notify user admins haven't set it up
          console.warn(`[StaffApp] Review channel not set for guild ${interaction.guild.id}`);
-         await interaction.editReply('✅ Application submitted! (Note to admins: Setup staff_review_channel to see it).');
+         await interaction.editReply(asEmbed('✅ Application submitted! (Note to admins: Setup staff_review_channel to see it).'));
          return;
       }
       
       const reviewChannel = interaction.guild.channels.cache.get(reviewChannelId);
       if (!reviewChannel) {
          console.warn(`[StaffApp] Review channel ${reviewChannelId} not found in guild ${interaction.guild.id}`);
-         await interaction.editReply('✅ Application submitted! (Note: Review channel not found).');
+         await interaction.editReply(asEmbed('✅ Application submitted! (Note: Review channel not found).'));
          return;
       }
 
@@ -1370,11 +1371,11 @@ module.exports = {
         [msg.id, reviewChannel.id, appId]
       );
 
-      await interaction.editReply({ content: '✅ Your application has been submitted successfully! Good luck!' });
+      await interaction.editReply(asEmbed({ content: '✅ Your application has been submitted successfully! Good luck!' }));
 
     } catch (error) {
       console.error('Error handling application modal:', error);
-      await interaction.editReply({ content: '❌ Failed to submit application. Please try again later.' }).catch(() => {});
+      await interaction.editReply(asEmbed({ content: '❌ Failed to submit application. Please try again later.' })).catch(() => {});
     }
   }
 };
@@ -1426,7 +1427,7 @@ async function handleViewApp(interaction, category) {
 
     } catch (error) {
         console.error(`Error in handleViewApp (${category}):`, error);
-        await interaction.editReply({ content: '❌ An error occurred.' }).catch(() => {});
+        await interaction.editReply(asEmbed({ content: '❌ An error occurred.' })).catch(() => {});
     }
 }
 
@@ -1482,7 +1483,7 @@ async function handleStartApp(interaction, category) {
 
     } catch (error) {
         console.error(`Error in handleStartApp (${category}):`, error);
-        if (!interaction.replied) await interaction.reply({ content: '❌ An error occurred.', flags: 64 });
+        if (!interaction.replied) await interaction.reply(asEmbed({ content: '❌ An error occurred.', flags: 64 }));
     }
 }
 
@@ -1491,9 +1492,9 @@ async function checkEligibility(interaction) {
     const accountAge = Date.now() - interaction.user.createdTimestamp;
     const minAge = 90 * 24 * 60 * 60 * 1000;
     if (accountAge < minAge) {
-        await interaction.editReply({
+        await interaction.editReply(asEmbed({
             content: `❌ **Account too young.**\nYou must be on Discord for at least 90 days to apply.\nYour account age: ${Math.floor(accountAge / (1000 * 60 * 60 * 24))} days.`
-        });
+        }));
         return false;
     }
 
@@ -1513,9 +1514,9 @@ async function checkEligibility(interaction) {
 
         if (timeSince < cooldown) {
             const daysLeft = Math.ceil((cooldown - timeSince) / (1000 * 60 * 60 * 24));
-            await interaction.editReply({
+            await interaction.editReply(asEmbed({
                 content: `❌ **Cooldown Active.**\nYou have applied recently. Please wait **${daysLeft} more days** before applying again.`
-            });
+            }));
             return false;
         }
     }

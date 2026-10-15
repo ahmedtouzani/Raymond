@@ -1,3 +1,4 @@
+const { asEmbed } = require('../../utils/responses');
 const { EmbedBuilder, PermissionFlagsBits } = require('discord.js');
 const logger = require('../../utils/logger');
 
@@ -248,7 +249,7 @@ module.exports = {
 async function sendDM(member, content) {
     try {
         // Try to send without creating DM channel first
-        await member.send(content);
+        await member.send(asEmbed(content));
         return { success: true };
     } catch (error) {
         // Handle specific error cases

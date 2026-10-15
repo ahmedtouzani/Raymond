@@ -1,3 +1,4 @@
+const { asEmbed } = require('../../utils/responses');
 const {
     EmbedBuilder,
     ActionRowBuilder,
@@ -16,7 +17,7 @@ module.exports = {
     async execute(message, args) {
         // Check permissions
         if (!message.member.permissions.has(PermissionFlagsBits.Administrator)) {
-            return message.reply('❌ You need Administrator permission to use this command.');
+            return message.reply(asEmbed('❌ You need Administrator permission to use this command.'));
         }
 
         // Get current settings

@@ -1,3 +1,4 @@
+const { asEmbed } = require('../../utils/responses');
 const {
   ContainerBuilder, TextDisplayBuilder, SectionBuilder, SeparatorBuilder, MessageFlags, ActionRowBuilder, StringSelectMenuBuilder, ButtonBuilder, ButtonStyle,
   ModalBuilder, TextInputBuilder, TextInputStyle,
@@ -109,13 +110,13 @@ module.exports = {
     const config = await getGuildConfig(message.guild.id);
     const state = { tab: null, expanded: false, prefix: config?.prefix || process.env.GLOBAL_PREFIX || '!', category: null, command: null, query: '', page: 0 };
     if (args.length) selectQuery(state, catalog(client, message.author.id), args.join(' '));
-    const panel = await message.reply(renderHelp(state, message, client));
+    const panel = await message.reply(asEmbed(renderHelp(state, message, client)));
     const collector = panel.createMessageComponentCollector({ time: 15 * 60_000, idle: 5 * 60_000,
       filter: interaction => interaction.customId.startsWith('help:') });
     let pending = Promise.resolve();
     collector.on('collect', interaction => {
       if (interaction.user.id !== message.author.id) {
-        interaction.reply({ content: 'This help menu belongs to the person who opened it. Run help to open your own.', flags: 64 }).catch(() => {}); return;
+        interaction.reply(asEmbed({ content: 'This help menu belongs to the person who opened it. Run help to open your own.', flags: 64 })).catch(() => {}); return;
       }
       const action = interaction._helpQuery != null ? 'query' : interaction.customId.slice(5);
       if (action === 'search') {
@@ -125,7 +126,7 @@ module.exports = {
         const submission = interaction.awaitModalSubmit({ time: 120_000, filter: modal => modal.customId === id && modal.user.id === message.author.id });
         interaction.showModal(new ModalBuilder().setCustomId(id).setTitle('Search Commands').addComponents(row(input))).catch(error => logger.error('Could not open help search:', error));
         submission.then(modal => {
-          if (collector.ended) return modal.reply({ content: 'This help session has expired. Run help again.', flags: 64 }).catch(() => {});
+          if (collector.ended) return modal.reply(asEmbed({ content: 'This help session has expired. Run help again.', flags: 64 })).catch(() => {});
           modal._helpQuery = modal.fields.getTextInputValue('query'); collector.emit('collect', modal);
         }).catch(() => {});
         return;
@@ -162,7 +163,7 @@ module.exports = {
         if (!collector.ended) await panel.edit(renderHelp(state, message, client));
       }).catch(error => {
         logger.error('Help interaction failed:', error);
-        interaction.followUp({ content: 'Could not update this page. Run help to open a new menu.', flags: 64 }).catch(() => {});
+        interaction.followUp(asEmbed({ content: 'Could not update this page. Run help to open a new menu.', flags: 64 })).catch(() => {});
       });
       acknowledgement.catch(() => {});
     });

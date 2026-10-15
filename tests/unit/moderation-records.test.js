@@ -57,7 +57,8 @@ test('a saved note survives disabled DMs without leaking its contents', async ()
     mentions: { users: { first: () => null } }, channel: { send: async payload => publicMessages.push(payload) }, deletable: true, delete: async () => {} };
   await command.execute(message, ['add', '123456789012345678', 'Private', 'note']);
   assert.equal(saves, 1); assert.equal(JSON.stringify(publicMessages).includes('Private note'), false);
-  assert(publicMessages[0].content.includes('Enable DMs'));
+  assert.equal(publicMessages[0].content, '');
+  assert.match(publicMessages[0].embeds[0].toJSON().description, /Enable DMs/);
 });
 
 test('ban records a case only after the Discord ban succeeds', async () => {

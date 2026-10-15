@@ -1,3 +1,4 @@
+const { asEmbed } = require('../../utils/responses');
 const { recordAction } = require('../../services/moderationRecords');
 const { PermissionsBitField } = require('discord.js');
 const { sendEmbed } = require('../../handlers/functions/sendEmbed');
@@ -46,7 +47,7 @@ module.exports = {
 
         if (subcommand === 'setrole') {
             const role = message.mentions.roles.first();
-            if (!role) return message.reply('Please mention a role. Usage: `!jail setrole @Role`');
+            if (!role) return message.reply(asEmbed('Please mention a role. Usage: `!jail setrole @Role`'));
             await setJailRole(message.guild.id, role.id);
             return sendEmbed(message, { title: '✅ Success', description: `Jail role set to ${role}.`, color: 0x23272A });
         }
@@ -54,7 +55,7 @@ module.exports = {
         if (subcommand === 'setvoice') {
             const channelId = args[1]?.replace(/[<#>]/g, '');
             const channel = message.guild.channels.cache.get(channelId);
-            if (!channel || channel.type !== 2) return message.reply('Please mention a valid voice channel. Usage: `!jail setvoice #Channel`');
+            if (!channel || channel.type !== 2) return message.reply(asEmbed('Please mention a valid voice channel. Usage: `!jail setvoice #Channel`'));
             await setJailVoiceChannel(message.guild.id, channel.id);
             return sendEmbed(message, { title: '✅ Success', description: `Jail voice channel set to ${channel}.`, color: 0x23272A });
         }

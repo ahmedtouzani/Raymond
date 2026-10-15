@@ -1,3 +1,4 @@
+const { asEmbed } = require('../../utils/responses');
 const { PermissionFlagsBits, EmbedBuilder } = require('discord.js');
 const logger = require('../../utils/logger');
 
@@ -19,20 +20,20 @@ module.exports = {
         try {
             // Check if this is the premium server
             if (message.guild.id !== PREMIUM_SERVER_ID) {
-                return message.reply(' This command is only available in the premium server.')
+                return message.reply(asEmbed(' This command is only available in the premium server.'))
                     .then(msg => setTimeout(() => msg.delete().catch(console.error), 5000))
                     .catch(console.error);
             }
 
             // Check if user has administrator permissions
             if (!message.member.permissions.has(PermissionFlagsBits.Administrator)) {
-                return message.reply(' You need administrator permissions to use this command.')
+                return message.reply(asEmbed(' You need administrator permissions to use this command.'))
                     .then(msg => setTimeout(() => msg.delete().catch(console.error), 5000))
                     .catch(console.error);
             }
 
             // Send initial message
-            const processingMsg = await message.channel.send('🔄 Setting up reaction roles...');
+            const processingMsg = await message.channel.send(asEmbed('🔄 Setting up reaction roles...'));
 
             try {
                 // Create or get the roles
@@ -86,19 +87,19 @@ module.exports = {
                 await message.delete().catch(console.error);
 
                 // Send success message that auto-deletes
-                const successMsg = await message.channel.send('<a:okey:1467170671351173121> Successfully set up reaction roles!');
+                const successMsg = await message.channel.send(asEmbed('<a:okey:1467170671351173121> Successfully set up reaction roles!'));
                 setTimeout(() => successMsg.delete().catch(console.error), 5000);
 
                 logger.info(`Reaction roles set up in guild ${guild.id}`);
 
             } catch (error) {
                 logger.error('Error in setuproles command:', error);
-                await processingMsg.edit(' Failed to set up roles. Please check bot permissions and try again.');
+                await processingMsg.edit(asEmbed(' Failed to set up roles. Please check bot permissions and try again.'));
             }
 
         } catch (error) {
             logger.error('Unexpected error in setuproles command:', error);
-            message.channel.send(' An unexpected error occurred while setting up roles.')
+            message.channel.send(asEmbed(' An unexpected error occurred while setting up roles.'))
                 .then(msg => setTimeout(() => msg.delete().catch(console.error), 5000))
                 .catch(console.error);
         }

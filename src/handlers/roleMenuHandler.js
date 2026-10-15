@@ -1,3 +1,4 @@
+const { asEmbed } = require('../utils/responses');
 const path = require('path');
 const { getRoleMenu } = require(path.join(process.cwd(), 'src/database/roleMenus'));
 const logger = require(path.join(process.cwd(), 'src/utils/logger'));
@@ -11,14 +12,14 @@ async function handleRoleMenuInteraction(interaction) {
     const type = parts[1]; // 'btn' or 'sel'
     const menuId = parts[2];
 
-    if (!menuId) return interaction.reply({ content: ' Invalid menu interaction.', ephemeral: true });
+    if (!menuId) return interaction.reply(asEmbed({ content: ' Invalid menu interaction.', ephemeral: true }));
 
     // Defer immediately to prevent "Unknown interaction" timeout
     await interaction.deferReply({ ephemeral: true });
 
     // Fetch Menu Logic
     const menu = await getRoleMenu(menuId);
-    if (!menu) return interaction.editReply({ content: ' This menu no longer exists.' });
+    if (!menu) return interaction.editReply(asEmbed({ content: ' This menu no longer exists.' }));
 
     const member = interaction.member;
     const guild = interaction.guild;
@@ -34,7 +35,7 @@ async function handleRoleMenuInteraction(interaction) {
 
 async function handleButton(interaction, menu, roleId, member, guild) {
     const role = guild.roles.cache.get(roleId);
-    if (!role) return interaction.editReply({ content: ' This role has been deleted from the server.' });
+    if (!role) return interaction.editReply(asEmbed({ content: ' This role has been deleted from the server.' }));
 
     const hasRole = member.roles.cache.has(roleId);
 
@@ -55,24 +56,24 @@ async function handleButton(interaction, menu, roleId, member, guild) {
 
             if (!hasRole) {
                 await member.roles.add(roleId);
-                return interaction.editReply({ content: `<a:okey:1467170671351173121> **${role.name}** selected.` });
+                return interaction.editReply(asEmbed({ content: `<a:okey:1467170671351173121> **${role.name}** selected.` }));
             } else {
-                return interaction.editReply({ content: `<a:okey:1467170671351173121> You already have **${role.name}**.` });
+                return interaction.editReply(asEmbed({ content: `<a:okey:1467170671351173121> You already have **${role.name}**.` }));
             }
 
         } else {
             // TOGGLE MODE
             if (hasRole) {
                 await member.roles.remove(roleId);
-                return interaction.editReply({ content: ` Removed **${role.name}**.` });
+                return interaction.editReply(asEmbed({ content: ` Removed **${role.name}**.` }));
             } else {
                 await member.roles.add(roleId);
-                return interaction.editReply({ content: `<a:okey:1467170671351173121> Added **${role.name}**.` });
+                return interaction.editReply(asEmbed({ content: `<a:okey:1467170671351173121> Added **${role.name}**.` }));
             }
         }
     } catch (error) {
         logger.error(`Failed to change role for ${member.user.tag}:`, error);
-        return interaction.editReply({ content: ' I failed to give/take that role. Check my permissions!', ephemeral: true });
+        return interaction.editReply(asEmbed({ content: ' I failed to give/take that role. Check my permissions!', ephemeral: true }));
     }
 }
 
@@ -105,16 +106,16 @@ async function handleSelect(interaction, menu, selectedRoleIds, member, guild) {
 
         // If empty selection
         if (toAdd.length === 0) {
-            return interaction.editReply({ content: `<a:okey:1467170671351173121> cleared roles from this menu.` });
+            return interaction.editReply(asEmbed({ content: `<a:okey:1467170671351173121> cleared roles from this menu.` }));
         }
 
-        return interaction.editReply({
+        return interaction.editReply(asEmbed({
             content: `<a:okey:1467170671351173121> Updated roles!\nCurrent: **${addedNames}**`
-        });
+        }));
 
     } catch (error) {
         logger.error(`Failed to batch update roles for ${member.user.tag}:`, error);
-        return interaction.editReply({ content: ' Failed to update roles. Check permissions.' });
+        return interaction.editReply(asEmbed({ content: ' Failed to update roles. Check permissions.' }));
     }
 }
 

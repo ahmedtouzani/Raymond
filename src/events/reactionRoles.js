@@ -1,3 +1,4 @@
+const { asEmbed } = require('../utils/responses');
 const { Events } = require('discord.js');
 const logger = require('../utils/logger');
 
@@ -88,7 +89,7 @@ async function handleReaction(reaction, user, action) {
             // Optionally send a message to the user if we can
             if (error.code === 50013) { // Missing Permissions
                 try {
-                    await user.send(`I don't have permission to manage the ${roleName} role. Please contact an admin.`);
+                    await user.send(asEmbed(`I don't have permission to manage the ${roleName} role. Please contact an admin.`));
                 } catch (dmError) {
                     logger.error('Failed to send DM to user:', dmError);
                 }

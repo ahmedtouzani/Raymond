@@ -1,3 +1,4 @@
+const { asEmbed } = require('../utils/responses');
 const { ActionRowBuilder, ButtonBuilder, ButtonStyle, AttachmentBuilder } = require('discord.js');
 const { getLeaderboard } = require('../database/levelSystem');
 const { generateLeaderboard } = require('../utils/canvasLeaderboard');
@@ -39,11 +40,11 @@ module.exports = {
       leaderboard = await getLeaderboard(message.guild.id, type, 100);
     } catch (error) {
       console.error('Error fetching leaderboard:', error);
-      return message.reply('❌ Failed to fetch leaderboard data.');
+      return message.reply(asEmbed('❌ Failed to fetch leaderboard data.'));
     }
 
     if (!leaderboard || leaderboard.length === 0) {
-      return message.reply(`No ${type} XP data available yet.`);
+      return message.reply(asEmbed(`No ${type} XP data available yet.`));
     }
 
     const totalPages = Math.ceil(leaderboard.length / usersPerPage);
@@ -77,7 +78,7 @@ module.exports = {
     }
 
     if (users.length === 0) {
-      return message.reply('No active users found on this page.');
+      return message.reply(asEmbed('No active users found on this page.'));
     }
 
     // Get server theme
@@ -96,7 +97,7 @@ module.exports = {
       });
     } catch (error) {
       console.error('[Leaderboard] Error generating Canvas:', error);
-      return message.reply('❌ Failed to generate leaderboard image.');
+      return message.reply(asEmbed('❌ Failed to generate leaderboard image.'));
     }
 
     const attachment = new AttachmentBuilder(imageBuffer, { name: 'leaderboard.png' });

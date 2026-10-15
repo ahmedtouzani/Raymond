@@ -1,3 +1,4 @@
+const { asEmbed } = require('../utils/responses');
 const { AttachmentBuilder } = require('discord.js');
 const { getLeaderboard } = require('../database/levelSystem');
 const { generateTopUsers } = require('../utils/canvasTopUsers');
@@ -50,11 +51,11 @@ module.exports = {
             }
         } catch (error) {
             console.error('Error fetching leaderboard:', error);
-            return message.reply('❌ Failed to fetch leaderboard data.');
+            return message.reply(asEmbed('❌ Failed to fetch leaderboard data.'));
         }
 
         if (!leaderboard || leaderboard.length === 0) {
-            return message.reply(`No ${type} XP data available yet.`);
+            return message.reply(asEmbed(`No ${type} XP data available yet.`));
         }
 
         // Get top 3 users
@@ -80,7 +81,7 @@ module.exports = {
         }
 
         if (users.length === 0) {
-            return message.reply('No active users found.');
+            return message.reply(asEmbed('No active users found.'));
         }
 
         // Get server theme
@@ -97,7 +98,7 @@ module.exports = {
             });
         } catch (error) {
             console.error('[Top] Error generating Canvas:', error);
-            return message.reply('❌ Failed to generate top users display.');
+            return message.reply(asEmbed('❌ Failed to generate top users display.'));
         }
 
         const attachment = new AttachmentBuilder(imageBuffer, { name: 'top-users.png' });

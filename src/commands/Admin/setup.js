@@ -1,3 +1,4 @@
+const { asEmbed } = require('../../utils/responses');
 const {
   ActionRowBuilder, ButtonBuilder, ButtonStyle, ContainerBuilder, TextDisplayBuilder, SectionBuilder, SeparatorBuilder, MessageFlags,
   StringSelectMenuBuilder, RoleSelectMenuBuilder, ChannelSelectMenuBuilder, UserSelectMenuBuilder,
@@ -203,14 +204,14 @@ module.exports = {
   permissions: [PermissionsBitField.Flags.Administrator], usage: 'setup',
   async execute(message) {
     const key = `${message.guild.id}:${message.author.id}`, previous = sessions.get(key);
-    if (previous) return message.reply({ content: `You already have an open panel: ${previous.url}`, allowedMentions: { parse: [] } });
+    if (previous) return message.reply(asEmbed({ content: `You already have an open panel: ${previous.url}`, allowedMentions: { parse: [] } }));
     sessions.set(key, { url: message.url });
     try {
       await Promise.all([message.guild.roles.fetch(), message.guild.channels.fetch(), message.guild.members.fetchMe()]);
       const owner = isBotOwner(message.author.id), premium = await hasStellarOrHigher(message.guild.id);
       const access = Object.fromEntries(Object.entries(modules).map(([name, definition]) => [name, !definition.ownerOnly || owner]));
       const state = { settings: await readSetupSettings(message.guild.id), module: null, notice: '', access, premium };
-      const panel = await message.reply(renderPanel(state, message.guild));
+      const panel = await message.reply(asEmbed(renderPanel(state, message.guild)));
       sessions.set(key, panel);
       const collector = panel.createMessageComponentCollector({ time: 15 * 60_000, idle: 5 * 60_000, filter: interaction => interaction.customId.startsWith('setup:') });
       let pending = Promise.resolve();
@@ -224,7 +225,7 @@ module.exports = {
       }
       collector.on('collect', interaction => {
         if (interaction.user.id !== message.author.id) {
-          interaction.reply({ content: 'Only the person who opened this panel can use it. Run setup to open your own panel.', flags: 64 }).catch(() => {}); return;
+          interaction.reply(asEmbed({ content: 'Only the person who opened this panel can use it. Run setup to open your own panel.', flags: 64 })).catch(() => {}); return;
         }
         const action = interaction._setupInput ? 'input' : interaction.customId.slice('setup:'.length);
         if (action === 'edit') {
@@ -245,7 +246,7 @@ module.exports = {
             .catch(error => logger.error('Failed to show setup modal:', error));
           submission.then(modal => {
             modal._setupInput = { draft, name, field, value: modal.fields.getTextInputValue('value') };
-            if (collector.ended) modal.reply({ content: 'This panel has expired. Run setup again.', flags: 64 }).catch(() => {});
+            if (collector.ended) modal.reply(asEmbed({ content: 'This panel has expired. Run setup again.', flags: 64 })).catch(() => {});
             else collector.emit('collect', modal);
           }).catch(() => {});
           return;
@@ -255,7 +256,7 @@ module.exports = {
           await acknowledgement;
           if (collector.ended) return;
           if (!(await permitted(['back', 'cancel'].includes(action) ? null : state.module))) {
-            if (!collector.ended) await interaction.followUp({ content: 'This feature requires the appropriate permissions or an active Premium plan.', flags: 64 });
+            if (!collector.ended) await interaction.followUp(asEmbed({ content: 'This feature requires the appropriate permissions or an active Premium plan.', flags: 64 }));
             return;
           }
           state.notice = '';
@@ -266,7 +267,7 @@ module.exports = {
           } else if (action === 'module' || action.startsWith('module:')) {
             const name = action === 'module' ? interaction.values[0] : action.slice('module:'.length);
             if (!Object.hasOwn(modules, name)) return;
-            if (!(await permitted(name))) { await interaction.followUp({ content: 'This feature requires the bot owner or a Stellar Matrix plan, depending on its access requirements.', flags: 64 }); return; }
+            if (!(await permitted(name))) { await interaction.followUp(asEmbed({ content: 'This feature requires the bot owner or a Stellar Matrix plan, depending on its access requirements.', flags: 64 })); return; }
             state.settings = await readSetupSettings(message.guild.id);
             state.module = name; state.original = structuredClone(state.settings[name]); state.draft = structuredClone(state.original);
             state.field = modules[name].fields[0]?.key; state.item = null; state.page = 0;
@@ -279,7 +280,7 @@ module.exports = {
               const command = message.client.commands.get(definition.launcher.command);
               if (!command) throw new Error('Setup editor is unavailable');
               const authorization = authorizeCommand(command, message);
-              if (!authorization.allowed) { await interaction.followUp({ content: authorization.message, flags: 64 }); return; }
+              if (!authorization.allowed) { await interaction.followUp(asEmbed({ content: authorization.message, flags: 64 })); return; }
               collector.stop('launch');
               await command.execute(message, definition.launcher.args, message.client);
               return;
@@ -300,7 +301,7 @@ module.exports = {
               if (state.module === 'reactions' && state.field === 'target_type') draft.target_id = null;
             } else if (action === 'input') {
               const input = interaction._setupInput;
-              if (input.name !== state.module || input.draft !== draft) { await interaction.followUp({ content: 'The page has changed. Open the field again.', flags: 64 }); return; }
+              if (input.name !== state.module || input.draft !== draft) { await interaction.followUp(asEmbed({ content: 'The page has changed. Open the field again.', flags: 64 })); return; }
               const value = await parseInput(input.field, input.value, message.client, getValue(draft, input.field.key));
               setValue(draft, input.field.key, value);
             } else if (action === 'clear' && draft) {
@@ -320,7 +321,7 @@ module.exports = {
           if (!collector.ended) await panel.edit(renderPanel(state, message.guild));
         }).catch(async error => {
           logger.error('Setup panel interaction failed:', error);
-          if (!collector.ended) await interaction.followUp({ content: 'Could not complete this action. Check the value and try again. Reopen the feature to verify its saved settings.', flags: 64 }).catch(() => {});
+          if (!collector.ended) await interaction.followUp(asEmbed({ content: 'Could not complete this action. Check the value and try again. Reopen the feature to verify its saved settings.', flags: 64 })).catch(() => {});
         });
         acknowledgement.catch(() => {});
       });
@@ -341,7 +342,7 @@ module.exports = {
       });
     } catch (error) {
       sessions.delete(key); logger.error('Failed to open setup panel:', error);
-      await message.reply('Could not open the setup panel. Check the bot permissions and try again.');
+      await message.reply(asEmbed('Could not open the setup panel. Check the bot permissions and try again.'));
     }
   },
   renderPanel, parseInput,

@@ -1,3 +1,4 @@
+const { asEmbed } = require('../utils/responses');
 const {
   getGuildConfig,
   setGuildConfig,
@@ -78,9 +79,9 @@ module.exports = {
                 const userData = await getUserLevel(message.guild.id, message.author.id);
                 const buffer = await generateRankCard(userData, message.member, 'text', 0, levelSettings?.theme_preset || 'dark');
                 const attachment = new AttachmentBuilder(buffer, { name: 'level-up.png' });
-                await targetChannel.send({ content, files: [attachment] });
+                await targetChannel.send(asEmbed({ content, files: [attachment] }));
               } else {
-                await targetChannel.send({ content });
+                await targetChannel.send(asEmbed({ content }));
               }
             } catch (err) {
             }
@@ -408,14 +409,14 @@ module.exports = {
       try {
         const authorization = authorizeCommand(command, message);
         if (!authorization.allowed) {
-          return message.reply({ content: authorization.message, allowedMentions: { parse: [] } });
+          return message.reply(asEmbed({ content: authorization.message, allowedMentions: { parse: [] } }));
         }
         console.log(`[MessageCreate] Executing command: ${command.name}`);
         await command.execute(message, argsArr, client);
       } catch (error) {
         logger.error(`Command ${commandName} failed:`, error);
         message
-          .reply(" An error occurred executing that command")
+          .reply(asEmbed(" An error occurred executing that command"))
           .catch(() => { });
       }
     }

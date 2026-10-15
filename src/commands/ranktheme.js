@@ -1,3 +1,4 @@
+const { asEmbed } = require('../utils/responses');
 const { EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder } = require('discord.js');
 const db = require('../services/database');
 
@@ -39,7 +40,7 @@ module.exports = {
         if (args[0]) {
             const selectedTheme = args[0].toLowerCase();
             if (!themes[selectedTheme]) {
-                return message.reply(`❌ Invalid theme. Available themes: **${Object.keys(themes).join(', ')}**`);
+                return message.reply(asEmbed(`❌ Invalid theme. Available themes: **${Object.keys(themes).join(', ')}**`));
             }
 
             try {
@@ -52,10 +53,10 @@ module.exports = {
                 );
 
                 const theme = themes[selectedTheme];
-                return message.reply(`${theme.emoji} **Theme Updated!**\nYour rank card theme is now set to **${theme.name}**.\nUse \`level\` to see your new card!`);
+                return message.reply(asEmbed(`${theme.emoji} **Theme Updated!**\nYour rank card theme is now set to **${theme.name}**.\nUse \`level\` to see your new card!`));
             } catch (error) {
                 console.error('Error saving theme preference:', error);
-                return message.reply('❌ Failed to save theme preference. Please try again.');
+                return message.reply(asEmbed('❌ Failed to save theme preference. Please try again.'));
             }
         }
 
@@ -86,7 +87,7 @@ module.exports = {
             await message.reply({ embeds: [embed] });
         } catch (error) {
             console.error('Error fetching theme preference:', error);
-            return message.reply('❌ Failed to load themes. Please try again.');
+            return message.reply(asEmbed('❌ Failed to load themes. Please try again.'));
         }
     }
 };

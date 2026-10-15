@@ -1,3 +1,4 @@
+const { asEmbed } = require('../../utils/responses');
 const { PermissionsBitField: { Flags } } = require('discord.js');
 const { isBotOwner } = require('../../handlers/commandAuthorization');
 const logs = require('../../services/auditLogs');
@@ -8,10 +9,10 @@ module.exports = {
   name:'auditlogs',aliases:['logs'],prefixless:true,guildOnly:true,category:'Admin',cooldown:5,
   description:'Inspect audit delivery, test staff logs channels or retry failed deliveries.',usage:'logs [status|test|retry]',
   async execute(message,args=[]) {
-    if (!isBotOwner(message.author.id) && !message.member.permissions.has(Flags.Administrator) && !message.member.permissions.has(Flags.ManageGuild)) return message.reply('You need Administrator or Manage Server to inspect audit logs.');
+    if (!isBotOwner(message.author.id) && !message.member.permissions.has(Flags.Administrator) && !message.member.permissions.has(Flags.ManageGuild)) return message.reply(asEmbed('You need Administrator or Manage Server to inspect audit logs.'));
     const config=await logs.settings(message.guild.id);
     if(args[0]?.toLowerCase()==='retry') {
-      if(!config.enabled)return message.reply('Enable Audit Logs in setup before retrying deliveries.');
+      if(!config.enabled)return message.reply(asEmbed('Enable Audit Logs in setup before retrying deliveries.'));
       const count=await queue.retry(message.guild.id);
       return sendEmbed(message,{title:'Retry Audit Logs',description:`${icons.utility} Requeued **${count}** failed events (up to 100 per request). Use logs status to follow delivery.`});
     }

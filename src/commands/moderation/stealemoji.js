@@ -1,3 +1,4 @@
+const { asEmbed } = require('../../utils/responses');
 const { ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 const { createEmbed, createUsageEmbed } = require('../../utils/embed');
 const { parseEmojis, planImports, hasImportPermission, botCanImport, downloadEmoji, publicError } = require('../../services/emojiImport');
@@ -24,7 +25,7 @@ module.exports = {
         examples: '`se <a:warningbug:1467300628907954300>`\n`se <a:warningbug:1467300628907954300> Warning`',
       })], allowedMentions: { parse: [] } });
     }
-    if (pendingGuilds.has(message.guild.id)) return message.reply('An emoji import is already open in this server. Finish or cancel it first.');
+    if (pendingGuilds.has(message.guild.id)) return message.reply(asEmbed('An emoji import is already open in this server. Finish or cancel it first.'));
     pendingGuilds.add(message.guild.id);
     let panel, collector, phase = 'preview';
     try {
@@ -46,7 +47,7 @@ module.exports = {
       collector = panel.createMessageComponentCollector({ time: 90_000, filter: interaction => interaction.customId.startsWith('emojiimport:') });
       collector.on('collect', interaction => {
         if (interaction.user.id !== message.author.id) {
-          interaction.reply({ content: 'Only the person who opened this preview can confirm it.', flags: 64 }).catch(() => {}); return;
+          interaction.reply(asEmbed({ content: 'Only the person who opened this preview can confirm it.', flags: 64 })).catch(() => {}); return;
         }
         if (phase !== 'preview') { interaction.deferUpdate().catch(() => {}); return; }
         phase = interaction.customId === 'emojiimport:cancel' ? 'cancelled' : 'importing';

@@ -1,3 +1,4 @@
+const { asEmbed } = require('../utils/responses');
 const { AttachmentBuilder } = require('discord.js');
 const { getUserLevel } = require('../database/levelSystem');
 const { generateRankCard } = require('../utils/canvasRankCard');
@@ -54,13 +55,13 @@ module.exports = {
     // Get user data
     const data = await getUserLevel(message.guild.id, target.id);
     if (!data) {
-      return message.reply(`${target} has no ${type} XP yet.`);
+      return message.reply(asEmbed(`${target} has no ${type} XP yet.`));
     }
 
     // Check if user has any XP in the selected type
     const hasXP = type === 'text' ? data.text_xp > 0 || data.text_level > 1 : data.voice_xp > 0 || data.voice_level > 1;
     if (!hasXP) {
-      return message.reply(`${target} has no ${type} XP yet.`);
+      return message.reply(asEmbed(`${target} has no ${type} XP yet.`));
     }
 
     try {
@@ -85,11 +86,11 @@ module.exports = {
       const bar = '▰'.repeat(progress) + '▱'.repeat(20 - progress);
 
       return message.reply(
-        `**${target.displayName}** - ${type === 'text' ? '📝 Text' : '🎤 Voice'} Level\n` +
+        asEmbed(`**${target.displayName}** - ${type === 'text' ? '📝 Text' : '🎤 Voice'} Level\n` +
         `Level: **${level}**\n` +
         `XP: **${xp.toLocaleString()}** / **${nextLevelXp.toLocaleString()}**\n` +
         `${bar}\n\n` +
-        `*Rank card generation failed. Try again later.*`
+        `*Rank card generation failed. Try again later.*`)
       );
     }
   }

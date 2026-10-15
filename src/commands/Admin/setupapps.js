@@ -1,3 +1,4 @@
+const { asEmbed } = require('../../utils/responses');
 const { PermissionsBitField, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, ChannelType, ComponentType } = require('discord.js');
 const { setGuildConfig, getGuildConfig } = require('../../database/guildConfig');
 const { createEmbed } = require('../../utils/embed');
@@ -10,7 +11,7 @@ module.exports = {
   
   async execute(message, args, client) {
     if (!message.member.permissions.has(PermissionsBitField.Flags.Administrator)) {
-      return message.reply('❌ You need Administrator permissions to use this command.');
+      return message.reply(asEmbed('❌ You need Administrator permissions to use this command.'));
     }
 
     // Interactive Wizard Mode
@@ -60,25 +61,25 @@ module.exports = {
 
       } else if (action === 'channel') {
         const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[1]);
-        if (!channel) return message.reply('❌ Please mention a valid channel.');
+        if (!channel) return message.reply(asEmbed('❌ Please mention a valid channel.'));
         await updateConfig(message.guild.id, 'staff_review_channel', channel.id);
-        message.reply(`✅ Review channel set to ${channel}.`);
+        message.reply(asEmbed(`✅ Review channel set to ${channel}.`));
 
       } else if (action === 'role') {
-        if (args.length < 3) return message.reply('Usage: `!setupapps role <moderator|designer|developer> @Role`');
+        if (args.length < 3) return message.reply(asEmbed('Usage: `!setupapps role <moderator|designer|developer> @Role`'));
         const type = args[1].toLowerCase();
-        if (!['moderator', 'designer', 'developer'].includes(type)) return message.reply('❌ Invalid role type.');
+        if (!['moderator', 'designer', 'developer'].includes(type)) return message.reply(asEmbed('❌ Invalid role type.'));
         const role = message.mentions.roles.first() || message.guild.roles.cache.get(args[2]);
-        if (!role) return message.reply('❌ Please mention a valid role.');
+        if (!role) return message.reply(asEmbed('❌ Please mention a valid role.'));
         await updateConfig(message.guild.id, `role_${type}`, role.id);
-        message.reply(`✅ **${type}** role mapped to **${role.name}**.`);
+        message.reply(asEmbed(`✅ **${type}** role mapped to **${role.name}**.`));
 
       } else {
-        message.reply('❌ Unknown action. Usage: `!setupapps [panel]` or just `!setupapps` for wizard.');
+        message.reply(asEmbed('❌ Unknown action. Usage: `!setupapps [panel]` or just `!setupapps` for wizard.'));
       }
     } catch (error) {
       console.error('Error in setupapps command:', error);
-      message.reply('❌ An error occurred.');
+      message.reply(asEmbed('❌ An error occurred.'));
     }
   }
 };
@@ -173,9 +174,9 @@ async function startSetupWizard(message) {
                     
                     // Retry once?
                     const retry = await message.channel.awaitMessages({ filter: m => m.author.id === message.author.id, max: 1, time: 30000 }).catch(() => null);
-                    if (!retry) return msg.edit({ content: '❌ Timeout.' });
+                    if (!retry) return msg.edit(asEmbed({ content: '❌ Timeout.' }));
                     const retryChannel = retry.first().mentions.channels.first();
-                    if (!retryChannel) return msg.edit({ content: '❌ Invalid channel again. Setup cancelled.' });
+                    if (!retryChannel) return msg.edit(asEmbed({ content: '❌ Invalid channel again. Setup cancelled.' }));
                     value = retryChannel.id;
                     if (retry.first().deletable) retry.first().delete().catch(() => {});
                 } else {
@@ -188,9 +189,9 @@ async function startSetupWizard(message) {
                     await msg.edit({ embeds: [wizardEmbed] });
                      
                     const retry = await message.channel.awaitMessages({ filter: m => m.author.id === message.author.id, max: 1, time: 30000 }).catch(() => null);
-                     if (!retry) return msg.edit({ content: '❌ Timeout.' });
+                     if (!retry) return msg.edit(asEmbed({ content: '❌ Timeout.' }));
                      const retryRole = retry.first().mentions.roles.first();
-                     if (!retryRole) return msg.edit({ content: '❌ Invalid role again. Setup cancelled.' });
+                     if (!retryRole) return msg.edit(asEmbed({ content: '❌ Invalid role again. Setup cancelled.' }));
                      value = retryRole.id;
                      if (retry.first().deletable) retry.first().delete().catch(() => {});
                 } else {
@@ -205,7 +206,7 @@ async function startSetupWizard(message) {
             wizardEmbed.setColor(0x5865F2);
 
         } catch (e) {
-            return msg.edit({ content: '❌ **Setup Timed Out.**' });
+            return msg.edit(asEmbed({ content: '❌ **Setup Timed Out.**' }));
         }
     }
 
@@ -234,9 +235,9 @@ async function startSetupWizard(message) {
             // Maybe delete the wizard success message to clean up? Or leave it?
             // Leave it.
         } else {
-            await message.channel.send('Okay! You can post it later using `!setupapps panel`.');
+            await message.channel.send(asEmbed('Okay! You can post it later using `!setupapps panel`.'));
         }
     } catch (e) {
-        await message.channel.send('Okay! You can post it later using `!setupapps panel`.');
+        await message.channel.send(asEmbed('Okay! You can post it later using `!setupapps panel`.'));
     }
 }

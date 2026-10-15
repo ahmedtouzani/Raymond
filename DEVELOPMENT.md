@@ -89,3 +89,8 @@ Message text capture is opt-in and disabled by default. Uncached content is unav
 ### AFK voice connections
 
 `afk` and `unafk` remain private owner commands. AFK requires View Channel and Connect, waits for a fully ready voice connection and closes failed sessions. Repeated calls to the same ready channel reuse the existing connection; `unafk` cancels a pending attempt. A Discord connection failure is handled separately from a text-response failure. Voice uses `@discordjs/voice` 0.19.2+ with DAVE support, requiring Node.js 22.12+; Nixpacks selects Node.js 24. Hosts must permit Discord Voice WebSocket and UDP traffic. The managed development cloud returned HTTP 403 on Voice handshakes; a successful Gateway login does not validate live Voice transport.
+
+
+### Text response presentation
+
+Legacy text responses use `asEmbed` from `src/utils/responses.js` at their send/reply/edit call sites. Usage hints, permission denials, failures and confirmations appear as dark embeds with a timestamp and footer. The formatter is synchronous and performs no database requests, so it also works when an error concerns database availability. It preserves ephemeral flags, explicit mention settings, attachments and controls. Existing embed messages and Components V2 panels keep their own presentation. Content is cleared on converted edits so earlier plain text does not remain above the embed.

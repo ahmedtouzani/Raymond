@@ -1,3 +1,4 @@
+const { asEmbed } = require('../utils/responses');
 const { ChannelType } = require('discord.js');
 const { addXp } = require('../database/levelSystem');
 const { handleLevelUpRoles } = require('../utils/levelRoleManager');
@@ -48,9 +49,9 @@ module.exports = {
                     // Send congratulatory message via DM
                     try {
                       const dmChannel = await newState.member.createDM();
-                      await dmChannel.send({
+                      await dmChannel.send(asEmbed({
                         content: `${newState.member}, congrats! You reached voice level **${level}**!`
-                      });
+                      }));
                     } catch (error) {
                       // Handle DM failure silently
                     }

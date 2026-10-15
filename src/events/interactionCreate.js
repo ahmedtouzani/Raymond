@@ -1,3 +1,4 @@
+const { asEmbed } = require('../utils/responses');
 // File: src/events/interactionCreate.js
 const logger = require('../utils/logger');
 const {
@@ -22,7 +23,7 @@ module.exports = {
   name: 'interactionCreate',
   async execute(interaction) {
     if (!allowsGuild(interaction.guildId || interaction.guild?.id)) {
-      return interaction.reply({ content: 'This development bot is restricted to its test server.', flags: 64 });
+      return interaction.reply(asEmbed({ content: 'This development bot is restricted to its test server.', flags: 64 }));
     }
     // Setup panels own their component collectors, including role/channel selectors.
     if (['setup:', 'emojiimport:', 'help:'].some(prefix => interaction.customId?.startsWith(prefix))) return;
@@ -35,15 +36,15 @@ module.exports = {
       try {
         const authorization = authorizeCommand(command, interaction);
         if (!authorization.allowed) {
-          return interaction.reply({ content: authorization.message, flags: 64, allowedMentions: { parse: [] } });
+          return interaction.reply(asEmbed({ content: authorization.message, flags: 64, allowedMentions: { parse: [] } }));
         }
         await command.execute(interaction);
       } catch (error) {
         logger.error('Error executing slash command:', error);
         if (interaction.replied || interaction.deferred) {
-          await interaction.followUp({ content: 'There was an error executing this command.', flags: 64 });
+          await interaction.followUp(asEmbed({ content: 'There was an error executing this command.', flags: 64 }));
         } else {
-          await interaction.reply({ content: 'There was an error executing this command.', flags: 64 });
+          await interaction.reply(asEmbed({ content: 'There was an error executing this command.', flags: 64 }));
         }
       }
       return;
@@ -59,7 +60,7 @@ module.exports = {
         } catch (error) {
           logger.error(`Error handling application modal ${interaction.customId}:`, error);
            if (!interaction.replied && !interaction.deferred) {
-             await interaction.reply({ content: '❌ Error processing application.', flags: 64 });
+             await interaction.reply(asEmbed({ content: '❌ Error processing application.', flags: 64 }));
            }
         }
         return;
@@ -72,13 +73,13 @@ module.exports = {
         } catch (error) {
           logger.error(`Error handling modal ${interaction.customId}:`, error);
           if (interaction.replied || interaction.deferred) {
-            await interaction.followUp({ content: 'There was an error handling this form.', flags: 64 }).catch(() => { });
+            await interaction.followUp(asEmbed({ content: 'There was an error handling this form.', flags: 64 })).catch(() => { });
           } else {
-            await interaction.reply({ content: 'There was an error handling this form.', flags: 64 }).catch(() => { });
+            await interaction.reply(asEmbed({ content: 'There was an error handling this form.', flags: 64 })).catch(() => { });
           }
         }
       } else {
-        await interaction.reply({ content: 'Unknown form submission.', flags: 64 }).catch(() => { });
+        await interaction.reply(asEmbed({ content: 'Unknown form submission.', flags: 64 })).catch(() => { });
       }
       return;
     }
@@ -96,7 +97,7 @@ module.exports = {
           await handleRoleMenuInteraction(interaction);
         } catch (error) {
           logger.error('Error in RoleMenu handler:', error);
-          if (!interaction.replied) await interaction.reply({ content: '❌ Error processing menu.', ephemeral: true });
+          if (!interaction.replied) await interaction.reply(asEmbed({ content: '❌ Error processing menu.', ephemeral: true }));
         }
         return;
       }
@@ -139,7 +140,7 @@ module.exports = {
             await buttonHandlers.lb_voice_handler(interaction, page);
           } else {
             // Unknown leaderboard button type
-            await interaction.editReply({ content: '❌ Unknown leaderboard button.' }).catch(() => { });
+            await interaction.editReply(asEmbed({ content: '❌ Unknown leaderboard button.' })).catch(() => { });
           }
         }
         return;
@@ -157,7 +158,7 @@ module.exports = {
             } catch (error) {
                logger.error(`Error handling application decision ${interaction.customId}:`, error);
                if (!interaction.replied && !interaction.deferred) {
-                  await interaction.reply({ content: '❌ Error processing decision.', flags: 64 });
+                  await interaction.reply(asEmbed({ content: '❌ Error processing decision.', flags: 64 }));
                }
             }
             return;
@@ -171,11 +172,11 @@ module.exports = {
         } catch (error) {
           logger.error(`Error handling button ${interaction.customId}:`, error);
           if (!interaction.replied && !interaction.deferred) {
-            await interaction.reply({ content: 'There was an error handling this button.', flags: 64 }).catch(() => { });
+            await interaction.reply(asEmbed({ content: 'There was an error handling this button.', flags: 64 })).catch(() => { });
           }
         }
       } else {
-        await interaction.reply({ content: 'Unknown button interaction.', flags: 64 });
+        await interaction.reply(asEmbed({ content: 'Unknown button interaction.', flags: 64 }));
       }
     }
   },

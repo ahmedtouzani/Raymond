@@ -1,3 +1,4 @@
+const { asEmbed } = require('../utils/responses');
 const { ChannelType, PermissionsBitField, OverwriteType, AttachmentBuilder } = require('discord.js');
 const tempVoiceDB = require('../database/tempVoice');
 const statsUpdater = require('../services/statsUpdater');
@@ -207,9 +208,9 @@ async function startVoiceXpTracking(newState) {
                     const userData = await getUserLevel(guild.id, member.id);
                     const buffer = await generateRankCard(userData, member, 'voice', 0, levelSettings?.theme_preset || 'dark');
                     const attachment = new AttachmentBuilder(buffer, { name: 'level-up.png' });
-                    await targetChannel.send({ content, files: [attachment] });
+                    await targetChannel.send(asEmbed({ content, files: [attachment] }));
                   } else {
-                    await targetChannel.send({ content });
+                    await targetChannel.send(asEmbed({ content }));
                   }
                 } catch (error) {
                 }

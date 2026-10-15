@@ -1,3 +1,4 @@
+const { asEmbed } = require('../../../utils/responses');
 const { EmbedBuilder, PermissionFlagsBits } = require('discord.js');
 const logger = require('../../../utils/logger');
 const { ensureReactionRoles } = require('../../../utils/ensureRoles');
@@ -41,16 +42,16 @@ module.exports = {
         try {
             // Check if this is the premium server
             if (message.guild.id !== PREMIUM_SERVER_ID) {
-                return message.reply({
+                return message.reply(asEmbed({
                     content: ' This command is only available in the premium server.'
-                }).then(msg => setTimeout(() => msg.delete().catch(console.error), 5000))
+                })).then(msg => setTimeout(() => msg.delete().catch(console.error), 5000))
                     .catch(console.error);
             }
 
 
 
             // Send a temporary message to show the command is working
-            const processingMsg = await message.channel.send('🔄 Setting up reaction roles...');
+            const processingMsg = await message.channel.send(asEmbed('🔄 Setting up reaction roles...'));
 
             try {
                 // Ensure required roles exist
@@ -104,17 +105,17 @@ module.exports = {
                 await message.delete().catch(console.error);
 
                 // Send success message that will auto-delete
-                const successMsg = await message.channel.send('<a:okey:1467170671351173121> Successfully created reaction role message!');
+                const successMsg = await message.channel.send(asEmbed('<a:okey:1467170671351173121> Successfully created reaction role message!'));
                 setTimeout(() => successMsg.delete().catch(console.error), 5000);
 
             } catch (error) {
                 logger.error('Error in reaction role setup:', error);
-                await processingMsg.edit(' Failed to set up reaction roles. Please check the bot permissions and try again.');
+                await processingMsg.edit(asEmbed(' Failed to set up reaction roles. Please check the bot permissions and try again.'));
             }
 
         } catch (error) {
             logger.error('Unexpected error in sendnotify command:', error);
-            message.channel.send(' An unexpected error occurred while creating the reaction role message.')
+            message.channel.send(asEmbed(' An unexpected error occurred while creating the reaction role message.'))
                 .then(msg => setTimeout(() => msg.delete().catch(console.error), 5000))
                 .catch(console.error);
         }
