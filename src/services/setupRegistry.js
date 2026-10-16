@@ -7,6 +7,10 @@ const boolean = (key, label, value = false) => ({ key, label, kind: 'boolean', d
 const choice = (key, label, options, value) => ({ key, label, kind: 'choice', options, default: value });
 
 const modules = {
+  ownerguard: {label:'Owner Guard',jsonKey:'ownerGuard',ownerOnly:true,permissions:['ViewAuditLog','MuteMembers','DeafenMembers'],fields:[
+    boolean('counterMute','Mirror Punishment',true),
+    number('counterMuteSeconds','Mirror Duration (seconds)',60,30,600),
+  ]},
   voicepresence: { label: 'Voice Presence', jsonKey: 'voicePresence', fields: [
     boolean('enabled', 'Enable Voice Presence'),
     {key:'channels',label:'Random Rotation Channels',kind:'channels',channelTypes:[ChannelType.GuildVoice],default:[]},

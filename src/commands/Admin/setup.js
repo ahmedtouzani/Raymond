@@ -28,7 +28,7 @@ const channelsFor = kind => kind === 'channels' ? [ChannelType.GuildText, Channe
   : kind === 'category' ? [ChannelType.GuildCategory]
   : ['voice', 'statsVoice'].includes(kind) ? [ChannelType.GuildVoice] : [ChannelType.GuildText, ChannelType.GuildAnnouncement];
 const activeDraft = state => modules[state.module]?.collection ? state.draft[state.item] : state.draft;
-const draftFor = (name, original) => structuredClone(name === 'voicepresence' ? {...defaults(modules[name]),...original} : original);
+const draftFor = (name, original) => structuredClone(['voicepresence','ownerguard'].includes(name) ? {...defaults(modules[name]),...original} : original);
 const short = value => String(value).slice(0, 180);
 function display(field, value) {
   if (value == null || value === '' || Array.isArray(value) && !value.length) return 'Not set';
@@ -48,7 +48,7 @@ function itemLabel(name, item, index) {
   return `Entry ${index + 1}`;
 }
 const sections = {
-  safety: { label: 'Safety', icon: emojis.manager, names: ['verification', 'jail', 'automod'] },
+  safety: { label: 'Safety', icon: emojis.manager, names: ['verification', 'jail', 'automod','ownerguard'] },
   community: { label: 'Community', icon: emojis.support, names: ['autorole', 'tempvoice', 'voicepresence', 'applications', 'modmail'] },
   engagement: { label: 'Engagement', icon: emojis.utility, names: ['levels', 'rewards', 'reactions', 'rolemenus'] },
   server: { label: 'Server', icon: emojis.system, names: ['auditlogs', 'stats', 'embeds', 'general'] },
@@ -56,7 +56,7 @@ const sections = {
 function featureStatus(name, state, guild) {
   if (modules[name].premium && state.premium === false) return { icon: emojis.premium, label: 'Premium', status: 'Requires Stellar Matrix' };
   const result = validateSetup(name, state.settings[name], guild);
-  if (result.disabled) return { icon: emojis.cross, label: 'Disabled', status: name==='voicepresence'?'Enable owner presence in every voice room':'Enable after choosing a staff logs channel' };
+  if (result.disabled) return { icon: emojis.cross, label: 'Disabled', status: name==='ownerguard'?'Bot owner only · Configure voice protection':name==='voicepresence'?'Enable owner presence in every voice room':'Enable after choosing a staff logs channel' };
   if (result.launcher) return { icon: emojis.designer, label: 'Designer', status: 'Open the interactive designer' };
   if (result.inactive) return { icon: emojis.category, label: 'No entries', status: 'Add your first entry' };
   if (result.errors.length) return { icon: emojis.warning, label: 'Needs attention', status: 'Check roles or permissions' };
@@ -78,6 +78,7 @@ function card(container, content, id, label, icon = emojis.arrow) {
     .setButtonAccessory(button(id, label).setEmoji(icon)));
 }
 const featureDescriptions = {
+  ownerguard: 'Always active for the bot owner. Reverse confirmed server mute/deafen actions and mirror them temporarily onto the confirmed actor. No activation required; existing punishments stay intact.',
   voicepresence: 'Owner arrival works automatically in every voice room. Choose channels only for random rotation. Short UPPERCASE statuses stand out; leave phrases blank for the signature collection.',
   auditlogs: 'Keep staff informed with dedicated event logs.', verification: 'Choose verification roles and your staff access.',
   jail: 'Set the jail role and optional voice channel.', automod: 'Manage anti-spam and blocked server invites.',
@@ -239,7 +240,7 @@ module.exports = {
       const owner = isBotOwner(message.author.id), premium = await hasStellarOrHigher(message.guild.id);
       const access = Object.fromEntries(Object.entries(modules).map(([name, definition]) => [name, !definition.ownerOnly || owner]));
       const state = { settings: await readSetupSettings(message.guild.id), module: null, notice: '', access, premium };
-      if (['levels','auditlogs','voicepresence'].includes(args[0])) {
+      if (['levels','auditlogs','voicepresence','ownerguard'].includes(args[0]) && access[args[0]]!==false) {
         state.module = args[0]; state.original = structuredClone(state.settings[state.module]); state.draft = draftFor(state.module,state.original);
         state.field = modules[state.module].fields[0].key; state.item = null;
       }

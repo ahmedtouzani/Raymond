@@ -166,6 +166,15 @@ test('voice presence uses voice-only selectors and saves defaults against the or
   await session.click('cancel');
 });
 
+test('Owner Guard is hidden from other administrators and owner configuration saves duration defaults',async()=>{
+  const ordinary=await openPanel();
+  assert(!moduleMenu(ordinary.replies[0]).options.some(option=>option.value==='ownerguard'));await ordinary.click('cancel');
+  const session=await openPanel({owner:true});session.settings.ownerguard={};
+  await session.click('module',['ownerguard']);await session.click('value',['true']);await session.click('save');
+  assert.equal(session.writes.length,1);assert.equal(session.writes[0][2].counterMuteSeconds,60);
+  assert.equal(session.writes[0][2].counterMute,true);assert.equal(Object.hasOwn(session.writes[0][2],'enabled'),false);await session.click('cancel');
+});
+
 test('setup saves a selected module only and prevents other users changing it', async () => {
   const session = await openPanel();
   await session.click('module', ['jail'], 'stranger');

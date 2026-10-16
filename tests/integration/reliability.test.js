@@ -11,7 +11,7 @@ const adminUrl = process.env.RAYMOND_TEST_DATABASE_URL;
 
 describe('Database reliability', { skip: !adminUrl }, () => {
   const name = `raymond_test_${process.pid}_${Date.now()}`;
-  let admin, pool, url, db, levels, setup, auditQueue, created = false;
+  let admin, pool, url, db, levels, setup, auditQueue, ownerGuard, created = false;
   before(async () => {
     admin = new Pool({ connectionString: adminUrl });
     await admin.query(`CREATE DATABASE ${name}`); created = true;
@@ -25,11 +25,12 @@ describe('Database reliability', { skip: !adminUrl }, () => {
       catch (error) { await client.query('ROLLBACK'); throw error; } finally { client.release(); }
     } };
     auditQueue = loadModule('src/database/auditLogQueue.js', { '../services/database': db, 'node:crypto': { randomUUID } }, {}, { Buffer });
+    ownerGuard = loadModule('src/database/ownerGuard.js', { '../services/database': db, 'node:crypto': { randomUUID } });
     levels = loadModule('src/database/levelSystem.js', { '../services/database': db, '../utils/logger': silentLogger });
     setup = loadModule('src/database/setupSettings.js', { '../services/database': db, './guildConfig': { clearCache() {} },
       './levelSettings': { clearSettingsCache() {} }, '../services/setupRegistry': require('../../src/services/setupRegistry') });
   });
-  beforeEach(async () => { await pool.query('TRUNCATE audit_log_queue, user_levels RESTART IDENTITY'); });
+  beforeEach(async () => { await pool.query('TRUNCATE audit_log_queue, owner_guard_events, user_levels RESTART IDENTITY'); });
   after(async () => { if (pool) await pool.end(); if (created) await dropDatabase(admin, name); if (admin) await admin.end(); });
 
   it('fresh migrations leave no AI tables or unused vector extension', async () => {
@@ -237,6 +238,54 @@ describe('Database reliability', { skip: !adminUrl }, () => {
     assert(result.last_delivered instanceof Date);assert(result.oldest_waiting instanceof Date);
     const empty=await auditQueue.health('health-empty');
     assert.equal(empty.failed,0);assert.equal(empty.waiting,0);assert.equal(empty.last_delivered,null);assert.equal(empty.oldest_waiting,null);
+  });
+
+  it('Owner Guard deduplicates events and expiry leases exclude concurrent or stale workers',async()=>{
+    const entry={id:'guard-entry',executorId:'actor'};
+    const row=await ownerGuard.record(entry,'guard-guild',60);
+    assert.equal(row.state,'prepared');assert.equal(await ownerGuard.record(entry,'guard-guild',60),undefined);
+    await pool.query("UPDATE owner_guard_events SET expires_at=NOW()-INTERVAL '1 minute' WHERE entry_id=$1",[entry.id]);
+    assert.equal(await ownerGuard.claim(),undefined,'In-flight prepared actions retain their lease');
+    await ownerGuard.activate(entry.id);
+    const claims=await Promise.all(Array.from({length:5},()=>ownerGuard.claim()));
+    const active=claims.filter(Boolean);assert.equal(active.length,1);
+    await pool.query("UPDATE owner_guard_events SET lease_until=NOW()-INTERVAL '1 second' WHERE entry_id=$1",[entry.id]);
+    const recovered=await ownerGuard.claim();assert.notEqual(recovered.lease_token,active[0].lease_token);
+    await ownerGuard.finish(active[0]);
+    assert.equal((await pool.query('SELECT state FROM owner_guard_events WHERE entry_id=$1',[entry.id])).rows[0].state,'processing');
+    await ownerGuard.finish(recovered);assert.equal(await ownerGuard.claim(),undefined);
+  });
+
+  it('Owner Guard recovers ambiguous prepared mutes and defers disconnected actors without exhausting retries',async()=>{
+    const row=await ownerGuard.record({id:'guard-ambiguous',executorId:'actor'},'guard-guild',30);
+    await pool.query("UPDATE owner_guard_events SET expires_at=NOW()-INTERVAL '1 minute',lease_until=NOW()-INTERVAL '1 second' WHERE entry_id=$1",[row.entry_id]);
+    const job=await ownerGuard.claim();assert.equal(job.attempts,1);
+    await ownerGuard.defer(job);
+    const deferred=(await pool.query('SELECT state,attempts,available_at>NOW() AS delayed FROM owner_guard_events WHERE entry_id=$1',[row.entry_id])).rows[0];
+    assert.equal(deferred.state,'active');assert.equal(deferred.attempts,0);assert.equal(deferred.delayed,true);
+    assert.equal(await ownerGuard.claim(),undefined);
+  });
+
+  it('mirror flags persist independently and stale expiry workers cannot clear them',async()=>{
+    const row=await ownerGuard.record({id:'mirror-flags',executorId:'actor'},'guild',60);
+    assert.equal(row.undo_mute,false);assert.equal(row.undo_deaf,false);
+    await ownerGuard.arm(row,false,true);
+    await ownerGuard.activate(row.entry_id);
+    await assert.rejects(ownerGuard.arm(row,true,true));
+    await pool.query("UPDATE owner_guard_events SET expires_at=NOW()-INTERVAL '1 minute' WHERE entry_id=$1",[row.entry_id]);
+    const job=await ownerGuard.claim();assert.equal(job.undo_mute,false);assert.equal(job.undo_deaf,true);
+    await assert.rejects(ownerGuard.clearFlag({...job,lease_token:randomUUID()},'undo_deaf'));
+    await ownerGuard.clearFlag(job,'undo_deaf');
+    assert.equal((await pool.query('SELECT undo_deaf FROM owner_guard_events WHERE entry_id=$1',[row.entry_id])).rows[0].undo_deaf,false);
+  });
+
+  it('mirror migration keeps legacy mute jobs and never invents legacy deafen jobs',async()=>{
+    await pool.query('ALTER TABLE owner_guard_events DROP COLUMN undo_mute, DROP COLUMN undo_deaf');
+    await pool.query("INSERT INTO owner_guard_events (entry_id,guild_id,actor_id,expires_at) VALUES ('legacy-mute','guild','actor',NOW())");
+    const sql=fs.readFileSync(path.join(__dirname,'../../migrations/20261016020000_owner_guard_mirror.sql'),'utf8');
+    await pool.query(sql);await pool.query(sql);
+    const row=(await pool.query("SELECT undo_mute,undo_deaf FROM owner_guard_events WHERE entry_id='legacy-mute'")).rows[0];
+    assert.equal(row.undo_mute,true);assert.equal(row.undo_deaf,false);
   });
 
   it('moderation case numbering is concurrent, guild-scoped and retries do not duplicate records', async () => {
