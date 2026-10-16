@@ -1,3 +1,4 @@
+const { ChannelType } = require('discord.js');
 const role = (key, label, required = false, extra = {}) => ({ key, label, kind: 'role', required, ...extra });
 const channel = (key, label, kind = 'text', required = false) => ({ key, label, kind, required });
 const text = (key, label, max = 100, extra = {}) => ({ key, label, kind: 'textInput', max, ...extra });
@@ -6,6 +7,15 @@ const boolean = (key, label, value = false) => ({ key, label, kind: 'boolean', d
 const choice = (key, label, options, value) => ({ key, label, kind: 'choice', options, default: value });
 
 const modules = {
+  voicepresence: { label: 'Voice Presence', jsonKey: 'voicePresence', fields: [
+    boolean('enabled', 'Enable Voice Presence'),
+    {key:'channels',label:'Random Rotation Channels',kind:'channels',channelTypes:[ChannelType.GuildVoice],default:[]},
+    number('intervalMinutes','Status Rotation (minutes)',15,5,1440),
+    text('phrases','Random Status Phrases (one per line)',2000),
+    text('ownerStatus','Owner Status (UPPERCASE)',100,{default:'👑 BOSS IS HERE'}),
+    boolean('announceOwner','Announce Owner Arrival',true),
+    text('ownerMessage','Owner Arrival Message',500,{default:'**{owner} HAS ARRIVED.**\nTHE ROOM JUST CHANGED.'}),
+  ] },
   auditlogs: { label: 'Audit Logs', jsonKey: 'auditLogs', fields: [
     boolean('enabled', 'Enable Audit Logs'), channel('defaultChannelId', 'General Logs Channel'),
     channel('moderationChannelId', 'Moderation Logs'), channel('messagesChannelId', 'Message Logs'),

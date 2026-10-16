@@ -133,6 +133,8 @@ async function handleChannelCleanup(oldState) {
 module.exports = {
   name: 'voiceStateUpdate',
   async execute(oldState, newState) {
+    require('../services/voicePresence').onVoiceState(oldState,newState)
+      .catch(error=>logger.warn('Voice presence event failed',{code:error.code||error.name}));
     if (isDevelopment()) return;
     const guild = newState.guild || oldState.guild;
 

@@ -28,6 +28,7 @@ const channelsFor = kind => kind === 'channels' ? [ChannelType.GuildText, Channe
   : kind === 'category' ? [ChannelType.GuildCategory]
   : ['voice', 'statsVoice'].includes(kind) ? [ChannelType.GuildVoice] : [ChannelType.GuildText, ChannelType.GuildAnnouncement];
 const activeDraft = state => modules[state.module]?.collection ? state.draft[state.item] : state.draft;
+const draftFor = (name, original) => structuredClone(name === 'voicepresence' ? {...defaults(modules[name]),...original} : original);
 const short = value => String(value).slice(0, 180);
 function display(field, value) {
   if (value == null || value === '' || Array.isArray(value) && !value.length) return 'Not set';
@@ -48,14 +49,14 @@ function itemLabel(name, item, index) {
 }
 const sections = {
   safety: { label: 'Safety', icon: emojis.manager, names: ['verification', 'jail', 'automod'] },
-  community: { label: 'Community', icon: emojis.support, names: ['autorole', 'tempvoice', 'applications', 'modmail'] },
+  community: { label: 'Community', icon: emojis.support, names: ['autorole', 'tempvoice', 'voicepresence', 'applications', 'modmail'] },
   engagement: { label: 'Engagement', icon: emojis.utility, names: ['levels', 'rewards', 'reactions', 'rolemenus'] },
   server: { label: 'Server', icon: emojis.system, names: ['auditlogs', 'stats', 'embeds', 'general'] },
 };
 function featureStatus(name, state, guild) {
   if (modules[name].premium && state.premium === false) return { icon: emojis.premium, label: 'Premium', status: 'Requires Stellar Matrix' };
   const result = validateSetup(name, state.settings[name], guild);
-  if (result.disabled) return { icon: emojis.cross, label: 'Disabled', status: 'Enable after choosing a staff logs channel' };
+  if (result.disabled) return { icon: emojis.cross, label: 'Disabled', status: name==='voicepresence'?'Enable owner presence in every voice room':'Enable after choosing a staff logs channel' };
   if (result.launcher) return { icon: emojis.designer, label: 'Designer', status: 'Open the interactive designer' };
   if (result.inactive) return { icon: emojis.category, label: 'No entries', status: 'Add your first entry' };
   if (result.errors.length) return { icon: emojis.warning, label: 'Needs attention', status: 'Check roles or permissions' };
@@ -77,6 +78,7 @@ function card(container, content, id, label, icon = emojis.arrow) {
     .setButtonAccessory(button(id, label).setEmoji(icon)));
 }
 const featureDescriptions = {
+  voicepresence: 'Owner arrival works automatically in every voice room. Choose channels only for random rotation. Short UPPERCASE statuses stand out; leave phrases blank for the signature collection.',
   auditlogs: 'Keep staff informed with dedicated event logs.', verification: 'Choose verification roles and your staff access.',
   jail: 'Set the jail role and optional voice channel.', automod: 'Manage anti-spam and blocked server invites.',
   autorole: 'Welcome members with a join role and logs.', tempvoice: 'Build and manage join-to-create voice channels.',
@@ -175,7 +177,7 @@ function renderPanel(state, guild) {
   let selector;
   if (field.kind === 'role' || field.kind === 'roles') selector = new RoleSelectMenuBuilder();
   else if (field.kind === 'target' && draft.target_type === 'user') selector = new UserSelectMenuBuilder();
-  else if (['text', 'voice', 'category', 'statsVoice', 'channels', 'target'].includes(field.kind)) selector = new ChannelSelectMenuBuilder().setChannelTypes(channelsFor(field.kind));
+  else if (['text', 'voice', 'category', 'statsVoice', 'channels', 'target'].includes(field.kind)) selector = new ChannelSelectMenuBuilder().setChannelTypes(field.channelTypes || channelsFor(field.kind));
   else if (field.kind === 'boolean' || field.kind === 'choice') selector = new StringSelectMenuBuilder().addOptions(
     field.kind === 'boolean' ? [{ label: 'Enable', value: 'true', default: getValue(draft, field.key) === true }, { label: 'Disable', value: 'false', default: getValue(draft, field.key) === false }]
       : field.options.map(value => ({ label: value, value, default: getValue(draft, field.key) === value })));
@@ -237,8 +239,8 @@ module.exports = {
       const owner = isBotOwner(message.author.id), premium = await hasStellarOrHigher(message.guild.id);
       const access = Object.fromEntries(Object.entries(modules).map(([name, definition]) => [name, !definition.ownerOnly || owner]));
       const state = { settings: await readSetupSettings(message.guild.id), module: null, notice: '', access, premium };
-      if (['levels','auditlogs'].includes(args[0])) {
-        state.module = args[0]; state.original = structuredClone(state.settings[state.module]); state.draft = structuredClone(state.original);
+      if (['levels','auditlogs','voicepresence'].includes(args[0])) {
+        state.module = args[0]; state.original = structuredClone(state.settings[state.module]); state.draft = draftFor(state.module,state.original);
         state.field = modules[state.module].fields[0].key; state.item = null;
       }
       const panel = await message.reply(asEmbed(renderPanel(state, message.guild)));
@@ -299,7 +301,7 @@ module.exports = {
             if (!Object.hasOwn(modules, name)) return;
             if (!(await permitted(name))) { await interaction.followUp(asEmbed({ content: 'This feature requires the bot owner or a Stellar Matrix plan, depending on its access requirements.', flags: 64 })); return; }
             state.settings = await readSetupSettings(message.guild.id);
-            state.module = name; state.original = structuredClone(state.settings[name]); state.draft = structuredClone(state.original);
+            state.module = name; state.original = structuredClone(state.settings[name]); state.draft = draftFor(name,state.original);
             state.auditWizard = null; state.auditRouteEditor = null;
             state.field = modules[name].fields[0]?.key; state.item = null; state.page = 0;
           } else if (action === 'back') {

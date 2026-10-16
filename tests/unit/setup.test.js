@@ -152,6 +152,20 @@ test('detailed route editor keeps channel choices in a draft until saving',async
   await session.click('cancel');
 });
 
+test('voice presence uses voice-only selectors and saves defaults against the original JSON snapshot',async()=>{
+  const session=await openPanel();session.settings.voicepresence={};
+  await session.click('module',['voicepresence']);await session.click('field',['channels']);
+  const selector=data(session.edits.at(-1)).find(component=>component.custom_id==='setup:value');
+  assert.deepEqual(selector.channel_types,[ChannelType.GuildVoice]);
+  await session.click('value',['voice']);
+  await session.click('field',['enabled']);await session.click('value',['true']);
+  await session.click('save');
+  assert.equal(session.writes.length,1);assert.equal(session.writes[0][2].intervalMinutes,15);
+  assert.equal(session.writes[0][2].announceOwner,true);assert.equal(session.writes[0][2].ownerStatus,'👑 BOSS IS HERE');
+  assert.equal(Object.keys(session.writes[0][3]).length,0);
+  await session.click('cancel');
+});
+
 test('setup saves a selected module only and prevents other users changing it', async () => {
   const session = await openPanel();
   await session.click('module', ['jail'], 'stranger');

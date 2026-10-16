@@ -76,6 +76,7 @@ const { loadSlashCommands, registerSlashCommands } = require('./handlers/slashCo
 loadCommands(client);
 loadEvents(client);
 client.once('ready', () => require('./services/auditLogs').start(client));
+client.once('ready', () => require('./services/voicePresence').start(client).catch(error=>logger.warn('Voice presence startup failed',{code:error.code||error.name})));
 loadSlashCommands(client);
 
 if (process.env.NODE_ENV !== 'production') {

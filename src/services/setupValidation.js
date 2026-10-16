@@ -7,6 +7,7 @@ function validateSetup(name, settings, guild) {
   if (!definition) throw new Error('Unknown setup module');
   if (definition.launcher) return { missing: [], errors: [], ready: true, launcher: true };
   if (name === 'auditlogs' && !settings?.enabled) return { missing: [], errors: [], ready: true, disabled: true };
+  if (name === 'voicepresence' && !settings?.enabled) return { missing: [], errors: [], ready: true, disabled: true };
   if (definition.collection && Array.isArray(settings)) {
     const results = settings.map(item => validateSetup(name, item, guild));
     const missing = results.flatMap(result => result.missing), errors = results.flatMap(result => result.errors);
@@ -56,16 +57,17 @@ function validateSetup(name, settings, guild) {
         if (!/^\d{17,20}$/.test(value)) errors.push('Choose a valid user.');
         continue;
       }
-      const types = field.kind === 'channels' ? [ChannelType.GuildText, ChannelType.GuildAnnouncement, ChannelType.GuildVoice, ChannelType.GuildStageVoice]
+      const types = field.channelTypes || (field.kind === 'channels' ? [ChannelType.GuildText, ChannelType.GuildAnnouncement, ChannelType.GuildVoice, ChannelType.GuildStageVoice]
         : field.kind === 'category' ? [ChannelType.GuildCategory]
         : ['voice', 'statsVoice'].includes(field.kind) ? [ChannelType.GuildVoice]
-          : [ChannelType.GuildText, ChannelType.GuildAnnouncement];
+          : [ChannelType.GuildText, ChannelType.GuildAnnouncement]);
       for (const id of (field.kind === 'channels' ? value : [value])) {
         const channel = guild.channels.cache.get(id);
         if (!channel || !types.includes(channel.type)) { errors.push(`${field.label}: Choose an existing channel of the correct type.`); continue; }
         const permissions = bot && channel.permissionsFor(bot);
         let required = [Flags.ViewChannel, Flags.SendMessages, Flags.EmbedLinks];
         if (field.kind === 'channels') required = [Flags.ViewChannel];
+        if(name==='voicepresence') {required=[Flags.ViewChannel,Flags.ManageChannels,Flags.SetVoiceChannelStatus];if(settings.announceOwner!==false)required.push(Flags.SendMessages,Flags.EmbedLinks);}
         if (field.kind === 'category' || field.kind === 'statsVoice') required = [Flags.ViewChannel, Flags.ManageChannels];
         if (field.kind === 'voice') required = [Flags.ViewChannel, Flags.Connect, Flags.MoveMembers];
         if (name === 'tempvoice') required.push(Flags.ManageChannels);
@@ -99,6 +101,14 @@ function validateSetup(name, settings, guild) {
   if (name === 'verification') {
     const ids = definition.fields.filter(field => field.kind === 'role').map(field => settings[field.key]).filter(Boolean);
     if (new Set(ids).size !== ids.length) errors.push('Use a different role for each verification purpose.');
+  }
+  if(name==='voicepresence') {
+    if(settings.channels != null && (!Array.isArray(settings.channels)||settings.channels.length>25))errors.push('Choose up to 25 voice channels for random rotation. Owner arrival works in every voice room.');
+    if(!bot?.permissions?.has([Flags.ManageChannels,Flags.SetVoiceChannelStatus]))errors.push('The bot needs Manage Channels and Set Voice Channel Status for owner presence.');
+    if(settings.phrases) {
+      const lines=String(settings.phrases).split('\n').map(line=>line.trim()).filter(Boolean);
+      if(!lines.length||lines.length>30||lines.some(line=>line.length>100))errors.push('Enter up to 30 status phrases, each at most 100 characters.');
+    }
   }
   if (name === 'levels' && Number(settings.text_xp_max) < Number(settings.text_xp_min)) errors.push('Text XP Maximum must be greater than or equal to Minimum.');
   if (name === 'stats' && settings.member_count_channel_id && settings.member_count_channel_id === settings.voice_count_channel_id) errors.push('Choose a different channel for each counter.');
