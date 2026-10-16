@@ -224,6 +224,21 @@ describe('Database reliability', { skip: !adminUrl }, () => {
     assert.equal((await auditQueue.status('guild'))[0].status,'failed');
   });
 
+  it('audit health isolates guilds and distinguishes waiting, failed and delivered events', async () => {
+    await auditQueue.enqueue('health-a','one','server',{title:'Pending'});
+    const delivered=await auditQueue.claim();
+    await auditQueue.finish(delivered,'delivered','message');
+    await auditQueue.enqueue('health-a','two','voice',{title:'Failed'});
+    const failed=await auditQueue.claim();await auditQueue.fail(failed,{code:50013});
+    await auditQueue.enqueue('health-a','three','messages',{title:'Waiting'});
+    await auditQueue.enqueue('health-b','other','server',{title:'Other guild'});
+    const result=await auditQueue.health('health-a');
+    assert.equal(result.failed,1);assert.equal(result.waiting,1);
+    assert(result.last_delivered instanceof Date);assert(result.oldest_waiting instanceof Date);
+    const empty=await auditQueue.health('health-empty');
+    assert.equal(empty.failed,0);assert.equal(empty.waiting,0);assert.equal(empty.last_delivered,null);assert.equal(empty.oldest_waiting,null);
+  });
+
   it('moderation case numbering is concurrent, guild-scoped and retries do not duplicate records', async () => {
     const records = loadModule('src/database/moderationRecords.js', { '../services/database': db });
     const cases = await Promise.all(Array.from({ length: 20 }, (_, i) => records.createCase({ guildId: 'case-a', targetId: 'target', moderatorId: 'mod', action: 'warn', reason: `Reason ${i}`, messageId: `message-${i}` })));

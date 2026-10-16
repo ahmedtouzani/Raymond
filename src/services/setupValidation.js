@@ -1,5 +1,6 @@
 const { PermissionsBitField: { Flags }, ChannelType } = require('discord.js');
 const { modules, getValue } = require('./setupRegistry');
+const { routes: auditRoutes } = require('./auditRoutes');
 
 function validateSetup(name, settings, guild) {
   const definition = modules[name];
@@ -19,8 +20,17 @@ function validateSetup(name, settings, guild) {
   if (name === 'auditlogs') {
     if (!bot?.permissions.has(Flags.ViewAuditLog)) errors.push('The bot needs View Audit Log to capture confirmed server actions.');
     const destinations = definition.fields.filter(field => field.kind === 'text').map(field => settings[field.key]).filter(Boolean);
+    if (settings.routes && (typeof settings.routes !== 'object' || Array.isArray(settings.routes))) errors.push('Detailed routes must be a channel mapping.');
+    for (const [key,id] of Object.entries(settings.routes || {})) {
+      if(!auditRoutes.some(route=>route.key===key)) {errors.push('Unknown detailed audit route.');continue;}
+      if(!id)continue;
+      destinations.push(id);
+      const channel=guild.channels.cache.get(id);
+      if(!channel || ![ChannelType.GuildText,ChannelType.GuildAnnouncement].includes(channel.type)
+        || !channel.permissionsFor(bot)?.has([Flags.ViewChannel,Flags.SendMessages,Flags.EmbedLinks]))errors.push(`${key}: Choose an existing staff text channel the bot can write to.`);
+    }
     if (!destinations.length) missing.push('At least one logs channel');
-    for (const id of destinations) {
+    for (const id of new Set(destinations)) {
       const channel = guild.channels.cache.get(id);
       if (guild.roles.everyone && channel?.permissionsFor(guild.roles.everyone)?.has(Flags.ViewChannel)) errors.push('Audit logs channels must be hidden from @everyone. Use a staff channel.');
     }

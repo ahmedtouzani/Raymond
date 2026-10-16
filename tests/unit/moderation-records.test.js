@@ -6,6 +6,7 @@ const icons = require('../../src/config/setupEmojis');
 
 function rules(createCase = async () => ({})) {
   return loadModule('src/services/moderationRecords.js', {
+    './auditRoutes':require('../../src/services/auditRoutes'),
     './auditLogs': { publish: async () => true },
     '../handlers/commandAuthorization': { isBotOwner: () => false }, '../database/moderationRecords': { createCase }, '../utils/logger': silentLogger,
   });

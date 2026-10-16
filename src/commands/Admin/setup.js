@@ -11,6 +11,8 @@ const { isBotOwner, authorizeCommand } = require('../../handlers/commandAuthoriz
 const { hasStellarOrHigher } = require('../../premium/premium');
 const logger = require('../../utils/logger');
 const emojis = require('../../config/setupEmojis');
+const { routes: auditRoutes } = require('../../services/auditRoutes');
+const auditProvisioning = require('../../services/auditProvisioning');
 
 const sessions = new Map();
 const PAGE_SIZE = 10;
@@ -120,6 +122,27 @@ function renderPanel(state, guild) {
   container.addTextDisplayComponents(textDisplay(`## ${emojis.system} ${definition.label}\n${featureDescriptions[state.module]}`));
   if (state.notice) container.addTextDisplayComponents(textDisplay(state.notice));
   container.addSeparatorComponents(separator());
+  if (state.module === 'auditlogs' && state.auditWizard) {
+    const wizard = state.auditWizard;
+    container.addTextDisplayComponents(textDisplay(`### Create Detailed Logs\nChoose a category. New channels are private to Administrators, you, the bot and the staff roles selected below.\n\n**Category:** ${wizard.categoryId ? `<#${wizard.categoryId}>` : 'Choose below'}\n**Staff roles:** ${wizard.staffRoleIds.length ? wizard.staffRoleIds.map(id=>`<@&${id}>`).join(' ') : 'Administrators only (plus you and the bot)'}`));
+    container.addActionRowComponents(row(new ChannelSelectMenuBuilder().setCustomId('setup:audit-category').setChannelTypes(ChannelType.GuildCategory).setPlaceholder('Choose the logs category').setMinValues(1).setMaxValues(1)),
+      row(new RoleSelectMenuBuilder().setCustomId('setup:audit-staff').setPlaceholder('Optional staff roles (up to 5)').setMinValues(0).setMaxValues(5)));
+    if (wizard.preview) {
+      container.addTextDisplayComponents(textDisplay(`### ${wizard.preview.createCount} to Create · ${wizard.preview.reuseCount} to Reuse\n${wizard.preview.items.map(item=>`${item.channelId ? `Reuse <#${item.channelId}>` : `Create \`#${item.name}\``} · ${item.label}`).join('\n')}\n\nThis creates channels and **saves the current Audit Logs draft immediately**, with logging enabled. Message capture and optional voice-state capture keep your draft preferences. Existing category/channel permissions are not changed. Reused channels keep their access settings.`));
+    } else container.addTextDisplayComponents(textDisplay(`-# ${auditRoutes.length} detailed routes · Existing linked channels can be reused · No changes until confirmation`));
+    container.addActionRowComponents(new ActionRowBuilder().addComponents(button('audit-review','Review Channels',ButtonStyle.Primary).setDisabled(!wizard.categoryId),
+      button('audit-create','Create & Save',ButtonStyle.Success).setDisabled(!wizard.preview),button('audit-return','Back'),button('cancel','Close')));
+    return payload(container);
+  }
+  if (state.module === 'auditlogs' && state.auditRouteEditor) {
+    const selected = auditRoutes.find(route=>route.key===state.auditRouteEditor) || auditRoutes[0];
+    const id=selected.key==='general' ? state.draft.defaultChannelId || state.draft.routes?.general : state.draft.routes?.[selected.key];
+    container.addTextDisplayComponents(textDisplay(`### Detailed Routes\nChoose an event type, then its staff channel.\n\n**${selected.label}**\n${id ? `<#${id}>` : 'Uses the category or general fallback.'}\n-# Changes stay in this draft until Save Changes.`));
+    container.addActionRowComponents(row(new StringSelectMenuBuilder().setCustomId('setup:audit-route').setPlaceholder('Choose a detailed event type').addOptions(auditRoutes.map(route=>({label:route.label,value:route.key,default:route.key===selected.key})))),
+      row(new ChannelSelectMenuBuilder().setCustomId('setup:audit-route-channel').setChannelTypes(ChannelType.GuildText,ChannelType.GuildAnnouncement).setPlaceholder('Choose a private logs channel').setMinValues(1).setMaxValues(1)),
+      new ActionRowBuilder().addComponents(button('audit-route-clear',selected.key==='general'?'Clear General Channel':'Use Fallback').setDisabled(!id),button('audit-return','Back'),button('cancel','Close')));
+    return payload(container);
+  }
   if (definition.launcher) {
     container.addTextDisplayComponents(textDisplay('### Interactive Designer\nChoose roles, customize your menu, and preview it before publishing.'))
       .addActionRowComponents(new ActionRowBuilder().addComponents(button('launch', 'Open Designer', ButtonStyle.Primary), button('back', 'Back'), button('cancel', 'Close')));
@@ -161,6 +184,8 @@ function renderPanel(state, guild) {
     components.push(row(selector));
   } else components.push(row(button('edit', 'Edit Value', ButtonStyle.Primary)));
   container.addActionRowComponents(...components);
+  if (state.module === 'auditlogs') container.addActionRowComponents(new ActionRowBuilder().addComponents(
+    button('audit-wizard','Create Logs Channels',ButtonStyle.Primary),button('audit-routes','Detailed Routes')));
   if (related.length) container.addTextDisplayComponents(textDisplay(`### ${group}\n${related.map(item => `**${item.label}** · ${display(item, getValue(draft, item.key))}`).join('\n')}`));
   const controls = new ActionRowBuilder().addComponents(
     button(definition.collection ? 'done' : 'save', definition.collection ? 'Done' : 'Save Changes', ButtonStyle.Success).setDisabled(!result.ready),
@@ -212,9 +237,9 @@ module.exports = {
       const owner = isBotOwner(message.author.id), premium = await hasStellarOrHigher(message.guild.id);
       const access = Object.fromEntries(Object.entries(modules).map(([name, definition]) => [name, !definition.ownerOnly || owner]));
       const state = { settings: await readSetupSettings(message.guild.id), module: null, notice: '', access, premium };
-      if (args[0] === 'levels') {
-        state.module = 'levels'; state.original = structuredClone(state.settings.levels); state.draft = structuredClone(state.original);
-        state.field = modules.levels.fields[0].key; state.item = null;
+      if (['levels','auditlogs'].includes(args[0])) {
+        state.module = args[0]; state.original = structuredClone(state.settings[state.module]); state.draft = structuredClone(state.original);
+        state.field = modules[state.module].fields[0].key; state.item = null;
       }
       const panel = await message.reply(asEmbed(renderPanel(state, message.guild)));
       sessions.set(key, panel);
@@ -275,12 +300,43 @@ module.exports = {
             if (!(await permitted(name))) { await interaction.followUp(asEmbed({ content: 'This feature requires the bot owner or a Stellar Matrix plan, depending on its access requirements.', flags: 64 })); return; }
             state.settings = await readSetupSettings(message.guild.id);
             state.module = name; state.original = structuredClone(state.settings[name]); state.draft = structuredClone(state.original);
+            state.auditWizard = null; state.auditRouteEditor = null;
             state.field = modules[name].fields[0]?.key; state.item = null; state.page = 0;
           } else if (action === 'back') {
             state.module = null; state.settings = await readSetupSettings(message.guild.id);
           } else if (state.module) {
             const definition = modules[state.module];
             let draft = activeDraft(state);
+            if (state.module === 'auditlogs' && action.startsWith('audit-')) {
+              if (action === 'audit-wizard') { state.auditWizard={categoryId:null,staffRoleIds:[],preview:null};state.auditRouteEditor=null; }
+              else if(action === 'audit-routes') {state.auditRouteEditor=auditRoutes[0].key;state.auditWizard=null;}
+              else if(action === 'audit-return') {state.auditWizard=null;state.auditRouteEditor=null;}
+              else if(action === 'audit-category' && state.auditWizard) {state.auditWizard.categoryId=interaction.values[0];state.auditWizard.preview=null;}
+              else if(action === 'audit-staff' && state.auditWizard) {state.auditWizard.staffRoleIds=interaction.values;state.auditWizard.preview=null;}
+              else if(action === 'audit-route' && state.auditRouteEditor && auditRoutes.some(route=>route.key===interaction.values[0])) state.auditRouteEditor=interaction.values[0];
+              else if(action === 'audit-route-channel' && state.auditRouteEditor) {state.draft.routes ||= {};state.draft.routes[state.auditRouteEditor]=interaction.values[0];if(state.auditRouteEditor==='general')state.draft.defaultChannelId=interaction.values[0];}
+              else if(action === 'audit-route-clear' && state.auditRouteEditor) {if(state.draft.routes)delete state.draft.routes[state.auditRouteEditor];if(state.auditRouteEditor==='general')state.draft.defaultChannelId=null;}
+              else if(action === 'audit-review' && state.auditWizard) {
+                await Promise.all([message.guild.channels.fetch(),message.guild.roles.fetch(),message.guild.members.fetchMe()]);
+                state.auditWizard.preview=auditProvisioning.plan(message.guild,{...state.auditWizard,actorId:message.author.id,config:state.draft});
+              } else if(action === 'audit-create' && state.auditWizard?.preview) {
+                state.auditCreating=true;
+                try {
+                  const result=await auditProvisioning.create(message.guild,{...state.auditWizard,actorId:message.author.id,config:structuredClone(state.draft),
+                    authorized:async()=>!collector.ended && await permitted('auditlogs'),
+                    persist:async config=>{
+                      const checked=validateSetup('auditlogs',config,message.guild);
+                      if(!checked.ready)throw Object.assign(new Error(`Could not save: ${[...checked.errors,...checked.missing].slice(0,3).join(' ')}`),{auditProvisioning:true});
+                      return saveSetupSettings(message.guild.id,'auditlogs',config,state.original);
+                    }});
+                  state.original=structuredClone(result.config);state.draft=structuredClone(result.config);state.settings.auditlogs=structuredClone(result.config);
+                  state.auditWizard=null;
+                  state.notice=`${emojis.success} Detailed logs saved · ${result.created} channels created · ${result.reused} reused. Use logs test all to check delivery.`;
+                } finally {state.auditCreating=false;}
+              }
+              if(!collector.ended)await panel.edit(renderPanel(state,message.guild));
+              return;
+            }
             if (action === 'launch' && definition.launcher) {
               const command = message.client.commands.get(definition.launcher.command);
               if (!command) throw new Error('Setup editor is unavailable');
@@ -311,6 +367,7 @@ module.exports = {
               const value = field.kind === 'boolean' ? interaction.values[0] === 'true'
                 : ['roles', 'channels'].includes(field.kind) ? interaction.values : interaction.values[0];
               setValue(draft, state.field, value);
+              if(state.module==='auditlogs' && state.field==='defaultChannelId' && draft.routes?.general)draft.routes.general=value;
               if (state.module === 'reactions' && state.field === 'target_type') draft.target_id = null;
             } else if (action === 'input') {
               const input = interaction._setupInput;
@@ -320,6 +377,7 @@ module.exports = {
             } else if (action === 'clear' && draft) {
               const field = definition.fields.find(item => item.key === state.field);
               if (!field.required) setValue(draft, field.key, ['roles', 'channels', 'invites'].includes(field.kind) ? [] : field.kind === 'boolean' ? false : null);
+              if(state.module==='auditlogs' && field.key==='defaultChannelId' && draft.routes)delete draft.routes.general;
             } else if (action === 'save') {
               await Promise.all([message.guild.roles.fetch(), message.guild.channels.fetch(), message.guild.members.fetchMe()]);
               if (collector.ended || !(await permitted(state.module))) return;
@@ -334,6 +392,12 @@ module.exports = {
           if (!collector.ended) await panel.edit(renderPanel(state, message.guild));
         }).catch(async error => {
           logger.error('Setup panel interaction failed:', error);
+          if(error.auditProvisioning && !collector.ended) {
+            if(state.auditWizard)state.auditWizard.preview=null;
+            state.notice=`${emojis.warning} ${String(error.message).slice(0,1400)}`;
+            await panel.edit(renderPanel(state,message.guild)).catch(()=>{});
+            return;
+          }
           if (!collector.ended) await interaction.followUp(asEmbed({ content: 'Could not complete this action. Check the value and try again. Reopen the feature to verify its saved settings.', flags: 64 })).catch(() => {});
         });
         acknowledgement.catch(() => {});
@@ -349,7 +413,7 @@ module.exports = {
           : reason === 'launch' ? 'Continue setting up your role menu in the interactive designer.'
             : reason === 'cancel' ? 'Your setup session has been closed.' : 'This setup session has timed out.';
         const container = new ContainerBuilder().setAccentColor(reason === 'permission' ? 0xE9B76A : 0x8594F0)
-          .addTextDisplayComponents(textDisplay(`## ${icon} ${title}\n${description}${reason === 'launch' ? '' : `\n\nUnsaved changes were discarded.\nRun \`${command}\` to open a new panel.`}`))
+          .addTextDisplayComponents(textDisplay(`## ${icon} ${title}\n${description}${reason === 'launch' ? '' : `\n\nUnsaved changes were discarded.${state.auditCreating ? '\nAny channels already created are retained. Reopen Audit Logs to finish linking them.' : ''}\nRun \`${command}\` to open a new panel.`}`))
           .addTextDisplayComponents(textDisplay('-# Server Setup · Session ended'));
         panel.edit(payload(container)).catch(() => {});
       });

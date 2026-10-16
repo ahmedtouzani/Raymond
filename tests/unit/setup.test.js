@@ -66,7 +66,7 @@ test('setup checks channel type, overwrites and bot permissions', () => {
   assert.equal(validation.validateSetup('verification', settings.verification, guild).ready, false);
 });
 
-async function openPanel({ premium = false, owner = false } = {}) {
+async function openPanel({ premium = false, owner = false, provisioning = require('../../src/services/auditProvisioning') } = {}) {
   const { guild, settings } = fixture();
   const collector = new EventEmitter();
   collector.ended = false;
@@ -74,6 +74,8 @@ async function openPanel({ premium = false, owner = false } = {}) {
   const edits = [], writes = [], replies = [];
   const panel = { url: 'panel-url', edit: async payload => { edits.push(payload); }, createMessageComponentCollector: () => collector };
   const command = loadModule('src/commands/Admin/setup.js', {
+    '../../services/auditRoutes':require('../../src/services/auditRoutes'),
+    '../../services/auditProvisioning':provisioning,
     '../../services/setupValidation': validation,
     '../../services/setupRegistry': require('../../src/services/setupRegistry'),
     '../../config/setupEmojis': require('../../src/config/setupEmojis'),
@@ -110,6 +112,44 @@ test('setup renders valid Discord components and cancels without saving draft ch
   assert.equal(session.writes.length, 0);
   checkV2(session.edits.at(-1));
   assert.equal(data(session.edits.at(-1)).some(component => component.custom_id), false);
+});
+
+test('audit wizard requires a selected category and a reviewed preview before creating and saving',async()=>{
+  const actual=require('../../src/services/auditProvisioning');let creates=0;
+  const session=await openPanel({provisioning:{plan:actual.plan,create:async(guild,options)=>{
+    creates++;assert.equal(options.categoryId,'category');assert.equal(await options.authorized(),true);
+    const config={...options.config,enabled:true,defaultChannelId:'logs',routes:{warnings:'logs'}};
+    assert.equal(await options.persist(config),true);
+    return{config,created:1,reused:0};
+  }}});
+  session.settings.auditlogs={};
+  session.guild.channels.cache.set('category',{id:'category',type:ChannelType.GuildCategory,permissionsFor:()=>({has:()=>true})});
+  await session.click('module',['auditlogs']);
+  await session.click('audit-wizard');
+  checkV2(session.edits.at(-1));
+  await session.click('audit-create');assert.equal(creates,0);
+  await session.click('audit-category',['category']);
+  await session.click('audit-staff',['staff']);
+  await session.click('audit-review');
+  const preview=session.edits.at(-1);checkV2(preview);
+  assert(data(preview).some(component=>component.custom_id==='setup:audit-create'&&!component.disabled));
+  assert.equal(session.writes.length,0);assert.equal(creates,0);
+  await session.click('audit-create');
+  assert.equal(creates,1);assert.equal(session.writes.length,1);assert.equal(session.writes[0][1],'auditlogs');
+  await session.click('audit-create');assert.equal(creates,1);
+  await session.click('cancel');
+});
+
+test('detailed route editor keeps channel choices in a draft until saving',async()=>{
+  const session=await openPanel();session.settings.auditlogs={};
+  await session.click('module',['auditlogs']);
+  await session.click('audit-routes');checkV2(session.edits.at(-1));
+  await session.click('audit-route',['warnings']);
+  await session.click('audit-route-channel',['logs']);
+  assert.equal(session.writes.length,0);
+  await session.click('audit-return');await session.click('save');
+  assert.equal(session.writes.length,1);assert.equal(session.writes[0][2].routes.warnings,'logs');
+  await session.click('cancel');
 });
 
 test('setup saves a selected module only and prevents other users changing it', async () => {

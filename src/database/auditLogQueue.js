@@ -34,6 +34,16 @@ async function status(guildId) {
   if (!guildId) throw new Error('guildId required');
   return (await db.query('SELECT status,COUNT(*)::int AS count FROM audit_log_queue WHERE guild_id=$1 GROUP BY status', [guildId])).rows;
 }
+async function health(guildId) {
+  if (!guildId) throw new Error('guildId required');
+  const { rows } = await db.query(`SELECT
+    MIN(created_at) FILTER (WHERE status IN ('pending','processing')) AS oldest_waiting,
+    MAX(delivered_at) FILTER (WHERE status='delivered') AS last_delivered,
+    COUNT(*) FILTER (WHERE status='failed')::int AS failed,
+    COUNT(*) FILTER (WHERE status IN ('pending','processing'))::int AS waiting
+    FROM audit_log_queue WHERE guild_id=$1`, [guildId]);
+  return rows[0];
+}
 async function prune() {
   await db.query("DELETE FROM audit_log_queue WHERE (status IN ('delivered','discarded') AND delivered_at<NOW()-INTERVAL '7 days') OR (status='failed' AND created_at<NOW()-INTERVAL '30 days')");
 }
@@ -44,4 +54,4 @@ async function retry(guildId) {
     FROM jobs WHERE q.id=jobs.id RETURNING q.id`,[guildId]);
   return result.rowCount;
 }
-module.exports = { enqueue, claim, finish, fail, status, prune, retry };
+module.exports = { enqueue, claim, finish, fail, status, health, prune, retry };

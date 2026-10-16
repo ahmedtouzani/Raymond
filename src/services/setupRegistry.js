@@ -10,7 +10,8 @@ const modules = {
     boolean('enabled', 'Enable Audit Logs'), channel('defaultChannelId', 'General Logs Channel'),
     channel('moderationChannelId', 'Moderation Logs'), channel('messagesChannelId', 'Message Logs'),
     channel('membersChannelId', 'Member Logs'), channel('serverChannelId', 'Server / Roles / Channels Logs'), channel('voiceChannelId', 'Voice Logs'),
-    boolean('captureMessageContent', 'Include Message Text'), { key: 'ignoredChannels', label: 'Ignored Channels', kind: 'channels', default: [] },
+    boolean('captureMessageContent', 'Include Message Text / Attachment Names'), boolean('captureVoiceStates', 'Include Voice Mute / Deafen / Stream Changes'),
+    { key: 'ignoredChannels', label: 'Ignored Channels', kind: 'channels', default: [] },
   ] },
   verification: { label: 'Verification', jsonKey: 'verification', permissions: ['ManageRoles'], fields: [
     role('unverifiedRoleId', 'Unverified Role', true), role('verifiedRoleId', 'Verified Role', true),
