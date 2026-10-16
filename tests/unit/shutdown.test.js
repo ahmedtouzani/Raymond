@@ -9,6 +9,7 @@ test('shutdown closes audit worker, client and database exactly once', async () 
     '../services/voiceXp': { stop: async () => {} },
     '../services/voicePresence': { stop: async () => {} },
     '../services/ownerGuard': { stop: async () => {} },
+    '../services/massRoles': { stop: async () => {} },
     './logger': silentLogger,
   }, {}, { process: { exit: code => exits.push(code) } });
   const client = { destroy: async () => { closed.push('client'); } }, db = { end: async () => { closed.push('database'); } };
@@ -23,6 +24,7 @@ test('shutdown closes remaining resources after a failure and exits nonzero', as
     '../services/voiceXp': { stop: async () => {} },
     '../services/voicePresence': { stop: async () => {} },
     '../services/ownerGuard': { stop: async () => {} },
+    '../services/massRoles': { stop: async () => {} },
     './logger': silentLogger,
   }, {}, { process: { exit: code => exits.push(code) } });
   await module.gracefulShutdown('UNCAUGHT_EXCEPTION', { destroy: async () => {} }, { end: async () => { databaseClosed = true; } }, 1);

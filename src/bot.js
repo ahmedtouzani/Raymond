@@ -79,6 +79,7 @@ client.once('ready', () => require('./services/auditLogs').start(client));
 client.once('ready', () => require('./services/voicePresence').start(client).catch(error=>logger.warn('Voice presence startup failed',{code:error.code||error.name})));
 client.on('guildAuditLogEntryCreate',(entry,guild)=>require('./services/ownerGuard').onAudit(entry,guild));
 client.once('ready',()=>require('./services/ownerGuard').start(client));
+client.once('ready',()=>require('./services/massRoles').start(client));
 loadSlashCommands(client);
 
 if (process.env.NODE_ENV !== 'production') {

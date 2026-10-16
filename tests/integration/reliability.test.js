@@ -11,7 +11,7 @@ const adminUrl = process.env.RAYMOND_TEST_DATABASE_URL;
 
 describe('Database reliability', { skip: !adminUrl }, () => {
   const name = `raymond_test_${process.pid}_${Date.now()}`;
-  let admin, pool, url, db, levels, setup, auditQueue, ownerGuard, created = false;
+  let admin, pool, url, db, levels, setup, auditQueue, ownerGuard, massRoles, created = false;
   before(async () => {
     admin = new Pool({ connectionString: adminUrl });
     await admin.query(`CREATE DATABASE ${name}`); created = true;
@@ -26,17 +26,64 @@ describe('Database reliability', { skip: !adminUrl }, () => {
     } };
     auditQueue = loadModule('src/database/auditLogQueue.js', { '../services/database': db, 'node:crypto': { randomUUID } }, {}, { Buffer });
     ownerGuard = loadModule('src/database/ownerGuard.js', { '../services/database': db, 'node:crypto': { randomUUID } });
+    massRoles = loadModule('src/database/massRoles.js', { '../services/database': db, 'node:crypto': { randomUUID } });
     levels = loadModule('src/database/levelSystem.js', { '../services/database': db, '../utils/logger': silentLogger });
     setup = loadModule('src/database/setupSettings.js', { '../services/database': db, './guildConfig': { clearCache() {} },
       './levelSettings': { clearSettingsCache() {} }, '../services/setupRegistry': require('../../src/services/setupRegistry') });
   });
-  beforeEach(async () => { await pool.query('TRUNCATE audit_log_queue, owner_guard_events, user_levels RESTART IDENTITY'); });
+  beforeEach(async () => { await pool.query('TRUNCATE audit_log_queue, owner_guard_events, user_levels, mass_role_items, mass_role_jobs RESTART IDENTITY'); });
   after(async () => { if (pool) await pool.end(); if (created) await dropDatabase(admin, name); if (admin) await admin.end(); });
 
   it('fresh migrations leave no AI tables or unused vector extension', async () => {
     const tables = (await pool.query("SELECT tablename FROM pg_tables WHERE schemaname='public' AND left(tablename, 3) = 'ai_' ")).rows;
     assert.equal(tables.length, 0);
     assert.equal((await pool.query("SELECT count(*)::int AS count FROM pg_extension WHERE extname='vector'")).rows[0].count, 0);
+  });
+
+  const roleJob=(guildId='guild',memberIds=['one','two','three'])=>massRoles.create({guildId,issuerId:'owner',sourceId:'source',targetId:'target',includeBots:false,channelId:'channel',messageId:'panel',memberIds});
+  it('massrole snapshots deduplicate members, isolate guilds and prevent two active jobs in a guild',async()=>{
+    const job=await roleJob('guild',['one','one','two']);
+    assert.equal((await massRoles.get('guild',job.id)).total,2);
+    await assert.rejects(roleJob('guild'),error=>error.code==='23505');
+    const other=await roleJob('other-guild');
+    assert.equal(await massRoles.get('guild',other.id),undefined);
+    assert.equal((await massRoles.get('other-guild',other.id)).total,3);
+  });
+
+  it('massrole leases exclude parallel workers and preserve journal stages after restart',async()=>{
+    const job=await roleJob();
+    const claims=await Promise.all(Array.from({length:5},()=>massRoles.claim()));
+    const selected=claims.filter(Boolean);assert.equal(selected.length,1);
+    const stale=selected[0];await massRoles.item(stale,'one',{started:true,target_added:true});
+    await pool.query("UPDATE mass_role_jobs SET lease_until=NOW()-INTERVAL '1 second' WHERE id=$1",[job.id]);
+    const recovered=await massRoles.claim();assert.notEqual(recovered.lease_token,stale.lease_token);
+    await assert.rejects(massRoles.item(stale,'one',{state:'done'}),error=>error.code==='LEASE_LOST');
+    await massRoles.release(stale,'completed');assert.equal((await massRoles.get('guild',job.id)).state,'running');
+    const pending=await massRoles.items(recovered),first=pending.find(item=>item.user_id==='one');
+    assert.equal(first.started,true);assert.equal(first.target_added,true);
+    await massRoles.item(recovered,'one',{state:'done'});await massRoles.release(recovered,'pending');
+    assert.equal((await massRoles.get('guild',job.id)).done,1);
+  });
+
+  it('massrole cancellation cannot be overwritten by a worker releasing its batch',async()=>{
+    const job=await roleJob(),worker=await massRoles.claim();
+    await massRoles.cancel('guild',job.id);assert.equal((await massRoles.get('guild',job.id)).state,'cancelling');
+    await massRoles.release(worker,'pending');assert.equal((await massRoles.get('guild',job.id)).state,'cancelled');
+    assert.equal(await massRoles.active('guild'),undefined);
+    assert.equal(await massRoles.retry('guild',job.id,'owner'),false);
+    await roleJob();assert.equal((await massRoles.active('guild')).state,'pending');
+  });
+
+  it('massrole retry retains successful/skipped members and retries failed members with their original stage',async()=>{
+    const job=await roleJob(),worker=await massRoles.claim();
+    await massRoles.item(worker,'one',{state:'failed',started:true,target_added:true,last_error:'Network error'});
+    await massRoles.item(worker,'two',{state:'done'});await massRoles.item(worker,'three',{state:'skipped'});
+    await massRoles.release(worker,'completed');
+    assert.equal((await massRoles.get('guild',job.id)).errors[0].user_id,'one');
+    assert.equal(await massRoles.retry('guild',job.id,'owner'),true);
+    const retried=await massRoles.claim(),pending=await massRoles.items(retried);
+    assert.equal(pending.length,1);assert.equal(pending[0].user_id,'one');assert.equal(pending[0].target_added,true);
+    const status=await massRoles.get('guild',job.id);assert.equal(status.done,1);assert.equal(status.skipped,1);assert.equal(status.failed,0);
   });
 
   it('AI retirement deletes legacy data, is repeatable and preserves server features', async () => {

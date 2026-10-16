@@ -13,6 +13,7 @@ async function gracefulShutdown(signal, client, dbClient, exitCode = 0) {
       () => require('../services/voiceXp').stop(),
       () => require('../services/voicePresence').stop(),
       () => require('../services/ownerGuard').stop(),
+      () => require('../services/massRoles').stop(),
       () => client?.destroy?.(),
       () => dbClient?.end?.(),
     ]) {

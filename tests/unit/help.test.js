@@ -19,6 +19,7 @@ function fixtures() {
     ['setup', { name: 'setup', category: 'Admin' }],
     ['massdm', { name: 'massdm', category: 'Owner' }],
     ['shutdown', { name: 'shutdown', ownerOnly: true }],
+    ['massrole', { name: 'massrole', aliases:['roleswap','mr'], ownerOnly:true, hidden:true }],
     ['avatar', { name: 'avatar', aliases: ['a'], prefixless: true, usage: 'avatar [user]' }],
     ...Array.from({ length: 30 }, (_, i) => [`mod${i}`, { name: `mod${i}`, category: 'Moderation', description: 'A moderation command', usage: '<member>' }]),
   ]);
@@ -42,6 +43,8 @@ test('help resolves aliases against a Map catalog and hides private owner comman
   assert.equal(guide.searchCommands(ordinary, 'massdm', '?').length, 0);
   assert.equal(guide.resolveCommand(guide.catalog(client, 'owner'), 'shutdown', '?'), undefined);
   assert.equal(guide.searchCommands(guide.catalog(client, 'owner'), 'massdm', '?').length, 0);
+  assert.equal(guide.resolveCommand(ordinary,'massrole','?'),undefined);
+  assert.equal(guide.resolveCommand(guide.catalog(client,'owner'),'mr','?'),undefined);
   assert.equal(ordinary.find(command => command.name === 'move').categoryId, 'moderation');
   assert.equal(ordinary.find(command => command.name === 'level').categoryId, 'leveling');
   assert(ordinary.find(command => command.name === 'setprefix'));
