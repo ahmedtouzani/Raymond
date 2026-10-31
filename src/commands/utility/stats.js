@@ -3,12 +3,13 @@ const {
   ActionRowBuilder, ButtonBuilder, ButtonStyle, MessageFlags,
 } = require('discord.js');
 
-// Custom emojis the bot already uses in serverinfo / userinfo / channelinfo.
+// Emojis from the Parallel Universe servers that Discord reports as available
+// (the 1379… set in "We Back" is disabled there and renders as plain :name: text).
 const icons = {
-  title: '<:36548namoonlight:1379103329044402257>',
-  members: '<:79914memberroleicom:1379108661367931071>',
-  voice: '<:13135namegaphone:1379103314121195545>',
-  boosters: '<:8569booster:1379103272488403115>',
+  title: '<:pu:1463991804301938845>',
+  members: '<:members:1363177944914071694>',
+  voice: '<:voice:1363178121519436146>',
+  boosters: '<:boost:1363177438003073035>',
   footer: '<:black_planet:1310547406697533492>',
 };
 
