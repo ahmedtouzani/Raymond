@@ -1,0 +1,13 @@
+.git
+node_modules/
+npm-debug.log*
+
+# Runtime data is mounted as volumes, not baked into the image
+logs/
+backups/
+*.dump
+
+# Secrets are passed through env_file at runtime
+.env
+.env.*
+!.env.example
