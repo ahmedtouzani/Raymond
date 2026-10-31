@@ -27,6 +27,10 @@ module.exports = {
     }
     // Setup panels own their component collectors, including role/channel selectors.
     if (['setup:', 'emojiimport:', 'help:'].some(prefix => interaction.customId?.startsWith(prefix))) return;
+    if (interaction.customId?.startsWith('mafia:')) {
+      return require('../commands/utility/mafia').handleInteraction(interaction)
+        .catch(error => logger.error('Error handling mafia rules menu:', error));
+    }
     // ─────────────────────────────
     // ─ Slash Command Handling ─
     // ─────────────────────────────
