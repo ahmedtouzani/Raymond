@@ -36,8 +36,9 @@ ssh-keygen -t ed25519 -N '' -C github-actions-raymond -f /tmp/raymond_deploy
 
 # 5. Authorize the public key with a forced command and no forwarding/pty
 sudo install -d -o raymond-deploy -g raymond-deploy -m 700 /home/raymond-deploy/.ssh
-echo "command=\"sudo -n /opt/apps/raymond/deploy.sh \\\"\$SSH_ORIGINAL_COMMAND\\\"\",restrict $(cat /tmp/raymond_deploy.pub)" \
-  | sudo tee /home/raymond-deploy/.ssh/authorized_keys
+# The inner quotes must reach the file as \" or sshd silently rejects the whole line.
+python3 -c 'import sys; print("command=\"sudo -n /opt/apps/raymond/deploy.sh \\\"$SSH_ORIGINAL_COMMAND\\\"\",restrict " + open(sys.argv[1]).read().strip())' \
+  /tmp/raymond_deploy.pub | sudo tee /home/raymond-deploy/.ssh/authorized_keys
 sudo chown raymond-deploy:raymond-deploy /home/raymond-deploy/.ssh/authorized_keys
 sudo chmod 600 /home/raymond-deploy/.ssh/authorized_keys
 
