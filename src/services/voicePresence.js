@@ -61,7 +61,11 @@ function createVoicePresence(options = {}) {
     if(stopped || !allowsGuild(guild.id))return Promise.resolve();
     const key=`${guild.id}:${id}`;
     const prior=chains.get(key) || Promise.resolve();
-    const task=prior.then(()=>limited(()=>update(guild,id,announce))).catch(error=>logger.warn('Voice presence update failed',{guildId:guild.id,channelId:id,code:error.code||error.name}));
+    const task=prior.then(()=>limited(()=>update(guild,id,announce))).catch(error=>{
+      // 10003 Unknown Channel: a temporary room (often another bot's) was deleted before its status could be cleared.
+      if(Number(error.code)===10003){states.delete(key);return;}
+      logger.warn('Voice presence update failed',{guildId:guild.id,channelId:id,code:error.code||error.name});
+    });
     chains.set(key,task);
     task.finally(()=>{if(chains.get(key)===task)chains.delete(key);});
     return task;
