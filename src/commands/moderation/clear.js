@@ -67,7 +67,10 @@ module.exports = {
         }]
       });
       setTimeout(() => {
-        confirmation.delete().catch(console.error);
+        confirmation.delete().catch(error => {
+          // 10008 = Unknown Message: someone already removed the confirmation.
+          if (error.code !== 10008) console.error(error);
+        });
       }, 5000);
     } catch (error) {
       try {

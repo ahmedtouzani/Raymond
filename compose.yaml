@@ -1,0 +1,50 @@
+# Production stack. Secrets are NOT stored here: database.env, runtime.env and
+# init.sql live next to this file on the server (/opt/apps/raymond).
+name: raymond
+services:
+  db:
+    image: postgres:17-bookworm
+    restart: unless-stopped
+    env_file:
+      - path: ./database.env
+        format: raw
+    command: ["postgres", "-c", "shared_buffers=128MB", "-c", "max_connections=40"]
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/01-raymond.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    mem_limit: 768m
+    cpus: 0.75
+    pids_limit: 120
+  bot:
+    # Built on the server by deploy/deploy.sh and tagged with the commit SHA.
+    image: raymond:${RAYMOND_TAG:?set RAYMOND_TAG to the image tag, e.g. 1b8e3b58e646}
+    restart: unless-stopped
+    init: true
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file:
+      - path: ./runtime.env
+        format: raw
+    environment:
+      NODE_ENV: production
+      DEVELOPMENT_MODE: "false"
+      NODE_OPTIONS: --max-old-space-size=768
+    mem_limit: 1536m
+    cpus: 1.0
+    pids_limit: 150
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - ./logs:/app/logs
+      - ./backups:/app/backups
+    stop_grace_period: 30s
+volumes:
+  postgres_data:
