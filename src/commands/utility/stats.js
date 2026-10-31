@@ -3,6 +3,15 @@ const {
   ActionRowBuilder, ButtonBuilder, ButtonStyle, MessageFlags,
 } = require('discord.js');
 
+// Custom emojis the bot already uses in serverinfo / userinfo / channelinfo.
+const icons = {
+  title: '<:36548namoonlight:1379103329044402257>',
+  members: '<:79914memberroleicom:1379108661367931071>',
+  voice: '<:13135namegaphone:1379103314121195545>',
+  boosters: '<:8569booster:1379103272488403115>',
+  footer: '<:black_planet:1310547406697533492>',
+};
+
 const text = content => new TextDisplayBuilder().setContent(content);
 const separator = () => new SeparatorBuilder().setDivider(true);
 // Read-only counters: the buttons only display numbers, so they stay disabled.
@@ -18,21 +27,21 @@ function countStats(guild) {
 }
 
 function renderStats(guild, { members, voice, boosters }) {
-  const header = text(`## ${guild.name} Statistics\n`
-    + `> 👥 **Total Members:** \`${members}\`\n`
-    + `> 🔊 **Active in Voice:** \`${voice}\`\n`
-    + `> 💎 **Boosters:** \`${boosters}\``);
+  const header = text(`## ${icons.title} ${guild.name} Statistics\n`
+    + `> ${icons.members} **Total Members:** \`${members}\`\n`
+    + `> ${icons.voice} **Active in Voice:** \`${voice}\`\n`
+    + `> ${icons.boosters} **Boosters:** \`${boosters}\``);
   const icon = guild.iconURL({ size: 256 });
   const container = new ContainerBuilder().addSeparatorComponents(separator());
   if (icon) container.addSectionComponents(new SectionBuilder().addTextDisplayComponents(header)
     .setThumbnailAccessory(new ThumbnailBuilder().setURL(icon)));
   else container.addTextDisplayComponents(header);
   container
-    .addTextDisplayComponents(text(`Stay active, and enjoy your time in ${guild.name}`))
+    .addTextDisplayComponents(text(`${icons.footer} Stay active, and enjoy your time in ${guild.name}`))
     .addSeparatorComponents(separator())
     .addActionRowComponents(new ActionRowBuilder().addComponents(
-      counter('members', `Members: ${members}`, '👥', ButtonStyle.Secondary),
-      counter('voice', `in Voice: ${voice}`, '🔊', ButtonStyle.Danger),
+      counter('members', `Members: ${members}`, icons.members, ButtonStyle.Secondary),
+      counter('voice', `in Voice: ${voice}`, icons.voice, ButtonStyle.Danger),
     ));
   return { flags: MessageFlags.IsComponentsV2, components: [container], allowedMentions: { parse: [] } };
 }
