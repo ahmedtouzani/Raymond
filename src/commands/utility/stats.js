@@ -6,9 +6,9 @@ const {
 // Emojis from the Parallel Universe servers that Discord reports as available
 // (the 1379… set in "We Back" is disabled there and renders as plain :name: text).
 const icons = {
-  title: '<:pu:1463991804301938845>',
+  title: '<a:monlighte:1560002776690458757>',
   members: '<:members:1363177944914071694>',
-  voice: '<:voice:1363178121519436146>',
+  voice: '<:event:1308126030984253640>',
   boosters: '<:boost:1363177438003073035>',
   footer: '<:black_planet:1310547406697533492>',
 };

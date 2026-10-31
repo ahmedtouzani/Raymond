@@ -20,9 +20,9 @@ test('stats renders the statistics card with disabled counter buttons', () => {
   const payload = stats.renderStats(guild(), { members: 2098, voice: 36, boosters: 14 });
   const parts = walk(payload.components.map(component => component.toJSON()));
   const content = parts.filter(part => part.type === 10).map(part => part.content).join('\n');
-  assert.match(content, /## <:pu:\d+> Parallel Universe Statistics/);
+  assert.match(content, /## <a:monlighte:\d+> Parallel Universe Statistics/);
   assert.match(content, /<:members:\d+> \*\*Total Members/);
-  assert.match(content, /<:voice:\d+> \*\*Active in Voice/);
+  assert.match(content, /<:event:\d+> \*\*Active in Voice/);
   assert.match(content, /<:boost:\d+> \*\*Boosters/);
   assert.match(content, /<:black_planet:\d+> Stay active/);
   assert.match(content, /Total Members:\*\* `2098`/);
@@ -31,7 +31,7 @@ test('stats renders the statistics card with disabled counter buttons', () => {
   assert.match(content, /Stay active, and enjoy your time in Parallel Universe/);
   assert.equal(parts.find(part => part.type === 11).media.url, 'https://example.com/icon.png');
   const buttons = parts.filter(part => part.type === 2);
-  assert.equal(JSON.stringify(buttons.map(button => button.emoji.id)), JSON.stringify(['1363177944914071694', '1363178121519436146']));
+  assert.equal(JSON.stringify(buttons.map(button => button.emoji.id)), JSON.stringify(['1363177944914071694', '1308126030984253640']));
   assert.equal(JSON.stringify(buttons.map(button => [button.label, button.disabled])), JSON.stringify([['Members: 2098', true], ['in Voice: 36', true]]));
 });
 
