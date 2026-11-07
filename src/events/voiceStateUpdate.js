@@ -135,6 +135,8 @@ module.exports = {
   async execute(oldState, newState) {
     require('../services/voicePresence').onVoiceState(oldState,newState)
       .catch(error=>logger.warn('Voice presence event failed',{code:error.code||error.name}));
+    require('../services/forceMute').onVoiceState(oldState,newState)
+      .catch(error=>logger.warn('Force unmute on rejoin failed',{code:error.code||error.name}));
     if (isDevelopment()) return;
     const guild = newState.guild || oldState.guild;
 
