@@ -119,3 +119,33 @@ test('leaving during an in-flight owner status update suppresses a stale arrival
   assert.equal(f.messages.length,0);assert.notEqual(f.writes.at(-1).status,'👑 BOSS IS HERE');
   await f.worker.stop();
 });
+
+test('a status write to an already deleted room is dropped without a warning',async()=>{
+  const warnings=[];
+  const module=loadModule('src/services/voicePresence.js',{
+    '../database/guildConfig':{},'../config/development':{allowsGuild:id=>id==='guild'},'../utils/logger':{...silentLogger,warn:(...args)=>warnings.push(args)},
+  });
+  const states=new Map([['owner',{channelId:'temp'}]]);
+  const bot={id:'bot',permissions:{has:()=>true}};
+  const guild={id:'guild',members:{me:bot,cache:new Map()},voiceStates:{cache:states},channels:{cache:new Map([['temp',{id:'temp',type:ChannelType.GuildVoice,permissionsFor:()=>({has:()=>true}),send:async()=>{}}]])}};
+  let calls=0;
+  const worker=module.createVoicePresence({configFor:async()=>({enabled:true,channels:[],announceOwner:false}),ownerId:()=>'owner',now:()=>0,random:()=>0,
+    write:async()=>{calls++;throw Object.assign(new Error('Unknown Channel'),{code:10003});},setInterval:()=>({unref(){}}),clearInterval:()=>{}});
+  await worker.onVoiceState({guild,id:'owner',channelId:null},{guild,id:'owner',channelId:'temp'});
+  assert.equal(calls,1);assert.equal(warnings.length,0);
+  await worker.onVoiceState({guild,id:'owner',channelId:'temp'},{guild,id:'owner',channelId:null});
+  assert.equal(warnings.length,0);
+});
+
+test('other status write failures are still reported',async()=>{
+  const warnings=[];
+  const module=loadModule('src/services/voicePresence.js',{
+    '../database/guildConfig':{},'../config/development':{allowsGuild:id=>id==='guild'},'../utils/logger':{...silentLogger,warn:(...args)=>warnings.push(args)},
+  });
+  const states=new Map([['owner',{channelId:'a'}]]);
+  const guild={id:'guild',members:{me:{id:'bot'},cache:new Map()},voiceStates:{cache:states},channels:{cache:new Map([['a',{id:'a',type:ChannelType.GuildVoice,permissionsFor:()=>({has:()=>true})}]])}};
+  const worker=module.createVoicePresence({configFor:async()=>({enabled:true,channels:[],announceOwner:false}),ownerId:()=>'owner',now:()=>0,random:()=>0,
+    write:async()=>{throw Object.assign(new Error('Missing Permissions'),{code:50013});},setInterval:()=>({unref(){}}),clearInterval:()=>{}});
+  await worker.onVoiceState({guild,id:'owner',channelId:null},{guild,id:'owner',channelId:'a'});
+  assert.equal(warnings.length,1);assert.equal(warnings[0][1].code,50013);
+});
